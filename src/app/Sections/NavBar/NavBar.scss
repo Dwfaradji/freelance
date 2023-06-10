@@ -1,0 +1,403 @@
+/* Navbar section */
+@import "/src/app/Styles/Variables.module";
+
+.nav {
+  width: 100%;
+  line-height: 65px;
+  text-align: center;
+  background: transparent;
+  position: relative;
+  z-index: 1000;
+  height: 64px;
+  @include displayCenterBetween;
+  font-size: $font-size-small;
+  font-family: $font-primary;
+
+  .block {
+    height: 64px;
+    width: 100%;
+    @include displayCenterBetween;
+
+    .logo {
+      height: 64px;
+      @include displayCenter;
+
+      .logoSvg {
+        width: 100%;
+        height: 8vh;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .openCollapse {
+    display: block;
+    width: 100vw;
+    position: relative;
+    background-color: white;
+
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+    }
+  }
+
+  .closeCollapse {
+    display: none;
+    background-color: white;
+  }
+
+  div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 2rem;
+
+    li {
+      text-decoration: none;
+      color: $color-secondary;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-hover;
+      }
+    }
+  }
+
+  div.main_list {
+    float: right;
+
+    ul {
+      width: 100%;
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        width: auto;
+        padding: 0 3rem 0 0;
+        cursor: pointer;
+
+        &:hover {
+          color: $color-hover;
+        }
+      }
+    }
+  }
+}
+
+/* Home section */
+
+.home {
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80);
+  background-position: center top;
+  background-size: cover;
+}
+
+.navTrigger {
+  display: none;
+}
+
+.nav {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navTrigger {
+    display: block;
+  }
+
+  .nav div.logo {
+    margin-left: 15px;
+  }
+
+  .nav div.main_list {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+
+    div.show_list {
+      height: auto;
+      display: none;
+    }
+
+    ul {
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: $color-secondary;
+      /*same background color of navbar*/
+      background-position: center top;
+    }
+
+    .openCollapse {
+      .navlinks {
+        display: none;
+      }
+    }
+
+    li {
+      width: 100%;
+      text-align: right;
+
+      a {
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+      }
+    }
+
+    div.media_button {
+      display: block;
+    }
+  }
+}
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  margin: auto;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+
+  i {
+    background-color: $color-secondary;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+  }
+
+  i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+  }
+
+  i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+  }
+
+  i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+  }
+
+  &.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+  }
+
+  &.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+  }
+
+  &.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+  }
+}
+
+@-webkit-keyframes inM {
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+  }
+}
+
+@keyframes inM {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes outM {
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+  }
+}
+
+@keyframes outM {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes inT {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateY(9px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(9px) rotate(135deg);
+  }
+}
+
+@keyframes inT {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(9px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(9px) rotate(135deg);
+  }
+}
+
+@-webkit-keyframes outT {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateY(9px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(9px) rotate(135deg);
+  }
+}
+
+@keyframes outT {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(9px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(9px) rotate(135deg);
+  }
+}
+
+@-webkit-keyframes inBtm {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateY(-9px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-9px) rotate(135deg);
+  }
+}
+
+@keyframes inBtm {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-9px) rotate(135deg);
+  }
+}
+
+@-webkit-keyframes outBtm {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateY(-9px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-9px) rotate(135deg);
+  }
+}
+
+@keyframes outBtm {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-9px) rotate(135deg);
+  }
+}
+
+.affixTrigger {
+  i {
+    background-color: white;
+  }
+}
+
+.affix {
+  padding: 0;
+  background-color: $color-quaternary;
+  position: fixed;
+  z-index: 1000;
+
+  .items-nav {
+    text-decoration: none;
+    color: $color-primary;
+    line-height: 64px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: $color-hover !important;
+    }
+  }
+
+}
+
+.myH2 {
+  text-align: center;
+
+  .myP {
+    text-align: justify;
+    padding-left: 15%;
+    padding-right: 15%;
+
+    @media all and (max-width: 700px) {
+      padding: 2%;
+    }
+  }
+}

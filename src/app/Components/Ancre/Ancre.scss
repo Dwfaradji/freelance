@@ -1,0 +1,21 @@
+@import "/src/app/Styles/Variables.module";
+
+.ancre {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+  z-index: 1000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+
+  button {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $color-hover;
+  }
+}

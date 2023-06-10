@@ -1,0 +1,51 @@
+@import "/src/app/Styles/Variables.module";
+
+.animationIcon {
+  @include displayCenterAround;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 5vh auto;
+
+  .containerIcon {
+    @include displayCenterAround;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 5vh auto;
+
+    .itemsIcon {
+      width: 200px;
+      margin: 30px;
+    }
+
+    i {
+      font-size: 7vh;
+      background: #3c9dda;
+      background: -webkit-linear-gradient(to bottom, #a65ccd, #3c9dda);
+      background: linear-gradient(to bottom, #a65ccd, #3c9dda);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-left: 1px;
+      animation-name: myAnimation;
+      animation-duration: 4s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+
+      @keyframes myAnimation {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+
+    h3 {
+      margin-top: 15px;
+      white-space: nowrap;
+    }
+  }
+}

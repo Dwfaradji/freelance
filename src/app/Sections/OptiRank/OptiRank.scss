@@ -1,0 +1,34 @@
+@import "/src/app/Styles/Variables.module";
+
+
+.background-picture {
+  //background: url("background1.jpg");
+  @include displayCenterColumn;
+
+  .background-content {
+    width: 60%;
+
+    @include displayCenterColumn;
+    text-align: center;
+    margin: 5vh 0;
+
+    h2 {
+      margin-bottom: 50px;
+      color: $color-primary;
+
+    }
+
+    p {
+      color: $color-primary;
+      margin-bottom: 5vh;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+  }
+
+}

@@ -1,0 +1,135 @@
+@import "/src/app/Styles/Variables.module";
+
+
+.background-container {
+  background-color: $color-quaternary;
+  @include displayCenter;
+
+  a {
+    color: $color-primary
+  }
+
+  .content-contact {
+    margin: 5vh 0;
+    width: 100%;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: $color-primary;
+    }
+
+    .flex-contact {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .contact {
+        @include displayCenterColumn;
+        position: relative;
+
+        img {
+          height: 269px;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+          position: absolute;
+          opacity: 0.5;
+          z-index: 1;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        p {
+          color: $color-primary;
+          position: relative;
+          z-index: 2;
+        }
+
+        &:hover {
+          p {
+            z-index: 1;
+          }
+
+          img {
+            z-index: 3;
+          }
+        }
+      }
+
+      .contact-form {
+        width: 30%;
+        display: grid;
+        grid-gap: 1rem;
+        margin-right: 19px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        label {
+          color: $color-primary;
+        }
+
+        input,
+        textarea {
+          padding: 0.5rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          width: 100%;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            outline: none;
+            border-color: #007bff;
+          }
+        }
+
+        textarea {
+          resize: vertical;
+        }
+
+        .file-upload {
+          label {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            height: 100%;
+            @include button;
+          }
+
+          input[type="file"] {
+            display: none;
+          }
+
+          .file-name {
+            margin-left: 0.5rem;
+          }
+        }
+
+        .file-button {
+          @include button;
+          width: 100%;
+          display: block;
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .flex-contact {
+        justify-content: center !important;
+        width: 100%;
+      }
+      .contact-form {
+        margin-right: 0 !important;
+        width: 100% !important;
+      }
+      img {
+        width: 100% !important;
+        height: 55vh !important;
+      }
+    }
+  }
+}
+

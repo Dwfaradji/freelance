@@ -1,0 +1,8 @@
+@import "/src/app/Styles/Variables.module";
+
+.container-banner {
+  @include displayCenterAround;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 5vh auto;
+}

@@ -1,0 +1,86 @@
+@import "/src/app/Styles/Variables.module";
+@import "~bootstrap/scss/bootstrap";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  min-width: 290px;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+}
+
+a {
+  color: $color-secondary;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+h2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  color: $color-secondary;
+}
+
+h3 {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-bold;
+  color: $color-secondary;
+}
+
+p {
+  font-size: $font-size-small;
+  font-weight: $font-weight-regular;
+  color: $color-primary;
+}
+
+textarea {
+  font-size: $font-size-medium;
+  font-weight: $font-weight-regular;
+  color: $color-secondary;
+}
+
+input {
+  font-size: $font-size-medium;
+  font-weight: $font-weight-regular;
+  color: $color-secondary;
+}
+
+label {
+  font-size: $font-size-medium;
+  font-weight: $font-weight-regular;
+  color: $color-secondary;
+}
+
+button {
+  font-weight: $font-weight-regular;
+  @include button;
+  outline: none !important;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
