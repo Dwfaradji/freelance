@@ -14,6 +14,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning={true}>
       <Script
+        strategy="lazyOnload"
         src="https://kit.fontawesome.com/53013b6bdc.js"
         crossOrigin="anonymous"
       ></Script>

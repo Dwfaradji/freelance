@@ -61,13 +61,10 @@ const projects: Project[] = [
   },
 ];
 // images du header background
-const picturesCarousel: Picture[] = [
-  {
-    id: 1,
-    imageUrl: String(images.pictureHeader),
-  },
-];
-
+const picturesCarousel: Picture = {
+  id: 1,
+  imageUrl: images.pictureHeader,
+};
 //Navigation
 const navItems: Item[] = [
   { title: "Accueil", link: "home" },

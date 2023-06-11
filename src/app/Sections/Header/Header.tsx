@@ -2,25 +2,23 @@ import React from "react";
 import "./Header.scss";
 import TypingAnimation from "../../Components/AnnimationText/AnnimationText";
 import Images from "next/image";
-
 interface Picture {
   id: number;
   imageUrl: string;
 }
-
-interface BackgroundProps {
-  pictures: Picture[];
+interface HeaderProps {
+  pictures: Picture;
 }
 
-const Header = ({ pictures }: BackgroundProps) => {
+const Header = ({ pictures }: HeaderProps) => {
   return (
     <header className="pictures">
-      <div className="background"></div>
       <Images
-        src={pictures[0].imageUrl}
+        src={pictures.imageUrl}
         alt="Header"
-        width="1024"
-        height="768"
+        priority
+        width="1000"
+        height="786"
       />
 
       <div className="text container ">
