@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./AnnimationText.scss";
 import scrollToSection from "@/app/Utils/Utils";
 
-const TypingAnimation = ({ text }) => {
+interface TypingAnimationProps {
+  text: string;
+}
+
+const TypingAnimation = ({ text }: TypingAnimationProps) => {
   const [displayedText, setDisplayedText] = useState("");
   const [displayBtn, setDisplayBtn] = useState("");
   const [styleBtn, setStyleBtn] = useState("displayNone");

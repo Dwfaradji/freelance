@@ -1,6 +1,6 @@
 import React from "react";
 import "./Project.scss";
-
+import Image from "next/image";
 interface Project {
   id: number;
   title: string;
@@ -33,7 +33,12 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
         <article className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
-              <img src={project.image} alt={project.title} />
+              <Image
+                src={project.image}
+                alt={project.title}
+                width="1024"
+                height="100"
+              />
               <div className="project-overlay">
                 <h3>{project.title}</h3>
                 {project.tech.map((tech) => (

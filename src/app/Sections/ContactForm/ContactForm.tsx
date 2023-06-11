@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ContactForm.scss";
 import images from "@/app/Assets/Gallery";
+import Image from "next/image";
 
 interface ContactFormProps {
   onSubmit: (formData: FormData) => void;
@@ -52,7 +53,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
         <h2>Contact</h2>
         <div className="flex-contact">
           <div className="contact col-sm-12 col-md-6">
-            <img src={images.contactBackground} alt="" />
+            <Image
+              src={images.contactBackground}
+              alt=""
+              width="1024"
+              height="768"
+            />
             <p>
               {`Vous avez un projet passionnant en tête ? Ne perdez pas une minute
                 de plus et faites le premier pas vers sa concrétisation.

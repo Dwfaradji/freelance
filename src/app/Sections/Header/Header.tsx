@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.scss";
 import TypingAnimation from "../../Components/AnnimationText/AnnimationText";
+import Images from "next/image";
 
 interface Picture {
   id: number;
@@ -15,7 +16,12 @@ const Header = ({ pictures }: BackgroundProps) => {
   return (
     <header className="pictures">
       <div className="background"></div>
-      <img src={pictures[0].imageUrl} alt="Header" />
+      <Images
+        src={pictures[0].imageUrl}
+        alt="Header"
+        width="1024"
+        height="768"
+      />
 
       <div className="text container ">
         <h1 className="text-4xl font-bold">

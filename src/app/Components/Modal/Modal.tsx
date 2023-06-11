@@ -16,10 +16,7 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
   const [modal, setModal] = React.useState<any>([]);
 
-  useEffect(() => {
-    dataMap();
-  }, [contentModal]);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const dataMap = () => {
     dataModal.map((data: any) => {
       if (data.id === parseInt(contentModal)) {
@@ -28,6 +25,9 @@ const Modal: React.FC<ModalProps> = ({
       }
     });
   };
+  useEffect(() => {
+    dataMap();
+  }, [contentModal, dataMap, dataModal]);
 
   const closeModal = () => {
     setIsOpen(false);

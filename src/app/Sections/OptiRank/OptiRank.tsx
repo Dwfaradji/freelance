@@ -1,12 +1,13 @@
 import React from "react";
 import "./OptiRank.scss";
-import images from "@/app/Assets/Gallery";
+import Images from "next/image";
+import gallery from "@/app/Assets/Gallery";
 
 const OptiRank = () => {
   return (
     <section
       className="background-picture"
-      style={{ background: `url(${images.backgroundDecoBlack})` }}
+      style={{ background: `url(${gallery.backgroundDecoBlack})` }}
     >
       <div className="background-content">
         <h2>Une approche unique du développement web</h2>
@@ -23,7 +24,13 @@ const OptiRank = () => {
             relever tous les défis. Contactez-nous dès aujourd'hui pour donner vie
             à votre projet tout en assurant une visibilité en ligne optimale !`}
         </p>
-        <img src={images.optiRankPicture} alt="" />
+        {/*<img src={gallery.optiRankPicture} alt="" />*/}
+        <Images
+          src={gallery.optiRankPicture}
+          alt=""
+          width="1024"
+          height="100"
+        />
       </div>
     </section>
   );
