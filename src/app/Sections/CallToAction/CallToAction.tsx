@@ -6,9 +6,10 @@ import scrollToSection from "@/app/Utils/Utils";
 const CallToAction = () => {
   return (
     <section
-      className="container-fluid content-picture"
+      className="content-picture "
       style={{
-        background: ` url(${images.callToActionPicture}) no-repeat center center fixed`,
+        background: `url(${images.callToActionPicture}) no-repeat center center fixed `,
+        backgroundSize: "cover",
       }}
     >
       <div className="background">

@@ -2,7 +2,7 @@
 @import "/src/app/Styles/Variables.module";
 
 .nav {
-  width: 100%;
+  width: 100vw;
   line-height: 65px;
   text-align: center;
   background: transparent;
@@ -59,6 +59,7 @@
       text-decoration: none;
       color: $color-secondary;
       cursor: pointer;
+
 
       &:hover {
         color: $color-hover;
@@ -122,7 +123,6 @@
   }
 
   .nav div.logo {
-    margin-left: 15px;
   }
 
   .nav div.main_list {

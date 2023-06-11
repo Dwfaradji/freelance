@@ -29,7 +29,7 @@ const TypingAnimation = ({ text }) => {
 
   return (
     <div className="animation-text">
-      <p className="lead">{displayedText}</p>
+      <p className="lead m-2">{displayedText}</p>
       <button onClick={() => scrollToSection("contact")} className={styleBtn}>
         {displayBtn}
       </button>

@@ -42,22 +42,26 @@ const Modal: React.FC<ModalProps> = ({
     }
   };
   return (
-    <section className={`modal ${showModal ? "open" : ""}`}>
-      <div className="modal-content">
-        <button className="close-btn" onClick={closeModal}>
-          <i className="fa-regular fa-circle-xmark"></i>
-        </button>
-        <h2>{modal.subtitle}</h2>
-        <ul>
-          {modal.details &&
-            modal.details.map((detail: string, i: number) => (
-              <li key={i.toString()}>
-                <i className="fa-solid fa-check"></i> {detail}
-              </li>
-            ))}
-        </ul>
-        <h3>Pour seulement: {modal.price}</h3>
-        <button onClick={() => openModal("contact")}>Demander un devis</button>
+    <section>
+      <div className={`modal ${showModal ? "open" : ""}`}>
+        <div className="modal-content ">
+          <button className="close-btn" onClick={closeModal}>
+            <i className="fa-regular fa-circle-xmark"></i>
+          </button>
+          <h2>{modal.subtitle}</h2>
+          <ul>
+            {modal.details &&
+              modal.details.map((detail: string, i: number) => (
+                <li key={i.toString()}>
+                  <i className="fa-solid fa-check"></i> {detail}
+                </li>
+              ))}
+          </ul>
+          <h3>Pour seulement: {modal.price}</h3>
+          <button onClick={() => openModal("contact")}>
+            Demander un devis
+          </button>
+        </div>
       </div>
     </section>
   );

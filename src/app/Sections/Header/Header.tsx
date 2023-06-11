@@ -17,7 +17,7 @@ const Header = ({ pictures }: BackgroundProps) => {
       <div className="background"></div>
       <img src={pictures[0].imageUrl} alt="Header" />
 
-      <div className="text container">
+      <div className="text container ">
         <h1 className="text-4xl font-bold">
           Développeur Freelance spécialisé en{" "}
           <span className="text-blue-500">Web Design</span> et{" "}

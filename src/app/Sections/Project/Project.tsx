@@ -37,7 +37,9 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
               <div className="project-overlay">
                 <h3>{project.title}</h3>
                 {project.tech.map((tech) => (
-                  <span key={tech}>{tech}</span>
+                  <span className="w-17 md:w-32 lg:w-40" key={tech}>
+                    {tech}
+                  </span>
                 ))}
               </div>
             </div>

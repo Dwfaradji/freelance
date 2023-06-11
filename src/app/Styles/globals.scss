@@ -25,6 +25,7 @@ body {
   text-rendering: optimizeLegibility;
   letter-spacing: 0.5px;
   box-sizing: border-box;
+  width: 100vw;
 }
 
 a {
@@ -82,5 +83,6 @@ button {
 
 li {
   list-style-type: none;
+  white-space: nowrap;
 }
 

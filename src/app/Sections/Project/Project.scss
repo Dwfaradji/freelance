@@ -65,11 +65,11 @@
 
       span {
         @include button;
-        height: 5vh;
-        width: 13vw;
-        padding: 0;
+        //height: 5vh;
+        padding: 0 10px;
         margin: 5px;
         @include displayCenter;
+        pointer-events: none;
       }
     }
 
