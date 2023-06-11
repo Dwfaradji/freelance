@@ -24,7 +24,7 @@ const Header = ({ pictures }: BackgroundProps) => {
       />
 
       <div className="text container ">
-        <h1 className="text-4xl font-bold">
+        <h1 className="font-bold">
           Développeur Freelance spécialisé en{" "}
           <span className="text-blue-500">Web Design</span> et{" "}
           <span className="text-blue-500">

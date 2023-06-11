@@ -65,7 +65,7 @@ const Price = ({ dataTarifs }: PriceProps) => {
               Estimation du temps de travail appuyé par un devis. *** Maintenance
               annuelle (engagement 12 mois). Droit d'auteur & propriété intellectuelle
               : Vous êtes à la fin du projet, propriétaire de l'ensemble des sources
-              (fichiers) composant celui-ci. Paiment possible en plusieurs fois`}
+              (fichiers) composant celui-ci. Paiement possible en plusieurs fois`}
       </p>
     </section>
   );

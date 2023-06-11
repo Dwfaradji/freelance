@@ -21,8 +21,8 @@ const Navbar = ({ items }: NavProps) => {
   useEffect(() => {
     const handleScroll = () => {
       const navElement = document.querySelector(".nav");
-      const openElement = document.querySelector(".openCollapse .navlinks");
-      const closeElement = document.querySelector(".closeCollapse .navlinks");
+      const openElement = document.querySelector(".openCollapse .navLinks");
+      const closeElement = document.querySelector(".closeCollapse .navLinks");
       const navTrigger = document.querySelector(".navTrigger");
       if (navElement) {
         if (window.scrollY > 900) {

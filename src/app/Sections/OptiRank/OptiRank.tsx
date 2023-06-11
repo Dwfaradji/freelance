@@ -24,7 +24,6 @@ const OptiRank = () => {
             relever tous les défis. Contactez-nous dès aujourd'hui pour donner vie
             à votre projet tout en assurant une visibilité en ligne optimale !`}
         </p>
-        {/*<img src={gallery.optiRankPicture} alt="" />*/}
         <Images
           src={gallery.optiRankPicture}
           alt=""

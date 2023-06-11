@@ -1,4 +1,5 @@
 import React from "react";
+import Script from "next/script";
 
 export const metadata = {
   title: "DevBreath",
@@ -12,14 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" suppressHydrationWarning={true}>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script
-          defer
-          src="https://kit.fontawesome.com/53013b6bdc.js"
-          crossOrigin="anonymous"
-        ></script>
-      </head>
+      <Script
+        src="https://kit.fontawesome.com/53013b6bdc.js"
+        crossOrigin="anonymous"
+      ></Script>
       <body>{children}</body>
     </html>
   );

@@ -12,31 +12,30 @@ import kasa from "./kasa.jpg";
 import pictureHeader from "./bg-4.jpg";
 import contactBackground from "./backgroundContact.jpeg";
 import backgroundDecoBlack from "./background1.jpg";
-import optiRankPicture from "./pictures1.png"
-import callToActionPicture from "./projet.jpg"
+import optiRankPicture from "./pictures1.png";
+import callToActionPicture from "./projet.jpg";
 import bannerPicture1 from "./a_propos.jpg";
 import bannerPicture2 from "./bg-1.jpg";
 import bannerPicture3 from "./bg-2.jpg";
 
-
 const images = {
-    groupomania,
-    reservia,
-    kanap,
-    piquante,
-    chouetteAgence,
-    ohmyfood,
-    gameOne,
-    fishEyes,
-    kasa,
-    pictureHeader,
-    contactBackground,
-    optiRankPicture,
-    backgroundDecoBlack,
-    callToActionPicture,
-    bannerPicture1,
-    bannerPicture2,
-    bannerPicture3
+  groupomania,
+  reservia,
+  kanap,
+  piquante,
+  chouetteAgence,
+  ohmyfood,
+  gameOne,
+  fishEyes,
+  kasa,
+  pictureHeader,
+  contactBackground,
+  optiRankPicture,
+  backgroundDecoBlack,
+  callToActionPicture,
+  bannerPicture1,
+  bannerPicture2,
+  bannerPicture3,
 };
 
 export default images;

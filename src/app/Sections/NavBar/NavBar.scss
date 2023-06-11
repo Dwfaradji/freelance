@@ -109,7 +109,7 @@
   transition: all 0.4s ease;
 }
 
-/* Media qurey section */
+/* Media query section */
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
@@ -148,7 +148,7 @@
     }
 
     .openCollapse {
-      .navlinks {
+      .navLinks {
         display: none;
       }
     }
@@ -171,8 +171,6 @@
 }
 
 /* Animation */
-/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
-
 .navTrigger {
   cursor: pointer;
   width: 30px;

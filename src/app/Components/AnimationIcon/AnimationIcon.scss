@@ -4,13 +4,12 @@
   @include displayCenterAround;
   flex-wrap: wrap;
   text-align: center;
-  margin: 5vh auto;
 
   .containerIcon {
     @include displayCenterAround;
     flex-wrap: wrap;
     text-align: center;
-    margin: 5vh auto;
+    margin-top: 5vh;
 
     .itemsIcon {
       width: 200px;
