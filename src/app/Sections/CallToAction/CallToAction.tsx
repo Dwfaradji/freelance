@@ -13,6 +13,7 @@ const CallToAction = () => {
       }}
     >
       <div className="background">
+        <h2>TITRE H2</h2>
         <p>
           Vous avez un projet intéressant en tête ? Ne tardez plus,{" "}
           <span onClick={() => scrollToSection("contact")}>contactez-moi</span>{" "}

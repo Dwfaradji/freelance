@@ -1,6 +1,7 @@
 import React from "react";
 import AnimationIcon from "../../Components/AnimationIcon/AnimationIcon";
 import AnimationPicture from "../../Components/AnimationPicture/AnimationPicture";
+import "./Banner.scss";
 import images from "@/app/Assets/Gallery";
 
 interface BannerProps {

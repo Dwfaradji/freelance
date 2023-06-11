@@ -19,7 +19,6 @@ export default function RootLayout({
           src="https://kit.fontawesome.com/53013b6bdc.js"
           crossOrigin="anonymous"
         ></script>
-        <title>DevBreath</title>
       </head>
       <body>{children}</body>
     </html>

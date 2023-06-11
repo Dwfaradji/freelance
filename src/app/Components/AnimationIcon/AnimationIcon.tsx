@@ -7,7 +7,7 @@ interface AnimationIconProps {
 
 const AnimationIcon = ({ itemsIcon }: AnimationIconProps) => {
   return (
-    <section className="container-fluid animationIcon ">
+    <div className="container-fluid animationIcon ">
       <h2>Une approche avancée pour des applications web performantes</h2>
       <div className=" containerIcon">
         {itemsIcon &&
@@ -18,7 +18,7 @@ const AnimationIcon = ({ itemsIcon }: AnimationIconProps) => {
             </div>
           ))}
       </div>
-    </section>
+    </div>
   );
 };
 
