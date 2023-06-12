@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import "./ContactForm.scss";
 import images from "@/app/Assets/Gallery";
 import Image from "next/image";
@@ -15,13 +16,19 @@ interface FormData {
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
-  const cahierDesCharges = "/downloads/cahierDesCharges.pdf";
+  //Variables
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
 
+  const cahierDesCharges = "/downloads/cahierDesCharges.pdf";
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
-    file: null,
+    file: null
   });
 
   const handleChange = (
@@ -30,7 +37,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: value
     }));
   };
 
@@ -38,15 +45,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
     const file = e.target.files && e.target.files[0];
     setFormData((prevData) => ({
       ...prevData,
-      file: file || null,
+      file: file || null
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    onSubmit(formData);
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   onSubmit(formData);
+  // };
+  // @ts-ignore
+  const onSubmitHandler = (data) => {
+    console.log(data);
   };
-
+  // @ts-ignore
   return (
     <section className="container-fluid background-container">
       <div className="content-contact">
@@ -59,7 +70,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               width="1024"
               height="768"
             />
-            <p className="text-base">
+            <p className="text-base md:text-xl">
               {`Vous avez un projet passionnant en tête ? Ne perdez pas une minute
                 de plus et faites le premier pas vers sa concrétisation.
                 Remplissez notre formulaire de contact ci-dessous pour nous en
@@ -81,17 +92,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               transformer vos idées en réalité.`}
             </p>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit(onSubmitHandler)}
+          >
             <div>
               <label htmlFor="name">Nom</label>
               <input
                 placeholder="Votre nom"
                 type="text"
                 id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
+                {...register("firstName", { required: true })}
               />
             </div>
             <div>
@@ -100,10 +111,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                 placeholder="Votre adresse email"
                 type="email"
                 id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
+                {...register("email", { required: true })}
               />
             </div>
             <div>
@@ -111,10 +119,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               <textarea
                 placeholder="Votre message"
                 id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
+                {...register("message", {  required: true })}
               />
             </div>
             <div className="file-upload">

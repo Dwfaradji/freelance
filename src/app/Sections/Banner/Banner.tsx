@@ -17,9 +17,10 @@ const Banner = ({ typeBanner }: BannerProps) => {
   ];
 
   const bannerPicture = [
-    { title: "CleanCode", picture: images.bannerPicture1 },
-    { title: "Populaire", picture: images.bannerPicture2 },
-    { title: "Sécurité", picture: images.bannerPicture3 },
+    { title: "Prise de contact", picture: images.bannerPicture3 },
+    { title: "Planification et conception", picture: images.bannerPicture2 },
+    { title: "Développement", picture: images.bannerPicture1 },
+    { title: "Livrable final", picture: images.bannerPicture5  },
   ];
   return (
     <section className="container-banner">

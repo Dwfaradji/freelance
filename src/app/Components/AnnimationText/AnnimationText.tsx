@@ -33,7 +33,9 @@ const TypingAnimation = ({ text }: TypingAnimationProps) => {
 
   return (
     <div className="animation-text">
-      <p className="lead m-3 text-2xl">{displayedText}</p>
+      <p className="lead mb-10 text-xl">
+        {"Besoin d'un site web ou d'une appli ?"} <br /> {displayedText}
+      </p>
       <button onClick={() => scrollToSection("contact")} className={styleBtn}>
         {displayBtn}
       </button>

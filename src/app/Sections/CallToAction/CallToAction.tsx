@@ -6,13 +6,14 @@ import scrollToSection from "@/app/Utils/Utils";
 const CallToAction = () => {
   return (
     <section
-      className="content-picture "
+      className="container-call-to-action"
       style={{
-        background: `url(${images.callToActionPicture}) no-repeat center center fixed `,
+        background: `url(${images.bannerPicture4}) no-repeat center center fixed `,
         backgroundSize: "cover",
       }}
     >
-      <div className="background">
+      <div className="background"></div>
+      <div className="content">
         <h2 className="text-h2">
           Services de conception web professionnels et personnalisés
         </h2>

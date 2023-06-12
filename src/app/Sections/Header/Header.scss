@@ -2,7 +2,7 @@
 
 .pictures {
   position: relative;
-  width: 100vw;
+  display: grid;
 
   img {
     width: 100%;
@@ -21,8 +21,6 @@
     color: white;
     text-align: center;
     text-shadow: 0 0 10px #000000;
-    width: 100vw;
-
     //h1 {
     //  font-size: 6vh;
     //}

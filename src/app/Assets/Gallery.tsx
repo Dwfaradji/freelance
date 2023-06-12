@@ -16,6 +16,8 @@ const images = {
   bannerPicture1: "/images/a_propos.webp",
   bannerPicture2: "/images/bg-1.webp",
   bannerPicture3: "/images/bg-2.webp",
+  bannerPicture4: "/images/bg-3.webp",
+  bannerPicture5: "/images/bg-5.webp",
   contactBackground: "/images/imageContact.webp",
 };
 

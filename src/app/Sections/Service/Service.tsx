@@ -20,7 +20,7 @@ interface ServiceProps {
 const Service = ({ dataServices }: ServiceProps) => {
   return (
     <section className="container-fluid services">
-      <h2 className="services__title text-h2">Services proposés</h2>
+      <h2 className="text-h2">Services proposés</h2>
       <div className="services__columns">
         {dataServices.map((service, i) => (
           <article key={i} className="services__column col-sm-12  col-md-4">

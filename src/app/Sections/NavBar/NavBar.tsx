@@ -18,6 +18,20 @@ const Navbar = ({ items }: NavProps) => {
   const [liItems, setLiItems] = useState<string>("");
   const [openNav, setOpenNav] = useState<boolean>(false);
 
+  const colorsInit = {
+    colorPrimary: "#3c9dda",
+    colorSecondary: "#5e6163",
+  };
+
+  const colorsSecond = {
+    colorPrimary: "#ffffff",
+    colorSecondary: "#3c9dda",
+  };
+
+  const [colors, setColors] = useState(colorsInit);
+
+  const svgElement = logoSVG(colors);
+
   useEffect(() => {
     const handleScroll = () => {
       const navElement = document.querySelector(".nav");
@@ -26,7 +40,7 @@ const Navbar = ({ items }: NavProps) => {
       const navTrigger = document.querySelector(".navTrigger");
       if (navElement) {
         if (window.scrollY > 900) {
-          console.log("affix");
+          setColors(colorsSecond);
           navElement.classList.add("affix");
           openElement && openElement.classList.add("affix");
           closeElement && closeElement.classList.add("affix");
@@ -37,6 +51,7 @@ const Navbar = ({ items }: NavProps) => {
           openElement && openElement.classList.remove("affix");
           closeElement && closeElement.classList.remove("affix");
           navTrigger && navTrigger.classList.remove("affixTrigger");
+          setColors(colorsInit);
         }
       }
     };
@@ -45,7 +60,8 @@ const Navbar = ({ items }: NavProps) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [colorsInit, colorsSecond]);
+
 
   const handleResize = () => {
     const screenWidth = window.innerWidth;
@@ -77,13 +93,15 @@ const Navbar = ({ items }: NavProps) => {
     </ul>
   );
 
-  const svgElement = logoSVG();
-
   return (
     <nav className="nav">
       <div className="block">
         <div className="logo">
-          <Link className="logoSvg" href="/" aria-label="link logo">
+          <Link
+            className="logoSvg flex items-center"
+            href="/"
+            aria-label="link logo"
+          >
             {svgElement}
           </Link>
         </div>
