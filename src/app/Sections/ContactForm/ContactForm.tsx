@@ -50,7 +50,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
   return (
     <section className="container-fluid background-container">
       <div className="content-contact">
-        <h2>Contact</h2>
+        <h2 className="text-h2">Contact</h2>
         <div className="flex-contact">
           <div className="contact col-sm-12 col-md-6">
             <Image
@@ -59,7 +59,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               width="1024"
               height="768"
             />
-            <p>
+            <p className="text-base">
               {`Vous avez un projet passionnant en tête ? Ne perdez pas une minute
                 de plus et faites le premier pas vers sa concrétisation.
                 Remplissez notre formulaire de contact ci-dessous pour nous en

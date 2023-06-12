@@ -9,7 +9,7 @@ interface AnimationPictureProps {
 const AnimationPicture = ({ itemsPicture }: AnimationPictureProps) => {
   return (
     <>
-      <h2>TITRE H2</h2>
+      <h2 className="text-h2">TITRE H2</h2>
       <div className="about-images">
         {itemsPicture.map((item, i) => (
           <div key={i} className="image-container">

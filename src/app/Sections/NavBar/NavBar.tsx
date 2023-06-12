@@ -26,6 +26,7 @@ const Navbar = ({ items }: NavProps) => {
       const navTrigger = document.querySelector(".navTrigger");
       if (navElement) {
         if (window.scrollY > 900) {
+          console.log("affix");
           navElement.classList.add("affix");
           openElement && openElement.classList.add("affix");
           closeElement && closeElement.classList.add("affix");
@@ -63,7 +64,7 @@ const Navbar = ({ items }: NavProps) => {
   };
 
   const renderNavLinks = (isCollapsed: boolean) => (
-    <ul className="navlinks">
+    <ul className="navLinks">
       {itemsNav.map((item, index) => (
         <li
           key={index}

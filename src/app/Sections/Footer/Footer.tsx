@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
     >
       <div className="footer__container">
         <div className="footer__section col-sm-12 col-md-4">
-          <h3>À propos de moi</h3>
+          <h3 className="text-h3">À propos de moi</h3>
           <p>
             {`Je suis un développeur freelance passionné par la création de sites
                   web et d'applications innovantes. Contactez-moi pour discuter de
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="footer__section  col-sm-12 col-md-4">
-          <h3>Services</h3>
+          <h3 className="text-h3">Services</h3>
           <ul>
             <li>Web design</li>
             <li>Développement web</li>
@@ -34,8 +34,9 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="footer__section col-sm-12 col-md-4">
-          <h3>Contact</h3>
-          <p>Email: dw.faradji66@yahoo.com</p>
+          <h3 className="text-h3">Contact</h3>
+          {/*AJOUTER LA REDIRECTION EMAIL*/}
+          <p>Email: contact@devevoke.com</p>
           <p>Téléphone: 0618237662</p>
           <p>
             Adresse: 5 impasse des vergers,

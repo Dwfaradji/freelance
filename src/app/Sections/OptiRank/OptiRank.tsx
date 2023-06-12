@@ -10,8 +10,8 @@ const OptiRank = () => {
       style={{ background: `url(${gallery.backgroundDecoBlack})` }}
     >
       <div className="background-content">
-        <h2>Une approche unique du développement web</h2>
-        <p>
+        <h2 className="text-h2">Une approche unique du développement web</h2>
+        <p className="text-xl">
           {`Découvrez notre approche unique du développement web, alliant
             créativité et référencement. En tant qu'experts en création de sites
             web et d'applications, nous nous engageons à développer des solutions

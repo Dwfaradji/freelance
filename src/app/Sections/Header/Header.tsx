@@ -22,7 +22,7 @@ const Header = ({ pictures }: HeaderProps) => {
       />
 
       <div className="text container ">
-        <h1 className="font-bold">
+        <h1 className="font-bold text-h1">
           Développeur Freelance spécialisé en{" "}
           <span className="text-blue-500">Web Design</span> et{" "}
           <span className="text-blue-500">

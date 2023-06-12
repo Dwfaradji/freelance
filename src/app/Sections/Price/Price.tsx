@@ -27,7 +27,7 @@ const Price = ({ dataTarifs }: PriceProps) => {
   return (
     <section className=" container-fluid section-tarif">
       <div className="content-tarif">
-        <h2 className="section-title">Nos tarifs</h2>
+        <h2 className="section-title text-h2">Nos tarifs</h2>
         <div className="tarif-grid">
           {dataTarifs.map((tarif, i) => (
             <article
@@ -35,11 +35,11 @@ const Price = ({ dataTarifs }: PriceProps) => {
               key={i.toString()}
               className="tarif-card"
             >
-              <h3 className="test">
-                {tarif.title} <br /> {tarif.subtitle}{" "}
+              <h3 className="test text-h3">
+                {tarif.title} <br /> {tarif.subtitle}
               </h3>
               <div className="tarif-price">
-                <p>À partir de {tarif.price} </p>
+                <p>À partir de {tarif.price}</p>
               </div>
               <p>{tarif.description}</p>
               <div className={!isOpen ? "tarif-overlay" : "offOverlay"}>

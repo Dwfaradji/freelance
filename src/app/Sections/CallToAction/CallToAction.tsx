@@ -13,8 +13,10 @@ const CallToAction = () => {
       }}
     >
       <div className="background">
-        <h2>TITRE H2</h2>
-        <p>
+        <h2 className="text-h2">
+          Services de conception web professionnels et personnalisés
+        </h2>
+        <p className="text-xl">
           Vous avez un projet intéressant en tête ? Ne tardez plus,{" "}
           <span onClick={() => scrollToSection("contact")}>contactez-moi</span>{" "}
           dès maintenant pour discuter de vos idées et commencer à travailler
