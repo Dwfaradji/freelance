@@ -1,63 +1,59 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import "./ContactForm.scss";
 import images from "@/app/Assets/Gallery";
 import Image from "next/image";
-
-interface ContactFormProps {
-  onSubmit: (formData: FormData) => void;
-}
+import axios from "axios";
 
 interface FormData {
-  name: string;
+  firstname: string;
+  lastname: string;
   email: string;
-  message: string;
-  file: File | null;
+  content: string;
+  // file: File | null;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
+interface Inputs {
+  firstname: string;
+  lastname: string;
+  email: string;
+  content: string;
+  // file: File | null;
+}
+
+const ContactForm = () => {
   //Variables
   const {
     register,
     handleSubmit,
-    formState: { errors }
-  } = useForm();
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const response = await axios.post("/api/contact", data);
+    console.log(response,"response");
+  };
 
   const cahierDesCharges = "/downloads/cahierDesCharges.pdf";
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
-    file: null
-  });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files && e.target.files[0];
-    setFormData((prevData) => ({
-      ...prevData,
-      file: file || null
-    }));
-  };
-
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   onSubmit(formData);
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  // ) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
   // };
-  // @ts-ignore
-  const onSubmitHandler = (data) => {
-    console.log(data);
-  };
-  // @ts-ignore
+
+  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = e.target.files && e.target.files[0];
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     file: file || null,
+  //   }));
+  // };
+
   return (
     <section className="container-fluid background-container">
       <div className="content-contact">
@@ -92,18 +88,30 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               transformer vos idées en réalité.`}
             </p>
           </div>
-          <form
-            className="contact-form"
-            onSubmit={handleSubmit(onSubmitHandler)}
-          >
+          <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
             <div>
-              <label htmlFor="name">Nom</label>
+              <label htmlFor="lastname">Nom</label>
               <input
                 placeholder="Votre nom"
                 type="text"
-                id="name"
-                {...register("firstName", { required: true })}
+                id="lastname"
+                {...register("lastname", { required: true })}
               />
+              {errors.lastname && (
+                <span className="text-white">Ce champ est requis</span>
+              )}
+            </div>
+            <div>
+              <label htmlFor="name">Nom</label>
+              <input
+                placeholder="Votre prénom"
+                type="text"
+                id="firstname"
+                {...register("firstname", { required: true })}
+              />
+              {errors.firstname && (
+                <span className="text-white">Ce champ est requis</span>
+              )}
             </div>
             <div>
               <label htmlFor="email">Email</label>
@@ -113,33 +121,34 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                 id="email"
                 {...register("email", { required: true })}
               />
+              {errors.email && (
+                <span className="text-white">Ce champ est requis</span>
+              )}
             </div>
             <div>
-              <label htmlFor="message">Message</label>
+              <label htmlFor="content">Message</label>
               <textarea
                 placeholder="Votre message"
-                id="message"
-                {...register("message", {  required: true })}
+                id="content"
+                {...register("content", { required: true })}
               />
+              {errors.content && (
+                <span className="text-white">Ce champ est requis</span>
+              )}
             </div>
             <div className="file-upload">
               <label htmlFor="file">Upload PDF</label>
-              <input
-                type="file"
-                id="file"
-                name="file"
-                accept=".pdf"
-                onChange={handleFileChange}
-              />
-              {formData.file && (
+              <input type="file" id="file" accept=".pdf" />
+              {/*   {formData.file && (
                 <span className="file-name">{formData.file.name}</span>
-              )}
+              )}*/}
             </div>
             <div>
               <a href={cahierDesCharges} download className="file-button">
                 Download Cahier des Charges
               </a>
             </div>
+
             <button className="submit-button" type="submit">
               Submit
             </button>
@@ -149,5 +158,4 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
     </section>
   );
 };
-
 export default ContactForm;

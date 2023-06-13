@@ -7,7 +7,8 @@ const Footer: React.FC = () => {
     <footer
       className="footer"
       style={{
-        background: `url(${images.footerBackground}) no-repeat center center `,backgroundSize: "cover",
+        background: `url(${images.footerBackground}) no-repeat center center `,
+        backgroundSize: "cover",
       }}
     >
       <div className="footer__container">
@@ -36,7 +37,12 @@ const Footer: React.FC = () => {
         <div className="footer__section col-sm-12 col-md-4">
           <h3 className="text-h3">Contact</h3>
           {/*AJOUTER LA REDIRECTION EMAIL*/}
-          <p>Email: contact@devevoke.com</p>
+          <p>
+            Email:
+            <a className="ml-1 text-white" href="mailto:contact@devevoke.com">
+               contact@devevoke.com
+            </a>
+          </p>
           <p>Téléphone: 0618237662</p>
           <p>
             Adresse: 5 impasse des vergers,

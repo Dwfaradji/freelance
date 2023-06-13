@@ -1,4 +1,4 @@
-// Api file for the website
+// Data file for the website
 // import images from "@/Assets/Gallery";
 import { Picture, Item, Project, Price, Service } from "./typeFile";
 import images from "@/app/Assets/Gallery";

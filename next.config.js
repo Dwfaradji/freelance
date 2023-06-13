@@ -17,13 +17,8 @@ module.exports = {
 
     return config;
   },
+  env: {
+    KEY_SENDGRID: "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",
+  }
 };
 
-// const withImages = require('next-images');
-//
-// module.exports = withImages({
-//     images: {
-//         outputPath: 'images/', // Répertoire de sortie pour les images
-//
-//     },
-// });
