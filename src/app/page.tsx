@@ -18,19 +18,6 @@ const Page: React.FC = () => {
     // file: null,
   };
 
-  const onSubmit = async (data: FormData) => {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    const result = await response.json();
-    console.log(result, "result");
-  };
-  onSubmit(data).then(r => console.log(r));
-
   return (
     <main>
       <Home />

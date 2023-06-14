@@ -30,8 +30,21 @@ const ContactForm = () => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const response = await axios.post("/api/contact", data);
-    console.log(response,"response");
+    try {
+      const response = await axios.post("/api/contact", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const result = response.data;
+      if (!response.data) {
+        console.log("error");
+      } else {
+        console.log("ok", result);
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
   const cahierDesCharges = "/downloads/cahierDesCharges.pdf";
