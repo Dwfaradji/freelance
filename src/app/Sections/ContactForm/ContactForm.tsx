@@ -67,6 +67,7 @@ const ContactForm = () => {
   //   }));
   // };
 
+
   return (
     <section className="container-fluid background-container">
       <div className="content-contact">
@@ -101,30 +102,18 @@ const ContactForm = () => {
               transformer vos idées en réalité.`}
             </p>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
-            <div>
-              <label htmlFor="lastname">Nom</label>
-              <input
-                placeholder="Votre nom"
-                type="text"
-                id="lastname"
-                {...register("lastname", { required: true })}
-              />
-              {errors.lastname && (
-                <span className="text-white">Ce champ est requis</span>
-              )}
-            </div>
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div>
               <label htmlFor="name">Nom</label>
               <input
-                placeholder="Votre prénom"
+                placeholder="Votre nom"
                 type="text"
-                id="firstname"
+                id="name"
                 {...register("firstname", { required: true })}
               />
-              {errors.firstname && (
-                <span className="text-white">Ce champ est requis</span>
-              )}
             </div>
             <div>
               <label htmlFor="email">Email</label>
@@ -134,34 +123,33 @@ const ContactForm = () => {
                 id="email"
                 {...register("email", { required: true })}
               />
-              {errors.email && (
-                <span className="text-white">Ce champ est requis</span>
-              )}
             </div>
             <div>
-              <label htmlFor="content">Message</label>
+              <label htmlFor="message">Message</label>
               <textarea
                 placeholder="Votre message"
-                id="content"
-                {...register("content", { required: true })}
+                id="message"
+                {...register("content", {  required: true })}
               />
-              {errors.content && (
-                <span className="text-white">Ce champ est requis</span>
-              )}
             </div>
             <div className="file-upload">
               <label htmlFor="file">Upload PDF</label>
-              <input type="file" id="file" accept=".pdf" />
-              {/*   {formData.file && (
-                <span className="file-name">{formData.file.name}</span>
-              )}*/}
+              <input
+                type="file"
+                id="file"
+                name="file"
+                accept=".pdf"
+                // onChange={handleFileChange}
+              />
+              {/*{formData.file && (*/}
+              {/*  <span className="file-name">{formData.file.name}</span>*/}
+              {/*)}*/}
             </div>
             <div>
               <a href={cahierDesCharges} download className="file-button">
                 Download Cahier des Charges
               </a>
             </div>
-
             <button className="submit-button" type="submit">
               Submit
             </button>
@@ -171,4 +159,5 @@ const ContactForm = () => {
     </section>
   );
 };
+
 export default ContactForm;
