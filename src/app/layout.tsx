@@ -1,5 +1,6 @@
 import React from "react";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "DevEvoke",
@@ -19,7 +20,10 @@ export default function RootLayout({
         src="https://kit.fontawesome.com/53013b6bdc.js"
         crossOrigin="anonymous"
       ></Script>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

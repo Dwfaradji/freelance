@@ -37,6 +37,7 @@ const ContactForm = () => {
         },
       });
       const result = response.data;
+      console.log(response);
       if (!response.data) {
         console.log("error");
       } else {
@@ -107,12 +108,21 @@ const ContactForm = () => {
             onSubmit={handleSubmit(onSubmit)}
           >
             <div>
-              <label htmlFor="name">Nom</label>
+              <label htmlFor="firstname">Prénom</label>
+              <input
+                placeholder="Votre prénon"
+                type="text"
+                id="firstname"
+                {...register("firstname", { required: true })}
+              />
+            </div>
+            <div>
+              <label htmlFor="lastname">Nom</label>
               <input
                 placeholder="Votre nom"
                 type="text"
-                id="name"
-                {...register("firstname", { required: true })}
+                id="lastname"
+                {...register("lastname", { required: true })}
               />
             </div>
             <div>
