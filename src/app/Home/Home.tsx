@@ -19,7 +19,7 @@ import {
   prices,
   navItems,
   picturesCarousel,
-} from "@/app/Api/data";
+} from "@/app/Data/data";
 
 interface ContactFormData {
   name: string;
@@ -29,11 +29,6 @@ interface ContactFormData {
 }
 
 const Home: React.FC = () => {
-  // //Donnees formulaire
-  const handleFormSubmit = (formData: ContactFormData) => {
-    // Traiter les données du formulaire ici
-    console.log(formData);
-  };
   return (
     <>
       <Navbar items={navItems} />
@@ -46,7 +41,7 @@ const Home: React.FC = () => {
       <div id="tarif"></div>
       <Price dataTarifs={prices} />
       <div id="contact"></div>
-      <ContactForm onSubmit={handleFormSubmit} />
+      <ContactForm />
       <div id="services"></div>
       <Service dataServices={services} />
       <div id="about"></div>

@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-// const nextConfig = {}
-// module.exports = nextConfig
-
 const path = require("path");
 
 module.exports = {
@@ -17,13 +14,8 @@ module.exports = {
 
     return config;
   },
+  env: {
+    KEY_SENDGRID: process.env.KEY_SENDGRID_API,
+    TEMPLATE_ID: process.env.KEY_TEMPLATE,
+  },
 };
-
-// const withImages = require('next-images');
-//
-// module.exports = withImages({
-//     images: {
-//         outputPath: 'images/', // Répertoire de sortie pour les images
-//
-//     },
-// });
