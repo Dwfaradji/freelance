@@ -6,6 +6,7 @@ import Images from "next/image";
 interface Picture {
   id: number;
   imageUrl: string;
+  alt: string;
 }
 
 interface HeaderProps {
@@ -17,7 +18,7 @@ const Header = ({ pictures }: HeaderProps) => {
     <header className="pictures">
       <Images
         src={pictures.imageUrl}
-        alt="Header"
+        alt={pictures.alt}
         priority
         width="1000"
         height="786"

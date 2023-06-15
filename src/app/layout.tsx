@@ -3,9 +3,13 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
-  title: "DevEvoke",
+  title:
+    "Services de développement web freelance de qualité - Votre partenaire pour des solutions numériques sur mesure",
   description:
-    "Besoin d'un développeur web freelance expérimenté pour créer votre site web sur mesure ? Faites confiance à notre expertise en développement web et obtenez un site performant, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour discuter de votre projet et obtenir un devis personnalisé.",
+    "Besoin d'un développeur web freelance expérimenté ? Obtenez un site performant, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour un site sur mesure.",
+  alternates: {
+    canonical: "https://www.devevoke.com/",
+  },
 };
 
 export default function RootLayout({

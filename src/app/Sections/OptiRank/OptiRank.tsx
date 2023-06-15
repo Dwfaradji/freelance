@@ -26,7 +26,7 @@ const OptiRank = () => {
         </p>
         <Images
           src={gallery.optiRankPicture}
-          alt=""
+          alt="picture site web"
           width="1024"
           height="100"
         />

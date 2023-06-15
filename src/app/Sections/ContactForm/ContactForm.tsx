@@ -77,7 +77,7 @@ const ContactForm = () => {
           <div className="contact col-sm-12 col-md-6">
             <Image
               src={images.contactBackground}
-              alt=""
+              alt="background contact"
               width="1024"
               height="768"
             />

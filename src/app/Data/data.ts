@@ -64,6 +64,7 @@ const projects: Project[] = [
 const picturesCarousel: Picture = {
   id: 1,
   imageUrl: images.pictureHeader,
+  alt: "image d'arrière plan",
 };
 //Navigation
 const navItems: Item[] = [

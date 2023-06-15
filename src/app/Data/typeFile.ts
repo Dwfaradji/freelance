@@ -2,6 +2,7 @@
 interface Picture {
   id: number;
   imageUrl: string;
+  alt: string;
 }
 
 interface Item {
