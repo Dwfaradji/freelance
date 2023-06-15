@@ -3,7 +3,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
-  title: "Sites web sur mesure par un développeur web expérimenté et passionné",
+  title: "Sites web sur mesure par un développeur web expérimenté",
   description:
     "Besoin d'un développeur web freelance expérimenté ? Obtenez un site performant, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour bénéficier d'un site sur mesure, créé selon vos besoins spécifiques.",
   alternates: {
@@ -45,6 +45,7 @@ export default function RootLayout({
         src="https://kit.fontawesome.com/53013b6bdc.js"
         crossOrigin="anonymous"
       ></Script>
+
       <body>
         {children}
         <Analytics />

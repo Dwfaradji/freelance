@@ -7,12 +7,17 @@ interface SendGridMail {
   to: string;
   from: string;
   templateId: string;
-  dynamic_template_data: {
-    firstname: string;
-    lastname: string;
-    email: string;
-    subject: string;
-  };
+  firstname: string;
+  lastname: string;
+  email: string;
+  subject: string;
+
+  // dynamic_template_data: {
+  //   firstname: string;
+  //   lastname: string;
+  //   email: string;
+  //   subject: string;
+  // };
 }
 
 // POST
@@ -35,16 +40,28 @@ export async function POST(request: Request) {
 
   // Configuration de SendGrid
   sgMail.setApiKey(apiKey);
+
   const msg: SendGridMail = {
     to: "test@belie.com",
     from: String(process.env.EMAIL_TO),
+    subject: String(content),
+    firstname: firstname,
+    lastname: lastname,
+    email: email,
     templateId: String(process.env.TEMPLATE_ID),
-    dynamic_template_data: {
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      subject: content,
-    },
+    // dynamic_template_data: {
+    //   firstname: firstname,
+    //   lastname: lastname,
+    //   email: email,
+    //   subject: content,
+    // },
+    // templateId: String(process.env.TEMPLATE_ID),
+    // dynamic_template_data: {
+    //   firstname: firstname,
+    //   lastname: lastname,
+    //   email: email,
+    //   subject: content,
+    // },
   };
 
   // Envoi de l'e-mail avec SendGrid

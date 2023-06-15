@@ -60,12 +60,9 @@ const Price = ({ dataTarifs }: PriceProps) => {
         </div>
       </div>
       <p className="infos">
-        {`L'ensemble des tarifs indiqués sont H.T. * Prix à titre informatif :
-              Changement possible selon les demandes et les choix du client. **
-              Estimation du temps de travail appuyé par un devis. *** Maintenance
-              annuelle (engagement 12 mois). Droit d'auteur & propriété intellectuelle
-              : Vous êtes à la fin du projet, propriétaire de l'ensemble des sources
-              (fichiers) composant celui-ci. Paiement possible en plusieurs fois`}
+        {
+          "Tous les tarifs mentionnés sont hors taxes. * Prix à titre informatif : susceptibles de changer en fonction des demandes et des choix du client. ** Estimation du temps de travail soutenue par un devis, basée sur un tarif journalier de 350€. *** Maintenance annuelle (engagement de 12 mois). Droits d'auteur et propriété intellectuelle : À la fin du projet, vous êtes le propriétaire de toutes les sources (fichiers) qui le composent. Possibilité de paiement échelonné selon les modalités convenues."
+        }
       </p>
     </section>
   );
