@@ -4,9 +4,9 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title:
-    "Services de développement web freelance de qualité - Votre partenaire pour des solutions numériques sur mesure",
+    "Services de développement web freelance - Solutions numériques sur mesure",
   description:
-    "Besoin d'un développeur web freelance expérimenté ? Obtenez un site performant, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour un site sur mesure.",
+    "Besoin d'un développeur web freelance expérimenté ? Obtenez un site performant, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour bénéficier d'un site sur mesure, créé selon vos besoins spécifiques.",
   alternates: {
     canonical: "https://www.devevoke.com/",
     languages: {
