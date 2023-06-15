@@ -3,8 +3,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
-  title:
-    "Services de développement web freelance - Solutions numériques sur mesure",
+  title: "Sites web sur mesure par un développeur web expérimenté et passionné",
   description:
     "Besoin d'un développeur web freelance expérimenté ? Obtenez un site performant, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour bénéficier d'un site sur mesure, créé selon vos besoins spécifiques.",
   alternates: {
