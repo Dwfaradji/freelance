@@ -4,21 +4,14 @@ import "./ContactForm.scss";
 import images from "@/app/Assets/Gallery";
 import Image from "next/image";
 import axios from "axios";
+import FileUploader from "@/app/Components/FileUploader/FileUploader";
 
 interface FormData {
   firstname: string;
   lastname: string;
   email: string;
   content: string;
-  // file: File | null;
-}
-
-interface Inputs {
-  firstname: string;
-  lastname: string;
-  email: string;
-  content: string;
-  // file: File | null;
+  file: File[];
 }
 
 const ContactForm = () => {
@@ -27,47 +20,53 @@ const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<FormData>();
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    const formData = new FormData();
+    formData.append("file", data.file[0], data.file[0].name);
+    console.log(formData);
+    try {
+      const response2 = await axios.post("/api/download", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      const data = await response2;
+      console.log(data);
+      // Traitez la réponse de l'API
+    } catch (error) {
+      console.error(
+        "Une erreur s'est produite lors de l'envoi du fichier.",
+        error
+      );
+    }
 
-  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    // Traitez la réponse de l'API
+    // if (responseFile.status === 200) {
+    //   console.log("Le fichier a été capturé et stocké avec succès.");
+    // } else {
+    //   console.error("Une erreur s'est produite lors de l'envoi du fichier.");
+    // }
+
     try {
       const response = await axios.post("/api/contact", data, {
         headers: {
           "Content-Type": "application/json",
         },
       });
-      const result = response.data;
       console.log(response);
-      if (!response.data) {
-        console.log("error");
+      // Traitez la réponse de l'API
+      if (response.status === 200) {
+        console.log("L'e-mail a été envoyé avec succès.");
       } else {
-        console.log("ok", result);
+        console.log("Erreur lors de l'envoi de l'e-mail");
       }
     } catch (error) {
-      console.log("error", error);
+      console.error("Erreur lors de l'envoi de l'e-mail", error);
     }
   };
 
   const cahierDesCharges = "/downloads/cahierDesCharges.pdf";
-
-  // const handleChange = (
-  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  // ) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-  // };
-
-  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const file = e.target.files && e.target.files[0];
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     file: file || null,
-  //   }));
-  // };
-
 
   return (
     <section className="container-fluid background-container">
@@ -103,10 +102,7 @@ const ContactForm = () => {
               transformer vos idées en réalité.`}
             </p>
           </div>
-          <form
-            className="contact-form"
-            onSubmit={handleSubmit(onSubmit)}
-          >
+          <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
             <div>
               <label htmlFor="firstname">Prénom</label>
               <input
@@ -139,24 +135,24 @@ const ContactForm = () => {
               <textarea
                 placeholder="Votre message"
                 id="message"
-                {...register("content", {  required: true })}
+                {...register("content", { required: true })}
               />
             </div>
             <div className="file-upload">
               <label htmlFor="file">Upload PDF</label>
               <input
+                style={{ display: "none !important" }}
                 type="file"
                 id="file"
-                name="file"
                 accept=".pdf"
-                // onChange={handleFileChange}
+                {...register("file")}
               />
               {/*{formData.file && (*/}
               {/*  <span className="file-name">{formData.file.name}</span>*/}
               {/*)}*/}
             </div>
             <div>
-              <a href={cahierDesCharges} download className="file-button">
+              <a href={cahierDesCharges} className="file-button">
                 Download Cahier des Charges
               </a>
             </div>
@@ -164,6 +160,7 @@ const ContactForm = () => {
               Submit
             </button>
           </form>
+          {/*  <FileUploader />*/}
         </div>
       </div>
     </section>

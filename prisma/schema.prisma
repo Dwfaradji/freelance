@@ -1,0 +1,17 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["extendedWhereUnique"]
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model Upload {
+  id          Int    @id @default(autoincrement())
+  filename    String @db.VarChar(100)
+  metadata    Json?
+  contentType String
+  content     Bytes
+}

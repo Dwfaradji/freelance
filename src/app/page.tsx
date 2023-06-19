@@ -1,23 +1,18 @@
 import React from "react";
 import Home from "@/app/Home/Home";
 import "./Styles/globals.scss";
+import handle from "@/app/api/database";
+import { NextResponse } from "next/server";
 
-interface FormData {
-  firstname: string;
-  lastname: string;
-  email: string;
-  content: string;
+const res = NextResponse;
+const req = Request;
+
+export async function dataBase() {
+  return await handle(req, res);
 }
 
+dataBase();
 const Page: React.FC = () => {
-  const data = {
-    firstname: "test",
-    lastname: "test",
-    email: "test",
-    content: "test",
-    // file: null,
-  };
-
   return (
     <main>
       <Home />
