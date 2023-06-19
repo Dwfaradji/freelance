@@ -9,7 +9,7 @@ const projects: Project[] = [
     id: 1,
     title: "Application Web",
     image: String(images.groupomania),
-    tech: ["VUE.JS", "NODE.JS", "EXPRESS", "MYSQL"],
+    tech: ["VUE.JS", "NODE.JS", "EXPRESS"],
   },
   {
     id: 2,

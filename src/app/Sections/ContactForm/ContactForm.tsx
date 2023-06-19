@@ -4,7 +4,6 @@ import "./ContactForm.scss";
 import images from "@/app/Assets/Gallery";
 import Image from "next/image";
 import axios from "axios";
-import FileUploader from "@/app/Components/FileUploader/FileUploader";
 
 interface FormData {
   firstname: string;
@@ -15,39 +14,15 @@ interface FormData {
 }
 
 const ContactForm = () => {
+  const [sendMsg, setSendMsg] = React.useState(false);
   //Variables
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>();
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    const formData = new FormData();
-    formData.append("file", data.file[0], data.file[0].name);
-    console.log(formData);
-    try {
-      const response2 = await axios.post("/api/download", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      const data = await response2;
-      console.log(data);
-      // Traitez la réponse de l'API
-    } catch (error) {
-      console.error(
-        "Une erreur s'est produite lors de l'envoi du fichier.",
-        error
-      );
-    }
-
-    // Traitez la réponse de l'API
-    // if (responseFile.status === 200) {
-    //   console.log("Le fichier a été capturé et stocké avec succès.");
-    // } else {
-    //   console.error("Une erreur s'est produite lors de l'envoi du fichier.");
-    // }
-
     try {
       const response = await axios.post("/api/contact", data, {
         headers: {
@@ -58,6 +33,8 @@ const ContactForm = () => {
       // Traitez la réponse de l'API
       if (response.status === 200) {
         console.log("L'e-mail a été envoyé avec succès.");
+        setSendMsg(true);
+        reset(); // ici
       } else {
         console.log("Erreur lors de l'envoi de l'e-mail");
       }
@@ -111,6 +88,9 @@ const ContactForm = () => {
                 id="firstname"
                 {...register("firstname", { required: true })}
               />
+              {errors.firstname && ( // errors est un objet
+                <span className="error text-white">Ce champ est requis</span>
+              )}
             </div>
             <div>
               <label htmlFor="lastname">Nom</label>
@@ -120,15 +100,21 @@ const ContactForm = () => {
                 id="lastname"
                 {...register("lastname", { required: true })}
               />
+              {errors.lastname && ( // errors est un objet
+                <span className="error text-white">Ce champ est requis</span>
+              )}
             </div>
             <div>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email text-white">Email</label>
               <input
                 placeholder="Votre adresse email"
                 type="email"
                 id="email"
                 {...register("email", { required: true })}
               />
+              {errors.email && ( // errors est un objet
+                <span className="error">Ce champ est requis</span>
+              )}
             </div>
             <div>
               <label htmlFor="message">Message</label>
@@ -137,11 +123,13 @@ const ContactForm = () => {
                 id="message"
                 {...register("content", { required: true })}
               />
+              {errors.content && ( // errors est un objet
+                <span className="error text-white">Ce champ est requis</span>
+              )}
             </div>
             <div className="file-upload">
               <label htmlFor="file">Upload PDF</label>
               <input
-                style={{ display: "none !important" }}
                 type="file"
                 id="file"
                 accept=".pdf"
@@ -156,9 +144,17 @@ const ContactForm = () => {
                 Download Cahier des Charges
               </a>
             </div>
-            <button className="submit-button" type="submit">
-              Submit
-            </button>
+            {!sendMsg && (
+              <button className="submit-button" type="submit">
+                Submit
+              </button>
+            )}
+
+            {sendMsg && (
+              <div className="send-msg">
+                <p>Votre message a bien été envoyé</p>
+              </div>
+            )}
           </form>
           {/*  <FileUploader />*/}
         </div>

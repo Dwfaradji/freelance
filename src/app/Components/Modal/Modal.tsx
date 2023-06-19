@@ -58,7 +58,6 @@ const Modal: React.FC<ModalProps> = ({
               ))}
           </ul>
           <h3>À partir de: {modal.price}</h3>
-          <p> TJM: 350€</p>
           <button onClick={() => openModal("contact")}>
             Demander un devis
           </button>

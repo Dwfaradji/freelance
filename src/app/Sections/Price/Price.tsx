@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Price.scss";
 import Modal from "../../Components/Modal/Modal";
 
@@ -22,7 +22,14 @@ const Price = ({ dataTarifs }: PriceProps) => {
     const id = e.currentTarget.parentElement?.parentElement?.id;
     setIsOpen(true);
     setContentModal(id || "");
+
+    //suprimer le scroll de la page
   };
+  useEffect(() => {
+    isOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+  }, [isOpen]);
 
   return (
     <section className=" container-fluid section-tarif">

@@ -89,6 +89,8 @@
 
         .file-upload {
           label {
+            /*btn upload pdf*/
+            display: none;
             width: 100%;
             text-align: center;
             margin: 0;
@@ -105,11 +107,10 @@
           }
         }
 
-        //file upload button display none
         .file-button {
           @include button;
           width: 100%;
-          display: none;
+          display: block;
           text-align: center;
           text-decoration: none;
         }
