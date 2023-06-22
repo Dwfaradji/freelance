@@ -1,6 +1,6 @@
 // Data file for the website
 // import images from "@/Assets/Gallery";
-import { Picture, Item, Project, Price, Service } from "./typeFile";
+import { Picture, Item, Project, Price, Service, PageInfo } from "./typeFile";
 import images from "@/app/Assets/Gallery";
 
 //Project
@@ -9,54 +9,63 @@ const projects: Project[] = [
     id: 1,
     title: "Application Web",
     image: String(images.groupomania),
+    alt: "image du projet groupomania",
     tech: ["VUE.JS", "NODE.JS", "EXPRESS"],
   },
   {
     id: 2,
     title: "Site Vitrine",
     image: String(images.reservia),
+    alt: "image du projet reservia",
     tech: ["HTML", "CSS", "SASS"],
   },
   {
     id: 3,
     title: "E-commerce",
     image: String(images.kanap),
+    alt: "image du projet kanap",
     tech: ["REACT.JS"],
   },
   {
     id: 4,
     title: "Application Web",
     image: String(images.piquante),
+    alt: "image du projet piquante",
     tech: ["MONGO DB", "NODE.JS", "EXPRESS"],
   },
   {
     id: 5,
     title: "Référencement",
     image: String(images.chouetteAgence),
+    alt: "image du projet chouette agence",
     tech: ["SEO"],
   },
   {
     id: 6,
     title: "E-commerce",
     image: String(images.ohmyfood),
+    alt: "image du projet ohmyfood",
     tech: ["REACT.JS", "SASS"],
   },
   {
     id: 7,
     title: "Site Vitrine",
     image: String(images.gameOne),
+    alt: "image du projet game one",
     tech: ["JS"],
   },
   {
     id: 8,
     title: "Site Vitrine",
     image: String(images.fishEyes),
+    alt: "image du projet fish eyes",
     tech: ["REACT.JS"],
   },
   {
     id: 9,
     title: "Site Vitrine",
     image: String(images.kasa),
+    alt: "image du projet kasa",
     tech: ["REACT.JS"],
   },
 ];
@@ -238,4 +247,147 @@ const services: Service[] = [
   },
 ];
 
-export { services, projects, prices, navItems, picturesCarousel };
+//Pages footer information
+const pageInfosPrice: PageInfo[] = [
+  {
+    titleH1: "Tarifs pour les services de développement web",
+  },
+  {
+    title: "Tarif journalier",
+    text: `Mon tjm standard est de 350€ Ce tarif horaire est
+        applicable à tous les projets de développement web, y compris la
+        conception de sites web, le développement d'applications web et
+        l'intégration de systèmes tiers. Le tarif horaire est calculé en
+        fonction du temps total passé sur le projet, y compris la communication
+        avec le client, la planification, le développement, les tests et la mise
+        en production du site web. Je m'assure de respecter les délais convenus
+        et de fournir un travail de haute qualité à chaque étape du processus.`,
+  },
+  {
+    title: "Tarif forfaitaire",
+    text: `Je propose également des forfaits pour les projets de développement web. Le prix forfaitaire est
+        calculé en fonction de la complexité du projet, du temps estimé pour le développement et de la
+        valeur ajoutée pour le client. Le prix forfaitaire est fixé avant le début du projet et ne change pas
+        pendant le développement. Je m'assure de respecter les délais convenus et de fournir un travail
+        de haute qualité à chaque étape du processus.`,
+  },
+  {
+    title: "Forfaits personnalisés",
+    text: `En plus du tarif horaire, je propose également des forfaits
+          personnalisés pour des projets plus importants ou des besoins
+          spécifiques. Les forfaits sont conçus pour offrir une solution complète
+          et incluent généralement des fonctionnalités supplémentaires telles que
+          l'intégration de systèmes tiers, la création de pages supplémentaires,
+          l'optimisation du référencement, etc. Les tarifs des forfaits peuvent
+          varier en fonction de la portée du projet et des exigences spécifiques
+          du client. Pour plus d'informations sur les forfaits disponibles, veuillez
+          me contacter.`,
+  },
+  {
+    title: "Devis personnalisé",
+    text: `Chaque projet est unique, c'est pourquoi je propose des devis
+          personnalisés en fonction des besoins spécifiques de chaque client.
+          Lorsque vous me contactez pour discuter de votre projet, je prendrai en
+          compte vos exigences, vos objectifs et votre budget pour vous fournir un
+          devis détaillé et transparent. Le devis comprendra une estimation du
+          temps nécessaire, les fonctionnalités incluses et le coût total du
+          projet. Je m'assure de fournir des devis précis et transparents afin que
+          vous sachiez exactement ce que vous obtenez et combien cela vous coûtera
+          avant de commencer le projet.
+          `,
+  },
+  {
+    title: "Modalités de paiement",
+    text: `Les modalités de paiement sont flexibles et peuvent être convenues avec
+          chaque client en fonction de ses préférences. Généralement, je demande
+          un acompte initial avant de commencer le projet, suivi de paiements
+          échelonnés à des étapes clés du développement. Les modalités de paiement
+          précises seront discutées et formalisées dans le contrat de services.`,
+  },
+  {
+    title: "Contactez-moi",
+    text: `Je suis fier d'offrir des tarifs compétitifs et transparents à mes
+          clients tout en maintenant un niveau élevé de qualité et de
+          satisfaction. N'hésitez pas à me contacter pour discuter de votre projet
+          et obtenir un devis personnalisé. Je suis impatient de travailler avec
+          vous pour donner vie à votre vision sur le web.`,
+  },
+];
+
+const pageInfosProcess: PageInfo[] = [
+  {
+    titleH1: "Processus de réalisation d'un site web",
+  },
+  {
+    title: "Étape 1 : Compréhension des besoins du client",
+    text: `Le processus commence par une communication approfondie avec le client
+          afin de comprendre ses objectifs, ses besoins et ses préférences pour le
+          site web. Il est important de poser des questions pertinentes pour
+          obtenir toutes les informations nécessaires.`,
+  },
+  {
+    title: "Étape 2 : Analyse et planification",
+    text: `Sur la base des informations recueillies, le développeur freelance
+          effectue une analyse approfondie des besoins du client. Cette étape
+          implique la définition des fonctionnalités requises, la sélection des
+          technologies appropriées et l'estimation du temps et des ressources
+          nécessaires pour le projet.`,
+  },
+  {
+    title: "Étape 3 : Conception et prototypage",
+    text: `Une fois la planification terminée, le développeur freelance crée une
+          maquette ou un prototype du site web. Cela permet au client de
+          visualiser le design, la disposition et la structure du site avant de
+          passer à la phase de développement.`,
+  },
+
+  {
+    title: "Étape 4 : Développement du site web",
+    text: `Dans cette phase, le développeur freelance utilise les langages de
+          programmation et les technologies appropriées pour créer le site web
+          selon les spécifications convenues. Il assure également l'optimisation
+          des performances, la compatibilité avec les navigateurs et la prise en
+          compte des bonnes pratiques en matière de sécurité.`,
+  },
+  {
+    title: "Étape 5 : Tests et corrections",
+    text: `Une fois le développement terminé, le site web est soumis à des tests
+          approfondis pour vérifier son bon fonctionnement, son accessibilité et
+          sa convivialité. Si des problèmes ou des bogues sont identifiés, des
+          corrections sont apportées pour garantir la qualité du site final.`,
+  },
+  {
+    title: "Étape 6 : Livraison et déploiement",
+    text: `Une fois que le site web est testé et validé, il est prêt à être livré
+          au client. Le développeur freelance peut aider le client à déployer le
+          site sur un serveur ou un hébergement web, en s'assurant que tout est
+          configuré correctement pour une mise en ligne réussie.`,
+  },
+  {
+    title: "Étape 7 : Maintenance et support",
+    text: `Après la livraison du site web, le développeur freelance peut proposer
+          des services de maintenance et de support supplémentaires. Cela peut
+          inclure la résolution des problèmes techniques, les mises à jour du
+          site, la surveillance de la sécurité et l'assistance continue au client
+          en cas de besoin.`,
+  },
+  {
+    title: "Conclusion",
+    text: `Le processus de réalisation d'un site web en tant que développeur
+          freelance, suivre un processus structuré pour la réalisation d'un site
+          web est essentiel pour garantir la satisfaction du client et la qualité
+          du travail fourni. En comprenant les besoins du client, en planifiant
+          soigneusement, en concevant, en développant, en testant et en livrant le
+          site web, vous créez une expérience fluide et professionnelle.`,
+  },
+];
+
+export {
+  services,
+  projects,
+  prices,
+  navItems,
+  picturesCarousel,
+  pageInfosPrice,
+  pageInfosProcess,
+};

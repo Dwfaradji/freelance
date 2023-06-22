@@ -1,10 +1,12 @@
 import React from "react";
 import "./Project.scss";
 import Image from "next/image";
+
 interface Project {
   id: number;
   title: string;
   image: string;
+  alt: string;
   tech: string[];
 }
 
@@ -18,7 +20,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
       <div className="content-project">
         <div id="project"></div>
         <h2 className="text-h2">Découvrez notre portfolio</h2>
-        <p className="text-xl" >
+        <p className="text-xl">
           {`Découvrez notre portfolio de projets exceptionnels dans le domaine de
                 la création de sites web et d'applications. Notre section "Projets"
                 met en avant notre expertise en utilisant des technologies modernes
@@ -35,7 +37,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
             <div key={project.id} className="project-card">
               <Image
                 src={project.image}
-                alt={project.title}
+                alt={project.alt}
                 width="1024"
                 height="100"
               />

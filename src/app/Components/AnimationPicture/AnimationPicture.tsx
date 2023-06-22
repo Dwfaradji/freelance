@@ -6,7 +6,7 @@ interface AnimationPictureProps {
   itemsPicture: any[];
 }
 
-const AnimationPicture = ({ itemsPicture }: AnimationPictureProps) => {
+const  AnimationPicture = ({ itemsPicture }: AnimationPictureProps) => {
   return (
     <>
       <h2 className="text-h2">Processus de développement web freelance</h2>
@@ -16,7 +16,7 @@ const AnimationPicture = ({ itemsPicture }: AnimationPictureProps) => {
             <Image
               className="image-container"
               src={item.picture}
-              alt={item.title}
+              alt={item.alt}
               width="1024"
               height="100"
             />

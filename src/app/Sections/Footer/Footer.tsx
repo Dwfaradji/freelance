@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.scss";
 import images from "@/app/Assets/Gallery";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -13,13 +14,19 @@ const Footer: React.FC = () => {
     >
       <div className="footer__container">
         <div className="footer__section col-sm-12 col-md-4">
-          <h3 className="text-h3">À propos de moi</h3>
-          <p>
-            {`Je suis un développeur freelance passionné par la création de sites
-                  web et d'applications innovantes. Contactez-moi pour discuter de
-                  votre projet et voir comment je peux vous aider à atteindre vos
-                  objectifs.`}
-          </p>
+          <h3 className="text-h3">Infos général</h3>
+          <ul>
+            <li>
+              <Link href="/procedure" target="_blank">
+                Procédure
+              </Link>
+            </li>
+            <li>
+              <Link href="/tarif" target="_blank">
+                Les tarifs
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <div className="footer__section  col-sm-12 col-md-4">
@@ -40,7 +47,7 @@ const Footer: React.FC = () => {
           <p>
             Email:
             <a className="ml-1 text-white" href="mailto:contact@devevoke.com">
-               contact@devevoke.com
+              contact@devevoke.com
             </a>
           </p>
           <p>Téléphone: 0618237662</p>
@@ -51,6 +58,38 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
+      <div className="container-network">
+        <div className="network">
+          <Link
+            href="https://www.facebook.com/Devevoke-103100528585996"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-square-facebook"></i>
+          </Link>
+          <Link
+            href="https://www.instagram.com/devevoke/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-square-instagram"></i>
+          </Link>
+          <Link
+            href="https://www.linkedin.com/company/devevoke/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-linkedin"></i>
+          </Link>
+          <Link
+            href="https://twitter.com/devevoke"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-square-twitter"></i>
+          </Link>
+        </div>
+      </div>
       <div className="footer__bottom col-12">
         <p>
           &copy; {new Date().getFullYear()} Faradji Boucif - Tous droits

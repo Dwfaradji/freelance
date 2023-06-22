@@ -9,7 +9,6 @@ import Price from "../Sections/Price/Price";
 import ContactForm from "../Sections/ContactForm/ContactForm";
 import Service from "../Sections/Service/Service";
 import CallToAction from "../Sections/CallToAction/CallToAction";
-import Footer from "../Sections/Footer/Footer";
 import Ancre from "../Components/Ancre/Ancre";
 import Banner from "../Sections/Banner/Banner";
 
@@ -21,12 +20,6 @@ import {
   picturesCarousel,
 } from "@/app/Data/data";
 
-interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
-  file: File | null;
-}
 
 const Home: React.FC = () => {
   return (
@@ -47,7 +40,6 @@ const Home: React.FC = () => {
       <div id="about"></div>
       <About />
       <CallToAction />
-      <Footer />
       <Ancre />
     </>
   );

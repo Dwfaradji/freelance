@@ -17,14 +17,15 @@ interface PriceProps {
 const Price = ({ dataTarifs }: PriceProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [contentModal, setContentModal] = useState("");
+  const [typeModal, setTypeModal] = useState("");
 
   const handleOpenModal = (e: React.MouseEvent) => {
-    const id = e.currentTarget.parentElement?.parentElement?.id;
+    const id = e.currentTarget.parentElement?.parentElement?.id as string;
     setIsOpen(true);
-    setContentModal(id || "");
-
-    //suprimer le scroll de la page
+    setContentModal(id);
+    setTypeModal("price");
   };
+
   useEffect(() => {
     isOpen
       ? (document.body.style.overflow = "hidden")
@@ -46,7 +47,7 @@ const Price = ({ dataTarifs }: PriceProps) => {
                 {tarif.title} <br /> {tarif.subtitle}
               </h3>
               <div className="tarif-price">
-                <p>À partir de {tarif.price}</p>
+                <h3>À partir de {tarif.price}</h3>
               </div>
               <p>{tarif.description}</p>
               <div className={!isOpen ? "tarif-overlay" : "offOverlay"}>
@@ -60,8 +61,8 @@ const Price = ({ dataTarifs }: PriceProps) => {
             <Modal
               showModal={isOpen}
               setIsOpen={setIsOpen}
-              dataModal={dataTarifs}
               contentModal={contentModal}
+              typeModal={typeModal}
             />
           )}
         </div>

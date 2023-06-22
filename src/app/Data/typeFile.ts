@@ -14,6 +14,7 @@ interface Project {
   id: number;
   title: string;
   image: string;
+  alt: string;
   tech: string[];
 }
 
@@ -38,4 +39,10 @@ interface Service {
   items: Lists[];
 }
 
-export type { Picture, Item, Project, Price, Service };
+interface PageInfo {
+  titleH1?: string;
+  title?: string;
+  text?: string;
+}
+
+export type { Picture, Item, Project, Price, Service, PageInfo };

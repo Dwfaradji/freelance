@@ -1,0 +1,44 @@
+@import "/src/app/Styles/Variables.module";
+
+.container-price {
+
+  ul {
+    margin: 5vh 0;
+
+    li {
+      color: white;
+      text-align: left;
+      white-space: normal;
+
+      i {
+        margin-right: 10px;
+        color: $color-hover;
+
+        &:hover {
+          color: $color-primary;
+          transform: scale(1.5);
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+
+  h3 {
+    margin-bottom: 3vh;
+    color: $color-primary;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .modal {
+    width: 100vw;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    width: 100vw;
+  }
+}

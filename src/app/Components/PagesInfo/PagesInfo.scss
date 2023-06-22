@@ -1,0 +1,41 @@
+
+.container-pages-info {
+  .header {
+    padding: 30px;
+    text-align: center;
+    margin: 10vh auto 0 auto;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    p {
+      color: black;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+    margin: 15px 0 5px 0;
+  }
+
+  p {
+    color: black;
+  }
+
+  .tarifs-section {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin: 20px auto;
+
+    .tarifs-card {
+      color: black;
+
+
+    }
+  }
+}
+

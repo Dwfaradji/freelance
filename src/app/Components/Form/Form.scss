@@ -1,0 +1,78 @@
+@import "/src/app/Styles/Variables.module";
+
+.contact-form {
+  display: grid;
+  grid-gap: 1rem;
+  margin: 19px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  label {
+    color: $color-primary;
+  }
+
+  input,
+  textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .file-upload {
+    label {
+      /*btn upload pdf*/
+      //display: none;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      height: 100%;
+      @include button;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-name {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .file-button {
+    @include button;
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .submit-button {
+    background: rgba(16, 1, 1, 0.58);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .flex-contact {
+    justify-content: center !important;
+    width: 100%;
+  }
+  .contact-form {
+    margin-right: 0 !important;
+    width: 100% !important;
+    padding: 40px;
+  }
+
+}
+
+

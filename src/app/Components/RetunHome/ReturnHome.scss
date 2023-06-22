@@ -1,0 +1,30 @@
+.logoPages {
+  padding: 7px 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+
+
+  a {
+    color: white;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+
+    span {
+      color: #4c98c9;
+    }
+
+    .logoSvg {
+      width: 95px;
+      height: 7vh;
+      -o-object-fit: contain;
+      object-fit: contain;
+    }
+  }
+
+
+}
