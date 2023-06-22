@@ -106,7 +106,7 @@ const Form = () => {
             <span className="error text-white">Ce champ est requis</span>
           )}
         </div>
-        <div className="file-upload">
+        <div className="file-upload" style={{display:"none"}}>
           <label htmlFor="file">Charger PDF</label>
           <input type="file" id="file" accept=".pdf" {...register("file")} />
           {/*{formData.file && (*/}

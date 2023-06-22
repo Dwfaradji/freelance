@@ -20,12 +20,14 @@ const Navbar = ({ items }: NavProps) => {
   const [liItems, setLiItems] = useState<string>("");
   const [openNav, setOpenNav] = useState<boolean>(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const colorsInit = {
     colorPrimary: "#3c9dda",
     colorSecondary: "#5e6163",
   };
 
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const colorsSecond = {
     colorPrimary: "#ffffff",
     colorSecondary: "#3c9dda",
