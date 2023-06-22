@@ -1,7 +1,0 @@
-{
-  "buildCommand": "next build",
-  "builds": [
-    { "src": "./prisma/schema.prisma", "use": "@vercel/node", "config": { "prisma": "generate" } }
-  ]
-
-}
