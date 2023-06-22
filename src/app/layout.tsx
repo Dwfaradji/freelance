@@ -1,6 +1,9 @@
 import React from "react";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import Footer from "@/app/Sections/Footer/Footer";
+import "@/app/Styles/globals.scss";
+
 
 export const metadata = {
   title: "Sites web sur mesure par un développeur web expérimenté",
@@ -20,8 +23,8 @@ export const metadata = {
   // openGraph: {
   //   url: "https://www.devevoke.com/",
   //   title: "Sites web sur mesure par un développeur web freelance expérimenté",
-  //   description:
-  //     "Besoin d'un développeur web freelance expérimenté ? Obtenez un site performant, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour bénéficier d'une solution sur mesure, créée selon vos besoins et attirer davantage de visiteurs.",
+  //   description :
+  //   "Besoin d'un développeur web freelance expérimenté ? Obtenez un site performant, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour bénéficier d'une solution sur mesure, créée selon vos besoins et attirer davantage de visiteurs.",
   //   images: [
   //     {
   //       url: "https://www.devevoke.com/images/og-image.jpg",
@@ -49,6 +52,7 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        <Footer />
       </body>
     </html>
   );

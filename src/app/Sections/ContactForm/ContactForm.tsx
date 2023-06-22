@@ -1,50 +1,10 @@
 import React from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
 import "./ContactForm.scss";
 import images from "@/app/Assets/Gallery";
 import Image from "next/image";
-import axios from "axios";
-
-interface FormData {
-  firstname: string;
-  lastname: string;
-  email: string;
-  content: string;
-  file: File[];
-}
+import Form from "@/app/Components/Form/Form";
 
 const ContactForm = () => {
-  const [sendMsg, setSendMsg] = React.useState(false);
-  //Variables
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>();
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    try {
-      const response = await axios.post("/api/contact", data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      console.log(response);
-      // Traitez la réponse de l'API
-      if (response.status === 200) {
-        console.log("L'e-mail a été envoyé avec succès.");
-        setSendMsg(true);
-        reset(); // ici
-      } else {
-        console.log("Erreur lors de l'envoi de l'e-mail");
-      }
-    } catch (error) {
-      console.error("Erreur lors de l'envoi de l'e-mail", error);
-    }
-  };
-
-  const cahierDesCharges = "/downloads/cahierDesCharges.pdf";
-
   return (
     <section className="container-fluid background-container">
       <div className="content-contact">
@@ -79,84 +39,7 @@ const ContactForm = () => {
               transformer vos idées en réalité.`}
             </p>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
-            <div>
-              <label htmlFor="firstname">Prénom</label>
-              <input
-                placeholder="Votre prénon"
-                type="text"
-                id="firstname"
-                {...register("firstname", { required: true })}
-              />
-              {errors.firstname && ( // errors est un objet
-                <span className="error text-white">Ce champ est requis</span>
-              )}
-            </div>
-            <div>
-              <label htmlFor="lastname">Nom</label>
-              <input
-                placeholder="Votre nom"
-                type="text"
-                id="lastname"
-                {...register("lastname", { required: true })}
-              />
-              {errors.lastname && ( // errors est un objet
-                <span className="error text-white">Ce champ est requis</span>
-              )}
-            </div>
-            <div>
-              <label htmlFor="email text-white">Email</label>
-              <input
-                placeholder="Votre adresse email"
-                type="email"
-                id="email"
-                {...register("email", { required: true })}
-              />
-              {errors.email && ( // errors est un objet
-                <span className="error">Ce champ est requis</span>
-              )}
-            </div>
-            <div>
-              <label htmlFor="message">Message</label>
-              <textarea
-                placeholder="Votre message"
-                id="message"
-                {...register("content", { required: true })}
-              />
-              {errors.content && ( // errors est un objet
-                <span className="error text-white">Ce champ est requis</span>
-              )}
-            </div>
-            <div className="file-upload">
-              <label htmlFor="file">Upload PDF</label>
-              <input
-                type="file"
-                id="file"
-                accept=".pdf"
-                {...register("file")}
-              />
-              {/*{formData.file && (*/}
-              {/*  <span className="file-name">{formData.file.name}</span>*/}
-              {/*)}*/}
-            </div>
-            <div>
-              <a href={cahierDesCharges} className="file-button">
-                Download Cahier des Charges
-              </a>
-            </div>
-            {!sendMsg && (
-              <button className="submit-button" type="submit">
-                Submit
-              </button>
-            )}
-
-            {sendMsg && (
-              <div className="send-msg">
-                <p>Votre message a bien été envoyé</p>
-              </div>
-            )}
-          </form>
-          {/*  <FileUploader />*/}
+          <Form />
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import scrollToSection from "@/app/Utils/Utils";
 import "./NavBar.scss";
@@ -22,6 +24,7 @@ const Navbar = ({ items }: NavProps) => {
     colorPrimary: "#3c9dda",
     colorSecondary: "#5e6163",
   };
+
 
   const colorsSecond = {
     colorPrimary: "#ffffff",
@@ -61,7 +64,6 @@ const Navbar = ({ items }: NavProps) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [colorsInit, colorsSecond]);
-
 
   const handleResize = () => {
     const screenWidth = window.innerWidth;

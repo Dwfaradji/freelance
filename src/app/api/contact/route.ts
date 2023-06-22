@@ -12,6 +12,7 @@ interface SendGridMail {
     lastname: string;
     email: string;
     subject: string;
+    attachments: string;
   };
 }
 
@@ -50,7 +51,7 @@ export async function POST(request: Request) {
 
   // Configuration de SendGrid
   sgMail.setApiKey(apiKey);
-
+  const piecesJointe = "public/uploads/cahierDesCharges (2).pdf";
   // Envoi de l'e-mail avec SendGrid
   try {
     const msg: SendGridMail = {
@@ -62,6 +63,7 @@ export async function POST(request: Request) {
         lastname: String(lastname),
         email: String(email),
         subject: String(message),
+        attachments: String(piecesJointe),
       },
     };
     await sgMail.send(msg);
