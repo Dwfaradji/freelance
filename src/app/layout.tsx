@@ -2,7 +2,7 @@ import React from "react";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/app/Sections/Footer/Footer";
-
+import "@/app/Styles/globals.scss";
 
 export const metadata = {
   title: "Sites web sur mesure par un développeur web expérimenté",
@@ -56,5 +56,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
