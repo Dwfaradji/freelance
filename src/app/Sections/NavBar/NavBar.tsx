@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import scrollToSection from "@/app/Utils/Utils";
 import "./NavBar.scss";
 import logoSVG from "../../Components/Logo/logo";
@@ -20,16 +20,15 @@ const Navbar = ({ items }: NavProps) => {
   const [liItems, setLiItems] = useState<string>("");
   const [openNav, setOpenNav] = useState<boolean>(false);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const colorsInit = {
+  const colorsInit = useMemo(() => ({
     colorPrimary: "#3c9dda",
     colorSecondary: "#5e6163",
-  };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const colorsSecond = {
+  }), []);
+
+  const colorsSecond = useMemo(() => ({
     colorPrimary: "#ffffff",
     colorSecondary: "#3c9dda",
-  };
+  }), []);
 
   const [colors, setColors] = useState(colorsInit);
 
