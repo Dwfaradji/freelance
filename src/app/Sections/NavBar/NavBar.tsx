@@ -25,8 +25,6 @@ const Navbar = ({ items }: NavProps) => {
     colorPrimary: "#3c9dda",
     colorSecondary: "#5e6163",
   };
-
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const colorsSecond = {
     colorPrimary: "#ffffff",
