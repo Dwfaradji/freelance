@@ -13,7 +13,7 @@ const Banner = ({ typeBanner }: BannerProps) => {
     { title: "CleanCode", icon: "fa-solid fa-code" },
     { title: "Populaire", icon: "fa-brands fa-react" },
     { title: "Sécurité", icon: "fa-solid fa-database" },
-    { title: "CleanCode", icon: "fa-brands fa-node-js" },
+    { title: "JsCode", icon: "fa-brands fa-node-js" },
   ];
 
   const bannerPicture = [

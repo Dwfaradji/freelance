@@ -46,10 +46,10 @@ const Footer: React.FC = () => {
           <p>
             Email:
             <a className="ml-1 text-white" href="mailto:contact@devevoke.com">
-              contact@devevoke.com
+               contact@devevoke.com
             </a>
           </p>
-          <p>Téléphone: 0618237662</p>
+          <p>Téléphone: 06 18 23 76 62</p>
           <p>
             Adresse: 5 impasse des vergers,
             <br /> 66370 Pézilla la rivière
