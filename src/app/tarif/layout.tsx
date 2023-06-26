@@ -1,0 +1,25 @@
+import React from "react";
+import "@/app/Styles/globals.scss";
+
+export const metadata = {
+  title: "tarifs de création de site web sur mesure",
+  description: "Découvrez nos tarifs de création de site web sur mesure. De la conception à la mise en ligne, nous vous accompagnons tout au long de votre projet.",
+  alternates: {
+    canonical: "https://www.devevoke.com/",
+    languages: {
+      fr: "https://www.devevoke.com/",
+    },
+  },
+  robots: {
+    follow: true,
+    index: true,
+  },
+};
+
+export default function PriceLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <section>{children}</section>;
+}

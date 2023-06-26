@@ -43,7 +43,6 @@ const Footer: React.FC = () => {
 
         <div className="footer__section col-sm-12 col-md-4">
           <h3 className="text-h3">Contact</h3>
-          {/*AJOUTER LA REDIRECTION EMAIL*/}
           <p>
             Email:
             <a className="ml-1 text-white" href="mailto:contact@devevoke.com">
@@ -68,21 +67,21 @@ const Footer: React.FC = () => {
             <i className="fa-brands fa-square-facebook"></i>
           </Link>
           <Link
-            href="https://www.instagram.com/devevoke/"
+            href="https://github.com/Dwfaradji"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-square-instagram"></i>
+            <i className="fa-brands fa-github"></i>
           </Link>
           <Link
-            href="https://www.linkedin.com/company/devevoke/"
+            href="https://fr.linkedin.com/in/boucif-faradji"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fa-brands fa-linkedin"></i>
           </Link>
           <Link
-            href="https://twitter.com/devevoke"
+            href="https://twitter.com/Dw_faradji"
             target="_blank"
             rel="noopener noreferrer"
           >
