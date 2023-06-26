@@ -48,10 +48,6 @@
         white-space: pre-wrap;
       }
     }
-
-    @media (max-width: 768px) {
-
-    }
   }
 
   .footer__bottom {
@@ -74,22 +70,17 @@
         font-size: 2rem;
       }
     }
-
-
   }
-
-
-
-
 }
 
-  @media screen and (max-width: 768px) {
-    .footer {
-      .footer__container {
-        flex-direction: column;
-      }
-      .container-network {
-        width: 90%;
-      }
+@media screen and (max-width: 768px) {
+  .footer {
+    .footer__container {
+      flex-direction: column;
+    }
+
+    .container-network {
+      width: 90%;
     }
   }
+}
