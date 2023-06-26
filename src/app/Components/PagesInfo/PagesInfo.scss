@@ -7,6 +7,8 @@
 
     h1 {
       font-size: 2em;
+      color: #5e6163;
+      font-weight: 500;
     }
 
     p {
@@ -15,7 +17,7 @@
   }
 
   h2 {
-    font-weight: 700;
+    font-weight: 400;
     margin: 15px 0 5px 0;
   }
 
@@ -38,6 +40,7 @@
     }
   }
 }
+
 @media screen and (max-width: 768px) {
   .container-pages-info {
     .tarifs-section {
