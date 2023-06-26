@@ -28,3 +28,24 @@
     }
   }
 }
+@media screen and (max-width: 768px) {
+  .about-images {
+    justify-content: space-between;
+    .image-container {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+    .item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+    .text-h3 {
+      font-size: 1.5rem;
+      white-space: pre-wrap;
+      width: 200px;
+    }
+  }
+}

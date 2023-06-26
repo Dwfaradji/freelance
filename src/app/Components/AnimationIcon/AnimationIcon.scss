@@ -4,11 +4,13 @@
   @include displayCenterAround;
   flex-wrap: wrap;
   text-align: center;
+  flex-direction: column;
 
   .containerIcon {
     @include displayCenterAround;
     flex-wrap: wrap;
     text-align: center;
+
     .itemsIcon {
       width: 200px;
       margin: 30px;
@@ -44,5 +46,27 @@
       margin-top: 15px;
       white-space: nowrap;
     }
+
+
   }
+}
+
+@media screen and (max-width: 768px) {
+    .animationIcon {
+        .containerIcon {
+          width: 100%;
+        .itemsIcon {
+            width: 70px;
+            margin: 10px;
+        }
+
+        i {
+            font-size: 3vh;
+        }
+          h3 {
+            text-align: center;
+            font-size: 1.5vh;
+          }
+        }
+    }
 }

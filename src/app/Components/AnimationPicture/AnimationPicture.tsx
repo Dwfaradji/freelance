@@ -12,7 +12,7 @@ const  AnimationPicture = ({ itemsPicture }: AnimationPictureProps) => {
       <h2 className="text-h2">Processus de développement web freelance</h2>
       <div className="about-images">
         {itemsPicture.map((item, i) => (
-          <div key={i} >
+          <div key={i} className="item" >
             <Image
               className="image-container"
               src={item.picture}

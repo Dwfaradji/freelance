@@ -26,6 +26,11 @@ const Footer: React.FC = () => {
                 Les tarifs
               </Link>
             </li>
+            <li>
+              <Link href="/mentions-legal" target="_blank">
+                Mentions légal
+              </Link>
+            </li>
           </ul>
         </div>
 

@@ -18,78 +18,78 @@
     width: 100%;
     @include displayCenterBetween;
 
-    .logo {
-      height: 64px;
-      @include displayCenter;
-
-      .logoSvg {
-        width: 100%;
-        height: 7vh;
-        object-fit: contain;
-        margin: 1px;
+    .logoSvg {
+      width: 10vw;
+      height: 5vh;
+      object-fit: contain;
+      margin: 5px 5px;
+      @media screen and (max-width: 768px) {
+        width: 15vw;
+        height: 5vh;
       }
     }
   }
+}
 
-  .openCollapse {
-    display: block;
-    width: 100vw;
-    position: relative;
-    background-color: white;
+.openCollapse {
+  display: block;
+  width: 100vw;
+  position: relative;
+  background-color: white;
 
-    ul {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      padding: 0;
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+  }
+}
+
+.closeCollapse {
+  display: none;
+  background-color: white;
+}
+
+div.logo {
+  float: left;
+  width: auto;
+  height: auto;
+  padding-left: 2rem;
+
+  li {
+    text-decoration: none;
+    color: $color-secondary;
+    cursor: pointer;
+
+
+    &:hover {
+      color: $color-hover;
     }
   }
+}
 
-  .closeCollapse {
-    display: none;
-    background-color: white;
-  }
+div.main_list {
+  float: right;
 
-  div.logo {
-    float: left;
-    width: auto;
-    height: auto;
-    padding-left: 2rem;
+  ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
     li {
-      text-decoration: none;
-      color: $color-secondary;
+      width: auto;
+      padding: 0 3rem 0 0;
       cursor: pointer;
-
 
       &:hover {
         color: $color-hover;
       }
     }
   }
-
-  div.main_list {
-    float: right;
-
-    ul {
-      width: 100%;
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      li {
-        width: auto;
-        padding: 0 3rem 0 0;
-        cursor: pointer;
-
-        &:hover {
-          color: $color-hover;
-        }
-      }
-    }
-  }
 }
+
 
 /* Home section */
 
@@ -115,14 +115,12 @@
   .container {
     margin: 0;
   }
+
 }
 
 @media screen and (max-width: 768px) {
   .navTrigger {
     display: block;
-  }
-
-  .nav div.logo {
   }
 
   .nav div.main_list {

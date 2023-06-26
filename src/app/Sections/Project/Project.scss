@@ -75,3 +75,10 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .container-project {
+    .content-project {
+      width: 90%;
+    }
+  }
+}

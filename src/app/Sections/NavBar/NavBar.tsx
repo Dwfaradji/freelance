@@ -20,15 +20,21 @@ const Navbar = ({ items }: NavProps) => {
   const [liItems, setLiItems] = useState<string>("");
   const [openNav, setOpenNav] = useState<boolean>(false);
 
-  const colorsInit = useMemo(() => ({
-    colorPrimary: "#3c9dda",
-    colorSecondary: "#5e6163",
-  }), []);
+  const colorsInit = useMemo(
+    () => ({
+      colorPrimary: "#3c9dda",
+      colorSecondary: "#5e6163",
+    }),
+    []
+  );
 
-  const colorsSecond = useMemo(() => ({
-    colorPrimary: "#ffffff",
-    colorSecondary: "#3c9dda",
-  }), []);
+  const colorsSecond = useMemo(
+    () => ({
+      colorPrimary: "#ffffff",
+      colorSecondary: "#3c9dda",
+    }),
+    []
+  );
 
   const [colors, setColors] = useState(colorsInit);
 
@@ -97,15 +103,14 @@ const Navbar = ({ items }: NavProps) => {
   return (
     <nav className="nav">
       <div className="block">
-        <div className="logo">
-          <Link
-            className="logoSvg flex items-center"
-            href="/"
-            aria-label="link logo"
-          >
-            {svgElement}
-          </Link>
-        </div>
+        <Link
+          className="logoSvg flex items-center"
+          href="/"
+          aria-label="link logo"
+        >
+          {svgElement}
+        </Link>
+
         <div id="mainListDiv" className="main_list">
           {renderNavLinks(false)}
         </div>
