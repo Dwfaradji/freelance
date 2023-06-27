@@ -20,7 +20,7 @@ interface SendGridMail {
 export async function POST(request: Request) {
   // Récupérer les données du formulaire
   const req = await request.json();
-  const { firstname, lastname, email, content, fileName } = req;
+  const { firstname, lastname, email, content, file } = req;
   // Vérifier les données du formulaire
   if (!firstname || !lastname || !email || !content) {
     return res.json({ message: "INVALID_PARAMETER" });
@@ -51,10 +51,12 @@ export async function POST(request: Request) {
   // Configuration de SendGrid
   sgMail.setApiKey(apiKey);
 
-  const piecesJointe = `https://www.devevoke.com/uploads/${fileName}`;
+  const piecesJointe = `https://www.devevoke.com/uploads/${file}`;
   // https://www.devevoke.com/downloads/cahierDesCharges.pdf
   // http://localhost:3000/uploads/cahierDesCharges.pdf
   // Envoi de l'e-mail avec SendGrid
+  console.log(file, "fileName");
+  console.log("piecesJointe", piecesJointe);
   try {
     const msg: SendGridMail = {
       to: String(process.env.ADRESS_MAIL),
