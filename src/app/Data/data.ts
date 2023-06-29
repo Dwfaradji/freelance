@@ -254,10 +254,10 @@ const pageInfosPrice: PageInfo[] = [
   },
   {
     title: "Tarif journalier",
-    text: `Mon tjm standard est de 350€ Ce tarif horaire est
+    text: `Mon tjm standard est de 350€ Ce tarif journalier est
         applicable à tous les projets de développement web, y compris la
         conception de sites web, le développement d'applications web et
-        l'intégration de systèmes tiers. Le tarif horaire est calculé en
+        l'intégration de systèmes tiers. Le tarif journalier est calculé en
         fonction du temps total passé sur le projet, y compris la communication
         avec le client, la planification, le développement, les tests et la mise
         en production du site web. Je m'assure de respecter les délais convenus
@@ -273,7 +273,7 @@ const pageInfosPrice: PageInfo[] = [
   },
   {
     title: "Forfaits personnalisés",
-    text: `En plus du tarif horaire, je propose également des forfaits
+    text: `Je propose également des forfaits
           personnalisés pour des projets plus importants ou des besoins
           spécifiques. Les forfaits sont conçus pour offrir une solution complète
           et incluent généralement des fonctionnalités supplémentaires telles que
