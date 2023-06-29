@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/app/Sections/Footer/Footer";
 import "@/app/Styles/globals.scss";
+import GoogleAnalytics from "@/app/Utils/GoogleAnalytics";
 
 export const metadata = {
   title: "Sites web sur mesure par un développeur web expérimenté",
@@ -47,23 +48,7 @@ export default function RootLayout({
         src="https://kit.fontawesome.com/53013b6bdc.js"
         crossOrigin="anonymous"
       ></Script>
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-3ZMKMEH64J"
-      ></Script>
-      <Script
-        id="gtag-init"
-        strategy="lazyOnload"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments)}
-            gtag('js', new Date());
-            gtag('config', 'G-3ZMKMEH64J');
-          `,
-        }}
-      ></Script>
-
+      <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)}  />
       <body>
         {children}
         <Analytics />
