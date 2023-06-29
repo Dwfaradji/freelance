@@ -64,17 +64,19 @@ const Footer: React.FC = () => {
 
       <div className="container-network">
         <div className="network">
-          <Link
-            href="https://www.facebook.com/Devevoke-103100528585996"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa-brands fa-square-facebook"></i>
-          </Link>
+          {/*<Link*/}
+          {/*  href="https://www.facebook.com/Devevoke-103100528585996"*/}
+          {/*  target="_blank"*/}
+          {/*  rel="noopener noreferrer"*/}
+          {/*  aria-label="facebook"*/}
+          {/*>*/}
+          {/*  <i className="fa-brands fa-square-facebook"></i>*/}
+          {/*</Link>*/}
           <Link
             href="https://github.com/Dwfaradji"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={"github"}
           >
             <i className="fa-brands fa-github"></i>
           </Link>
@@ -82,6 +84,7 @@ const Footer: React.FC = () => {
             href="https://fr.linkedin.com/in/boucif-faradji"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={"linkedin"}
           >
             <i className="fa-brands fa-linkedin"></i>
           </Link>
@@ -89,6 +92,7 @@ const Footer: React.FC = () => {
             href="https://twitter.com/Dw_faradji"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={"twitter"}
           >
             <i className="fa-brands fa-square-twitter"></i>
           </Link>
