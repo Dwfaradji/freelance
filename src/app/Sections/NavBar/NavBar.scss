@@ -15,7 +15,7 @@
 
   .block {
     height: 64px;
-    width: 100%;
+    width: 100dvw;
     @include displayCenterBetween;
 
     .logoSvg {
