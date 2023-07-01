@@ -51,12 +51,6 @@ export async function POST(request: Request) {
   // Configuration de SendGrid
   sgMail.setApiKey(apiKey);
 
-  const piecesJointe = `https://www.devevoke.com/uploads/${file}`;
-  // https://www.devevoke.com/downloads/cahierDesCharges.pdf
-  // http://localhost:3000/uploads/cahierDesCharges.pdf
-  // Envoi de l'e-mail avec SendGrid
-  console.log(file, "fileName");
-  console.log("piecesJointe", piecesJointe);
   try {
     const msg: SendGridMail = {
       to: String(process.env.ADRESS_MAIL),
@@ -67,10 +61,9 @@ export async function POST(request: Request) {
         lastname: String(lastname),
         email: String(email),
         subject: String(message),
-        attachments: String(piecesJointe),
+        attachments: String("piecesJointe"),
       },
     };
-    console.log("msg", msg);
     await sgMail.send(msg);
     return res.json({ message: "EMAIL_SENT" });
   } catch (error) {

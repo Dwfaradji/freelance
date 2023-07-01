@@ -28,7 +28,7 @@ const Modal: React.FC<ModalProps> = ({
             <i className="fa-regular fa-circle-xmark"></i>
           </button>
           {/*content modal*/}
-          {typeModal === "price" && <ModalPrice contentModal={contentModal} />}
+          {typeModal === "price" && <ModalPrice contentModal={contentModal} setIsOpen={setIsOpen} />}
           {typeModal === "form" && <Form />}
         </div>
       </div>

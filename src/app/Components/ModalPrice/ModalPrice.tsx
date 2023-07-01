@@ -4,10 +4,10 @@ import { prices } from "@/app/Data/data";
 
 interface ModalPriceProps {
   contentModal: string | undefined;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
-
-const ModalPrice = ({contentModal}:ModalPriceProps) => {
+const ModalPrice = ({ contentModal, setIsOpen }: ModalPriceProps) => {
   // const [contentModal, setContentModal] = useState("");
 
   const [modal, setModal] = React.useState<any>([]);
@@ -26,6 +26,7 @@ const ModalPrice = ({contentModal}:ModalPriceProps) => {
 
   const openModal = (sectionId: string) => {
     const section = document.getElementById(sectionId);
+    setIsOpen(false);
     if (section) {
       //scroll 200px above the section
       const y = section.getBoundingClientRect().top + window.scrollY - 64;

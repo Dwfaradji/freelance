@@ -21,25 +21,8 @@ const Form = () => {
     formState: { errors },
   } = useForm<FormData>();
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    // Envoie le fichier téléchargé dans le dossier uploads
-    const formData = new FormData();
-    formData.set("file", data.file?.[0]);
-
-    const newData = { ...data, file: data.file?.[0].name };
-
     try {
-      const response2 = await axios.post("/api/upload", formData, {});
-      const data = await response2;
-      // Traitez la réponse de l'API
-    } catch (error) {
-      console.error(
-        "Une erreur s'est produite lors de l'envoi du fichier.",
-        error
-      );
-    }
-
-    try {
-      const response = await axios.post("/api/contact", newData, {
+      const response = await axios.post("/api/contact", data, {
         headers: {
           "Content-Type": "application/json",
         },
