@@ -9,17 +9,19 @@ const About = () => {
         <div className="about-content col-sm-12 col-md-12">
           <p className="text-xl">
             {`Je suis un développeur Full Stack freelance passionné par la
-              création d'applications web innovantes. Avec plus de 5 années
-              d"expérience, j'ai acquis une expertise approfondie dans le
+              création d'applications web innovantes. Je suis spécialisé dans le
               développement frontend et backend, ainsi que dans la conception de
-              bases de données robustes.`}
+              bases de données robustes. Je suis également un développeur
+              autodidacte qui aime apprendre de nouvelles technologies et
+              acquérir de nouvelles compétences pour améliorer mes capacités de
+              développement.`}
           </p>
           <p className="text-xl">
             {`En tant que développeur Full Stack, je suis à l'aise avec les
               langages de programmation tels que HTML, CSS, JavaScript, ainsi que
-              les frameworks populaires tels que React, Angular et Vue.js pour le
+              les frameworks populaires tels que React,VueJs pour le
               développement côté client. Du côté serveur, j'ai travaillé avec des
-              technologies telles que Node.js et PHP, ce qui me permet de créer
+              technologies telles que NextJs, Symfony, MongoDb, Node.Js et PHP, ce qui me permet de créer
               des fonctionnalités puissantes et des API performantes.`}
           </p>
           <p className="text-xl">
