@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Ancre.scss";
 import scrollToSection from "@/app/Utils/Utils";
 

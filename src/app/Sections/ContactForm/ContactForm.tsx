@@ -6,7 +6,7 @@ import Form from "@/app/Components/Form/Form";
 
 const ContactForm = () => {
   return (
-    <section className="container-fluid background-container">
+    <section id="test" className="container-fluid background-container">
       <div className="content-contact">
         <h2 className="text-h2">Contact</h2>
         <div className="flex-contact">

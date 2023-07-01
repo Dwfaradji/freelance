@@ -13,9 +13,13 @@
   button {
     outline: none;
     text-decoration: none;
+    background-color: #a4a3a3ab;
   }
 
   &:hover {
-    background-color: $color-hover;
+    background-color: $color-hover !important;
+    button{
+      background-color: white !important;
+    }
   }
 }
