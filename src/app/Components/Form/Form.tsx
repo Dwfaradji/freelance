@@ -109,7 +109,7 @@ const Form = () => {
             <span className="error text-white">Ce champ est requis</span>
           )}
         </div>
-        <div className="file-upload" style={{ display: "" }}>
+        <div className="file-upload" style={{ display: "none" }}>
           <label htmlFor="file">Charger PDF</label>
           <input type="file" id="file" accept=".pdf" {...register("file")} />
           {/*{formData.file && (*/}
@@ -123,7 +123,7 @@ const Form = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <i className="fa-solid fa-download "></i> Cahier des Charges PDF
+            <i className="fa-solid fa-download "></i> Cahier des Charges site web
           </a>
         </div>
         {!sendMsg && (

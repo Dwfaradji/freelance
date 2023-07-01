@@ -22,11 +22,11 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
         <h2 className="text-h2">Découvrez notre portfolio</h2>
         <p className="text-xl">
           {`Découvrez notre portfolio de projets exceptionnels dans le domaine de
-                la création de sites web et d'applications. Notre section "Projets"
+                la création de site web et d'application. Notre section "Projets"
                 met en avant notre expertise en utilisant des technologies modernes
                 telles que React, Vue.js et Node.js. Explorez nos réalisations pour
                 voir comment nous avons aidé nos clients à concrétiser leur vision en
-                ligne. De sites vitrines élégants à des applications mobiles
+                ligne. De site vitrine élégants à des applications mobiles
                 performantes, notre équipe freelance est prête à relever de nouveaux
                 défis et à créer des expériences utilisateur remarquables. Consultez
                 nos projets et contactez-nous pour discuter de votre prochain projet

@@ -26,15 +26,12 @@ const Header = ({ pictures }: HeaderProps) => {
 
       <div className="text grid col-span-12 xl:col-span-1">
         <h1 className="font-bold text-h1 mb-10 text-center xl:text-5xl">
-          Développeur Freelance spécialisé en
-          <span className="text-regal-blue"> Web Design</span> <br /> et <br />
-          <span className="text-regal-blue">
-            {"Développement d'Applications"}
-          </span>
+          Développeur Web Freelance <br/> à <br/>
+          <span className="text-regal-blue">Perpignan en Occitanie</span>
         </h1>
         <TypingAnimation
           text={
-            "Besoin d'un site web ou d'une appli ?  Notre équipe freelance crée des solutions personnalisées. Design attrayant, fonctionnalités performantes."
+            "Notre équipe freelance crée des solutions personnalisées. Design attrayant, fonctionnalités performantes."
           }
         />
       </div>

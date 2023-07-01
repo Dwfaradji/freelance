@@ -29,32 +29,23 @@
         position: relative;
 
         img {
-          height: 269px;
           object-fit: contain;
           transition: transform 0.3s ease;
           position: absolute;
           opacity: 0.5;
-          z-index: 1;
-
-          &:hover {
-            transform: scale(1.1);
-          }
+          height: 60dvh;
+          width: 100%;
+          filter: brightness(0.5);
+        }
+        h3{
+          position: relative;
+          z-index: 2;
         }
 
         p {
           color: $color-primary;
           position: relative;
           z-index: 2;
-        }
-
-        &:hover {
-          p {
-            z-index: 1;
-          }
-
-          img {
-            z-index: 3;
-          }
         }
       }
     }
@@ -63,6 +54,7 @@
       .flex-contact {
         justify-content: center !important;
         width: 100%;
+        text-align: center;
       }
       .contact-form {
         width: 100% !important;

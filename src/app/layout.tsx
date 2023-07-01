@@ -6,9 +6,9 @@ import "@/app/Styles/globals.scss";
 import GoogleAnalytics from "@/app/Utils/GoogleAnalytics";
 
 export const metadata = {
-  title: "Sites web sur mesure par un développeur web expérimenté",
+  title: "DevEvoke - Site web sur mesure par un développeur web freelance",
   description:
-    "Besoin d'un développeur web freelance expérimenté ? Obtenez un site performant, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour bénéficier d'un site sur mesure, créé selon vos besoins spécifiques.",
+    "Besoin d'un développeur web freelance à Perpignan ? Obtenez un site internet, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour bénéficier d'un site sur mesure, créé selon vos besoins spécifiques.",
   alternates: {
     canonical: "https://www.devevoke.com/",
     languages: {

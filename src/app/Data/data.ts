@@ -94,7 +94,7 @@ const prices: Price[] = [
     price: "999€",
     description: `Obtenez un site vitrine professionnel et moderne qui mettra en valeur votre
             entreprise. Cette formule comprend la conception personnalisée, l'intégration HTML/CSS,
-            la gestion de contenu, l'optimisation SEO de base et l'intégration des médias sociaux.
+            la gestion de contenu, l'optimisation site web de base et l'intégration des médias sociaux.
             Augmentez votre visibilité en ligne avec un site vitrine convaincant et engageant. `,
     details: [
       "Charte graphique à partir d'une maquette pré-définie",
