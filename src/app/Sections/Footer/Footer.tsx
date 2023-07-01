@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
       <div className="container-network">
         <div className="network">
           <Link
-            href="https://www.facebook.com/Devevoke-103100528585996"
+            href="https://www.facebook.com/profile.php?id=100094324716136"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="facebook"
