@@ -2,7 +2,7 @@ import React from "react";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/app/Sections/Footer/Footer";
-import "@/app/Styles/globals.scss";
+// import "@/app/Styles/globals.scss";
 import GoogleAnalytics from "@/app/Utils/GoogleAnalytics";
 
 export const metadata = {

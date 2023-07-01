@@ -31,13 +31,13 @@
 
       @keyframes myAnimation {
         0% {
-          transform: scale(1);
+          transform: translateY(-10px);
         }
         50% {
-          transform: scale(1.2);
+          transform: translateY(0px);
         }
         100% {
-          transform: scale(1);
+          transform: translateY(-10px);
         }
       }
     }

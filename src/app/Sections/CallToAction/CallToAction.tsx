@@ -2,6 +2,7 @@ import React from "react";
 import "./CallToAction.scss";
 import images from "@/app/Assets/Gallery";
 import scrollToSection from "@/app/Utils/Utils";
+import Images from "next/image";
 
 const CallToAction = () => {
   return (
@@ -12,6 +13,9 @@ const CallToAction = () => {
         backgroundSize: "cover",
       }}
     >
+      {/*<div className="container-picture">*/}
+      {/*  <Images src={images.bannerPicture4} width="100" height="100" alt={"test"} />*/}
+      {/*</div>*/}
       <div className="background"></div>
       <div className="content">
         <h2 className="text-h2">
