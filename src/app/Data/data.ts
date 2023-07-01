@@ -170,9 +170,13 @@ const prices: Price[] = [
 const services: Service[] = [
   {
     id: 0,
-    title: "Design de site internet",
-    description: ` Le design de votre site internet est réalisé sur mesure et répond aux standards web du W3C.
-                Il est optimisé pour le référencement naturel (SEO) et est adapté à tous les supports (ordinateur, tablette, smartphone).`,
+    title: "Création et Refonte de sites web sur mesure",
+    description: `Confiez-nous votre site web ! En tant que développeurs web freelance, 
+    nous concevons des sites personnalisés et modernes, adaptés à vos besoins spécifiques. 
+    Que vous souhaitiez créer un nouveau site ou donner un coup de neuf à votre site existant, 
+    nous sommes là pour vous. 
+    Nous nous occupons du design, de la programmation et de l'optimisation pour les appareils mobiles.
+      `,
 
     items: [
       { id: 1, title: "Maquette Figma" },
@@ -180,29 +184,34 @@ const services: Service[] = [
         id: 2,
         title: "Design responsive (adaptable ordinateur, tablette, smartphone)",
       },
+      { id: 3, title: "W3C" },
     ],
   },
   {
     id: 1,
-    title: "Développement d'application mobile",
-    description: `Le développement d’application mobile est indispensable pour améliorer la visibilité de ses activités. 
-            Le développement de votre application mobile est réalisé avec soin et répond aux standards web du W3C.`,
+    title: "Développement d'applications web personnalisées et performantes",
+    description: `Nous sommes spécialisés dans le développement d'applications web sur mesure, 
+    utilisant les dernières technologies et frameworks. DevEvoke vous accompagne 
+    de la conception à la mise en œuvre, en intégrant des fonctionnalités avancées et une interface utilisateur intuitive. 
+    Que vous ayez besoin d'une application de gestion, 
+    d'une plateforme e-commerce ou d'un outil collaboratif, nous concevons des solutions adaptées à vos besoins`,
     items: [
-      { id: 1, title: "HTML5 & CSS3" },
+      { id: 1, title: "React & NextJs 13" },
       {
         id: 2,
-        title: String(
-          "Design responsive (adaptable ordinateur, tablette, smartphone)"
-        ),
+        title:"Symfony 5 & PHP 8",
       },
+      { id: 3, title: "MongoDB & MySQL" },
     ],
   },
   {
     id: 2,
-    title: "Référencement (SEO)",
-    description: `Le référencement naturel (SEO) est un service qui permet d’augmenter la visibilité de votre
-                        site internet sur les moteurs de recherche. Il s’agit d’un service gratuit qui permet d’obtenir
-                        des résultats sur le long terme.`,
+    title: "Optimisation et référencement pour une visibilité maximale",
+    description: `Améliorez le classement de votre site web grâce à notre expertise en optimisation et référencement. 
+    Nous utilisons des techniques avancées pour optimiser les balises, le contenu et les mots clés, afin de générer un 
+    trafic qualifié. Notre objectif est d'augmenter votre visibilité sur les moteurs de recherche, notamment Google, en 
+    mettant en place des stratégies de création de liens efficaces. Contactez-nous dès maintenant pour discuter de votre 
+    projet de référencement et propulsez votre site web vers de nouveaux sommets.`,
     items: [
       { id: 1, title: "Audit de référencement" },
       { id: 2, title: "Optimisation de référencement" },
@@ -213,36 +222,37 @@ const services: Service[] = [
   {
     id: 3,
     title: "Hébergement",
-    description: `L’hébergement de votre site internet est un service indispensable pour que votre site soit
-                        accessible sur internet. Nous vous proposons un hébergement de qualité, sécurisé et adapté à vos
-                        besoins.`,
+    description: `Maximisez la visibilité de votre site internet grâce à notre service d'hébergement de qualité.
+     Bénéficiez d'un hébergement sécurisé et performant adapté aux besoins spécifiques de votre site, favorisant
+      ainsi un meilleur référencement et une expérience utilisateur optimale.`,
     items: [
-      { id: 1, title: "Hébergement de qualité" },
-      { id: 2, title: "Hébergement sécurisé" },
-      { id: 3, title: "Hébergement adapté à vos besoins" },
+      { id: 1, title: "Qualité, sécurité, adaptation" },
+      { id: 2, title: "Hébergement optimal" },
+      { id: 3, title: "Service sur mesure" },
     ],
   },
   {
     id: 4,
     title: "Maintenance",
-    description: `La maintenance de votre site internet est un service indispensable pour garantir le bon
-                        fonctionnement de votre site internet. Nous vous proposons un service de maintenance adapté à vos
-                        besoins.`,
+    description: `Assurez la stabilité et la performance de votre site internet grâce à notre service de maintenance
+     professionnelle. Notre équipe expérimentée veille à la mise à jour régulière de votre site, à la correction des
+      bugs et à la résolution rapide des problèmes techniques, assurant ainsi un fonctionnement fluide et sans interruption.`,
     items: [
-      { id: 1, title: "Maintenance de qualité" },
-      { id: 2, title: "Maintenance sécurisée" },
-      { id: 3, title: "Maintenance adaptée à vos besoins" },
+      { id: 1, title: "Essentielle pour votre site" },
+      { id: 2, title: "Adaptée à vos besoins" },
+      { id: 3, title: "Bon fonctionnement assuré" },
     ],
   },
   {
     id: 5,
     title: "Formation",
-    description: `La formation est un service qui vous permet d’être autonome dans la gestion de votre site
-                        internet. Nous vous proposons une formation adaptée à vos besoins.`,
+    description: `Gagnez en autonomie et en confiance dans la gestion de votre site internet grâce à notre programme de 
+    formation personnalisée. Apprenez les techniques de gestion de contenu, le référencement, l'optimisation des performances 
+    et d'autres compétences essentielles pour vous démarquer et réussir en ligne.`,
     items: [
-      { id: 1, title: "Formation de qualité" },
-      { id: 2, title: "Formation sécurisée" },
-      { id: 3, title: "Formation adaptée à vos besoins" },
+      { id: 1, title: "Autonomie garantie" },
+      { id: 2, title: "Gestion de site simplifiée" },
+      { id: 3, title: "Compétences acquises" },
     ],
   },
 ];
