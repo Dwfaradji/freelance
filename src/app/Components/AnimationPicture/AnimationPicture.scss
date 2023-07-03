@@ -20,7 +20,7 @@
       -webkit-text-fill-color: transparent;
       fill: none;
       padding: 10px;
-      border: none;
+      border: 1px solid white;
       /*animation de l'item*/
       animation: animate 3s linear backwards;
       @keyframes animate {
