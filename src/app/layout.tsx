@@ -1,6 +1,5 @@
 import React from "react";
 import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/app/Sections/Footer/Footer";
 import "@/app/Styles/globals.scss";
 import GoogleAnalytics from "@/app/Utils/GoogleAnalytics";
@@ -51,7 +50,6 @@ export default function RootLayout({
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)}  />
       <body>
         {children}
-        <Analytics />
         <Footer />
       </body>
     </html>
