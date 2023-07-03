@@ -29,7 +29,13 @@ const ReturnHome = () => {
           {svgElement}
           <span>Return Home</span>
         </Link>
-        <button onClick={(e) => handleOpenModal(e)}>Contactez-nous</button>
+        <div className="container-btn">
+          <button className="btn-contact" onClick={(e) => handleOpenModal(e)}>
+            Contactez-nous
+          </button>
+        </div>
+
+
       </div>
       {isOpen && (
         <Modal showModal={isOpen} setIsOpen={setIsOpen} typeModal="form" />

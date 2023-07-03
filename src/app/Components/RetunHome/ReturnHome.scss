@@ -1,12 +1,13 @@
 .logoPages {
-  padding: 7px 10px;
   position: fixed;
   top: 0;
-  width: 100%;
   background: #f4f4f4;
   display: flex;
   justify-content: space-between;
-
+  height: 64px;
+  width: 100dvw;
+  align-items: center;
+  padding-right: 30px;;
 
   a {
     color: white;
@@ -14,17 +15,28 @@
     text-decoration: none;
     align-items: center;
 
+
     span {
       color: #4c98c9;
     }
 
     .logoSvg {
-      width: 95px;
-      height: 7vh;
+      width: 10vw;
+      height: 5vh;
       -o-object-fit: contain;
       object-fit: contain;
+      margin: 5px 5px;
     }
+
+    .container-btn{
+        display: flex;
+      .btn-contact {
+        height: 5vh;
+      }
+    }
+
   }
+
 
 
 }
