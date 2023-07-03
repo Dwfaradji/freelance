@@ -49,17 +49,20 @@ const AnimationPicture = ({ itemsPicture }: AnimationPictureProps) => {
       <div className="about-images" ref={sectionRef}>
         {itemsPicture.map((item, i) => (
           <div key={i} className="item">
+            <Image
+              className="image-container"
+              src={item.picture}
+              alt={item.alt}
+              width="100"
+              height="100"
+            />
             <div className="item2">
-              <Image
-                className="image-container"
-                src={item.picture}
-                alt={item.alt}
-                width="1024"
-                height="100"
-              />
               <h3 className="text-h3">{item.title}</h3>
               {i !== 3 ? (
-                <i id={String(i)} className="fa-solid fa-chevron-right chevron"></i>
+                <i
+                  id={String(i)}
+                  className="fa-solid fa-chevron-right chevron"
+                ></i>
               ) : (
                 <i className="fa-regular fa-circle-check check"></i>
               )}
