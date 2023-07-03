@@ -23,7 +23,7 @@ const CallToAction = () => {
         </h2>
         <p className="text-xl">
           Vous avez un projet intéressant en tête ? Ne tardez plus,{" "}
-          <span onClick={() => scrollToSection("contact")}>contactez-moi</span>{" "}
+          <span onClick={() => scrollToSection("contact")}>Contactez-moi</span>{" "}
           dès maintenant pour discuter de vos idées et commencer à travailler
           ensemble !
         </p>

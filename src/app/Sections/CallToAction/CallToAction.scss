@@ -25,10 +25,19 @@
       color: white;
       text-align: center;
       font-weight: bold;
+      filter: drop-shadow(2px 4px 6px white);
 
       span {
         cursor: pointer;
         color: $color-hover;
+
+        padding: 4px;
+        border-radius: 8px;
+        background-color: #ede9e9a3;
+
+        &:hover {
+          background-color: #ede9e9;
+        }
       }
     }
 
