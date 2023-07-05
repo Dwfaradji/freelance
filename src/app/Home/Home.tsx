@@ -31,7 +31,7 @@ const Home: React.FC = () => {
       <Projet projects={projects} />
       <Banner typeBanner={"picture"} />
       <OptiRank />
-      <div id="tarif"></div>
+      <div id="info-tarif"></div>
       <Price dataTarifs={prices} />
       <div id="contact"></div>
       <ContactForm />

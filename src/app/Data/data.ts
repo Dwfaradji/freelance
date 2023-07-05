@@ -82,7 +82,7 @@ const navItems: Item[] = [
   { title: "Projet", link: "project" },
   { title: "Services", link: "services" },
   { title: "Contact", link: "contact" },
-  { title: "Tarif", link: "tarif" },
+  { title: "Tarif", link: "info-tarif" },
 ];
 
 //Tarifs

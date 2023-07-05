@@ -17,12 +17,12 @@ const Footer: React.FC = () => {
           <h3 className="text-h3">Infos général</h3>
           <ul>
             <li>
-              <Link href="/procedure" target="_blank">
+              <Link href="/info-procedure" target="_blank">
                 Procédure
               </Link>
             </li>
             <li>
-              <Link href="/tarif" target="_blank">
+              <Link href="/info-tarif"  target="_blank">
                 Les tarifs
               </Link>
             </li>
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
           <p>
             Email:
             <a className="ml-1 text-white" href="mailto:contact@devevoke.com">
-               contact@devevoke.com
+              contact@devevoke.com
             </a>
           </p>
           <p>Téléphone: 06 18 23 76 62</p>
