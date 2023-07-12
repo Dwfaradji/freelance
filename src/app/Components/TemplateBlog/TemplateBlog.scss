@@ -2,9 +2,11 @@
 
 .container-modal-blog {
   @include displayCenterColumn;
-h2{
-  margin-bottom: 1rem;
-}
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
   .container-header {
     text-align: center;
     font-size: 2rem;
@@ -43,13 +45,12 @@ h2{
       }
 
     }
-
   }
 
 
   .container-img {
     width: 80%;
-    height:90%;
+    height: 90%;
     margin: 0 auto;
 
     img {
@@ -65,6 +66,7 @@ h2{
     align-items: normal;
     flex-wrap: wrap;
     height: 100%;
+
     a {
       width: 100%;
       display: flex;
@@ -97,7 +99,8 @@ h2{
           border-radius: 20px;
         }
       }
-      .card-body{
+
+      .card-body {
         padding: 0;
       }
 
@@ -107,4 +110,10 @@ h2{
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    .container-img{
+      width: 95%;
+    }
+  }
+
 }
