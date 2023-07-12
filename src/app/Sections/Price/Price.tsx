@@ -26,11 +26,11 @@ const Price = ({ dataTarifs }: PriceProps) => {
     setTypeModal("price");
   };
 
-  useEffect(() => {
-    isOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "auto");
-  }, [isOpen]);
+  // useEffect(() => {
+  //   isOpen
+  //     ? (document.body.style.overflow = "hidden")
+  //     : (document.body.style.overflow = "auto");
+  // }, [isOpen]);
 
   return (
     <section className=" container-fluid section-tarif">
@@ -69,7 +69,7 @@ const Price = ({ dataTarifs }: PriceProps) => {
       </div>
       <p className="infos">
         {
-          "Tous les tarifs mentionnés sont hors taxes. * Prix à titre informatif : susceptibles de changer en fonction des demandes et des choix du client. ** Estimation du temps de travail soutenue par un devis, basée sur un info-tarif journalier de 350€. *** Maintenance annuelle (engagement de 12 mois). Droits d'auteur et propriété intellectuelle : À la fin du projet, vous êtes le propriétaire de toutes les sources (fichiers) qui le composent. Possibilité de paiement échelonné selon les modalités convenues."
+          "Tous les tarifs mentionnés sont hors taxes. * Prix à titre informatif : susceptibles de changer en fonction des demandes et des choix du client. ** Estimation du temps de travail soutenue par un devis, basée sur un info-tarif.tsx journalier de 350€. *** Maintenance annuelle (engagement de 12 mois). Droits d'auteur et propriété intellectuelle : À la fin du projet, vous êtes le propriétaire de toutes les sources (fichiers) qui le composent. Possibilité de paiement échelonné selon les modalités convenues."
         }
       </p>
     </section>

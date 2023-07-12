@@ -2,7 +2,7 @@ import React from "react";
 import PagesInfo from "@/app/Components/PagesInfo/PagesInfo";
 import { pageInfosProcess } from "@/app/Data/data";
 
-const Page = () => {
+const InfoProcedure = () => {
   return (
     <div>
       <PagesInfo infosText={pageInfosProcess} />
@@ -10,4 +10,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default InfoProcedure;

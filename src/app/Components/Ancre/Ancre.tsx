@@ -7,7 +7,7 @@ const Ancre = () => {
     <div className="ancre">
       <button
         aria-label="up page"
-        onClick={() => scrollToSection("home")}
+        onClick={() => scrollToSection("home", true)}
         type="button"
       >
         <i className="fa-solid fa-angles-up"></i>

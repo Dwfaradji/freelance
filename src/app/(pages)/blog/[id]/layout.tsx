@@ -6,7 +6,7 @@ export const metadata = {
   description:
     "Découvrez le processus de création de site web sur mesure. De la conception à la mise en ligne, nous vous accompagnons tout au long de votre projet.",
   alternates: {
-    canonical: "https://www.devevoke.com/mentions-legale",
+    canonical: "https://www.devevoke.com/",
     languages: {
       fr: "https://www.devevoke.com/",
     },

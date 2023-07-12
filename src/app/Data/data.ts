@@ -77,12 +77,13 @@ const picturesCarousel: Picture = {
 };
 //Navigation
 const navItems: Item[] = [
-  { title: "Accueil", link: "home" },
-  { title: "A propos", link: "about" },
-  { title: "Projet", link: "project" },
-  { title: "Services", link: "services" },
-  { title: "Contact", link: "contact" },
-  { title: "Tarif", link: "info-tarif" },
+  { title: "Accueil", link: "home", scroll: true },
+  { title: "A propos", link: "about", scroll: true },
+  { title: "Projet", link: "project", scroll: true },
+  { title: "Services", link: "services", scroll: true },
+  { title: "Contact", link: "contact", scroll: true },
+  { title: "Tarif", link: "tarif", scroll: true },
+  { title: "Blog", link: "blog", scroll: false },
 ];
 
 //Tarifs
@@ -199,7 +200,7 @@ const services: Service[] = [
       { id: 1, title: "React & NextJs 13" },
       {
         id: 2,
-        title:"Symfony 5 & PHP 8",
+        title: "Symfony 5 & PHP 8",
       },
       { id: 3, title: "MongoDB & MySQL" },
     ],

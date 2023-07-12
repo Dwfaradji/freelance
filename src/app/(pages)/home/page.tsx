@@ -1,12 +1,11 @@
 import React from "react";
 import Home from "@/app/(pages)/home/home";
 
-
-const Page: React.FC = () => {
+const Page = () => {
   return (
-    <main>
+    <div>
       <Home />
-    </main>
+    </div>
   );
 };
 

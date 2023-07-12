@@ -9,6 +9,7 @@ import Link from "next/link";
 interface Item {
   title: string;
   link: string;
+  scroll: boolean;
 }
 
 interface NavProps {
@@ -92,7 +93,7 @@ const Navbar = ({ items }: NavProps) => {
         <li
           key={index}
           className={liItems}
-          onClick={() => scrollToSection(item.link)}
+          onClick={() => scrollToSection(item.link, item.scroll)}
         >
           {item.title}
         </li>

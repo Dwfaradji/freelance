@@ -41,13 +41,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" suppressHydrationWarning={true}>
+    <html lang="fr" >
       <Script
         strategy="lazyOnload"
         src="https://kit.fontawesome.com/53013b6bdc.js"
         crossOrigin="anonymous"
       ></Script>
-      <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)}  />
+      <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
       <body>
         {children}
         <Footer />

@@ -8,6 +8,7 @@ interface Picture {
 interface Item {
   title: string;
   link: string;
+  scroll: boolean;
 }
 
 interface Project {
@@ -45,4 +46,23 @@ interface PageInfo {
   text?: string;
 }
 
-export type { Picture, Item, Project, Price, Service, PageInfo };
+interface Text {
+  title: string;
+  text: string;
+}
+
+
+
+interface BlogProps {
+  id: number;
+  title: string;
+  descriptionShort: string;
+  descriptionLong: Text[];
+  image: string;
+  alt: string;
+  readingTime: number;
+  category: string;
+  date: string;
+}
+
+export type { Picture, Item, Project, Price, Service, PageInfo, BlogProps };

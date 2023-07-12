@@ -1,16 +1,16 @@
 "use client";
 import React from "react";
-import Navbar from "../Sections/NavBar/NavBar";
-import Header from "../Sections/Header/Header";
-import About from "../Sections/About/About";
-import Projet from "../Sections/Project/Project";
-import OptiRank from "../Sections/OptiRank/OptiRank";
-import Price from "../Sections/Price/Price";
-import ContactForm from "../Sections/ContactForm/ContactForm";
-import Service from "../Sections/Service/Service";
-import CallToAction from "../Sections/CallToAction/CallToAction";
-import Ancre from "../Components/Ancre/Ancre";
-import Banner from "../Sections/Banner/Banner";
+import Navbar from "../../Sections/NavBar/NavBar";
+import Header from "../../Sections/Header/Header";
+import About from "../../Sections/About/About";
+import Projet from "../../Sections/Project/Project";
+import OptiRank from "../../Sections/OptiRank/OptiRank";
+import Price from "../../Sections/Price/Price";
+import ContactForm from "../../Sections/ContactForm/ContactForm";
+import Service from "../../Sections/Service/Service";
+import CallToAction from "../../Sections/CallToAction/CallToAction";
+import Ancre from "../../Components/Ancre/Ancre";
+import Banner from "../../Sections/Banner/Banner";
 
 import {
   projects,
@@ -19,7 +19,6 @@ import {
   navItems,
   picturesCarousel,
 } from "@/app/Data/data";
-
 
 const Home: React.FC = () => {
   return (
@@ -31,7 +30,7 @@ const Home: React.FC = () => {
       <Projet projects={projects} />
       <Banner typeBanner={"picture"} />
       <OptiRank />
-      <div id="info-tarif"></div>
+      <div id="tarif"></div>
       <Price dataTarifs={prices} />
       <div id="contact"></div>
       <ContactForm />
