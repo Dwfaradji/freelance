@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Navbar from "../../Sections/NavBar/NavBar";
 import Header from "../../Sections/Header/Header";

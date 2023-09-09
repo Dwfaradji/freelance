@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import "./PagesInfo.scss";
 import ReturnHome from "@/app/Components/RetunHome/ReturnHome";

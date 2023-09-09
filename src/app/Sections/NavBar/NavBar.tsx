@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useMemo, useState } from "react";
 import scrollToSection from "@/app/Utils/Utils";
 import "./NavBar.scss";

@@ -26,8 +26,8 @@ const Header = ({ pictures }: HeaderProps) => {
 
       <div className="text grid col-span-12 xl:col-span-1">
         <h1 className="font-bold text-h1 mb-10 text-center xl:text-5xl">
-          Développeur Web Freelance <br/> à <br/>
-          <span className="text-regal-blue">Perpignan en Occitanie</span>
+          Développeur Web Freelance <br/>
+          <span className="text-regal-blue">Expert React & NextJs   </span>
         </h1>
         <TypingAnimation
           text={

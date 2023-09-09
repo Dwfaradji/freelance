@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import BlogData from "@/app/Data/blog";
 import "./CardBlog.scss";

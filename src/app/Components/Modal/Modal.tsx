@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import "./Modal.scss";
 import ModalPrice from "@/app/Components/ModalPrice/ModalPrice";

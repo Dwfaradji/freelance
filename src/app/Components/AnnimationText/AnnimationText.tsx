@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import "./AnnimationText.scss";
 import scrollToSection from "@/app/Utils/Utils";

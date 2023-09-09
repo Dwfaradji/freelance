@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./CallToAction.scss";
 import images from "@/app/Assets/Gallery";

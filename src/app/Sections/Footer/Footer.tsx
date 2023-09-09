@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
               contact@devevoke.com
             </a>
           </p>
-          <p>Téléphone: 06 18 23 76 62</p>
+          <p>Téléphone: 04 34 29 76 40</p>
           <p>
             Adresse: 5 impasse des vergers,
             <br /> 66370 Pézilla la rivière
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
       </div>
       <div className="footer__bottom col-12">
         <p>
-          &copy; {new Date().getFullYear()} Faradji Boucif - Tous droits
+          &copy; {new Date().getFullYear()} DevEvoke - Tous droits
           réservés.
         </p>
       </div>
