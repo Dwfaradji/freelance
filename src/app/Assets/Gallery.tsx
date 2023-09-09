@@ -19,6 +19,13 @@ const images = {
   bannerPicture4: "/images/bg-3.webp",
   bannerPicture5: "/images/bg-5.webp",
   contactBackground: "/images/imageContact.webp",
+  reactImage: "/images/react-image.png",
+  nextImage: "/images/next-image.png",
+  reduxImage: "/images/redux-image.png",
+  symfonyImage: "/images/symfony-image.png",
+  etudeImage: "/images/etude-image.png",
+  formationImage: "/images/formation-image.png",
+  passionImage: "/images/passion-image.png",
 };
 
 export default images;

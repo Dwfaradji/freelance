@@ -2705,10 +2705,10 @@ typed-array-length@^1.0.4:
     for-each "^0.3.3"
     is-typed-array "^1.1.9"
 
-typescript@^5.2.0-dev.20230622:
-  version "5.2.0-dev.20230622"
-  resolved "https://registry.npmmirror.com/typescript/-/typescript-5.2.0-dev.20230622.tgz"
-  integrity sha512-rVTuiLuyezBKAEAvkvDRvO/tA+nk5DXwnWk3vpKXzDtuv7JJ22iBPkehusg9m5AQ6To+ZJ7+mFJ+mNE6yPr9zQ==
+typescript@4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
+  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"

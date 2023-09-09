@@ -122,4 +122,19 @@ $container-large: 70%;
   }
 }
 
+@mixin AnimationIcon {
+  animation-name: myAnimation;
+
+  @keyframes myAnimation {
+    0% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+}
 

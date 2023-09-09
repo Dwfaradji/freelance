@@ -1,10 +1,10 @@
 import React from "react";
-import InfoProcedure from "@/app/(pages)/info-procedure/info-procedure";
+import APropos from "@/app/(pages)/a_propos/a_propos";
 
 const Page = () => {
   return (
     <div>
-      <InfoProcedure />
+      <APropos />
     </div>
   );
 };

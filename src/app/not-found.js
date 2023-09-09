@@ -7,6 +7,7 @@ const NotFound = () => {
     <div className="container-404">
       <h1 className="title-404">Page introuvable</h1>
       <p className="subtitle-404">
+
         {"Désolé, la page que vous recherchez n'existe pas."}
       </p>
 

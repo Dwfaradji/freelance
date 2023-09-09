@@ -33,7 +33,8 @@
   "devDependencies": {
     "@directus/sdk": "^10.3.3",
     "prettier": "2.8.8",
-    "typescript": "^5.2.0-dev.20230622"
+    "typescript": "4.5.5"
+
   },
   "description": "Il s'agit d'un projet [Next.js](https://nextjs.org/) initialisé avec [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
   "main": "next.config.js",
