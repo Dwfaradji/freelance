@@ -19,7 +19,7 @@ import {
   picturesCarousel,
 } from "@/app/Data/data";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <>
       <Navbar items={navItems} />
