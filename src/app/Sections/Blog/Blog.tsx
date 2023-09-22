@@ -33,7 +33,6 @@ const Blog = () => {
     <section className="container-blog">
       <div className="container-header">
         <h1>DevEvoke Blog</h1>
-        <Link href="/"> {"Retour à l'accueil"} </Link>
       </div>
       <div className="search-bar">
         <input type="search" placeholder="Rechercher" onChange={handleSearch} />

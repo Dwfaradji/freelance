@@ -20,24 +20,21 @@ const ReturnHome = () => {
   };
 
   return (
-    <div>
-      <div className="logoPages ">
-        <Link
-          className="logoSvg flex items-center"
-          href="/"
-          aria-label="link logo"
-        >
-          {svgElement}
-          <span>Return Home</span>
-        </Link>
-        <div className="container-btn">
-          <button className="btn-contact" onClick={(e) => handleOpenModal(e)}>
-            Contactez-nous
-          </button>
-        </div>
-
-
+    <div className="logoPages">
+      <Link
+        className="logoSvg flex items-center"
+        href="/"
+        aria-label="link logo"
+      >
+        {svgElement}
+        <span>{"Retour à l'accueil"}</span>
+      </Link>
+      <div className="container-btn">
+        <button className="btn-contact" onClick={(e) => handleOpenModal(e)}>
+          Contactez-nous
+        </button>
       </div>
+
       {isOpen && (
         <Modal showModal={isOpen} setIsOpen={setIsOpen} typeModal="form" />
       )}

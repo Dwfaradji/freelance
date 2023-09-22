@@ -8,6 +8,7 @@
   width: 100dvw;
   align-items: center;
   padding-right: 30px;;
+  z-index: 100;
 
   a {
     color: white;
@@ -28,8 +29,9 @@
       margin: 5px 5px;
     }
 
-    .container-btn{
-        display: flex;
+    .container-btn {
+      display: flex;
+
       .btn-contact {
         height: 5vh;
       }
@@ -38,5 +40,24 @@
   }
 
 
+}
 
+/*Media query*/
+@media (max-width: 768px) {
+  .container-btn {
+    display: flex;
+
+    .btn-contact {
+      height: 5vh;
+      width: 100%;
+      font-size: 12px;
+    }
+  }
+  .logoPages {
+    a {
+      span {
+        font-size: 12px;
+      }
+    }
+  }
 }

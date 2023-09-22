@@ -2,7 +2,7 @@
 
 .container-modal-blog {
   @include displayCenterColumn;
-
+  margin-top: 8em;
   h2 {
     margin-bottom: 1rem;
   }
@@ -12,6 +12,10 @@
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2rem;
+    h1{
+        color: $color-secondary;
+
+    }
 
     a {
       font-size: 1rem;

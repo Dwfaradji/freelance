@@ -86,13 +86,20 @@ const Navbar = ({ items }: NavProps) => {
     setOpenNav(!openNav);
   };
 
+  const openNavFunction = (item: any) => {
+    scrollToSection(item.link, item.scroll);
+    setOpenNav(false);
+  };
+
   const renderNavLinks = (isCollapsed: boolean) => (
     <ul className="navLinks">
       {itemsNav.map((item, index) => (
         <li
           key={index}
           className={liItems}
-          onClick={() => scrollToSection(item.link, item.scroll)}
+          onClick={() => {
+            openNavFunction(item);
+          }}
         >
           {item.title}
         </li>

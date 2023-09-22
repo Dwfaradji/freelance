@@ -7,5 +7,6 @@ const scrollToSection = (sectionId: string, scroll: boolean) => {
   if (!scroll) {
     window.location.href = `${sectionId}`;
   }
+
 };
 export default scrollToSection;
