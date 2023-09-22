@@ -25,7 +25,17 @@ module.exports = {
         h2: "1.4rem",
         h3: "1.2rem",
       },
+      container: {
+        center: true,
+      },
+      gridTemplateRows: {
+        // Simple 8 row grid
+        8: "repeat(3, minmax(0, 1fr))",
 
+        // Complex site-specific row configuration
+        layout: "200px minmax(900px, 1fr) 100px",
+        display:"grid",
+      },
       colors: {
         "regal-blue": "#4c98c9",
       },

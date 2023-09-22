@@ -17,7 +17,6 @@
     "@vercel/postgres": "^0.3.1",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
-    "bootstrap": "^5.3.0",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
     "gsap": "^3.12.1",
@@ -34,11 +33,11 @@
     "@directus/sdk": "^10.3.3",
     "prettier": "2.8.8",
     "typescript": "4.5.5"
-
   },
-  "description": "Il s'agit d'un projet [Next.js](https://nextjs.org/) initialisé avec [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "description": "Site for DevEvoke community",
   "main": "next.config.js",
   "keywords": [],
-  "author": "",
-  "license": "MIT"
+  "author": "Devevoke",
+  "license": "MIT",
+  "nodeVersion": "19.9.0"
 }

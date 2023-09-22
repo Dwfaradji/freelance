@@ -1,29 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ContactForm.scss";
 import images from "@/app/Assets/Gallery";
 import Image from "next/image";
 import Form from "@/app/Components/Form/Form";
+import Modal from "@/app/Components/Modal/Modal";
+import BtnOpenForm from "@/app/Components/BtnOpenForm/BtnOpenForm";
 
 const ContactForm = () => {
   return (
-    <section id="test" className="container-fluid background-container">
-      <div className="content-contact">
+    <section id="test" className="background-container">
+      <div className="contact-background">
+        <Image
+          src={images.contactBackground}
+          alt="background contact"
+          width="1024"
+          height="768"
+        />
+      </div>
+      <div className="content-contact flex-col flex">
         <h2 className="text-h2">Contact</h2>
-        <div className="flex-contact">
-          <div className="contact col-sm-12 col-md-6">
-            <Image
-              src={images.contactBackground}
-              alt="background contact"
-              width="1024"
-              height="768"
-            />
-            <h3 className="text-white mb-2">
-              {
-                "Vous voulez un site web ou une application unique qui mettra en valeur votre marque et attirera l'attention de vos visiteurs ? "
-              }
-            </h3>
-            <p className="text-base md:text-xl">
-              {`Vous êtes au bon endroit ! Chez DevEvoke, nous sommes experts dans la création de sites web et d'applications 
+        <div className="flex-contact ">
+          <div className="contact">
+            <div className="text-form">
+              <h3 className="text-white mb-2">
+                {
+                  "Vous voulez un site web ou une application unique qui mettra en valeur votre marque et attirera l'attention de vos visiteurs ? "
+                }
+              </h3>
+              <p className="text-base md:text-xl">
+                {`Vous êtes au bon endroit ! Chez DevEvoke, nous sommes experts dans la création de sites web et d'applications 
               sur mesure qui feront une réelle différence pour votre entreprise.
               Notre équipe de professionnels expérimentés sait comment créer des expériences en ligne captivantes. 
               Que vous ayez besoin d'un site web pour présenter votre entreprise, vendre vos produits ou partager votre passion, 
@@ -35,13 +40,17 @@ const ContactForm = () => {
               N'attendez plus pour vous démarquer en ligne ! Contactez-nous dès maintenant et discutons de votre projet. 
               Remplissez simplement notre formulaire rapide et nous vous contacterons pour une consultation gratuite. 
               Ensemble, nous transformerons votre idée en réalité numérique.`}
-            </p>
-            <p className="text-base md:text-xl mt-2">
-              Faites le premier pas vers une présence en ligne qui fera
-              sensation !
-            </p>
+              </p>
+              <p className="text-base md:text-xl mt-2">
+                Faites le premier pas vers une présence en ligne qui fera
+                sensation !
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <BtnOpenForm />
+              {/*<Form />*/}
+            </div>
           </div>
-          <Form />
         </div>
       </div>
     </section>

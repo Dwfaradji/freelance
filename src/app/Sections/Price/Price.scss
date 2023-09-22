@@ -8,14 +8,15 @@
   text-align: center;
   padding: 0 30px;
   height: 100%;
+  margin: 5vh  0;
 
   .content-tarif {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    //margin: 0 auto;
   }
 
   h2 {
@@ -42,6 +43,7 @@
       padding: 10px;
       position: relative;
       z-index: 100;
+      white-space: nowrap;
 
       &:hover {
         color: white;
@@ -126,8 +128,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  .section-tarif .content-tarif {
-    width: 90%;
+  .section-tarif {
+    .tarif-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
   }
 
 }

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Modal.scss";
 import ModalPrice from "@/app/Components/ModalPrice/ModalPrice";
 import Form from "@/app/Components/Form/Form";
@@ -17,15 +17,12 @@ const Modal: React.FC<ModalProps> = ({
   contentModal,
   typeModal,
 }) => {
-  console.log(contentModal);
-
   const closeModal = () => {
+    document.body.style.overflow = "auto";
     setIsOpen(false);
   };
   useEffect(() => {
-    showModal
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "auto");
+    showModal && (document.body.style.overflow = "hidden");
   }, [showModal]);
   return (
     <section>

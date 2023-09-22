@@ -76,7 +76,7 @@
       flex-direction: row;
       width: 20em;
       align-items: center;
-
+      display: flex;
       .card-title {
         font-size: 0.8rem;
         font-weight: 700;
@@ -113,6 +113,9 @@
   @media screen and (max-width: 768px) {
     .container-img{
       width: 95%;
+    }
+    .item-cards{
+      justify-content: flex-start;
     }
   }
 

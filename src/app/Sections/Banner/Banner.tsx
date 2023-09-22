@@ -33,7 +33,7 @@ const Banner = ({ typeBanner }: BannerProps) => {
       alt: "Image de développement",
     },
     {
-      title: "Livrable final",
+      title: "Livraison du projet",
       picture: images.bannerPicture5,
       alt: "Image de livrable final",
     },

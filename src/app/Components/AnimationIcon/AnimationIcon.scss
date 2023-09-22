@@ -8,11 +8,11 @@
 
   .containerIcon {
     @include displayCenterAround;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     text-align: center;
+    width: 100%;
 
     .itemsIcon {
-      width: 200px;
       margin: 30px;
     }
 
@@ -52,21 +52,23 @@
 }
 
 @media screen and (max-width: 768px) {
-    .animationIcon {
-        .containerIcon {
-          width: 100%;
-        .itemsIcon {
-            width: 70px;
-            margin: 10px;
-        }
+  .animationIcon {
+    .containerIcon {
+      width: 100%;
 
-        i {
-            font-size: 4vh;
-        }
-          h3 {
-            text-align: center;
-            font-size: 1.5vh;
-          }
-        }
+      .itemsIcon {
+        width: 70px;
+        margin: 10px;
+      }
+
+      i {
+        font-size: 7vh;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 1.5vh;
+      }
     }
+  }
 }

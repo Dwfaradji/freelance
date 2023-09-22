@@ -38,7 +38,7 @@ const Blog = () => {
       <div className="search-bar">
         <input type="search" placeholder="Rechercher" onChange={handleSearch} />
       </div>
-      <div className="container-cards">
+      <div className="container-cards  container mx-auto">
         {displayHeader && (
           <div className="header-blog">
             <h2> À la une </h2>

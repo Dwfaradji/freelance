@@ -19,11 +19,11 @@ interface ServiceProps {
 
 const Service = ({ dataServices }: ServiceProps) => {
   return (
-    <section className="container-fluid services">
+    <section className="container services ">
       <h2 className="text-h2">Services proposés</h2>
-      <div className="services__columns">
+      <div className="md:grid grid-rows-3 grid-flow-col gap-4 ">
         {dataServices.map((service, i) => (
-          <article key={i} className="services__column col-sm-12  col-md-4">
+          <article key={i} className="services__column grid grid-rows-[80px_minmax(50px,_1fr)_100px] grid-flow-col ">
             <h3 className="text-h3">{service.title}</h3>
             <p className="text-xl">{service.description}</p>
             <ul>
