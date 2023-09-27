@@ -43,7 +43,7 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="container-item">
-            <img src="" alt="" />
+            <img src="" alt="photo developpeur devevoke" />
           </div>
         </div>
         <div className="section-skill">

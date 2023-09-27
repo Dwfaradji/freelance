@@ -17,6 +17,7 @@ interface Project {
   image: string;
   alt: string;
   tech: string[];
+  link: string;
 }
 
 interface Price {

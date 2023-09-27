@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./Project.scss";
 import Image from "next/image";
@@ -8,6 +9,7 @@ interface Project {
   image: string;
   alt: string;
   tech: string[];
+  link: string;
 }
 
 interface ProjectsGridProps {
@@ -15,6 +17,10 @@ interface ProjectsGridProps {
 }
 
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
+  const linkProjects = (link:string) => {
+    console.log(link);
+    window.open(link, "_blank");
+  };
   return (
     <section className="container-project">
       <div className="content-project">
@@ -34,7 +40,11 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
         </p>
         <article className="projects-grid">
           {projects.map((project) => (
-            <div key={project.id} className="project-card">
+            <div
+              key={project.id}
+              className="project-card"
+              onClick={() => linkProjects(project.link)}
+            >
               <Image
                 src={project.image}
                 alt={project.alt}

@@ -10,6 +10,7 @@ const Footer: React.FC = () => {
       style={{
         background: `url(${images.footerBackground}) no-repeat center center `,
         backgroundSize: "cover",
+        filter:`url(${images.footerBackground})`
       }}
     >
       <div className="footer__container">

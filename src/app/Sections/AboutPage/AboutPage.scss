@@ -76,17 +76,17 @@
           animation-iteration-count: 1;
         }
 
-        //@keyframes background {
-        //  0% {
-        //    scale: 1;
-        //  }
-        //  50% {
-        //    scale: 1.1;
-        //  }
-        //  100% {
-        //    scale: 1;
-        //  }
-        //}
+        @keyframes background {
+          0% {
+            scale: 1;
+          }
+          50% {
+            scale: 1.1;
+          }
+          100% {
+            scale: 1;
+          }
+        }
 
         img {
           width: 50%;
