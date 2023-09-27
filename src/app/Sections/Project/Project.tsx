@@ -48,7 +48,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
               <Image
                 src={project.image}
                 alt={project.alt}
-                width="300"
+                width="500"
                 height="100"
               />
               <div className="project-overlay">

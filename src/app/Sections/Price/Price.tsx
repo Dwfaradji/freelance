@@ -34,7 +34,7 @@ const Price = ({ dataTarifs }: PriceProps) => {
   }, [isOpen]);
 
   return (
-    <section className="container mx-auto section-tarif">
+    <section className="container section-tarif">
       <div className="content-tarif">
         <h2 className="section-title text-h2">Nos tarifs</h2>
         <div className="tarif-grid">
