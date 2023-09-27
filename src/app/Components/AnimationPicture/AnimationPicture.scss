@@ -33,6 +33,7 @@
         -webkit-text-fill-color: transparent;
         padding: 8px;
         animation: animate 3s linear backwards;
+        color: transparent;
         @keyframes animate {
           0% {
             transform: scale(0);
@@ -76,8 +77,8 @@
     justify-content: space-between;
 
     .image-container {
-      width: 100px;
-      height: 100px;
+      width: 4em;
+      height: 4em;
       margin: 10px;
     }
 
@@ -96,11 +97,12 @@
     .chevron {
       transform: rotate(90deg);
       border: none;
+      text-decoration: none;
+
       //translate: -340% 110%;
     }
 
     .check {
-
       border: none;
       //translate: -340% 110%;
     }
