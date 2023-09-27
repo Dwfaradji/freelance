@@ -52,9 +52,9 @@ const About = () => {
           </p>
         </div>
       </div>
-      <button>
-        <a href="/a_propos">Qui suis je ?</a>
-      </button>
+      {/*<button>*/}
+      {/*  <a href="/a_propos">Qui suis je ?</a>*/}
+      {/*</button>*/}
     </section>
   );
 };
