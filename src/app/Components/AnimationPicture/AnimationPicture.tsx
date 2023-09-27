@@ -47,7 +47,7 @@ const AnimationPicture = ({ itemsPicture }: AnimationPictureProps) => {
   return (
     <>
       <h2 className="text-h2">Processus de développement web freelance</h2>
-      <div className="about-images" ref={sectionRef}>
+      <div className="about-images xl:container" ref={sectionRef}>
         {itemsPicture.map((item, i) => (
           <div key={i} className="item">
             <Image

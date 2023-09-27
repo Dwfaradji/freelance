@@ -23,9 +23,9 @@ const Banner = ({ typeBanner }: BannerProps) => {
       alt: "Image de prise contact",
     },
     {
-      title: "Planification et conception",
+      title: "Planification",
       picture: images.bannerPicture2,
-      alt: "Image de planification et conception",
+      alt: "Image de planification",
     },
     {
       title: "Développement",
