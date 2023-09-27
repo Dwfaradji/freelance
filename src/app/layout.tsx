@@ -5,9 +5,9 @@ import "@/app/Styles/globals.scss";
 import GoogleAnalytics from "@/app/Utils/GoogleAnalytics";
 
 export const metadata = {
-  title: "DevEvoke - Site web sur mesure par un développeur web freelance",
+  title: "DevEvoke : Développement Web & Applications de Qualité Supérieure",
   description:
-    "Besoin d'un développeur web freelance à Perpignan ? Obtenez un site internet, responsive et optimisé pour les moteurs de recherche. Contactez-nous dès maintenant pour bénéficier d'un site sur mesure, créé selon vos besoins spécifiques.",
+    "DevEvoke : Votre succès en ligne commence ici. Experts en développement web & applications. Excellence dans le code propre et maintenable. Transformez vos idées en réalité numérique avec notre expertise.",
   alternates: {
     canonical: "https://www.devevoke.com/",
     languages: {
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" >
+    <html lang="fr">
       <Script
         strategy="lazyOnload"
         src="https://kit.fontawesome.com/53013b6bdc.js"
@@ -49,7 +49,6 @@ export default function RootLayout({
       ></Script>
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
       <body>
-
         {children}
         <Footer />
       </body>
