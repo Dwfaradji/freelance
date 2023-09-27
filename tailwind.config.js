@@ -25,9 +25,9 @@ module.exports = {
         h2: "1.4rem",
         h3: "1.2rem",
       },
-      // container: {
-      //   center: true,
-      // },
+      container: {
+        center: true,
+      },
       gridTemplateRows: {
         // Simple 8 row grid
         8: "repeat(3, minmax(0, 1fr))",
