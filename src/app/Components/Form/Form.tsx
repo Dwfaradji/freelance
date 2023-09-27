@@ -31,6 +31,7 @@ const Form = () => {
       // Traitez la réponse de l'API
       if (response.status === 200) {
         console.log("L'e-mail a été envoyé avec succès.");
+        window.location.hash = "confirmation";
         setSendMsg(true);
         reset(); // ici
       } else {
