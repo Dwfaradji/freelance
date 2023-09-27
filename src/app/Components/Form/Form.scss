@@ -4,6 +4,7 @@
   display: grid;
   grid-gap: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
 
   label {
     color: $color-primary;
@@ -58,8 +59,9 @@
   .submit-button {
     background: rgba(16, 1, 1, 0.58);
   }
-  .send-msg{
-    p{
+
+  .send-msg {
+    p {
       color: $color-primary;
     }
   }
