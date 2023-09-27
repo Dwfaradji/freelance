@@ -1,6 +1,6 @@
 const images = {
   groupomania: "/images/groupomania.webp",
-  hrnet: "/images/hrnet.png",
+  hrnet: "/images/devevoke-hrnet.png",
   kanap: "/images/kanap.webp",
   piquante: "/images/piquante.webp",
   chouetteAgence: "/images/devevoke-chouette.png",
