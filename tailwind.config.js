@@ -39,6 +39,14 @@ module.exports = {
       colors: {
         "regal-blue": "#4c98c9",
       },
+      inputStyle: {
+        "&:focus": {
+          boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
+          outline: "2px solid transparent",
+          outlineOffset: "2px",
+        },
+
+      },
     },
   },
   plugins: [],

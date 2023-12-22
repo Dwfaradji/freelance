@@ -8,6 +8,8 @@
   text-align: center;
   padding: 0 30px;
   height: 100%;
+  width: 100%;
+  margin: 0 auto;
 
   .content-tarif {
     display: flex;
@@ -88,7 +90,9 @@
       transition: opacity 0.3s ease;
 
       button {
-        @include button
+        @include button;
+        position: relative;
+        top: 2em;
       }
     }
 

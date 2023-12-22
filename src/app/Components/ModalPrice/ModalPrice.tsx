@@ -25,14 +25,8 @@ const ModalPrice = ({ contentModal, setIsOpen }: ModalPriceProps) => {
     dataMap();
   }, [contentModal, dataMap]);
 
-  const openModal = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    setIsOpen(false);
-    if (section) {
-      //scroll 200px above the section
-      const y = section.getBoundingClientRect().top + window.scrollY - 64;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
+  const getPageDevis = () => {
+    window.open("/form-devis", "_blank");
   };
   return (
     <div className="container-price">
@@ -46,7 +40,7 @@ const ModalPrice = ({ contentModal, setIsOpen }: ModalPriceProps) => {
           ))}
       </ul>
       <h3>À partir de: {modal.price}</h3>
-      <button onClick={() => openModal("contact")}>Demander un devis</button>
+      <button onClick={getPageDevis}>Demander un devis</button>
     </div>
   );
 };
