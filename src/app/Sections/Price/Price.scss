@@ -3,13 +3,12 @@
 
 //Section qui affichera 3 formules de tarifs différentes sur 3 colonnes
 .section-tarif {
-  margin: 5vh 0;
   background-color: $color-primary;
   text-align: center;
   padding: 0 30px;
   height: 100%;
   width: 100%;
-  margin: 0 auto;
+  margin: 5vh auto;
 
   .content-tarif {
     display: flex;
