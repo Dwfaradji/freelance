@@ -1,11 +1,11 @@
 import React from "react";
-import FormulaireDevis from "@/app/(pages)/form-devis/form-devis";
+// import FormulaireDevis from "@/app/(pages)/form-devis/form-devis";
 
 
 const Page = () => {
   return (
     <div>
-      <FormulaireDevis />
+      {/*<FormulaireDevis />*/}
     </div>
   );
 };
