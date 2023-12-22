@@ -1,6 +1,6 @@
-// import React from "react";
+import React from "react";
 // import "@/app/Styles/globals.scss";
-//
+
 // export const metadata = {
 //   title: "processus de création de site web sur mesure",
 //   description:
@@ -16,7 +16,7 @@
 //     index: true,
 //   },
 // };
-//
+
 // export default function ProcessLayout({
 //   children,
 // }: {
