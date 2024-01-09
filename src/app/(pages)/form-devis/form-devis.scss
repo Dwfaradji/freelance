@@ -15,3 +15,8 @@
 ////  outline: none;             /* Supprime l'outline par défaut lors de la mise au point */
 ////  box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.5); /* Ajoute un shadow pour un effet visuel de mise au point */
 ////}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
