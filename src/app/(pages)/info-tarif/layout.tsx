@@ -1,5 +1,5 @@
 import React from "react";
-import "@/app/Styles/globals.scss";
+import "@/app/globals.scss";
 
 export const metadata = {
   title: "tarifs de création de site web sur mesure",

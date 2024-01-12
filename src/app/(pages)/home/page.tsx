@@ -1,6 +1,6 @@
 import React from "react";
-import Home from "@/app/(pages)/home/home";
-import NavBar from "@/app/Sections/NavBar/NavBar";
+import Home from "../../(pages)/home/home";
+
 
 const Page = () => {
   return (

@@ -1,0 +1,74 @@
+@import "/src/styles/Variables.module";
+
+.animationIcon {
+  @include displayCenterAround;
+  flex-wrap: wrap;
+  text-align: center;
+  flex-direction: column;
+
+  .containerIcon {
+    @include displayCenterAround;
+    flex-wrap: nowrap;
+    text-align: center;
+    width: 100%;
+
+    .itemsIcon {
+      margin: 30px;
+    }
+
+    i {
+      font-size: 7vh;
+      background: -webkit-linear-gradient(to bottom, #0dcaf0, #3c9dda);
+      background: linear-gradient(to bottom, #0dcaf0, #3c9dda);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-left: 1px;
+      animation-name: myAnimation;
+      animation-duration: 4s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      filter: drop-shadow(2px 3px 2px grey);
+
+      @keyframes myAnimation {
+        0% {
+          transform: translateY(-10px);
+        }
+        50% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(-10px);
+        }
+      }
+    }
+
+    h3 {
+      margin-top: 15px;
+      white-space: nowrap;
+    }
+
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .animationIcon {
+    .containerIcon {
+      width: 100%;
+
+      .itemsIcon {
+        width: 70px;
+        margin: 10px;
+      }
+
+      i {
+        font-size: 7vh;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 1.5vh;
+      }
+    }
+  }
+}

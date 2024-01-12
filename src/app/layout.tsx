@@ -1,8 +1,11 @@
 import React from "react";
 import Script from "next/script";
-import Footer from "@/app/Sections/Footer/Footer";
-import "@/app/Styles/globals.scss";
-import GoogleAnalytics from "@/app/Utils/GoogleAnalytics";
+import Footer from "../components/sections/Footer/Footer";
+import "./globals.scss";
+import GoogleAnalytics from "../lib/GoogleAnalytics";
+import { Inter } from "next/font/google";
+import Navbar from "@/components/sections/NavBar/NavBar";
+import { navItems } from "@/data/data";
 
 export const metadata = {
   title: "DevEvoke : Développement Web & Applications de Qualité Supérieure",
@@ -34,6 +37,7 @@ export const metadata = {
   //   ],
   // },
 };
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export default function RootLayout({
   children,
@@ -41,14 +45,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <Script
         strategy="lazyOnload"
         src="https://kit.fontawesome.com/53013b6bdc.js"
         crossOrigin="anonymous"
       ></Script>
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
-      <body>
+      <body className={inter.variable}>
+        <Navbar items={navItems} />
         {children}
         <Footer />
       </body>

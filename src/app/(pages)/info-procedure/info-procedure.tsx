@@ -1,6 +1,6 @@
 import React from "react";
-import PagesInfo from "@/app/Components/PagesInfo/PagesInfo";
-import { pageInfosProcess } from "@/app/Data/data";
+import PagesInfo from "@/components/ui/PagesInfo/PagesInfo";
+import { pageInfosProcess } from "@/data/data";
 
 const InfoProcedure = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import PagesInfo from "@/app/Components/PagesInfo/PagesInfo";
-import { pageMentionsLegales } from "@/app/Data/data";
+import PagesInfo from "@/components/ui/PagesInfo/PagesInfo";
+import { pageMentionsLegales } from "@/data/data";
 
 const MentionsLegal = () => {
   return (

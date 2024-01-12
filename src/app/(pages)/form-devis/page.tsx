@@ -1,5 +1,5 @@
 import React from "react";
-import FormulaireDevis from "@/app/(pages)/form-devis/form-devis";
+import FormulaireDevis from "../../../components/ui/FormDevis/form-devis";
 
 
 const Page = () => {

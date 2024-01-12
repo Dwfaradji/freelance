@@ -1,5 +1,5 @@
 import React from "react";
-import "@/app/Styles/404.scss";
+import "../styles/404.scss";
 import Link from "next/link";
 
 const NotFound = () => {

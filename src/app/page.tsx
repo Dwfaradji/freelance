@@ -1,6 +1,6 @@
 import React from "react";
-import Home from "@/app/(pages)/home/home";
-import "@/app/Styles/globals.scss";
+import Home from "../app/(pages)/home/home";
+import "./globals.scss";
 
 const Page: React.FC = () => {
   return (
