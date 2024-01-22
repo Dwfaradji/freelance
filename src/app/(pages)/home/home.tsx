@@ -18,7 +18,9 @@ import {
   picturesCarousel,
 } from "../../../data/data";
 
+
 const Home = () => {
+
   return (
     <>
       <div id="home"></div>

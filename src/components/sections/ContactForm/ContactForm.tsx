@@ -46,7 +46,7 @@ const ContactForm = () => {
             </div>
             <div className="flex flex-col items-center">
               <BtnOpenForm />
-              {/*<Form />*/}
+              {/*<FormContact />*/}
             </div>
           </div>
         </div>

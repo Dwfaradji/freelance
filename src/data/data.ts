@@ -10,7 +10,7 @@ const projects: Project[] = [
     title: "Application Web",
     image: String(images.hrnet),
     alt: "image du projet hrnet",
-    tech: ["Test U/I", "React", "Npm"],
+    tech: ["Test U/I ", " React ", " Npm"],
     link: "https://devevoke-projet.github.io/hrnet/",
   },
   {
@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "E-commerce",
     image: String(images.ohmyfood),
     alt: "image du projet ohmyfood",
-    tech: ["REACT.JS", "SASS"],
+    tech: ["REACT.JS, ", "SASS"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_3_27052021/",
   },
   {
@@ -42,7 +42,7 @@ const projects: Project[] = [
     title: "Site Vitrine",
     image: String(images.fishEyes),
     alt: "image du projet fish eyes",
-    tech: ["REACT.JS"],
+    tech: ["REACT"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_P6_19-08-22/",
   },
   {
@@ -50,7 +50,7 @@ const projects: Project[] = [
     title: "Site Vitrine",
     image: String(images.kasa),
     alt: "image du projet kasa",
-    tech: ["REACT.JS"],
+    tech: ["REACT"],
     link: "https://devevoke-projet.github.io/kasa/",
   },
 ];
@@ -62,7 +62,7 @@ const picturesCarousel: Picture = {
 };
 //Navigation
 const navItems: Item[] = [
-  { title: "Accueil", link: "home", scroll: true },
+  { title: "Accueil", link: "/", scroll: true },
   { title: "A propos", link: "about", scroll: true },
   { title: "Projet", link: "project", scroll: true },
   { title: "Services", link: "services", scroll: true },

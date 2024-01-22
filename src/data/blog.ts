@@ -19,8 +19,8 @@ const blog: BlogProps[] = [
         text: "Un blog vous offre la possibilité de publier fréquemment du contenu, ce qui constitue un facteur essentiel pour améliorer votre référencement. En proposant un contenu frais et pertinent, vous permettez aux moteurs de recherche de mieux appréhender votre site, ce qui peut entraîner une amélioration significative de votre classement dans les résultats de recherche. En rédigeant des articles portant sur des sujets connexes à votre domaine d'expertise, vous pouvez élargir votre visibilité et créer des regroupements thématiques autour de divers sujets. Par exemple, dans mon cas, j'aborderais des sujets relatifs au marketing numérique, aux stratégies d'optimisation SEO, aux plateformes de commerce électronique, etc. En développant ces différentes thématiques, vous renforcez votre SEO et obtenez un référencement de qualité pour un large éventail de mots-clés pertinents.",
       },
       {
-        title: "Augmentez le nombre de pages de votre site",
-        text: "D'un point de vue SEO, le nombre de pages de votre site revêt une importance considérable. Même si Google ne précise pas le nombre exact de pages requis, nous savons que les liens internes (maillage interne) jouent un rôle crucial pour les moteurs de recherche. Il est bien plus complexe d'optimiser votre maillage interne lorsque vous disposez de seulement 4 pages, par rapport à 400 pages. Un blog bien structuré vous permet d'améliorer votre maillage interne en créant des liens entre vos articles. Cette pratique favorise votre référencement. Ainsi, nous pouvons affirmer que le nombre de pages influence indirectement votre référencement. Toutefois, veillez à ne pas créer des pages superflues. L'objectif est de proposer des pages à forte valeur ajoutée pour le référencement et de les interconnecter entre elles.",
+        title: "Augmentez le nombre de (src) de votre site",
+        text: "D'un point de vue SEO, le nombre de (src) de votre site revêt une importance considérable. Même si Google ne précise pas le nombre exact de (src) requis, nous savons que les liens internes (maillage interne) jouent un rôle crucial pour les moteurs de recherche. Il est bien plus complexe d'optimiser votre maillage interne lorsque vous disposez de seulement 4 (src), par rapport à 400 (src). Un blog bien structuré vous permet d'améliorer votre maillage interne en créant des liens entre vos articles. Cette pratique favorise votre référencement. Ainsi, nous pouvons affirmer que le nombre de (src) influence indirectement votre référencement. Toutefois, veillez à ne pas créer des (src) superflues. L'objectif est de proposer des (src) à forte valeur ajoutée pour le référencement et de les interconnecter entre elles.",
       },
       {
         title: "Notoriété et crédibilité",
@@ -75,7 +75,7 @@ const blog: BlogProps[] = [
       },
       {
         title: "Performance optimale",
-        text: "Un site créé sans CMS peut être plus léger et plus rapide, ce qui améliore l'expérience utilisateur et le référencement. En évitant le poids supplémentaire des plugins et des fonctionnalités inutilisées, vous pouvez optimiser les performances de votre site et réduire le temps de chargement des pages. Vous avez un contrôle total sur l'optimisation du code, ce qui permet de garantir une expérience fluide et réactive pour vos visiteurs.",
+        text: "Un site créé sans CMS peut être plus léger et plus rapide, ce qui améliore l'expérience utilisateur et le référencement. En évitant le poids supplémentaire des plugins et des fonctionnalités inutilisées, vous pouvez optimiser les performances de votre site et réduire le temps de chargement des (src). Vous avez un contrôle total sur l'optimisation du code, ce qui permet de garantir une expérience fluide et réactive pour vos visiteurs.",
       },
       {
         title: "Sécurité renforcée ",

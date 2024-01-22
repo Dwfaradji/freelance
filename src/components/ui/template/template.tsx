@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Images from "next/image";
 import images from "@/assets/Gallery";
 
@@ -15,8 +15,9 @@ import "./template.css";
 // import required modules Swiper
 import { Navigation } from "swiper/modules";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import { useMyContext } from "@/context/Mycontext";
 
-// data
+// Type
 interface Article {
   id: number;
   title: string;
@@ -24,6 +25,13 @@ interface Article {
   description: string;
 }
 
+interface MultiCheckboxProps {
+  options: string[];
+  selectedOption: string;
+  onTemplateSelect: (option: string) => void;
+}
+
+//DATA
 const articles: Article[] = [
   {
     id: 1,
@@ -46,7 +54,6 @@ const articles: Article[] = [
     description:
       "Un design moderne et interactif, adapté aux entreprises technologiques, aux blogueurs high-tech ou aux startups.",
   },
-  // ...plus d'articles
   {
     id: 4,
     title: "CreativeMind",
@@ -70,9 +77,9 @@ const articles: Article[] = [
   },
 ];
 
-const Template = () => {
+const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
   return (
-    <div className="">
+    <div className="w-full">
       <Swiper
         effect={"coverflow"}
         grabCursor={false}
@@ -93,27 +100,27 @@ const Template = () => {
       >
         {articles.map((article, index) => (
           <SwiperSlide key={article.id}>
-            <div className="group relative flex flex-col justify-center items-center cursor-pointer">
+            <div className="group  w-full relative flex flex-col justify-center items-center cursor-pointer">
               <Images
                 width={150}
                 height={100}
                 src={article.image}
                 alt={article.title}
-                style={{ width: "100%", height: "200px" }}
+                style={{ width: "100%", height: "215px" }}
               />
-              <div className="absolute top-0 h-52  left-0 right-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute h-full w-full flex items-center p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {article.description}
               </div>
-              <div className="w-full flex flex-col justify-center items-center m-5">
-                <label htmlFor={ String(article.id)}>{article.title}</label>
-                <input
-                  className={"cursor-pointer"}
-                  id={ String(article.id)}
-                  type="radio"
-                  name="articleSelection"
-                  value={article.id}
-                />
-              </div>
+            </div>
+            <div className="w-full flex flex-col justify-center items-center m-5">
+              <label htmlFor={String(article.id)}>{article.title}</label>
+              <input
+                className={"cursor-pointer"}
+                id={String(article.id)}
+                type="radio"
+                name="articleSelection"
+                onChange={() => onTemplateSelect(article.title)}
+              />
             </div>
           </SwiperSlide>
         ))}

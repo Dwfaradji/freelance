@@ -17,7 +17,7 @@ export const metadata = {
   },
 };
 
-export default function ProcessLayout({
+export default function BlogLayout({
   children,
 }: {
   children: React.ReactNode;

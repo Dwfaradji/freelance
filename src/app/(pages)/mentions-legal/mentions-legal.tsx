@@ -6,7 +6,6 @@ const MentionsLegal = () => {
   return (
     <div>
       <PagesInfo infosText={pageMentionsLegales} />
-
     </div>
   );
 };

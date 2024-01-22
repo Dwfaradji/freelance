@@ -45,7 +45,8 @@
     position: absolute;
     background: white;
     top: 32px;
-    li{
+
+    li {
       height: 3em;
       display: flex;
       align-items: center;
@@ -156,6 +157,7 @@ div.main_list {
     li {
       width: 100%;
       text-align: right;
+
       a {
         text-align: center;
         width: 100%;
@@ -361,6 +363,7 @@ div.main_list {
   background-color: $color-quaternary !important;
   position: fixed;
   z-index: 1000;
+  top: 0;
 
   .items-nav {
     text-decoration: none;

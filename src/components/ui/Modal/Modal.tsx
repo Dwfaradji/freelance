@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./Modal.scss";
 import ModalPrice from "../../../components/ui/ModalPrice/ModalPrice";
-import Form from "../../../components/ui/Form/Form";
+import FormContact from "@/components/ui/FormContact/FormContact";
 
 interface ModalProps {
   showModal: boolean;
@@ -10,7 +10,7 @@ interface ModalProps {
   contentModal?: string | undefined;
   typeModal: string;
 }
-
+//TODO: regler le bug
 const Modal: React.FC<ModalProps> = ({
   showModal,
   setIsOpen,
@@ -22,7 +22,7 @@ const Modal: React.FC<ModalProps> = ({
     setIsOpen(false);
   };
   useEffect(() => {
-    showModal && (document.body.style.overflow = "hidden");
+    showModal && (document.body.style.overflow = "auto");
   }, [showModal]);
   return (
     <section>
@@ -35,7 +35,7 @@ const Modal: React.FC<ModalProps> = ({
           {typeModal === "price" && (
             <ModalPrice contentModal={contentModal} setIsOpen={setIsOpen} />
           )}
-          {typeModal === "form" && <Form />}
+          {typeModal === "form" && <FormContact />}
         </div>
       </div>
     </section>

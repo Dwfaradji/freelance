@@ -67,13 +67,37 @@
     }
 
     &:hover {
-      transform: scale(1.05);
-
+      transform: scale(1.3) translate(0, 50px);
       .project-overlay {
         opacity: 1;
       }
     }
   }
+}
+
+.mySwiperProject  {
+  width: 70%;
+  height: 100%;
+  padding: 50px;
+}
+
+.mySwiperProject .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+}
+
+.mySwiperProject .swiper-slide img {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  height: 30em;
+  object-fit: contain;
+}
+
+
+.mySwiperProject .swiper-pagination{
+  position: initial !important;
 }
 
 @media screen and (max-width: 768px) {

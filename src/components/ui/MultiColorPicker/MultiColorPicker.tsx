@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./MultiColorPicker.css";
 
 interface Colors {
@@ -15,29 +15,23 @@ interface MultiColorPickerProps {
 const MultiColorPicker: React.FC<MultiColorPickerProps> = ({
   onColorsSelect,
 }) => {
-  const [colors, setColors] = useState<Colors>({
+  const [selectColors, setSelectColors] = useState<Colors>({
     Principal: "#abc2e8",
     Secondaire: "#f7b6b6",
     Texte: "#a6cca4",
   });
-  useEffect(() => {
-    setColors({
-      Principal: "#abc2e8",
-      Secondaire: "#f7b6b6",
-      Texte: "#a6cca4",
-    });
-  }, []);
+
   const handleColorChange =
     (colorName: keyof Colors) =>
       (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newColors = { ...colors, [colorName]: event.target.value };
-        setColors(newColors);
+        const newColors = { ...selectColors, [colorName]: event.target.value };
+        setSelectColors(newColors);
         onColorsSelect(newColors);
       };
 
   return (
-    <div className="color-picker-container w-full justify-around flex h-full flex-wrap">
-      {Object.entries(colors).map(([colorName, colorValue]) => (
+    <div className="color-picker-container w-full justify-around flex flex-wrap h-96">
+      {Object.entries(selectColors).map(([colorName, colorValue]) => (
         <div key={colorName} className="flex items-center m-3 ">
           <div className="flex justify-center -space-x-14 ">
             <div className="mix-blend-multiply">

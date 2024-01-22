@@ -1,12 +1,16 @@
 import React from "react";
-import Home from "../../(pages)/home/home";
+import Home from "@/app/(src)/home/home";
+import { MyProvider } from "@/context/Mycontext";
+import { initialState, reducer } from "@/context/reducer";
 
 
 const Page = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    <MyProvider initialState={initialState} reducer={reducer}>
+      <main>
+
+      </main>
+    </MyProvider>
   );
 };
 

@@ -1,83 +1,95 @@
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 
-const MultiFontsChoice = () => {
-  const [selectedFontFirst, setSelectedFontFirst] = useState("Arial"); // État pour la police sélectionnée
-  const [selectedFontSecond, setSelectedFontSecond] = useState("Helvetica"); // État pour la police sélectionnée
+interface FontSelectorProps {
+  label: string;
+  value: string;
+  onChange: (fontKey: string, newValue: string) => void;
+  fonts: string[];
+}
 
-  // Liste des polices disponibles
-  const availableFonts = ["Arial", "Times New Roman", "Georgia", "Verdana"];
+const FontSelector: React.FC<FontSelectorProps> = ({
+  label,
+  value,
+  onChange,
+  fonts,
+}) => (
+  <div className="mb-8">
+    <label htmlFor={label}>{label}:</label>
+    <select
+      id={label}
+      value={value}
+      onChange={(e) => onChange(label, e.target.value)}
+      className="text-center"
+    >
+      {fonts.map((font) => (
+        <option key={font} value={font}>
+          {font}
+        </option>
+      ))}
+    </select>
+    <div
+      className="font-preview"
+      style={{
+        fontFamily: value,
+        marginTop: "2em",
+        border: "1px solid #ccc",
+        padding: "10px",
+      }}
+    >
+      Aperçu : The quick brown fox jumps over the lazy dog
+    </div>
+  </div>
+);
 
-  const handleFontChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if (e.target.id === "fontSelectorFirst") {
-      setSelectedFontFirst(e.target.value);
+interface MultiFontsProps {
+  onFontsSelect: (font: { [key: string]: string }) => void;
+}
+
+const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
+  const availableFonts: string[] = [
+    "Arial",
+    "Times New Roman",
+    "Georgia",
+    "Verdana",
+  ];
+
+  const [selectedFontFirst, setSelectedFontFirst] = useState<string>(
+    availableFonts[0]
+  );
+  const [selectedFontSecond, setSelectedFontSecond] = useState<string>(
+    availableFonts[1]
+  );
+
+  const handleFontChange = (fontKey: string, newValue: string) => {
+    if (fontKey === "Choisissez une police principale") {
+      setSelectedFontFirst(newValue);
     } else {
-      setSelectedFontSecond(e.target.value);
+      setSelectedFontSecond(newValue);
     }
   };
 
+  useEffect(() => {
+    onFontsSelect({
+      primary: selectedFontFirst,
+      secondary: selectedFontSecond,
+    });
+  }, [selectedFontFirst, selectedFontSecond]);
+
   return (
-    <div className={"w-full flex-wrap"}>
-      <div className="mb-8 ">
-        {/* Appliquer la police sélectionnée */}
-        <label className="w-2/4" htmlFor="fontSelectorFirst">
-          Choisissez une police principal:
-        </label>
-        <select
-          id="fontSelectorFirst"
-          value={selectedFontFirst}
-          onChange={handleFontChange}
-          className="text-center"
-        >
-          {availableFonts.map((font) => (
-            <option key={font} value={font}>
-              {font}
-            </option>
-          ))}
-        </select>
-        {/* Élément d'aperçu */}
-        <div
-          className="font-preview"
-          style={{
-            fontFamily: selectedFontFirst,
-            marginTop: "20px",
-            border: "1px solid #ccc",
-            padding: "10px",
-          }}
-        >
-          Aperçu : The quick brown fox jumps over the lazy dog
-        </div>
-      </div>
-      <div className="mb-8">
-        {/* Appliquer la police sélectionnée */}
-        <label htmlFor="fontSelectorLast">
-          Choisissez une police secondaire:
-        </label>
-        <select
-          id="fontSelectorLast"
-          value={selectedFontSecond}
-          onChange={handleFontChange}
-          className="text-center"
-        >
-          {availableFonts.map((font) => (
-            <option key={font} value={font}>
-              {font}
-            </option>
-          ))}
-        </select>
-        {/* Élément d'aperçu */}
-        <div
-          className="font-preview"
-          style={{
-            fontFamily: selectedFontSecond,
-            marginTop: "20px",
-            border: "1px solid #ccc",
-            padding: "10px",
-          }}
-        >
-          Aperçu : The quick brown fox jumps over the lazy dog
-        </div>
-        {/* ... reste du formulaire ... */}
-      </div>
+    <div className="w-full h-96 flex-col justify-around items-center flex">
+      <FontSelector
+        label="Choisissez une police principale"
+        value={selectedFontFirst}
+        onChange={handleFontChange}
+        fonts={availableFonts}
+      />
+      <FontSelector
+        label="Choisissez une police secondaire"
+        value={selectedFontSecond}
+        onChange={handleFontChange}
+        fonts={availableFonts}
+      />
     </div>
   );
 };

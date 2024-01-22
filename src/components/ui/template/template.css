@@ -1,28 +1,27 @@
 
 .mySwiper {
-    width: 100%;
+    width: 90%;
     height: 20em;
     cursor: auto;
 }
-.swiper-container {
+.mySwiper .swiper-container {
     cursor: pointer; /* Ou tout autre style de curseur que vous préférez */
 }
-.mySwiper .swiper-wrapper{
-    margin: 1em;
+.mySwiper .swiper-button-prev, .swiper-button-next {
+
 }
 /*.mySwiper .swiper-pagination{*/
-/*    position: relative;*/
-/*    top: 0em;*/
+/*
 /*}*/
 
-.swiper-slide {
+.mySwiper .swiper-slide {
     background-position: center;
     background-size: cover;
     width: 300px;
     height: 300px;
 }
 
-.swiper-slide img {
+.mySwiper .swiper-slide img {
     display: block;
     width: 100%;
 }

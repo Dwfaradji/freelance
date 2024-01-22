@@ -2,7 +2,7 @@
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
-import "./Form.scss";
+import "./FormContact.scss";
 
 interface FormData {
   firstname: string;
@@ -12,7 +12,7 @@ interface FormData {
   file: File[];
 }
 
-const Form = () => {
+const FormContact = () => {
   const [sendMsg, setSendMsg] = React.useState(false);
   //Variables
   const {
@@ -23,7 +23,7 @@ const Form = () => {
   } = useForm<FormData>();
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
-      const response = await axios.post("/api/contact", data, {
+      const response = await axios.post("/api/contact/", data, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -128,4 +128,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormContact;

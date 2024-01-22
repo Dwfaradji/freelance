@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import "./ModalPrice.scss";
 import { prices } from "../../../data/data";
+import Link from "next/link";
 
 interface ModalPriceProps {
   contentModal: string | undefined;
@@ -12,7 +13,6 @@ const ModalPrice = ({ contentModal, setIsOpen }: ModalPriceProps) => {
   // const [contentModal, setContentModal] = useState("");
 
   const [modal, setModal] = React.useState<any>([]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const dataMap = () => {
     prices.map((data: any) => {
       if (data.id === parseInt(contentModal as string)) {
@@ -25,9 +25,7 @@ const ModalPrice = ({ contentModal, setIsOpen }: ModalPriceProps) => {
     dataMap();
   }, [contentModal, dataMap]);
 
-  const getPageDevis = () => {
-    window.open("/form-devis", "_blank");
-  };
+  console.log(modal);
   return (
     <div className="container-price">
       <h2>{modal.subtitle}</h2>
@@ -40,7 +38,9 @@ const ModalPrice = ({ contentModal, setIsOpen }: ModalPriceProps) => {
           ))}
       </ul>
       <h3>À partir de: {modal.price}</h3>
-      <button onClick={getPageDevis}>Demander un devis</button>
+      <Link href={`/form-ui/${modal.id}/model/`}>
+        <button>Demander un devis</button>
+      </Link>
     </div>
   );
 };

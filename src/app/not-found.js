@@ -8,7 +8,7 @@ const NotFound = () => {
       <h1 className="title-404">Page introuvable</h1>
       <p className="subtitle-404">
 
-        {"Désolé, la page que vous recherchez n'existe pas."}
+        {"Désolé, la page.tsx que vous recherchez n'existe pas."}
       </p>
 
       <Link className="btn-404" href={"/"}>

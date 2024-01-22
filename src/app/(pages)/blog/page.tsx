@@ -1,6 +1,5 @@
 import React from "react";
-import Blog from "../../../components/sections/Blog/Blog"
-import ReturnHome from "../../../components/ui/RetunHome/ReturnHome";
+import Blog from "../../../components/sections/Blog/Blog";
 
 const Page = () => {
   return (

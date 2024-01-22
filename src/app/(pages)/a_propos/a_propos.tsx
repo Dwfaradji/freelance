@@ -1,5 +1,6 @@
 import React from "react";
-import AboutPage from "@/app/Sections/AboutPage/AboutPage";
+import AboutPage from "@/components/sections/AboutPage/AboutPage";
+
 
 const APropos = () => {
   return (
