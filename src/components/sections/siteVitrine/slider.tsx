@@ -191,12 +191,12 @@ const Slider = ({ slidesData }: Slide) => {
         <div className="swiper-navigation m-8">
           {!dataForm && (
             <>
-              <button onClick={back}>
+              <button className="w-2/3 md:w-1/5" onClick={back}>
                 <i className="fa-solid fa-chevron-left mr-3"></i>
                 {"Retour"}
               </button>
 
-              <button onClick={nextOrSubmit}>
+              <button className="w-2/3 md:w-1/5" onClick={nextOrSubmit}>
                 {currentSlide < lastSlideIndex ? "Suivant" : "Soumettre"}
               </button>
             </>

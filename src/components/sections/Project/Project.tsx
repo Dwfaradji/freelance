@@ -4,7 +4,7 @@ import "./Project.scss";
 import Image from "next/image";
 
 // Import Swiper React components
-import { EffectFlip, Pagination, Navigation } from "swiper/modules";
+import { EffectFlip, Pagination, Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -53,26 +53,37 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
 
         <Swiper
           effect={"flip"}
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           grabCursor={true}
           pagination={true}
           navigation={true}
-          modules={[EffectFlip, Pagination, Navigation]}
-          className="mySwiperProject bg-white border rounded "
+          modules={[EffectFlip, Pagination, Navigation, Autoplay]}
+          className="mySwiperProject md:w-3/5 lg:w-3/5 rounded"
         >
           <article className="projects-grid project-card">
             {projects.map((project, index) => (
               <SwiperSlide key={project.id}>
-                <Link href={project.link}>
-                  <Image
-                    className="project-card"
-                    src={project.image}
-                    alt={project.alt}
-                    width="300"
-                    height="300"
-                  />
-                </Link>
-                <div className="text-center bg-white m-5">
-                  <h3 className="text-4xl">{project.title}</h3>
+
+                <div>
+                  <Link className={"block w-3/5 md:w-3/5 lg:w-4/5 mx-auto"} href={project.link}>
+                    <Image
+                      className="project-card"
+                      src={project.image}
+                      alt={project.alt}
+                      width="300"
+                      height="300"
+                    />
+                  </Link>
+
+                </div>
+
+                <div className="text-center text-white m-5">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl  text-white">{project.title}</h3>
                   {project.tech.map((tech) => (
                     <span
                       className="text-2xl w-17 md:w-32 lg:w-40"

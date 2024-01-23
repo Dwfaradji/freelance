@@ -76,7 +76,7 @@
 }
 
 .mySwiperProject  {
-  width: 70%;
+  //width: 70%;
   height: 100%;
   padding: 50px;
 }
@@ -91,13 +91,19 @@
   display: block;
   width: 80%;
   margin: 0 auto;
-  height: 30em;
+
   object-fit: contain;
 }
 
 
 .mySwiperProject .swiper-pagination{
   position: initial !important;
+  color: white;
+
+}
+.mySwiperProject .swiper-pagination .swiper-pagination-bullet{
+  color: white;
+  background: white;
 }
 
 @media screen and (max-width: 768px) {

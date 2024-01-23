@@ -53,7 +53,7 @@ export default function RootLayout({
       ></Script>
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
       <body className={inter.variable}>
-        <Navbar items={navItems} />
+        {/*<Navbar items={navItems} />*/}
         {children}
         <Footer />
       </body>

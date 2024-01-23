@@ -8,6 +8,7 @@ import { navItems } from "@/data/data";
 const Page = () => {
   return (
     <main>
+      <Navbar items={navItems} />
       <Home />
     </main>
   );

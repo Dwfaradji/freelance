@@ -4,7 +4,6 @@ import scrollToSection from "../../../lib/utils";
 import "./NavBar.scss";
 import logoSVG from "../../ui/Logo/logo";
 import Link from "next/link";
-import { router } from "next/client";
 
 interface Item {
   title: string;
@@ -78,7 +77,6 @@ const Navbar = ({ items }: NavProps) => {
   };
 
   if (typeof window !== "undefined") {
-    // Votre code utilisant "window" ici
     window.addEventListener("resize", handleResize);
   }
 
@@ -87,7 +85,6 @@ const Navbar = ({ items }: NavProps) => {
   };
 
   const openNavFunction = (item: any) => {
-
     scrollToSection(item.link, item.scroll);
     setOpenNav(false);
   };
