@@ -4,6 +4,7 @@ import scrollToSection from "../../../lib/utils";
 import "./NavBar.scss";
 import logoSVG from "../../ui/Logo/logo";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface Item {
   title: string;
@@ -16,6 +17,8 @@ interface NavProps {
 }
 
 const Navbar = ({ items }: NavProps) => {
+  const router = useRouter();
+
   const [itemsNav] = useState<Item[]>(items);
   const [liItems, setLiItems] = useState<string>("");
   const [openNav, setOpenNav] = useState<boolean>(false);
@@ -46,7 +49,7 @@ const Navbar = ({ items }: NavProps) => {
       const closeElement = document.querySelector(".closeCollapse .navLinks");
       const navTrigger = document.querySelector(".navTrigger");
       if (navElement) {
-        if (window.scrollY > 1010) {
+        if (window.scrollY > 1000) {
           setColors(colorsSecond);
           navElement.classList.add("affix");
           openElement && openElement.classList.add("affix");
@@ -61,8 +64,7 @@ const Navbar = ({ items }: NavProps) => {
           setColors(colorsInit);
         }
       }
-    };
-
+    }
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -85,7 +87,11 @@ const Navbar = ({ items }: NavProps) => {
   };
 
   const openNavFunction = (item: any) => {
-    scrollToSection(item.link, item.scroll);
+    if (item.scroll === false) {
+      router.push(item.link);
+    } else {
+      scrollToSection(item.link, item.scroll);
+    }
     setOpenNav(false);
   };
 

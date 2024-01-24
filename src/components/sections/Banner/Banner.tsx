@@ -15,7 +15,7 @@ const Banner = ({ typeBanner }: BannerProps) => {
     { title: "Sécurité", icon: "fa-solid fa-database" },
     { title: "JsCode", icon: "fa-brands fa-node-js" },
   ];
-
+  console.log(images.bannerPicture1);
   const bannerPicture = [
     {
       title: "Prise de contact",

@@ -1,7 +1,6 @@
 import React from "react";
 import BlogData from "../../../data/blog";
 import "./CardBlog.scss";
-import Link from "next/link";
 import Card from "../../ui/Card/Card";
 
 interface BlogData {

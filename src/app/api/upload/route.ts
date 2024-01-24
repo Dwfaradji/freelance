@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { UploadFile } from "../../Utils/UploadFile";
+import { UploadFile } from "@/lib/UploadFile";
+
 
 export async function POST(request: NextRequest) {
   await UploadFile(request);

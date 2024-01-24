@@ -313,8 +313,8 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
               )}
               {errors.radioSelections &&
                 errors.radioSelections[question.id] && (
-                  <span className="text-red-600">Ce champ est requis</span>
-                )}
+                <span className="text-red-600">Ce champ est requis</span>
+              )}
             </div>
           ))}
           <div className="mb-4">

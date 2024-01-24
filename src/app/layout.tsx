@@ -4,8 +4,6 @@ import Footer from "../components/sections/Footer/Footer";
 import "./globals.scss";
 import GoogleAnalytics from "../lib/GoogleAnalytics";
 import { Inter } from "next/font/google";
-import Navbar from "@/components/sections/NavBar/NavBar";
-import { navItems } from "@/data/data";
 
 export const metadata = {
   title: "DevEvoke : Développement Web & Applications de Qualité Supérieure",

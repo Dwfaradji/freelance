@@ -9,7 +9,7 @@ export default function RootLayout({
 
   return (
     <div>
-      <Navbar items={[  { title: "Blog", link: "blog", scroll: false },]} />
+      <Navbar items={[ {title: "Accueil", link: "/", scroll: false }, { title: "Blog", link: "/blog", scroll: false }]} />
       {children}
     </div>
   );

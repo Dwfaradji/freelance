@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ContactForm.scss";
 import images from "../../../assets/Gallery";
 import Image from "next/image";

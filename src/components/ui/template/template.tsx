@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Images from "next/image";
 import images from "@/assets/Gallery";
 
@@ -15,7 +15,6 @@ import "./template.css";
 // import required modules Swiper
 import { Navigation } from "swiper/modules";
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import { useMyContext } from "@/context/Mycontext";
 
 // Type
 interface Article {

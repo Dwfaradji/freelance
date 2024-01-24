@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import "./ModalPrice.scss";
-import { prices } from "../../../data/data";
+import { prices } from "@/data/data";
 import Link from "next/link";
 
 interface ModalPriceProps {
@@ -13,19 +13,16 @@ const ModalPrice = ({ contentModal, setIsOpen }: ModalPriceProps) => {
   // const [contentModal, setContentModal] = useState("");
 
   const [modal, setModal] = React.useState<any>([]);
-  const dataMap = () => {
+
+  useEffect(() => {
     prices.map((data: any) => {
       if (data.id === parseInt(contentModal as string)) {
         setModal(data);
         return data;
       }
     });
-  };
-  useEffect(() => {
-    dataMap();
-  }, [contentModal, dataMap]);
+  }, [contentModal]);
 
-  console.log(modal);
   return (
     <div className="container-price">
       <h2>{modal.subtitle}</h2>

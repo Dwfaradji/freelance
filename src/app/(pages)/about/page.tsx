@@ -1,5 +1,5 @@
 import React from "react";
-import APropos from "@/app/(pages)/a_propos/a_propos";
+import APropos from "@/app/(pages)/about/a_propos";
 
 
 const Page = () => {

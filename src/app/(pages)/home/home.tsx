@@ -10,17 +10,9 @@ import CallToAction from "../../../components/sections/CallToAction/CallToAction
 import Ancre from "../../../components/ui/Ancre/Ancre";
 import Banner from "../../../components/sections/Banner/Banner";
 
-import {
-  projects,
-  services,
-  prices,
-  navItems,
-  picturesCarousel,
-} from "../../../data/data";
-
+import { projects, services, prices, picturesCarousel } from "@/data/data";
 
 const Home = () => {
-
   return (
     <>
       <div id="home"></div>

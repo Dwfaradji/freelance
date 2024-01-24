@@ -53,7 +53,7 @@ const About = () => {
         </div>
       </div>
       {/*<button>*/}
-      {/*  <a href="/a_propos">Qui suis je ?</a>*/}
+      {/*  <a href="/about">Qui suis je ?</a>*/}
       {/*</button>*/}
     </section>
   );

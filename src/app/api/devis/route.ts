@@ -3,7 +3,7 @@ import sgMail from "@sendgrid/mail";
 
 const res = NextResponse;
 
-interface SendGridMail {
+interface SendGridMailDevis {
   to: string;
   from: string;
   templateId: string;
@@ -53,7 +53,6 @@ export async function POST(request: Request) {
   const pattern =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!pattern.test(form.email)) {
-    console.log("testEmail");
     return res.json({
       message: "EMAIL_SYNTAX_INCORRECT",
     });
@@ -62,7 +61,7 @@ export async function POST(request: Request) {
   sgMail.setApiKey(apiKey);
   //
   try {
-    const devis: SendGridMail = {
+    const devis: SendGridMailDevis = {
       to: String(process.env.ADRESS_MAIL),
       from: String(process.env.ADRESS_MAIL),
       templateId: String(process.env.TEMPLATE_ID_DEVIS),

@@ -7,7 +7,6 @@ const Ancre = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
     if (window.scrollY > 100) {
-      console.log("test");
       setShow(true);
     } else {
       setShow(false);
@@ -16,7 +15,7 @@ const Ancre = () => {
 
   return (
     <div>
-      {show === true && (
+      {show && (
         <div className="ancre">
           <button
             aria-label="up page"

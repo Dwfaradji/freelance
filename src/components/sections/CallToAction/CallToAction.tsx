@@ -3,7 +3,6 @@ import React from "react";
 import "./CallToAction.scss";
 import images from "../../../assets/Gallery";
 import scrollToSection from "../../../lib/utils";
-import Images from "next/image";
 
 const CallToAction = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/404.scss";
 import Link from "next/link";
-import { FaceFrownIcon } from '@heroicons/react/24/outline';
+import { FaceFrownIcon } from "@heroicons/react/24/outline";
 
 const NotFound = () => {
   return (
@@ -13,9 +13,7 @@ const NotFound = () => {
       </p>
 
       <Link className="btn-404" href={"/"}>
-        <button>
-          {"Retour à l'accueil"}
-        </button>
+        <button>{"Retour à l'accueil"}</button>
       </Link>
     </div>
   );

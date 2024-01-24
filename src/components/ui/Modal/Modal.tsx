@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Modal.scss";
 import ModalPrice from "../../../components/ui/ModalPrice/ModalPrice";
 import FormContact from "@/components/ui/FormContact/FormContact";
