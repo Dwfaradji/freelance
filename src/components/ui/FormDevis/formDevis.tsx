@@ -177,7 +177,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
               type="text"
               className="w-full mt-2 p-1.5 ring-1 ring-inset focus:ring-0 focus:outline-none rounded-md focus:shadow-lg focus:shadow-indigo-500/40"
               id="nom"
-              {...register("nom", { required: false })}
+              {...register("nom", { required: true })}
             />
             {errors.nom && (
               <span className="text-red-600">Ce champ est requis</span>
@@ -191,7 +191,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
               className="w-full mt-2 p-1.5 ring-1 ring-inset focus:ring-0 focus:outline-none rounded-md focus:shadow-lg focus:shadow-indigo-500/40"
               type="email"
               id="email"
-              {...register("email", { required: false })}
+              {...register("email", { required: true })}
             />
             {errors.email && (
               <span className="text-red-600">Ce champ est requis</span>
@@ -204,7 +204,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
               className="w-full mt-2 p-1.5 ring-1 ring-inset focus:ring-0 focus:outline-none rounded-md focus:shadow-lg focus:shadow-indigo-500/40"
               type="tel"
               id="telephone"
-              {...register("telephone", { required: false })}
+              {...register("telephone", { required: true })}
             />
             {errors.telephone && (
               <span className="text-red-600">Ce champ est requis</span>
@@ -216,7 +216,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
             <textarea
               className="w-full mt-2 p-1.5 ring-1 ring-inset focus:ring-0 focus:outline-none rounded-md focus:shadow-lg focus:shadow-indigo-500/40"
               id="descriptionProjet"
-              {...register("descriptionProjet", { required: false })}
+              {...register("descriptionProjet", { required: true })}
             />
             {errors.descriptionProjet && (
               <span className="text-red-600">Ce champ est requis</span>
@@ -285,7 +285,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
                   {question.label2}
                 </label>
               </div>
-              {question.id == "particulier" && isProfessionnel && (
+              {question.label2 == "Professionnel" && isProfessionnel && (
                 <div className="mb-4">
                   <label
                     htmlFor="siret"
@@ -313,8 +313,8 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
               )}
               {errors.radioSelections &&
                 errors.radioSelections[question.id] && (
-                <span className="text-red-600">Ce champ est requis</span>
-              )}
+                  <span className="text-red-600">Ce champ est requis</span>
+                )}
             </div>
           ))}
           <div className="mb-4">

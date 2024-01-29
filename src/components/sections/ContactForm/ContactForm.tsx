@@ -20,7 +20,7 @@ const ContactForm = () => {
         <div className="flex-contact ">
           <div className="contact">
             <div className="text-form">
-              <h3 className="text-white mb-2">
+              <h3 className="text-white text-2xl mb-3">
                 {
                   "Vous voulez un site web ou une application unique qui mettra en valeur votre marque et attirera l'attention de vos visiteurs ? "
                 }

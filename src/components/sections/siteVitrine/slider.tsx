@@ -14,6 +14,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import FormulaireDevis from "@/components/ui/FormDevis/formDevis";
 import { useMyContext } from "@/context/Mycontext";
 import axios from "axios";
+import { log } from "node:util";
 
 interface Slide {
   slidesData: {
@@ -33,6 +34,7 @@ interface FormulaireDevisMethods {
 
 const Slider = ({ slidesData }: Slide) => {
   const [{ form }] = useMyContext();
+  const sendDataForm = useMyContext()[0];
 
   const swiperRef = useRef<SwiperClass | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -46,13 +48,20 @@ const Slider = ({ slidesData }: Slide) => {
   const [display, setDisplay] = useState("");
   const [displaySlide, setDisplaySlide] = useState("hidden");
   const [hiddenSlide, setHiddenSlide] = useState("block");
-  const [dataForm, setDataForm] = useState(undefined);
+  const [dataForm, setDataForm] = useState(form);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   // Mettre à jour le texte du bouton lorsque le slide change
   useEffect(() => {
     const nextSlideIndex = activeSlide + 1;
     const nextButtonText = slidesData[nextSlideIndex]?.button || "Formulaire";
     setTextButton(nextButtonText);
-
+    if (form) {
+      setDataForm(form);
+      console.log("test",form);
+      sendDevis();
+    }
     const prevSlideIndex = activeSlide - 1;
     const prevButtonText = slidesData[prevSlideIndex]?.button || "";
     if (prevButtonText === "") {
@@ -60,10 +69,8 @@ const Slider = ({ slidesData }: Slide) => {
     } else {
       setDisplay("");
     }
-
-    setDataForm(form);
     setPrevTextButton(prevButtonText);
-  }, [activeSlide, slidesData, dataForm, form]);
+  }, [activeSlide, slidesData, form]);
 
   // Fonction pour passer au slide suivant
   const getNextSlideTitle = () => {
@@ -80,8 +87,6 @@ const Slider = ({ slidesData }: Slide) => {
     swiperRef.current?.slidePrev();
   };
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   // Fonction pour revenir au slide précédent
   const back = () => {
     setHiddenSlide("block");
@@ -94,37 +99,33 @@ const Slider = ({ slidesData }: Slide) => {
   const lastSlideIndex = 0; // Exemple : si vous avez 5 slides
   // Fonction pour aller au slide suivant ou soumettre le formulaire
   const nextOrSubmit = () => {
-    // const lastSlideIndex = activeSlide;
     if (currentSlide < lastSlideIndex) {
       setCurrentSlide(currentSlide + 1);
-    } else {
-      // Soumettre le formulaire
+    } else if (textButton === "Formulaire") {
+      // Soumettre le formulaire seulement lorsque le bouton "Soumettre" est cliqué
       formulaireRef.current && formulaireRef.current.submit();
     }
   };
 
-  const sendDataForm = useMyContext()[0];
 
-  const sendDevis = async () => {
-    if (dataForm !== undefined) {
-      try {
-        const response = await axios.post("/api/devis", sendDataForm, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        // Traitez la réponse de l'API
-        if (response.status === 200) {
-          console.log("L'e-mail a été envoyé avec succès.");
-        } else {
-          console.log("Erreur lors de l'envoi de l'e-mail");
-        }
-      } catch (error) {
-        console.error("Une erreur s'est produite lors de l'envoi du devis:");
+  async function sendDevis() {
+    try {
+      const response = await axios.post("/api/devis", sendDataForm, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      // Traitez la réponse de l'API
+      if (response.status === 200) {
+        console.log("L'e-mail a été envoyé avec succès.");
+      } else {
+        console.log("Erreur lors de l'envoi de l'e-mail");
       }
+    } catch (error) {
+      console.error("Une erreur s'est produite lors de l'envoi du devis:");
     }
-  };
-  sendDevis();
+  }
+
   return (
     <div>
       <div className={`${hiddenSlide} m-8`}>
