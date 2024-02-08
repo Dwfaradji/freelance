@@ -1,5 +1,4 @@
 import React from "react";
-import "@/app/styles/globals.scss";
 
 export const metadata = {
   title: "A propos de Devevoke",
