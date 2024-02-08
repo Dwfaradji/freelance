@@ -64,7 +64,7 @@ const Navbar = ({ items }: NavProps) => {
           setColors(colorsInit);
         }
       }
-    }
+    };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
