@@ -167,7 +167,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
     },
   }));
   return (
-    <div className="mx-auto  m-5  text-left md:w-4/5 lg:w-2/3 gap-8 columns-1 ">
+    <div className="text-left gap-8 columns-1 ">
       <form className={hiddenForm} onSubmit={handleSubmit(onSubmit)}>
         {/* Champ pour le nom ou la société */}
         <div className={"1-partie"}>

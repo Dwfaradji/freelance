@@ -177,7 +177,7 @@ const Slider = ({ slidesData }: Slide) => {
       </div>
       <div className={`${displaySlide} w-4/5 mx-auto text-center  m-8`}>
         {!dataForm && (
-          <div className="m-7">
+          <div className="md:w-4/5 lg:w-2/5 mx-auto">
             <h2 className="text-black m-0">{"Formulaire"}</h2>
             <p className="text-black text-left m-3">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque,

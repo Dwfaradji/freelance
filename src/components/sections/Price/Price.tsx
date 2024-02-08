@@ -34,7 +34,7 @@ const Price = ({ dataTarifs }: PriceProps) => {
   // }, [isOpen]);
 
   return (
-    <section className="2xl:container section-tarif">
+    <section className="2xl:container section-tarif ">
       <div className="content-tarif">
         <h2 className="section-title text-h2">Nos tarifs</h2>
         <div className="tarif-grid">
@@ -42,12 +42,16 @@ const Price = ({ dataTarifs }: PriceProps) => {
             <article
               id={i.toString()}
               key={i.toString()}
-              className="tarif-card"
+              className="tarif-card  "
             >
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+              </span>
               <h3 className="test text-h3">
                 {tarif.title} <br /> {tarif.subtitle}
               </h3>
-              <div className="tarif-price">
+              <div className="tarif-price ">
                 <h3>À partir de {tarif.price}</h3>
               </div>
               <p>{tarif.description}</p>

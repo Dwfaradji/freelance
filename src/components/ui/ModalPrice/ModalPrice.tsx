@@ -36,7 +36,15 @@ const ModalPrice = ({ contentModal, setIsOpen }: ModalPriceProps) => {
       </ul>
       <h3>À partir de: {modal.price}</h3>
       <Link href={`/form-ui/${modal.id}/model/`}>
-        <button onClick={()=> setIsOpen(true)}>Demander un devis</button>
+        <span className="relative inline-flex">
+          <button className="relative animate-pulse" onClick={() => setIsOpen(true)}>
+            Demander un devis
+          </button>
+          <span className="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+          </span>
+        </span>
       </Link>
     </div>
   );

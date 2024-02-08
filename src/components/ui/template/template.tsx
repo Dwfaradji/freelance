@@ -79,8 +79,12 @@ const articles: Article[] = [
 const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
   const [displayNav, setDisplayNav] = useState(true);
   useEffect(() => {
+    if (window.innerWidth <= 640) {
+      setDisplayNav(false);
+    } else {
+      setDisplayNav(true);
+    }
     window.addEventListener("resize", (e) => {
-      console.log(window.innerWidth);
       if (window.innerWidth <= 640) {
         setDisplayNav(false);
       } else {

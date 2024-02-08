@@ -34,6 +34,11 @@ interface ProjectsGridProps {
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
   const [displayNav, setDisplayNav] = useState(true);
   useEffect(() => {
+    if (window.innerWidth <= 640) {
+      setDisplayNav(false);
+    } else {
+      setDisplayNav(true);
+    }
     window.addEventListener("resize", (e) => {
       console.log(window.innerWidth);
       if (window.innerWidth <= 640) {
@@ -48,7 +53,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
       <div className="content-project">
         <div id="project"></div>
         <h2 className="text-h2">Découvrez notre portfolio</h2>
-        <p className="text-xs md:text-xl text-justify">
+        <p className=" text-justify text-base">
           {`Découvrez notre portfolio de projets exceptionnels dans le domaine de
                 la création de site web et d'application. Notre section "Projets"
                 met en avant notre expertise en utilisant des technologies modernes

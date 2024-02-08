@@ -38,25 +38,25 @@ main {
 }
 
 h1 {
-  font-size: $font-size-h1;
+  font-size: $font-size-h1 !important;
   font-weight: $font-weight-bold;
 }
 
 h2 {
-  font-size: $font-size-h2;
+  font-size: $font-size-h2 !important;
   font-weight: $font-weight-bold;
   color: $color-secondary;
   margin-bottom: 50px;
 }
 
 h3 {
-  font-size: $font-size-h3;
+  font-size: $font-size-h3 !important;
   font-weight: $font-weight-bold;
   color: $color-secondary;
 }
 
 p {
-  font-size: $font-size-small;
+  font-size: $font-size-small !important;
   font-weight: $font-weight-regular;
   color: $color-primary;
   text-align: justify !important;

@@ -19,17 +19,16 @@ const Modal: React.FC<ModalProps> = ({
   typeModal,
 }) => {
   const [isClick, setIsClick] = useState(false);
-  console.log(typeModal);
   const closeModal = () => {
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY= "auto";
     setIsOpen(false);
   };
   useEffect(() => {
-    showModal && (document.body.style.overflow = "hidden");
-    isClick && (document.body.style.overflow = "auto");
+    showModal && (document.body.style.overflowY = "hidden");
+    isClick && (document.body.style.overflowY = "auto");
   }, [showModal,isClick]);
   return (
-    <section>
+    <section className={""}>
       <div className={`modal ${showModal ? "open" : ""}`}>
         <div className="modal-content ">
           <button className="close-btn" onClick={closeModal}>
