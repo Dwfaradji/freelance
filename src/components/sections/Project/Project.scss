@@ -1,0 +1,117 @@
+@import "/src/styles/Variables.module";
+
+
+.container-project {
+  background-color: $color-quaternary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .content-project {
+    width: 60%;
+    margin: 5vh auto;
+
+    h2 {
+      text-align: center;
+      color: $color-primary;
+    }
+
+    p {
+      margin-bottom: 5vh;
+    }
+  }
+
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: white;
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include displayCenterColumn;
+      padding: 20px;
+      color: $color-primary;
+      background-color: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      h3 {
+        margin-bottom: 10px;
+        color: $color-primary;
+        text-align: center;
+      }
+
+      span {
+        @include button;
+        //height: 5vh;
+        padding: 0 10px;
+        margin: 5px;
+        @include displayCenter;
+        pointer-events: none;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.3) translate(0, 50px);
+
+      .project-overlay {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.mySwiperProject {
+  //width: 70%;
+  height: 100%;
+  padding: 50px;
+}
+
+.mySwiperProject .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+}
+
+.mySwiperProject .swiper-slide img {
+  display: block;
+
+  margin: 0 auto;
+  height: 500px;
+  //object-fit: contain;
+}
+
+
+.mySwiperProject .swiper-pagination {
+  position: initial !important;
+  color: white;
+
+}
+
+.mySwiperProject .swiper-pagination .swiper-pagination-bullet {
+  color: white;
+  background: white;
+}
+
+@media screen and (max-width: 768px) {
+  .container-project {
+    .content-project {
+      width: 90%;
+    }
+  }
+}

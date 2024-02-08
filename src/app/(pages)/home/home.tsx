@@ -1,28 +1,20 @@
 import React from "react";
-import Navbar from "../../Sections/NavBar/NavBar";
-import Header from "../../Sections/Header/Header";
-import About from "../../Sections/About/About";
-import Projet from "../../Sections/Project/Project";
-import OptiRank from "../../Sections/OptiRank/OptiRank";
-import Price from "../../Sections/Price/Price";
-import ContactForm from "../../Sections/ContactForm/ContactForm";
-import Service from "../../Sections/Service/Service";
-import CallToAction from "../../Sections/CallToAction/CallToAction";
-import Ancre from "../../Components/Ancre/Ancre";
-import Banner from "../../Sections/Banner/Banner";
+import Header from "../../../components/sections/Header/Header";
+import About from "../../../components/sections/About/About";
+import Projet from "../../../components/sections/Project/Project";
+import OptiRank from "../../../components/sections/OptiRank/OptiRank";
+import Price from "../../../components/sections/Price/Price";
+import ContactForm from "../../../components/sections/ContactForm/ContactForm";
+import Service from "../../../components/sections/Service/Service";
+import CallToAction from "../../../components/sections/CallToAction/CallToAction";
+import Ancre from "../../../components/ui/Ancre/Ancre";
+import Banner from "../../../components/sections/Banner/Banner";
 
-import {
-  projects,
-  services,
-  prices,
-  navItems,
-  picturesCarousel,
-} from "@/app/Data/data";
+import { projects, services, prices, picturesCarousel } from "@/data/data";
 
 const Home = () => {
   return (
     <>
-      <Navbar items={navItems} />
       <div id="home"></div>
       <Header pictures={picturesCarousel} />
       <Banner typeBanner={"icon"} />

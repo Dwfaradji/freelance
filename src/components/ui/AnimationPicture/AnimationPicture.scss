@@ -1,0 +1,119 @@
+@import "/src/styles/Variables.module";
+
+.about-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+
+  .item {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //width: 23em;
+
+    .item2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      //width: 17em;
+      /*Selectionner le 2eme element de item2*/
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      i {
+        font-size: 4vh;
+        background: linear-gradient(to bottom, #0dcaf0, #3c9dda);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 8px;
+        animation: animate 3s linear backwards;
+        color: transparent;
+        @keyframes animate {
+          0% {
+            transform: scale(0);
+          }
+          50% {
+            transform: scale(0.5);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+
+    }
+  }
+
+
+  .image-container {
+    min-height: 67px;
+    margin-right: 1rem;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(2px 4px 6px grey);
+    width: 5em;
+    height: 5em;
+
+    img {
+      object-fit: cover;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-images {
+    justify-content: space-between;
+
+    .image-container {
+      width: 4em;
+      height: 4em;
+      margin: 10px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .item2 {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    .chevron {
+      transform: rotate(90deg);
+      border: none;
+      text-decoration: none;
+
+      //translate: -340% 110%;
+    }
+
+    .check {
+      border: none;
+      //translate: -340% 110%;
+    }
+
+    .text-h3 {
+      font-size: 1.2rem;
+      white-space: pre-wrap;
+      width: 200px;
+    }
+  }
+}
+
+
+/*Media query*/

@@ -1,0 +1,9 @@
+@import "/src/styles/Variables.module";
+
+
+.container-banner {
+  @include displayCenterColumn;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 5vh 1em;
+ }

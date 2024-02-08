@@ -1,5 +1,5 @@
 import React from "react";
-import "@/app/Styles/globals.scss";
+import "@/app/globals.scss";
 
 export const metadata = {
   title: "Mentions légales - DevEvoke",
@@ -17,7 +17,7 @@ export const metadata = {
   },
 };
 
-export default function ProcessLayout({
+export default function MentionsLayout({
   children,
 }: {
   children: React.ReactNode;

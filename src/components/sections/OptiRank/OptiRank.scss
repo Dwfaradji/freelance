@@ -1,0 +1,37 @@
+@import "/src/styles/Variables.module";
+
+.background-picture {
+  @include displayCenterColumn;
+
+  .background-content {
+    width: 60%;
+
+    @include displayCenterColumn;
+    text-align: center;
+    margin: 5vh 0;
+
+    h2 {
+      color: $color-primary;
+    }
+
+    p {
+      color: $color-primary;
+      margin-bottom: 5vh;
+    }
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .background-picture {
+    .background-content {
+      width: 90%;
+    }
+  }
+}
