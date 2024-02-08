@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Project.scss";
 import Image from "next/image";
 
@@ -32,13 +32,23 @@ interface ProjectsGridProps {
 }
 
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
-
+  const [displayNav, setDisplayNav] = useState(true);
+  useEffect(() => {
+    window.addEventListener("resize", (e) => {
+      console.log(window.innerWidth);
+      if (window.innerWidth <= 640) {
+        setDisplayNav(false);
+      } else {
+        setDisplayNav(true);
+      }
+    });
+  }, [displayNav]);
   return (
-    <section className="container-project">
+    <section className="container-project  ">
       <div className="content-project">
         <div id="project"></div>
         <h2 className="text-h2">Découvrez notre portfolio</h2>
-        <p className="text-xl">
+        <p className="text-xs md:text-xl text-justify">
           {`Découvrez notre portfolio de projets exceptionnels dans le domaine de
                 la création de site web et d'application. Notre section "Projets"
                 met en avant notre expertise en utilisant des technologies modernes
@@ -50,7 +60,8 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
                 nos projets et contactez-nous pour discuter de votre prochain projet
                 de développement web ou d'application en freelance.`}
         </p>
-
+      </div>
+      <>
         <Swiper
           effect={"flip"}
           spaceBetween={30}
@@ -61,45 +72,44 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
           }}
           grabCursor={true}
           pagination={true}
-          navigation={true}
+          navigation={displayNav}
           modules={[EffectFlip, Pagination, Navigation, Autoplay]}
-          className="mySwiperProject w-full md:w-full lg:w-full rounded"
+          className="mySwiperProject w-full md:w-full lg:w-full rounded "
         >
           <article className="projects-grid project-card w-full">
             {projects.map((project, index) => (
               <SwiperSlide key={project.id}>
-
-                <div>
-                  <Link className={"block mx-auto"} href={project.link}>
+                <div className={"m-3"}>
+                  <Link className={" block mx-auto h-72 "} href={project.link}>
                     <Image
                       className="project-card w-full lg:w-3/4"
                       src={project.image}
                       alt={project.alt}
-                      width="800"
-                      height="800"
-                      objectFit={"cover"}
-                      sizes="(min-width: 300px) 50vw, 100vw"
+                      width="600"
+                      height="400"
+                      // objectFit={"cover"}
+                      // sizes="(min-width: 300px) 50vw, 100vw"
                     />
                   </Link>
-
-                </div>
-
-                <div className="text-center text-white m-5">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl  text-white">{project.title}</h3>
-                  {project.tech.map((tech) => (
-                    <span
-                      className="text-2xl w-17 md:w-32 lg:w-40"
-                      key={tech}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  <div className="text-center text-white m-5">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl  text-white">
+                      {project.title}
+                    </h3>
+                    {project.tech.map((tech) => (
+                      <span
+                        className="text-2xl w-17 md:w-32 lg:w-40"
+                        key={tech}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
           </article>
         </Swiper>
-      </div>
+      </>
     </section>
   );
 };

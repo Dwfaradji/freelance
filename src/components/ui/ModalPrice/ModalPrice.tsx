@@ -36,7 +36,7 @@ const ModalPrice = ({ contentModal, setIsOpen }: ModalPriceProps) => {
       </ul>
       <h3>À partir de: {modal.price}</h3>
       <Link href={`/form-ui/${modal.id}/model/`}>
-        <button>Demander un devis</button>
+        <button onClick={()=> setIsOpen(true)}>Demander un devis</button>
       </Link>
     </div>
   );

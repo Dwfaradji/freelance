@@ -65,7 +65,7 @@ const Navbar = ({ items }: NavProps) => {
         }
       }
     };
-    // window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

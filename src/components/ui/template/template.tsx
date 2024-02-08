@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Images from "next/image";
 import images from "@/assets/Gallery";
 
@@ -77,13 +77,24 @@ const articles: Article[] = [
 ];
 
 const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
+  const [displayNav, setDisplayNav] = useState(true);
+  useEffect(() => {
+    window.addEventListener("resize", (e) => {
+      console.log(window.innerWidth);
+      if (window.innerWidth <= 640) {
+        setDisplayNav(false);
+      } else {
+        setDisplayNav(true);
+      }
+    });
+  }, [displayNav]);
   return (
     <div className="w-full h-full">
       <Swiper
         effect={"coverflow"}
-        grabCursor={false}
+        grabCursor={true}
         centeredSlides={true}
-        navigation={true}
+        navigation={displayNav}
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 50,
@@ -92,21 +103,21 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={true}
-        allowTouchMove={false}
+        pagination={false}
+        allowTouchMove={true}
         modules={[EffectCoverflow, Pagination, Navigation]}
-        className="mySwiper"
+        className="swipper-template"
       >
         {articles.map((article, index) => (
           <SwiperSlide key={article.id}>
             <div className="group  w-full relative flex flex-col justify-center items-center cursor-pointer">
               <Images
-                width={500}
+                width={400}
                 height={800}
                 src={article.image}
                 alt={article.title}
-                objectFit="contain"
-                style={{ width: "100%", height: "100%" }}
+                // style={{ width: "100%", height: "100%" }}
+                priority={true}
               />
               <div className="absolute h-full w-full flex items-center p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {article.description}

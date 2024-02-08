@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Modal.scss";
 import ModalPrice from "../../../components/ui/ModalPrice/ModalPrice";
 import FormContact from "@/components/ui/FormContact/FormContact";
+import Link from "next/link";
 
 interface ModalProps {
   showModal: boolean;
@@ -10,20 +11,23 @@ interface ModalProps {
   contentModal?: string | undefined;
   typeModal: string;
 }
-//TODO: regler le bug
+
 const Modal: React.FC<ModalProps> = ({
   showModal,
   setIsOpen,
   contentModal,
   typeModal,
 }) => {
+  const [isClick, setIsClick] = useState(false);
+  console.log(typeModal);
   const closeModal = () => {
     document.body.style.overflow = "auto";
     setIsOpen(false);
   };
   useEffect(() => {
-    showModal && (document.body.style.overflow = "auto");
-  }, [showModal]);
+    showModal && (document.body.style.overflow = "hidden");
+    isClick && (document.body.style.overflow = "auto");
+  }, [showModal,isClick]);
   return (
     <section>
       <div className={`modal ${showModal ? "open" : ""}`}>
@@ -33,7 +37,7 @@ const Modal: React.FC<ModalProps> = ({
           </button>
           {/*content modal*/}
           {typeModal === "price" && (
-            <ModalPrice contentModal={contentModal} setIsOpen={setIsOpen} />
+            <ModalPrice contentModal={contentModal} setIsOpen={setIsClick} />
           )}
           {typeModal === "form" && <FormContact />}
         </div>

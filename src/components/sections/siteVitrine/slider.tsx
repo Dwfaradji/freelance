@@ -14,7 +14,6 @@ import { Pagination, Navigation } from "swiper/modules";
 import FormulaireDevis from "@/components/ui/FormDevis/formDevis";
 import { useMyContext } from "@/context/Mycontext";
 import axios from "axios";
-import { log } from "node:util";
 
 interface Slide {
   slidesData: {
@@ -126,7 +125,7 @@ const Slider = ({ slidesData }: Slide) => {
   }
 
   return (
-    <div className={""}>
+    <div>
       <div className={`${hiddenSlide} m-8 `}>
         <Swiper
           onSwiper={(swiper: any) => (swiperRef.current = swiper)} // Mise à jour correcte de la référence

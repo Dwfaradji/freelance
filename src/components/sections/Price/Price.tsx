@@ -27,11 +27,11 @@ const Price = ({ dataTarifs }: PriceProps) => {
     setTypeModal("price");
   };
 
-  useEffect(() => {
-    isOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "auto");
-  }, [isOpen]);
+  // useEffect(() => {
+  //   isOpen
+  //     ? (document.body.style.overflow = "auto")
+  //     : (document.body.style.overflow = "auto");
+  // }, [isOpen]);
 
   return (
     <section className="2xl:container section-tarif">

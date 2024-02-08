@@ -59,6 +59,7 @@ p {
   font-size: $font-size-small;
   font-weight: $font-weight-regular;
   color: $color-primary;
+  text-align: justify !important;
 }
 
 textarea {
@@ -90,8 +91,8 @@ li {
   list-style-type: none;
   white-space: nowrap;
 }
-img{
-  max-width: none;
-}
+//img{
+//  max-width: none;
+//}
 
 
