@@ -7,7 +7,7 @@ import images from "../assets/Gallery";
 const projects: Project[] = [
   {
     id: 0,
-    title: "Application Web",
+    title: "Hrnet",
     image: String(images.hrnet),
     alt: "image du projet hrnet",
     tech: ["Test U/I ", " React ", " Npm"],
@@ -15,15 +15,15 @@ const projects: Project[] = [
   },
   {
     id: 1,
-    title: "Référencement",
-    image: String(images.chouetteAgence),
-    alt: "image du projet chouette agence",
+    title: "Argent Bank",
+    image: String(images.argentBank),
+    alt: "image du projet argent bank",
     tech: ["SEO"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_4_27052021/",
   },
   {
     id: 2,
-    title: "E-commerce",
+    title: "Oh My Food",
     image: String(images.ohmyfood),
     alt: "image du projet ohmyfood",
     tech: ["REACT.JS, ", "SASS"],
@@ -31,15 +31,15 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Site Vitrine",
-    image: String(images.gameOne),
-    alt: "image du projet game one",
-    tech: ["JS"],
+    title: "Fénix Solutions",
+    image: String(images.fenixSolutions),
+    alt: "image du projet fenix solutions",
+    tech: ["VueJS"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_P4_21-07-22/",
   },
   {
     id: 4,
-    title: "Site Vitrine",
+    title: "Fish Eyes",
     image: String(images.fishEyes),
     alt: "image du projet fish eyes",
     tech: ["REACT"],
@@ -47,11 +47,19 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    title: "Site Vitrine",
+    title: "Kasa",
     image: String(images.kasa),
     alt: "image du projet kasa",
     tech: ["REACT"],
     link: "https://devevoke-projet.github.io/kasa/",
+  },
+  {
+    id: 6,
+    title: "Keller Williams",
+    image: String(images.kellerWilliams),
+    alt: "image du projet keller williams",
+    tech: ["NextJS"," React"," Symfony"," Docker"],
+    link: "https://kwoxygene.fr/",
   },
 ];
 // images du header background
@@ -63,11 +71,11 @@ const picturesCarousel: Picture = {
 //Navigation
 const navItems: Item[] = [
   { title: "Accueil", link: "/", scroll: true },
-  { title: "A propos", link: "about", scroll: true },
   { title: "Projet", link: "project", scroll: true },
-  { title: "Services", link: "services", scroll: true },
-  { title: "Contact", link: "contact", scroll: true },
   { title: "Tarif", link: "tarif", scroll: true },
+  { title: "Contact", link: "contact", scroll: true },
+  { title: "Services", link: "services", scroll: true },
+  { title: "A propos", link: "about", scroll: true },
   { title: "Blog", link: "blog", scroll: false },
 ];
 

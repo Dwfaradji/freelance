@@ -12,11 +12,11 @@ const MultiCheckbox: React.FC<MultiCheckboxProps> = ({
   onOptionChange,
 }) => {
   return (
-    <div className="mx-auto flex items-center justify-around flex-wrap h-96 w-2/3">
+    <div className="mx-auto flex items-center  flex-col lg:flex-row  justify-around flex-wrap h-full">
       {options.map((option) => (
         <label
           key={option}
-          className="m-5 text-slate-700 bg-white shadow flex items-center gap-6 rounded-full p-4 ring-1 ring-transparent hover:bg-slate-100"
+          className="m-5 text-slate-700 bg-white shadow flex items-center gap-6 rounded-full p-4 ring-1 ring-transparent hover:bg-slate-100 cursor-pointer"
         >
           {option}
           <input

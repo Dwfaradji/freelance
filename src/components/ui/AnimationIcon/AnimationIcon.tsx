@@ -8,7 +8,7 @@ interface AnimationIconProps {
 const AnimationIcon = ({ itemsIcon }: AnimationIconProps) => {
   return (
     <div className="container mx-auto animationIcon ">
-      <h2 className="text-h2">Une approche avancée pour des applications web performantes</h2>
+      <h2 className="text-h2 ">Une approche avancée pour des applications web performantes</h2>
       <div className=" containerIcon">
         {itemsIcon &&
           itemsIcon.map((item, i) => (

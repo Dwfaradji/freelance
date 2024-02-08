@@ -77,7 +77,7 @@ const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
   }, [selectedFontFirst, selectedFontSecond]);
 
   return (
-    <div className="w-full h-96 flex-col justify-around items-center flex">
+    <div className="w-full h-full flex-col justify-around items-center flex">
       <FontSelector
         label="Choisissez une police principale"
         value={selectedFontFirst}

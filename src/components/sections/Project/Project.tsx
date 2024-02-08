@@ -63,20 +63,22 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
           pagination={true}
           navigation={true}
           modules={[EffectFlip, Pagination, Navigation, Autoplay]}
-          className="mySwiperProject md:w-3/5 lg:w-3/5 rounded"
+          className="mySwiperProject w-full md:w-full lg:w-full rounded"
         >
-          <article className="projects-grid project-card">
+          <article className="projects-grid project-card w-full">
             {projects.map((project, index) => (
               <SwiperSlide key={project.id}>
 
                 <div>
-                  <Link className={"block w-3/5 md:w-3/5 lg:w-4/5 mx-auto"} href={project.link}>
+                  <Link className={"block mx-auto"} href={project.link}>
                     <Image
-                      className="project-card"
+                      className="project-card w-full lg:w-3/4"
                       src={project.image}
                       alt={project.alt}
-                      width="300"
-                      height="300"
+                      width="800"
+                      height="800"
+                      objectFit={"cover"}
+                      sizes="(min-width: 300px) 50vw, 100vw"
                     />
                   </Link>
 

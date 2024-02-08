@@ -30,7 +30,7 @@ const MultiColorPicker: React.FC<MultiColorPickerProps> = ({
       };
 
   return (
-    <div className="color-picker-container w-full justify-around flex flex-wrap h-96">
+    <div className="color-picker-container w-full justify-around flex flex-wrap h-full">
       {Object.entries(selectColors).map(([colorName, colorValue]) => (
         <div key={colorName} className="flex items-center m-3 ">
           <div className="flex justify-center -space-x-14 ">

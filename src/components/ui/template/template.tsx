@@ -49,7 +49,7 @@ const articles: Article[] = [
   {
     id: 3,
     title: "InnovaTech",
-    image: images.gameOne,
+    image: images.argentBank,
     description:
       "Un design moderne et interactif, adapté aux entreprises technologiques, aux blogueurs high-tech ou aux startups.",
   },
@@ -78,7 +78,7 @@ const articles: Article[] = [
 
 const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Swiper
         effect={"coverflow"}
         grabCursor={false}
@@ -101,11 +101,12 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
           <SwiperSlide key={article.id}>
             <div className="group  w-full relative flex flex-col justify-center items-center cursor-pointer">
               <Images
-                width={150}
-                height={100}
+                width={500}
+                height={800}
                 src={article.image}
                 alt={article.title}
-                style={{ width: "100%", height: "215px" }}
+                objectFit="contain"
+                style={{ width: "100%", height: "100%" }}
               />
               <div className="absolute h-full w-full flex items-center p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {article.description}

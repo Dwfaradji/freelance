@@ -9,9 +9,9 @@ export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id;
   return (
     <MyProvider initialState={initialState} reducer={reducer}>
-      <div>
+      <div >
         {id === "0" && (
-          <div>
+          <div >
             <h1 className="text-center m-6"> SITE VITRINE </h1>
             <FonctionSlide />
           </div>

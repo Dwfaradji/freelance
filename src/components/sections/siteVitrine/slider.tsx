@@ -59,7 +59,7 @@ const Slider = ({ slidesData }: Slide) => {
     setTextButton(nextButtonText);
     if (form) {
       setDataForm(form);
-      console.log("test",form);
+      console.log("test", form);
       sendDevis();
     }
     const prevSlideIndex = activeSlide - 1;
@@ -107,7 +107,6 @@ const Slider = ({ slidesData }: Slide) => {
     }
   };
 
-
   async function sendDevis() {
     try {
       const response = await axios.post("/api/devis", sendDataForm, {
@@ -127,8 +126,8 @@ const Slider = ({ slidesData }: Slide) => {
   }
 
   return (
-    <div>
-      <div className={`${hiddenSlide} m-8`}>
+    <div className={""}>
+      <div className={`${hiddenSlide} m-8 `}>
         <Swiper
           onSwiper={(swiper: any) => (swiperRef.current = swiper)} // Mise à jour correcte de la référence
           pagination={{
@@ -143,27 +142,28 @@ const Slider = ({ slidesData }: Slide) => {
         >
           {slidesData.map(({ title, content, ComponentType, props }, index) => (
             <SwiperSlide key={index}>
-              <div className="m-7 tex">
+              <div className="m-7">
                 <h2 className="text-black m-0">{title}</h2>
                 <p className="text-black text-left m-3">{content}</p>
               </div>
-              <ComponentType {...props} />
+              <ComponentType  {...props} />
             </SwiperSlide>
           ))}
         </Swiper>
 
-        <div className="swiper-navigation">
+        <div className="swiper-navigation lg:mt-6">
           <button
-            className={display}
+            className={`w-1/4 md:w-2/6 lg:w-60  justify-center lg:justify-between ${display} `}
             onClick={() => {
               getPrevSlideTitle();
               setActiveSlide((prev) => Math.max(prev - 1, 0)); // Mise à jour de activeSlide
             }}
           >
             <i className="fa-solid fa-chevron-left mr-3"></i>
-            {prevTextButton}
+            <span className={"hidden md:block lg:block"}>{prevTextButton}</span>
           </button>
           <button
+            className={"w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between"}
             onClick={() => {
               getNextSlideTitle();
               setActiveSlide((prev) =>
@@ -171,7 +171,7 @@ const Slider = ({ slidesData }: Slide) => {
               ); // Mise à jour d'activeSlide
             }}
           >
-            {textButton}
+            <span className={"hidden md:block lg:block"}>{textButton}</span>
             <i className="fa-solid fa-chevron-right ml-3"></i>
           </button>
         </div>
