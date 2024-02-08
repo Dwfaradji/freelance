@@ -16,8 +16,9 @@ module.exports = {
   },
   env: {
     KEY_SENDGRID: process.env.KEY_SENDGRID_API,
-    TEMPLATE_ID: process.env.KEY_TEMPLATE,
+    TEMPLATE_ID: process.env.TEMPLATE_ID_CONTACT,
     EMAIL_TO: process.env.ADRESS_MAIL,
-    TEMPLATE_ID_DEVIS: process.env.KEY_TEMPLATE_DEVIS
+    // TEMPLATE_ID_DEVIS: process.env.KEY_TEMPLATE_DEVIS
+    TEMPLATE_ID_DEVIS: process.env.TEMPLATE_ID_DEVIS,
   },
 };
