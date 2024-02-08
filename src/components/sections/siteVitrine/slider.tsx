@@ -184,14 +184,18 @@ const Slider = ({ slidesData }: Slide) => {
               <span className="font-bold">
                 Prêt à donner vie à votre site web personnalisé ?
               </span>
-              <br /> Commencez par remplir notre formulaire complémentaire. Ce
+              <br />
+              <br/>
+              Commencez par remplir notre formulaire complémentaire. Ce
               premier pas essentiel nous permet de comprendre en profondeur vos
               aspirations et besoins spécifiques, assurant que chaque aspect de
               votre site reflète parfaitement votre vision et vos objectifs.
               Chez Devevoke, chaque projet débute par une écoute attentive et
               une planification minutieuse, garantissant une personnalisation
-              sans faille. Remplissez le formulaire dès maintenant et embarquez
-              vers la réalisation de votre site idéal.
+              sans faille. <br/>
+              <span className="font-bold">  Remplissez le formulaire dès maintenant et embarquez
+              vers la réalisation de votre site idéal.</span>
+
             </p>
             <br />
             <h2 className="text-black mb-5">{"Formulaire"}</h2>
