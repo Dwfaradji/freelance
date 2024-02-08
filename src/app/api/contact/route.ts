@@ -55,7 +55,7 @@ export async function POST(request: Request) {
     const msg: SendGridMail = {
       to: String(process.env.ADRESS_MAIL),
       from: String(process.env.ADRESS_MAIL),
-      templateId: String(process.env.TEMPLATE_ID),
+      templateId: String(process.env.TEMPLATE_ID_CONTACT),
       dynamic_template_data: {
         firstname: String(firstname),
         lastname: String(lastname),
