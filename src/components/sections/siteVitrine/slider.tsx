@@ -145,7 +145,7 @@ const Slider = ({ slidesData }: Slide) => {
                 <h2 className="text-black m-0">{title}</h2>
                 <p className="text-black text-left m-3">{content}</p>
               </div>
-              <ComponentType  {...props} />
+              <ComponentType {...props} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -162,7 +162,9 @@ const Slider = ({ slidesData }: Slide) => {
             <span className={"hidden md:block lg:block"}>{prevTextButton}</span>
           </button>
           <button
-            className={"w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between"}
+            className={
+              "w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between"
+            }
             onClick={() => {
               getNextSlideTitle();
               setActiveSlide((prev) =>
@@ -177,14 +179,23 @@ const Slider = ({ slidesData }: Slide) => {
       </div>
       <div className={`${displaySlide} w-4/5 mx-auto text-center  m-8`}>
         {!dataForm && (
-          <div className="md:w-4/5 lg:w-2/5 mx-auto">
-            <h2 className="text-black m-0">{"Formulaire"}</h2>
+          <div className="mx-auto">
             <p className="text-black text-left m-3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque,
-              dolore ea exercitationem inventore natus nisi, numquam
-              praesentium, quibusdam reiciendis sapiente soluta sunt vel vero?
-              Dignissimos dolore doloremque odit voluptas voluptatum!
+              <span className="font-bold">
+                Prêt à donner vie à votre site web personnalisé ?
+              </span>
+              <br /> Commencez par remplir notre formulaire complémentaire. Ce
+              premier pas essentiel nous permet de comprendre en profondeur vos
+              aspirations et besoins spécifiques, assurant que chaque aspect de
+              votre site reflète parfaitement votre vision et vos objectifs.
+              Chez Devevoke, chaque projet débute par une écoute attentive et
+              une planification minutieuse, garantissant une personnalisation
+              sans faille. Remplissez le formulaire dès maintenant et embarquez
+              vers la réalisation de votre site idéal.
             </p>
+            <br />
+            <h2 className="text-black mb-5">{"Formulaire"}</h2>
+
             <FormulaireDevis ref={formulaireRef} />
           </div>
         )}

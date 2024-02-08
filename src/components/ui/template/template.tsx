@@ -130,7 +130,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
             <div className="w-full flex flex-col justify-center items-center m-5">
               <label htmlFor={String(article.id)}>{article.title}</label>
               <input
-                className={"cursor-pointer"}
+                className={"cursor-pointer mt-3"}
                 id={String(article.id)}
                 type="radio"
                 name="articleSelection"

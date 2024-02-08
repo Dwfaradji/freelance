@@ -61,7 +61,6 @@ export async function POST(request: Request) {
   form.commentaires === ""
     ? (form.commentaires = "Pas de commentaires particulier")
     : form.commentaires;
-  console.log("test envoie");
   // Teste si tous les champs sont bien rempli
   if (!areAllValuesNonEmpty(data)) {
     return res.json({
