@@ -148,7 +148,7 @@ const FonctionSlide = () => {
         "Elevez votre présence en ligne avec nos templates sur mesure, conçus pour les professionnels à la recherche d'excellence. Dotés d'un design moderne, d'une fonctionnalité irréprochable, et d'une adaptabilité inégalée, nos templates vous offrent la liberté de définir le nombre de pages, vous permettant ainsi de créer un site qui s'adapte parfaitement à votre contenu et reflète fidèlement votre identité de marque. Chaque template est une promesse d'impact et de distinction. Personnalisez votre site jusqu'au nombre de pages et démarquez-vous dès aujourd'hui.",
       ComponentType: MultiCheckbox,
       props: {
-        options: ["1", "2", "3", "4", "5 ou plus"],
+        options: ["1", "2", "3", "4 ou plus"],
         selectedOption: selectedPagesOption,
         onOptionChange: (option: string) =>
           handleOptionChange("Nombre_de_page", option),

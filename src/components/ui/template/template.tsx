@@ -93,7 +93,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
     });
   }, [displayNav]);
   return (
-    <div className="w-full h-full">
+    <>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -140,7 +140,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </>
   );
 };
 
