@@ -1,6 +1,6 @@
 const images = {
   kellerWilliams: "/images/kw.png",
-  hrnet: "/images/hrnet.png",
+  hrnet: "/images/Medical_HTML_Template.png",
   argentBank: "/images/argentBank.png",
   piquante: "/images/piquante.webp",
   chouetteAgence: "/images/devevoke-chouette.png",

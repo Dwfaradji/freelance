@@ -1,17 +1,11 @@
 
 .swipper-template {
     width: 90%;
-    /*height: 20em;*/
+    height: 20em;
     cursor: auto;
 }
 .swipper-template .swiper-container {
     cursor: pointer; /* Ou tout autre style de curseur que vous préférez */
-}
-.swipper-template .swiper-button-prev, .swiper-button-next {
-
-}
-.mySwiper .swiper-pagination{
-
 }
 
 .swipper-template .swiper-slide {

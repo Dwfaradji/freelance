@@ -15,6 +15,7 @@ import "./template.css";
 // import required modules Swiper
 import { Navigation } from "swiper/modules";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import Link from "next/link";
 
 // Type
 interface Article {
@@ -53,29 +54,29 @@ const articles: Article[] = [
     description:
       "Un design moderne et interactif, adapté aux entreprises technologiques, aux blogueurs high-tech ou aux startups.",
   },
-  {
-    id: 4,
-    title: "CreativeMind",
-    image: images.fishEyes,
-    description:
-      "Un design moderne et interactif, adapté aux entreprises technologiques, aux blogueurs high-tech ou aux startups.",
-  },
-  {
-    id: 5,
-    title: "Gastronome",
-    image: images.ohmyfood,
-    description:
-      "Conçu pour les établissements éducatifs, les formateurs ou les sites de e-learning, avec un aspect à la fois professionnel et accessible.",
-  },
-  {
-    id: 6,
-    title: "FashionTrend",
-    image: images.chouetteAgence,
-    description:
-      "Parfait pour les artisans, les boutiques de produits faits main ou les petits commerces, offrant un design chaleureux et personnalisé.",
-  },
+  // {
+  //   id: 4,
+  //   title: "CreativeMind",
+  //   image: images.fishEyes,
+  //   description:
+  //     "Un design moderne et interactif, adapté aux entreprises technologiques, aux blogueurs high-tech ou aux startups.",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Gastronome",
+  //   image: images.ohmyfood,
+  //   description:
+  //     "Conçu pour les établissements éducatifs, les formateurs ou les sites de e-learning, avec un aspect à la fois professionnel et accessible.",
+  // },
+  // {
+  //   id: 6,
+  //   title: "FashionTrend",
+  //   image: images.chouetteAgence,
+  //   description:
+  //     "Parfait pour les artisans, les boutiques de produits faits main ou les petits commerces, offrant un design chaleureux et personnalisé.",
+  // },
 ];
-
+// import test from "../../../../public/template/mediplus-lite/index.html"
 const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
   const [displayNav, setDisplayNav] = useState(true);
   useEffect(() => {
@@ -123,8 +124,15 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
                 // style={{ width: "100%", height: "100%" }}
                 priority={true}
               />
-              <div className="absolute h-full w-full flex items-center p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+              <div className="absolute h-full w-full flex-col flex justify-center items-center p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {article.description}
+                <Link
+                  className="mt-5"
+                  href={"https://devevoke.com/template/mediplus-lite/index.html"}
+                >
+                  <button>Démo</button>
+                </Link>
               </div>
             </div>
             <div className="w-full flex flex-col justify-center items-center m-5">
