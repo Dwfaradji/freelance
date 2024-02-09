@@ -129,7 +129,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
                 {article.description}
                 <Link
                   className="mt-5"
-                  href={"https://devevoke.com/template/mediplus-lite/index.html"}
+                  href={"https://www.devevoke.com/template/mediplus-lite/index.html"}
                 >
                   <button>Démo</button>
                 </Link>
