@@ -125,7 +125,7 @@ const Slider = ({ slidesData }: Slide) => {
   }
 
   return (
-    <div>
+    <div className="">
       <div className={`${hiddenSlide} m-8 `}>
         <Swiper
           onSwiper={(swiper: any) => (swiperRef.current = swiper)} // Mise à jour correcte de la référence
@@ -143,13 +143,12 @@ const Slider = ({ slidesData }: Slide) => {
             <SwiperSlide key={index}>
               <div className="mt-7">
                 <h2 className="text-black m-0">{title}</h2>
-                <p className="text-black text-left m-0 md:m-3 min-h-max mb-7 h-80 md:h-auto   ">
+                <p className="text-black text-left m-0 md:m-3 min-h-max mb-7 h-6 hover:h-full overflow-hidden md:h-auto">
                   {content}
                 </p>
               </div>
               <div className="w-full h-96 m-4">
                 <ComponentType {...props} />
-
               </div>
             </SwiperSlide>
           ))}
@@ -186,11 +185,9 @@ const Slider = ({ slidesData }: Slide) => {
         {!dataForm && (
           <div className="mx-auto">
             <p className="text-black text-left m-3">
-              <span className="font-bold">
+              <span className="font-bold block mb-2">
                 Prêt à donner vie à votre site web personnalisé ?
               </span>
-              <br />
-              <br />
               Commencez par remplir notre formulaire complémentaire. Ce premier
               pas essentiel nous permet de comprendre en profondeur vos
               aspirations et besoins spécifiques, assurant que chaque aspect de
@@ -198,8 +195,7 @@ const Slider = ({ slidesData }: Slide) => {
               Chez Devevoke, chaque projet débute par une écoute attentive et
               une planification minutieuse, garantissant une personnalisation
               sans faille. <br />
-              <span className="font-bold">
-                {" "}
+              <span className="font-bold block mt-2">
                 Remplissez le formulaire dès maintenant et embarquez vers la
                 réalisation de votre site idéal.
               </span>

@@ -81,19 +81,14 @@ const FonctionSlide = () => {
       [page]: option,
     }));
 
-    switch (page) {
-    case "Nombre_de_page":
+    if (page === "Nombre_de_page") {
       setSelectedPagesOption(option);
-      break;
-    case "Hébergement":
+    } else if (page === "Hébergement") {
       setSelectedHebergementOption(option);
-      break;
-    case "Maintenance":
+    } else if (page === "Maintenance") {
       setSelectedOptionMaintenance(option);
-      break;
-    case "Personnalisation":
+    } else if (page === "Personnalisation") {
       setSelectedPersoOption(option);
-      break;
     }
   };
 
@@ -145,7 +140,7 @@ const FonctionSlide = () => {
     {
       title: "Nombre de page",
       content:
-        "Elevez votre présence en ligne avec nos templates sur mesure, conçus pour les professionnels à la recherche d'excellence. Dotés d'un design moderne, d'une fonctionnalité irréprochable, et d'une adaptabilité inégalée, nos templates vous offrent la liberté de définir le nombre de pages, vous permettant ainsi de créer un site qui s'adapte parfaitement à votre contenu et reflète fidèlement votre identité de marque. Chaque template est une promesse d'impact et de distinction. Personnalisez votre site jusqu'au nombre de pages et démarquez-vous dès aujourd'hui.",
+        "Élevez votre présence en ligne avec nos templates sur mesure, conçus pour les professionnels à la recherche d'excellence. Dotés d'un design moderne, d'une fonctionnalité irréprochable, et d'une adaptabilité inégalée, nos templates vous offrent la liberté de définir le nombre de pages, vous permettant ainsi de créer un site qui s'adapte parfaitement à votre contenu et reflète fidèlement votre identité de marque. Chaque template est une promesse d'impact et de distinction. Personnalisez votre site jusqu'au nombre de pages et démarquez-vous dès aujourd'hui.",
       ComponentType: MultiCheckbox,
       props: {
         options: ["1", "2", "3", "4 ou plus"],

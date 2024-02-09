@@ -11,10 +11,10 @@ export default async function Page({ params }: { params: { id: string } }) {
     <MyProvider initialState={initialState} reducer={reducer}>
       <div >
         {id === "0" && (
-          <div >
+          <section className="" >
             <h1 className="text-center m-6"> SITE VITRINE </h1>
             <FonctionSlide />
-          </div>
+          </section>
         )}
 
         {id === "1" && (
