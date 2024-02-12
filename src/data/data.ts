@@ -10,7 +10,7 @@ const projects: Project[] = [
     title: "Hrnet",
     image: String(images.hrnet),
     alt: "image du projet hrnet",
-    tech: ["Test U/I ", " React ", " Npm"],
+    tech: ["Test U/I,", " React,", " Npm"],
     link: "https://devevoke-projet.github.io/hrnet/",
   },
   {
@@ -18,7 +18,7 @@ const projects: Project[] = [
     title: "Argent Bank",
     image: String(images.argentBank),
     alt: "image du projet argent bank",
-    tech: ["SEO"],
+    tech: ["Seo"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_4_27052021/",
   },
   {
@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "Oh My Food",
     image: String(images.ohmyfood),
     alt: "image du projet ohmyfood",
-    tech: ["REACT.JS, ", "SASS"],
+    tech: ["React,", " Sass"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_3_27052021/",
   },
   {
@@ -34,7 +34,7 @@ const projects: Project[] = [
     title: "Fénix Solutions",
     image: String(images.fenixSolutions),
     alt: "image du projet fenix solutions",
-    tech: ["VueJS"],
+    tech: ["Vue3,"," Node,", " ApiRest"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_P4_21-07-22/",
   },
   {
@@ -42,7 +42,7 @@ const projects: Project[] = [
     title: "Fish Eyes",
     image: String(images.fishEyes),
     alt: "image du projet fish eyes",
-    tech: ["REACT"],
+    tech: ["React"," Seo"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_P6_19-08-22/",
   },
   {
@@ -50,7 +50,7 @@ const projects: Project[] = [
     title: "Kasa",
     image: String(images.kasa),
     alt: "image du projet kasa",
-    tech: ["REACT"],
+    tech: ["React,"," Redux"],
     link: "https://devevoke-projet.github.io/kasa/",
   },
   {
@@ -58,7 +58,7 @@ const projects: Project[] = [
     title: "Keller Williams",
     image: String(images.kellerWilliams),
     alt: "image du projet keller williams",
-    tech: ["NextJS"," React"," Symfony"," Docker"],
+    tech: ["Next,"," React,"," Symfony,"," Docker"],
     link: "https://kwoxygene.fr/",
   },
 ];

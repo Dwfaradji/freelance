@@ -23,6 +23,7 @@ interface Article {
   title: string;
   image: string;
   description: string;
+  link: string;
 }
 
 interface MultiCheckboxProps {
@@ -31,28 +32,34 @@ interface MultiCheckboxProps {
   onTemplateSelect: (option: string) => void;
 }
 
+//localhost:3000/
 //DATA
+const url = "http://localhost:3000" || "https://www.devevoke.com";
+
 const articles: Article[] = [
   {
     id: 1,
-    title: "ElegancePro",
-    image: images.hrnet,
+    title: "HealthPro",
+    image: images.templateMedical,
     description:
-      "Un template sophistiqué et élégant, idéal pour les entreprises qui souhaitent projeter une image de luxe et de raffinement.",
+      "HealthPro est un modèle concis pour les professionnels de santé, offrant clarté, navigation intuitive et sécurité en ligne, parfait pour une communication efficace et sécurisée.",
+    link: `${url}/template/mediplus/index.html/`,
   },
   {
     id: 2,
-    title: "TechSavvy",
-    image: images.kasa,
+    title: "YogaFlow",
+    image: images.templateYoga,
     description:
-      "Un design moderne et interactif, adapté aux entreprises technologiques, aux blogueurs high-tech ou aux startups.",
+      "YogaFlow est un template zen et dynamique, idéal pour les studios de yoga ou les instructeurs indépendants. Il met en valeur la pratique du yoga, les cours et les ateliers avec une touche de sérénité et d'inspiration, favorisant une connexion profonde avec les visiteurs.",
+    link: `${url}/template/yoga/index.html/`,
   },
   {
     id: 3,
-    title: "InnovaTech",
-    image: images.argentBank,
+    title: "GreenEnergy",
+    image: images.templateEnergy,
     description:
-      "Un design moderne et interactif, adapté aux entreprises technologiques, aux blogueurs high-tech ou aux startups.",
+      "GreenEnergy est un modèle vibrant, conçu pour les entreprises d'énergie renouvelable. Il souligne l'engagement envers la durabilité et l'innovation, présentant technologies propres et projets verts de manière claire et attrayante.",
+    link: `${url}/template/renewableEnergy/index.html/`,
   },
   // {
   //   id: 4,
@@ -76,7 +83,7 @@ const articles: Article[] = [
   //     "Parfait pour les artisans, les boutiques de produits faits main ou les petits commerces, offrant un design chaleureux et personnalisé.",
   // },
 ];
-// import test from "../../../../public/template/mediplus-lite/index.html"
+
 const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
   const [displayNav, setDisplayNav] = useState(true);
   useEffect(() => {
@@ -125,12 +132,9 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
                 priority={true}
               />
 
-              <div className="absolute h-full w-full flex-col flex justify-center items-center p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {article.description}
-                <Link
-                  className="mt-5"
-                  href={"https://www.devevoke.com/template/mediplus-lite/index.html"}
-                >
+              <div className="text-base absolute h-full w-full flex-col flex justify-between items-center p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="flex justify-center items-center h-full">{article.description}</p>
+                <Link className="mt-5" href={article.link}>
                   <button>Démo</button>
                 </Link>
               </div>

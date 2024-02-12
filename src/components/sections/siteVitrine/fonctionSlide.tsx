@@ -132,7 +132,7 @@ const FonctionSlide = () => {
     {
       title: "Fonts",
       content:
-        "Dans le paysage numérique actuel, marquez votre différence avec nos templates conçus pour les professionnels exigeants. Offrant un design moderne, une fonctionnalité sans faille et une adaptabilité remarquable, nos templates vous permettent de personnaliser entièrement la police de caractères pour qu'elle parle véritablement de votre marque. Chaque template est une invitation à l'excellence, assurant que votre présence en ligne soit distincte et mémorable. Embrassez une identité visuelle qui vous est propre dès aujourd'hui.",
+        "Dans le paysage numérique actuel, marquez votre différence avec nos templates conçus pour les professionnels exigeants. Offrant un design moderne, une fonctionnalité sans faille et une adaptabilité remarquable, nos templates vous permettent de personnaliser entièrement la police de caractères pour qu'elle parle véritablement de votre marque. Chaque templates est une invitation à l'excellence, assurant que votre présence en ligne soit distincte et mémorable. Embrassez une identité visuelle qui vous est propre dès aujourd'hui.",
       ComponentType: MultiFontsChoice,
       props: { onFontsSelect: handleFontsChange },
       button: "Fonts",
@@ -140,7 +140,7 @@ const FonctionSlide = () => {
     {
       title: "Nombre de page",
       content:
-        "Élevez votre présence en ligne avec nos templates sur mesure, conçus pour les professionnels à la recherche d'excellence. Dotés d'un design moderne, d'une fonctionnalité irréprochable, et d'une adaptabilité inégalée, nos templates vous offrent la liberté de définir le nombre de pages, vous permettant ainsi de créer un site qui s'adapte parfaitement à votre contenu et reflète fidèlement votre identité de marque. Chaque template est une promesse d'impact et de distinction. Personnalisez votre site jusqu'au nombre de pages et démarquez-vous dès aujourd'hui.",
+        "Élevez votre présence en ligne avec nos templates sur mesure, conçus pour les professionnels à la recherche d'excellence. Dotés d'un design moderne, d'une fonctionnalité irréprochable, et d'une adaptabilité inégalée, nos templates vous offrent la liberté de définir le nombre de pages, vous permettant ainsi de créer un site qui s'adapte parfaitement à votre contenu et reflète fidèlement votre identité de marque. Chaque templates est une promesse d'impact et de distinction. Personnalisez votre site jusqu'au nombre de pages et démarquez-vous dès aujourd'hui.",
       ComponentType: MultiCheckbox,
       props: {
         options: ["1", "2", "3", "4 ou plus"],

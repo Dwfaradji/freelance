@@ -1,6 +1,7 @@
 const images = {
+  //projet
   kellerWilliams: "/images/kw.png",
-  hrnet: "/images/Medical_HTML_Template.png",
+  hrnet: "/images/hrnet.png",
   argentBank: "/images/argentBank.png",
   piquante: "/images/piquante.webp",
   chouetteAgence: "/images/devevoke-chouette.png",
@@ -8,6 +9,10 @@ const images = {
   fenixSolutions: "/images/fenixSolutions.png",
   fishEyes: "/images/fisheyes.png",
   kasa: "/images/kasa.png",
+
+  templateMedical: "/images/templates/medicalTemplate.png",
+  templateEnergy: "/images/templates/energyTemplate.png",
+  templateYoga: "/images/templates/yogaTemplate.png",
 
   pictureHeader: "/images/bg-4.webp",
   footerBackground: "/images/backgroundContact.webp",
