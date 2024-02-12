@@ -40,7 +40,8 @@ const MultiColorPicker: React.FC<MultiColorPickerProps> = ({
                 className="bg-blue-500 shadow-lg flex justify-center items-center rounded-full overflow-hidden p-1 input-color"
               >
                 <input
-                  className="input-color "
+                  className="input-color"
+                  aria-label="Color"
                   type="color"
                   value={colorValue}
                   onChange={handleColorChange(colorName as keyof Colors)}
@@ -50,6 +51,7 @@ const MultiColorPicker: React.FC<MultiColorPickerProps> = ({
             <div className=" mix-blend-multiply ">
               <div className="flex justify-center items-center rounded-full overflow-hidden p-1 input-color">
                 <input
+                  aria-label="Color"
                   className="input-color "
                   type="color"
                   value={colorValue}

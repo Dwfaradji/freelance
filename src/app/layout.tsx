@@ -8,9 +8,10 @@ import "./globals.scss";
 
 
 export const metadata = {
-  title: "DevEvoke : Développement Web & Applications de Qualité Supérieure",
+  title: "DevEvoke : Développement Web & Applications de Qualité Supérieure à Perpignan",
   description:
-    "DevEvoke : Votre succès en ligne commence ici. Experts en développement web & applications. Excellence dans le code propre et maintenable. Transformez vos idées en réalité numérique avec notre expertise.",
+     "DevEvoke  Agence web & mobile experte à Perpignan.Développez votre succès numérique avec des solutions innovantes et intuitives. Sites web | Applications | Logiciels sur mesure 5+ans d'expérience | Code propre & Maintenable | Devis gratuit",
+
   alternates: {
     canonical: "https://www.devevoke.com/",
     languages: {

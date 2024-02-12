@@ -34,7 +34,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     display: grid;
-    grid-template-rows: 0fr 0fr 1fr;
+    grid-template-rows: 0fr 5rem max-content;
     padding: 20px;
 
     h3 {

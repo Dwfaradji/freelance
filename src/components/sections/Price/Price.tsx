@@ -51,7 +51,7 @@ const Price = ({ dataTarifs }: PriceProps) => {
               <h3 className="test text-h3">
                 {tarif.title} <br /> {tarif.subtitle}
               </h3>
-              <div className="tarif-price ">
+              <div className="tarif-price h-20">
                 <h3>À partir de {tarif.price}</h3>
               </div>
               <p>{tarif.description}</p>

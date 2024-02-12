@@ -14,6 +14,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import FormulaireDevis from "@/components/ui/FormDevis/formDevis";
 import { useMyContext } from "@/context/Mycontext";
 import axios from "axios";
+import Link from "next/link";
 
 interface Slide {
   slidesData: {
@@ -87,12 +88,15 @@ const Slider = ({ slidesData }: Slide) => {
   };
 
   // Fonction pour revenir au slide précédent
-  const back = () => {
+  const back = (e: any) => {
     setHiddenSlide("block");
     setDisplaySlide("hidden");
     if (currentSlide > 0) {
       setCurrentSlide(currentSlide - 1);
     }
+    window.onload = function () {
+      window.scrollTo(0, 0);
+    };
   };
   const formulaireRef = useRef<FormulaireDevisMethods>(null);
   const lastSlideIndex = 0; // Exemple : si vous avez 5 slides
@@ -125,7 +129,7 @@ const Slider = ({ slidesData }: Slide) => {
   }
 
   return (
-    <div className="">
+    <div id={"ancre-template"} className="">
       <div className={`${hiddenSlide} m-8 `}>
         <Swiper
           onSwiper={(swiper: any) => (swiperRef.current = swiper)} // Mise à jour correcte de la référence
@@ -142,12 +146,14 @@ const Slider = ({ slidesData }: Slide) => {
           {slidesData.map(({ title, content, ComponentType, props }, index) => (
             <SwiperSlide key={index}>
               <div className="mt-7">
-                <h2 className="text-black m-0">{title}</h2>
+                <h2  className="text-black m-0">
+                  {title}
+                </h2>
                 <p className="text-black text-left m-0 md:m-3 min-h-max mb-7 h-6 hover:h-full overflow-hidden md:h-auto">
                   {content}
                 </p>
               </div>
-              <div className="w-full h-96 m-4">
+              <div className="w-full h-96 m-4 ">
                 <ComponentType {...props} />
               </div>
             </SwiperSlide>
@@ -156,6 +162,7 @@ const Slider = ({ slidesData }: Slide) => {
 
         <div className="swiper-navigation lg:mt-6">
           <button
+            aria-label="precedent"
             className={`w-1/4 md:w-2/6 lg:w-60  justify-center lg:justify-between ${display} `}
             onClick={() => {
               getPrevSlideTitle();
@@ -166,6 +173,7 @@ const Slider = ({ slidesData }: Slide) => {
             <span className={"hidden md:block lg:block"}>{prevTextButton}</span>
           </button>
           <button
+            aria-label="suivant"
             className={
               "w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between"
             }
@@ -209,12 +217,12 @@ const Slider = ({ slidesData }: Slide) => {
         <div className="swiper-navigation m-8">
           {!dataForm && (
             <>
-              <button className="w-2/3 md:w-1/5" onClick={back}>
+              <button className="w-2/3 md:w-1/4 lg:1/5" onClick={back}>
                 <i className="fa-solid fa-chevron-left mr-3"></i>
-                {"Retour"}
+                <Link href={"#ancre-template"}>{"Retour"}</Link>
               </button>
 
-              <button className="w-2/3 md:w-1/5" onClick={nextOrSubmit}>
+              <button className="w-2/3 md:w-1/4 lg:1/5" onClick={nextOrSubmit}>
                 {currentSlide < lastSlideIndex ? "Suivant" : "Soumettre"}
               </button>
             </>

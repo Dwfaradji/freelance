@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import FonctionSlide from "@/components/sections/siteVitrine/fonctionSlide";
 import { MyProvider } from "@/context/Mycontext";
 import { initialState, reducer } from "@/context/reducer";
 import FormulaireDevis from "@/components/ui/FormDevis/formDevis";
+import Loading from "@/app/loading";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id;
@@ -11,7 +12,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     <MyProvider initialState={initialState} reducer={reducer}>
       <div >
         {id === "0" && (
-          <section className="" >
+          <section className="">
             <h1 className="text-center m-6"> SITE VITRINE </h1>
             <FonctionSlide />
           </section>

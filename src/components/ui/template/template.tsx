@@ -34,7 +34,7 @@ interface MultiCheckboxProps {
 
 //localhost:3000/
 //DATA
-const url = "http://localhost:3000" || "https://www.devevoke.com";
+const url = "https://www.devevoke.com";
 
 const articles: Article[] = [
   {
@@ -101,8 +101,9 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
     });
   }, [displayNav]);
   return (
-    <>
+    <div>
       <Swiper
+        breakpointsBase={"window"}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
@@ -119,10 +120,11 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
         allowTouchMove={true}
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swipper-template"
+
       >
         {articles.map((article, index) => (
           <SwiperSlide key={article.id}>
-            <div className="group  w-full relative flex flex-col justify-center items-center cursor-pointer">
+            <div className="group  w-full relative flex flex-col justify-center items-center cursor-pointer  ">
               <Images
                 width={400}
                 height={800}
@@ -130,11 +132,12 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
                 alt={article.title}
                 // style={{ width: "100%", height: "100%" }}
                 priority={true}
+                objectFit={"cover"}
               />
 
               <div className="text-base absolute h-full w-full flex-col flex justify-between items-center p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="flex justify-center items-center h-full">{article.description}</p>
-                <Link className="mt-5" href={article.link}>
+                <Link className="mt-5" href={article.link} target={"_blank"}>
                   <button>Démo</button>
                 </Link>
               </div>
@@ -152,7 +155,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 };
 
