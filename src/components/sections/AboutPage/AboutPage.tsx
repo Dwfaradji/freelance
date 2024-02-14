@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import "./AboutPage.scss";
 import images from "../../../assets/Gallery";
 import Banner from "../../ui/Banner/Banner";
+import Image from "next/image";
 
 const AboutPage = () => {
   // fonction qui active l'animation lorsque l'utilisateur arrive sur un élément
@@ -24,7 +25,7 @@ const AboutPage = () => {
 
   return (
     <div>
-      <div className="container-about-page container">
+      <div className="container-about-page container mb-8">
         <div className="header-about">
           <h1>À propos</h1>
         </div>
@@ -43,53 +44,53 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="container-item overflow-hidden m-8 md:m-0">
-            <img src={images.imageHead} alt="photo developpeur devevoke" />
+            <Image className={"object-cover h-full"} width={"300"} height={300} src={images.imageHead} alt="photo developpeur devevoke" />
           </div>
         </div>
         <div className="section-skill">
           <h2 className={"mb-8"}>Mes Spécialité</h2>
           <div className="item-skill">
             <div className="item">
-              <img src={images.reactImage} alt="" />
+              <Image width={"300"} height={"300"} src={images.reactImage} alt="" />
               <h3>React</h3>
             </div>
             <div className="item">
-              <img src={images.nextImage} alt="" />
+              <Image width={"300"} height={"300"} src={images.nextImage} alt="" />
               <h3>NextJs</h3>
             </div>
             <div className="item">
-              <img src={images.reduxImage} alt="" />
+              <Image width={"300"} height={"300"} src={images.reduxImage} alt="" />
               <h3>Redux</h3>
             </div>
             <div className="item">
-              <img src={images.symfonyImage} alt="" />
+              <Image width={"300"} height={"300"} src={images.symfonyImage} alt="" />
               <h3>Symfony</h3>
             </div>
           </div>
           <p className={"m-8"}>
-            Bienvenue sur mon espace professionnel en ligne, où je fusionne
-            créativité et expertise technique pour construire des expériences
-            Web captivantes et fonctionnelles. Spécialisé dans les solutions
-            avant-gardistes, je maîtrise l'art de créer des interfaces fluides
-            et réactives grâce à ma solide connaissance de React et Next.js. Mon
-            approche centrée sur l'utilisateur et ma quête constante
-            d'optimisation m'ont permis de développer des applications web
-            hautement interactives, performantes et accessibles. Avec Redux, je
-            gère les états d'applications complexes avec aisance, assurant une
-            synchronisation parfaite et une réactivité sans faille. Mon
-            expertise dans la gestion d'état global fait de chaque projet un
-            modèle de clarté et d'efficacité. Côté back-end, je transforme les
-            exigences fonctionnelles en architectures robustes avec Symfony,
-            créant des fondations solides pour des applications web évolutives.
-            Ma maîtrise de ce framework PHP me permet de développer des API
-            performantes et sécurisées, capables de gérer de grandes quantités
-            de données avec une facilité déconcertante. Chaque ligne de code est
-            rédigée avec la même attention, chaque projet est une nouvelle
-            aventure où je mets en œuvre mon expertise pour dépasser les
-            attentes. Découvrez mes projets, mes collaborations réussies, et
-            entamez avec moi le chemin vers une solution digitale sans
-            précédent. Vos idées méritent le meilleur des développements web, et
-            je suis là pour les réaliser.
+            {`Bienvenue sur mon espace professionnel en ligne, où je fusionne
+              créativité et expertise technique pour construire des expériences
+              Web captivantes et fonctionnelles. Spécialisé dans les solutions
+              avant-gardistes, je maîtrise l'art de créer des interfaces fluides
+              et réactives grâce à ma solide connaissance de React et Next.js. Mon
+              approche centrée sur l'utilisateur et ma quête constante
+              d"optimisation m"ont permis de développer des applications web
+              hautement interactives, performantes et accessibles. Avec Redux, je
+              gère les états d'applications complexes avec aisance, assurant une
+              synchronisation parfaite et une réactivité sans faille. Mon
+              expertise dans la gestion d'état global fait de chaque projet un
+              modèle de clarté et d'efficacité. Côté back-end, je transforme les
+              exigences fonctionnelles en architectures robustes avec Symfony,
+              créant des fondations solides pour des applications web évolutives.
+              Ma maîtrise de ce framework PHP me permet de développer des API
+              performantes et sécurisées, capables de gérer de grandes quantités
+              de données avec une facilité déconcertante. Chaque ligne de code est
+              rédigée avec la même attention, chaque projet est une nouvelle
+              aventure où je mets en œuvre mon expertise pour dépasser les
+              attentes. Découvrez mes projets, mes collaborations réussies, et
+              entamez avec moi le chemin vers une solution digitale sans
+              précédent. Vos idées méritent le meilleur des développements web, et
+              je suis là pour les réaliser.`}
           </p>
         </div>
         <div className="section-studies">
@@ -98,7 +99,7 @@ const AboutPage = () => {
             <div className="item">
               <div className="icon-studies">
                 {/*<i className="fa-solid fa-graduation-cap"></i>*/}
-                <img src={images.etudeImage} alt="" />
+                <Image width={"300"} height={"300"} src={images.etudeImage} alt="" />
               </div>
               <h3>Études </h3>
 
@@ -106,21 +107,21 @@ const AboutPage = () => {
             </div>
             <div className="item">
               <div className="icon-studies">
-                <img src={images.formationImage} alt="" />
+                <Image width={"300"} height={"300"} src={images.formationImage} alt="" />
               </div>
               <h3>Formation</h3>
               <p></p>
             </div>
             <div className="item">
               <div className="icon-studies">
-                <img src={images.passionImage} alt="" />
+                <Image width={"300"} height={"300"} src={images.passionImage} alt="" />
               </div>
               <h3>Passion</h3>
               <p></p>
             </div>
           </div>
           <p className={"m-8"}>
-            Mon voyage dans l'univers du développement web a débuté par une
+            {`Mon voyage dans l'univers du développement web a débuté par une
             fascination pour la technologie et une curiosité insatiable pour les
             dernières innovations. Au fil des années, j'ai forgé un parcours qui
             reflète mon engagement envers l'excellence et ma passion pour la
@@ -150,14 +151,12 @@ const AboutPage = () => {
             une approche agile et réactive aux besoins en constante évolution du
             domaine web. Aujourd'hui, je continue d'apprendre, d'explorer et de
             me dépasser, toujours à la recherche de la prochaine innovation qui
-            révolutionnera la manière dont nous interagissons avec le web.
+            révolutionnera la manière dont nous interagissons avec le web.`}
           </p>
         </div>
       </div>
       <div className="section-banner">
-        <div className="item-banner">
-          {/*<Banner />*/}
-        </div>
+        <div className="item-banner">{/*<Banner />*/}</div>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ interface HeaderProps {
 
 const Header = ({ pictures }: HeaderProps) => {
   return (
-    <header className="pictures">
+    <header id={"accueil"} className="pictures">
       <Images
         src={pictures.imageUrl}
         alt={pictures.alt}

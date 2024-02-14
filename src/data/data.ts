@@ -70,7 +70,7 @@ const picturesCarousel: Picture = {
 };
 //Navigation
 const navItems: Item[] = [
-  { title: "Accueil", link: "/", scroll: true },
+  { title: "Accueil", link: "accueil", scroll: true },
   { title: "Projet", link: "project", scroll: true },
   { title: "Tarif", link: "tarif", scroll: true },
   { title: "Contact", link: "contact", scroll: true },

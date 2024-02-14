@@ -42,29 +42,30 @@ const Navbar = ({ items }: NavProps) => {
   const [colors, setColors] = useState(colorsInit);
   const svgElement = logoSVG(colors);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const navElement = document.querySelector(".nav");
-      const openElement = document.querySelector(".openCollapse .navLinks");
-      const closeElement = document.querySelector(".closeCollapse .navLinks");
-      const navTrigger = document.querySelector(".navTrigger");
-      if (navElement) {
-        if (window.scrollY > 1000) {
-          setColors(colorsSecond);
-          navElement.classList.add("affix");
-          openElement && openElement.classList.add("affix");
-          closeElement && closeElement.classList.add("affix");
-          navTrigger && navTrigger.classList.add("affixTrigger");
-          setLiItems("items-nav");
-        } else {
-          navElement.classList.remove("affix");
-          openElement && openElement.classList.remove("affix");
-          closeElement && closeElement.classList.remove("affix");
-          navTrigger && navTrigger.classList.remove("affixTrigger");
-          setColors(colorsInit);
-        }
+  const handleScroll = () => {
+    const navElement = document.querySelector(".nav");
+    const openElement = document.querySelector(".openCollapse .navLinks");
+    const closeElement = document.querySelector(".closeCollapse .navLinks");
+    const navTrigger = document.querySelector(".navTrigger");
+    if (navElement) {
+      if (window.scrollY > 1000) {
+        setColors(colorsSecond);
+        navElement.classList.add("affix");
+        openElement && openElement.classList.add("affix");
+        closeElement && closeElement.classList.add("affix");
+        navTrigger && navTrigger.classList.add("affixTrigger");
+        setLiItems("items-nav");
+      } else {
+        navElement.classList.remove("affix");
+        openElement && openElement.classList.remove("affix");
+        closeElement && closeElement.classList.remove("affix");
+        navTrigger && navTrigger.classList.remove("affixTrigger");
+        setColors(colorsInit);
       }
-    };
+    }
+  };
+
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -87,6 +88,7 @@ const Navbar = ({ items }: NavProps) => {
   };
 
   const openNavFunction = (item: any) => {
+
     if (item.scroll === false) {
       router.push(item.link);
     } else {
