@@ -1,5 +1,6 @@
 import React from "react";
 import "./Service.scss";
+import { Button } from "@/components/ui/button";
 
 interface Test {
   id: number;

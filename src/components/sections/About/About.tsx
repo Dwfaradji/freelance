@@ -16,6 +16,8 @@ const About = () => {
               acquérir de nouvelles compétences pour améliorer mes capacités de
               développement.`}
           </p>
+
+
           <p className="text-xl">
             {`En tant que développeur Full Stack, je suis à l'aise avec les
               langages de programmation tels que HTML, CSS, JavaScript, ainsi que
@@ -52,9 +54,9 @@ const About = () => {
           </p>
         </div>
       </div>
-      {/*<button>*/}
-      {/*  <a href="/about">Qui suis je ?</a>*/}
-      {/*</button>*/}
+      <button>
+        <a href="/about">Qui suis je ?</a>
+      </button>
     </section>
   );
 };

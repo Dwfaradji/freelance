@@ -35,12 +35,12 @@
   .section-about {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    //justify-content: space-between;
     padding: 2rem 0;
     background-color: #fff;
 
     .container-text {
-      width: 50%;
+      //width: 50%;
     }
 
     .container-item {
@@ -145,7 +145,6 @@
           height: 75%;
 
           img {
-            filter: sepia(100%);
             width: 100%;
             height: 100%;
             object-fit: contain;

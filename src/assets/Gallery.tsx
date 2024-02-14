@@ -29,9 +29,10 @@ const images = {
   nextImage: "/images/next-image.png",
   reduxImage: "/images/redux-image.png",
   symfonyImage: "/images/symfony-image.png",
-  etudeImage: "/images/etude-image.png",
+  etudeImage: "/images/etude.png",
   formationImage: "/images/formation-image.png",
   passionImage: "/images/passion-image.png",
+  imageHead:"/images/test2.webp"
 };
 
 export default images;
