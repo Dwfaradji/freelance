@@ -4,6 +4,7 @@ import "./TemplateBlog.scss";
 import blog from "@/data/blog";
 import Link from "next/link";
 import CardBlog from "@/components/ui/CardBlog/CardBlog";
+import Image from "next/image";
 
 const TemplateBlog = () => {
   // fonction qui recupere id dans url nextJs et qui permet de recuperer les données du blog
@@ -35,15 +36,16 @@ const TemplateBlog = () => {
       <div className="container-text container">
         <p>{contentBlog.descriptionShort}</p>
         <p>
-          Mise en ligne le <span>{contentBlog.date}</span>
+          Mise en ligne le{" "}
+          <span className={"text-blue-400"}>{contentBlog.date}</span>
         </p>
       </div>
       <div className="container-img">
-        <img
+        <Image
+          width={"100"}
+          height={"100"}
           src={contentBlog.image}
           alt={contentBlog.alt}
-          width="1024"
-          height="100"
         />
       </div>
       <div className="container-text container">

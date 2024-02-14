@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from "react";
 import "./AnimationPicture.scss";
 import Image from "next/image";
 import { gsap } from "gsap";
+import { CheckCircleIcon, ChevronRightIcon, ShieldCheckIcon } from "@heroicons/react/16/solid";
+
 
 interface AnimationPictureProps {
   itemsPicture: any[];
@@ -60,12 +62,11 @@ const AnimationPicture = ({ itemsPicture }: AnimationPictureProps) => {
             <div className="item2">
               <h3 className="text-h3">{item.title}</h3>
               {i !== 3 ? (
-                <i
-                  id={String(i)}
-                  className="fa-solid fa-chevron-right chevron"
-                ></i>
+                <ChevronRightIcon
+                  className={"chevron text-blue-300 w-8 h-8 ml-3"}
+                />
               ) : (
-                <i className="fa-regular fa-circle-check check"></i>
+                <ShieldCheckIcon className={" text-blue-300 w-8 h-8 ml-3"} />
               )}
             </div>
           </div>

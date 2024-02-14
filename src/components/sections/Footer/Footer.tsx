@@ -2,6 +2,8 @@ import React from "react";
 import "./Footer.scss";
 import images from "../../../assets/Gallery";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +12,7 @@ const Footer: React.FC = () => {
       style={{
         background: `url(${images.footerBackground}) no-repeat center center `,
         backgroundSize: "cover",
-        filter:`url(${images.footerBackground})`
+        filter: `url(${images.footerBackground})`,
       }}
     >
       <div className="footer__container">
@@ -23,7 +25,7 @@ const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href="/info-tarif"  target="_blank">
+              <Link href="/info-tarif" target="_blank">
                 Les tarifs
               </Link>
             </li>
@@ -71,7 +73,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label="facebook"
           >
-            <i className="fa-brands fa-square-facebook"></i>
+            <i className="fa-brands fa-square-facebook"/>
           </Link>
           <Link
             href="https://github.com/Dwfaradji"
@@ -87,7 +89,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label={"linkedin"}
           >
-            <i className="fa-brands fa-linkedin"></i>
+            <i className="fa-brands fa-linkedin"/>
           </Link>
           <Link
             href="https://twitter.com/DevEvoke"
@@ -95,14 +97,13 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label={"twitter"}
           >
-            <i className="fa-brands fa-square-twitter"></i>
+            <i className="fa-brands fa-square-twitter"/>
           </Link>
         </div>
       </div>
       <div className="footer__bottom col-12">
         <p>
-          &copy; {new Date().getFullYear()} DevEvoke - Tous droits
-          réservés.
+          &copy; {new Date().getFullYear()} DevEvoke - Tous droits réservés.
         </p>
       </div>
     </footer>

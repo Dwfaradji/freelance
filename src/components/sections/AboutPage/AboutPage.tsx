@@ -5,6 +5,7 @@ import images from "../../../assets/Gallery";
 import Banner from "../../ui/Banner/Banner";
 import Image from "next/image";
 
+
 const AboutPage = () => {
   // fonction qui active l'animation lorsque l'utilisateur arrive sur un élément
   const handleScroll = () => {
@@ -28,6 +29,7 @@ const AboutPage = () => {
       <div className="container-about-page container mb-8">
         <div className="header-about">
           <h1>À propos</h1>
+          {/*<ChevronRight className={}/>*/}
         </div>
         <h2>Qui nous sommes ? </h2>
         <div className="section-about flex justify-center md:justify-between flex-wrap-reverse">
@@ -44,26 +46,52 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="container-item overflow-hidden m-8 md:m-0">
-            <Image className={"object-cover h-full"} width={"300"} height={300} src={images.imageHead} alt="photo developpeur devevoke" />
+            <Image
+              className={"object-cover h-full"}
+              width={"300"}
+              height={300}
+              src={images.imageHead}
+              alt="photo developpeur devevoke"
+            />
           </div>
         </div>
         <div className="section-skill">
           <h2 className={"mb-8"}>Mes Spécialité</h2>
           <div className="item-skill">
             <div className="item">
-              <Image width={"300"} height={"300"} src={images.reactImage} alt="" />
+              <Image
+                width={"300"}
+                height={"300"}
+                src={images.reactImage}
+                alt=""
+              />
               <h3>React</h3>
             </div>
             <div className="item">
-              <Image width={"300"} height={"300"} src={images.nextImage} alt="" />
+              <Image
+                width={"300"}
+                height={"300"}
+                src={images.nextImage}
+                alt=""
+              />
               <h3>NextJs</h3>
             </div>
             <div className="item">
-              <Image width={"300"} height={"300"} src={images.reduxImage} alt="" />
+              <Image
+                width={"300"}
+                height={"300"}
+                src={images.reduxImage}
+                alt=""
+              />
               <h3>Redux</h3>
             </div>
             <div className="item">
-              <Image width={"300"} height={"300"} src={images.symfonyImage} alt="" />
+              <Image
+                width={"300"}
+                height={"300"}
+                src={images.symfonyImage}
+                alt=""
+              />
               <h3>Symfony</h3>
             </div>
           </div>
@@ -99,7 +127,12 @@ const AboutPage = () => {
             <div className="item">
               <div className="icon-studies">
                 {/*<i className="fa-solid fa-graduation-cap"></i>*/}
-                <Image width={"300"} height={"300"} src={images.etudeImage} alt="" />
+                <Image
+                  width={"300"}
+                  height={"300"}
+                  src={images.etudeImage}
+                  alt=""
+                />
               </div>
               <h3>Études </h3>
 
@@ -107,14 +140,24 @@ const AboutPage = () => {
             </div>
             <div className="item">
               <div className="icon-studies">
-                <Image width={"300"} height={"300"} src={images.formationImage} alt="" />
+                <Image
+                  width={"300"}
+                  height={"300"}
+                  src={images.formationImage}
+                  alt=""
+                />
               </div>
               <h3>Formation</h3>
               <p></p>
             </div>
             <div className="item">
               <div className="icon-studies">
-                <Image width={"300"} height={"300"} src={images.passionImage} alt="" />
+                <Image
+                  width={"300"}
+                  height={"300"}
+                  src={images.passionImage}
+                  alt=""
+                />
               </div>
               <h3>Passion</h3>
               <p></p>

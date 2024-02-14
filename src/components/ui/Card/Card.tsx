@@ -1,6 +1,7 @@
 import React from "react";
 import "./Card.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 interface CardProp {
   id: number;
@@ -22,7 +23,12 @@ const Card = ({ val }: CardProps) => {
         <article id={val.id.toString()}>
           <div className="card">
             <div className="card-img">
-              <img src={val.image} alt={val.alt} />
+              <Image
+                width={"300"}
+                height={"300"}
+                src={val.image}
+                alt={val.alt}
+              />
             </div>
             <div className="card-body">
               <p className="card-date">

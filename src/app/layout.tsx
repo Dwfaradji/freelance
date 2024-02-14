@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Script from "next/script";
 import Footer from "../components/sections/Footer/Footer";
 import "./globals.scss";
 import GoogleAnalytics from "../lib/GoogleAnalytics";
 import { Inter } from "next/font/google";
 import "./globals.scss";
+import Loading from "@/app/loading";
 
 
 export const metadata = {
@@ -55,7 +56,7 @@ export default function RootLayout({
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
       <body className={inter.variable}>
         {/*<Navbar items={navItems} />*/}
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
         <Footer />
       </body>
     </html>

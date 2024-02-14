@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./Ancre.scss";
 import scrollToSection from "../../../lib/utils";
+import {ChevronDoubleUpIcon } from "@heroicons/react/24/solid";
 
 const Ancre = () => {
   const [show, setShow] = useState(false);
@@ -29,7 +30,8 @@ const Ancre = () => {
             onClick={() => scrollToSection("home", true)}
             type="button"
           >
-            <i className="fa-solid fa-angles-up animate-bounce "></i>
+            {/*<i className="fa-solid fa-angles-up animate-bounce "></i>*/}
+            <ChevronDoubleUpIcon  className={"animate-bounce w-6 h-6"}/>
           </button>
         </div>
       )}
