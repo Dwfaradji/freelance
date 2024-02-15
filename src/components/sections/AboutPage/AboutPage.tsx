@@ -25,15 +25,15 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div>
-      <div className="container-about-page container mb-8">
+    <div className="container-about-page  pt-8 pb-8 bg-slate-50 ">
+      <div className={"container"} >
         <div className="header-about">
           <h1>À propos</h1>
           {/*<ChevronRight className={}/>*/}
         </div>
         <h2>Qui nous sommes ? </h2>
-        <div className="section-about flex justify-center md:justify-between flex-wrap-reverse">
-          <div className="container-text w-full md:w-3/6">
+        <div className="section-about flex justify-center md:justify-between flex-wrap-reverse p-2 rounded-2xl shadow-md">
+          <div className="container-text w-full md:w-3/6 flex items-center justify-center">
             <p>
               {`DevEvoke est une entreprise de développement web et mobile. Nous
               sommes spécialisés dans la création de sites web et d'applications
@@ -56,46 +56,46 @@ const AboutPage = () => {
           </div>
         </div>
         <div className="section-skill">
-          <h2 className={"mb-8"}>Mes Spécialité</h2>
-          <div className="item-skill">
+          <h2 className={"mb-8 mt-8"}>Mes Spécialité</h2>
+          <div className="item-skill shadow-md bg-white p-4">
             <div className="item">
               <Image
                 width={"300"}
                 height={"300"}
                 src={images.reactImage}
-                alt=""
+                alt="react"
               />
-              <h3>React</h3>
+              <h3 className={"text-base md:text-xl"}>React</h3>
             </div>
             <div className="item">
               <Image
                 width={"300"}
                 height={"300"}
                 src={images.nextImage}
-                alt=""
+                alt="nextjs"
               />
-              <h3>NextJs</h3>
+              <h3 className={"text-base md:text-xl"}>NextJs</h3>
             </div>
             <div className="item">
               <Image
                 width={"300"}
                 height={"300"}
                 src={images.reduxImage}
-                alt=""
+                alt="redux"
               />
-              <h3>Redux</h3>
+              <h3 className={"text-base md:text-xl"}>Redux</h3>
             </div>
             <div className="item">
               <Image
                 width={"300"}
                 height={"300"}
                 src={images.symfonyImage}
-                alt=""
+                alt="synfony"
               />
-              <h3>Symfony</h3>
+              <h3 className={"text-base md:text-xl"}>Symfony</h3>
             </div>
           </div>
-          <p className={"m-8"}>
+          <p className={"mt-8 mb-8 bg-white p-3 rounded-2xl shadow-md"}>
             {`Bienvenue sur mon espace professionnel en ligne, où je fusionne
               créativité et expertise technique pour construire des expériences
               Web captivantes et fonctionnelles. Spécialisé dans les solutions
@@ -122,21 +122,19 @@ const AboutPage = () => {
           </p>
         </div>
         <div className="section-studies">
-          <h2 className={"mb-8"}>Mon Parcours</h2>
-          <div className="item-studies">
-            <div className="item">
-              <div className="icon-studies">
+          <h2 className={"mb-8 mt-8"}>Mon Parcours</h2>
+          <div className="item-studies shadow-md bg-white p-4">
+            <div className="item ">
+              <div className="icon-studies ">
                 {/*<i className="fa-solid fa-graduation-cap"></i>*/}
                 <Image
-                  width={"300"}
-                  height={"300"}
+                  width={"200"}
+                  height={"200"}
                   src={images.etudeImage}
-                  alt=""
+                  alt="etudes"
                 />
               </div>
-              <h3>Études </h3>
-
-              <p></p>
+              <h3 className={"text-base md:text-xl"}>Études </h3>
             </div>
             <div className="item">
               <div className="icon-studies">
@@ -144,11 +142,10 @@ const AboutPage = () => {
                   width={"300"}
                   height={"300"}
                   src={images.formationImage}
-                  alt=""
+                  alt="formation"
                 />
               </div>
-              <h3>Formation</h3>
-              <p></p>
+              <h3 className={"text-base md:text-xl"}>Formation</h3>
             </div>
             <div className="item">
               <div className="icon-studies">
@@ -156,14 +153,13 @@ const AboutPage = () => {
                   width={"300"}
                   height={"300"}
                   src={images.passionImage}
-                  alt=""
+                  alt="passion"
                 />
               </div>
-              <h3>Passion</h3>
-              <p></p>
+              <h3 className={"text-base md:text-xl"}>Passion</h3>
             </div>
           </div>
-          <p className={"m-8"}>
+          <p className={"mt-8 mb-8 bg-white p-3 rounded-2xl shadow-md"}>
             {`Mon voyage dans l'univers du développement web a débuté par une
             fascination pour la technologie et une curiosité insatiable pour les
             dernières innovations. Au fil des années, j'ai forgé un parcours qui

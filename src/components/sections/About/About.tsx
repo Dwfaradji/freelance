@@ -49,7 +49,7 @@ const About = () => {
       <div className="about-container">
         <h2 className="about-title text-h2">À propos de moi</h2>
         <div className="about-content col-sm-12 col-md-12">
-          <TextHidden text={textAbout} />
+          <TextHidden text={textAbout} style={""}/>
         </div>
       </div>
       <button>

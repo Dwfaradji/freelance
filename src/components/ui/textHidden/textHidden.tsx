@@ -3,13 +3,13 @@ import React, { useState } from "react";
 
 interface TextProps {
   text: string;
+  style: string;
 }
 
-const TextHidden = ({ text }: TextProps) => {
+const TextHidden = ({ text, style}: TextProps) => {
   const [visibleText, setVisibleText] = useState("h-36");
   const [textButton, setTextButton] = useState("Lire la suite ...");
   const handleShowText = (e: any) => {
-    e.preventDefault();
     setVisibleText("h-full");
     setTextButton("Fermer");
     if (textButton == "Fermer") {
@@ -19,7 +19,7 @@ const TextHidden = ({ text }: TextProps) => {
   };
   return (
     <div>
-      <p className={`${visibleText} overflow-hidden `}>{text}</p>
+      <p className={`${visibleText} ${style} overflow-hidden`}>{text}</p>
       <span className={"cursor-pointer"} onClick={handleShowText}>
         {textButton}
       </span>
