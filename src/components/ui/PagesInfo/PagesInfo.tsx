@@ -28,9 +28,6 @@ const PagesInfo = ({ infosText }: PagesInfoProps) => {
           </article>
         ))}
       </section>
-      {/*{isOpen && (*/}
-      {/*  <Modal showModal={isOpen} setIsOpen={setIsOpen} typeModal="form" />*/}
-      {/*)}*/}
     </div>
   );
 };
