@@ -70,7 +70,7 @@ const Navbar = ({ items }: NavProps) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [colorsInit, colorsSecond]);
+  }, [colorsInit, colorsSecond, handleScroll]);
 
   const handleResize = () => {
     const screenWidth = window.innerWidth;
@@ -97,7 +97,7 @@ const Navbar = ({ items }: NavProps) => {
     setOpenNav(false);
   };
 
-  const renderNavLinks = (isCollapsed: boolean) => (
+  const renderNavLinks = () => (
     <ul className="navLinks">
       {itemsNav.map((item, index) => (
         <li
@@ -114,7 +114,7 @@ const Navbar = ({ items }: NavProps) => {
   );
 
   return (
-    <nav className="nav h-10 md:h-20">
+    <nav className="nav h-16 md:h-20">
       <div className="block">
         <Link
           className="logoSvg flex items-center"
