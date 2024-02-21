@@ -83,7 +83,7 @@ const articles: Article[] = [
     image: images.templateHairdresser,
     description:
       "Mettez en valeur votre talent et attirez de nouveaux clients avec ce template élégant et moderne dédié aux professionnels de la coiffure.",
-    link: `${url}/template/haidresser/index.html`,
+    link: `${url}/template/hairdresser/index.html`,
   },
 ];
 

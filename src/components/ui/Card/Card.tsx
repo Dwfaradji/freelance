@@ -19,7 +19,7 @@ interface CardProps {
 const Card = ({ val }: CardProps) => {
   return (
     <div>
-      <Link href={`/blog/${val.id.toString()}`}>
+      <Link prefetch={true} href={`/blog/${val.id.toString()}`}>
         <article id={val.id.toString()}>
           <div className="card">
             <div className="card-img">
@@ -28,11 +28,12 @@ const Card = ({ val }: CardProps) => {
                 height={"300"}
                 src={val.image}
                 alt={val.alt}
+                priority={true}
               />
             </div>
             <div className="card-body">
               <p className="card-date">
-                Publié le <span>{val.date}</span> par devEvoke{" "}
+                Publié le <span>{val.date}</span> par DevEvoke
               </p>
               <h2 className="card-title">{val.title}</h2>
               <div className={"card-text"}>
