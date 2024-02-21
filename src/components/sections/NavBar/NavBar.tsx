@@ -114,7 +114,7 @@ const Navbar = ({ items }: NavProps) => {
   );
 
   return (
-    <nav className="nav">
+    <nav className="nav h-10 md:h-20">
       <div className="block">
         <Link
           className="logoSvg flex items-center"

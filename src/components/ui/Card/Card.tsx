@@ -35,7 +35,9 @@ const Card = ({ val }: CardProps) => {
                 Publié le <span>{val.date}</span> par devEvoke{" "}
               </p>
               <h2 className="card-title">{val.title}</h2>
-              <p className="card-text">{val.descriptionShort}</p>
+              <div className={"card-text"}>
+                <p className="card-text">{val.descriptionShort}</p>
+              </div>
             </div>
           </div>
         </article>

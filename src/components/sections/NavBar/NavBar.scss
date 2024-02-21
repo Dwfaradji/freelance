@@ -8,13 +8,12 @@
   background: transparent;
   position: relative;
   z-index: 1000;
-  height: 64px;
   @include displayCenterBetween;
   font-size: $font-size-small;
   font-family: $font-primary;
 
   .block {
-    height: 64px;
+    //height: 64px;
     width: 100dvw;
     @include displayCenterBetween;
 
