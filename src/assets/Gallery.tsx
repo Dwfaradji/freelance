@@ -13,6 +13,10 @@ const images = {
   templateMedical: "/images/templates/medicalTemplate.png",
   templateEnergy: "/images/templates/energyTemplate.png",
   templateYoga: "/images/templates/yogaTemplate.png",
+  templateDesign: "/images/templates/design_interieur.png",
+  templateOrganicFarm: "/images/templates/organic-farm.png",
+  templateHairdresser: "/images/templates/hairdresser.png",
+
 
   pictureHeader: "/images/bg-4.webp",
   footerBackground: "/images/backgroundContact.webp",
@@ -32,7 +36,7 @@ const images = {
   etudeImage: "/images/etude.png",
   formationImage: "/images/formation-image.png",
   passionImage: "/images/passion-image.png",
-  imageHead:"/images/test2.webp"
+  imageHead: "/images/test2.webp"
 };
 
 export default images;

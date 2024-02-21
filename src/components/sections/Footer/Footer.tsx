@@ -2,8 +2,6 @@ import React from "react";
 import "./Footer.scss";
 import images from "../../../assets/Gallery";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 
 const Footer: React.FC = () => {
   return (
@@ -20,18 +18,17 @@ const Footer: React.FC = () => {
           <h3 className="text-h3">Infos général</h3>
           <ul>
             <li>
-              <Link href="/info-procedure" target="_blank">
-                Procédure
-              </Link>
+              <Link href="/info-procedure">Procédure</Link>
             </li>
             <li>
-              <Link href="/info-tarif" target="_blank">
-                Les tarifs
-              </Link>
+              <Link href="/info-tarif">Les tarifs</Link>
             </li>
             <li>
-              <Link href="/mentions-legal" target="_blank">
-                Mentions légal
+              <Link href="/mentions-legal">Mentions légal</Link>
+            </li>
+            <li>
+              <Link href="/politique-confidentialite">
+                Politique de confidentialité
               </Link>
             </li>
           </ul>
@@ -73,7 +70,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label="facebook"
           >
-            <i className="fa-brands fa-square-facebook"/>
+            <i className="fa-brands fa-square-facebook" />
           </Link>
           <Link
             href="https://github.com/Dwfaradji"
@@ -89,7 +86,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label={"linkedin"}
           >
-            <i className="fa-brands fa-linkedin"/>
+            <i className="fa-brands fa-linkedin" />
           </Link>
           <Link
             href="https://twitter.com/DevEvoke"
@@ -97,7 +94,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             aria-label={"twitter"}
           >
-            <i className="fa-brands fa-square-twitter"/>
+            <i className="fa-brands fa-square-twitter" />
           </Link>
         </div>
       </div>

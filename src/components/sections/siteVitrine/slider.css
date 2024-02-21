@@ -1,7 +1,9 @@
 
 .mySwiperSlide {
     /*width: 70%;*/
-    /*height: 38rem;*/
+    /*height: 70dvh;*/
+
+    /*height: 75dvh;*/
     display: flex;
     align-items: center;
 }

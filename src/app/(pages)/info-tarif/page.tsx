@@ -1,10 +1,11 @@
 import React from "react";
-import InfoTarif from "@/app/(pages)/info-tarif/info-tarif";
+import PagesInfo from "@/components/ui/PagesInfo/PagesInfo";
+import { pageInfosPrice } from "@/data/data";
 
 const Page = () => {
   return (
     <div>
-      <InfoTarif />
+      <PagesInfo infosText={pageInfosPrice} />
     </div>
   );
 };

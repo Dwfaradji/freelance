@@ -4,26 +4,27 @@ import React, { useState } from "react";
 interface TextProps {
   text: string;
   style: string;
+  heightVisible:string
 }
 
-const TextHidden = ({ text, style}: TextProps) => {
-  const [visibleText, setVisibleText] = useState("h-36");
+const TextHidden = ({ text, style ,heightVisible}: TextProps) => {
+  const [visibleText, setVisibleText] = useState(heightVisible);
   const [textButton, setTextButton] = useState("Lire la suite ...");
   const handleShowText = (e: any) => {
     setVisibleText("h-full");
     setTextButton("Fermer");
     if (textButton == "Fermer") {
-      setVisibleText("h-36");
+      setVisibleText(heightVisible);
       setTextButton("Lire la suite ...");
     }
   };
   return (
-    <div>
-      <p className={`${visibleText} ${style} overflow-hidden`}>{text}</p>
-      <span className={"cursor-pointer"} onClick={handleShowText}>
+    <>
+      <p className={`${visibleText} ${style} overflow-hidden break-all`}>{text}</p>
+      <span className={"cursor-pointer  truncate"} onClick={handleShowText}>
         {textButton}
       </span>
-    </div>
+    </>
   );
 };
 

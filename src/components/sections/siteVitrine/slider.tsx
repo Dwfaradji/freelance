@@ -15,6 +15,7 @@ import FormulaireDevis from "@/components/ui/FormDevis/formDevis";
 import { useMyContext } from "@/context/Mycontext";
 import axios from "axios";
 import Link from "next/link";
+import TextHidden from "@/components/ui/textHidden/textHidden";
 
 interface Slide {
   slidesData: {
@@ -146,12 +147,21 @@ const Slider = ({ slidesData }: Slide) => {
           {slidesData.map(({ title, content, ComponentType, props }, index) => (
             <SwiperSlide key={index}>
               <div className="mt-7">
-                <h2  className="text-black m-0">
-                  {title}
-                </h2>
-                <p className="text-black text-left m-0 md:m-3 min-h-max mb-7 h-6 hover:h-full overflow-hidden md:h-auto">
-                  {content}
-                </p>
+                <h2 className="text-black m-0">{title}</h2>
+
+                <div className={"hidden md:block"}>
+                  <p className=" break-all text-black text-left m-0 md:m-3 min-h-max mb-7 h-6 hover:h-full overflow-hidden md:h-auto">
+                    {content}
+                  </p>
+                </div>
+
+                <div className={"block md:hidden"}>
+                  <TextHidden
+                    text={content}
+                    style={"text-black text-left"}
+                    heightVisible={"h-16"}
+                  />
+                </div>
               </div>
               <div className="w-full h-96 m-4 ">
                 <ComponentType {...props} />

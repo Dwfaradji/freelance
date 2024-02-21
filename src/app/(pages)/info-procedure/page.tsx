@@ -1,11 +1,12 @@
 import React from "react";
-import InfoProcedure from "@/app/(pages)/info-procedure/info-procedure";
+import PagesInfo from "@/components/ui/PagesInfo/PagesInfo";
+import { pageInfosProcess } from "@/data/data";
 
 
 const Page = () => {
   return (
     <div>
-      <InfoProcedure />
+      <PagesInfo infosText={pageInfosProcess} />
     </div>
   );
 };

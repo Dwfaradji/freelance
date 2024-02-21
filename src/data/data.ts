@@ -34,7 +34,7 @@ const projects: Project[] = [
     title: "Fénix Solutions",
     image: String(images.fenixSolutions),
     alt: "image du projet fenix solutions",
-    tech: ["Vue3,"," Node,", " ApiRest"],
+    tech: ["Vue3,", " Node,", " ApiRest"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_P4_21-07-22/",
   },
   {
@@ -42,7 +42,7 @@ const projects: Project[] = [
     title: "Fish Eyes",
     image: String(images.fishEyes),
     alt: "image du projet fish eyes",
-    tech: ["React"," Seo"],
+    tech: ["React", " Seo"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_P6_19-08-22/",
   },
   {
@@ -50,7 +50,7 @@ const projects: Project[] = [
     title: "Kasa",
     image: String(images.kasa),
     alt: "image du projet kasa",
-    tech: ["React,"," Redux"],
+    tech: ["React,", " Redux"],
     link: "https://devevoke-projet.github.io/kasa/",
   },
   {
@@ -58,7 +58,7 @@ const projects: Project[] = [
     title: "Keller Williams",
     image: String(images.kellerWilliams),
     alt: "image du projet keller williams",
-    tech: ["Next,"," React,"," Symfony,"," Docker"],
+    tech: ["Next,", " React,", " Symfony,", " Docker"],
     link: "https://kwoxygene.fr/",
   },
 ];
@@ -335,7 +335,7 @@ const pageInfosProcess: PageInfo[] = [
           effectue une analyse approfondie des besoins du client. Cette étape
           implique la définition des fonctionnalités requises, la sélection des
           technologies appropriées et l'estimation du temps et des ressources
-          nécessaires pour le projet.`,
+          nécessaires pour le projet. `,
   },
   {
     title: "Étape 3 : Conception et prototypage",
@@ -392,50 +392,97 @@ const pageMentionsLegales: PageInfo[] = [
   },
   {
     title: "Édition du site",
-    text:
-      "En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet https://www.devevoke.com/ l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi:\n" +
-      "Propriétaire du site : Faradji Boucif - Contact : contact@devevoke.com 06 18 23 76 62 - Adresse : 5 impasse des vergers.\n" +
-      "Identification de l'entreprise : EI Faradji Boucif au capital social de € - SIREN : 87843895100013 - RCS ou RM : - Adresse postale : 5 impasse des vergers - \n" +
-      "Directeur de la publication : Faradji boucif - Contact : dw.faradji66@yahoo.co.\n" +
-      "Hébergeur : OVH SAS - 2 rue Kellermann - BP 80157 - 59053 Roubaix Cedex 1 - Téléphone : 1007",
+    text: "En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet https://www.devevoke.com/ l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi: Propriétaire du site : Faradji Boucif - Contact : contact@devevoke.com 06 18 23 76 62 - Adresse : 5 impasse des vergers. Identification de l'entreprise : EI Faradji Boucif au capital social de € - SIREN : 87843895100013 - RCS ou RM : - Adresse postale : 5 impasse des vergers - Directeur de la publication : Faradji boucif - Contact : dw.faradji66@yahoo.co. Hébergeur : OVH SAS - 2 rue Kellermann - BP 80157 - 59053 Roubaix Cedex 1 - Téléphone : 1007",
   },
   {
-    title: " Propriété intellectuelle et contrefaçons.",
-    text:
-      "Faradji Boucif est propriétaire des droits de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site internet, notamment les textes, images, graphismes, logos, vidéos, architecture, icônes et sons.\n" +
-      "Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de Faradji Boucif.\n" +
-      "Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.\n",
+    title: "Propriété intellectuelle et contrefaçons.",
+    text: "Faradji Boucif est propriétaire des droits de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site internet, notamment les textes, images, graphismes, logos, vidéos, architecture, icônes et sons. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de Faradji Boucif. Toute non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.",
   },
   {
     title: "Limitations de responsabilité.",
-    text:
-      "Faradji Boucif ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site https://www.devevoke.com/.\n" +
-      "Faradji Boucif décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur https://www.devevoke.com/.\n" +
-      "Faradji Boucif s’engage à sécuriser au mieux le site https://www.devevoke.com/, cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son site à son insu.\n" +
-      "Des espaces interactifs (espace contact ou commentaires) sont à la disposition des utilisateurs. Faradji Boucif se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données.\n" +
-      "Le cas échéant, Faradji Boucif se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie …).\n",
+    text: "Faradji Boucif ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site https://www.devevoke.com/. Faradji Boucif décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur https://www.devevoke.com/. Faradji Boucif s’engage à sécuriser au mieux le site https://www.devevoke.com/, cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son site à son insu. Des espaces interactifs (espace contact ou commentaires) sont à la disposition des utilisateurs. Faradji Boucif se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données. Le cas échéant, Faradji Boucif se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie …).",
   },
   {
-    title: " CNIL et gestion des données personnelles.",
-    text:
-      "Conformément aux dispositions de la loi 78-17 du 6 janvier 1978 modifiée, l’utilisateur du site https://www.devevoke.com/ dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre Délégué à la Protection des Données : - .\n" +
-      "Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), lisez notre https://www.devevoke.com/politique-confidentialité. [Consignes : ajoutez ici le lien hypertexte vers votre politique de confidentialité]",
+    title: "CNIL et gestion des données personnelles.",
+    text: "Conformément aux dispositions de la loi 78-17 du 6 janvier 1978 modifiée, l’utilisateur du site https://www.devevoke.com/ dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre Délégué à la Protection des Données : -. Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), lisez notre.",
   },
   {
     title: "Liens hypertextes et cookies.",
-    text:
-      "Le site https://www.devevoke.com/ contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers https://www.devevoke.com/.\n" +
-      "La navigation sur le site https://www.devevoke.com/ est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.\n" +
-      "Un cookie est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par exemple.\n" +
-      "Vous avez la possibilité d’accepter ou de refuser les cookies en modifiant les paramètres de votre navigateur. Aucun cookie ne sera déposé sans votre consentement.\n" +
-      "Les cookies sont enregistrés pour une durée maximale de 5 mois.\n" +
-      "Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre https://www.devevoke.com/politique-confidentialité. [Consignes : ajoutez ici le lien hypertexte vers votre politique de confidentialité ou vers votre politique de cookies si vous en avez une (c'est le cas si vous utilisez Complianz)]\n",
+    text: "Le site https://www.devevoke.com/ contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers https://www.devevoke.com/. La navigation sur le site https://www.devevoke.com/ est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. Un cookie est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par exemple. Vous avez la possibilité d’<a href='https://www.devevoke.com/politique-confidentialité'>accepter ou de refuser les cookies</a> en modifiant les paramètres de votre navigateur. Aucun cookie ne sera déposé sans votre consentement. Les cookies sont enregistrés pour une durée maximale de 5 mois. Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre <a href='https://www.devevoke.com/politique-confidentialité'>politique de confidentialité</a>.",
   },
   {
     title: "Droit applicable et attribution de juridiction.",
-    text: "Tout litige en relation avec l’utilisation du site https://www.devevoke.com/ est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Perpignan.\n",
+    text: "Tout litige en relation avec l’utilisation du site https://www.devevoke.com/ est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Perpignan.",
+  },
+
+];
+
+const politiqueConfidentialite: PageInfo[] = [
+  {
+    titleH1: "Politique de confidentialité",
+  },
+  {
+    title: "Introduction",
+    text: "La présente politique de confidentialité a pour but de vous informer de la manière dont nous traitons vos données personnelles lorsque vous utilisez notre site web ou nos services. Nous nous engageons à respecter votre vie privée et à protéger vos données personnelles conformément à la réglementation en vigueur.",
+  },
+  {
+    title: "Données collectées",
+    text: `Lorsque vous utilisez notre site web ou nos services, nous sommes susceptibles de collecter les données personnelles suivantes :
+- Informations de base : nom, prénom, adresse e-mail, numéro de téléphone, adresse postale.
+- Données de connexion : adresse IP, type de navigateur, système d'exploitation, date et heure de connexion.
+- Données de contenu : contenu que vous publiez sur notre site web ou nos services, tels que des commentaires, des photos ou des vidéos.
+- Données de navigation : pages que vous visitez sur notre site web, liens sur lesquels vous cliquez.`,
+  },
+  {
+    title: "Utilisation des données",
+    text: `Les données personnelles que nous collectons sont utilisées aux fins suivantes :
+- Fournir et améliorer nos services : nous utilisons vos données pour vous fournir les services que vous avez demandés et pour améliorer l'expérience utilisateur.
+- Communiquer avec vous : nous utilisons vos données pour vous contacter par e-mail, par téléphone ou par courrier postal afin de vous fournir des informations sur nos services ou pour répondre à vos questions.
+- Analyser les données : nous utilisons des outils d'analyse pour collecter des informations sur l'utilisation de notre site web et de nos services. Ces informations nous permettent d'améliorer nos services et de vous proposer des contenus plus pertinents.
+- Sécurité et prévention des fraudes : nous utilisons vos données pour garantir la sécurité de notre site web et de nos services et pour prévenir les fraudes.`,
+  },
+  {
+    title: "Partage des données",
+    text: `Nous ne partageons vos données personnelles avec des tiers que dans les cas suivants :
+- Avec votre consentement : nous ne partageons vos données personnelles avec des tiers qu'avec votre consentement explicite.
+- Avec des prestataires de services : nous partageons vos données personnelles avec des prestataires de services qui nous aident à fournir nos services, tels que des hébergeurs web ou des sociétés de marketing.
+- Pour des raisons légales : nous pouvons être amenés à partager vos données personnelles si la loi nous l'impose ou si nous pensons de bonne foi qu'il est nécessaire de le faire pour protéger nos droits ou ceux de tiers.`,
+  },
+  {
+    title: "Conservation des données",
+    text: "Nous conservons vos données personnelles pendant la durée nécessaire à la réalisation des finalités pour lesquelles elles ont été collectées. Nous pouvons également conserver vos données personnelles pendant une période plus longue si la loi nous l'impose ou si nous pensons de bonne foi qu'il est nécessaire de le faire pour protéger nos droits ou ceux de tiers.",
+  },
+  {
+    title: "Vos droits",
+    text: `Vous disposez de plusieurs droits en ce qui concerne vos données personnelles, notamment :
+- Le droit d'accès : vous avez le droit de demander l'accès à vos données personnelles que nous détenons.
+- Le droit de rectification : vous avez le droit de demander la rectification de vos données personnelles si elles sont inexactes ou incomplètes.
+- Le droit à l'effacement : vous avez le droit de demander l'effacement de vos données personnelles dans certains cas.
+- Le droit de limitation du traitement : vous avez le droit de demander la limitation du traitement de vos données personnelles dans certains cas.
+- Le droit d'opposition : vous avez le droit de vous opposer au traitement de vos données personnelles dans certains cas.
+- Le droit à la portabilité des données : vous avez le droit de recevoir vos données personnelles dans un format structuré, couramment utilisé et lisible par machine, et de les transmettre à un autre responsable du traitement.`,
+  },
+  {
+    title: "Contactez-nous",
+    text: `Pour exercer vos droits, vous pouvez nous contacter à l'adresse suivante :
+- Devevoke
+- contact@devevoke.com
+- 04 34 29 76 40`,
+  },
+  {
+    title: "Modifications de la politique de confidentialité",
+    text: "Nous nous réservons le droit de modifier la présente politique de confidentialité à tout moment. Nous vous informerons de toute modification importante en publiant un avis sur notre site web ou en vous envoyant un e-mail.",
+  },
+  {
+    title: "Date de la dernière mise à jour",
+    text: "Date de la dernière mise à jour : 2023-11-16",
+  },
+  {
+    title: "Acceptation de la politique de confidentialité",
+    text: "En utilisant notre site web ou nos services, vous acceptez la présente politique de confidentialité.",
   },
 ];
+
 export {
   services,
   projects,
@@ -445,4 +492,5 @@ export {
   pageInfosPrice,
   pageInfosProcess,
   pageMentionsLegales,
+  politiqueConfidentialite,
 };

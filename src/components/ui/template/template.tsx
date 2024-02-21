@@ -32,56 +32,59 @@ interface MultiCheckboxProps {
   onTemplateSelect: (option: string) => void;
 }
 
-//localhost:3000/
 //DATA
-const url = "https://www.devevoke.com";
+// const url = "https://www.devevoke.com";
+const url = "http://localhost:3000";
 
 const articles: Article[] = [
   {
     id: 1,
-    title: "HealthPro",
+    title: "Clinique Bien-Être ⚕️",
     image: images.templateMedical,
     description:
-      "HealthPro est un modèle concis pour les professionnels de santé, offrant clarté, navigation intuitive et sécurité en ligne, parfait pour une communication efficace et sécurisée.",
+      "Créez un site web professionnel et rassurant pour votre clinique médicale avec ce template intuitif et personnalisable.",
     link: `${url}/template/mediplus/index.html/`,
   },
   {
     id: 2,
-    title: "YogaFlow",
+    title: "Éveil Intérieur ‍♀️",
     image: images.templateYoga,
     description:
-      "YogaFlow est un template zen et dynamique, idéal pour les studios de yoga ou les instructeurs indépendants. Il met en valeur la pratique du yoga, les cours et les ateliers avec une touche de sérénité et d'inspiration, favorisant une connexion profonde avec les visiteurs.",
+      "Trouvez votre équilibre intérieur et explorez votre potentiel avec ce template conçu pour les yogis de tous niveaux.",
     link: `${url}/template/yoga/index.html/`,
   },
   {
     id: 3,
-    title: "GreenEnergy",
+    title: "Éco-Futur",
     image: images.templateEnergy,
     description:
-      "GreenEnergy est un modèle vibrant, conçu pour les entreprises d'énergie renouvelable. Il souligne l'engagement envers la durabilité et l'innovation, présentant technologies propres et projets verts de manière claire et attrayante.",
+      "Engagez-vous dans la transition écologique et donnez vie à votre projet d'énergie renouvelable avec ce template dynamique et informatif.",
     link: `${url}/template/renewableEnergy/index.html/`,
   },
-  // {
-  //   id: 4,
-  //   title: "CreativeMind",
-  //   image: images.fishEyes,
-  //   description:
-  //     "Un design moderne et interactif, adapté aux entreprises technologiques, aux blogueurs high-tech ou aux startups.",
-  // },
-  // {
-  //   id: 5,
-  //   title: "Gastronome",
-  //   image: images.ohmyfood,
-  //   description:
-  //     "Conçu pour les établissements éducatifs, les formateurs ou les sites de e-learning, avec un aspect à la fois professionnel et accessible.",
-  // },
-  // {
-  //   id: 6,
-  //   title: "FashionTrend",
-  //   image: images.chouetteAgence,
-  //   description:
-  //     "Parfait pour les artisans, les boutiques de produits faits main ou les petits commerces, offrant un design chaleureux et personnalisé.",
-  // },
+  {
+    id: 4,
+    title: "Studio Créatif",
+    image: images.templateDesign,
+    description:
+      "Exprimez votre vision unique et présentez votre entreprise avec style grâce à ce template flexible et adaptable à tous les domaines du design.",
+    link: `${url}/template/design-interieur/index.html`,
+  },
+  {
+    id: 5,
+    title: "Terre nourricière",
+    image: images.templateOrganicFarm,
+    description:
+      "Valorisez votre exploitation agricole et partagez votre passion avec ce template authentique et convivial.",
+    link: `${url}/template/organic-farm/index.html`,
+  },
+  {
+    id: 6,
+    title: "Salon Tendance ‍♀",
+    image: images.templateHairdresser,
+    description:
+      "Mettez en valeur votre talent et attirez de nouveaux clients avec ce template élégant et moderne dédié aux professionnels de la coiffure.",
+    link: `${url}/template/haidresser/index.html`,
+  },
 ];
 
 const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
@@ -120,28 +123,29 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
         allowTouchMove={true}
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swipper-template"
-
       >
         {articles.map((article, index) => (
           <SwiperSlide key={article.id}>
-            <div className="group  w-full relative flex flex-col justify-center items-center cursor-pointer  ">
+            <div className="group  w-full relative flex flex-col justify-between items-center cursor-pointer  ">
               <Images
                 width={400}
-                height={800}
+                height={600}
                 src={article.image}
                 alt={article.title}
                 // style={{ width: "100%", height: "100%" }}
                 priority={true}
-                objectFit={"cover"}
               />
 
               <div className="text-base absolute h-full w-full flex-col flex justify-between items-center p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="flex justify-center items-center h-full">{article.description}</p>
+                <p className="break-all flex justify-center items-center h-full text-left">
+                  {article.description}
+                </p>
                 <Link className="mt-5" href={article.link} target={"_blank"}>
                   <button>Démo</button>
                 </Link>
               </div>
             </div>
+
             <div className="w-full flex flex-col justify-center items-center m-5">
               <label htmlFor={String(article.id)}>{article.title}</label>
               <input

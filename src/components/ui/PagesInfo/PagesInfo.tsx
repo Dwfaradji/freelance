@@ -23,7 +23,8 @@ const PagesInfo = ({ infosText }: PagesInfoProps) => {
         {infosText.map((item, i) => (
           <article key={i.toString()} className="tarif-card">
             <h2>{item.title}</h2>
-            <p>{item.text}</p>
+            <p>{item.text}
+            </p>
           </article>
         ))}
       </section>

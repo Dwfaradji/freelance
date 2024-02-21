@@ -1,10 +1,11 @@
 import React from "react";
-import MentionsLegal from "@/app/(pages)/mentions-legal/mentions-legal";
+import PagesInfo from "@/components/ui/PagesInfo/PagesInfo";
+import { pageMentionsLegales } from "@/data/data";
 
 const Page = () => {
   return (
     <div>
-      <MentionsLegal />
+      <PagesInfo infosText={pageMentionsLegales} />
     </div>
   );
 };
