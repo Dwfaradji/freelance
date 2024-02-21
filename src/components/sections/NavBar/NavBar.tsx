@@ -42,6 +42,7 @@ const Navbar = ({ items }: NavProps) => {
   const [colors, setColors] = useState(colorsInit);
   const svgElement = logoSVG(colors);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleScroll = () => {
     const navElement = document.querySelector(".nav");
     const openElement = document.querySelector(".openCollapse .navLinks");
@@ -125,7 +126,7 @@ const Navbar = ({ items }: NavProps) => {
         </Link>
 
         <div id="mainListDiv" className="main_list">
-          {renderNavLinks(false)}
+          {renderNavLinks()}
         </div>
         <span onClick={toggleNav} className="navTrigger">
           <i></i>
@@ -134,7 +135,7 @@ const Navbar = ({ items }: NavProps) => {
         </span>
       </div>
       <div className={openNav ? "openCollapse" : "closeCollapse"}>
-        {renderNavLinks(true)}
+        {renderNavLinks()}
       </div>
     </nav>
   );
