@@ -40,7 +40,6 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
       setDisplayNav(true);
     }
     window.addEventListener("resize", (e) => {
-      console.log(window.innerWidth);
       if (window.innerWidth <= 640) {
         setDisplayNav(false);
       } else {
