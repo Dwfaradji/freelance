@@ -21,7 +21,7 @@ interface Project {
 }
 
 interface Price {
-  id: number;
+  id: string;
   title: string;
   subtitle: string;
   price: string;

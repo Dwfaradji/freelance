@@ -1,5 +1,4 @@
 import React from "react";
-import "@/app/globals.scss";
 
 export const metadata = {
   title: "processus de création de site web sur mesure",

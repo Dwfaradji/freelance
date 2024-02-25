@@ -1,5 +1,4 @@
 import React from "react";
-import "@/app/globals.scss";
 
 export const metadata = {
   title: "Mentions légales - DevEvoke",
