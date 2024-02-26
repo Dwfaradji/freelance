@@ -16,7 +16,7 @@ const PricingMain = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6  lg:block">
+    <div className="max-w-7xl mx-auto px-6 lg:block">
       <Fade >
         <div className="flex-col gap-3 w-full bg-gradient-to-r from-pink to-purple flex items-center justify-center  rounded-xl">
           {prices.map((tarif, i) => (
@@ -61,14 +61,18 @@ const PricingMain = () => {
                 </div>
               </article>
           ))}
+
           {isOpen && (
+            <div className={"relative z-50"}>
               <Modal
-                  showModal={isOpen}
-                  setIsOpen={setIsOpen}
-                  contentModal={contentModal}
-                  prices={prices}
+                showModal={isOpen}
+                setIsOpen={setIsOpen}
+                contentModal={contentModal}
+                prices={prices}
 
               />
+            </div>
+
           )}
         </div>
       </Fade>

@@ -34,7 +34,7 @@ const BlogPage = () => {
             {contentBlog && (
                 <Fade >
                     <div className="max-w-7xl mx-auto mt-10 flex flex-col text-white relative">
-                        <div className="h-screen overflow-hidden rounded-xl m-5">
+                        <div className="overflow-hidden rounded-xl m-5">
                             <Image priority src={contentBlog.img} width={1650} height={300} alt={"article_blog"}/>
                         </div>
 

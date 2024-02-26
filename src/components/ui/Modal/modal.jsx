@@ -30,19 +30,17 @@ const Modal = ({
     };
   }, [setIsOpen, showModal]);
 
-  const [modal, setModal] = useState();
+  const [modal, setModal] = useState("");
 
 
   useEffect(() => {
     // Ajoute la classe lorsque la modal s'ouvre
     document.body.classList.add('modal-open');
-
-
   }, []);
 
   return (
-    <div id="popup-modal" tabIndex="-1" aria-hidden="true"
-         className={`${open} fixed z-50 flex justify-center items-center w-full inset-0 h-[calc(100%-1rem)] max-h-full`}>
+    <div id="modal" tabIndex="-1" aria-hidden="true"
+         className={`${open} fixed z-50 flex justify-center items-center w-full inset-0 h-screen max-h-full top-10 md:top-8`}>
       <div className="relative p-4  max-w-2xl mx-auto max-h-full text-center">
 
         <div className="relative bg-white rounded-lg shadow dark:bg-black">
