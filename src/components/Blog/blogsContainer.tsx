@@ -37,7 +37,7 @@ const BlogsContainer = () => {
                 </div>
             </Fade>
             <div
-                className="w-full h-72 mt-10 bg-gradient-to-r from-pink to-purple rounded-xl flex flex-col items-center justify-center">
+                className="hidden w-full h-72 mt-10 bg-gradient-to-r from-pink to-purple rounded-xl flex flex-col items-center justify-center">
                 <h1 className="font-poppins font-bold text-3xl">Rester dans la boucle</h1>
                 <h2 className="text-lg mt-2 opacity-50">
                     Abonnez-vous à notre newsletter pour recevoir les meilleures nouvelles avant tout le monde

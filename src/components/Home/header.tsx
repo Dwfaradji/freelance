@@ -40,15 +40,15 @@ const Header = () => {
                 </div>
             </Fade>
             <Fade>
-                <div className="mt-10 xxs:flex xxs:flex-row sm:block">
-                    <Input placeholder="email."></Input>
-                    <Button
-                        colorClass="bg-gradient-to-r from-pink to-purple "
-                        title="Envoyer"
-                        textColor="text-white"
-                        marginClass="ml-5"
-                    ></Button>
-                </div>
+                {/*<div className=" hidden mt-10 xxs:flex xxs:flex-row sm:hidden">*/}
+                {/*    <Input placeholder="email."></Input>*/}
+                {/*    <Button*/}
+                {/*        colorClass="bg-gradient-to-r from-pink to-purple "*/}
+                {/*        title="Envoyer"*/}
+                {/*        textColor="text-white"*/}
+                {/*        marginClass="ml-5"*/}
+                {/*    ></Button>*/}
+                {/*</div>*/}
             </Fade>
             <div className="max-w-7xl mx-auto mt-10">
                 <div className="w-full h-auto overflow-hidden rounded-xl">

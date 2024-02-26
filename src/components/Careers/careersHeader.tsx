@@ -16,8 +16,8 @@ const CareersHeader = () => {
               Création site web et application
             </h1>
             <p className="mt-5 opacity-70">
-              {`🚀 En tant que développeur Front-End, j'ai contribué à la création d'une plateforme
-                                immobilière intuitive, utilisant Next.js, React, Bootstrap, Docker, Twig et GitLab.
+              🚀 {`En tant que développeur Front-End, j'ai contribué à la création d"une plateforme
+              immobilière intuitive, utilisant Next.js, React, Bootstrap, Docker, Twig et GitLab.`}
                                 <br/>
                                 🛠️ Notre mission : concevoir une plateforme conviviale pour les agents immobiliers, avec un
                                 tableau de bord personnalisable.
@@ -25,14 +25,14 @@ const CareersHeader = () => {
                                 🎯 Nous avons opté pour Next.js et React pour des performances optimales, Bootstrap pour une
                                 esthétique moderne et Docker pour une gestion efficiente des conteneurs.
                                 <br/>
-                                💼 Résultat majeur : un site web complet, permettant aux clients d'estimer leurs biens et de
-                                contacter les agents, tout en offrant aux agents un tableau de bord intuitif.
+                                💼 {`Résultat majeur : un site web complet, permettant aux clients d'estimer leurs biens et de
+              contacter les agents, tout en offrant aux agents un tableau de bord intuitif.`}
                                 <br/>
                                 ⚙️ Méthodologie : travail en mode agile, avec une adaptation continue pour répondre aux
                                 besoins évolutifs du projet.
                                 <br/>
                                 📈 Résultats : une expérience utilisateur exceptionnelle, avec un tableau de bord permettant
-                                aux agents de modeler leur espace virtuel en toute simplicité.`}
+                                aux agents de modeler leur espace virtuel en toute simplicité.
             </p>
             <br />
             🔧 Technologies Clés : Next.js, React, Bootstrap, Docker, Twig, GitLab.
@@ -50,8 +50,8 @@ const CareersHeader = () => {
               Création Carousel Youtube.
             </h1>
             <p className="mt-5 opacity-70">
-              {`🚀 En tant que développeur Full-Stack, j'ai contribué à la création d'une plateforme de
-                gestion des tâches collaboratives, utilisant Vue.js, Node.js, MongoDB, Socket.IO, et GitLab.
+              🚀 {`En tant que développeur Full-Stack, j"ai contribué à la création d"une plateforme de
+              gestion des tâches collaboratives, utilisant Vue.js, Node.js, MongoDB, Socket.IO, et GitLab.`}
                 <br />
                 🛠️ Notre mission : concevoir une application web flexible pour la gestion efficace des
                 projets et des équipes, avec des fonctionnalités de chat en temps réel.
@@ -68,7 +68,7 @@ const CareersHeader = () => {
                 basées sur les retours des utilisateurs et une intégration continue via GitLab.
                 <br />
                 📈 Résultats : une augmentation significative de la productivité des équipes, une meilleure
-                communication et une gestion plus efficace des projets.`}
+                communication et une gestion plus efficace des projets.
             </p>
             🔧 Technologies Clés : Vue.js, Node.js, MongoDB, Socket.IO, GitLab.
 
@@ -86,23 +86,23 @@ const CareersHeader = () => {
               {"Création d'application"}
             </h1>
             <p className="mt-5 opacity-70">
-              {`🚀 Chargé de développer une application innovante pour présenter les produits de manière
+              🚀 Chargé de développer une application innovante pour présenter les produits de manière
                 immersive, stimulant ainsi les ventes.
                 <br />
                 🎯 Objectif : Créer une interface intuitive pour captiver les clients et favoriser les
                 conversions.
                 <br />
-                🚀 Approche : Allier Next.js et React avec Vercel pour un déploiement fluide, ajoutant
-                l'esthétique soignée de Tailwind CSS.
+                🚀 {`Approche : Allier Next.js et React avec Vercel pour un déploiement fluide, ajoutant
+              l'esthétique soignée de Tailwind CSS.`}
                 <br />
-                💼 Mission : Transformer des idées en une application web percutante, stimulant l'engagement
-                du client et boostant les ventes.
+                💼 {`Mission : Transformer des idées en une application web percutante, stimulant l'engagement
+              du client et boostant les ventes.`}
                 <br />
                 ⚙️ Méthodologie : Agile et orientée pour une livraison rapide et une satisfaction
                 client optimaux.
                 <br />
                 📈 Résultats Attendus : Une application performante et esthétiquement attrayante prête à
-                propulser votre entreprise vers de nouveaux sommets de réussite.`}
+                propulser votre entreprise vers de nouveaux sommets de réussite.
 
             </p>
             <br />
