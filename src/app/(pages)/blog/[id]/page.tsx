@@ -5,9 +5,9 @@ import blogData from "@/data/dataBlog";
 
 const Page = () => {
   return (
-    <div>
+    <main>
       <BlogPage />
-    </div>
+    </main>
   );
 };
 

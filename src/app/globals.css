@@ -12,7 +12,7 @@
     }
 
     main {
-        margin-top: 10em;
+        margin-top: 7em;
     }
 }
 
@@ -49,4 +49,10 @@ textarea {
 footer li {
     margin-bottom: 4px;
     white-space: pre-wrap;
+}
+
+@media  (max-width: 600px){
+    main {
+        margin-top: 6em;
+    }
 }
