@@ -3,7 +3,7 @@ import pictureContact from "@/images/contact.jpg"
 import Button from "@/components/ui/Atoms/button"
 import {Fade} from "react-awesome-reveal";
 import Image from "next/image";
-import {SubmitHandler, useForm} from "react-hook-form";
+import { useForm} from "react-hook-form";
 import axios from "axios";
 
 
@@ -46,10 +46,10 @@ const Contact = () => {
                         Travaillons ensemble
                     </h1>
                     <p className="text-lg mt-2 opacity-50 w-3/4 xxs:text-xs xxs:w-full sm:text-sm sm:w-3/4">
-                        Besoin d'aide ou simplement envie de discuter de votre prochain projet passionnant ? Nous sommes
-                        tout ouïe ! Laissez-nous un message et nous vous contacterons dans les plus brefs délais pour
-                        discuter de la façon dont nous pouvons concrétiser vos idées. Votre prochaine grande aventure
-                        commence ici !
+                        {`Besoin d'aide ou simplement envie de discuter de votre prochain projet passionnant ? Nous sommes
+                            tout ouïe ! Laissez-nous un message et nous vous contacterons dans les plus brefs délais pour
+                            discuter de la façon dont nous pouvons concrétiser vos idées. Votre prochaine grande aventure
+                            commence ici !`}
                     </p>
                     <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex xxs:flex-col sm:flex-row">

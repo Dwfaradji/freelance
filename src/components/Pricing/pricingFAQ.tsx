@@ -37,18 +37,18 @@ const PricingFAQ = () => {
                             Quelle est la différence entre un site web statique et un site web dynamique ?
                         </h1>
                         <p className="mt-2 text-sm opacity-50">
-                            Un site web statique affiche le même contenu pour tous les utilisateurs et ne change pas en
-                            fonction des actions de l'utilisateur, tandis qu'un site web dynamique peut être modifié en
-                            temps réel et offre une expérience utilisateur plus interactive.
+                            {`Un site web statique affiche le même contenu pour tous les utilisateurs et ne change pas en
+                                fonction des actions de l"utilisateur, tandis qu"un site web dynamique peut être modifié en
+                                temps réel et offre une expérience utilisateur plus interactive.`}
                         </p>
                     </div>
                     <div className="xxs:p-2 sm:p-0">
                         <h1 className="font-bold text-2xl font-poppins xxs:text-lg sm:text-2xl">
-                            Pouvez-vous m'aider à héberger mon site web ou mon application ?
+                            {`Pouvez - vous m'aider à héberger mon site web ou mon application ?`}
                         </h1>
                         <p className="mt-2 text-sm opacity-50">
-                            Oui, nous pouvons vous aider à choisir le bon service d'hébergement en fonction de vos
-                            besoins et à configurer votre site web ou votre application pour un déploiement réussi.
+                            {`Oui, nous pouvons vous aider à choisir le bon service d'hébergement en fonction de vos
+                                besoins et à configurer votre site web ou votre application pour un déploiement réussi.`}
                         </p>
                     </div>
                     <div className="xxs:p-2 sm:p-0">
@@ -64,12 +64,12 @@ const PricingFAQ = () => {
                     </div>
                     <div className="xxs:p-2 sm:p-0">
                         <h1 className="font-bold text-2xl font-poppins xxs:text-lg sm:text-2xl">
-                            Comment puis-je suivre l'avancement de mon projet de développement ?
+                            {`Comment puis-je suivre l'avancement de mon projet de développement ?`}
                         </h1>
                         <p className="mt-2 text-sm opacity-50">
-                            Nous vous tiendrons informé de l'avancement de votre projet à chaque étape du processus de
-                            développement. De plus, vous aurez accès à notre système de suivi en ligne pour suivre les
-                            progrès en temps réel.
+                            {`Nous vous tiendrons informé de l'avancement de votre projet à chaque étape du processus de
+                                développement. De plus, vous aurez accès à notre système de suivi en ligne pour suivre les
+                                progrès en temps réel.`}
                         </p>
                     </div>
                 </div>

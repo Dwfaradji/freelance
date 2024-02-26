@@ -1,7 +1,6 @@
 "use client";
 import React, {useEffect, useState} from "react";
 import Images from "next/image";
-import template1 from "@/images/templates/design_interieur.png"
 import articles from "@/data/dataSlideDevis";
 
 
@@ -20,13 +19,6 @@ import {EffectCoverflow, Pagination} from "swiper/modules";
 import Link from "next/link";
 
 // Type
-interface Article {
-    id: number;
-    title: string;
-    image: string;
-    description: string;
-    link: string;
-}
 
 interface MultiCheckboxProps {
     options: string[];

@@ -1,16 +1,16 @@
-import React from "react"
-import {Fade} from "react-awesome-reveal";
+import React from "react";
+import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
 import blogData from "@/data/dataBlog";
 
 
 const BlogHeader = () => {
-  const dataHeader=blogData[3]
+  const dataHeader = blogData[3];
   return (
-    <Fade >
+    <Fade>
       <div id={dataHeader.id} className="max-w-7xl mx-auto mt-10 flex text-white xxs:flex-col sm:flex-row">
         <div className="h-full object-cover overflow-hidden rounded-xl m-5">
-          <Image priority={true} src={dataHeader.img} width={2000} height={1500} alt={""}/>
+          <Image priority={true} src={dataHeader.img} width={2000} height={1500} alt={""} />
         </div>
         <div className="m-5">
           <h2 className="text-sm opacity-50">Develop Process</h2>
@@ -22,10 +22,13 @@ const BlogHeader = () => {
           </p>
           <div className="flex items-center mt-5">
             <div className="h-10 w-10 object-cover overflow-hidden rounded-full">
-              <img
+              <Image
+                width={30}
+                height={30}
                 className="h-10 w-10"
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-              ></img>
+                src={""}
+                alt={""}
+              />
             </div>
             <div className="ml-2">
               <h2>Boucif Faradji</h2>
@@ -35,7 +38,7 @@ const BlogHeader = () => {
         </div>
       </div>
     </Fade>
-  )
-}
+  );
+};
 
-export default BlogHeader
+export default BlogHeader;

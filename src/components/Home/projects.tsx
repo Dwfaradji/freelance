@@ -15,9 +15,9 @@ const Projects = () => {
                         Découvrez Nos Projets Web
                     </h1>
                     <h2 className="text-white text-sm mt-5 opacity-50">
-                        Mon portfolio présente une sélection de mes réalisations en tant que développeur web freelance.
-                        Vous y trouverez des sites web, des applications web et des solutions informatiques sur mesure
-                        que j'ai créées pour des clients de différents secteurs d'activité.
+                        {`Mon portfolio présente une sélection de mes réalisations en tant que développeur web freelance.
+                            Vous y trouverez des sites web, des applications web et des solutions informatiques sur mesure
+                            que j"ai créées pour des clients de différents secteurs d"activité.`}
                         <br/>
                         Vous recherchez un développeur web freelance pour donner vie à vos projets web ?
                         <br/>
@@ -89,10 +89,10 @@ const Projects = () => {
                         <p className="mt-8 text-white opacity-50">
                             Prêts à relever de nouveaux défis ?
                             <br/>
-                            Nous sommes toujours à la recherche de nouveaux défis et nous sommes impatients de
-                            collaborer avec vous sur votre prochain projet de développement web ou d'application en
-                            freelance. Contactez-nous dès aujourd'hui pour discuter de vos besoins et obtenir un devis
-                            gratuit.
+                            {`Nous sommes toujours à la recherche de nouveaux défis et nous sommes impatients de
+                                collaborer avec vous sur votre prochain projet de développement web ou d'application en
+                                freelance. Contactez-nous dès aujourd'hui pour discuter de vos besoins et obtenir un devis
+                                gratuit.`}
                         </p>
                     </div>
                 </div>

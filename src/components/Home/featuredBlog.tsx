@@ -12,10 +12,10 @@ const FeaturedBlog = () => {
 
             </h1>
             <p className="text-white text-lg mt-5 opacity-50 w-3/4 xxs:w-full lg:w-3/4">
-                Explorez notre collection de modèles de site web dès aujourd'hui et trouvez celui qui correspond le
-                mieux à votre entreprise. Restez à l'affût des dernières nouveautés en vous abonnant à notre newsletter
-                ou en nous suivant sur les réseaux sociaux. Chez DevEvoke, nous vous offrons les outils
-                dont vous avez besoin pour réussir en ligne.
+                {`Explorez notre collection de modèles de site web dès aujourd'hui et trouvez celui qui correspond le
+                    mieux à votre entreprise. Restez à l'affût des dernières nouveautés en vous abonnant à notre newsletter
+                    ou en nous suivant sur les réseaux sociaux. Chez DevEvoke, nous vous offrons les outils
+                    dont vous avez besoin pour réussir en ligne.`}
             </p>
             <div className="grid grid-cols-3 mt-10 gap-4 xxs:grid-cols-1 lg:grid-cols-3">
                 <div className="rounded-xl overflow-hidden opacity-70  hover:opacity-100">

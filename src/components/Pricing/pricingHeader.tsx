@@ -23,9 +23,9 @@ const PricingHeader = () => {
                         </h2>
                         <h1 className="text-4xl mt-2 font-bold">49€/Mois</h1>
                         <h3 className="text-sm mt-2 opacity-50">
-                            Chez DevEvoke, nous comprenons l'importance de maintenir votre site web en
-                            parfait état.
-                            Nos forfaits sont là pour vous simplifier la vie.
+                            {`Chez DevEvoke, nous comprenons l'importance de maintenir votre site web en
+                                parfait état.
+                                Nos forfaits sont là pour vous simplifier la vie.`}
                         </h3>
                         <ul className="mt-5">
                             <li className="text-sm opacity-70 py-2">
@@ -59,8 +59,8 @@ const PricingHeader = () => {
                         </h2>
                         <h1 className="text-4xl mt-2 font-bold">25€/An</h1>
                         <h3 className="text-sm mt-2 opacity-50">
-                            Confiez l'hébergement de votre site web à DevEvoke et profitez d'une solution fiable,
-                            sécurisée et performante pour votre présence en ligne.
+                            {`Confiez l"hébergement de votre site web à DevEvoke et profitez d"une solution fiable,
+                                sécurisée et performante pour votre présence en ligne.`}
                         </h3>
                         <ul className="mt-5">
                             <li className="text-sm opacity-70 py-2">

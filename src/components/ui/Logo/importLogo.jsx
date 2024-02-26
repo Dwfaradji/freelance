@@ -1,6 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import logoSVG from "@/components/ui/Logo/logo";
-import Image from "next/image";
 
 const ImportLogo = ({displayColor}) => {
     const [colors, setColors] = useState("");

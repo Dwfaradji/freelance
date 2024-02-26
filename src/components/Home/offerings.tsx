@@ -12,21 +12,20 @@ const Offerings = () => {
                         Services proposés
                     </h2>
                     <p className="text-white text-sm mt-5 opacity-50">
-                        DevEvoke est votre partenaire privilégié pour tous vos besoins web.
-
-                        Notre agence de développement web freelance vous propose une gamme complète de services sur
-                        mesure pour vous accompagner dans la création, la refonte et l'optimisation de votre site web ou
-                        application web.
+                        {`DevEvoke est votre partenaire privilégié pour tous vos besoins web.
+                            Notre agence de développement web freelance vous propose une gamme complète de services sur
+                            mesure pour vous accompagner dans la création, la refonte et l'optimisation de votre site web ou
+                            application web.`}
                     </p>
                     <p className="text-white text-sm mt-5 opacity-50">
                         Nos services incluent :
                         <br/>
-                        Création et refonte de sites web,
-                        Développement d'applications web,
-                        Optimisation et référencement SEO,
-                        Hébergement web,
-                        Maintenance de site web,
-                        Formation.
+                        {`Création et refonte de sites web,
+                            Développement d'applications web,
+                            Optimisation et référencement SEO,
+                            Hébergement web,
+                            Maintenance de site web,
+                            Formation.`}
                     </p>
                 </div>
             </Fade>
