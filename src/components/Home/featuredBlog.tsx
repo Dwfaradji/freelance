@@ -18,7 +18,7 @@ const FeaturedBlog = () => {
                     dont vous avez besoin pour réussir en ligne.`}
             </p>
             <div className="grid grid-cols-3 mt-10 gap-4 xxs:grid-cols-1 lg:grid-cols-3">
-                <div className="rounded-xl overflow-hidden opacity-70  hover:opacity-100">
+                <div className="rounded-xl overflow-hidden opacity-70 relative hover:opacity-100">
                     <Image
                         src={tempDesign}
                         width={1950}
@@ -31,7 +31,7 @@ const FeaturedBlog = () => {
                         Design
                     </div>
                 </div>
-                <div className="rounded-xl overflow-hidden opacity-70  hover:opacity-100">
+                <div className="rounded-xl overflow-hidden opacity-70 relative hover:opacity-100">
                     <Image
                         src={tempEnergy}
                         width={1950}
