@@ -42,7 +42,7 @@ const Modal = ({
 
   return (
     <div id="popup-modal" tabIndex="-1" aria-hidden="true"
-         className={`${open} bg-white fixed z-50 flex justify-center items-center w-full inset-0 h-[calc(100%-1rem)] max-h-full`}>
+         className={`${open} fixed z-50 flex justify-center items-center w-full inset-0 h-[calc(100%-1rem)] max-h-full`}>
       <div className="relative p-4  max-w-2xl mx-auto max-h-full text-center">
 
         <div className="relative bg-white rounded-lg shadow dark:bg-black">
