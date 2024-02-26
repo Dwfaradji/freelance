@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    a {
+        color: white;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    main {
+        margin-top: 10em;
+    }
+}
+
+
+@layer utilities {
+    .text-gradient {
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.modal-open {
+    overflow: hidden !important;
+}
+
+input {
+    color: black;
+
+}
+
+textarea {
+    color: black;
+}
+
+.truncate-lines {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 5; /* Nombre de lignes à afficher */
+    max-height: calc(1.2em * 5); /* Hauteur maximale pour cinq lignes */
+}
+
+footer li {
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+}

@@ -1,12 +1,12 @@
 import React from "react";
-import PagesInfo from "@/components/ui/PagesInfo/PagesInfo";
+import PagesInfo from "@/components/ui/PagesInfo/pagesInfo";
 import { pageMentionsLegales } from "@/data/data";
 
 const Page = () => {
   return (
-    <div>
+    <main>
       <PagesInfo infosText={pageMentionsLegales} />
-    </div>
+    </main>
   );
 };
 

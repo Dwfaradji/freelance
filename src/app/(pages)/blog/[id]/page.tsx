@@ -1,10 +1,12 @@
+"use client";
 import React from "react";
-import TemplateBlog from "@/components/ui/TemplateBlog/TemplateBlog";
+import BlogPage from "@/components/Blog/blogPage";
+import blogData from "@/data/dataBlog";
 
 const Page = () => {
   return (
     <div>
-      <TemplateBlog  />
+      <BlogPage />
     </div>
   );
 };

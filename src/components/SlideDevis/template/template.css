@@ -1,0 +1,29 @@
+
+.swipperTemplate {
+    width: 90%;
+    /*height: 20em;*/
+    cursor: auto;
+}
+.swipperTemplate .swiper-container {
+    cursor: pointer; /* Ou tout autre style de curseur que vous préférez */
+}
+
+.swipperTemplate .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    display: flex;
+    justify-content: space-between !important;
+    /*height: 300px;*/
+}
+
+.swipperTemplate .swiper-slide img {
+    /*display: block;*/
+    /*width: 100%;*/
+    height: 30dvh;
+    border-radius: 15px;
+}
+
+.swipperTemplate .swiper-slide p {
+text-align: center !important;
+}

@@ -1,0 +1,41 @@
+import React, {useEffect, useMemo, useState} from 'react';
+import logoSVG from "@/components/ui/Logo/logo";
+import Image from "next/image";
+
+const ImportLogo = ({displayColor}) => {
+    const [colors, setColors] = useState("");
+    const colorsInit = useMemo(
+        () => ({
+            colorPrimary: "#3c9dda",
+            colorSecondary: "#5e6163",
+        }),
+        []
+    );
+
+    const colorsSecond = useMemo(
+        () => ({
+            colorPrimary: "#ffffff",
+            colorSecondary: "#3c9dda",
+        }),
+        []
+    );
+
+    const svgElement = logoSVG(colors);
+
+    useEffect(() => {
+        if (displayColor === "colorP") {
+            setColors(colorsInit)
+        } else {
+            setColors(colorsSecond)
+        }
+    }, [displayColor]);
+
+
+    return (
+        <div className={"w-20 h-20"}>
+            {svgElement}
+        </div>
+    );
+};
+
+export default ImportLogo;

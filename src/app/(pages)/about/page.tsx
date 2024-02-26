@@ -1,10 +1,17 @@
+"use client";
 import React from "react";
-import AboutPage from "@/components/sections/AboutPage/AboutPage";
+import AboutHeader from "@/components/About/aboutHeader";
+import AboutMore from "@/components/About/aboutMore";
+import AboutTeamBigCard from "@/components/About/aboutTeamBigCard";
+import AboutGrid from "@/components/About/aboutGrid";
 
 const Page = () => {
   return (
     <main>
-      <AboutPage />
+      <AboutHeader />
+      <AboutMore />
+      <AboutTeamBigCard />
+      <AboutGrid />
     </main>
   );
 };

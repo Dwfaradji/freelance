@@ -1,11 +1,14 @@
+"use client";
 import React from "react";
-import Blog from "../../../components/sections/Blog/Blog";
+import BlogHeader from "@/components/Blog/blogHeader";
+import BlogsContainer from "@/components/Blog/blogsContainer";
 
 const Page = () => {
   return (
-    <div>
-      <Blog />
-    </div>
+    <main>
+      <BlogHeader />
+      <BlogsContainer />
+    </main>
   );
 };
 

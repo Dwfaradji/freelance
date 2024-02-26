@@ -1,5 +1,4 @@
 import React from "react";
-import "@/app/globals.scss";
 
 export const metadata = {
   title: "processus de création de site web sur mesure",
@@ -8,18 +7,18 @@ export const metadata = {
   alternates: {
     canonical: "https://www.devevoke.com/info-procedure",
     languages: {
-      fr: "https://www.devevoke.com/",
-    },
+      fr: "https://www.devevoke.com/"
+    }
   },
   robots: {
     follow: true,
-    index: true,
-  },
+    index: true
+  }
 };
 
 export default function ProcessLayout({
-  children,
-}: {
+                                        children
+                                      }: {
   children: React.ReactNode;
 }) {
   return <section>{children}</section>;

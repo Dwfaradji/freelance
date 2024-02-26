@@ -1,16 +1,29 @@
-import React from "react";
+"use client"
 
-import Home from "@/app/(pages)/home/home";
-import Navbar from "@/components/sections/NavBar/NavBar";
-import { navItems } from "@/data/data";
+import Testimonial from "@/components/Home/testimonial";
+import Pricing from "@/components/Home/pricing";
+import FeaturedBlog from "@/components/Home/featuredBlog";
+import FeatureSection from "@/components/Home/featureSection";
+import Projects from "@/components/Home/projects";
+import Offerings from "@/components/Home/offerings";
+import Header from "@/components/Home/header";
+
 
 const Page = () => {
-  return (
-    <main>
-      <Navbar items={navItems} />
-      <Home />
-    </main>
-  );
+    return (
+            <main>
+                <div className="h-auto w-full">
+                    <Header/>
+                    <FeatureSection/>
+                    <Projects/>
+                    <Offerings />
+                    <Testimonial/>
+                    <Pricing/>
+                    <FeaturedBlog/>
+                </div>
+            </main>
+    );
 };
 
 export default Page;
+

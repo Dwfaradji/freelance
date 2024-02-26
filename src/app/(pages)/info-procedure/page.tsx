@@ -1,13 +1,12 @@
 import React from "react";
-import PagesInfo from "@/components/ui/PagesInfo/PagesInfo";
+import PagesInfo from "@/components/ui/PagesInfo/pagesInfo";
 import { pageInfosProcess } from "@/data/data";
-
 
 const Page = () => {
   return (
-    <div>
+    <main>
       <PagesInfo infosText={pageInfosProcess} />
-    </div>
+    </main>
   );
 };
 

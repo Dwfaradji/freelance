@@ -20,9 +20,9 @@ interface SendGridMail {
 export async function POST(request: Request) {
   // Récupérer les données du formulaire
   const req = await request.json();
-  const { firstname, lastname, email, content, file } = req;
+  const { firstname, business, email, content, file } = req;
   // Vérifier les données du formulaire
-  if (!firstname || !lastname || !email || !content) {
+  if (!firstname || !business || !email || !content) {
     return res.json({ message: "INVALID_PARAMETER" });
   }
 
@@ -53,17 +53,18 @@ export async function POST(request: Request) {
 
   try {
     const msg: SendGridMail = {
-      to: String(process.env.ADRESS_MAIL),
-      from: String(process.env.ADRESS_MAIL),
+      to: String(process.env.EMAIL_TO),
+      from: String(process.env.EMAIL_TO),
       templateId: String(process.env.TEMPLATE_ID_CONTACT),
       dynamic_template_data: {
         firstname: String(firstname),
-        lastname: String(lastname),
+        lastname: String(business),
         email: String(email),
         subject: String(message),
         attachments: String("piecesJointe"),
       },
     };
+    console.log(msg)
     await sgMail.send(msg);
     return res.json({ message: "EMAIL_SENT" });
   } catch (error) {

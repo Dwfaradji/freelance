@@ -1,88 +1,51 @@
 // data file for the website
-// import images from "@/assets/Gallery";
 import { Picture, Item, Project, Price, Service, PageInfo } from "./typeFile";
-import images from "../assets/Gallery";
+
+import fenixSolutions from "@/images/projects/fenixSolutions.png"
+import kellerWilliams from "@/images/projects/kw.png"
+
 
 //Project
 const projects: Project[] = [
   {
     id: 0,
-    title: "Hrnet",
-    image: String(images.hrnet),
-    alt: "image du projet hrnet",
-    tech: ["Test U/I,", " React,", " Npm"],
-    link: "https://devevoke-projet.github.io/hrnet/",
-  },
-  {
-    id: 1,
-    title: "Argent Bank",
-    image: String(images.argentBank),
-    alt: "image du projet argent bank",
-    tech: ["Seo"],
-    link: "https://dwfaradji.github.io/FaradjiBoucif_4_27052021/",
-  },
-  {
-    id: 2,
-    title: "Oh My Food",
-    image: String(images.ohmyfood),
-    alt: "image du projet ohmyfood",
-    tech: ["React,", " Sass"],
-    link: "https://dwfaradji.github.io/FaradjiBoucif_3_27052021/",
-  },
-  {
-    id: 3,
     title: "Fénix Solutions",
-    image: String(images.fenixSolutions),
+    image: String(fenixSolutions.src),
     alt: "image du projet fenix solutions",
     tech: ["Vue3,", " Node,", " ApiRest"],
     link: "https://dwfaradji.github.io/FaradjiBoucif_P4_21-07-22/",
   },
   {
-    id: 4,
-    title: "Fish Eyes",
-    image: String(images.fishEyes),
-    alt: "image du projet fish eyes",
-    tech: ["React", " Seo"],
-    link: "https://dwfaradji.github.io/FaradjiBoucif_P6_19-08-22/",
-  },
-  {
-    id: 5,
-    title: "Kasa",
-    image: String(images.kasa),
-    alt: "image du projet kasa",
-    tech: ["React,", " Redux"],
-    link: "https://devevoke-projet.github.io/kasa/",
-  },
-  {
-    id: 6,
+    id: 1,
     title: "Keller Williams",
-    image: String(images.kellerWilliams),
+    image: String(kellerWilliams.src),
     alt: "image du projet keller williams",
     tech: ["Next,", " React,", " Symfony,", " Docker"],
     link: "https://kwoxygene.fr/",
   },
 ];
-// images du header background
-const picturesCarousel: Picture = {
-  id: 1,
-  imageUrl: images.pictureHeader,
-  alt: "image d'arrière plan",
-};
-//Navigation
-const navItems: Item[] = [
-  { title: "Accueil", link: "accueil", scroll: true },
-  { title: "Projet", link: "project", scroll: true },
-  { title: "Tarif", link: "tarif", scroll: true },
-  { title: "Contact", link: "contact", scroll: true },
-  { title: "Services", link: "services", scroll: true },
-  { title: "A propos", link: "about", scroll: true },
-  { title: "Blog", link: "blog", scroll: false },
-];
 
-//Tarifs
+// // images du header background
+// const picturesCarousel: Picture = {
+//   id: 1,
+//   imageUrl: images.pictureHeader,
+//   alt: "image d'arrière plan",
+// };
+// //Navigation
+// const navItems: Item[] = [
+//   { title: "Accueil", link: "accueil", scroll: true },
+//   { title: "Projet", link: "project", scroll: true },
+//   { title: "Tarif", link: "tarif", scroll: true },
+//   { title: "Contact", link: "contact", scroll: true },
+//   { title: "Services", link: "services", scroll: true },
+//   { title: "A propos", link: "About", scroll: true },
+//   { title: "Blog", link: "blog", scroll: false },
+// ];
+
+// //Tarifs
 const prices: Price[] = [
   {
-    id: 0,
+    id: "0",
     title: "Formule Essentielle",
     subtitle: "Site Vitrine",
     price: "999€",
@@ -108,7 +71,7 @@ const prices: Price[] = [
     ],
   },
   {
-    id: 1,
+    id: "1",
     title: "Formule Premium",
     subtitle: "Site E-commerce",
     price: "2499€",
@@ -133,7 +96,7 @@ const prices: Price[] = [
     ],
   },
   {
-    id: 2,
+    id: "2",
     title: "Formule Pro",
     subtitle: "Application Web",
     price: "4999€",
@@ -160,15 +123,15 @@ const prices: Price[] = [
     ],
   },
 ];
-//Service
+// //Service
 const services: Service[] = [
   {
     id: 0,
     title: "Création et Refonte de sites web sur mesure",
-    description: `Confiez-nous votre site web ! En tant que développeurs web freelance, 
-    nous concevons des sites personnalisés et modernes, adaptés à vos besoins spécifiques. 
-    Que vous souhaitiez créer un nouveau site ou donner un coup de neuf à votre site existant, 
-    nous sommes là pour vous. 
+    description: `Confiez-nous votre site web ! En tant que développeurs web freelance,
+    nous concevons des sites personnalisés et modernes, adaptés à vos besoins spécifiques.
+    Que vous souhaitiez créer un nouveau site ou donner un coup de neuf à votre site existant,
+    nous sommes là pour vous.
     Nous nous occupons du design, de la programmation et de l'optimisation pour les appareils mobiles.
       `,
 
@@ -184,10 +147,10 @@ const services: Service[] = [
   {
     id: 1,
     title: "Développement d'applications web personnalisées et performantes",
-    description: `Nous sommes spécialisés dans le développement d'applications web sur mesure, 
-    utilisant les dernières technologies et frameworks. DevEvoke vous accompagne 
-    de la conception à la mise en œuvre, en intégrant des fonctionnalités avancées et une interface utilisateur intuitive. 
-    Que vous ayez besoin d'une application de gestion, 
+    description: `Nous sommes spécialisés dans le développement d'applications web sur mesure,
+    utilisant les dernières technologies et frameworks. DevEvoke vous accompagne
+    de la conception à la mise en œuvre, en intégrant des fonctionnalités avancées et une interface utilisateur intuitive.
+    Que vous ayez besoin d'une application de gestion,
     d'une plateforme e-commerce ou d'un outil collaboratif, nous concevons des solutions adaptées à vos besoins`,
     items: [
       { id: 1, title: "React & NextJs 13" },
@@ -201,10 +164,10 @@ const services: Service[] = [
   {
     id: 2,
     title: "Optimisation et référencement pour une visibilité maximale",
-    description: `Améliorez le classement de votre site web grâce à notre expertise en optimisation et référencement. 
-    Nous utilisons des techniques avancées pour optimiser les balises, le contenu et les mots clés, afin de générer un 
-    trafic qualifié. Notre objectif est d'augmenter votre visibilité sur les moteurs de recherche, notamment Google, en 
-    mettant en place des stratégies de création de liens efficaces. Contactez-nous dès maintenant pour discuter de votre 
+    description: `Améliorez le classement de votre site web grâce à notre expertise en optimisation et référencement.
+    Nous utilisons des techniques avancées pour optimiser les balises, le contenu et les mots clés, afin de générer un
+    trafic qualifié. Notre objectif est d'augmenter votre visibilité sur les moteurs de recherche, notamment Google, en
+    mettant en place des stratégies de création de liens efficaces. Contactez-nous dès maintenant pour discuter de votre
     projet de référencement et propulsez votre site web vers de nouveaux sommets.`,
     items: [
       { id: 1, title: "Audit de référencement" },
@@ -240,8 +203,8 @@ const services: Service[] = [
   {
     id: 5,
     title: "Formation",
-    description: `Gagnez en autonomie et en confiance dans la gestion de votre site internet grâce à notre programme de 
-    formation personnalisée. Apprenez les techniques de gestion de contenu, le référencement, l'optimisation des performances 
+    description: `Gagnez en autonomie et en confiance dans la gestion de votre site internet grâce à notre programme de
+    formation personnalisée. Apprenez les techniques de gestion de contenu, le référencement, l'optimisation des performances
     et d'autres compétences essentielles pour vous démarquer et réussir en ligne.`,
     items: [
       { id: 1, title: "Autonomie garantie" },
@@ -484,11 +447,9 @@ const politiqueConfidentialite: PageInfo[] = [
 ];
 
 export {
-  services,
   projects,
+  services,
   prices,
-  navItems,
-  picturesCarousel,
   pageInfosPrice,
   pageInfosProcess,
   pageMentionsLegales,

@@ -21,7 +21,7 @@ interface Project {
 }
 
 interface Price {
-  id: number;
+  id: string;
   title: string;
   subtitle: string;
   price: string;
@@ -55,11 +55,11 @@ interface Text {
 
 
 interface BlogProps {
-  id: number;
+  id: string;
   title: string;
   descriptionShort: string;
   descriptionLong: Text[];
-  image: string;
+  img: any;
   alt: string;
   readingTime: number;
   category: string;
