@@ -27,7 +27,7 @@ const Projects = () => {
             </Fade>
             <Fade cascade>
                 <div
-                    className="max-w-7xl  mx-auto px-8 mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row">
+                    className=" w-full px-8 mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row">
                     {/*<div className="w-2/6 bg-gradient-to-r from-pink to-purple p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-2/6">*/}
                     <Swiper
                         effect={"flip"}
@@ -49,7 +49,7 @@ const Projects = () => {
                                     <div className={"p-3 h-full"}>
                                         <Link href={project.link}>
                                             <Image
-                                                className="h-full rounded-xl"
+                                                className="h-full w-full rounded-xl"
                                                 src={project.image}
                                                 alt={project.alt}
                                                 width="400"

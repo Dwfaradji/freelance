@@ -9,7 +9,7 @@ import Input from "@/components/ui/Atoms/input";
 
 const Header = () => {
     return (
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="mx-auto px-8">
             <Fade>
                 <div>
                     <h2 className="text-white font-poppins opacity-50 font-semibold text-xs xxs:text-xs xs:text-xs sm:text-xs md:text-sm lg:text-xl">
@@ -50,7 +50,7 @@ const Header = () => {
                 {/*    ></Button>*/}
                 {/*</div>*/}
             </Fade>
-            <div className="max-w-7xl mx-auto mt-10">
+            <div className="mx-auto  mt-10">
                 <div className="w-full h-auto overflow-hidden rounded-xl">
                     <Image width={1024} height={100} className="w-full h-full" src={HeaderImage}
                            alt="Photo_ordinateur_sur_bureau"/>

@@ -7,9 +7,9 @@ import headerAbout from "@/images/about/aboutHeader.jpg"
 const AboutHeader = () => {
   return (
     <Fade cascade>
-      <div className="max-w-7xl mx-auto mt-10">
+      <div className="mx-auto mt-10">
         <div className="overflow-hidden rounded-xl">
-          <Image width={1600} height={1000} src={headerAbout} alt={""}/>
+          <Image className={"w-full"} width={1600} height={1000} src={headerAbout} alt={""}/>
         </div>
         <div className="mt-5">
           <span className="text-white text-sm opacity-50">A propos</span>

@@ -1,14 +1,10 @@
 "use client";
 // Importations nécessaires
-import React, {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useState,
-} from "react";
+import React, { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import "./formDevis.css";
-import {useMyContext} from "@/context/Mycontext";
+import { useMyContext } from "@/context/Mycontext";
+import Link from "next/link";
+import axios from "axios";
 
 // Interface pour les données du formulaire
 interface IFormData {
@@ -41,7 +37,7 @@ interface Question {
   label2: string;
 }
 
-const FormulaireDevis = forwardRef((onFormSelect, ref) => {
+const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
   // États pour gérer les valeurs des champs du formulaire
   const [budgetEstime, setBudgetEstime] = useState<string>("350");
   const [isProfessionnel, setIsProfessionnel] = useState<boolean>(false);
@@ -62,12 +58,12 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm<IFormData>({
     defaultValues: {
       radioSelections: {},
-      dateDebut: currentDate, // Utiliser la date actuelle comme valeur par défaut
-    },
+      dateDebut: currentDate // Utiliser la date actuelle comme valeur par défaut
+    }
   });
   const [formSend, setFormSend] = useState(false);
   const [hiddenForm, setHiddenForm] = useState("");
@@ -75,6 +71,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
   const [dataForm, setDataForm] = useState<IFormData>();
   // Fonction appelée lors de la soumission du formulaire
   const onSubmit: SubmitHandler<IFormData> = async (data, e) => {
+    sendDevis();
     setFormSend(true);
     setHiddenForm("hidden");
     data.dateDebut = formatDateToFR(data.dateDebut);
@@ -84,6 +81,8 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
   };
 
   const [{ form }, dispatch] = useMyContext();
+  const sendDataForm = useMyContext()[0];
+
   useEffect(() => {
     dispatch({ type: "ADD_FORM", payload: dataForm });
   }, [dataForm]);
@@ -96,21 +95,21 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
       type: "radio",
       id: "typeClient",
       label: "Particulier",
-      label2: "Professionnel",
+      label2: "Professionnel"
     },
     {
       questionText: "Ce projet est il existant ?",
       type: "radio",
       id: "projet",
       label: "Oui",
-      label2: "Non",
+      label2: "Non"
     },
     {
       questionText: "Avez vous une maquette?",
       type: "radio",
       id: "maquette",
       label: "Oui",
-      label2: "Non",
+      label2: "Non"
     },
 
     {
@@ -118,21 +117,21 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
       type: "radio",
       id: "cahier",
       label: "Oui",
-      label2: "Non",
+      label2: "Non"
     },
     {
       questionText: "Avez vous un logo?",
       type: "radio",
       id: "logo",
       label: "Oui",
-      label2: "Non",
+      label2: "Non"
     },
     {
       questionText: "Avez vous des images ou videos à nous fournir ?",
       type: "radio",
       id: "images",
       label: "Oui",
-      label2: "Non",
+      label2: "Non"
     },
     {
       questionText:
@@ -140,7 +139,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
       type: "radio",
       id: "textPresentation",
       label: "Oui",
-      label2: "Non",
+      label2: "Non"
     },
     {
       questionText:
@@ -148,8 +147,8 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
       type: "radio",
       id: "textServices",
       label: "Oui",
-      label2: "Non",
-    },
+      label2: "Non"
+    }
   ];
 
   // Gestionnaire d'événements pour les boutons radio
@@ -161,11 +160,25 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
     }
   };
 
-  useImperativeHandle(ref, () => ({
-    submit: () => {
-      handleSubmit(onSubmit)();
-    },
-  }));
+
+  async function sendDevis() {
+    try {
+      const response = await axios.post("/api/devis", dataForm, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      if (response.status === 200) {
+        console.log("L'e-mail a été envoyé avec succès.");
+      } else {
+        console.log("Erreur lors de l'envoi de l'e-mail");
+      }
+    } catch (error) {
+      console.error("Une erreur s'est produite lors de l'envoi du devis:", error);
+    }
+  }
+
+
   return (
     <div className="text-left text-white gap-8 columns-1 md:w-4/5 lg:w-2/5 mx-auto ">
       <form className={`${hiddenForm} p-3`} onSubmit={handleSubmit(onSubmit)}>
@@ -254,7 +267,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
                     value={question.label}
                     {...register(`radioSelections.${question.id}`, {
                       required: "Ce champ est requis",
-                      onChange: handleRadioChange,
+                      onChange: handleRadioChange
                     })}
                   />
                 </div>
@@ -273,7 +286,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
                     value={question.label2}
                     {...register(`radioSelections.${question.id}`, {
                       required: "Ce champ est requis",
-                      onChange: handleRadioChange,
+                      onChange: handleRadioChange
                     })}
                   />
                 </div>
@@ -302,7 +315,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
                       required: "Veuillez entrer exactement 16 chiffres",
                       validate: (value) =>
                         /^\d{16}$/.test(String(value)) ||
-                        "Veuillez entrer un numéro de SIRET valide (jusqu'à 16 chiffres)",
+                        "Veuillez entrer un numéro de SIRET valide (jusqu'à 16 chiffres)"
                     })}
                   />
                   {errors.siret && (
@@ -313,8 +326,8 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
               )}
               {errors.radioSelections &&
                 errors.radioSelections[question.id] && (
-                <span className="text-red-600">Ce champ est requis</span>
-              )}
+                  <span className="text-red-600">Ce champ est requis</span>
+                )}
             </div>
           ))}
           <div className="mb-4">
@@ -327,7 +340,7 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
               id="dateDebut"
               {...register("dateDebut", {
                 required: false,
-                value: "09/01/2024",
+                value: "09/01/2024"
               })}
             />
             <br />
@@ -347,14 +360,33 @@ const FormulaireDevis = forwardRef((onFormSelect, ref) => {
             {errors.commentaires && <span>Ce champ est requis</span>}
           </div>
         </div>
-        {/*<Button*/}
-        {/*  title={"Envoyer"}*/}
-        {/*>*/}
-        {/*</Button>*/}
+        <div className="flex m-8 text-white justify-between">
+          {/* Bouton de soumission du formulaire et du bouton retour*/}
+          <>
+            <Link
+              scroll={true}
+              className={
+                "w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between bg-blue px-3 py-2 rounded-lg text-sm transform scale-100 transition hover:scale-110 active:scale-95 focus:outline-none focus:ring-1 focus:ring-offset-1 sm:width-full md:width-full lg:width-full"
+              }
+              href={`${hrefLink}`}
+              onClick={onClickBack}>
+              <i className="fa-solid fa-chevron-left mr-3"></i>
+              Retour
+            </Link>
+
+            <button
+              type={"submit"}
+              className="w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between bg-blue px-3 py-2 rounded-lg text-sm transform scale-100 transition hover:scale-110 active:scale-95 focus:outline-none focus:ring-1 focus:ring-offset-1 sm:width-full md:width-full lg:width-full"
+            >
+              Soumettre
+            </button>
+          </>
+        </div>
       </form>
     </div>
-  );
-});
+  )
+    ;
+};
 
 // Vous pouvez toujours définir un displayName pour plus de clarté, bien que ce soit optionnel maintenant
 FormulaireDevis.displayName = "FormulaireDevis";

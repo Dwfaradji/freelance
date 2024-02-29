@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const FeaturedBlog = () => {
     return (
-        <div className="max-w-7xl mx-auto px-8 mt-10">
+        <div className="mx-auto px-8 mt-10">
             <h1 className="text-white font-poppins font-bold text-6xl xxs:text-lg xs:text-xl sm:text-xl lg:text-6xl">
                 Découvrez <br/> Chaque Mois <br/> Nos Nouveaux Templates <br/>
 

@@ -1,8 +1,9 @@
 "use client";
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
+
 // Import Swiper React components
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Swiper as SwiperClass} from "swiper"; // Importation corrigée
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperClass } from "swiper"; // Importation corrigée
 // Import Swiper styles globalement
 import "swiper/css";
 import "swiper/css/pagination";
@@ -10,263 +11,166 @@ import "swiper/css/navigation";
 import "./slider.css";
 
 // import required modules
-import {Pagination, Navigation} from "swiper/modules";
-
-import axios from "axios";
-import Link from "next/link";
-import {useMyContext} from "../../../context/Mycontext";
-import TextHidden from "../../ui/textHidden/textHidden";
-import FormulaireDevis from "../FormDevis/formDevis";
-import {Fade} from "react-awesome-reveal";
-
+import { Pagination, Navigation } from "swiper/modules";
+import { Fade } from "react-awesome-reveal";
+import TextHidden from "@/components/ui/TextHidden/textHidden";
+import FormulaireDevis from "@/components/SlideDevis/formDevis";
 
 interface Slide {
-    slidesData: {
-        title: string;
-        content: string;
-        ComponentType: any; // Replace 'any' with specific props type
-        props?: any; // Allow optional props // Utilisez un type plus général pour les props
-        button?: string;
-    }[];
-    onSubmitForm?: (formData: any) => void;
+  data: {
+    title: string;
+    content: string;
+    ComponentType: any; // Replace 'any' with specific props type
+    props?: {}; // Allow optional props // Utilisez un type plus général pour les props
+    button?: string;
+  }[];
+  onSubmitForm?: (formData: any) => void;
 }
 
-// À l'endroit où vous définissez vos interfaces/types
-interface FormulaireDevisMethods {
-    submit: () => void;
-}
+const Slider = ({ data }: Slide) => {
+  const swiperRef = useRef<SwiperClass | null>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [textButton, setNextTextButton] = useState("");
+  const [prevTextButton, setPrevTextButton] = useState("");
+  const [display, setDisplay] = useState("");
+  const [displaySlide, setDisplaySlide] = useState(false);
+  const [hiddenSlide, setHiddenSlide] = useState("block");
 
-const Slider = ({slidesData}: Slide) => {
-    const [{form}] = useMyContext();
-    const sendDataForm = useMyContext()[0];
+  useEffect(() => {
+    updateButtonText();
+    updateDisplay();
+  }, [activeSlide, data]);
 
-    const swiperRef = useRef<SwiperClass | null>(null);
-    const [activeSlide, setActiveSlide] = useState(0);
-    const [textButton, setTextButton] = useState(
-        slidesData[1]?.button || "Suivant"
-    ); // Texte initial du bouton
-    const [prevTextButton, setPrevTextButton] = useState(
-        slidesData[1]?.button || "Suivant"
-    ); // Texte initial du bouton
+  const updateButtonText = () => {
+    const nextSlideIndex = activeSlide + 1;
+    const nextButtonText = data[nextSlideIndex]?.button || "Formulaire";
+    setNextTextButton(nextButtonText);
+    const prevSlideIndex = activeSlide - 1;
+    const prevButtonText = data[prevSlideIndex]?.button || "";
+    setPrevTextButton(prevButtonText);
+  };
 
-    const [display, setDisplay] = useState("");
-    const [displaySlide, setDisplaySlide] = useState("hidden");
-    const [hiddenSlide, setHiddenSlide] = useState("block");
-    const [dataForm, setDataForm] = useState(form);
+  const updateDisplay = () => {
+    const prevButtonText = data[activeSlide - 1]?.button || "";
+    setDisplay(prevButtonText === "" ? "hiddenDisplay" : "");
+  };
 
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    // Mettre à jour le texte du bouton lorsque le slide change
-    useEffect(() => {
-        const nextSlideIndex = activeSlide + 1;
-        const nextButtonText = slidesData[nextSlideIndex]?.button || "Formulaire";
-        setTextButton(nextButtonText);
-        if (form) {
-            setDataForm(form);
-            console.log("test", form);
-            sendDevis();
-        }
-        const prevSlideIndex = activeSlide - 1;
-        const prevButtonText = slidesData[prevSlideIndex]?.button || "";
-        if (prevButtonText === "") {
-            setDisplay("hiddenDisplay");
-        } else {
-            setDisplay("");
-        }
-        setPrevTextButton(prevButtonText);
-    }, [activeSlide, slidesData, form]);
-
-    // Fonction pour passer au slide suivant
-    const getNextSlideTitle = () => {
-        if (textButton === "Formulaire") {
-            console.log("Formulaire en cours d'envoi");
-            setDisplaySlide("block");
-            setHiddenSlide("hidden");
-        }
-        swiperRef.current?.slideNext();
-    };
-
-    // Fonction pour passer au slide suivant
-    const getPrevSlideTitle = () => {
-        swiperRef.current?.slidePrev();
-    };
-
-    // Fonction pour revenir au slide précédent
-    const back = (e: any) => {
-        setHiddenSlide("block");
-        setDisplaySlide("hidden");
-        if (currentSlide > 0) {
-            setCurrentSlide(currentSlide - 1);
-        }
-        window.onload = function () {
-            window.scrollTo(0, 0);
-        };
-    };
-    const formulaireRef = useRef<FormulaireDevisMethods>(null);
-    const lastSlideIndex = 0; // Exemple : si vous avez 5 slides
-    // Fonction pour aller au slide suivant ou soumettre le formulaire
-    const nextOrSubmit = () => {
-        if (currentSlide < lastSlideIndex) {
-            setCurrentSlide(currentSlide + 1);
-        } else if (textButton === "Formulaire") {
-            // Soumettre le formulaire seulement lorsque le bouton "Soumettre" est cliqué
-            formulaireRef.current && formulaireRef.current.submit();
-        }
-    };
-
-    async function sendDevis() {
-        try {
-            const response = await axios.post("/api/devis", sendDataForm, {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-            // Traitez la réponse de l'API
-            if (response.status === 200) {
-                console.log("L'e-mail a été envoyé avec succès.");
-            } else {
-                console.log("Erreur lors de l'envoi de l'e-mail");
-            }
-        } catch (error) {
-            console.error("Une erreur s'est produite lors de l'envoi du devis:");
-        }
+  const getNextSlideTitle = () => {
+    // Masque le slide et affiche le formulaire ajouter le scroll en haut de la page
+    if (textButton === "Formulaire") {
+      setDisplaySlide(true);
+      setHiddenSlide("hidden");
     }
+    swiperRef.current?.slideNext();
+  };
 
-    return (
-        <div id={"ancre-template"} className="">
-            <div className={`${hiddenSlide} m-8 text-white `}>
-                <Swiper
-                    onSwiper={(swiper: any) => (swiperRef.current = swiper)} // Mise à jour correcte de la référence
-                    pagination={{
-                        type: "progressbar",
-                    }}
-                    parallax={true}
-                    slidesPerView={1}
-                    navigation={false}
-                    modules={[Pagination, Navigation]}
-                    allowTouchMove={false}
-                    className="mySwiperSlide h-full bg-gradient-to-r from-pink to-purple p-8 rounded-xl"
-                >
-                    {slidesData.map(({title, content, ComponentType, props}, index) => (
-                        <SwiperSlide key={index}>
-                            <div>
-                                <h2 className=" m-8">{title}</h2>
-                                    <div className={"hidden md:block"}>
-                                        <p className="text-left m-0 md:m-3 min-h-max mb-7 h-6 hover:h-full overflow-hidden md:h-auto">
-                                            {content}
-                                        </p>
-                                    </div>
+  const getPrevSlideTitle = () => {
+    swiperRef.current?.slidePrev();
+  };
 
+  const back = () => {
+    setHiddenSlide("block");
+    setDisplaySlide(false);
+  };
 
-                                <div className={"block md:hidden"}>
-                                    <TextHidden
-                                        text={content}
-                                        style={"text-black text-left"}
-                                        heightVisible={"h-16"}
-                                    />
-                                </div>
-                            </div>
-                            <div className="w-full h-96 m-4 ">
-                                <ComponentType {...props} />
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-
-                <div className="swiper-navigation lg:mt-6">
-                    <button
-                        aria-label="precedent"
-                        className={`${display} w-1/4 md:w-2/6 lg:w-60  justify-center lg:justify-between bg-blue px-3 py-2 rounded-lg text-sm transform scale-100 transition hover:scale-110 active:scale-95 focus:outline-none focus:ring-1 focus:ring-offset-1 sm:width-full md:width-full lg:width-full`}
-                        onClick={() => {
-                            getPrevSlideTitle();
-                            setActiveSlide((prev) => Math.max(prev - 1, 0)); // Mise à jour de activeSlide
-                        }}
-                    >
-                        <i className="fa-solid fa-chevron-left mr-3"></i>
-                        <span className={"hidden md:block lg:block"}>{prevTextButton}</span>
-                    </button>
-                    <button
-                        aria-label="suivant"
-                        className={
-                            "w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between bg-blue px-3 py-2 rounded-lg text-sm transform scale-100 transition hover:scale-110 active:scale-95 focus:outline-none focus:ring-1 focus:ring-offset-1 sm:width-full md:width-full lg:width-full"
-                        }
-                        onClick={() => {
-                            getNextSlideTitle();
-                            setActiveSlide((prev) =>
-                                Math.min(prev + 1, slidesData.length - 1)
-                            ); // Mise à jour d'activeSlide
-                        }}
-                    >
-                        <span className={"hidden md:block lg:block"}>{textButton}</span>
-                        <i className="fa-solid fa-chevron-right ml-3"></i>
-                    </button>
+  return (
+    <>
+      <div className={`${hiddenSlide} text-white`}>
+        <Swiper
+          onSwiper={(swiper: any) => (swiperRef.current = swiper)} // Mise à jour correcte de la référence
+          pagination={{
+            type: "progressbar"
+          }}
+          parallax={true}
+          slidesPerView={1}
+          navigation={false}
+          modules={[Pagination, Navigation]}
+          allowTouchMove={false}
+          className="mySwiperSlide"
+        >
+          {data.map(({ title, content, ComponentType, props }, index) => (
+            <SwiperSlide key={index}>
+              <Fade>
+                <h2 className=" m-10 text-xl">{title}</h2>
+                <div className={"hidden md:block"}>
+                  <p className="text-left m-0 md:m-3 min-h-max mb-7 h-6 hover:h-full overflow-hidden md:h-auto">
+                    {content}
+                  </p>
                 </div>
-            </div>
-            <div className={`${displaySlide} w-4/5 mx-auto text-center  m-8`}>
-                {!dataForm && (
-                    <div className="mx-auto ">
-                        <p className=" text-left text-white m-3">
-                            <span className="font-bold block mb-2">
-                            Prêt à donner vie à votre site web personnalisé ?
-                            </span>
-                            Commencez par remplir notre formulaire complémentaire. Ce premier
-                            pas essentiel nous permet de comprendre en profondeur vos
-                            aspirations et besoins spécifiques, assurant que chaque aspect de
-                            votre site reflète parfaitement votre vision et vos objectifs.
-                            Chez Devevoke, chaque projet débute par une écoute attentive et
-                            une planification minutieuse, garantissant une personnalisation
-                            sans faille. <br/>
-                            <span className="font-bold block mt-2">
-                            Remplissez le formulaire dès maintenant et embarquez vers la
-                            réalisation de votre site idéal.
-                            </span>
-                        </p>
-                        <br/>
-                        <div className="shadow-md shadow-pink  bg-gradient-to-r from-pink to-purple rounded-2xl">
-                            <h2 className="text-white mb-5">{"Formulaire"}</h2>
-                            <FormulaireDevis ref={formulaireRef}/>
-                        </div>
-
-                    </div>
-                )}
-                <div className="swiper-navigation m-8 text-white">
-                    {!dataForm && (
-                        <>
-                            <button
-                                className={
-                                    "w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between bg-blue px-3 py-2 rounded-lg text-sm transform scale-100 transition hover:scale-110 active:scale-95 focus:outline-none focus:ring-1 focus:ring-offset-1 sm:width-full md:width-full lg:width-full"
-                                }
-                                onClick={back}>
-                                <i className="fa-solid fa-chevron-left mr-3"></i>
-                                <Link className={""} href={"#ancre-template"}>{"Retour"}</Link>
-                            </button>
-
-                            <button
-                                className={
-                                    "w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between bg-blue px-3 py-2 rounded-lg text-sm transform scale-100 transition hover:scale-110 active:scale-95 focus:outline-none focus:ring-1 focus:ring-offset-1 sm:width-full md:width-full lg:width-full"
-                                }
-                                onClick={nextOrSubmit}>
-                                {currentSlide < lastSlideIndex ? "Suivant" : "Soumettre"}
-                            </button>
-                        </>
-                    )}
+                <div className={"block md:hidden"}>
+                  <TextHidden
+                    text={content}
+                    style={"text-black text-left"}
+                    heightVisible={"h-16"}
+                  />
                 </div>
-            </div>
-            {!!dataForm && (
-                <div
-                    className="w-11/12 md:w-10/12 lg:w-6/12 mx-auto p-6  shadow-lg shadow-indigo-500/40 rounded-lg text-center m-10 h-96 flex flex-col justify-between ">
-                    <h2>Message envoyé</h2>
-                    <p className="text-blue-950 mb-13">
-                        {
-                            "Merci d'avoir remplis le devis nous reviendrons vers vous une fois le devis effectuer"
-                        }
-                    </p>
-                    <button>
-                        <a href="/public">{"Retour à l'accueil"}</a>
-                    </button>
-                </div>
-            )}
+              </Fade>
+              <div className="w-full m-4 ">
+                <ComponentType {...props} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/*Bouton de navigation*/}
+        <div className="swiper-navigation lg:mt-6">
+          <button
+            aria-label="precedent"
+            className={`${display} w-1/4 md:w-2/6 lg:w-60  justify-center lg:justify-between bg-blue px-3 py-2 rounded-lg text-sm transform scale-100 transition hover:scale-110 active:scale-95 focus:outline-none focus:ring-1 focus:ring-offset-1 sm:width-full md:width-full lg:width-full`}
+            onClick={() => {
+              getPrevSlideTitle();
+              setActiveSlide((prev) => Math.max(prev - 1, 0)); // Mise à jour de activeSlide
+            }}
+          >
+            <i className="fa-solid fa-chevron-left mr-3"></i>
+            <span className={"hidden md:block lg:block"}>{prevTextButton}</span>
+          </button>
+          <button
+            aria-label="suivant"
+            className={
+              "w-1/4 md:w-2/6 lg:w-60 justify-center lg:justify-between bg-blue px-3 py-2 rounded-lg text-sm transform scale-100 transition hover:scale-110 active:scale-95 focus:outline-none focus:ring-1 focus:ring-offset-1 sm:width-full md:width-full lg:width-full"
+            }
+            onClick={() => {
+              getNextSlideTitle();
+              setActiveSlide((prev) =>
+                Math.min(prev + 1, data.length - 1)
+              ); // Mise à jour d'activeSlide
+            }}
+          >
+            <span className={"hidden md:block lg:block"}>{textButton}</span>
+            <i className="fa-solid fa-chevron-right ml-3"></i>
+          </button>
         </div>
-    );
+      </div>
+      {/*Affiche le formulaire lorsque displaySlide est true*/}
+        {displaySlide && (
+          <Fade>
+            <div className="mx-auto text-white">
+              <p className=" text-left">
+                <span className="font-bold block mb-2">
+                  Prêt à donner vie à votre site web personnalisé ?
+                </span>
+                Commencez par remplir notre formulaire complémentaire. Ce premier
+                pas essentiel nous permet de comprendre en profondeur vos
+                aspirations et besoins spécifiques, assurant que chaque aspect de
+                votre site reflète parfaitement votre vision et vos objectifs.
+                Chez Devevoke, chaque projet débute par une écoute attentive et
+                une planification minutieuse, garantissant une personnalisation
+                sans faille. <br />
+              </p>
+              <p className="font-bold block mt-2">
+                Remplissez le formulaire dès maintenant et embarquez vers la
+                réalisation de votre site idéal.
+              </p>
+              <br />
+              <div className="shadow-md rounded-2xl text-center">
+                <h2 className="text-white text-xl mb-5">{"Formulaire"}</h2>
+                <FormulaireDevis onClickBack={back} hrefLink={"#"}/>
+              </div>
+            </div>
+          </Fade>
+        )}
+      </>
+  );
 };
 export default Slider;

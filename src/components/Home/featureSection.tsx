@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 
 const FeatureSection = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="mx-auto">
       <Fade cascade>
         <div className="w-full flex flex-row justify-between mt-10 xxs:flex-col xs:flex-col sm:flex-row">
           <div

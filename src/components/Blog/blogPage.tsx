@@ -33,9 +33,9 @@ const BlogPage = () => {
         <>
             {contentBlog && (
                 <Fade >
-                    <div className="max-w-7xl mx-auto mt-10 flex flex-col text-white relative">
+                    <div className="mx-auto mt-10 flex flex-col text-white relative">
                         <div className="overflow-hidden rounded-xl m-5">
-                            <Image priority src={contentBlog.img} width={1650} height={300} alt={"article_blog"}/>
+                            <Image priority src={contentBlog.img} width={1650} height={300} alt={"article_blog"} className={"w-full"}/>
                         </div>
 
                         <div className="m-5">
@@ -69,12 +69,12 @@ const BlogPage = () => {
                                         </div>
                                     ))}
                             </div>
-                            <div className={"absolute xl:bottom-[50%] xl:left-[0] 2xl:left-52 xl:fixed"}>
+                            <div className={"absolute xl:bottom-[50%] xl:left-0 2xl:left-0 xl:fixed"}>
                                 <Link href={"/blog"}>
                                     <Button
                                         colorClass="bg-gradient-to-r from-pink to-purple "
                                         textColor="text-white"
-                                        marginClass="ml-5"
+                                        marginClass="ml-2"
                                         title="Retour"
                                     />
                                 </Link>

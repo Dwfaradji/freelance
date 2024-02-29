@@ -7,7 +7,7 @@ import me from "@/images/about/presentation.jpg"
 
 const AboutMore = () => {
     return (
-        <div className="max-w-7xl mx-auto mt-10">
+        <div className="mx-auto mt-10">
             <Fade cascade>
                 <div
                     className="grid grid-cols-3 h-full overflow-hidden gap-4 xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-3">
@@ -16,14 +16,10 @@ const AboutMore = () => {
                     </div>
                     <div className="col-start-3 overflow-hidden rounded-xl h-96 xxs:col-start-1 sm:col-start-3">
                         <Image className="object-cover h-96" src={me} alt={""} width={800} height={300}/>
-                        {/*<img*/}
-                        {/*    className="object-cover h-96"*/}
-                        {/*    src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"*/}
-                        {/*></img>*/}
                     </div>
                 </div>
             </Fade>
-            <div>
+            <div className={"p-8"}>
                 <Fade>
                     <p className="text-white text-2xl leading-normal mt-10 xxs:text-sm xs:text-lg sm:text-3xl">
                         {`Mon voyage dans l'univers du développement web a débuté par une

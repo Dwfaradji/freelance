@@ -7,7 +7,7 @@ const Offerings = () => {
     return (
         <div>
             <Fade  cascade>
-                <div className="max-w-7xl mx-auto px-8 mt-10">
+                <div className=" mx-auto px-8 mt-10">
                     <h2 className="text-white text-7xl font-bold xxs:text-2xl xs:text-3xl sm:text-5xl lg:text-7xl">
                         Services proposés
                     </h2>
@@ -31,7 +31,7 @@ const Offerings = () => {
             </Fade>
             <Fade  cascade>
                 <div
-                    className="max-w-7xl mx-auto px-8  mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row flex-wrap justify-center">
+                    className="mx-auto px-8  mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row flex-wrap justify-center">
                     {services.map((service, i) => (
                         <div key={i}
                              className="w-[30%] hover:bg-gradient-to-r hover:from-pink hover:to-purple p-5 rounded-xl xxs:w-full xs:w-full sm:w-[30%]">

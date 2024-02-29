@@ -8,7 +8,7 @@ const BlogHeader = () => {
   const dataHeader = blogData[3];
   return (
     <Fade>
-      <div id={dataHeader.id} className="max-w-7xl mx-auto mt-10 flex text-white xxs:flex-col sm:flex-row">
+      <div id={dataHeader.id} className="mx-auto mt-10 flex text-white xxs:flex-col sm:flex-row">
         <div className="h-full object-cover overflow-hidden rounded-xl m-5">
           <Image priority={true} src={dataHeader.img} width={2000} height={1500} alt={""} />
         </div>

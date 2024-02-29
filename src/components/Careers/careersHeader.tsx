@@ -7,7 +7,7 @@ import projectFs from "@/images/projects/fenixSolutions.png";
 
 const CareersHeader = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="mx-auto">
       <Fade cascade>
         <div className="flex flex-wrap md:flex-nowrap mt-10">
           <div className="w-full md:w-2/4 m-2 text-white bg-lightblack p-8 rounded-xl">
@@ -38,7 +38,7 @@ const CareersHeader = () => {
             🔧 Technologies Clés : Next.js, React, Bootstrap, Docker, Twig, GitLab.
           </div>
           <div className=" md:w-2/4 rounded-xl overflow-hidden m-2 ">
-            <Image className="h-full" src={projectKw} alt={""} width={1000} height={300} />
+            <Image className="" src={projectKw} alt={""} width={1000} height={300} />
           </div>
         </div>
       </Fade>
@@ -74,7 +74,7 @@ const CareersHeader = () => {
 
           </div>
           <div className="md:w-3/5 rounded-xl overflow-hidden m-2">
-            <Image className="h-full" src={projectFs} alt={""} width={1000} height={600} />
+            <Image className="" src={projectFs} alt={""} width={1000} height={600} />
           </div>
         </div>
       </Fade>
@@ -110,7 +110,7 @@ const CareersHeader = () => {
 
           </div>
           <div className=" md:w-2/4 rounded-xl overflow-hidden m-2 ">
-            <Image className="h-full" src={projectKw} alt={""} width={1000} height={300} />
+            <Image className="" src={projectKw} alt={""} width={1000} height={300} />
           </div>
         </div>
       </Fade>

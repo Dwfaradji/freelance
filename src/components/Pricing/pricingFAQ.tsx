@@ -4,7 +4,7 @@ import {Fade} from "react-awesome-reveal";
 
 const PricingFAQ = () => {
     return (
-        <div className="max-w-7xl mx-auto mt-10 text-center text-white">
+        <div className="mx-auto mt-10 text-center text-white">
             <Fade >
                 <h1 className="text-5xl font-poppins font-bold xxs:text-xl sm:text-3xl lg:text-5xl">
                     Questions fréquemment posées

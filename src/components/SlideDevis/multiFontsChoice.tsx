@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useMyContext } from "@/context/Mycontext";
 
 interface FontSelectorProps {
   label: string;
@@ -9,11 +10,11 @@ interface FontSelectorProps {
 }
 
 const FontSelector: React.FC<FontSelectorProps> = ({
-  label,
-  value,
-  onChange,
-  fonts,
-}) => (
+                                                     label,
+                                                     value,
+                                                     onChange,
+                                                     fonts
+                                                   }) => (
   <div className="mb-8">
     <label htmlFor={label}>{label}:</label>
     <select
@@ -34,7 +35,7 @@ const FontSelector: React.FC<FontSelectorProps> = ({
         fontFamily: value,
         marginTop: "2em",
         border: "1px solid #ccc",
-        padding: "10px",
+        padding: "10px"
       }}
     >
       Aperçu : The quick brown fox jumps over the lazy dog
@@ -47,11 +48,13 @@ interface MultiFontsProps {
 }
 
 const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
+  const [{}, dispatch] = useMyContext();
+
   const availableFonts: string[] = [
     "Arial",
     "Times New Roman",
     "Georgia",
-    "Verdana",
+    "Verdana"
   ];
 
   const [selectedFontFirst, setSelectedFontFirst] = useState<string>(
@@ -70,11 +73,15 @@ const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
   };
 
   useEffect(() => {
-    onFontsSelect({
+    const fontsSelected = {
       primary: selectedFontFirst,
-      secondary: selectedFontSecond,
-    });
-  }, [selectedFontFirst, selectedFontSecond]);
+      secondary: selectedFontSecond
+    };
+
+    if (fontsSelected) {
+      dispatch({ type: "ADD_FONTS", payload: fontsSelected });
+    }
+  }, [selectedFontFirst,selectedFontSecond]);
 
   return (
     <div className="w-full h-full flex-col justify-around items-center flex">

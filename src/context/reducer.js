@@ -26,7 +26,10 @@ export const reducer = (state, action) => {
   case "ADD_CHECKBOX":
     return {
       ...state,
-      checkbox: action.payload,
+      checkbox: {
+        ...state.checkbox,
+        [action.payload.page]: action.payload.value // Mettre à jour uniquement la sélection de la page actuelle
+      }
     };
   case "ADD_FORM":
     return {

@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (
         <nav className=" fixed top-0 z-[1] left-0 right-0 w-full text-blue backdrop-blur-lg">
-            <div className="max-w-7xl mx-auto px-3 py-2">
+            <div className="mx-auto px-3 py-2">
                 <div className="flex items-center justify-between h-16">
                     <div className="w-full justify-between flex items-center">
                         <a className="flex-shrink-0 font-poppins" href="/">

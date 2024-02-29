@@ -6,7 +6,7 @@ import Image from "next/image";
 const Testimonial = () => {
 
     return (
-        <div className="max-w-7xl mx-auto px-6 mt-10 h-auto mb-10">
+        <div className="mx-auto px-6 mt-10 h-auto mb-10">
             <Fade>
                 <div
                     className="w-full flex flex-row justify-between align-middle bg-lightblack  rounded-lg xxs:flex-col xs:flex-col sm:flex-row  ">
