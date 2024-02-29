@@ -1,8 +1,8 @@
 // data file for the website
 import { Picture, Item, Project, Price, Service, PageInfo } from "./typeFile";
 
-import fenixSolutions from "@/images/projects/fenixSolutions.png"
-import kellerWilliams from "@/images/projects/kw.png"
+import fenixSolutions from "@/images/projects/fenixSolutions.webp"
+import kellerWilliams from "@/images/projects/kw.webp"
 
 
 //Project

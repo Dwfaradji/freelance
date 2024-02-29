@@ -1,7 +1,7 @@
-import article1 from "@/images/blogs/article-1.jpg"
-import article2 from "@/images/blogs/article-2.jpg"
-import article3 from "@/images/blogs/article-3.jpg"
-import articleHeader from "@/images/blogs/article-header.jpg"
+import article1 from "@/images/blogs/article-1.webp"
+import article2 from "@/images/blogs/article-2.webp"
+import article3 from "@/images/blogs/article-3.webp"
+import articleHeader from "@/images/blogs/article-header.webp"
 import { BlogProps } from "./typeFile";
 
 

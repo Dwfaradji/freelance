@@ -3,7 +3,7 @@ import AboutTeamCard from "./aboutTeamCard"
 
 const AboutGrid = () => {
   return (
-    <div className="p-8 mx-auto mt-20 grid grid-cols-3 gap-16 justify-items-center xxs:grid-cols-1 sm:grid-cols-3">
+    <article className="hidden p-8 mx-auto mt-20 grid grid-cols-3 gap-16 justify-items-center xxs:grid-cols-1 sm:grid-cols-3">
       <AboutTeamCard
         imgSrc="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
         position="React"
@@ -28,7 +28,7 @@ const AboutGrid = () => {
         imgSrc="https://images.unsplash.com/photo-1539125530496-3ca408f9c2d9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTI4fHxwZW9wbGV8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         position="Symfony"
       ></AboutTeamCard>
-    </div>
+    </article>
   )
 }
 

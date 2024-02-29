@@ -1,7 +1,7 @@
 import React from "react"
 import {Fade} from "react-awesome-reveal";
 import Image from "next/image";
-import headerAbout from "@/images/about/aboutHeader.jpg"
+import headerAbout from "@/images/about/aboutHeader.webp"
 
 
 const AboutHeader = () => {
@@ -9,7 +9,7 @@ const AboutHeader = () => {
     <Fade cascade>
       <div className="mx-auto mt-10">
         <div className="overflow-hidden rounded-xl">
-          <Image className={"w-full"} width={1600} height={1000} src={headerAbout} alt={""}/>
+          <Image className={"w-full"} width={1000} height={1000} src={headerAbout} alt={""} />
         </div>
         <div className="mt-5">
           <span className="text-white text-sm opacity-50">A propos</span>

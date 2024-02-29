@@ -1,6 +1,6 @@
 import React from "react"
 // Assets
-import HeaderImage from "@/images/home/header-main.jpg"
+import HeaderImage from "@/images/home/header-main.webp"
 import {Fade} from "react-awesome-reveal";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ import Input from "@/components/ui/Atoms/input";
 
 const Header = () => {
     return (
-        <div className="mx-auto px-8">
+        <header className="mx-auto px-8">
             <Fade>
                 <div>
                     <h2 className="text-white font-poppins opacity-50 font-semibold text-xs xxs:text-xs xs:text-xs sm:text-xs md:text-sm lg:text-xl">
@@ -22,14 +22,11 @@ const Header = () => {
                             React NextJs
                         </span>
                         <br/>
-
                     </h1>
-
-                        <div className="text-white mt-8 text-xl">
+                        <h2 className="text-white mt-8 text-xl">
                             Créez Votre Présence en Ligne avec Nos Services
-                        </div>
+                        </h2>
                     <p className={"text-white mt-2 text-xl"}>
-
                         Bienvenue sur <span className="text-gradient bg-gradient-to-r from-pink to-purple">
                         DevEvoke
                         </span>, votre partenaire de confiance pour tous vos besoins en
@@ -56,7 +53,7 @@ const Header = () => {
                            alt="Photo_ordinateur_sur_bureau"/>
                 </div>
             </div>
-        </div>
+        </header>
     )
 }
 

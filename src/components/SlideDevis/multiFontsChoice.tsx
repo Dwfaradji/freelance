@@ -15,7 +15,7 @@ const FontSelector: React.FC<FontSelectorProps> = ({
                                                      onChange,
                                                      fonts
                                                    }) => (
-  <div className="mb-8">
+  <article className="mb-8">
     <label htmlFor={label}>{label}:</label>
     <select
       id={label}
@@ -40,7 +40,7 @@ const FontSelector: React.FC<FontSelectorProps> = ({
     >
       Aperçu : The quick brown fox jumps over the lazy dog
     </div>
-  </div>
+  </article>
 );
 
 interface MultiFontsProps {
@@ -84,7 +84,7 @@ const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
   }, [selectedFontFirst,selectedFontSecond]);
 
   return (
-    <div className="w-full h-full flex-col justify-around items-center flex">
+    <section className="w-full h-full flex-col justify-around items-center flex">
       <FontSelector
         label="Choisissez une police principale"
         value={selectedFontFirst}
@@ -97,7 +97,7 @@ const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
         onChange={handleFontChange}
         fonts={availableFonts}
       />
-    </div>
+    </section>
   );
 };
 

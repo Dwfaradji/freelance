@@ -1,8 +1,8 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
-import projectKw from "@/images/projects/kw.png";
-import projectFs from "@/images/projects/fenixSolutions.png";
+import projectKw from "@/images/projects/kw.webp";
+import projectFs from "@/images/projects/fenixSolutions.webp";
 
 
 const CareersHeader = () => {

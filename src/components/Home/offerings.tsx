@@ -5,7 +5,7 @@ import {services} from "@/data/data";
 
 const Offerings = () => {
     return (
-        <div>
+        <section>
             <Fade  cascade>
                 <div className=" mx-auto px-8 mt-10">
                     <h2 className="text-white text-7xl font-bold xxs:text-2xl xs:text-3xl sm:text-5xl lg:text-7xl">
@@ -30,14 +30,14 @@ const Offerings = () => {
                 </div>
             </Fade>
             <Fade  cascade>
-                <div
+                <article
                     className="mx-auto px-8  mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row flex-wrap justify-center">
                     {services.map((service, i) => (
                         <div key={i}
                              className="w-[30%] hover:bg-gradient-to-r hover:from-pink hover:to-purple p-5 rounded-xl xxs:w-full xs:w-full sm:w-[30%]">
                             <article
                                 className="flex justify-between flex-col h-full">
-                                <h3 className="text-white text-2xl">{service.title}</h3>
+                                <h2 className="text-white text-2xl">{service.title}</h2>
                                 <div className="items-start flex">
                                     <p className="mt-10 text-white text-sm opacity-50">{service.description}</p>
                                 </div>
@@ -54,9 +54,9 @@ const Offerings = () => {
                             </article>
                         </div>
                     ))}
-                </div>
+                </article>
             </Fade>
-        </div>
+        </section>
     );
 };
 

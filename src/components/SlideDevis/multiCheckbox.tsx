@@ -32,9 +32,9 @@ const MultiCheckbox = ({ page, options, valueDefault }: MultiCheckboxProps) => {
   };
 
   return (
-    <div className="mx-auto flex items-center  flex-col lg:flex-row  justify-evenly flex-wrap h-full">
+    <section className="mx-auto flex items-center  flex-col lg:flex-row  justify-evenly flex-wrap h-full">
       {options.map((option, i) => (
-        <div key={option}>
+        <article key={option}>
           <label
             htmlFor={option + i}
             className="w-56 whitespace-nowrap m-1 md:m-5 text-slate-700 bg-blue shadow flex justify-between items-center gap-6 rounded-full p-4 ring-1 ring-transparent hover:bg-slate-100 cursor-pointer"
@@ -48,9 +48,9 @@ const MultiCheckbox = ({ page, options, valueDefault }: MultiCheckboxProps) => {
               onChange={() => handleOptionChange(page, option)}
             />
           </label>
-        </div>
+        </article>
       ))}
-    </div>
+    </section>
   );
 };
 

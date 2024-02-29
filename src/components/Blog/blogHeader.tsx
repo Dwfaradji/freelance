@@ -8,7 +8,7 @@ const BlogHeader = () => {
   const dataHeader = blogData[3];
   return (
     <Fade>
-      <div id={dataHeader.id} className="mx-auto mt-10 flex text-white xxs:flex-col sm:flex-row">
+      <section id={dataHeader.id} className="mx-auto mt-10 flex text-white xxs:flex-col sm:flex-row">
         <div className="h-full object-cover overflow-hidden rounded-xl m-5">
           <Image priority={true} src={dataHeader.img} width={2000} height={1500} alt={""} />
         </div>
@@ -20,23 +20,23 @@ const BlogHeader = () => {
           <p className="text-lg mt-4 opacity-50 xxs:text-sm sm:text-lg">
             {dataHeader.descriptionShort}
           </p>
-          <div className="flex items-center mt-5">
+          <article className="flex items-center mt-5">
             <div className="h-10 w-10 object-cover overflow-hidden rounded-full">
-              <Image
-                width={30}
-                height={30}
-                className="h-10 w-10"
-                src={""}
-                alt={""}
-              />
+              {/*<Image*/}
+              {/*  width={30}*/}
+              {/*  height={30}*/}
+              {/*  className="h-10 w-10"*/}
+              {/*  src={""}*/}
+              {/*  alt={""}*/}
+              {/*/>*/}
             </div>
             <div className="ml-2">
               <h2>Boucif Faradji</h2>
               <h4 className="text-xs opacity-50">{dataHeader.date}</h4>
             </div>
-          </div>
+          </article>
         </div>
-      </div>
+      </section>
     </Fade>
   );
 };

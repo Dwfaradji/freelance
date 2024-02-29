@@ -1,13 +1,13 @@
 import React from "react"
 import {Fade} from "react-awesome-reveal";
 import Image from "next/image";
-import setup from "@/images/about/setup.jpg"
-import me from "@/images/about/presentation.jpg"
+import setup from "@/images/about/setup.webp"
+import me from "@/images/about/presentation.webp"
 
 
 const AboutMore = () => {
     return (
-        <div className="mx-auto mt-10">
+        <section className="mx-auto mt-10">
             <Fade cascade>
                 <div
                     className="grid grid-cols-3 h-full overflow-hidden gap-4 xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-3">
@@ -61,7 +61,7 @@ const AboutMore = () => {
                     </p>
                 </Fade>
             </div>
-        </div>
+        </section>
     )
 }
 

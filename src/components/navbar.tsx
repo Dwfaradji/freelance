@@ -22,9 +22,9 @@ const Navbar = () => {
             <div className="mx-auto px-3 py-2">
                 <div className="flex items-center justify-between h-16">
                     <div className="w-full justify-between flex items-center">
-                        <a className="flex-shrink-0 font-poppins" href="/">
+                        <Link className="flex-shrink-0 font-poppins" href="/">
                             <ImportLogo displayColor={colorLogo}/>
-                        </a>
+                        </Link>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4 text-red-600">
                                 <Link

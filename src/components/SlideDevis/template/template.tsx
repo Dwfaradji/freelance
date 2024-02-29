@@ -61,7 +61,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
 
 
   return (
-    <div>
+    <section>
       <Swiper
         breakpointsBase={"window"}
         effect={"coverflow"}
@@ -83,7 +83,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
       >
         {articles.map((article, index) => (
           <SwiperSlide key={article.id}>
-            <div
+            <article
               className="group relative flex flex-col justify-between items-center cursor-pointer  ">
               <Images
                 width={400}
@@ -105,7 +105,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
                   ></Button>
                 </Link>
               </div>
-            </div>
+            </article>
 
             <div
               className="m-8 p-2 border border-sky-500 rounded-2xl  w-full flex flex-col justify-center items-center">
@@ -121,7 +121,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 };
 

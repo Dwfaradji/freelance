@@ -1,5 +1,5 @@
 import React from "react"
-import pictureContact from "@/images/contact.jpg"
+import pictureContact from "@/images/contact.webp"
 import Button from "@/components/ui/Atoms/button"
 import {Fade} from "react-awesome-reveal";
 import Image from "next/image";
@@ -39,7 +39,7 @@ const Contact = () => {
 
     return (
         <Fade cascade>
-            <div className="max-w-7xl mx-auto mt-10 flex text-white xxs:flex-col sm:flex-row">
+            <section className="max-w-7xl mx-auto mt-10 flex text-white xxs:flex-col sm:flex-row">
                 <div className="bg-lightblack p-10 rounded-xl md:w-3/4 m-5">
                     <h2 className="text-xs opacity-50">Entrer en contact</h2>
                     <h1 className="text-4xl font-bold font-poppins mt-2 xxs:text-lg sm:text-2xl lg:text-4xl">
@@ -66,8 +66,6 @@ const Contact = () => {
                                     <span className="error text-white">Ce champ est requis</span>
                                 )}
                             </div>
-
-
                             <div className="sm:ml-5 xxs:ml-0 xxs:mt-2 sm:mt-0">
                                 <input
                                     className="w-full px-2 py-2 rounded-lg bg-white bg-opacity-20 border-transparent flex-1 appearance-none text-white font-poppins focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent sm:width-full md:width-full xxs:text-sm"
@@ -153,7 +151,7 @@ const Contact = () => {
                         alt={"image_contact"}
                     />
                 </div>
-            </div>
+            </section>
         </Fade>
     )
 }

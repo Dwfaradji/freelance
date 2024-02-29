@@ -75,7 +75,7 @@ const Slider = ({ data }: Slide) => {
 
   return (
     <>
-      <div className={`${hiddenSlide} text-white`}>
+      <section className={`${hiddenSlide} text-white`}>
         <Swiper
           onSwiper={(swiper: any) => (swiperRef.current = swiper)} // Mise à jour correcte de la référence
           pagination={{
@@ -141,7 +141,7 @@ const Slider = ({ data }: Slide) => {
             <i className="fa-solid fa-chevron-right ml-3"></i>
           </button>
         </div>
-      </div>
+      </section>
       {/*Affiche le formulaire lorsque displaySlide est true*/}
         {displaySlide && (
           <Fade>

@@ -8,13 +8,13 @@ import {projects} from "@/data/data";
 
 const Projects = () => {
     return (
-        <div>
+        <section>
             <Fade cascade>
                 <div className="mt-10 px-8">
-                    <h1 className="text-white text-7xl font-bold xxs:text-2xl xs:text-2xl sm:text-3xl lg:text-5xl xl:text-7xl">
+                    <h2 className="text-white text-7xl font-bold xxs:text-2xl xs:text-2xl sm:text-3xl lg:text-5xl xl:text-7xl">
                         Découvrez Nos Projets Web
-                    </h1>
-                    <h2 className="text-white text-sm mt-5 opacity-50">
+                    </h2>
+                    <p className="text-white text-sm mt-5 opacity-50">
                         {`Mon portfolio présente une sélection de mes réalisations en tant que développeur web freelance.
                             Vous y trouverez des sites web, des applications web et des solutions informatiques sur mesure
                             que j"ai créées pour des clients de différents secteurs d"activité.`}
@@ -22,11 +22,11 @@ const Projects = () => {
                         Vous recherchez un développeur web freelance pour donner vie à vos projets web ?
                         <br/>
                         Découvrez mon portfolio et explorez une sélection de mes réalisations.
-                    </h2>
+                    </p>
                 </div>
             </Fade>
             <Fade cascade>
-                <div
+                <article
                     className=" w-full px-8 mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row">
                     {/*<div className="w-2/6 bg-gradient-to-r from-pink to-purple p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-2/6">*/}
                     <Swiper
@@ -80,7 +80,7 @@ const Projects = () => {
                     {/*</div>*/}
 
                     <div className="w-4/6 bg-lightblack p-8 rounded-xl  xxs:w-full xs:w-full sm:w-4/6">
-                        <h1 className="text-white text-4xl"> Explorez nos réalisations et laissez-vous inspirer</h1>
+                        <h2 className="text-white text-4xl"> Explorez nos réalisations et laissez-vous inspirer</h2>
                         <p className="mt-8 text-white opacity-50">
                             Découvrez comment nous avons aidé nos clients à concrétiser leur vision en ligne. De sites
                             vitrines élégants et responsives à des applications mobiles performantes et intuitives,
@@ -95,9 +95,9 @@ const Projects = () => {
                                 gratuit.`}
                         </p>
                     </div>
-                </div>
+                </article>
             </Fade>
-        </div>
+        </section>
     );
 };
 

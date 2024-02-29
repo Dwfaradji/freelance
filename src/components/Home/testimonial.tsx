@@ -6,16 +6,15 @@ import Image from "next/image";
 const Testimonial = () => {
 
     return (
-        <div className="mx-auto px-6 mt-10 h-auto mb-10">
+        <section className="mx-auto px-6 mt-10 h-auto mb-10">
             <Fade>
                 <div
                     className="w-full flex flex-row justify-between align-middle bg-lightblack  rounded-lg xxs:flex-col xs:flex-col sm:flex-row  ">
                     <div className="w-3/4 xxs:w-full xs:w-full sm:w-3/4 p-12">
-
-                        <h2 className="font-poppins text-white font-semibold text-xl leading-10 xxs:text-xl xxs:font-medium sm:text-3xl">Expertise
+                        <h2 className="text-white text-2xl">Expertise
                             digitale à votre service</h2>
                         <p
-                            className="mt-3 text-justify font-poppins text-white font-semibold text-xs leading-10 xxs:text-xs xxs:font-normal sm:text-2xl">
+                            className="mt-10 text-white text-sm opacity-50">
                             {`DevEvoke est une entreprise de développement web et mobile. Nous
               sommes spécialisés dans la création de sites web et d'applications
               mobiles. Nous proposons également des services de référencement et
@@ -27,11 +26,11 @@ const Testimonial = () => {
 
                         </p>
                         <div className="mt-10">
-                            <h1 className="text-white text-3xl font-bold font-poppins">
-                                Boucif Faradji </h1>
-                            <h1 className="text-white text-sm font-semibold font-poppins opacity-50">
+                            <h2 className="text-white text-3xl font-bold font-poppins">
+                                Boucif Faradji </h2>
+                            <h3 className="text-white text-sm font-semibold font-poppins opacity-50">
                                 Développeur
-                            </h1>
+                            </h3>
                         </div>
                     </div>
                     <div
@@ -49,7 +48,7 @@ const Testimonial = () => {
                     </div>
                 </div>
             </Fade>
-        </div>
+        </section>
     )
 }
 

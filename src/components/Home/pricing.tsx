@@ -16,7 +16,7 @@ const PricingMain = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 lg:block">
+    <section className="max-w-7xl mx-auto px-6 lg:block">
       <Fade >
         <div className="flex-col gap-3 w-full bg-gradient-to-r from-pink to-purple flex items-center justify-center  rounded-xl">
           {prices.map((tarif, i) => (
@@ -30,9 +30,9 @@ const PricingMain = () => {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-gradient-to-r from-pink to-purple"></span>
               </span>
                 <div className="p-8 w-full  sm:w-3/5">
-                  <h1 className="text-3xl font-bold">
+                  <h2 className="text-3xl font-bold">
                     {tarif.title} <br/> {tarif.subtitle}
-                  </h1>
+                  </h2>
                   <br/>
                   <p>{tarif.description}</p>
                   <div className=" hidden mt-5">
@@ -48,7 +48,7 @@ const PricingMain = () => {
                   <h2 className="text-xl text-white text-bold">
                     À partir de
                   </h2>
-                  <h1 className="text-7xl text-white font-bold mt-2">{tarif.price}</h1>
+                  <h3 className="text-4xl lg:text-7xl text-white font-bold mt-2">{tarif.price}</h3>
                   <div className="mt-5">
                     <Button
                         id={tarif.id}
@@ -56,7 +56,6 @@ const PricingMain = () => {
                         title=" En savoir plus"
                         onClick={handleOpenModal}
                     ></Button>
-
                   </div>
                 </div>
               </article>
@@ -76,7 +75,7 @@ const PricingMain = () => {
           )}
         </div>
       </Fade>
-    </div>
+    </section>
   )
 }
 

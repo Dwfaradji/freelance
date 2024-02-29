@@ -33,7 +33,7 @@ const BlogPage = () => {
         <>
             {contentBlog && (
                 <Fade >
-                    <div className="mx-auto mt-10 flex flex-col text-white relative">
+                    <section className="mx-auto mt-10 flex flex-col text-white relative">
                         <div className="overflow-hidden rounded-xl m-5">
                             <Image priority src={contentBlog.img} width={1650} height={300} alt={"article_blog"} className={"w-full"}/>
                         </div>
@@ -58,7 +58,7 @@ const BlogPage = () => {
                                     {contentBlog.descriptionShort}
                                 </p>
                             </Fade>
-                            <div className="mt-8">
+                            <article className="mt-8">
                                 {contentBlog.descriptionLong &&
                                     contentBlog.descriptionLong.map((val, i) => (
                                         <div key={i} className="mt-8 mb-8">
@@ -68,7 +68,7 @@ const BlogPage = () => {
                                             </Fade>
                                         </div>
                                     ))}
-                            </div>
+                            </article>
                             <div className={"absolute xl:bottom-[50%] xl:left-0 2xl:left-0 xl:fixed"}>
                                 <Link href={"/blog"}>
                                     <Button
@@ -80,7 +80,7 @@ const BlogPage = () => {
                                 </Link>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </Fade>
             )}
         </>
