@@ -22,8 +22,7 @@ const Modal = ({ showModal, setIsOpen, contentModal, prices }) => {
     // Appliquer le style de la modal
     prices.forEach((data) => {
       if (contentModal === data.id) {
-        return  setModal(data);
-
+        return setModal(data);
       }
     });
 
@@ -37,10 +36,11 @@ const Modal = ({ showModal, setIsOpen, contentModal, prices }) => {
   }, [showModal, contentModal, prices]);
   return (
     <div
+      style={{zIndex:"1000",position:"fixed"}}
       id="modal"
-      tabIndex="-1"
+      tabIndex="1"
       aria-hidden="true"
-      className={`${open} fixed inset-0 top-10 z-[1000]  flex h-screen max-h-full w-full items-center justify-center bg-fixed md:top-8`}
+      className={`${open} inset-0 flex h-screen  w-screen items-center justify-center backdrop-blur-lg`}
     >
       <div className="relative mx-auto  max-h-full max-w-2xl p-4 text-center">
         <div className="relative rounded-lg bg-white shadow dark:bg-black">

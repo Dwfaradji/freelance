@@ -62,16 +62,18 @@ const PricingMain = () => {
             </article>
           ))}
 
-          {isOpen && (
-              <Modal
-                showModal={isOpen}
-                setIsOpen={setIsOpen}
-                contentModal={contentModal}
-                prices={prices}
-              />
-          )}
+
         </div>
       </Fade>
+
+      {isOpen && (
+        <Modal
+          showModal={isOpen}
+          setIsOpen={setIsOpen}
+          contentModal={contentModal}
+          prices={prices}
+        />
+      )}
     </section>
   );
 };

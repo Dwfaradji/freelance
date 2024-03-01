@@ -3,11 +3,23 @@
 @tailwind utilities;
 
 
-body {
-    background-color: black;
-}
+
 
 @layer components {
+
+    body {
+        background-color: black;
+        position: relative;
+        z-index: 0;
+    }
+
+
+    .modal-open {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
     a {
         color: white;
     }
@@ -19,9 +31,6 @@ body {
         width: 100dvw;
     }
 
-    .modal-open {
-        overflow: hidden;
-    }
 
     input {
         color: black;
