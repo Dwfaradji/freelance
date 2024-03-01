@@ -5,13 +5,13 @@ const AboutTeamBigCard = () => {
   return (
     <section className="mx-auto mt-10 max-w-7xl">
       <div className="flex size-full flex-row justify-between rounded-xl bg-lightblack xxs:flex-col sm:flex-row">
-        <Image
-          width={300}
-          height={400}
-          className="h-96 w-3/4 rounded-l-lg object-cover xxs:w-full sm:w-3/4"
-          src={''}
-          alt={''}
-        />
+        {/*<Image*/}
+        {/*  width={300}*/}
+        {/*  height={400}*/}
+        {/*  className="hidden h-96 w-3/4 rounded-l-lg object-cover xxs:w-full sm:w-3/4"*/}
+        {/*  src={''}*/}
+        {/*  alt={''}*/}
+        {/*/>*/}
         <div className="flex flex-col justify-between">
           <div className="m-6 text-right font-poppins text-white xxs:text-center sm:text-right">
             <h2 className="text-5xl font-bold">Boucif Faradji</h2>

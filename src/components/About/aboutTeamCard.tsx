@@ -12,13 +12,14 @@ const AboutTeamCard = ({ imgSrc, position }: AboutTeamCardProps) => {
     <Fade cascade className={'w-full p-3'}>
       <div className="relative flex h-96 w-full flex-col items-center justify-end overflow-hidden rounded-xl">
         <Image
-          width={300}
-          height={400}
-          className="size-full object-cover"
-          src={''}
-          alt={''}
+          className={"rounded-2xl"}
+          width={500}
+          height={350}
+
+          src={imgSrc}
+          alt={'ss'}
         />
-        <h2 className="absolute mb-4 w-3/4 rounded-xl bg-white p-2 text-center">
+        <h2 className="absolute w-3/4 rounded-xl bg-white p-2 text-center">
           {position}
         </h2>
       </div>

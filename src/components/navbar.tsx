@@ -19,7 +19,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav  className="fixed  inset-x-0 top-0 z-[10] w-full text-blue">
+    <nav className="fixed  inset-x-0 top-0 z-[10] w-full text-blue">
       <div className="mx-auto px-3 py-2 backdrop-blur-lg">
         <div className="flex h-16 items-center justify-between">
           <div className="flex w-full items-center justify-between  ">
@@ -93,7 +93,7 @@ const Navbar = () => {
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-gray-800 dark:hover:text-white"
               href="/"
             >
-              Home
+              <OtherHousesIcon />
             </a>
             <a
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 dark:text-white"
