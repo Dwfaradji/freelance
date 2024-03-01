@@ -40,12 +40,12 @@ const Modal = ({ showModal, setIsOpen, contentModal, prices }) => {
       id="modal"
       tabIndex="1"
       aria-hidden="true"
-      className={`${open} inset-0 flex h-screen  w-screen items-center justify-center backdrop-blur-lg`}
+      className={`${open} inset-0 flex h-screen w-screen items-center justify-center  backdrop-blur-lg`}
     >
       <div className="relative mx-auto  max-h-full max-w-2xl p-4 text-center">
         <div className="relative rounded-lg bg-white shadow dark:bg-black">
           <div className="flex items-center justify-between rounded-t border-b p-4 md:p-5 dark:border-gray-600">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-center font-semibold text-gray-900 xxs:text-xl md:text-2xl dark:text-white">
               {modal && modal.subtitle}
             </h3>
 
@@ -75,7 +75,7 @@ const Modal = ({ showModal, setIsOpen, contentModal, prices }) => {
           </div>
 
           <div className="space-y-4 p-4 md:p-5">
-            <ul className="text-left text-base leading-relaxed text-gray-500 dark:text-white">
+            <ul className="text-left leading-relaxed text-gray-500  xxs:text-xs md:text-xl dark:text-white">
               {modal &&
                 modal.details.map((detail, i) => (
                   <li key={i.toString()}>

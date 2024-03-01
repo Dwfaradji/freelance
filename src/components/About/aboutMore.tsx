@@ -8,7 +8,7 @@ const AboutMore = () => {
   return (
     <section className="mx-auto mt-10">
       <Fade cascade>
-        <div className="grid h-full grid-cols-3 gap-4 overflow-hidden xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-3">
+        <div className="grid h-full grid-cols-3 gap-4 overflow-hidden xxs:grid-cols-1  xxs:gap-x-2 xs:grid-cols-1 sm:grid-cols-3">
           <div className="col-start-1 col-end-3 h-96 overflow-hidden rounded-xl">
             <Image
               width={800}

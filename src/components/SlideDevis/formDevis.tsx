@@ -182,10 +182,10 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
   }
 
   return (
-    <section className="mx-auto columns-1 gap-8 text-left text-white md:w-4/5 lg:w-2/5 ">
+    <section className="mx-auto columns-1 gap-8 text-left text-white md:w-4/5 lg:w-2/4 dark:bg-white">
       <form className={`${hiddenForm} p-3`} onSubmit={handleSubmit(onSubmit)}>
         {/* Champ pour le nom ou la société */}
-        <div className={'1-partie'}>
+        <div className={'1-partie text-white dark:text-gray-300'}>
           <div className="field mb-4">
             <label htmlFor="nom">Nom / Société :</label>
             <input
@@ -254,7 +254,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
             />
           </div>
         </div>
-        <div className="2_partie">
+        <div className="2_partie text-white dark:text-gray-300">
           {/* Boucle sur les questions du formulaire */}
           {questions.map((question: Question) => (
             <div className="question mb-6" key={question.id}>
@@ -274,7 +274,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
                   />
                 </div>
                 <label
-                  className="font-me mr-3 ms-2 text-[1rem] text-gray-900 dark:text-gray-300"
+                  className="font-me mr-3 ms-2 text-[1rem] dark:text-gray-300"
                   htmlFor={`${question.id}-1`}
                 >
                   {question.label}
@@ -294,18 +294,15 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
                 </div>
 
                 <label
-                  className="font-me mr-3 ms-2 text-[1rem] text-gray-900 dark:text-gray-300"
+                  className="font-me mr-3 ms-2 text-[1rem] "
                   htmlFor={`${question.id}-2`}
                 >
                   {question.label2}
                 </label>
               </div>
               {question.label2 == 'Professionnel' && isProfessionnel && (
-                <div className="mb-4">
-                  <label
-                    htmlFor="siret"
-                    className="text-m block font-medium text-gray-700"
-                  >
+                <div className="mt-4">
+                  <label htmlFor="siret" className="text-m block font-medium">
                     Numéro de siret :
                   </label>
                   <input
@@ -362,7 +359,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
             {errors.commentaires && <span>Ce champ est requis</span>}
           </div>
         </div>
-        <div className="m-8 flex justify-between text-center text-white ">
+        <div className=" mt-8 flex justify-between text-center text-white ">
           {/* Bouton de soumission du formulaire et du bouton retour*/}
           <>
             <Link
@@ -373,7 +370,6 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
               href={`${hrefLink}`}
               onClick={onClickBack}
             >
-              <i className="fa-solid fa-chevron-left mr-3"></i>
               Retour
             </Link>
 
@@ -381,7 +377,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
               type={'submit'}
               className="sm:width-full md:width-full lg:width-full w-1/4 scale-100 items-center justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between"
             >
-              <SendOutlinedIcon className={"-rotate-45"}/>
+              <SendOutlinedIcon className={'-rotate-45'} />
             </button>
           </>
         </div>
