@@ -6,28 +6,12 @@ import { useMyContext } from '@/context/Mycontext';
 import Link from 'next/link';
 import axios from 'axios';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import { IFormData } from '@/data/typeFile';
+import questions from '@/data/dataForm';
+import { useRouter } from "next/navigation";
+
 
 // Interface pour les données du formulaire
-interface IFormData {
-  nom: string;
-  email: string;
-  telephone: string;
-  descriptionProjet: string;
-  budgetEstime: string; // Renommé pour plus de clarté
-  dateDebut: string;
-  commentaires: string;
-  budgetRange: string;
-  maquette: string;
-  cahier: string;
-  projet: string;
-  logo: string;
-  images: string;
-  textes: string;
-  questions: Question[];
-  siret?: number;
-  radioSelections: { [key: string]: string };
-  send: boolean;
-}
 
 // Interface pour les questions
 interface Question {
@@ -39,6 +23,8 @@ interface Question {
 }
 
 const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
+  const router = useRouter()
+
   // États pour gérer les valeurs des champs du formulaire
   const [budgetEstime, setBudgetEstime] = useState<string>('350');
   const [isProfessionnel, setIsProfessionnel] = useState<boolean>(false);
@@ -66,91 +52,27 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
       dateDebut: currentDate, // Utiliser la date actuelle comme valeur par défaut
     },
   });
-  const [formSend, setFormSend] = useState(false);
   const [hiddenForm, setHiddenForm] = useState('');
-
-  const [dataForm, setDataForm] = useState<IFormData>();
-  // Fonction appelée lors de la soumission du formulaire
-  const onSubmit: SubmitHandler<IFormData> = async (data, e) => {
-    await sendDevis();
-    setFormSend(true);
-    setHiddenForm('hidden');
-    data.dateDebut = formatDateToFR(data.dateDebut);
-    data.budgetEstime = budgetEstime;
-    e && e.target.reset();
-    setDataForm(data);
-  };
-
   const [{ form }, dispatch] = useMyContext();
   const sendDataForm = useMyContext()[0];
 
   useEffect(() => {
-    dispatch({ type: 'ADD_FORM', payload: dataForm });
-  }, [dataForm]);
+    if (form) {
+      sendDevis();
+    }
+  }, [form]);
+
+  // Fonction appelée lors de la soumission du formulaire
+  const onSubmit: SubmitHandler<IFormData> = async (data, e) => {
+    await dispatch({ type: 'ADD_FORM', payload: data });
+
+    setHiddenForm('hidden');
+    data.dateDebut = formatDateToFR(data.dateDebut);
+    data.budgetEstime = budgetEstime;
+    e && e.target.reset();
+  };
 
   // Questions du formulaire
-  const questions: Question[] = [
-    // Définition des questions ici...
-    {
-      questionText: 'Êtes vous un particulier ou un professionnel?',
-      type: 'radio',
-      id: 'typeClient',
-      label: 'Particulier',
-      label2: 'Professionnel',
-    },
-    {
-      questionText: 'Ce projet est il existant ?',
-      type: 'radio',
-      id: 'projet',
-      label: 'Oui',
-      label2: 'Non',
-    },
-    {
-      questionText: 'Avez vous une maquette?',
-      type: 'radio',
-      id: 'maquette',
-      label: 'Oui',
-      label2: 'Non',
-    },
-
-    {
-      questionText: 'Avez vous un cahier des charges?',
-      type: 'radio',
-      id: 'cahier',
-      label: 'Oui',
-      label2: 'Non',
-    },
-    {
-      questionText: 'Avez vous un logo?',
-      type: 'radio',
-      id: 'logo',
-      label: 'Oui',
-      label2: 'Non',
-    },
-    {
-      questionText: 'Avez vous des images ou videos à nous fournir ?',
-      type: 'radio',
-      id: 'images',
-      label: 'Oui',
-      label2: 'Non',
-    },
-    {
-      questionText:
-        'Avez vous des textes de présentation de votre activité à nous fournir ?',
-      type: 'radio',
-      id: 'textPresentation',
-      label: 'Oui',
-      label2: 'Non',
-    },
-    {
-      questionText:
-        'Avez vous des textes de vos produits et services à nous fournir ?',
-      type: 'radio',
-      id: 'textServices',
-      label: 'Oui',
-      label2: 'Non',
-    },
-  ];
 
   // Gestionnaire d'événements pour les boutons radio
   const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -161,15 +83,17 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
     }
   };
 
+
   async function sendDevis() {
     try {
-      const response = await axios.post('/api/devis', dataForm, {
+      const response = await axios.post('/api/devis', sendDataForm, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
       if (response.status === 200) {
         console.log("L'e-mail a été envoyé avec succès.");
+         router.push("/confirmation")
       } else {
         console.log("Erreur lors de l'envoi de l'e-mail");
       }

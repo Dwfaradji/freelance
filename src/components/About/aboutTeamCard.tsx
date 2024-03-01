@@ -10,7 +10,7 @@ interface AboutTeamCardProps {
 const AboutTeamCard = ({ imgSrc, position }: AboutTeamCardProps) => {
   return (
     <Fade cascade className={'w-full p-3'}>
-      <div className="relative flex h-96 w-full flex-col items-center justify-end overflow-hidden rounded-xl">
+      <div className="relative flex w-full flex-col items-center justify-end overflow-hidden rounded-xl">
         <Image
           className={"rounded-2xl"}
           width={500}

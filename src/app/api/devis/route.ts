@@ -58,6 +58,7 @@ export async function POST(request: Request) {
   // Récupérer les données du formulaire
   const data = await request.json();
   const { form } = data;
+
   form.commentaires === ''
     ? (form.commentaires = 'Pas de commentaires particulier')
     : form.commentaires;
@@ -68,7 +69,6 @@ export async function POST(request: Request) {
       message: 'Des champs vides ont été trouvés dans la requête.',
     });
   }
-
   // Donner la clé API
   const apiKey = process.env.KEY_SENDGRID;
   if (!apiKey) {
@@ -131,6 +131,7 @@ export async function POST(request: Request) {
         },
       },
     };
+
     await sgMail.send(devis);
     return res.json({ message: 'DEVIS_SEND' });
   } catch (error) {
