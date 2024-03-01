@@ -1,23 +1,23 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
 const AboutTeamBigCard = () => {
   return (
-    <section className="max-w-7xl mx-auto mt-10">
-      <div className="bg-lightblack w-full h-full flex flex-row justify-between rounded-xl xxs:flex-col sm:flex-row">
-        {/*<Image*/}
-        {/*  width={300}*/}
-        {/*  height={400}*/}
-        {/*  className="w-3/4 object-cover h-96 rounded-l-lg xxs:w-full sm:w-3/4"*/}
-        {/*  src={""}*/}
-        {/*  alt={""}*/}
-        {/*/>*/}
+    <section className="mx-auto mt-10 max-w-7xl">
+      <div className="flex size-full flex-row justify-between rounded-xl bg-lightblack xxs:flex-col sm:flex-row">
+        <Image
+          width={300}
+          height={400}
+          className="h-96 w-3/4 rounded-l-lg object-cover xxs:w-full sm:w-3/4"
+          src={''}
+          alt={''}
+        />
         <div className="flex flex-col justify-between">
-          <div className="text-white text-right m-6 font-poppins xxs:text-center sm:text-right">
+          <div className="m-6 text-right font-poppins text-white xxs:text-center sm:text-right">
             <h2 className="text-5xl font-bold">Boucif Faradji</h2>
             <h3 className="text-lg font-bold opacity-50">Fondateur</h3>
           </div>
-          <p className="text-white p-6 text-xl text-right xxs:text-center sm:text-right">
+          <p className="p-6 text-right text-xl text-white xxs:text-center sm:text-right">
             {`Je suis un développeur Full Stack freelance passionné par la
               création d'applications web innovantes. Je suis spécialisé dans le
               développement frontend et backend, ainsi que dans la conception de

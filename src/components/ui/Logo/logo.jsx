@@ -1,5 +1,5 @@
-import React from "react";
-import"./logo.css"
+import React from 'react';
+import './logo.css';
 
 // Fonction pour afficher le SVG
 function logoSVG(colors) {

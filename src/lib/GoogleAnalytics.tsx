@@ -1,4 +1,4 @@
-import Script from "next/script";
+import Script from 'next/script';
 interface GoogleAnalyticsProps {
   GA_TRACKING_ID: string;
 }

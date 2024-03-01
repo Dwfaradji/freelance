@@ -1,23 +1,29 @@
-import React from "react"
-import {Fade} from "react-awesome-reveal";
-import Image from "next/image";
+import React from 'react';
+import { Fade } from 'react-awesome-reveal';
+import Image from 'next/image';
 
 interface AboutTeamCardProps {
-    imgSrc: string,
-    position:string
+  imgSrc: string;
+  position: string;
 }
 
-const AboutTeamCard = ({ imgSrc, position }:AboutTeamCardProps) => {
+const AboutTeamCard = ({ imgSrc, position }: AboutTeamCardProps) => {
   return (
-    <Fade cascade className={"w-full p-3"}>
-      <div className=" w-full h-96 relative overflow-hidden rounded-xl flex flex-col justify-end items-center">
-        {/*<Image width={300} height={400} className="object-cover h-full w-full" src={""} alt={""}/>*/}
-        <h2 className="bg-white absolute p-2 rounded-xl w-3/4 mb-4 text-center">
+    <Fade cascade className={'w-full p-3'}>
+      <div className="relative flex h-96 w-full flex-col items-center justify-end overflow-hidden rounded-xl">
+        <Image
+          width={300}
+          height={400}
+          className="size-full object-cover"
+          src={''}
+          alt={''}
+        />
+        <h2 className="absolute mb-4 w-3/4 rounded-xl bg-white p-2 text-center">
           {position}
         </h2>
       </div>
     </Fade>
-  )
-}
+  );
+};
 
-export default AboutTeamCard
+export default AboutTeamCard;

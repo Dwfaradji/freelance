@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 export const metadata = {
-  title: "Mentions légales - DevEvoke",
+  title: 'Mentions légales - DevEvoke',
   description:
-    "Mentions légales du site DevEvoke. Découvrez les mentions légales du site DevEvoke.",
+    'Mentions légales du site DevEvoke. Découvrez les mentions légales du site DevEvoke.',
   alternates: {
-    canonical: "https://www.devevoke.com/mentions-legal",
+    canonical: 'https://www.devevoke.com/mentions-legal',
     languages: {
-      fr: "https://www.devevoke.com/",
+      fr: 'https://www.devevoke.com/',
     },
   },
   robots: {

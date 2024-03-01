@@ -2,65 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+
+body {
+    background-color: black;
+}
+
+@layer components {
     a {
         color: white;
-    }
-
-    body {
-        background-color: black;
     }
 
     main {
         margin-top: 7em;
         padding-left: 4rem;
-        padding-right:4rem;
+        padding-right: 4rem;
         width: 100dvw;
-
     }
-}
 
+    .modal-open {
+        overflow: hidden;
+    }
 
-@layer utilities {
+    input {
+        color: black;
+    }
+
+    textarea {
+        color: black;
+    }
+
+    .truncate-lines {
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 5; /* Nombre de lignes à afficher */
+        max-height: calc(1.2em * 5); /* Hauteur maximale pour cinq lignes */
+    }
+
+    footer li {
+        margin-bottom: 4px;
+        white-space: pre-wrap;
+    }
+
     .text-gradient {
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 }
 
-.modal-open {
-    overflow: hidden;
-}
 
-input {
-    color: black;
-
-}
-
-textarea {
-    color: black;
-}
-
-.truncate-lines {
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    -webkit-line-clamp: 5; /* Nombre de lignes à afficher */
-    max-height: calc(1.2em * 5); /* Hauteur maximale pour cinq lignes */
-}
-
-footer li {
-    margin-bottom: 4px;
-    white-space: pre-wrap;
-}
-
-@media  (max-width: 600px){
+@media (max-width: 600px) {
     main {
         margin-top: 6em;
         padding-left: 0;
         padding-right: 0;
     }
 }
-
-

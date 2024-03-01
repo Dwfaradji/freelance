@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import BlogPage from "@/components/Blog/blogPage";
-import blogData from "@/data/dataBlog";
+'use client';
+import React from 'react';
+import BlogPage from '@/components/Blog/blogPage';
+import blogData from '@/data/dataBlog';
 
-const Page = () => {
+const Page = async () => {
   return (
     <main>
       <BlogPage />

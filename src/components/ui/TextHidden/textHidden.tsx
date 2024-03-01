@@ -1,5 +1,5 @@
-"use client";
-import React, { useEffect, useState } from "react";
+'use client';
+import React, { useEffect, useState } from 'react';
 
 interface TextProps {
   text: string;
@@ -9,22 +9,22 @@ interface TextProps {
 
 const TextHidden = ({ text, style, heightVisible }: TextProps) => {
   const [visibleText, setVisibleText] = useState(heightVisible);
-  const [textButton, setTextButton] = useState("Lire la suite ...");
+  const [textButton, setTextButton] = useState('Lire la suite ...');
   const handleShowText = (e: any) => {
-    setVisibleText("h-full");
-    setTextButton("Fermer");
+    setVisibleText('h-full');
+    setTextButton('Fermer');
 
-    if (textButton == "Fermer") {
+    if (textButton == 'Fermer') {
       setVisibleText(heightVisible);
-      setTextButton("Lire la suite ...");
+      setTextButton('Lire la suite ...');
     }
   };
   useEffect(() => {
-    window.addEventListener("click", (e) => {
+    window.addEventListener('click', (e) => {
       // @ts-ignore
-      if (e.target.id !== "button") {
+      if (e.target.id !== 'button') {
         setVisibleText(heightVisible);
-        setTextButton("Lire la suite ...");
+        setTextButton('Lire la suite ...');
       }
     });
   }, []);
@@ -34,8 +34,8 @@ const TextHidden = ({ text, style, heightVisible }: TextProps) => {
         {text}
       </p>
       <span
-        id={"button"}
-        className={"cursor-pointer  truncate"}
+        id={'button'}
+        className={'cursor-pointer  truncate'}
         onClick={handleShowText}
       >
         {textButton}

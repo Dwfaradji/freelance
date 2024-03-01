@@ -1,6 +1,6 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { useMyContext } from "@/context/Mycontext";
+'use client';
+import React, { useState, useEffect } from 'react';
+import { useMyContext } from '@/context/Mycontext';
 
 interface FontSelectorProps {
   label: string;
@@ -10,18 +10,18 @@ interface FontSelectorProps {
 }
 
 const FontSelector: React.FC<FontSelectorProps> = ({
-                                                     label,
-                                                     value,
-                                                     onChange,
-                                                     fonts
-                                                   }) => (
+  label,
+  value,
+  onChange,
+  fonts,
+}) => (
   <article className="mb-8">
     <label htmlFor={label}>{label}:</label>
     <select
       id={label}
       value={value}
       onChange={(e) => onChange(label, e.target.value)}
-      className="text-center bg-transparent border-none"
+      className="border-none bg-transparent text-center"
     >
       {fonts.map((font) => (
         <option key={font} value={font}>
@@ -33,9 +33,9 @@ const FontSelector: React.FC<FontSelectorProps> = ({
       className="font-preview"
       style={{
         fontFamily: value,
-        marginTop: "2em",
-        border: "1px solid #ccc",
-        padding: "10px"
+        marginTop: '2em',
+        border: '1px solid #ccc',
+        padding: '10px',
       }}
     >
       Aperçu : The quick brown fox jumps over the lazy dog
@@ -51,21 +51,21 @@ const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
   const [{}, dispatch] = useMyContext();
 
   const availableFonts: string[] = [
-    "Arial",
-    "Times New Roman",
-    "Georgia",
-    "Verdana"
+    'Arial',
+    'Times New Roman',
+    'Georgia',
+    'Verdana',
   ];
 
   const [selectedFontFirst, setSelectedFontFirst] = useState<string>(
-    availableFonts[0]
+    availableFonts[0],
   );
   const [selectedFontSecond, setSelectedFontSecond] = useState<string>(
-    availableFonts[1]
+    availableFonts[1],
   );
 
   const handleFontChange = (fontKey: string, newValue: string) => {
-    if (fontKey === "Choisissez une police principale") {
+    if (fontKey === 'Choisissez une police principale') {
       setSelectedFontFirst(newValue);
     } else {
       setSelectedFontSecond(newValue);
@@ -75,16 +75,16 @@ const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
   useEffect(() => {
     const fontsSelected = {
       primary: selectedFontFirst,
-      secondary: selectedFontSecond
+      secondary: selectedFontSecond,
     };
 
     if (fontsSelected) {
-      dispatch({ type: "ADD_FONTS", payload: fontsSelected });
+      dispatch({ type: 'ADD_FONTS', payload: fontsSelected });
     }
-  }, [selectedFontFirst,selectedFontSecond]);
+  }, [selectedFontFirst, selectedFontSecond]);
 
   return (
-    <section className="w-full h-full flex-col justify-around items-center flex">
+    <section className="flex h-full w-full flex-col items-center justify-around">
       <FontSelector
         label="Choisissez une police principale"
         value={selectedFontFirst}

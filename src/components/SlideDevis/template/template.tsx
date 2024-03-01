@@ -1,26 +1,17 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Images from "next/image";
-import { articles } from "@/data/dataSlideDevis";
+'use client';
+import React, { useEffect, useState } from 'react';
+import { useMyContext } from '@/context/Mycontext';
 
+import Link from 'next/link';
+import Button from '@/components/ui/Atoms/button';
+import Images from 'next/image';
+import { articles } from '@/data/dataSlideDevis';
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination,Navigation } from 'swiper/modules';
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-coverflow";
-import "./template.css";
-
-// import required modules Swiper
-import { Navigation } from "swiper/modules";
-import { EffectCoverflow, Pagination } from "swiper/modules";
-import Link from "next/link";
-import { useMyContext } from "@/context/Mycontext";
-import Button from "@/components/ui/Atoms/button";
-
-// Type
+import './template.css';
 
 interface MultiCheckboxProps {
   options: string[];
@@ -31,7 +22,7 @@ interface MultiCheckboxProps {
 //DATA
 const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
   const [{}, dispatch] = useMyContext();
-  const [selectedTemplateOption, setSelectedTemplateOption] = useState(""); // Option par défaut
+  const [selectedTemplateOption, setSelectedTemplateOption] = useState(''); // Option par défaut
 
   const [displayNav, setDisplayNav] = useState(true);
   useEffect(() => {
@@ -40,7 +31,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
     } else {
       setDisplayNav(true);
     }
-    window.addEventListener("resize", (e) => {
+    window.addEventListener('resize', (e) => {
       if (window.innerWidth <= 640) {
         setDisplayNav(false);
       } else {
@@ -55,26 +46,25 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
 
   useEffect(() => {
     if (selectedTemplateOption) {
-      dispatch({ type: "ADD_TEMPLATE", payload: selectedTemplateOption });
+      dispatch({ type: 'ADD_TEMPLATE', payload: selectedTemplateOption });
     }
   }, [selectedTemplateOption]);
-
 
   return (
     <section>
       <Swiper
-        breakpointsBase={"window"}
-        effect={"coverflow"}
+        breakpointsBase={'window'}
+        effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
         navigation={displayNav}
-        slidesPerView={"auto"}
+        slidesPerView={'auto'}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
           depth: 100,
           modifier: 1,
-          slideShadows: true
+          slideShadows: true,
         }}
         pagination={false}
         allowTouchMove={true}
@@ -83,8 +73,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
       >
         {articles.map((article, index) => (
           <SwiperSlide key={article.id}>
-            <article
-              className="group relative flex flex-col justify-between items-center cursor-pointer  ">
+            <article className="group relative flex cursor-pointer flex-col items-center justify-between  ">
               <Images
                 width={400}
                 height={600}
@@ -92,26 +81,29 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
                 alt={article.title}
               />
 
-              <div
-                className="rounded-2xl backdrop-blur-sm text-xs lg:text-base absolute h-full w-full flex-col flex justify-between items-center p-1 md:p-4  bg-black bg-opacity-0 group-hover:bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className=" flex justify-center items-center h-full text-left">
+              <div className="absolute flex size-full flex-col items-center justify-between rounded-2xl bg-black bg-opacity-0 p-1 text-xs text-white opacity-0  backdrop-blur-sm transition-opacity duration-300 group-hover:bg-opacity-50 group-hover:opacity-100 md:p-4 lg:text-base">
+                <p className=" flex h-full items-center justify-center text-left">
                   {article.description}
                 </p>
-                <Link className="mt-5" href={article.link} target={"_blank"}>
+                <Link className="mt-5" href={article.link} target={'_blank'}>
                   <Button
-                    type={"button"}
-                    title={"Démo"}
+                    type={'button'}
+                    title={'Démo'}
                     colorClass="bg-gradient-to-r from-pink to-purple "
                   ></Button>
                 </Link>
               </div>
             </article>
 
-            <div
-              className="m-8 p-2 border border-sky-500 rounded-2xl  w-full flex flex-col justify-center items-center">
-              <label className={" h-full cursor-pointer"} htmlFor={String(article.id)}>{article.title}</label>
+            <div className="border-sky-500 m-8 flex w-full flex-col  items-center justify-center rounded-2xl border p-2">
+              <label
+                className={' h-full cursor-pointer'}
+                htmlFor={String(article.id)}
+              >
+                {article.title}
+              </label>
               <input
-                className={"cursor-pointer"}
+                className={'cursor-pointer'}
                 id={String(article.id)}
                 type="radio"
                 name="articleSelection"

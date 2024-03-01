@@ -1,11 +1,10 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 const Page = () => {
   return (
     <div>
-      <div
-        className="w-11/12 md:w-10/12 lg:w-6/12 mx-auto p-6  shadow-lg shadow-indigo-500/40 rounded-lg text-center m-10 h-96 flex flex-col justify-between ">
+      <div className="shadow-indigo-500/40 m-10 mx-auto flex h-96  w-11/12 flex-col justify-between rounded-lg p-6 text-center shadow-lg md:w-10/12 lg:w-6/12 ">
         <h2>Message envoyé</h2>
         <p className="text-blue-950 mb-13">
           {

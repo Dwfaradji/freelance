@@ -1,7 +1,7 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import "./multiColorPicker.css";
-import { useMyContext } from "@/context/Mycontext";
+'use client';
+import React, { useEffect, useState } from 'react';
+import './multiColorPicker.css';
+import { useMyContext } from '@/context/Mycontext';
 
 interface Colors {
   Principal: string;
@@ -14,43 +14,40 @@ interface MultiColorPickerProps {
 }
 
 const MultiColorPicker: React.FC<MultiColorPickerProps> = ({
-                                                             onColorsSelect
-                                                           }) => {
-
+  onColorsSelect,
+}) => {
   const [{}, dispatch] = useMyContext();
 
   const [selectColors, setSelectColors] = useState<Colors>({
-    Principal: "#abc2e8",
-    Secondaire: "#f7b6b6",
-    Texte: "#a6cca4"
+    Principal: '#abc2e8',
+    Secondaire: '#f7b6b6',
+    Texte: '#a6cca4',
   });
 
   const handleColorChange =
     (colorName: keyof Colors) =>
-      (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newColors = { ...selectColors, [colorName]: event.target.value };
-        setSelectColors(newColors);
-        // onColorsSelect(newColors);
-      };
-
-
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const newColors = { ...selectColors, [colorName]: event.target.value };
+      setSelectColors(newColors);
+      // onColorsSelect(newColors);
+    };
 
   useEffect(() => {
     if (selectColors) {
-      dispatch({ type: "ADD_COLORS", payload: selectColors });
+      dispatch({ type: 'ADD_COLORS', payload: selectColors });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectColors ]);
+  }, [selectColors]);
 
   return (
-    <section className="color-picker-container w-full justify-around flex flex-wrap h-full">
+    <section className="color-picker-container flex size-full flex-wrap justify-around">
       {Object.entries(selectColors).map(([colorName, colorValue]) => (
-        <div key={colorName} className="flex items-center m-3">
+        <div key={colorName} className="m-3 flex items-center">
           <article className="flex justify-center -space-x-14">
             <div className="mix-blend-multiply">
               <div
                 style={{ boxShadow: `0px 15px 15px ${colorValue}` }} // Appliquer le shadow ici
-                className="bg-blue-500 shadow-lg flex justify-center items-center rounded-full overflow-hidden p-1 input-color"
+                className="bg-blue-500 input-color flex items-center justify-center overflow-hidden rounded-full p-1 shadow-lg"
               >
                 <input
                   className="input-color"
@@ -62,7 +59,7 @@ const MultiColorPicker: React.FC<MultiColorPickerProps> = ({
               </div>
             </div>
             <div className="mix-blend-multiply">
-              <div className="flex justify-center items-center rounded-full overflow-hidden p-1 input-color">
+              <div className="input-color flex items-center justify-center overflow-hidden rounded-full p-1">
                 <input
                   aria-label="Color"
                   className="input-color "

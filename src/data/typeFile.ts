@@ -52,8 +52,6 @@ interface Text {
   text: string;
 }
 
-
-
 interface BlogProps {
   id: string;
   title: string;

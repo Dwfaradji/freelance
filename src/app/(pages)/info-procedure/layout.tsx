@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react';
 
 export const metadata = {
-  title: "processus de création de site web sur mesure",
+  title: 'processus de création de site web sur mesure',
   description:
-    "Découvrez le processus de création de site web sur mesure. De la conception à la mise en ligne, nous vous accompagnons tout au long de votre projet.",
+    'Découvrez le processus de création de site web sur mesure. De la conception à la mise en ligne, nous vous accompagnons tout au long de votre projet.',
   alternates: {
-    canonical: "https://www.devevoke.com/info-procedure",
+    canonical: 'https://www.devevoke.com/info-procedure',
     languages: {
-      fr: "https://www.devevoke.com/"
-    }
+      fr: 'https://www.devevoke.com/',
+    },
   },
   robots: {
     follow: true,
-    index: true
-  }
+    index: true,
+  },
 };
 
 export default function ProcessLayout({
-                                        children
-                                      }: {
+  children,
+}: {
   children: React.ReactNode;
 }) {
   return <section>{children}</section>;

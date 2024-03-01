@@ -1,5 +1,5 @@
-"use client";
-import React, { createContext, useContext, useReducer } from "react";
+'use client';
+import React, { createContext, useContext, useReducer } from 'react';
 
 // Création du Context
 const Context = createContext();
@@ -13,6 +13,5 @@ export const MyProvider = ({ reducer, initialState, children }) => (
 
 // Hook pour utiliser le Context
 export const useMyContext = () => {
-  console.log(useContext(Context));
   return useContext(Context);
 };

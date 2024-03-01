@@ -1,82 +1,79 @@
-"use client"
-import React, {useState} from "react"
-import Button from "@/components/ui/Atoms/button"
-import {Fade} from "react-awesome-reveal";
-import Modal from "@/components/ui/Modal/modal";
-import {prices} from "@/data/data";
-
+'use client';
+import React, { useState } from 'react';
+import Button from '@/components/ui/Atoms/button';
+import { Fade } from 'react-awesome-reveal';
+import Modal from '@/components/ui/Modal/modal';
+import { prices } from '@/data/data';
 
 const PricingMain = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [contentModal, setContentModal] = useState("");
+  const [contentModal, setContentModal] = useState('');
 
-  const handleOpenModal = (e:any) => {
+  const handleOpenModal = (e: any) => {
     setIsOpen(true);
     setContentModal(e.target.id);
+
   };
 
+
+
   return (
-    <section className="max-w-7xl mx-auto px-6 lg:block">
-      <Fade >
-        <div className="flex-col gap-3 w-full bg-gradient-to-r from-pink to-purple flex items-center justify-center  rounded-xl">
+    <section className="mx-auto max-w-7xl px-6 lg:block">
+      <Fade>
+        <div className="flex w-full flex-col items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-pink  to-purple">
           {prices.map((tarif, i) => (
-              <article
-                  key={i.toString()}
-                  className="flex flex-col sm:flex-row bg-white h-auto rounded-xl m-3 "
-              >
-              <span className="relative flex h-3 w-3 m-4">
-                <span
-                    className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gradient-to-r from-pink to-purple opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-gradient-to-r from-pink to-purple"></span>
+            <article
+              key={i.toString()}
+              className="m-3 flex h-auto flex-col rounded-xl bg-white sm:flex-row "
+            >
+              <span className="relative m-4 flex size-3">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-gradient-to-r from-pink to-purple opacity-75"></span>
+                <span className="relative inline-flex size-3 rounded-full bg-gradient-to-r from-pink to-purple"></span>
               </span>
-                <div className="p-8 w-full  sm:w-3/5">
-                  <h2 className="text-3xl font-bold">
-                    {tarif.title} <br/> {tarif.subtitle}
-                  </h2>
-                  <br/>
-                  <p>{tarif.description}</p>
-                  <div className=" hidden mt-5">
-                    <div className="mt-5 grid grid-cols-2 gap-3">
-                      <h3>Feature One</h3>
-                      <h3>Feature Two</h3>
-                      <h3>Feature Three</h3>
-                      <h3>Feature Four</h3>
-                    </div>
+              <div className="w-full p-8  sm:w-3/5">
+                <h2 className="text-3xl font-bold">
+                  {tarif.title} <br /> {tarif.subtitle}
+                </h2>
+                <br />
+                <p>{tarif.description}</p>
+                <div className=" mt-5 hidden">
+                  <div className="mt-5 grid grid-cols-2 gap-3">
+                    <h3>Feature One</h3>
+                    <h3>Feature Two</h3>
+                    <h3>Feature Three</h3>
+                    <h3>Feature Four</h3>
                   </div>
                 </div>
-                <div className="w-full  sm:w-2/5 flex flex-col items-center justify-center  p-8 bg-pink rounded-r-lg">
-                  <h2 className="text-xl text-white text-bold">
-                    À partir de
-                  </h2>
-                  <h3 className="text-4xl lg:text-7xl text-white font-bold mt-2">{tarif.price}</h3>
-                  <div className="mt-5">
-                    <Button
-                        id={tarif.id}
-                        colorClass="bg-white"
-                        title=" En savoir plus"
-                        onClick={handleOpenModal}
-                    ></Button>
-                  </div>
+              </div>
+              <div className="flex  w-full flex-col items-center justify-center rounded-r-lg  bg-pink p-8 sm:w-2/5">
+                <h2 className="text-xl text-white">À partir de</h2>
+                <h3 className="mt-2 text-4xl font-bold text-white lg:text-7xl">
+                  {tarif.price}
+                </h3>
+                <div className="mt-5">
+                  <Button
+                    id={tarif.id}
+                    colorClass="bg-white"
+                    title=" En savoir plus"
+                    onClick={handleOpenModal}
+                  ></Button>
                 </div>
-              </article>
+              </div>
+            </article>
           ))}
 
           {isOpen && (
-            <div className={"relative z-50"}>
               <Modal
                 showModal={isOpen}
                 setIsOpen={setIsOpen}
                 contentModal={contentModal}
                 prices={prices}
-
               />
-            </div>
-
           )}
         </div>
       </Fade>
     </section>
-  )
-}
+  );
+};
 
-export default PricingMain
+export default PricingMain;
