@@ -4,7 +4,7 @@ import Button from '@/components/ui/Atoms/button';
 import { Fade } from 'react-awesome-reveal';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import callApi from "@/utils/callApi";
 
 const Contact = () => {
   const [sendMsg, setSendMsg] = React.useState(false);
@@ -17,19 +17,13 @@ const Contact = () => {
   } = useForm();
   const onSubmit = async (data: {}) => {
     try {
-      const response = await axios.post('/api/contact/', data, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await callApi({ url: '/api/contact', data: data });
       // Traitez la réponse de l'API
       if (response.status === 200) {
         console.log("L'e-mail a été envoyé avec succès.");
         window.location.hash = 'confirmation';
         setSendMsg(true);
         reset();
-      } else {
-        console.log("Erreur lors de l'envoi de l'e-mail");
       }
     } catch (error) {
       console.error("Erreur lors de l'envoi de l'e-mail", error);
@@ -39,7 +33,7 @@ const Contact = () => {
   return (
     <Fade cascade>
       <section className="mx-auto mt-10 flex max-w-7xl text-white xxs:flex-col sm:flex-row">
-        <div className="m-5 rounded-xl bg-lightblack p-10 md:w-3/4">
+        <div className="m-5 rounded-xl bg-lightblack p-10 xxs:p-0 md:w-3/4">
           <h2 className="text-xs opacity-50">Entrer en contact</h2>
           <h1 className="mt-2 font-poppins text-4xl font-bold xxs:text-lg sm:text-2xl lg:text-4xl">
             Travaillons ensemble

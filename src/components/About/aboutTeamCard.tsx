@@ -19,9 +19,9 @@ const AboutTeamCard = ({ imgSrc, position }: AboutTeamCardProps) => {
           src={imgSrc}
           alt={'ss'}
         />
-        <h2 className="absolute w-3/4 rounded-xl bg-white p-2 text-center">
-          {position}
-        </h2>
+        {/*<h2 className="absolute w-3/4 rounded-xl bg-white p-2 text-center">*/}
+        {/*  {position}*/}
+        {/*</h2>*/}
       </div>
     </Fade>
   );

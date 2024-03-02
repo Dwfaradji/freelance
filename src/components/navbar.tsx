@@ -30,37 +30,37 @@ const Navbar = () => {
               <div className="ml-10 flex items-baseline space-x-4 text-red-600">
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href="/"
+                  href={'/'}
                 >
                   <OtherHousesIcon />
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href="/about"
+                  href={'/about'}
                 >
                   A propos
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href="/blog"
+                  href={'/blog'}
                 >
                   Blog
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href="/pricing"
+                  href={'/pricing'}
                 >
                   Tarifs
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href="/project"
+                  href={'/project'}
                 >
                   Project
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href="/contact"
+                  href={'/contact'}
                 >
                   Contact
                 </Link>
@@ -89,42 +89,42 @@ const Navbar = () => {
       {openMenu && (
         <div className="backdrop-blur-lg md:hidden">
           <div className="space-y-1 pb-3 pt-2 sm:px-3 md:px-2">
-            <a
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-gray-800 dark:hover:text-white"
-              href="/"
+            <Link
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
+              href={'/'}
             >
               <OtherHousesIcon />
-            </a>
-            <a
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 dark:text-white"
-              href="/about"
+            </Link>
+            <Link
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
+              href={'/about'}
             >
               A propos
-            </a>
-            <a
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 dark:text-white"
-              href="/blog"
+            </Link>
+            <Link
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
+              href={'/blog'}
             >
               Blog
-            </a>
-            <a
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-gray-800 dark:hover:text-white"
-              href="/pricing"
+            </Link>
+            <Link
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
+              href={'/pricing'}
             >
               Tarifs
-            </a>
-            <a
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-gray-800 dark:hover:text-white"
-              href="/project"
+            </Link>
+            <Link
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
+              href={'/project'}
             >
               Projects
-            </a>
-            <a
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-gray-800 dark:hover:text-white"
-              href="/contact"
+            </Link>
+            <Link
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
+              href={'/contact'}
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       )}

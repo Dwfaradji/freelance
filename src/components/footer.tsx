@@ -7,21 +7,21 @@ const Footer = () => {
   return (
     <div className="mx-auto mt-10 rounded-xl bg-lightblack p-8 md:p-20">
       <footer className="flex flex-col items-center justify-center text-white">
-        <div className="flex w-full flex-wrap justify-between ">
+        <div className="flex w-full flex-wrap justify-between gap-8">
           <div className="col-sm-12 col-md-4">
             <h3 className="mb-5 text-left text-xl">Infos général</h3>
             <ul>
               <li>
-                <Link href="/info-procedure">Procédure</Link>
+                <Link href={'/info-procedure'}>Procédure</Link>
               </li>
               <li>
-                <Link href="/info-tarif">Les tarifs</Link>
+                <Link href={'/info-tarif'}>Les tarifs</Link>
               </li>
               <li>
-                <Link href="/mentions-legal">Mentions légal</Link>
+                <Link href={'/mentions-legal'}>Mentions légal</Link>
               </li>
               <li>
-                <Link href="/politique-confidentialite">
+                <Link href={'/politique-confidentialite'}>
                   Politique de confidentialité
                 </Link>
               </li>
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="container-network w-1/3">
+        <div className=" w-full p-8 md:w-3/4 lg:w-2/4">
           <div className="my-8 flex justify-between">
             <Link
               href="https://www.facebook.com/profile.php?id=100094324716136"
