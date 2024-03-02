@@ -13,6 +13,7 @@ import React from "react";
 const Page = () => {
   return (
     <main>
+
       <div className="h-auto w-full">
         <Header />
         <FeatureSection />

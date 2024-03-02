@@ -2,29 +2,16 @@
 // Importations nécessaires
 import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useMyContext } from '@/context/Mycontext';
+import { useMyContext } from '@/context/context';
 import Link from 'next/link';
-import axios from 'axios';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-import { IFormData } from '@/data/typeFile';
+import { IFormData, Question } from '@/data/typeFile';
 import questions from '@/data/dataForm';
-import { useRouter } from "next/navigation";
-
-
-// Interface pour les données du formulaire
-
-// Interface pour les questions
-interface Question {
-  questionText: string; // Renommé pour plus de clarté
-  type: string;
-  id: string;
-  label: string;
-  label2: string;
-}
+import { useRouter } from 'next/navigation';
+import callApi from '@/utils/callApi';
 
 const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
-  const router = useRouter()
-
+  const router = useRouter();
   // États pour gérer les valeurs des champs du formulaire
   const [budgetEstime, setBudgetEstime] = useState<string>('350');
   const [isProfessionnel, setIsProfessionnel] = useState<boolean>(false);
@@ -52,7 +39,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
       dateDebut: currentDate, // Utiliser la date actuelle comme valeur par défaut
     },
   });
-  const [hiddenForm, setHiddenForm] = useState('');
+
   const [{ form }, dispatch] = useMyContext();
   const sendDataForm = useMyContext()[0];
 
@@ -60,19 +47,15 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
     if (form) {
       sendDevis();
     }
-  }, [form]);
+  }, [form, dispatch]);
 
   // Fonction appelée lors de la soumission du formulaire
   const onSubmit: SubmitHandler<IFormData> = async (data, e) => {
     await dispatch({ type: 'ADD_FORM', payload: data });
-
-    setHiddenForm('hidden');
     data.dateDebut = formatDateToFR(data.dateDebut);
     data.budgetEstime = budgetEstime;
     e && e.target.reset();
   };
-
-  // Questions du formulaire
 
   // Gestionnaire d'événements pour les boutons radio
   const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,19 +66,12 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
     }
   };
 
-
   async function sendDevis() {
     try {
-      const response = await axios.post('/api/devis', sendDataForm, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await callApi({ url: '/api/devis', data: sendDataForm });
       if (response.status === 200) {
-        console.log("L'e-mail a été envoyé avec succès.");
-         router.push("/confirmation")
-      } else {
-        console.log("Erreur lors de l'envoi de l'e-mail");
+        await dispatch({ type: 'ADD_STATUS', payload: true });
+        router.push('/devis/confirmation');
       }
     } catch (error) {
       console.error(
@@ -107,7 +83,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
 
   return (
     <section className="mx-auto columns-1 gap-8 text-left text-white md:w-4/5 lg:w-2/4 dark:bg-white">
-      <form className={`${hiddenForm} p-3`} onSubmit={handleSubmit(onSubmit)}>
+      <form className={`p-3`} onSubmit={handleSubmit(onSubmit)}>
         {/* Champ pour le nom ou la société */}
         <div className={'1-partie text-white dark:text-gray-300'}>
           <div className="field mb-4">

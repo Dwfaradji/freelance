@@ -132,7 +132,7 @@ export async function POST(request: Request) {
       },
     };
 
-    await sgMail.send(devis);
+    // await sgMail.send(devis);
     return res.json({ message: 'DEVIS_SEND' });
   } catch (error) {
     return res.json({ message: 'DEVIS_SENDING_FAILED' });

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useMyContext } from '@/context/Mycontext';
+import { useMyContext } from '@/context/context';
 
 interface MultiCheckboxProps {
   options: string[];

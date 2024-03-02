@@ -13,5 +13,6 @@ export const MyProvider = ({ reducer, initialState, children }) => (
 
 // Hook pour utiliser le Context
 export const useMyContext = () => {
+  console.log(useContext(Context));
   return useContext(Context);
 };

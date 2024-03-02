@@ -1,8 +1,13 @@
 import React from 'react';
 
 const Loading = () => {
+  const shimmer =
+    'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent';
+
   return (
-    <div className="flex h-screen w-full items-center justify-center rounded-lg border border-gray-200 bg-gray-50 text-center dark:border-gray-700 dark:bg-gray-800">
+    <div
+      className={`${shimmer} flex h-screen w-full items-center justify-center rounded-lg border border-gray-200 bg-gray-50 text-center dark:border-gray-700 dark:bg-gray-800`}
+    >
       <div role="status">
         <svg
           aria-hidden="true"

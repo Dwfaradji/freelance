@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import './multiColorPicker.css';
-import { useMyContext } from '@/context/Mycontext';
+import { useMyContext } from '@/context/context';
 
 interface Colors {
   Principal: string;

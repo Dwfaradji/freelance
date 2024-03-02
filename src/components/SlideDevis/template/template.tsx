@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { useMyContext } from '@/context/Mycontext';
+import { useMyContext } from '@/context/context';
 
 import Link from 'next/link';
 import Button from '@/components/ui/Atoms/button';

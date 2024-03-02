@@ -4,6 +4,7 @@ export const initialState = {
   fonts: {},
   checkbox: {},
   form: '',
+  status: false,
 };
 
 export const reducer = (state, action) => {
@@ -36,6 +37,12 @@ export const reducer = (state, action) => {
         ...state,
         form: action.payload,
       };
+    case 'ADD_STATUS':
+      return {
+        ...state,
+        status: action.payload,
+      };
+    //
     // autres actions
     default:
       return state;

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { useMyContext } from '@/context/Mycontext';
+import { useMyContext } from '@/context/context';
 
 interface FontSelectorProps {
   label: string;
@@ -84,7 +84,7 @@ const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
   }, [selectedFontFirst, selectedFontSecond]);
 
   return (
-    <section className="flex h-full w-full flex-col items-center justify-around">
+    <section className="flex size-full flex-col items-center justify-around">
       <FontSelector
         label="Choisissez une police principale"
         value={selectedFontFirst}
