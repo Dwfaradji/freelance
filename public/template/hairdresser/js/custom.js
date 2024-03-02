@@ -61,7 +61,7 @@ $(function () {
     $('select').niceSelect();
   });
 
-  /* OwlCarousel - Product Slider
+  /* OwlCarousel - Product slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
   $('.owl-carousel').owlCarousel({
@@ -242,7 +242,7 @@ $(function () {
     });
   });
 
-  /* Deal Slider
+  /* Deal slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
   $('.deal-slider').slick({
@@ -281,7 +281,7 @@ $(function () {
     ],
   });
 
-  /* News Slider
+  /* News slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
   $('#news-slider').slick({

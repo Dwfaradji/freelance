@@ -4,7 +4,7 @@ import Image from 'next/image';
 import projectKw from '@/images/projects/kw.webp';
 import projectFs from '@/images/projects/fenixSolutions.webp';
 
-const CareersHeader = () => {
+const ProjectsHeader = () => {
   return (
     <div className="mx-auto">
       <Fade cascade>
@@ -46,9 +46,8 @@ const CareersHeader = () => {
           </div>
           <div className=" m-2 overflow-hidden rounded-xl md:w-2/4 ">
             <Image
-              className=""
               src={projectKw}
-              alt={''}
+              alt={'image_project_kw'}
               width={1000}
               height={300}
             />
@@ -96,7 +95,7 @@ const CareersHeader = () => {
             <Image
               className=""
               src={projectFs}
-              alt={''}
+              alt={'image_project_felix_solutions'}
               width={1000}
               height={600}
             />
@@ -141,7 +140,7 @@ const CareersHeader = () => {
             <Image
               className=""
               src={projectKw}
-              alt={''}
+              alt={'image_project_gap'}
               width={1000}
               height={300}
             />
@@ -152,4 +151,4 @@ const CareersHeader = () => {
   );
 };
 
-export default CareersHeader;
+export default ProjectsHeader;

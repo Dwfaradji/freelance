@@ -13,7 +13,7 @@ const AboutHeader = () => {
             width={1000}
             height={1000}
             src={headerAbout}
-            alt={''}
+            alt={'photo_de_group'}
           />
         </div>
         <div className="mt-5">

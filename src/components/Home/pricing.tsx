@@ -12,10 +12,7 @@ const PricingMain = () => {
   const handleOpenModal = (e: any) => {
     setIsOpen(true);
     setContentModal(e.target.id);
-
   };
-
-
 
   return (
     <section className="mx-auto max-w-7xl px-6 lg:block">
@@ -61,8 +58,6 @@ const PricingMain = () => {
               </div>
             </article>
           ))}
-
-
         </div>
       </Fade>
 

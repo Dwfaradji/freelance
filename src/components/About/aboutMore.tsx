@@ -14,7 +14,7 @@ const AboutMore = () => {
               width={800}
               height={300}
               src={setup}
-              alt={''}
+              alt={'image_decor'}
               className="h-96 w-full object-cover"
             />
           </div>
@@ -22,7 +22,7 @@ const AboutMore = () => {
             <Image
               className="h-96 object-cover"
               src={me}
-              alt={''}
+              alt={'image_personne_costume'}
               width={800}
               height={300}
             />

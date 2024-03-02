@@ -33527,7 +33527,7 @@ http://www.gnu.org/licenses/gpl.html
   ]);
 
   /*!
-   * jQuery UI Slider 1.12.1
+   * jQuery UI slider 1.12.1
    * http://jqueryui.com
    *
    * Copyright jQuery Foundation and other contributors
@@ -33535,7 +33535,7 @@ http://www.gnu.org/licenses/gpl.html
    * http://jquery.org/license
    */
 
-  //>>label: Slider
+  //>>label: slider
   //>>group: Widgets
   //>>description: Displays a flexible slider with ranges and accessibility via keyboard.
   //>>docs: http://api.jqueryui.com/slider/

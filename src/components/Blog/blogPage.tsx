@@ -38,7 +38,7 @@ const BlogPage = () => {
                   src={contentBlog.img}
                   width={1000}
                   height={800}
-                  alt={'article_blog'}
+                  alt={contentBlog.alt}
                   className={'w-full'}
                 />
               </div>
@@ -91,7 +91,6 @@ const BlogPage = () => {
             </section>
           </Fade>
         </div>
-
       )}
     </div>
   );

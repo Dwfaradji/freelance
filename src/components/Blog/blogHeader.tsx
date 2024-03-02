@@ -17,7 +17,7 @@ const BlogHeader = () => {
               src={dataHeader.img}
               width={1000}
               height={800}
-              alt={'coucou'}
+              alt={dataHeader.alt}
             />
           </div>
           <div className="m-5">
@@ -35,7 +35,7 @@ const BlogHeader = () => {
                 {/*  height={30}*/}
                 {/*  className="h-10 w-10"*/}
                 {/*  src={""}*/}
-                {/*  alt={""}*/}
+                {/*  alt={"auteur"}*/}
                 {/*/>*/}
               </div>
               <div className="ml-2">

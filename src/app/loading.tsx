@@ -11,7 +11,7 @@ const Loading = () => {
       <div role="status">
         <svg
           aria-hidden="true"
-          className="fill-blue-600 mx-auto size-14 animate-spin text-gray-200 dark:text-gray-600"
+          className="mx-auto size-14 animate-spin fill-blue text-gray-200 dark:text-gray-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@ const Loading = () => {
             fill="currentFill"
           />
         </svg>
-        <span className="text-blue-400 mt-20 block">Chargement...</span>
+        <span className="mt-20 block text-blue">Chargement...</span>
       </div>
     </div>
   );

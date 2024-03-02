@@ -62,7 +62,6 @@ export async function POST(request: Request) {
         subject: String(message),
       },
     };
-    console.log(msg);
     await sgMail.send(msg);
     return res.json({ message: 'EMAIL_SENT' });
   } catch (error) {

@@ -24,7 +24,7 @@ const BlogsContainer = () => {
                     height={300}
                     className="size-full object-cover"
                     src={blog.img}
-                    alt={'article1'}
+                    alt={blog.alt}
                   />
                 </div>
                 <h2 className="mt-2 font-poppins text-3xl font-bold">

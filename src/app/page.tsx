@@ -6,14 +6,11 @@ import FeatureSection from '@/components/Home/featureSection';
 import Projects from '@/components/Home/projects';
 import Offerings from '@/components/Home/offerings';
 import Header from '@/components/Home/header';
-import Modal from "@/components/ui/Modal/modal";
-import { prices } from "@/data/data";
-import React from "react";
+import React from 'react';
 
 const Page = () => {
   return (
     <main>
-
       <div className="h-auto w-full">
         <Header />
         <FeatureSection />
@@ -22,7 +19,6 @@ const Page = () => {
         <Testimonial />
         <Pricing />
         <FeaturedBlog />
-
       </div>
     </main>
   );

@@ -14,7 +14,7 @@ Version:	1.1
 	+ Widget
 	+ Main Menu
 	+ Search
-* Hero Slider CSS
+* Hero slider CSS
 * Schedule CSS
 * Feautes CSS
 * Fun Facts CSS
@@ -672,7 +672,7 @@ body {
   right: 20px;
 }
 
-/* Slider Animation */
+/* slider Animation */
 .owl-item.active .single-slider h1 {
   animation: fadeInUp 1s both 0.6s;
 }
@@ -1194,7 +1194,7 @@ body {
 .portfolio .owl-nav {
   display: none;
 }
-/* Slider Nav */
+/* slider Nav */
 .pf-details .image-slider .owl-nav {
   margin: 0;
   position: absolute;

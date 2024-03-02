@@ -114,7 +114,7 @@ const Slider = ({ data }: Slide) => {
         <div className="swiper-navigation lg:mt-6">
           <button
             aria-label="precedent"
-            className={`${display} sm:width-full md:width-full lg:width-full  w-1/4 scale-100 justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between`}
+            className={`${display}  w-1/4 scale-100 justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between`}
             onClick={() => {
               getPrevSlideTitle();
               setActiveSlide((prev) => Math.max(prev - 1, 0)); // Mise à jour de activeSlide
@@ -126,7 +126,7 @@ const Slider = ({ data }: Slide) => {
           <button
             aria-label="suivant"
             className={
-              'sm:width-full md:width-full lg:width-full w-1/4 scale-100 justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between'
+              'w-1/4 scale-100 justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between'
             }
             onClick={() => {
               getNextSlideTitle();

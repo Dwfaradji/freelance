@@ -11,11 +11,11 @@ Version:	1.1
 * Sticky Header JS
 * Search JS
 * Mobile Menu JS
-* Hero Slider JS
-* Testimonial Slider JS
-* Portfolio Slider JS
-* Clients Slider JS
-* Single Portfolio Slider JS
+* Hero slider JS
+* Testimonial slider JS
+* Portfolio slider JS
+* Clients slider JS
+* Single Portfolio slider JS
 * Accordion JS
 * Nice Select JS
 * Date Picker JS
@@ -75,7 +75,7 @@ Version:	1.1
     });
 
     /*===============================
-			Hero Slider JS
+			Hero slider JS
 		=================================*/
     $('.hero-slider').owlCarousel({
       loop: true,
@@ -94,7 +94,7 @@ Version:	1.1
     });
 
     /*===============================
-			Testimonial Slider JS
+			Testimonial slider JS
 		=================================*/
     $('.testimonial-slider').owlCarousel({
       items: 3,
@@ -126,7 +126,7 @@ Version:	1.1
     });
 
     /*===============================
-			Portfolio Slider JS
+			Portfolio slider JS
 		=================================*/
     $('.portfolio-slider').owlCarousel({
       autoplay: true,
@@ -162,7 +162,7 @@ Version:	1.1
     });
 
     /*===============================
-			Clients Slider JS
+			Clients slider JS
 		=================================*/
     $('.clients-slider').owlCarousel({
       items: 5,
@@ -191,7 +191,7 @@ Version:	1.1
     });
 
     /*====================================
-			Single Portfolio Slider JS
+			Single Portfolio slider JS
 		======================================*/
     $('.pf-details-slider').owlCarousel({
       items: 1,

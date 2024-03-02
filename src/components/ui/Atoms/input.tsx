@@ -13,7 +13,7 @@ const Input = ({ placeholder, onChange, id }: InputProps) => {
       type="text"
       placeholder={placeholder}
       onChange={onChange}
-      className="focus:ring-purple-600 sm:width-full md:width-full flex-1 appearance-none rounded-lg border-transparent bg-white bg-opacity-20 px-2 py-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 xxs:text-sm"
+      className="flex-1 appearance-none rounded-lg border-transparent bg-white/20 p-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple xxs:text-sm sm:w-full md:w-full"
     ></input>
   );
 };

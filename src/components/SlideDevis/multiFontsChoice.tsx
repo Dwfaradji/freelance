@@ -30,7 +30,6 @@ const FontSelector: React.FC<FontSelectorProps> = ({
       ))}
     </select>
     <div
-      className="font-preview"
       style={{
         fontFamily: value,
         marginTop: '2em',
@@ -47,7 +46,7 @@ interface MultiFontsProps {
   onFontsSelect: (font: { [key: string]: string }) => void;
 }
 
-const MultiFontsChoice: React.FC<MultiFontsProps> = ({ onFontsSelect }) => {
+const MultiFontsChoice: React.FC<MultiFontsProps> = () => {
   const [{}, dispatch] = useMyContext();
 
   const availableFonts: string[] = [

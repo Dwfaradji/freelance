@@ -13,6 +13,10 @@ const config: Config = {
       fontFamily: {
         poppins: ['poppins', 'sans-serif'],
       },
+
+      textColor: {
+        gradient: 'linear-gradient(to right, #3c9dda, #3c9dda)',
+      },
     },
     colors: {
       black: colors.black,

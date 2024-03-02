@@ -15,7 +15,7 @@ interface PagesInfoProps {
 
 const PagesInfo = ({ infosText }: PagesInfoProps) => {
   return (
-    <div className="mx-auto max-w-7xl rounded-2xl p-8 px-8 text-white shadow-md shadow-pink">
+    <div className="mx-auto max-w-7xl rounded-2xl p-8 text-white shadow-md shadow-pink">
       <header className="header text-center">
         <h1 className={'text-2xl text-white'}>{infosText[0].titleH1}</h1>
       </header>

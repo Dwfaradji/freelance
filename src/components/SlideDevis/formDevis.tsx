@@ -90,7 +90,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
             <label htmlFor="nom">Nom / Société :</label>
             <input
               type="text"
-              className="focus:shadow-indigo-500/40 mt-2 w-full rounded-md p-1.5 ring-1 ring-inset focus:shadow-lg focus:outline-none focus:ring-0"
+              className="focus:shadow-indigo mt-2 w-full rounded-md p-1.5 ring-1 ring-inset focus:shadow-lg focus:outline-none focus:ring-0"
               id="nom"
               {...register('nom', { required: true })}
             />

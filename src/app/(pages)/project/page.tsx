@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
-import CareersHeader from '@/components/Careers/careersHeader';
-import CareersRoles from '@/components/Careers/careersRoles';
+import ProjectsHeader from '@/components/Projects/projectsHeader';
+import ProjectsRoles from '@/components/Projects/projectsRoles';
 
 const Page = () => {
   return (
     <main>
-      <CareersHeader />
-      <CareersRoles />
+      <ProjectsHeader />
+      <ProjectsRoles />
     </main>
   );
 };

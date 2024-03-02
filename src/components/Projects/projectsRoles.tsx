@@ -1,7 +1,7 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 
-const CareersRoles = () => {
+const ProjectsRoles = () => {
   return (
     <div className="mx-auto mt-20 hidden max-w-7xl flex-col items-center font-poppins text-white">
       <h2 className="text-sm font-bold opacity-50">Join our team</h2>
@@ -38,4 +38,4 @@ const CareersRoles = () => {
   );
 };
 
-export default CareersRoles;
+export default ProjectsRoles;

@@ -1,14 +1,14 @@
-"use client"
+'use client';
 import React from 'react';
 import Link from 'next/link';
-import { FacebookOutlined, LinkedIn,X,GitHub } from '@mui/icons-material';
+import { FacebookOutlined, LinkedIn, X, GitHub } from '@mui/icons-material';
 
 const Footer = () => {
   return (
     <div className="mx-auto mt-10 rounded-xl bg-lightblack p-8 md:p-20">
       <footer className="flex flex-col items-center justify-center text-white">
         <div className="flex w-full flex-wrap justify-between gap-8">
-          <div className="col-sm-12 col-md-4">
+          <div className="sm:col-span-12 md:col-span-4">
             <h3 className="mb-5 text-left text-xl">Infos général</h3>
             <ul>
               <li>
@@ -28,7 +28,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer__section  col-sm-12 col-md-4">
+          <div className="footer__section">
             <h3 className="mb-5 text-left text-xl">Services</h3>
             <ul>
               <li className="mb-1">Web design</li>
@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer__section col-sm-12 col-md-4">
+          <div className="footer__section">
             <h3 className="mb-5 text-left text-xl">Contact</h3>
             <p className={'mb-1'}>
               Email:

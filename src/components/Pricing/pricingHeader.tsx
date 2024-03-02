@@ -1,9 +1,8 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Link from 'next/link';
-import InfoIcon from '@mui/icons-material/Info';
 import { Done } from '@mui/icons-material';
-import { dataPriceOptions } from "@/data/data";
+import { dataPriceOptions } from '@/data/data';
 
 const PricingHeader = () => {
   return (

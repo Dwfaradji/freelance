@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 const AboutTeamBigCard = () => {
   return (
@@ -10,7 +9,7 @@ const AboutTeamBigCard = () => {
         {/*  height={400}*/}
         {/*  className="hidden h-96 w-3/4 rounded-l-lg object-cover xxs:w-full sm:w-3/4"*/}
         {/*  src={''}*/}
-        {/*  alt={''}*/}
+        {/*  alt={'photo_du_gerant_devevoke'}*/}
         {/*/>*/}
         <div className="flex flex-col justify-between">
           <div className="m-6 text-right font-poppins text-white xxs:text-center sm:text-right">

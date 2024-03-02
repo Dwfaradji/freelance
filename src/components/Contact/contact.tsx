@@ -4,7 +4,7 @@ import Button from '@/components/ui/Atoms/button';
 import { Fade } from 'react-awesome-reveal';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
-import callApi from "@/utils/callApi";
+import callApi from '@/utils/callApi';
 
 const Contact = () => {
   const [sendMsg, setSendMsg] = React.useState(false);
@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <Fade cascade>
       <section className="mx-auto mt-10 flex max-w-7xl text-white xxs:flex-col sm:flex-row">
-        <div className="m-5 rounded-xl bg-lightblack p-10 xxs:p-0 md:w-3/4">
+        <div className="m-5 rounded-xl bg-lightblack p-10 xxs:m-0 md:m-5 md:w-3/4">
           <h2 className="text-xs opacity-50">Entrer en contact</h2>
           <h1 className="mt-2 font-poppins text-4xl font-bold xxs:text-lg sm:text-2xl lg:text-4xl">
             Travaillons ensemble
@@ -48,7 +48,7 @@ const Contact = () => {
             <div className="flex xxs:flex-col sm:flex-row">
               <div className="xxs:mr-0 sm:mr-5">
                 <input
-                  className="focus:ring-purple-600 sm:width-full md:width-full w-full flex-1 appearance-none rounded-lg border-transparent bg-white bg-opacity-20 p-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 xxs:text-sm"
+                  className="w-full flex-1 appearance-none rounded-lg border-transparent  bg-white/20 p-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple xxs:text-sm sm:w-full md:w-full"
                   placeholder="Votre Nom"
                   type="text"
                   id="firstname"
@@ -56,12 +56,12 @@ const Contact = () => {
                 />
                 <br />
                 {errors.firstname && ( // errors est un objet
-                  <span className="error text-white">Ce champ est requis</span>
+                  <span className="text-white">Ce champ est requis</span>
                 )}
               </div>
               <div className="xxs:ml-0 xxs:mt-2 sm:ml-5 sm:mt-0">
                 <input
-                  className="focus:ring-purple-600 sm:width-full md:width-full w-full flex-1 appearance-none rounded-lg border-transparent bg-white bg-opacity-20 p-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 xxs:text-sm"
+                  className="w-full flex-1 appearance-none rounded-lg border-transparent  bg-white/20 p-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple xxs:text-sm sm:w-full md:w-full"
                   placeholder="Votre Société"
                   type="text"
                   id="business"
@@ -69,7 +69,7 @@ const Contact = () => {
                 />
                 <br />
                 {errors.business && ( // errors est un objet
-                  <span className="error text-red">Ce champ est requis</span>
+                  <span className="text-white">Ce champ est requis</span>
                 )}
               </div>
             </div>
@@ -77,7 +77,7 @@ const Contact = () => {
             <div className="mt-5 flex xxs:flex-col sm:flex-row">
               <div className="xxs:mr-0 sm:mr-5">
                 <input
-                  className="focus:ring-purple-600 sm:width-full md:width-full w-full flex-1 appearance-none rounded-lg border-transparent bg-white bg-opacity-20 p-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 xxs:text-sm"
+                  className="w-full flex-1 appearance-none rounded-lg border-transparent  bg-white/20 p-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple xxs:text-sm sm:w-full md:w-full"
                   placeholder="Votre Adresse Email"
                   type="email"
                   id="email"
@@ -85,13 +85,13 @@ const Contact = () => {
                 />
                 <br />
                 {errors.email && ( // errors est un objet
-                  <span className="error text-white">Ce champ est requis</span>
+                  <span className="text-white">Ce champ est requis</span>
                 )}
               </div>
               <div className="xxs:ml-0 xxs:mt-2 sm:ml-5 sm:mt-0">
                 <input
                   title={'Le numéro doit comporter 10 chiffres'}
-                  className="focus:ring-purple-600 sm:width-full md:width-full w-full flex-1 appearance-none rounded-lg border-transparent bg-white bg-opacity-20 p-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 xxs:text-sm"
+                  className="w-full flex-1 appearance-none rounded-lg border-transparent  bg-white/20 p-2 font-poppins text-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple xxs:text-sm sm:w-full md:w-full"
                   placeholder="Votre Téléphone"
                   type="tel"
                   id="phone"
@@ -100,13 +100,13 @@ const Contact = () => {
                 />
                 <br />
                 {errors.phone && ( // errors est un objet
-                  <span className="error text-white">Ce champ est requis</span>
+                  <span className="text-white">Ce champ est requis</span>
                 )}
               </div>
             </div>
 
             <textarea
-              className="mt-5 w-full rounded-xl bg-white bg-opacity-20 p-5 text-white"
+              className="mt-5 w-full rounded-xl bg-white/20 p-5 text-white"
               rows={5}
               placeholder="Comment pouvons-nous vous aider?"
               id="message"
@@ -114,7 +114,7 @@ const Contact = () => {
             />
             <br />
             {errors.content && ( // errors est un objet
-              <span className="error text-white">Ce champ est requis</span>
+              <span className="text-white">Ce champ est requis</span>
             )}
             <br />
             {!sendMsg && (
@@ -127,7 +127,7 @@ const Contact = () => {
             )}
 
             {sendMsg && (
-              <div className="send-msg text-white">
+              <div className="text-white">
                 <p>Votre message a bien été envoyé</p>
               </div>
             )}

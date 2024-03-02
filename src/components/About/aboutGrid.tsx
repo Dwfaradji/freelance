@@ -10,12 +10,12 @@ import symfony from '@/images/about/symphony.webp';
 const AboutGrid = () => {
   return (
     <article className="mx-auto mt-20 grid grid-cols-3 justify-items-center gap-16 p-8 xxs:grid-cols-1 sm:grid-cols-3">
-      <AboutTeamCard imgSrc={String(react.src)} position="React" />
-      <AboutTeamCard imgSrc={String(nextjs.src)} position="NextJs" />
-      <AboutTeamCard imgSrc={String(tailwind.src)} position="TailwindCss" />
-      <AboutTeamCard imgSrc={String(nodejs.src)} position="NodeJs"></AboutTeamCard>
-      <AboutTeamCard imgSrc={String(postGrey.src)} position="PostGreySql" />
-      <AboutTeamCard imgSrc={String(symfony.src)} position="Symfony" />
+      <AboutTeamCard imgSrc={String(react.src)} altText="React" />
+      <AboutTeamCard imgSrc={String(nextjs.src)} altText="NextJs" />
+      <AboutTeamCard imgSrc={String(tailwind.src)} altText="TailwindCss" />
+      <AboutTeamCard imgSrc={String(nodejs.src)} altText="NodeJs" />
+      <AboutTeamCard imgSrc={String(postGrey.src)} altText="PostGreySql" />
+      <AboutTeamCard imgSrc={String(symfony.src)} altText="Symfony" />
     </article>
   );
 };

@@ -4,9 +4,6 @@ import HeaderImage from '@/images/home/header-main.webp';
 import { Fade } from 'react-awesome-reveal';
 import Image from 'next/image';
 
-import Button from '@/components/ui/Atoms/button';
-import Input from '@/components/ui/Atoms/input';
-
 const Header = () => {
   return (
     <header className="mx-auto px-8">

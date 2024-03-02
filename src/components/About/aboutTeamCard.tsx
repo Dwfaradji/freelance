@@ -4,24 +4,20 @@ import Image from 'next/image';
 
 interface AboutTeamCardProps {
   imgSrc: string;
-  position: string;
+  altText: string;
 }
 
-const AboutTeamCard = ({ imgSrc, position }: AboutTeamCardProps) => {
+const AboutTeamCard = ({ imgSrc, altText }: AboutTeamCardProps) => {
   return (
     <Fade cascade className={'w-full p-3'}>
       <div className="relative flex w-full flex-col items-center justify-end overflow-hidden rounded-xl">
         <Image
-          className={"rounded-2xl"}
+          className={'rounded-2xl'}
           width={500}
           height={350}
-
           src={imgSrc}
-          alt={'ss'}
+          alt={altText}
         />
-        {/*<h2 className="absolute w-3/4 rounded-xl bg-white p-2 text-center">*/}
-        {/*  {position}*/}
-        {/*</h2>*/}
       </div>
     </Fade>
   );

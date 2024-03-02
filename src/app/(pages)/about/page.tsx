@@ -8,13 +8,12 @@ import AboutGrid from '@/components/About/aboutGrid';
 const Page = () => {
   return (
     <main>
-      <div className={"p-8"}>
+      <div className={'p-8'}>
         <AboutHeader />
         <AboutMore />
         <AboutTeamBigCard />
         <AboutGrid />
       </div>
-
     </main>
   );
 };
