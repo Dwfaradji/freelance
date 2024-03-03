@@ -3,7 +3,7 @@ import Button from '@/components/ui/Atoms/button';
 
 const PricingCTA = () => {
   return (
-    <div className="mx-auto mt-20 flex max-w-7xl flex-col items-center text-center text-white">
+    <div className="mx-auto mt-20 flex hidden max-w-7xl flex-col items-center text-center text-white">
       <h1 className="font-poppins text-4xl font-bold xxs:text-2xl sm:text-4xl">
         Ready to create better products?
       </h1>
