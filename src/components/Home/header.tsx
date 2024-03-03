@@ -50,8 +50,9 @@ const Header = () => {
       <div className="mx-auto  mt-10">
         <div className="h-auto w-full overflow-hidden rounded-xl">
           <Image
-            width={1024}
-            height={100}
+            priority
+            width={500}
+            height={500}
             className="size-full"
             src={HeaderImage}
             alt="Photo_ordinateur_sur_bureau"

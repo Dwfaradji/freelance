@@ -6,9 +6,6 @@ export const metadata = {
     'Mentions légales du site DevEvoke. Découvrez les mentions légales du site DevEvoke.',
   alternates: {
     canonical: 'https://www.devevoke.com/mentions-legal',
-    languages: {
-      fr: 'https://www.devevoke.com/',
-    },
   },
   robots: {
     follow: true,

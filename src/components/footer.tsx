@@ -10,18 +10,18 @@ const Footer = () => {
         <div className="flex w-full flex-wrap justify-between gap-8">
           <div className="sm:col-span-12 md:col-span-4">
             <h3 className="mb-5 text-left text-xl">Infos général</h3>
-            <ul>
+            <ul className={""}>
               <li>
-                <Link href={'/info-procedure'}>Procédure</Link>
+                <Link className={" xxs:block xxs:h-12 md:h-auto"}  href={'/info-procedure'}>Procédure</Link>
               </li>
               <li>
-                <Link href={'/info-tarif'}>Les tarifs</Link>
+                <Link className={" xxs:block xxs:h-12 md:h-auto"} href={'/info-tarif'}>Les tarifs</Link>
               </li>
               <li>
-                <Link href={'/mentions-legal'}>Mentions légal</Link>
+                <Link className={" xxs:block xxs:h-12 md:h-auto"} href={'/mentions-legal'}>Mentions légal</Link>
               </li>
               <li>
-                <Link href={'/politique-confidentialite'}>
+                <Link className={" xxs:block xxs:h-12 md:h-auto"} href={'/politique-confidentialite'}>
                   Politique de confidentialité
                 </Link>
               </li>

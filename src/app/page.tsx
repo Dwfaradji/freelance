@@ -7,20 +7,24 @@ import Projects from '@/components/Home/projects';
 import Offerings from '@/components/Home/offerings';
 import Header from '@/components/Home/header';
 import React from 'react';
+import { MyProvider } from '@/context/context';
+import { initialState, reducer } from '@/context/reducer';
 
 const Page = () => {
   return (
-    <main>
-      <div className="h-auto w-full">
-        <Header />
-        <FeatureSection />
-        <Projects />
-        <Offerings />
-        <Testimonial />
-        <Pricing />
-        <FeaturedTemplate />
-      </div>
-    </main>
+    <MyProvider initialState={initialState} reducer={reducer}>
+      <main>
+        <div className="h-auto w-full">
+          <Header />
+          <FeatureSection />
+          <Projects />
+          <Offerings />
+          <Testimonial />
+          <Pricing />
+          <FeaturedTemplate />
+        </div>
+      </main>
+    </MyProvider>
   );
 };
 

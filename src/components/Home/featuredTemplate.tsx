@@ -20,8 +20,8 @@ const FeaturedTemplate = () => {
         <div className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100">
           <Image
             src={tempDesign}
-            width={1950}
-            height={1300}
+            width={1000}
+            height={800}
             className="h-full"
             alt="template_designer"
           />
@@ -32,8 +32,8 @@ const FeaturedTemplate = () => {
         <div className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100">
           <Image
             src={tempEnergy}
-            width={1950}
-            height={1300}
+            width={1000}
+            height={800}
             className=" h-full"
             alt="template_energy"
           />
@@ -44,8 +44,8 @@ const FeaturedTemplate = () => {
         <div className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100">
           <Image
             src={tempOrganic}
-            width={1950}
-            height={1300}
+            width={1000}
+            height={800}
             className="h-full"
             alt="template_organic"
           />

@@ -35,10 +35,10 @@ const Contact = () => {
       <section className="mx-auto mt-10 flex max-w-7xl text-white xxs:flex-col sm:flex-row">
         <div className="m-5 rounded-xl bg-lightblack p-10 xxs:m-0 md:m-5 md:w-3/4">
           <h2 className="text-xs opacity-50">Entrer en contact</h2>
-          <h1 className="mt-2 font-poppins text-4xl font-bold xxs:text-lg sm:text-2xl lg:text-4xl">
+          <h1 className="mt-2 font-poppins text-2xl font-bold lg:text-4xl xl:text-7xl">
             Travaillons ensemble
           </h1>
-          <p className="mt-2 w-3/4 text-lg opacity-50 xxs:w-full xxs:text-xs sm:w-3/4 sm:text-sm">
+          <p className="w-ful mt-2 text-lg opacity-50 lg:text-2xl">
             {`Besoin d'aide ou simplement envie de discuter de votre prochain projet passionnant ? Nous sommes
                             tout ouïe ! Laissez-nous un message et nous vous contacterons dans les plus brefs délais pour
                             discuter de la façon dont nous pouvons concrétiser vos idées. Votre prochaine grande aventure

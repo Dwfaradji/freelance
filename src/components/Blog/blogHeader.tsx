@@ -18,6 +18,7 @@ const BlogHeader = () => {
               width={1000}
               height={800}
               alt={dataHeader.alt}
+              priority
             />
           </div>
           <div className="m-5">

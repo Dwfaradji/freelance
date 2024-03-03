@@ -12,7 +12,7 @@ const ProjectsHeader = () => {
           'mb-8 text-center font-poppins text-2xl font-semibold text-white lg:text-4xl xl:text-7xl'
         }
       >
-        Nos projects
+        Nos projets
       </h1>
 
       <Fade cascade>
@@ -59,7 +59,7 @@ const ProjectsHeader = () => {
               src={projectKw}
               alt={'image_project_kw'}
               width={1000}
-              height={300}
+              height={800}
             />
           </div>
         </div>
@@ -106,66 +106,65 @@ const ProjectsHeader = () => {
               GitLab.
             </div>
           </div>
-          <div className="m-2 overflow-hidden rounded-xl md:w-3/5">
+          <div className="m-2 overflow-hidden  rounded-xl md:w-3/5">
             <Image
-              className=""
               src={projectFs}
               alt={'image_project_felix_solutions'}
               width={1000}
-              height={600}
+              height={800}
             />
           </div>
         </div>
       </Fade>
-      <Fade cascade>
-        <div className="mt-10 flex flex-wrap md:flex-nowrap">
-          <div className="m-2 w-full rounded-xl bg-lightblack p-8 text-white md:w-2/4">
-            <h2 className="text-sm font-semibold opacity-50">
-              {' '}
-              Group Art Photos
-            </h2>
-            <h2 className="text-xl font-bold  lg:text-3xl">
-              {"Création d'application"}
-            </h2>
-            <div className={'h-full overflow-hidden'}>
-              <p className="mt-5 line-clamp-4 text-lg opacity-70  hover:line-clamp-none lg:text-2xl">
-                🚀 Chargé de développer une application innovante pour présenter
-                les produits de manière immersive, stimulant ainsi les ventes.
-                <br />
-                🎯 Objectif : Créer une interface intuitive pour captiver les
-                clients et favoriser les conversions.
-                <br />
-                🚀{' '}
-                {`Approche : Allier Next.js et React avec Vercel pour un déploiement fluide, ajoutant
-              l'esthétique soignée de Tailwind CSS.`}
-                <br />
-                💼{' '}
-                {`Mission : Transformer des idées en une application web percutante, stimulant l'engagement
-              du client et boostant les ventes.`}
-                <br />
-                ⚙️ Méthodologie : Agile et orientée pour une livraison rapide et
-                une satisfaction client optimaux.
-                <br />
-                📈 Résultats Attendus : Une application performante et
-                esthétiquement attrayante prête à propulser votre entreprise
-                vers de nouveaux sommets de réussite.
-              </p>
-              <br />
-              🔧 Technologies Clés : Next.js, React, Vercel, Tailwind CSS,
-              TypeScript, Node.js.
-            </div>
-          </div>
-          <div className=" m-2 overflow-hidden rounded-xl md:w-2/4 ">
-            <Image
-              className=""
-              src={projectKw}
-              alt={'image_project_gap'}
-              width={1000}
-              height={300}
-            />
-          </div>
-        </div>
-      </Fade>
+      {/*<Fade cascade>*/}
+      {/*  <div className="mt-10 flex flex-wrap md:flex-nowrap">*/}
+      {/*    <div className="m-2 w-full rounded-xl bg-lightblack p-8 text-white md:w-2/4">*/}
+      {/*      <h2 className="text-sm font-semibold opacity-50">*/}
+      {/*        {' '}*/}
+      {/*        Group Art Photos*/}
+      {/*      </h2>*/}
+      {/*      <h2 className="text-xl font-bold  lg:text-3xl">*/}
+      {/*        {"Création d'application"}*/}
+      {/*      </h2>*/}
+      {/*      <div className={'h-full overflow-hidden'}>*/}
+      {/*        <p className="mt-5 line-clamp-4 text-lg opacity-70  hover:line-clamp-none lg:text-2xl">*/}
+      {/*          🚀 Chargé de développer une application innovante pour présenter*/}
+      {/*          les produits de manière immersive, stimulant ainsi les ventes.*/}
+      {/*          <br />*/}
+      {/*          🎯 Objectif : Créer une interface intuitive pour captiver les*/}
+      {/*          clients et favoriser les conversions.*/}
+      {/*          <br />*/}
+      {/*          🚀{' '}*/}
+      {/*          {`Approche : Allier Next.js et React avec Vercel pour un déploiement fluide, ajoutant*/}
+      {/*        l'esthétique soignée de Tailwind CSS.`}*/}
+      {/*          <br />*/}
+      {/*          💼{' '}*/}
+      {/*          {`Mission : Transformer des idées en une application web percutante, stimulant l'engagement*/}
+      {/*        du client et boostant les ventes.`}*/}
+      {/*          <br />*/}
+      {/*          ⚙️ Méthodologie : Agile et orientée pour une livraison rapide et*/}
+      {/*          une satisfaction client optimaux.*/}
+      {/*          <br />*/}
+      {/*          📈 Résultats Attendus : Une application performante et*/}
+      {/*          esthétiquement attrayante prête à propulser votre entreprise*/}
+      {/*          vers de nouveaux sommets de réussite.*/}
+      {/*        </p>*/}
+      {/*        <br />*/}
+      {/*        🔧 Technologies Clés : Next.js, React, Vercel, Tailwind CSS,*/}
+      {/*        TypeScript, Node.js.*/}
+      {/*      </div>*/}
+      {/*    </div>*/}
+      {/*    <div className=" m-2 overflow-hidden rounded-xl md:w-2/4 ">*/}
+      {/*      <Image*/}
+      {/*        className=""*/}
+      {/*        src={projectKw}*/}
+      {/*        alt={'image_project_gap'}*/}
+      {/*        width={1000}*/}
+      {/*        height={300}*/}
+      {/*      />*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</Fade>*/}
     </div>
   );
 };

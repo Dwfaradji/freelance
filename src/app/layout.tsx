@@ -21,9 +21,6 @@ export const metadata = {
 
   alternates: {
     canonical: 'https://www.devevoke.com/',
-    languages: {
-      fr: 'https://www.devevoke.com/',
-    },
   },
   robots: {
     follow: true,

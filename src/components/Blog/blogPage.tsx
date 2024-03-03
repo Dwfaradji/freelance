@@ -40,6 +40,7 @@ const BlogPage = () => {
                   height={800}
                   alt={contentBlog.alt}
                   className={'w-full'}
+                  priority
                 />
               </div>
 

@@ -36,7 +36,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/about'}
+                  href={'/a_propos'}
                 >
                   A propos
                 </Link>
@@ -48,15 +48,15 @@ const Navbar = () => {
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/pricing'}
+                  href={'/tarifs'}
                 >
                   Tarifs
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/project'}
+                  href={'/portfolio'}
                 >
-                  Project
+                  Portfolio
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
@@ -69,6 +69,7 @@ const Navbar = () => {
           </div>
           <div className="-mr-2 flex md:hidden">
             <button
+              aria-label={"navbar"}
               onClick={() => setOpenMenu(!openMenu)}
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:text-gray-300 focus:outline-none dark:text-white"
             >
@@ -97,7 +98,7 @@ const Navbar = () => {
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/about'}
+              href={'/a_propos'}
             >
               A propos
             </Link>
@@ -109,13 +110,13 @@ const Navbar = () => {
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/pricing'}
+              href={'/tarifs'}
             >
               Tarifs
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/project'}
+              href={'/portfolio'}
             >
               Projects
             </Link>
