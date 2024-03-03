@@ -31,7 +31,7 @@ const AboutMore = () => {
       </Fade>
       <div className={'p-8'}>
         <Fade>
-          <p className="mt-10 text-2xl leading-normal text-white xxs:text-sm xs:text-lg sm:text-3xl">
+          <p className="mt-10 text-lg leading-normal text-white lg:text-2xl">
             {`Mon voyage dans l'univers du développement web a débuté par une
             fascination pour la technologie et une curiosité insatiable pour les
             dernières innovations. Au fil des années, j'ai forgé un parcours qui
@@ -49,7 +49,7 @@ const AboutMore = () => {
           </p>
         </Fade>
         <Fade>
-          <p className=" mt-10 text-2xl leading-normal text-white xxs:text-sm xs:text-lg sm:text-3xl">
+          <p className=" mt-10 text-lg leading-normal text-white lg:text-2xl">
             {`J'ai plongé dans l'écosystème React, embrassant Next.js pour ses
             capacités de rendu côté serveur et d'optimisation des performances.
             J'ai également maîtrisé Redux pour gérer l'état global des

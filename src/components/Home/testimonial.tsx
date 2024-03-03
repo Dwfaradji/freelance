@@ -5,14 +5,14 @@ import Image from 'next/image';
 
 const Testimonial = () => {
   return (
-    <section className="mx-auto my-10 h-auto px-6">
+    <section className="mx-auto my-20 h-auto px-6">
       <Fade>
         <div className="flex w-full flex-row justify-between rounded-lg bg-lightblack  align-middle xxs:flex-col xs:flex-col sm:flex-row  ">
           <div className="w-3/4 p-12 xxs:w-full xs:w-full sm:w-3/4">
-            <h2 className="text-2xl text-white">
+            <h2 className="text-xl text-white lg:text-3xl">
               Expertise digitale à votre service
             </h2>
-            <p className="mt-10 text-sm text-white opacity-50">
+            <p className="mt-10 text-lg text-white opacity-50 lg:text-2xl">
               {`DevEvoke est une entreprise de développement web et mobile. Nous
               sommes spécialisés dans la création de sites web et d'applications
               mobiles. Nous proposons également des services de référencement et

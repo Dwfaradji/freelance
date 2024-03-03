@@ -1,7 +1,7 @@
 'use client';
 import Testimonial from '@/components/Home/testimonial';
 import Pricing from '@/components/Home/pricing';
-import FeaturedBlog from '@/components/Home/featuredBlog';
+import FeaturedTemplate from '@/components/Home/featuredTemplate';
 import FeatureSection from '@/components/Home/featureSection';
 import Projects from '@/components/Home/projects';
 import Offerings from '@/components/Home/offerings';
@@ -18,7 +18,7 @@ const Page = () => {
         <Offerings />
         <Testimonial />
         <Pricing />
-        <FeaturedBlog />
+        <FeaturedTemplate />
       </div>
     </main>
   );

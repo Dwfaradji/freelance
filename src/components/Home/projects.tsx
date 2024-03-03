@@ -10,11 +10,11 @@ const Projects = () => {
   return (
     <section>
       <Fade cascade>
-        <div className="mt-10 px-8">
-          <h2 className="text-7xl font-bold text-white xxs:text-2xl xs:text-2xl sm:text-3xl lg:text-5xl xl:text-7xl">
+        <div className="mt-20 px-8">
+          <h2 className="text-xl font-bold text-white lg:text-3xl">
             Découvrez Nos Projets Web
           </h2>
-          <p className="mt-5 text-sm text-white opacity-50">
+          <p className="mt-5 text-lg text-white opacity-50 lg:text-2xl">
             {`Mon portfolio présente une sélection de mes réalisations en tant que développeur web freelance.
                             Vous y trouverez des sites web, des applications web et des solutions informatiques sur mesure
                             que j"ai créées pour des clients de différents secteurs d"activité.`}
@@ -80,17 +80,17 @@ const Projects = () => {
           {/*</div>*/}
 
           <div className="w-4/6 rounded-xl bg-lightblack p-8  xxs:w-full xs:w-full sm:w-4/6">
-            <h2 className="text-4xl text-white">
+            <h2 className="text-xl text-white lg:text-3xl">
               {' '}
               Explorez nos réalisations et laissez-vous inspirer
             </h2>
-            <p className="mt-8 text-white opacity-50">
+            <p className="mt-8 text-lg text-white opacity-50 lg:text-2xl">
               Découvrez comment nous avons aidé nos clients à concrétiser leur
               vision en ligne. De sites vitrines élégants et responsives à des
               applications mobiles performantes et intuitives, notre équipe
               freelance est capable de répondre à tous vos besoins.
             </p>
-            <p className="mt-8 text-white opacity-50">
+            <p className="mt-8 text-lg text-white opacity-50 lg:text-2xl">
               Prêts à relever de nouveaux défis ?
               <br />
               {`Nous sommes toujours à la recherche de nouveaux défis et nous sommes impatients de

@@ -6,26 +6,26 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="mx-auto px-8">
+    <header className="mx-auto mb-8 px-8">
       <Fade>
         <div>
           <h2 className="font-poppins text-xs font-semibold text-white opacity-50 xxs:text-xs xs:text-xs sm:text-xs md:text-sm lg:text-xl">
             Nous fournissons une solution créative haut de gamme
           </h2>
 
-          <h1 className="font-poppins text-2xl font-semibold text-white xxs:text-2xl xs:text-2xl sm:text-lg md:text-2xl lg:text-4xl xl:text-7xl 2xl:text-8xl">
+          <h1 className="font-poppins  text-2xl font-semibold text-white lg:text-4xl xl:text-7xl ">
             Développeur Freelance <br></br> Expert{' '}
-            <span className="text-gradient bg-gradient-to-r from-pink to-purple">
+            <span className="bg-gradient-to-r from-pink to-purple text-gradient">
               React NextJs
             </span>
             <br />
           </h1>
-          <h2 className="mt-8 text-xl text-white">
+          <h2 className="mt-8 text-xl text-white lg:text-3xl">
             Créez Votre Présence en Ligne avec Nos Services
           </h2>
-          <p className={'mt-2 text-xl text-white'}>
+          <p className={'mt-2 text-lg text-white lg:text-2xl'}>
             Bienvenue sur{' '}
-            <span className="text-gradient bg-gradient-to-r from-pink to-purple">
+            <span className="bg-gradient-to-r from-pink to-purple text-gradient">
               DevEvoke
             </span>
             , votre partenaire de confiance pour tous vos besoins en

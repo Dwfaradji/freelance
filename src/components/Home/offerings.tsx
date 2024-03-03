@@ -6,17 +6,17 @@ const Offerings = () => {
   return (
     <section>
       <Fade cascade>
-        <div className=" mx-auto mt-10 px-8">
-          <h2 className="text-7xl font-bold text-white xxs:text-2xl xs:text-3xl sm:text-5xl lg:text-7xl">
+        <div className=" mx-auto mt-20 px-8">
+          <h2 className="text-xl font-bold text-white lg:text-3xl">
             Services proposés
           </h2>
-          <p className="mt-5 text-sm text-white opacity-50">
+          <p className="mt-5 text-lg text-white opacity-50 lg:text-2xl">
             {`DevEvoke est votre partenaire privilégié pour tous vos besoins web.
                             Notre agence de développement web freelance vous propose une gamme complète de services sur
                             mesure pour vous accompagner dans la création, la refonte et l'optimisation de votre site web ou
                             application web.`}
           </p>
-          <p className="mt-5 text-sm text-white opacity-50">
+          <p className="mt-5 text-lg text-white opacity-50 lg:text-2xl">
             Nos services incluent :
             <br />
             {`Création et refonte de sites web,
@@ -29,7 +29,7 @@ const Offerings = () => {
         </div>
       </Fade>
       <Fade cascade>
-        <article className="mx-auto  mt-10 flex flex-row flex-wrap justify-center px-8 xxs:flex-col xs:flex-col sm:flex-row">
+        <article className="mx-auto  mt-20 flex flex-row flex-wrap justify-center px-8 xxs:flex-col xs:flex-col sm:flex-row">
           {services.map((service, i) => (
             <div
               key={i}

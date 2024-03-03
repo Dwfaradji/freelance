@@ -16,7 +16,7 @@ const AboutTeamBigCard = () => {
             <h2 className="text-5xl font-bold">Boucif Faradji</h2>
             <h3 className="text-lg font-bold opacity-50">Fondateur</h3>
           </div>
-          <p className="p-6 text-right text-xl text-white xxs:text-center sm:text-right">
+          <p className="p-6 text-right text-lg text-white xxs:text-center sm:text-right lg:text-2xl">
             {`Je suis un développeur Full Stack freelance passionné par la
               création d'applications web innovantes. Je suis spécialisé dans le
               développement frontend et backend, ainsi que dans la conception de

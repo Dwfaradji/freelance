@@ -4,13 +4,13 @@ import tempEnergy from '@/images/templates/energyTemplate.webp';
 import tempOrganic from '@/images/templates/organic-farm.webp';
 import Image from 'next/image';
 
-const FeaturedBlog = () => {
+const FeaturedTemplate = () => {
   return (
-    <section className="mx-auto mt-10 px-8">
-      <h2 className="font-poppins text-6xl font-bold text-white xxs:text-lg xs:text-xl sm:text-xl lg:text-6xl">
+    <section className="mx-auto mt-20 px-8">
+      <h2 className="font-poppins text-xl font-bold text-white lg:text-3xl">
         Découvrez <br /> Chaque Mois <br /> Nos Nouveaux Templates <br />
       </h2>
-      <p className="mt-5 w-3/4 text-lg text-white opacity-50 xxs:w-full lg:w-3/4">
+      <p className="mt-5 w-3/4 text-lg text-white opacity-50 xxs:w-full lg:w-3/4 lg:text-2xl">
         {`Explorez notre collection de modèles de site web dès aujourd'hui et trouvez celui qui correspond le
                     mieux à votre entreprise. Restez à l'affût des dernières nouveautés en vous abonnant à notre newsletter
                     ou en nous suivant sur les réseaux sociaux. Chez DevEvoke, nous vous offrons les outils
@@ -58,4 +58,4 @@ const FeaturedBlog = () => {
   );
 };
 
-export default FeaturedBlog;
+export default FeaturedTemplate;
