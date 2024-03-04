@@ -22,7 +22,7 @@ interface Article {
 
 
 // const url = "https://www.devevoke.com";
-const url = "http://localhost:3000";
+const url = process.env.URL_WEBSITE;
 const articles: Article[] = [
   {
     id: 1,
