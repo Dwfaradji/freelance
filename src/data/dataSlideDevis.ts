@@ -22,7 +22,8 @@ interface Article {
 
 
 // const url = "https://www.devevoke.com";
-const url = process.env.URL_WEBSITE;
+// const url = "http://localhost:3000";
+
 const articles: Article[] = [
   {
     id: 1,
@@ -30,7 +31,7 @@ const articles: Article[] = [
     image: medical,
     description:
       "Créez un site web professionnel et rassurant pour votre clinique médicale avec ce template intuitif et personnalisable.",
-    link: `${url}/template/mediplus/index.html/`,
+    link: `/template/mediplus/index.html/`,
     date: "2024-03-04",
     type: "Santé"
   },
@@ -40,7 +41,7 @@ const articles: Article[] = [
     image: yoga,
     description:
       "Trouvez votre équilibre intérieur et explorez votre potentiel avec ce template conçu pour les yogis de tous niveaux.",
-    link: `${url}/template/yoga/index.html/`,
+    link: `/template/yoga/index.html/`,
     date: "2024-02-25",
     type: "Détente"
 
@@ -51,7 +52,7 @@ const articles: Article[] = [
     image: energy,
     description:
       "Engagez-vous dans la transition écologique et donnez vie à votre projet d'énergie renouvelable avec ce template dynamique et informatif.",
-    link: `${url}/template/renewableEnergy/index.html/`,
+    link: `/template/renewableEnergy/index.html/`,
     date: "2024-02-20",
 
     type: "Energies renouvelable"
@@ -62,7 +63,7 @@ const articles: Article[] = [
     image: design,
     description:
       "Exprimez votre vision unique et présentez votre entreprise avec style grâce à ce template flexible et adaptable à tous les domaines du design.",
-    link: `${url}/template/design-interieur/index.html`,
+    link: `/template/design-interieur/index.html`,
     date: "2024-02-27",
 
     type:"design"
@@ -74,7 +75,7 @@ const articles: Article[] = [
     image: organic,
     description:
       "Valorisez votre exploitation agricole et partagez votre passion avec ce template authentique et convivial.",
-    link: `${url}/template/organic-farm/index.html`,
+    link: `/template/organic-farm/index.html`,
     date: "2024-03-04",
 
     type:"Agriculture"
@@ -86,7 +87,7 @@ const articles: Article[] = [
     image: hairdresser,
     description:
       "Mettez en valeur votre talent et attirez de nouveaux clients avec ce template élégant et moderne dédié aux professionnels de la coiffure.",
-    link: `${url}/template/hairdresser/index.html`,
+    link: `/template/hairdresser/index.html`,
     date: "2024-03-03",
     type:"Coiffure"
   }
