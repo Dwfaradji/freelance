@@ -6,12 +6,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import blogData from '@/data/dataBlog';
 import { BlogProps } from '@/data/typeFile';
+import ButtonNetwork from '@/components/ui/ButtonNetwork/buttonNetwork';
+interface PropsBlogPage {
+  id: string;
+}
 
-const BlogPage = () => {
+const BlogPage = ({ id }: PropsBlogPage) => {
   const [contentBlog, setContentBlog] = useState<BlogProps>();
 
   useEffect(() => {
-    const id = window.location.pathname.split('/')[2];
     blogData.map((data) => {
       if (data.id === id) {
         setContentBlog(data);
@@ -43,7 +46,7 @@ const BlogPage = () => {
                   priority
                 />
               </div>
-
+              <ButtonNetwork id={contentBlog.id} />
               <div className="m-5">
                 <div className="mt-5 flex items-center">
                   <div className="size-10 overflow-hidden rounded-full object-cover">

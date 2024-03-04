@@ -2,6 +2,7 @@ import article1 from '@/images/blogs/article-1.webp';
 import article2 from '@/images/blogs/article-2.webp';
 import article3 from '@/images/blogs/article-3.webp';
 import articleHeader from '@/images/blogs/article-header.webp';
+import articleIa from '@/images/blogs/article-ia.webp';
 import { BlogProps } from './typeFile';
 
 const blogData: BlogProps[] = [
@@ -59,7 +60,7 @@ const blogData: BlogProps[] = [
     alt: 'image_blog_pourquoi_creer_un_blog',
     readingTime: 5,
     category: 'category 1',
-    date: '11-07-2023',
+    date: '2024-03-02',
   },
   {
     id: '2',
@@ -98,7 +99,7 @@ const blogData: BlogProps[] = [
     alt: 'image blog les avantages de créer un site sans cms',
     readingTime: 5,
     category: 'category 2',
-    date: '12-07-2023',
+    date: '2024-03-01',
   },
   {
     id: '3',
@@ -135,7 +136,7 @@ const blogData: BlogProps[] = [
     alt: 'image blog faire appel a un développeur web freelance',
     readingTime: 5,
     category: 'category 3',
-    date: '13-07-2023',
+    date: '2024-03-02',
   },
   {
     id: '4',
@@ -185,13 +186,54 @@ const blogData: BlogProps[] = [
         title: 'Conclusion',
         text: "Vous l'aurez compris, de nombreux sites en ligne proposent un blog pour profiter des multiples avantages qu'il offre. Que ce soit pour améliorer votre référencement, mettre en place une stratégie marketing ou simplement communiquer sur votre expertise, un blog peut apporter de nombreux bénéfices. Alors n'attendez plus, prenez votre clavier et rédigez les meilleurs paragraphes qui captiveront vos lecteurs.",
       },
+
     ],
 
     img: articleHeader,
     alt: 'image_blog_pourquoi_creer_un_blog',
     readingTime: 5,
     category: 'category 1',
-    date: '11-07-2023',
+    date: '2024-03-03',
+  },
+
+  {
+    id: '5',
+    title: "L'intelligence artificielle dans le monde moderne",
+    descriptionShort:
+      "L'intelligence artificielle (IA) est devenue un sujet brûlant dans le monde de la technologie. Découvrez pourquoi elle est si importante et comment elle façonne notre avenir.",
+
+    descriptionLong: [
+      {
+        title: 'Qu’est-ce que l’intelligence artificielle (IA) ?',
+        text: "L'intelligence artificielle (IA) désigne la capacité d'un système informatique à exécuter des tâches qui nécessiteraient normalement l'intelligence humaine. Cela comprend des activités telles que l'apprentissage, le raisonnement et la résolution de problèmes. L'IA est souvent utilisée pour automatiser des processus, améliorer l'efficacité et prendre des décisions basées sur des données.",
+      },
+      {
+        title: 'Applications de l’IA',
+        text: "Les applications de l'IA sont vastes et variées. Elles vont des assistants virtuels tels que Siri et Alexa aux voitures autonomes, en passant par la reconnaissance faciale, la traduction automatique, la recommandation de contenu et bien plus encore. L'IA est devenue omniprésente dans notre vie quotidienne et continue de se développer à un rythme rapide.",
+      },
+      {
+        title: 'L’impact de l’IA sur la société',
+        text: "L'IA a un impact profond sur la société dans de nombreux domaines. Elle transforme la façon dont nous travaillons, communiquons, apprenons et interagissons avec le monde qui nous entoure. Bien qu'elle offre de nombreuses opportunités et avantages, elle soulève également des questions éthiques et sociales importantes, telles que la protection de la vie privée, la sécurité des données et l'avenir du travail.",
+      },
+      {
+        title: 'Le futur de l’IA',
+        text: "Le futur de l'IA est prometteur mais incertain. Alors que de nouvelles avancées technologiques sont réalisées chaque jour, il est important de réfléchir aux implications de ces progrès et d'adopter une approche éthique et responsable dans le développement et l'utilisation de l'IA. En comprenant les défis et en travaillant ensemble, nous pouvons exploiter le plein potentiel de l'IA pour le bien de l'humanité.",
+      },
+      {
+        title: 'Défis et opportunités',
+        text: "Bien que l'IA présente de nombreux avantages, elle est également confrontée à des défis significatifs. Parmi ceux-ci figurent les problèmes de confidentialité des données, la perte d'emplois due à l'automatisation, et les préoccupations éthiques concernant les décisions prises par les systèmes d'IA. Cependant, avec une approche réfléchie et une réglementation appropriée, nous pouvons surmonter ces défis et exploiter pleinement le potentiel de l'IA pour créer un avenir meilleur.",
+      },
+      {
+        title: 'Conclusion',
+        text: "En conclusion, l'intelligence artificielle est une technologie révolutionnaire qui transforme notre monde à un rythme sans précédent. Alors que nous continuons à explorer ses applications et à relever ses défis, il est essentiel de garder à l'esprit les implications éthiques et sociales de son utilisation. En adoptant une approche responsable et collaborative, nous pouvons utiliser l'IA pour résoudre certains des problèmes les plus pressants de notre époque et créer un avenir meilleur pour tous.",
+      },
+    ],
+
+    img: articleIa,
+    alt: 'image_blog_intelligence_artificielle',
+    readingTime: 12,
+    category: 'Technologie',
+    date: '2024-03-04',
   },
 ];
 

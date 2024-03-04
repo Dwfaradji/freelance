@@ -4,6 +4,7 @@ import Button from '@/components/ui/Atoms/button';
 import { Fade } from 'react-awesome-reveal';
 import Modal from '@/components/ui/Modal/modal';
 import { prices } from '@/data/data';
+import Link from "next/link";
 
 const PricingMain = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,14 +18,16 @@ const PricingMain = () => {
   return (
     <section className="mx-auto max-w-7xl px-6 lg:block">
       <Fade>
-        <div className="flex w-full flex-col items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-pink  to-purple">
+        <div
+          className="flex w-full flex-col items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-pink  to-purple">
           {prices.map((tarif, i) => (
             <article
               key={i.toString()}
               className="m-3 flex h-auto flex-col rounded-xl bg-white sm:flex-row "
             >
               <span className="relative m-4 flex size-3">
-                <span className="absolute inline-flex size-full animate-ping rounded-full bg-gradient-to-r from-pink to-purple opacity-75"></span>
+                <span
+                  className="absolute inline-flex size-full animate-ping rounded-full bg-gradient-to-r from-pink to-purple opacity-75"></span>
                 <span className="relative inline-flex size-3 rounded-full bg-gradient-to-r from-pink to-purple"></span>
               </span>
               <div className="w-full p-8  sm:w-3/5">
@@ -58,19 +61,24 @@ const PricingMain = () => {
               </div>
             </article>
           ))}
-        </div>
-      </Fade>
 
-      {isOpen && (
-        <Modal
-          showModal={isOpen}
-          setIsOpen={setIsOpen}
-          contentModal={contentModal}
-          prices={prices}
-        />
-      )}
-    </section>
-  );
+        </div>
+
+    </Fade>
+
+  {
+    isOpen && (
+      <Modal
+        showModal={isOpen}
+        setIsOpen={setIsOpen}
+        contentModal={contentModal}
+        prices={prices}
+      />
+    )
+  }
+</section>
+)
+  ;
 };
 
 export default PricingMain;

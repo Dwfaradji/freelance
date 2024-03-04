@@ -3,6 +3,8 @@ import React from 'react';
 import HeaderImage from '@/images/home/header-main.webp';
 import { Fade } from 'react-awesome-reveal';
 import Image from 'next/image';
+import Link from "next/link";
+import Button from "@/components/ui/Atoms/button";
 
 const Header = () => {
   return (
@@ -37,15 +39,25 @@ const Header = () => {
         </div>
       </Fade>
       <Fade>
-        {/*<div className=" hidden mt-10 xxs:flex xxs:flex-row sm:hidden">*/}
-        {/*    <Input placeholder="email."></Input>*/}
-        {/*    <Button*/}
-        {/*        colorClass="bg-gradient-to-r from-pink to-purple "*/}
-        {/*        title="Envoyer"*/}
-        {/*        textColor="text-white"*/}
-        {/*        marginClass="ml-5"*/}
-        {/*    ></Button>*/}
+        {/*<div className=" mt-10 hidden xxs:flex xxs:flex-row sm:hidden">*/}
+        {/*  <Input placeholder="email."></Input>*/}
+        {/*  <Button*/}
+        {/*    colorClass="bg-gradient-to-r from-pink to-purple "*/}
+        {/*    title="Envoyer"*/}
+        {/*    textColor="text-white"*/}
+        {/*    marginClass="ml-5"*/}
+        {/*  ></Button>*/}
         {/*</div>*/}
+
+        <div className=" mt-10 xxs:flex xxs:flex-row">
+          <Link href={'/contact'}>
+            <Button
+              colorClass="bg-gradient-to-r from-pink to-purple "
+              title="Contactez-Nous"
+              textColor="text-white text-xl"
+            ></Button>
+          </Link>
+        </div>
       </Fade>
       <div className="mx-auto  mt-10">
         <div className="h-auto w-full overflow-hidden rounded-xl">

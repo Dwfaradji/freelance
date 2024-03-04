@@ -1,10 +1,17 @@
 import React from 'react';
-import tempDesign from '@/images/templates/design_interieur.webp';
-import tempEnergy from '@/images/templates/energyTemplate.webp';
-import tempOrganic from '@/images/templates/organic-farm.webp';
-import Image from 'next/image';
+import { articles } from '@/data/dataSlideDevis';
+import Template from '@/components/Template/template';
+import Button from '@/components/ui/Atoms/button';
+import Link from 'next/link';
 
 const FeaturedTemplate = () => {
+  const sortByDateDescending = articles.sort((a: any, b: any) => {
+    const dateA: Date = new Date(a.date);
+    const dateB: Date = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+  const templateFilter = sortByDateDescending.slice(0, 3);
+
   return (
     <section className="mx-auto mt-20 px-8">
       <h2 className="font-poppins text-xl font-bold text-white lg:text-3xl">
@@ -17,43 +24,25 @@ const FeaturedTemplate = () => {
                     dont vous avez besoin pour réussir en ligne.`}
       </p>
       <article className="mt-10 grid grid-cols-3 gap-4 xxs:grid-cols-1 lg:grid-cols-3">
-        <div className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100">
-          <Image
-            src={tempDesign}
-            width={1000}
-            height={800}
-            className="h-full"
-            alt="template_designer"
+        {templateFilter.map((article, i) => (
+          <Template
+            key={article.id}
+            image={article.image}
+            link={article.link}
+            name={article.type}
+            id={article.id}
           />
-          <div className="absolute inset-0 z-auto flex items-center p-2 text-3xl font-bold text-white opacity-0 backdrop-blur-sm duration-300 hover:opacity-100">
-            Design
-          </div>
-        </div>
-        <div className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100">
-          <Image
-            src={tempEnergy}
-            width={1000}
-            height={800}
-            className=" h-full"
-            alt="template_energy"
-          />
-          <div className="absolute inset-0 z-10 flex items-center p-2 text-3xl font-bold text-white opacity-0 backdrop-blur-sm duration-300 hover:opacity-100">
-            Energy renouvelable
-          </div>
-        </div>
-        <div className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100">
-          <Image
-            src={tempOrganic}
-            width={1000}
-            height={800}
-            className="h-full"
-            alt="template_organic"
-          />
-          <div className="absolute inset-0 z-10 flex items-center p-2 text-3xl font-bold text-white opacity-0 backdrop-blur-sm duration-300 hover:opacity-100">
-            Agriculture
-          </div>
-        </div>
+        ))}
       </article>
+      <div className="mt-10 w-full items-center justify-center xxs:flex xxs:flex-row  ">
+        <Link href={'/templates'}>
+          <Button
+            colorClass="bg-gradient-to-r from-pink to-purple "
+            title="Voir Tout Les Templates"
+            textColor="text-white text-xl"
+          ></Button>
+        </Link>
+      </div>
     </section>
   );
 };

@@ -16,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: 'https://www.devevoke.com/templates',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
       url: 'https://www.devevoke.com/blog',
       lastModified: new Date(),
       changeFrequency: 'weekly',

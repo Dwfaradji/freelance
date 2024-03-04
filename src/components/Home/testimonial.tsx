@@ -2,6 +2,8 @@ import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import logo from '@/images/logocv.svg';
 import Image from 'next/image';
+import Link from "next/link";
+import Button from "@/components/ui/Atoms/button";
 
 const Testimonial = () => {
   return (
@@ -22,6 +24,15 @@ const Testimonial = () => {
               la recherche de nouveaux défis et de nouvelles technologies. Nous
               sommes à votre disposition pour vous aider à réaliser vos projets.`}
             </p>
+            <div className="mt-10 w-full items-center justify-center xxs:flex xxs:flex-row  ">
+              <Link href={'/a_propos'}>
+                <Button
+                  colorClass="bg-gradient-to-r from-pink to-purple "
+                  title="Qui nous sommes ?"
+                  textColor="text-white text-xl"
+                ></Button>
+              </Link>
+            </div>
             <div className="mt-10">
               <h2 className="font-poppins text-3xl font-bold text-white">
                 Boucif Faradji{' '}

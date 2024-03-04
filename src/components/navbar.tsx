@@ -42,6 +42,12 @@ const Navbar = () => {
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
+                  href={'/templates'}
+                >
+                  Nos Templates
+                </Link>
+                <Link
+                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
                   href={'/blog'}
                 >
                   Blog
@@ -101,6 +107,12 @@ const Navbar = () => {
               href={'/a_propos'}
             >
               A propos
+            </Link>
+            <Link
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
+              href={'/templates'}
+            >
+              Nos Templates
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"

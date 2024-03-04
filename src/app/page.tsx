@@ -9,6 +9,8 @@ import Header from '@/components/Home/header';
 import React from 'react';
 import { MyProvider } from '@/context/context';
 import { initialState, reducer } from '@/context/reducer';
+import Link from "next/link";
+import Button from "@/components/ui/Atoms/button";
 
 const Page = () => {
   return (
@@ -21,6 +23,15 @@ const Page = () => {
           <Offerings />
           <Testimonial />
           <Pricing />
+          <div className="mx-auto mt-8 max-w-7xl px-6 lg:block">
+            <Link href={'/tarifs'}>
+              <Button
+                colorClass="bg-gradient-to-r from-pink to-purple "
+                title="Voir Nos Tarifs"
+                textColor="text-white text-xl"
+              ></Button>
+            </Link>
+          </div>
           <FeaturedTemplate />
         </div>
       </main>

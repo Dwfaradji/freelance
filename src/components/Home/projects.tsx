@@ -5,6 +5,7 @@ import { Autoplay, EffectFlip, Pagination } from 'swiper/modules';
 import Link from 'next/link';
 import Image from 'next/image';
 import { projects } from '@/data/data';
+import Button from "@/components/ui/Atoms/button";
 
 const Projects = () => {
   return (
@@ -55,23 +56,8 @@ const Projects = () => {
                         width="400"
                         height="400"
                         priority={true}
-                        // objectFit={"cover"}
-                        // sizes="(min-width: 300px) 50vw, 100vw"
                       />
                     </Link>
-                    {/*  <div className="">*/}
-                    {/*    <h3 className="">*/}
-                    {/*      {project.title}*/}
-                    {/*    </h3>*/}
-                    {/*    {project.tech.map((tech) => (*/}
-                    {/*        <span*/}
-                    {/*            className="text-2xl w-17 md:w-32 lg:w-40"*/}
-                    {/*            key={tech}*/}
-                    {/*        >*/}
-                    {/*  {tech}*/}
-                    {/*</span>*/}
-                    {/*    ))}*/}
-                    {/*  </div>*/}
                   </div>
                 </SwiperSlide>
               ))}
@@ -98,7 +84,17 @@ const Projects = () => {
                                 freelance. Contactez-nous dès aujourd'hui pour discuter de vos besoins et obtenir un devis
                                 gratuit.`}
             </p>
+            <div className="mt-10 w-full items-center justify-center xxs:flex xxs:flex-row  ">
+              <Link href={'/portfolio'}>
+                <Button
+                  colorClass="bg-gradient-to-r from-pink to-purple "
+                  title="Voir Tout Nos Projets"
+                  textColor="text-white text-xl"
+                ></Button>
+              </Link>
+            </div>
           </div>
+
         </article>
       </Fade>
     </section>

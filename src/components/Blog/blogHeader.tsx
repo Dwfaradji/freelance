@@ -4,7 +4,12 @@ import Image from 'next/image';
 import blogData from '@/data/dataBlog';
 
 const BlogHeader = () => {
-  const dataHeader = blogData[3];
+  const sortByDateDescending = blogData.sort((a: any, b: any) => {
+    const dateA: Date = new Date(a.date);
+    const dateB: Date = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+  const dataHeader = sortByDateDescending[0];
   return (
     <div>
       <Fade>
