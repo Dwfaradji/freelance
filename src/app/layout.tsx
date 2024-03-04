@@ -5,6 +5,7 @@ import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import Loading from '@/app/loading';
 import GoogleAnalytics from '@/lib/GoogleAnalytics';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
+      <SpeedInsights/>
       <body className={`${inter.variable} antialiased`}>
         <Navbar />
         <Suspense fallback={<Loading />}>{children}</Suspense>
