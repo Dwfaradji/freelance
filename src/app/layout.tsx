@@ -37,11 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <Script
-        type="text/javascript"
-        charSet="UTF-8"
-        src="//cdn.cookie-script.com/s/64964e641363fdb6351948e5bee65388.js"
-      ></Script>
+
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
       <body className={`${inter.variable} antialiased`}>
         <Navbar />
