@@ -35,7 +35,7 @@ const Page = () => {
       </p>
       <div
         className={
-          'mt-20 grid grid-cols-3 gap-20 xxs:grid-cols-1 lg:grid-cols-3'
+          'mt-20 grid grid-cols-3 gap-20 xxs:grid-cols-1 lg:grid-cols-3 '
         }
       >
         {articles.map((article, i) => (

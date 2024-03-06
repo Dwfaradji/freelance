@@ -4,12 +4,10 @@ import BlogPage from '@/components/Blog/blogPage'
 
 const Page = ({ params }: { params: { id: string } }) => {
   const id = params.id;
-  console.log("toto");
-  console.log(id);
   return (
-    <>
+    <main>
       <BlogPage id={id} />
-    </>
+    </main>
   );
 };
 

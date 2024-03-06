@@ -13,7 +13,7 @@ const Template = ({  image, link, name, id }: PropsTemplate) => {
   return (
     <div
       key={id}
-      className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100"
+      className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100 "
     >
       <Link href={link}>
         <Image

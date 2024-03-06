@@ -35,19 +35,21 @@ const BlogPage = ({ id }: PropsBlogPage) => {
       {contentBlog && (
         <div>
           <Fade>
-            <section className="relative mt-10 flex flex-col text-white">
-              <div className="m-5 overflow-hidden rounded-xl">
+            <section className="relative mt-10 flex flex-col text-white xxs:px-3 lg:px-20">
+              <div className="overflow-hidden rounded-xl">
                 <Image
                   src={contentBlog.img}
                   width={1000}
                   height={800}
                   alt={contentBlog.alt}
-                  className={'w-full'}
+                  className={'w-full md:h-[80dvh] '}
                   priority
                 />
               </div>
-              <ButtonNetwork id={contentBlog.id} />
-              <div className="m-5">
+              <div className={"m-3"}>
+                <ButtonNetwork id={contentBlog.id} />
+              </div>
+              <div className="">
                 <div className="mt-5 flex items-center">
                   <div className="size-10 overflow-hidden rounded-full object-cover">
                     {/*<Image className="h-10 w-10" priority={true} width={300} height={300} src={""}*/}

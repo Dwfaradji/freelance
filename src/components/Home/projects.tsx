@@ -29,7 +29,7 @@ const Projects = () => {
         </div>
       </Fade>
       <Fade cascade>
-        <article className="mt-10 flex w-full  flex-row px-8 xxs:flex-col sm:flex-col  sm:items-center lg:flex-row">
+        <article className="mt-10 flex w-full  flex-row px-8 xxs:flex-col sm:flex-col  xxs:items-center lg:flex-row">
           <div className=" m-5  rounded-xl  bg-gradient-to-r from-pink to-purple xxs:w-full xs:w-full sm:w-full lg:w-2/6 ">
             <Swiper
               effect={'flip'}

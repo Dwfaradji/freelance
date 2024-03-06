@@ -23,7 +23,7 @@ const FeaturedTemplate = () => {
                     ou en nous suivant sur les réseaux sociaux. Chez DevEvoke, nous vous offrons les outils
                     dont vous avez besoin pour réussir en ligne.`}
       </p>
-      <article className="mt-10 grid grid-cols-3 gap-4 xxs:grid-cols-1 lg:grid-cols-3">
+      <article className="h-50 mt-10 grid grid-cols-3 gap-4 xxs:grid-cols-1 lg:grid-cols-3">
         {templateFilter.map((article, i) => (
           <Template
             key={article.id}

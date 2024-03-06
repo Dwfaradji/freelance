@@ -98,7 +98,7 @@ const Slider = ({ data }: Slide) => {
                 <div className={'block md:hidden'}>
                   <TextHidden
                     text={content}
-                    style={'text-black text-left'}
+                    style={'text-white text-left'}
                     heightVisible={'h-16'}
                   />
                 </div>

@@ -6,10 +6,10 @@ import headerAbout from '@/images/about/aboutHeader.webp';
 const AboutHeader = () => {
   return (
     <Fade cascade>
-      <div className="mx-auto mt-10">
+      <div className="mx-auto">
         <div className="overflow-hidden rounded-xl">
           <Image
-            className={'w-full'}
+            className={'w-full md:h-[85dvh]'}
             width={1000}
             height={1000}
             src={headerAbout}
