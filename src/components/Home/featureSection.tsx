@@ -14,7 +14,7 @@ const FeatureSection = () => {
       <Fade cascade>
         <div className="mt-10 flex w-full flex-row justify-between xxs:flex-col xs:flex-col sm:flex-row">
           <div className="m-5  flex h-52 flex-col content-center justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack text-center align-middle transition duration-500 ease-in-out hover:from-purple hover:to-pink md:w-full">
-            <h2 className="text-5xl text-white">2</h2>
+            <h2 className="text-5xl text-white">21</h2>
             <h3 className="text-white">Projet réaliser</h3>
           </div>
           <div className="m-5 flex  h-52 flex-col content-center justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack text-center align-middle transition duration-500 ease-in-out hover:from-purple hover:to-pink md:w-full">

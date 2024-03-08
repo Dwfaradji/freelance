@@ -19,7 +19,7 @@ export const metadata = {
   title:
     'DevEvoke : Développement Web & Applications de Qualité Supérieure à Perpignan',
   description:
-    "DevEvoke  Agence web & mobile experte à Perpignan.Développez votre succès numérique avec des solutions innovantes et intuitives. Sites web | Applications | Logiciels sur mesure 5+ans d'expérience | Code propre & Maintenable | Devis gratuit",
+    "DevEvoke Agence web & mobile experte à Perpignan. Développez votre succès numérique avec des solutions innovantes et intuitives. Sites web | Applications | Logiciels sur mesure 5+ans d'expérience | Code propre & Maintenable | Devis gratuit",
 
   alternates: {
     canonical: 'https://www.devevoke.com/',
@@ -37,20 +37,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      {/*<Script*/}
-      {/*  id="Cookiebot"*/}
-      {/*  src="https://consent.cookiebot.com/uc.js"*/}
-      {/*  data-cbid="4dfefc65-d4f0-4409-9174-818a0fabf0d5"*/}
-      {/*  data-blockingmode="auto"*/}
-      {/*  type="text/javascript"*/}
-      {/*></Script>*/}
-
       <Script
         id="Cookiebot"
         src="https://consent.cookiebot.com/uc.js"
         data-cbid="4dfefc65-d4f0-4409-9174-818a0fabf0d5"
         type="text/javascript"
       ></Script>
+
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
       <body className={`${inter.variable} antialiased`}>
         <Navbar />
