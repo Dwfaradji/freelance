@@ -43,6 +43,11 @@ export default function RootLayout({
         data-cbid="4dfefc65-d4f0-4409-9174-818a0fabf0d5"
         type="text/javascript"
       ></Script>
+      <Script
+        src="https://www.google.com/recaptcha/enterprise.js"
+        async
+        defer
+      ></Script>
 
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
       <body className={`${inter.variable} antialiased`}>
