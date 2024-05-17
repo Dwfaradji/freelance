@@ -7,11 +7,19 @@ import blogData from '@/data/dataBlog';
 import Image from 'next/image';
 
 const BlogsContainer = () => {
+
+  const sortByDateDescending = blogData.sort((a: any, b: any) => {
+    const dateA: Date = new Date(a.date);
+    const dateB: Date = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+  const dataHeader = sortByDateDescending.slice(1,sortByDateDescending.length);
+  console.log(dataHeader);
   return (
     <section className="mx-auto mt-10 text-white">
       <Fade cascade>
         <article className="grid grid-cols-3 gap-4 xxs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {blogData.map((blog, i) => (
+          {dataHeader.map((blog, i) => (
             <Link
               className="flex justify-center"
               key={i}

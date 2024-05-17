@@ -2,6 +2,7 @@ import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Image from 'next/image';
 import blogData from '@/data/dataBlog';
+import Link from "next/link";
 
 const BlogHeader = () => {
   const sortByDateDescending = blogData.sort((a: any, b: any) => {
@@ -13,6 +14,10 @@ const BlogHeader = () => {
   return (
     <div>
       <Fade>
+        <Link
+          className="flex justify-center"
+          href={`/blog/${dataHeader.id.toString()}`}
+        >
         <section
           id={dataHeader.id}
           className="mx-auto mt-10 flex text-white xxs:flex-col sm:flex-row"
@@ -51,6 +56,7 @@ const BlogHeader = () => {
             </article>
           </div>
         </section>
+        </Link>
       </Fade>
     </div>
   );
