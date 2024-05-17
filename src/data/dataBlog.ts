@@ -1,69 +1,46 @@
-import article1 from '@/images/blogs/article-1.webp';
 import article2 from '@/images/blogs/article-2.webp';
 import article3 from '@/images/blogs/article-3.webp';
 import article6 from '@/images/blogs/article-6.webp';
 import article7 from '@/images/blogs/article-7.webp';
+import article8 from '@/images/blogs/article-8.webp';
 import articleHeader from '@/images/blogs/article-header.webp';
 import articleIa from '@/images/blogs/article-ia.webp';
 import { BlogProps } from './typeFile';
 
 const blogData: BlogProps[] = [
   {
-    id: '1',
-    title: 'Pourquoi avoir un blog sur son site ?',
-    descriptionShort:
-      'Aujourd’hui, il est important pour les entreprises d’avoir un site internet professionnel et de qualité. Cependant, avoir un site internet ne suffit pas, il faut également le faire vivre ! Et, c’est là que le blog intervient.',
-
+    id: "1",
+    title: "Optimisez Votre Entreprise avec une Appli Interne",
+    descriptionShort: "Découvrez comment le développement d'une application interne peut transformer vos opérations quotidiennes, améliorer la communication entre les équipes et offrir un avantage concurrentiel significatif.",
     descriptionLong: [
       {
-        title:
-          " Les avantages d'un blog pour booster votre visibilité en ligne",
-        text: "De nos jours, il est primordial pour toute entreprise de disposer d'un site internet professionnel et de qualité. Cependant, posséder un site web ne suffit pas, il est également essentiel de le rendre attractif et dynamique. C'est là que le blog intervient en tant qu'outil indispensable. En effet, un blog permet d'alimenter régulièrement votre site en contenu de qualité, ce qui joue un rôle crucial dans l'optimisation de votre référencement. De plus, il offre l'opportunité d'établir une relation de confiance avec vos visiteurs et de les fidéliser. En proposant un contenu pertinent et en répondant à leurs questions, vous démontrez que vous êtes à l'écoute de leur satisfaction et que vous vous souciez de leur bien-être. Enfin, un blog constitue un moyen naturel de promouvoir votre entreprise ainsi que vos produits ou services, en mettant en avant vos atouts et en répondant aux besoins de vos visiteurs.",
+        title: "Amélioration de l'efficacité opérationnelle",
+        text: "Développer une application interne pour votre entreprise peut transformer vos opérations quotidiennes en automatisant de nombreuses tâches répétitives et chronophages. Imaginez un système où la gestion des stocks, la facturation ou le suivi des commandes sont gérés de manière transparente et automatique. Une telle application peut réduire considérablement les erreurs humaines et accélérer les processus internes. Par exemple, une application interne peut mettre à jour automatiquement les inventaires à chaque transaction, éliminant ainsi les comptages manuels fastidieux. Les rappels automatiques pour les tâches cruciales, comme les paiements ou les rendez-vous, assurent que rien n'est laissé au hasard, améliorant ainsi la fiabilité et l'efficacité de vos opérations."
       },
       {
-        title: 'Optimisez votre SEO',
-        text: "Un blog vous offre la possibilité de publier fréquemment du contenu, ce qui constitue un facteur essentiel pour améliorer votre référencement. En proposant un contenu frais et pertinent, vous permettez aux moteurs de recherche de mieux appréhender votre site, ce qui peut entraîner une amélioration significative de votre classement dans les résultats de recherche. En rédigeant des articles portant sur des sujets connexes à votre domaine d'expertise, vous pouvez élargir votre visibilité et créer des regroupements thématiques autour de divers sujets. Par exemple, dans mon cas, j'aborderais des sujets relatifs au marketing numérique, aux stratégies d'optimisation SEO, aux plateformes de commerce électronique, etc. En développant ces différentes thématiques, vous renforcez votre SEO et obtenez un référencement de qualité pour un large éventail de mots-clés pertinents.",
+        title: "Meilleure communication et collaboration interne",
+        text: "Une application interne dédiée améliore considérablement la communication et la collaboration entre les équipes. Elle offre des canaux de communication instantanés, comme les notifications push et les messageries internes, permettant à vos employés de rester informés et connectés en permanence. En centralisant les informations et en facilitant l'accès à des documents partagés, une application interne encourage la collaboration et la coordination entre les différents départements. Par exemple, les équipes peuvent facilement partager des mises à jour de projet, des rapports ou des idées, ce qui favorise un environnement de travail plus cohésif et productif."
       },
       {
-        title: 'Augmentez le nombre de (src) de votre site',
-        text: "D'un point de vue SEO, le nombre de (src) de votre site revêt une importance considérable. Même si Google ne précise pas le nombre exact de (src) requis, nous savons que les liens internes (maillage interne) jouent un rôle crucial pour les moteurs de recherche. Il est bien plus complexe d'optimiser votre maillage interne lorsque vous disposez de seulement 4 (src), par rapport à 400 (src). Un blog bien structuré vous permet d'améliorer votre maillage interne en créant des liens entre vos articles. Cette pratique favorise votre référencement. Ainsi, nous pouvons affirmer que le nombre de (src) influence indirectement votre référencement. Toutefois, veillez à ne pas créer des (src) superflues. L'objectif est de proposer des (src) à forte valeur ajoutée pour le référencement et de les interconnecter entre elles.",
+        title: "Accroissement de la visibilité et de l'accessibilité des informations",
+        text: "Une application interne permet à vos employés d'accéder aux informations cruciales 24/7, où qu'ils se trouvent. Cela signifie que les équipes peuvent consulter des données, des rapports ou des documents nécessaires à leurs tâches à tout moment, sans être limitées par les heures de bureau. Cette accessibilité accrue assure que les employés disposent toujours des informations les plus récentes et peuvent prendre des décisions informées rapidement. De plus, en centralisant les informations dans une application unique, vous réduisez le temps passé à chercher des documents ou des données, ce qui augmente l'efficacité générale de l'entreprise."
       },
       {
-        title: 'Notoriété et crédibilité',
-        text: "La notoriété en ligne est directement liée au référencement. En développant votre référencement naturel, vous renforcez votre visibilité et, par conséquent, votre notoriété. La rédaction d'articles portant sur vos sujets de prédilection vous confère également une certaine crédibilité. En combinant votre expertise et une notoriété croissante, vous serez perçu par vos prospects comme une personne légitime. Par conséquent, il est essentiel de développer votre blog afin d'améliorer ces aspects et de profiter des avantages pour votre entreprise.",
+        title: "Collecte et analyse des données en temps réel",
+        text: "Une application interne bien conçue permet de collecter des données en temps réel sur les opérations et les performances des employés. Ces informations peuvent ensuite être analysées pour identifier les domaines à améliorer, optimiser les processus et prendre des décisions stratégiques basées sur des données concrètes. Par exemple, en suivant les temps de réponse des employés aux requêtes internes ou aux tâches assignées, vous pouvez identifier les goulets d'étranglement et mettre en place des solutions pour améliorer l'efficacité. Les tableaux de bord et les rapports analytiques intégrés dans l'application fournissent une vue d'ensemble des performances en temps réel, facilitant la prise de décisions éclairées."
       },
       {
-        title: 'Visites régulières',
-        text: "Visitez-vous régulièrement un site statique qui ne propose pas de contenu mis à jour ? Probablement pas, et vos prospects non plus. Lorsque vous publiez du contenu de manière régulière, vos visiteurs ont toutes les raisons de revenir sur votre site, car ils y trouveront constamment de nouvelles informations. Si vous traitez de sujets qui les intéressent, il y a de fortes chances qu'ils reviennent régulièrement pour consulter vos publications. De plus, un blog vous permet d'interagir directement avec vos visiteurs et d'établir une relation avec eux. En proposant un contenu intéressant et en répondant aux commentaires des lecteurs, vous pouvez construire une communauté solide autour de votre site, qui reviendra fréquemment. Cette approche renforce votre notoriété et votre crédibilité.",
-      },
-      {
-        title: 'Contenu pour votre newsletter',
-        text: "La newsletter demeure l'une des stratégies d'inbound marketing les plus populaires et faciles à mettre en place. Toutefois, une fois créée, vous avez besoin de contenu pour l'alimenter régulièrement. Grâce à votre blog, vous disposez d'un flux de contenu régulier que vous pouvez réutiliser dans votre newsletter. En mettant en place un processus bien défini, vous pouvez créer deux flux d'informations distincts qui vous aideront à convertir vos prospects.",
-      },
-      {
-        title: 'Fréquence de publication',
-        text: "La récurrence est l'un des facteurs les plus importants, voire le plus important, pour un blog. Vous devez définir une fréquence de publication afin que vos lecteurs sachent quand revenir sur votre site. Cela peut être une fois par semaine, une fois par mois, peu importe. L'essentiel est de maintenir cette fréquence sur le long terme.",
-      },
-      {
-        title: 'Promotion de votre blog sur les réseaux sociaux',
-        text: "Publiez-vous un article et constatez-vous un faible nombre de consultations ? C'est tout à fait normal au début. Il faut du temps pour développer votre notoriété et votre référencement. En attendant, vous pouvez partager vos articles avec conviction sur vos propres réseaux sociaux ainsi que sur ceux de votre entreprise. Cela attirera des lecteurs et vous permettra également d'obtenir des retours. Grâce à ces retours, vous pourrez améliorer la performance de votre blog.",
-      },
-      {
-        title: 'Une rédaction de qualité',
-        text: "Il existe quelques règles fondamentales pour une bonne rédaction de blog. Tout d'abord, pensez à écrire pour votre public cible. Identifiez le type de lecteurs que vous souhaitez atteindre et adaptez votre style en conséquence. Ensuite, veillez à soigner votre orthographe et votre grammaire, car rien ne peut nuire plus rapidement à la qualité d'un contenu qu'une faute d'orthographe. Gardez à l'esprit que les internautes sont impatients, évitez donc les phrases trop longues et les paragraphes denses. Structurez votre texte avec des titres et des sous-titres, et n'hésitez pas à insérer des images pour renforcer vos idées. Enfin, relisez toujours votre article avant de le publier, afin de vous assurer qu'il est bien rédigé et ne contient aucune erreur.",
-      },
-      {
-        title: 'Conclusion',
-        text: "Vous l'aurez compris, de nombreux sites en ligne proposent un blog pour profiter des multiples avantages qu'il offre. Que ce soit pour améliorer votre référencement, mettre en place une stratégie marketing ou simplement communiquer sur votre expertise, un blog peut apporter de nombreux bénéfices. Alors n'attendez plus, prenez votre clavier et rédigez les meilleurs paragraphes qui captiveront vos lecteurs.",
-      },
+        title: "Avantage concurrentiel et innovation",
+        text: "Dans un marché compétitif, une application interne bien conçue peut offrir un avantage concurrentiel significatif. Elle permet d'introduire des fonctionnalités innovantes qui améliorent la productivité et l'efficacité des employés. Par exemple, l'intégration de technologies telles que l'intelligence artificielle pour des recommandations de tâches automatisées ou l'utilisation de la réalité augmentée pour la formation des employés peut rendre vos processus internes plus efficaces et vos équipes plus compétentes. Ces innovations montrent également que votre entreprise est à la pointe de la technologie, ce qui peut attirer des talents et renforcer votre position sur le marché."
+      }
     ],
-
-    img: article1,
-    alt: 'image_blog_pourquoi_creer_un_blog',
-    readingTime: 5,
-    category: 'category 1',
-    date: '2024-03-02',
+    img: article8,
+    alt: "image_blog_application_interne",
+    readingTime: 10,
+    category: "Business",
+    date: "2024-05-17"
   },
+
   {
     id: '2',
     title: 'Les avantages de créer un site sans CMS',
@@ -144,12 +121,12 @@ const blogData: BlogProps[] = [
     id: '4',
     title: 'Pourquoi avoir un blog sur son site ?',
     descriptionShort:
-      'Aujourd’hui, il est important pour les entreprises d’avoir un site internet professionnel et de qualité. Cependant, avoir un site internet ne suffit pas, il faut également le faire vivre ! Et, c’est là que le blog intervient.',
+      `Aujourd’hui, il est important pour les entreprises d’avoir un site internet professionnel et de qualité. Cependant, avoir un site internet ne suffit pas, il faut également le faire vivre ! Et, c’est là que le blog intervient.`,
 
     descriptionLong: [
       {
         title:
-          " Les avantages d'un blog pour booster votre visibilité en ligne",
+          "Les avantages d'un blog pour booster votre visibilité en ligne",
         text: "De nos jours, il est primordial pour toute entreprise de disposer d'un site internet professionnel et de qualité. Cependant, posséder un site web ne suffit pas, il est également essentiel de le rendre attractif et dynamique. C'est là que le blog intervient en tant qu'outil indispensable. En effet, un blog permet d'alimenter régulièrement votre site en contenu de qualité, ce qui joue un rôle crucial dans l'optimisation de votre référencement. De plus, il offre l'opportunité d'établir une relation de confiance avec vos visiteurs et de les fidéliser. En proposant un contenu pertinent et en répondant à leurs questions, vous démontrez que vous êtes à l'écoute de leur satisfaction et que vous vous souciez de leur bien-être. Enfin, un blog constitue un moyen naturel de promouvoir votre entreprise ainsi que vos produits ou services, en mettant en avant vos atouts et en répondant aux besoins de vos visiteurs.",
       },
       {
@@ -192,7 +169,7 @@ const blogData: BlogProps[] = [
     ],
 
     img: articleHeader,
-    alt: 'image_blog_pourquoi_creer_un_blog',
+    alt: 'image_blog_pourquoi_créer_un_blog',
     readingTime: 5,
     category: 'category 1',
     date: '2024-03-03',
