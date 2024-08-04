@@ -24,3 +24,6 @@ const GoogleAnalytics = ({ GA_TRACKING_ID }: GoogleAnalyticsProps) => {
 };
 
 export default GoogleAnalytics;
+
+
+
