@@ -38,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
+      {/*<GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />*/}
       <body className={`${inter.variable} antialiased `}>
         <Navbar />
         <Suspense fallback={<Loading />}>{children}</Suspense>
