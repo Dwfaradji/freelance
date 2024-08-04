@@ -11,19 +11,21 @@ import { MyProvider } from '@/context/context';
 import { initialState, reducer } from '@/context/reducer';
 import Link from "next/link";
 import Button from "@/components/ui/Atoms/button";
+import Cookies from "@/lib/Cookies";
 
 const Page = () => {
   return (
     <MyProvider initialState={initialState} reducer={reducer}>
-      <main>
-        <div className="h-auto w-full">
+      <Cookies/>
+      <main className={'mx-auto md:container'}>
+        <div className=" h-auto w-full">
           <Header />
           <FeatureSection />
           <Projects />
           <Offerings />
           <Testimonial />
           <Pricing />
-          <div className="mx-auto mt-8 max-w-7xl px-6 lg:block">
+          <div className="mx-auto mt-8 max-w-7xl px-6 text-center lg:block">
             <Link href={'/tarifs'}>
               <Button
                 colorClass="bg-gradient-to-r from-pink to-purple "

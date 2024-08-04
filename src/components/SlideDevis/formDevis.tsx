@@ -15,6 +15,9 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
   // États pour gérer les valeurs des champs du formulaire
   const [budgetEstime, setBudgetEstime] = useState<string>('350');
   const [isProfessionnel, setIsProfessionnel] = useState<boolean>(false);
+
+  const [errorMsg, setErrorMsg] = useState<boolean>(false);
+
   // Initialisation de useForm pour la gestion du formulaire
   const formatDateToFR = (dateString: string) => {
     const [year, month, day] = dateString.split('-');
@@ -32,6 +35,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<IFormData>({
     defaultValues: {
@@ -54,7 +58,6 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
     await dispatch({ type: 'ADD_FORM', payload: data });
     data.dateDebut = formatDateToFR(data.dateDebut);
     data.budgetEstime = budgetEstime;
-    e && e.target.reset();
   };
 
   // Gestionnaire d'événements pour les boutons radio
@@ -69,9 +72,13 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
   async function sendDevis() {
     try {
       const response = await callApi({ url: '/api/devis', data: sendDataForm });
-      if (response.status === 200) {
+      if (response.data.status === 200) {
         await dispatch({ type: 'ADD_STATUS', payload: true });
         router.push('/devis/confirmation');
+        reset()
+      }else{
+        console.log("error");
+        setErrorMsg(true)
       }
     } catch (error) {
       console.error(
@@ -261,11 +268,13 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
         </div>
         <div className=" mt-8 flex justify-between text-center text-white ">
           {/* Bouton de soumission du formulaire et du bouton retour*/}
+
           <>
+
             <Link
               scroll={true}
               className={
-                'sm:width-full md:width-full lg:width-full w-1/4 scale-100 items-center justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between'
+                'sm:width-full md:width-full lg:width-full mr-3 w-1/4 scale-100 items-center justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between'
               }
               href={`${hrefLink}`}
               onClick={onClickBack}
@@ -275,12 +284,18 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
 
             <button
               type={'submit'}
-              className="sm:width-full md:width-full lg:width-full w-1/4 scale-100 items-center justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between"
+              className="sm:width-full md:width-full lg:width-full w-1/4 scale-100 items-center justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between ml-3"
             >
               <SendOutlinedIcon className={'-rotate-45'} />
             </button>
+
+
           </>
+
         </div>
+        {!errorMsg &&(
+          <p className={"mt-3"}> {"Une erreur s'est produite lors de l'envoie du devis"}</p>
+        )}
       </form>
     </section>
   );

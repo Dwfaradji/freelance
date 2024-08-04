@@ -13,6 +13,8 @@
         z-index: 0;
     }
 
+
+
     .modal-open {
         overflow: hidden;
         width: 100%;
@@ -23,12 +25,7 @@
         color: white;
     }
 
-    main {
-        margin-top: 7em;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        /*width: 100dvw;*/
-    }
+
 
 
     input {
@@ -51,10 +48,10 @@
 }
 
 
-@media (max-width: 600px) {
+
     main {
         margin-top: 6em;
         padding-left: 1em;
         padding-right: 1em;
     }
-}
+

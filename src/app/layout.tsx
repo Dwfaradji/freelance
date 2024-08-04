@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 import './globals.css';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import Script from 'next/script';
+import Cookies from "@/lib/Cookies";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -37,20 +38,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <Script
-        id="Cookiebot"
-        src="https://consent.cookiebot.com/uc.js"
-        data-cbid="4dfefc65-d4f0-4409-9174-818a0fabf0d5"
-        type="text/javascript"
-      ></Script>
-      <Script
-        src="https://www.google.com/recaptcha/enterprise.js"
-        async
-        defer
-      ></Script>
-
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased `}>
         <Navbar />
         <Suspense fallback={<Loading />}>{children}</Suspense>
         <Footer />

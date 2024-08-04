@@ -7,7 +7,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
 
       <MyProvider initialState={initialState} reducer={reducer}>
-        {children}
+        <main className={"container mx-auto"}>
+          {children}
+        </main>
       </MyProvider>
   );
 };

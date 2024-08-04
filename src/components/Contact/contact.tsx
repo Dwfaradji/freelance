@@ -8,6 +8,10 @@ import callApi from '@/utils/callApi';
 
 const Contact = () => {
   const [sendMsg, setSendMsg] = React.useState(false);
+  const [sendText, setSendText] = React.useState('');
+  const [failedMsg, setFailedMsg] = React.useState(false);
+  const [buttonSendMsg, setButtonSendMsg] = React.useState(true);
+  const [buttonText, setButtonText] = React.useState("Envoyer-nous un message");
   //Variables
   const {
     register,
@@ -16,14 +20,24 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data: {}) => {
+
+    const response = await callApi({ url: '/api/contact', data: data });
     try {
-      const response = await callApi({ url: '/api/contact', data: data });
       // Traitez la réponse de l'API
-      if (response.status === 200) {
+      if (response.data.status === 200) {
         console.log("L'e-mail a été envoyé avec succès.");
         window.location.hash = 'confirmation';
-        setSendMsg(true);
+        setSendText("Votre message a bien été envoyé")
+        setSendMsg(true)
+        setButtonSendMsg(false);
         reset();
+        return
+      }
+      else{
+        window.location.hash = 'Erreur_send';
+        setButtonText('Réessayer')
+        setSendMsg(true)
+        setSendText("Une erreur ses produite lors de l'envoie veuillez réessayer ultérieurement")
       }
     } catch (error) {
       console.error("Erreur lors de l'envoi de l'e-mail", error);
@@ -117,20 +131,21 @@ const Contact = () => {
               <span className="text-white">Ce champ est requis</span>
             )}
             <br />
-            {!sendMsg && (
+            {buttonSendMsg && (
               <Button
                 type="submit"
-                title="Envoie-nous un message"
+                title={buttonText}
                 colorClass="bg-gradient-to-r from-pink to-purple"
                 marginClass="mt-5"
               ></Button>
             )}
 
             {sendMsg && (
-              <div className="text-white">
-                <p>Votre message a bien été envoyé</p>
+              <div className="text-white mt-3">
+                <p>{sendText}</p>
               </div>
             )}
+
           </form>
         </div>
         <div className="m-5 w-1/4 overflow-hidden rounded-xl xxs:hidden sm:block">

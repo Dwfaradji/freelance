@@ -7,7 +7,7 @@ import Button from "@/components/ui/Atoms/button";
 
 const Testimonial = () => {
   return (
-    <section className="mx-auto my-20 h-auto px-6">
+    <section className="mx-auto my-20 h-auto">
       <Fade>
         <div className="flex w-full flex-row justify-between rounded-lg bg-lightblack  align-middle xxs:flex-col xs:flex-col sm:flex-row  ">
           <div className="w-3/4 p-12 xxs:w-full xs:w-full sm:w-3/4">

@@ -63,8 +63,8 @@ const Header = () => {
         <div className="h-auto w-full overflow-hidden rounded-xl">
           <Image
             priority
-            width={500}
-            height={500}
+            width={1000}
+            height={1000}
             className="size-full"
             src={HeaderImage}
             alt="Photo_ordinateur_sur_bureau"

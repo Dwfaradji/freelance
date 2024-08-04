@@ -16,7 +16,7 @@ const PricingMain = () => {
   };
 
   return (
-    <section className="mx-auto max-w-7xl px-6 lg:block">
+    <section className="mx-auto max-w-7xl lg:block">
       <Fade>
         <div
           className="flex w-full flex-col items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-pink  to-purple">
@@ -61,24 +61,22 @@ const PricingMain = () => {
               </div>
             </article>
           ))}
-
         </div>
+      </Fade>
 
-    </Fade>
-
-  {
-    isOpen && (
-      <Modal
-        showModal={isOpen}
-        setIsOpen={setIsOpen}
-        contentModal={contentModal}
-        prices={prices}
-      />
-    )
-  }
-</section>
-)
-  ;
+      {
+        isOpen && (
+          <Modal
+            showModal={isOpen}
+            setIsOpen={setIsOpen}
+            contentModal={contentModal}
+            prices={prices}
+          />
+        )
+      }
+    </section>
+  )
+    ;
 };
 
 export default PricingMain;
