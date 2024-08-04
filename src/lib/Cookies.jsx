@@ -16,7 +16,6 @@ const Cookies = () => {
 
   return (
     <>
-      {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
       <Script
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         strategy="beforeInteractive"

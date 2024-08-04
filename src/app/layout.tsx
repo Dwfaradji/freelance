@@ -11,8 +11,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
-import Script from 'next/script';
-import Cookies from "@/lib/Cookies";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -38,10 +36,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      {/*<GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />*/}
+    {/*<GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />*/}
       <body className={`${inter.variable} antialiased `}>
         <Navbar />
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Suspense fallback={<Loading />}>
+          {children}</Suspense>
         <Footer />
         <SpeedInsights />
       </body>
