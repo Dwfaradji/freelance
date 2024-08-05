@@ -4,15 +4,19 @@ import './globals.css';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import Loading from '@/app/loading';
-import GoogleAnalytics from '@/lib/GoogleAnalytics';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
+import CookieBanner from "@/utils/cookie/cookiebanner";
+import { config, headerScripts } from '@/utils/cookie/index.js';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+
+
+
 
 export const metadata = {
   title:
@@ -36,10 +40,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-    <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
+    {/*<GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />*/}
       <body className={`${inter.variable} antialiased `}>
+
         <Navbar />
         <Suspense fallback={<Loading />}>
+          <CookieBanner config={config} headerScripts={headerScripts} />,
           {children}</Suspense>
         <Footer />
         <SpeedInsights />

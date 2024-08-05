@@ -1,13 +1,15 @@
 "use client";
-import '../../public/cookie/cookiebanner.style.css'; // Chemin mis à jour pour CSS
+
 import Script from 'next/script';
 import { useEffect } from 'react';
 import React from 'react';
+import CookieBanner from '@/utils/cookie/cookiebanner';
 
 const Cookies = () => {
   useEffect(() => {
     window.cookieBanner = {
       init: function() {
+        CookieBanner()
         // Votre logique pour afficher la bannière de cookies
         console.log('Cookie banner initialized');
       }
@@ -20,7 +22,7 @@ const Cookies = () => {
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         strategy="beforeInteractive"
       />
-      <Script src="/cookie/cookiebanner.script.js" strategy="afterInteractive" />
+      <Script src="" strategy="afterInteractive" />
       <Script id="cookie-banner-init" strategy="afterInteractive">
         {`$(document).ready(function() {
           cookieBanner.init();

@@ -11,12 +11,10 @@ import { MyProvider } from '@/context/context';
 import { initialState, reducer } from '@/context/reducer';
 import Link from "next/link";
 import Button from "@/components/ui/Atoms/button";
-import Cookies from "@/lib/Cookies";
 
 const Page = () => {
   return (
     <MyProvider initialState={initialState} reducer={reducer}>
-      <Cookies/>
       <main className={'mx-auto md:container'}>
         <div className=" h-auto w-full">
           <Header />
