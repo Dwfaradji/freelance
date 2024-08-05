@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
-import "./cookiebanner.css";
+import './cookiebanner.css';
 
 const CookieBanner = ({ config, headerScripts }) => {
   const [isBannerVisible, setIsBannerVisible] = useState(false);
@@ -23,7 +23,7 @@ const CookieBanner = ({ config, headerScripts }) => {
 
   const injectScripts = () => {
     if (headerScripts) {
-      headerScripts.forEach(script => {
+      headerScripts.forEach((script) => {
         if (isPreferenceAccepted(script.type)) {
           if (script.type === 'analytics') {
             // Inject external Google Analytics script
@@ -35,7 +35,7 @@ const CookieBanner = ({ config, headerScripts }) => {
             // Inject inline configuration script
             tagScript.onload = () => {
               const configScript = document.createElement('script');
-              configScript.id = "google-analytics";
+              configScript.id = 'google-analytics';
               configScript.innerHTML = `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -56,10 +56,11 @@ const CookieBanner = ({ config, headerScripts }) => {
     }
   };
 
-
   const isPreferenceAccepted = (type) => {
     const cookieConsentPrefs = getCookie('cookieConsentPrefs');
-    return cookieConsentPrefs ? JSON.parse(decodeURIComponent(cookieConsentPrefs)).includes(type) : false;
+    return cookieConsentPrefs
+      ? JSON.parse(decodeURIComponent(cookieConsentPrefs)).includes(type)
+      : false;
   };
 
   const setCookie = (name, value, options = {}) => {
@@ -72,37 +73,46 @@ const CookieBanner = ({ config, headerScripts }) => {
       options.expires = options.expires.toUTCString();
     }
 
-    let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    let updatedCookie =
+      encodeURIComponent(name) + '=' + encodeURIComponent(value);
 
     for (let optionKey in options) {
-      updatedCookie += "; " + optionKey;
+      updatedCookie += '; ' + optionKey;
       let optionValue = options[optionKey];
       if (optionValue !== true) {
-        updatedCookie += "=" + optionValue;
+        updatedCookie += '=' + optionValue;
       }
     }
-
     document.cookie = updatedCookie;
   };
 
   const getCookie = (name) => {
-    let matches = document.cookie.match(new RegExp(
-      "(?:^|; )" + name.replace(/([.$?*|{}()[]\\\/+^])/g, '\\$1') + "=([^;]*)"
-    ));
+    let matches = document.cookie.match(
+      new RegExp(
+        '(?:^|; )' +
+          name.replace(/([.$?*|{}()[]\\\/+^])/g, '\\$1') +
+          '=([^;]*)',
+      ),
+    );
     return matches ? decodeURIComponent(matches[1]) : undefined;
   };
 
   const handleAccept = () => {
-    setCookie('cookieConsent', true, { 'max-age': config.expires * 24 * 60 * 60 });
-    setCookie('cookieConsentPrefs', JSON.stringify(Object.keys(cookies).filter(key => cookies[key])), { 'max-age': config.expires * 24 * 60 * 60 });
+    setCookie('cookieConsent', true, {
+      'max-age': config.expires * 24 * 60 * 60,
+    });
+    setCookie(
+      'cookieConsentPrefs',
+      JSON.stringify(Object.keys(cookies).filter((key) => cookies[key])),
+      { 'max-age': config.expires * 24 * 60 * 60 },
+    );
     injectScripts();
-    console.log("test");
     setIsBannerVisible(false);
   };
 
   const handleReject = () => {
     setCookie('cookieConsent', false, { 'max-age': -1 });
-    setCookie('cookieConsentPrefs', "", { 'max-age': -1 });
+    setCookie('cookieConsentPrefs', '', { 'max-age': -1 });
     setIsBannerVisible(false);
   };
 
@@ -112,13 +122,23 @@ const CookieBanner = ({ config, headerScripts }) => {
 
   return (
     isBannerVisible && (
-      <div className={`cookie-banner ${config.themeMode} display-${config.displayPosition} full-width-${config.fullWidth}`}>
+      <div
+        className={`cookie-banner ${config.themeMode} display-${config.displayPosition} full-width-${config.fullWidth}`}
+      >
         <div className="title-wrap">
           <h4>{config.title}</h4>
         </div>
         <div className="content-wrap">
           <div className="msg-wrap">
-            <p>{config.description} <a href={config.moreInfoBtnLink} style={{ color: config.primaryColor }}>{config.moreInfoBtnLabel}</a></p>
+            <p>
+              {config.description}{' '}
+              <a
+                href={config.moreInfoBtnLink}
+                style={{ color: config.primaryColor }}
+              >
+                {config.moreInfoBtnLabel}
+              </a>
+            </p>
             <div id="cookieSettings" onClick={handleSettingsToggle}>
               {config.settingsBtnLabel}
             </div>
@@ -127,8 +147,16 @@ const CookieBanner = ({ config, headerScripts }) => {
                 <h5>{config.cookieTypesTitle}</h5>
                 <ul>
                   <li>
-                    <input type="checkbox" name="gdprPrefItem" value="necessary" checked disabled />
-                    <label title={config.necessaryCookieTypeDesc}>{config.necessaryCookieTypeLabel}</label>
+                    <input
+                      type="checkbox"
+                      name="gdprPrefItem"
+                      value="necessary"
+                      checked
+                      disabled
+                    />
+                    <label title={config.necessaryCookieTypeDesc}>
+                      {config.necessaryCookieTypeLabel}
+                    </label>
                   </li>
                   {config.cookieTypes.map((cookieType, index) => (
                     <li key={index}>
@@ -138,12 +166,19 @@ const CookieBanner = ({ config, headerScripts }) => {
                         name="gdprPrefItem"
                         value={cookieType.value}
                         checked={cookies[cookieType.value]}
-                        onChange={() => setCookies({
-                          ...cookies,
-                          [cookieType.value]: !cookies[cookieType.value],
-                        })}
+                        onChange={() =>
+                          setCookies({
+                            ...cookies,
+                            [cookieType.value]: !cookies[cookieType.value],
+                          })
+                        }
                       />
-                      <label htmlFor={`gdprPrefItem${cookieType.value}`} title={cookieType.description}>{cookieType.type}</label>
+                      <label
+                        htmlFor={`gdprPrefItem${cookieType.value}`}
+                        title={cookieType.description}
+                      >
+                        {cookieType.type}
+                      </label>
                     </li>
                   ))}
                 </ul>
@@ -151,11 +186,26 @@ const CookieBanner = ({ config, headerScripts }) => {
             )}
           </div>
           <div className="btn-wrap">
-            <button id="cookieAccept" style={{ color: config.lightColor, background: config.primaryColor, border: `1px solid ${config.primaryColor}` }} onClick={handleAccept}>
+            <button
+              id="cookieAccept"
+              style={{
+                color: config.lightColor,
+                background: config.primaryColor,
+                border: `1px solid ${config.primaryColor}`,
+              }}
+              onClick={handleAccept}
+            >
               {config.acceptBtnLabel}
             </button>
             {config.showDeclineBtn && (
-              <button id="cookieReject" style={{ color: config.primaryColor, border: `1px solid ${config.primaryColor}` }} onClick={handleReject}>
+              <button
+                id="cookieReject"
+                style={{
+                  color: config.primaryColor,
+                  border: `1px solid ${config.primaryColor}`,
+                }}
+                onClick={handleReject}
+              >
                 {config.declineInfoBtnLabel}
               </button>
             )}

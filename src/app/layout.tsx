@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Inter } from "next/font/google";
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
@@ -10,14 +10,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
-import CookieBanner from "@/utils/cookie/cookiebanner";
-import { config, headerScripts } from '@/utils/cookie/index.js';
-import Script from "next/script";
+import CookieBanner from '@/lib/cookie/cookiebanner';
+import { config, headerScripts } from '@/lib/cookie/index.js';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
-
-
-
 
 export const metadata = {
   title:
@@ -41,30 +37,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-    <Script
-      src={`https://www.googletagmanager.com/gtag/js?id=G-3ZMKMEH64J`}
-      strategy="afterInteractive"
-    />
-    <Script id="google-analytics" strategy="afterInteractive">
-      {`
-        window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-3ZMKMEH64J');
-        `}
-    </Script>
-
-    {/*<GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />*/}
-    <body className={`${inter.variable} antialiased `}>
-
-    <Navbar />
-    <Suspense fallback={<Loading />}>
-      <CookieBanner config={config} headerScripts={headerScripts} />,
-      {children}</Suspense>
-    <Footer />
-    <SpeedInsights />
-    </body>
+      {/*<GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />*/}
+      <body className={`${inter.variable} antialiased `}>
+        <Navbar />
+        <Suspense fallback={<Loading />}>
+          <CookieBanner config={config} headerScripts={headerScripts} />,
+          {children}
+        </Suspense>
+        <Footer />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
