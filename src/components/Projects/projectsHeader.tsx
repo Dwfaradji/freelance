@@ -14,7 +14,7 @@ const ProjectsHeader = () => {
       >
         Nos projets
       </h1>
-<div className={"mx-auto w-5/6"}>
+<div className={"mx-auto w-5/6 xxs:w-full"}>
   <Fade cascade>
     <div className="mt-10 flex flex-wrap md:flex-nowrap">
       <div className="m-2 w-full rounded-xl bg-lightblack p-8 text-white md:w-2/4">

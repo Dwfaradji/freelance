@@ -29,7 +29,7 @@ const AboutMore = () => {
           </div>
         </div>
       </Fade>
-      <div className={'p-8'}>
+      <div className={'p-8 xxs:p-0'}>
         <Fade>
           <p className="mt-10 text-lg leading-normal text-white lg:text-2xl">
             {`Mon voyage dans l'univers du développement web a débuté par une
