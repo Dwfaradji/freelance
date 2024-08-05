@@ -28,7 +28,6 @@ const CookieBanner = ({ config, headerScripts }) => {
           if (script.type === 'analytics') {
             // Inject external Google Analytics script
             const tagScript = document.createElement('script');
-            tagScript.strategy = "afterInteractive"
             tagScript.async = true;
             tagScript.src = script.value;
             document.head.appendChild(tagScript);
@@ -37,7 +36,6 @@ const CookieBanner = ({ config, headerScripts }) => {
             tagScript.onload = () => {
               const configScript = document.createElement('script');
               configScript.id = "google-analytics";
-              configScript.strategy = "afterInteractive"
               configScript.innerHTML = `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -98,6 +96,7 @@ const CookieBanner = ({ config, headerScripts }) => {
     setCookie('cookieConsent', true, { 'max-age': config.expires * 24 * 60 * 60 });
     setCookie('cookieConsentPrefs', JSON.stringify(Object.keys(cookies).filter(key => cookies[key])), { 'max-age': config.expires * 24 * 60 * 60 });
     injectScripts();
+    console.log("test");
     setIsBannerVisible(false);
   };
 
