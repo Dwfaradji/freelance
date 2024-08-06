@@ -50,11 +50,12 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
   useEffect(() => {
     if (form) {
       sendDevis();
+
     }
   }, [form, dispatch]);
 
   // Fonction appelée lors de la soumission du formulaire
-  const onSubmit: SubmitHandler<IFormData> = async (data, e) => {
+  const onSubmit: SubmitHandler<IFormData> = async (data) => {
     await dispatch({ type: 'ADD_FORM', payload: data });
     data.dateDebut = formatDateToFR(data.dateDebut);
     data.budgetEstime = budgetEstime;
@@ -77,7 +78,6 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
         router.push('/devis/confirmation');
         reset()
       }else{
-        console.log("error");
         setErrorMsg(true)
       }
     } catch (error) {
@@ -284,7 +284,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
 
             <button
               type={'submit'}
-              className="sm:width-full md:width-full lg:width-full w-1/4 scale-100 items-center justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between ml-3"
+              className="sm:width-full md:width-full lg:width-full ml-3 w-1/4 scale-100 items-center justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between"
             >
               <SendOutlinedIcon className={'-rotate-45'} />
             </button>
@@ -293,7 +293,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
           </>
 
         </div>
-        {!errorMsg &&(
+        {errorMsg &&(
           <p className={"mt-3"}> {"Une erreur s'est produite lors de l'envoie du devis"}</p>
         )}
       </form>

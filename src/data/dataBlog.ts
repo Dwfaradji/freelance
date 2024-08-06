@@ -277,7 +277,8 @@ const blogData: BlogProps[] = [
     readingTime: 10,
     category: "Business",
     date: "2024-05-07"
-  }
+  },
+
 
 
 ];
