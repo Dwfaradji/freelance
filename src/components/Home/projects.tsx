@@ -36,7 +36,7 @@ const Projects = () => {
         <article className="mt-8  flex h-full flex-row flex-wrap px-8 sm:gap-y-2.5 lg:flex-row">
           <div
             className={
-              'size-full from-pink p-8 bg-gradient-to-b  lg:bg-gradient-to-r rounded-tl-xl rounded-tr-xl lg:rounded-tl-xl lg:rounded-bl-xl  lg:w-2/4'
+              'size-full from-pink p-8 bg-gradient-to-b  lg:bg-gradient-to-r rounded-tl-xl rounded-tr-xl lg:rounded-tl-xl lg:rounded-bl-xl w-full lg:w-2/4'
             }
           >
             <Swiper
@@ -54,7 +54,7 @@ const Projects = () => {
                 <SwiperSlide key={project.id}>
                   <Link href={project.link}>
                     <Image
-                      className="h-[30rem] object-contain "
+                      className="h-[10rem] w-full xs:h-[22rem] md:h-[21rem] lg:h-[30rem] object-contain "
                       src={project.image}
                       alt={project.alt}
                       width={1000}
