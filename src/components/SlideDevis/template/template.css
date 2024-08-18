@@ -1,0 +1,32 @@
+.swipperTemplate {
+  cursor: auto;
+}
+
+.swipperTemplate .swiper-container {
+  cursor: pointer; /* Ou tout autre style de curseur que vous préférez */
+}
+
+.swipperTemplate .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 30%;
+  display: flex;
+  justify-content: space-between !important;
+}
+
+.swipperTemplate .swiper-slide img {
+  height: 30dvh;
+  border-radius: 15px;
+}
+
+.swipperTemplate .swiper-slide p {
+  text-align: center !important;
+}
+
+@media (max-width: 600px) {
+  .swipperTemplate .swiper-slide {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

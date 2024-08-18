@@ -1,0 +1,22 @@
+.input-color {
+  border-radius: 50%; /* Pour un arrondi complet */
+  border: none; /* Supprimer la bordure par défaut */
+  padding: 0; /* Supprimer le padding par défaut */
+  cursor: pointer; /* Indiquer qu'il s'agit d'un élément cliquable */
+  height: 5em; /* Hauteur de l'input */
+  width: 5em; /* Largeur de l'input */
+  -webkit-appearance: none; /* Supprimer l'apparence par défaut pour certains navigateurs */
+}
+
+/* Vous pouvez avoir besoin de styles supplémentaires pour cibler spécifiquement la partie colorée de l'input dans certains navigateurs */
+.input-color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.input-color::-webkit-color-swatch {
+  border: none;
+}
+
+.color-picker-container {
+  width: 100%;
+}

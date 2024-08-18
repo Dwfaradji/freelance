@@ -1,0 +1,39 @@
+.mySwiperSlide {
+  z-index: 0;
+}
+
+.mySwiperSlide .swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.swiper-navigation {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.mySwiperSlide .swiper-pagination-progressbar {
+  top: 1em;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.swiper-navigation button {
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.hiddenDisplay {
+  display: none !important;
+}
+
+.displayForm {
+  display: block !important;
+}
