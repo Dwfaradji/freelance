@@ -40,7 +40,7 @@ const MultiColorPicker: React.FC<MultiColorPickerProps> = ({
   }, [selectColors]);
 
   return (
-    <section className="color-picker-container flex size-full flex-wrap justify-around">
+    <section className="flex size-full flex-wrap justify-around">
       {Object.entries(selectColors).map(([colorName, colorValue]) => (
         <div key={colorName} className="m-3 flex items-center">
           <article className="flex justify-center -space-x-14">

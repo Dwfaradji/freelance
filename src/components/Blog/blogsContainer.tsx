@@ -7,21 +7,20 @@ import blogData from '@/data/dataBlog';
 import Image from 'next/image';
 
 const BlogsContainer = () => {
-
   const sortByDateDescending = blogData.sort((a: any, b: any) => {
     const dateA: Date = new Date(a.date);
     const dateB: Date = new Date(b.date);
     return dateB.getTime() - dateA.getTime();
   });
-  const dataHeader = sortByDateDescending.slice(1,sortByDateDescending.length);
+  const dataHeader = sortByDateDescending.slice(1, sortByDateDescending.length);
   return (
     <section className="mx-auto mt-10 text-white">
-      <Fade cascade>
-        <article className="grid grid-cols-3 gap-4 xxs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <article className="grid grid-cols-3 gap-4 xxs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <Fade cascade delay={500} >
           {dataHeader.map((blog, i) => (
             <Link
-              className="flex justify-center"
               key={i}
+              className="flex justify-center"
               href={`/blog/${blog.id.toString()}`}
             >
               <div id={blog.id} className={'m-3'}>
@@ -45,8 +44,9 @@ const BlogsContainer = () => {
               </div>
             </Link>
           ))}
-        </article>
-      </Fade>
+        </Fade>
+      </article>
+
       <div className="mt-10 hidden h-72 w-full flex-col items-center justify-center rounded-xl bg-gradient-to-r from-pink to-purple">
         <h2 className="font-poppins text-3xl font-bold">
           Rester dans la boucle

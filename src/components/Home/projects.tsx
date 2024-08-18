@@ -36,7 +36,7 @@ const Projects = () => {
         <article className="mt-8  flex h-full flex-row flex-wrap px-8 sm:gap-y-2.5 lg:flex-row">
           <div
             className={
-              'size-full from-pink p-8 sm:bg-gradient-to-b  lg:bg-gradient-to-r rounded-tl-xl rounded-tr-xl lg:rounded-tl-xl lg:rounded-bl-xl  lg:w-2/4'
+              'size-full from-pink p-8 bg-gradient-to-b  lg:bg-gradient-to-r rounded-tl-xl rounded-tr-xl lg:rounded-tl-xl lg:rounded-bl-xl  lg:w-2/4'
             }
           >
             <Swiper
@@ -67,7 +67,7 @@ const Projects = () => {
             </Swiper>
           </div>
 
-          <div className="flex w-full flex-col justify-between rounded-xl from-pink sm:bg-gradient-to-t  lg:bg-gradient-to-l  p-8   sm:w-full lg:w-2/4 ">
+          <div className="flex w-full flex-col justify-between rounded-xl from-pink bg-gradient-to-t  lg:bg-gradient-to-l  p-8   sm:w-full lg:w-2/4 ">
             <h2 className="text-xl text-white lg:text-3xl">
               Explorez nos réalisations et laissez-vous inspirer
             </h2>

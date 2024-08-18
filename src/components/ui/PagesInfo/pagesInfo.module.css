@@ -1,0 +1,37 @@
+.container-pages-info {
+  padding: 5em 0;
+}
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2em;
+  color: #5e6163;
+  font-weight: 500;
+}
+
+.header h2 {
+  font-weight: 400;
+  margin: 15px 0 5px 0;
+}
+
+ .tarifsSection {
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  margin: 20px auto;
+}
+
+.tarifsSection a {
+  text-decoration: none;
+  color: #33d1ee;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .tarifs-section {
+    width: 90%;
+  }
+}

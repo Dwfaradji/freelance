@@ -144,7 +144,7 @@ const Slider = ({ data }: Slide) => {
           <div className="mx-auto text-white">
             <p className=" text-left">
               <span className="mb-2 block font-bold">
-                Prêt à donner vie à votre site web personnalisé ?
+                Prêt à donner vie à votre projet ?
               </span>
               Commencez par remplir notre formulaire complémentaire. Ce premier
               pas essentiel nous permet de comprendre en profondeur vos

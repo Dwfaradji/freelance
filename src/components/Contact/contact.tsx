@@ -69,7 +69,7 @@ const Contact = () => {
                 />
                 <br />
                 {errors.firstname && ( // errors est un objet
-                  <span className="text-white">Ce champ est requis</span>
+                  <span className="text-red-400">Ce champ est requis</span>
                 )}
               </div>
               <div className="xxs:ml-0 xxs:mt-2 sm:ml-5 sm:mt-0">
@@ -82,7 +82,7 @@ const Contact = () => {
                 />
                 <br />
                 {errors.business && ( // errors est un objet
-                  <span className="text-white">Ce champ est requis</span>
+                  <span className="text-red-400">Ce champ est requis</span>
                 )}
               </div>
             </div>
@@ -98,7 +98,7 @@ const Contact = () => {
                 />
                 <br />
                 {errors.email && ( // errors est un objet
-                  <span className="text-white">Ce champ est requis</span>
+                  <span className="text-red-400">Ce champ est requis</span>
                 )}
               </div>
               <div className="xxs:ml-0 xxs:mt-2 sm:ml-5 sm:mt-0">
@@ -113,7 +113,7 @@ const Contact = () => {
                 />
                 <br />
                 {errors.phone && ( // errors est un objet
-                  <span className="text-white">Ce champ est requis</span>
+                  <span className="text-red-400">Ce champ est requis</span>
                 )}
               </div>
             </div>
@@ -127,7 +127,7 @@ const Contact = () => {
             />
             <br />
             {errors.content && ( // errors est un objet
-              <span className="text-white">Ce champ est requis</span>
+              <span className="text-red-400">Ce champ est requis</span>
             )}
             <br />
             {buttonSendMsg && (

@@ -1,11 +1,10 @@
 import React from 'react';
-import './logo.css';
 
 // Fonction pour afficher le SVG
 function logoSVG(colors) {
   return (
     <svg
-      className="logoSvg"
+      className="size-full"
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
       width="2000.000000pt"

@@ -298,14 +298,6 @@ const pageInfosPrice: PageInfo[] = [
           échelonnés à des étapes clés du développement. Les modalités de paiement
           précises seront discutées et formalisées dans le contrat de services.`,
   },
-  {
-    title: 'Contactez-moi',
-    text: `Je suis fier d'offrir des tarifs compétitifs et transparents à mes
-          clients tout en maintenant un niveau élevé de qualité et de
-          satisfaction. N'hésitez pas à me contacter pour discuter de votre projet
-          et obtenir un devis personnalisé. Je suis impatient de travailler avec
-          vous pour donner vie à votre vision sur le web.`,
-  },
 ];
 
 const pageInfosProcess: PageInfo[] = [
@@ -366,7 +358,7 @@ const pageInfosProcess: PageInfo[] = [
           en cas de besoin.`,
   },
   {
-    title: 'Conclusion',
+    title: 'Le travail bien fait',
     text: `Le processus de réalisation d'un site web en tant que développeur
           freelance, suivre un processus structuré pour la réalisation d'un site
           web est essentiel pour garantir la satisfaction du client et la qualité
@@ -375,11 +367,12 @@ const pageInfosProcess: PageInfo[] = [
           site web, vous créez une expérience fluide et professionnelle.`,
   },
 ];
-
+const lienPolitiqueConfidentialité=`<a href='https://www.devevoke.com/politique-confidentialité'>politique de confidentialité</a>`
 const pageMentionsLegales: PageInfo[] = [
   {
     titleH1: 'Mentions légales',
   },
+
   {
     title: 'Édition du site',
     text: "En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet https://www.devevoke.com/ l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi: Propriétaire du site : Faradji Boucif - Contact : contact@devevoke.com 06 18 23 76 62 - Adresse : 5 impasse des vergers. Identification de l'entreprise : EI Faradji Boucif au capital social de € - SIREN : 87843895100013 - RCS ou RM : - Adresse postale : 5 impasse des vergers - Directeur de la publication : Faradji boucif - Contact : dw.faradji66@yahoo.co. Hébergeur : OVH SAS - 2 rue Kellermann - BP 80157 - 59053 Roubaix Cedex 1 - Téléphone : 1007",
@@ -398,7 +391,7 @@ const pageMentionsLegales: PageInfo[] = [
   },
   {
     title: 'Liens hypertextes et cookies.',
-    text: "Le site https://www.devevoke.com/ contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers https://www.devevoke.com/. La navigation sur le site https://www.devevoke.com/ est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. Un cookie est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par exemple. Vous avez la possibilité d’<a href='https://www.devevoke.com/politique-confidentialité'>accepter ou de refuser les cookies</a> en modifiant les paramètres de votre navigateur. Aucun cookie ne sera déposé sans votre consentement. Les cookies sont enregistrés pour une durée maximale de 5 mois. Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre <a href='https://www.devevoke.com/politique-confidentialité'>politique de confidentialité</a>.",
+    text: `Le site https://www.devevoke.com/ contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers https://www.devevoke.com/. La navigation sur le site https://www.devevoke.com/ est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. Un cookie est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par exemple. Vous avez la possibilité d’accepter ou de refuser les cookies en modifiant les paramètres de votre navigateur. Aucun cookie ne sera déposé sans votre consentement. Les cookies sont enregistrés pour une durée maximale de 5 mois. Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre ${lienPolitiqueConfidentialité}.`,
   },
   {
     title: 'Droit applicable et attribution de juridiction.',
@@ -464,7 +457,7 @@ const politiqueConfidentialite: PageInfo[] = [
   },
   {
     title: 'Date de la dernière mise à jour',
-    text: 'Date de la dernière mise à jour : 2023-11-16',
+    text: 'Date de la dernière mise à jour : 18-08-2024',
   },
   {
     title: 'Acceptation de la politique de confidentialité',

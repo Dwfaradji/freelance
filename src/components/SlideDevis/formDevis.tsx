@@ -89,10 +89,10 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
   }
 
   return (
-    <section className="mx-auto columns-1 gap-8 text-left text-white md:w-4/5 lg:w-2/4 dark:bg-white">
+    <section className="mx-auto columns-1 gap-8 text-left text-white md:w-4/5 lg:w-2/4 dark:bg-white dark:text-black rounded-xl">
       <form className={`p-3`} onSubmit={handleSubmit(onSubmit)}>
         {/* Champ pour le nom ou la société */}
-        <div className={'1-partie text-white dark:text-gray-300'}>
+        <div className={'1-partie text-white dark:text-black'}>
           <div className="field mb-4">
             <label htmlFor="nom">Nom / Société :</label>
             <input
@@ -161,7 +161,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
             />
           </div>
         </div>
-        <div className="2_partie text-white dark:text-gray-300">
+        <div className="2_partie text-white dark:text-black">
           {/* Boucle sur les questions du formulaire */}
           {questions.map((question: Question) => (
             <div className="question mb-6" key={question.id}>
@@ -181,7 +181,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
                   />
                 </div>
                 <label
-                  className="font-me mr-3 ms-2 text-[1rem] dark:text-gray-300"
+                  className="font-me mr-3 ms-2 text-[1rem] dark:text-black"
                   htmlFor={`${question.id}-1`}
                 >
                   {question.label}

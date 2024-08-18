@@ -1,5 +1,6 @@
 import React from 'react';
-import './pagesInfo.css';
+// @ts-ignore
+import style from "./pagesInfo.module.css" ;
 
 interface Text {
   titleH1?: string;
@@ -16,14 +17,18 @@ interface PagesInfoProps {
 const PagesInfo = ({ infosText }: PagesInfoProps) => {
   return (
     <div className="mx-auto max-w-7xl rounded-2xl p-8 text-white shadow-md shadow-pink">
-      <header className="header text-center">
-        <h1 className={'text-2xl text-white'}>{infosText[0].titleH1}</h1>
+      <header className={`${style.header} text-center`}>
+        <h1 className={'text-2xl text-white'}>
+          {infosText[0].titleH1 ?? 'Mentions légales'}
+        </h1>
       </header>
-      <section className="tarifs-section">
+      <section className={style.tarifsSection}>
         {infosText.map((item, i) => (
-          <article key={i.toString()} className="tarif-card">
+          <article key={i.toString()} className= {style.tarifCard}>
             <h2 className={'mb-3 mt-8 text-xl'}>{item.title}</h2>
-            <p>{item.text}</p>
+            <p
+              dangerouslySetInnerHTML={{ __html: item.text ?? '' }} // Fournir une chaîne vide par défaut
+            />
           </article>
         ))}
       </section>
