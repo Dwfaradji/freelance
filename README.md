@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Super, je vais adapter le README pour refléter que le site est déjà déployé sur Vercel. Voici une version mise à jour :
 
-## Getting Started
+---
 
-First, run the development server:
+# Mon Portfolio de Développeur Freelance
+
+Bienvenue sur le projet Next.js de mon portfolio. Ce site est conçu pour présenter mes compétences et projets en tant que développeur freelance. Le projet a été démarré avec [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## 🚀 Démarrer en Local
+
+Pour démarrer le serveur de développement localement, exécutez la commande suivante :
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Une fois le serveur démarré, ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour voir le résultat.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Vous pouvez commencer à modifier la page en éditant le fichier `app/page.tsx`. La page se met à jour automatiquement à chaque modification du fichier.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Ce projet utilise [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) pour optimiser et charger automatiquement Inter, une police personnalisée de Google Fonts.
 
-## Learn More
+## 🌐 Site Déployé
 
-To learn more about Next.js, take a look at the following resources:
+Votre site est déjà déployé et accessible en ligne. Vous pouvez le consulter directement à l'adresse suivante : [Votre Site en Ligne](https://votre-site.vercel.app)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📚 En Savoir Plus
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Pour en savoir plus sur Next.js, consultez les ressources suivantes :
 
-## Deploy on Vercel
+- [Documentation Next.js](https://nextjs.org/docs) - Découvrez les fonctionnalités et l'API de Next.js.
+- [Learn Next.js](https://nextjs.org/learn) - Un tutoriel interactif sur Next.js.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Vous pouvez également consulter [le dépôt GitHub de Next.js](https://github.com/vercel/next.js/) - vos retours et contributions sont les bienvenus !
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🔧 Déploiement et Gestion
+
+Le déploiement de ce projet est géré via la [plateforme Vercel](https://vercel.com). Vercel s'occupe automatiquement du déploiement et de la mise à jour de votre site à chaque push sur le dépôt.
+
+Pour plus d'informations sur la gestion et la personnalisation de votre déploiement, consultez la [documentation de Vercel](https://vercel.com/docs).
+
+---
+

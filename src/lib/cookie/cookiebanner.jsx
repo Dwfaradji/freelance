@@ -38,17 +38,17 @@ const CookieBanner = ({ config, headerScripts }) => {
               const configScript = document.createElement('script');
               configScript.id = 'google-analytics';
               configScript.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('consent', 'default', {
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'ad_storage': 'denied',
-        'analytics_storage': 'denied',
-        'wait_for_update': 500,
-        });
-        dataLayer.push({'gtm.start': new Date().getTime(), 'event': 'gtm.js'});
-            `;
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_user_data': '${cookies.analytics ? 'granted' : 'denied'}',
+      'ad_personalization': '${cookies.analytics ? 'granted' : 'denied'}',
+      'ad_storage': '${cookies.analytics ? 'granted' : 'denied'}',
+      'analytics_storage': '${cookies.analytics ? 'granted' : 'denied'}',
+      'wait_for_update': 500,
+    });
+    dataLayer.push({'gtm.start': new Date().getTime(), 'event': 'gtm.js'});
+  `;
               document.head.appendChild(configScript);
             };
           } else {
