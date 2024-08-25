@@ -2,26 +2,45 @@
 import React from 'react';
 import Link from 'next/link';
 import { FacebookOutlined, LinkedIn, X, GitHub } from '@mui/icons-material';
+import NewsLetters from '@/components/ui/Newsletters/newsLetters';
 
 const Footer = () => {
   return (
     <div className="mt-10 w-full rounded-xl bg-lightblack p-8 md:p-20">
-      <footer className="flex max-w-screen-2xl mx-auto flex-col items-center justify-center text-white">
+      <footer className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center text-white">
         <div className="flex w-full flex-wrap justify-between gap-8">
           <div className="sm:col-span-12 md:col-span-4">
             <h3 className="mb-5 text-left text-xl">Infos général</h3>
-            <ul className={""}>
+            <ul className={''}>
               <li>
-                <Link className={" xxs:block xxs:h-12 md:h-auto"}  href={'/info-procedure'}>Procédure</Link>
+                <Link
+                  className={' xxs:block xxs:h-12 md:h-auto'}
+                  href={'/info-procedure'}
+                >
+                  Procédure
+                </Link>
               </li>
               <li>
-                <Link className={" xxs:block xxs:h-12 md:h-auto"} href={'/info-tarif'}>Les tarifs</Link>
+                <Link
+                  className={' xxs:block xxs:h-12 md:h-auto'}
+                  href={'/info-tarif'}
+                >
+                  Les tarifs
+                </Link>
               </li>
               <li>
-                <Link className={" xxs:block xxs:h-12 md:h-auto"} href={'/mentions-legal'}>Mentions légal</Link>
+                <Link
+                  className={' xxs:block xxs:h-12 md:h-auto'}
+                  href={'/mentions-legal'}
+                >
+                  Mentions légal
+                </Link>
               </li>
               <li>
-                <Link className={" xxs:block xxs:h-12 md:h-auto"} href={'/politique-confidentialite'}>
+                <Link
+                  className={' xxs:block xxs:h-12 md:h-auto'}
+                  href={'/politique-confidentialite'}
+                >
                   Politique de confidentialité
                 </Link>
               </li>

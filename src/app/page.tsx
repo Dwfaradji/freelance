@@ -9,8 +9,9 @@ import Header from '@/components/Home/header';
 import React from 'react';
 import { MyProvider } from '@/context/context';
 import { initialState, reducer } from '@/context/reducer';
-import Link from "next/link";
-import Button from "@/components/ui/Atoms/button";
+import Link from 'next/link';
+import Button from '@/components/ui/Atoms/button';
+import NewsLetters from '@/components/ui/Newsletters/newsLetters';
 
 const Page = () => {
   return (
@@ -33,6 +34,7 @@ const Page = () => {
           </div>
           <FeaturedTemplate />
           <Testimonial />
+          <NewsLetters />
         </div>
       </main>
     </MyProvider>
