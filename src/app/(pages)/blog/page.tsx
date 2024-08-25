@@ -5,10 +5,10 @@ import BlogsContainer from '@/components/Blog/blogsContainer';
 
 const Page = () => {
   return (
-    <main>
+    <div>
       <BlogHeader />
       <BlogsContainer />
-    </main>
+    </div>
   );
 };
 

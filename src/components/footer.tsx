@@ -61,14 +61,14 @@ const Footer = () => {
 
           <div className="footer__section">
             <h3 className="mb-5 text-left text-xl">Contact</h3>
-            <p className={'mb-1'}>
+            <p className={'mb-1 flex flex-wrap justify-between'}>
               Email:
               <a className="ml-1 text-white" href="mailto:contact@devevoke.com">
                 contact@devevoke.com
               </a>
             </p>
-            <p className={'mb-1'}>Téléphone: 04 34 29 76 40</p>
-            <p className={'mb-1'}>
+            <p className={'mb-1 flex flex-wrap justify-between'}>Téléphone: 04 34 29 76 40</p>
+            <p className={'mb-1 flex flex-wrap justify-between'}>
               Adresse: 5 impasse des vergers,
               <br /> 66370 Pézilla la rivière
             </p>

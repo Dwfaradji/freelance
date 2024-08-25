@@ -5,9 +5,9 @@ import BlogPage from '@/components/Blog/blogPage'
 const Page = ({ params }: { params: { id: string } }) => {
   const id = params.id;
   return (
-    <main>
+    <div>
       <BlogPage id={id} />
-    </main>
+    </div>
   );
 };
 

@@ -7,14 +7,14 @@ import PricingCTA from '@/components/Pricing/pricingCTA';
 
 const Page = () => {
   return (
-    <main>
+    <div>
       <PricingHeader />
       <div className="mt-20">
         <PricingMain />
       </div>
       <PricingFAQ />
       <PricingCTA />
-    </main>
+    </div>
   );
 };
 

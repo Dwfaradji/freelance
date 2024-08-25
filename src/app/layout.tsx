@@ -40,10 +40,13 @@ export default function RootLayout({
       {/*<GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />*/}
       <body className={`${inter.variable} antialiased `}>
         <Navbar />
-        <Suspense fallback={<Loading />}>
-          <CookieBanner config={config} headerScripts={headerScripts} />,
-          {children}
-        </Suspense>
+        <main className={"mx-auto md:container max-w-7xl p-2"}>
+          <Suspense fallback={<Loading />}>
+            <CookieBanner config={config} headerScripts={headerScripts} />
+            {children}
+          </Suspense>
+        </main>
+
         <Footer />
         <SpeedInsights />
       </body>

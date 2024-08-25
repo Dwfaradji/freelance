@@ -4,9 +4,9 @@ import Contact from '@/components/Contact/contact';
 
 const Page = () => {
   return (
-    <main>
+    <div>
       <Contact />
-    </main>
+    </div>
   );
 };
 

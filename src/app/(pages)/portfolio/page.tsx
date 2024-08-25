@@ -5,10 +5,10 @@ import ProjectsRoles from '@/components/Projects/projectsRoles';
 
 const Page = () => {
   return (
-    <main>
+    <div>
       <ProjectsHeader />
       <ProjectsRoles />
-    </main>
+    </div>
   );
 };
 

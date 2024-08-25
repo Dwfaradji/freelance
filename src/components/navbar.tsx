@@ -3,14 +3,16 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import ImportLogo from '@/components/ui/Logo/importLogo';
 import OtherHousesIcon from '@mui/icons-material/OtherHouses';
+import { Fade } from "react-awesome-reveal";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [colorLogo, setColorLogo] = useState<string>();
+
   useEffect(() => {
     window.addEventListener('scroll', function () {
       if (window.scrollY > 100) {
-        // Exemple : changer l'état lorsque le scroll dépasse 100px
         setColorLogo('colorP');
       } else {
         setColorLogo('colorS');
@@ -18,11 +20,28 @@ const Navbar = () => {
     });
   }, []);
 
+  const handleMenuClick = () => {
+    if (openMenu) {
+      // Si le menu est ouvert et qu'on veut le fermer
+      setIsAnimating(true);
+      setTimeout(() => {
+        setOpenMenu(false);
+        setIsAnimating(false);
+      }, 500); // La durée de l'animation doit correspondre à celle définie pour le composant Fade
+    } else {
+      setOpenMenu(true);
+    }
+  };
+
+  const handleLinkClick = () => {
+    handleMenuClick(); // Fermer le menu lors du clic sur un lien
+  };
+
   return (
-    <nav className="fixed  inset-x-0 top-0 z-30 w-full text-blue">
+    <nav className="fixed inset-x-0 top-0 z-30 w-full text-blue">
       <div className="mx-auto px-3 py-2 backdrop-blur-lg">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex w-full items-center justify-between  ">
+          <div className="flex w-full items-center justify-between">
             <Link className="shrink-0 font-poppins" href="/">
               <ImportLogo displayColor={colorLogo} />
             </Link>
@@ -76,7 +95,7 @@ const Navbar = () => {
           <div className="-mr-2 flex md:hidden">
             <button
               aria-label={"navbar"}
-              onClick={() => setOpenMenu(!openMenu)}
+              onClick={handleMenuClick}
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:text-gray-300 focus:outline-none dark:text-white"
             >
               <svg
@@ -93,53 +112,60 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {openMenu && (
-        <div className="backdrop-blur-lg md:hidden">
+      {(openMenu || isAnimating) && (
+        <Fade direction="left" triggerOnce className="backdrop-blur-lg md:hidden">
           <div className="space-y-1 pb-3 pt-2 sm:px-3 md:px-2">
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
               href={'/'}
+              onClick={handleLinkClick}
             >
               <OtherHousesIcon />
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
               href={'/a_propos'}
+              onClick={handleLinkClick}
             >
               A propos
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
               href={'/templates'}
+              onClick={handleLinkClick}
             >
               Nos Templates
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
               href={'/blog'}
+              onClick={handleLinkClick}
             >
               Blog
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
               href={'/tarifs'}
+              onClick={handleLinkClick}
             >
               Tarifs
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
               href={'/portfolio'}
+              onClick={handleLinkClick}
             >
               Portfolio
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
               href={'/contact'}
+              onClick={handleLinkClick}
             >
               Contact
             </Link>
           </div>
-        </div>
+        </Fade>
       )}
     </nav>
   );

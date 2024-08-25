@@ -2,7 +2,7 @@
 import Testimonial from '@/components/Home/testimonial';
 import Pricing from '@/components/Home/pricing';
 import FeaturedTemplate from '@/components/Home/featuredTemplate';
-import FeatureSection from '@/components/Home/featureSection';
+import AnimatedStats from '@/components/Home/AnimatedStats';
 import Projects from '@/components/Home/projects';
 import Offerings from '@/components/Home/offerings';
 import Header from '@/components/Home/header';
@@ -16,10 +16,9 @@ import NewsLetters from '@/components/ui/Newsletters/newsLetters';
 const Page = () => {
   return (
     <MyProvider initialState={initialState} reducer={reducer}>
-      <main className={'mx-auto md:container'}>
         <div className=" h-auto w-full">
           <Header />
-          <FeatureSection />
+          <AnimatedStats />
           <Projects />
           <Offerings />
           <Pricing />
@@ -36,7 +35,6 @@ const Page = () => {
           <Testimonial />
           <NewsLetters />
         </div>
-      </main>
     </MyProvider>
   );
 };

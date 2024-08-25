@@ -4,9 +4,9 @@ import { pageInfosPrice } from '@/data/data';
 
 const Page = () => {
   return (
-    <main>
+    <div>
       <PagesInfo infosText={pageInfosPrice} />
-    </main>
+    </div>
   );
 };
 

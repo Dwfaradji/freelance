@@ -3,14 +3,12 @@ import React from 'react';
 
 import { articles } from '@/data/dataSlideDevis';
 import Template from '@/components/Template/template';
-import { main } from '@popperjs/core';
-import { Fade, Slide, AttentionSeeker } from 'react-awesome-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 const Page = () => {
   return (
-    <main>
-      <section>
-        <Fade cascade reverse={false} delay={500} direction={'right'}>
+      <div className={"pt-12"}>
+        <Fade cascade reverse={false} delay={500} direction={'left'}>
           <h1
             className={
               'font-poppins  text-2xl font-semibold text-white lg:text-4xl xl:text-7xl '
@@ -56,8 +54,7 @@ const Page = () => {
             ))}
           </Fade>
         </article>
-      </section>
-    </main>
+      </div>
   );
 };
 

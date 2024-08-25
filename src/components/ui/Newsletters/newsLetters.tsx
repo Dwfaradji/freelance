@@ -50,56 +50,60 @@ const NewsLetters = () => {
   }, [message]);
 
   return (
-    <section className={'px-3'}>
-      <h2 className={'py-3 text-white'}>Rejoignez notre Communauté !</h2>
-      <div className={'text-white'}>
-        <p>
-          En vous abonnant à notre newsletter, vous ne manquerez plus aucune de
-          nos actualités ! Bénéficiez d’avantages uniques :
-        </p>
+    <section className={'mx-auto my-20 h-auto'}>
+      <div className={"w-3/4 p-12 xxs:w-full xs:w-full sm:w-3/4"}>
+        <h2 className={'py-3 text-white'}>Rejoignez notre Communauté !</h2>
+        <div className={'text-white '}>
+          <p>
+            En vous abonnant à notre newsletter, vous ne manquerez plus aucune de
+            nos actualités ! Bénéficiez d’avantages uniques :
+          </p>
 
-        <ul className={'list-disc px-5 py-2'}>
-          <li>
-            {' '}
-            Offres exclusives : Accédez à des promotions réservées uniquement à
-            nos abonnés.
-          </li>
-          <li>
-            {' '}
-            Contenu Premium : Recevez des articles et des guides spécialement
-            conçus pour vous.
-          </li>
-          <li>
-            {' '}
-            Événements à venir : Soyez informé(e) en avant-première de nos
-            événements et lancements.
-          </li>
-          <li>
-            {' '}
-            Inscrivez-vous maintenant pour ne rien manquer de notre actualité et
-            profiter d’offres spéciales !
-          </li>
-        </ul>
-      </div>
-      <div className="mt-3   flex  w-full sm:w-2/4 lg:w-1/3">
-        <Input
-          placeholder="Adresse E-mail"
-          value={email} // Liaison avec l'état email
-          onChange={handleChange} // Gère les changements dans le champ de saisie
-        />
-        <Button
-          colorClass="bg-gradient-to-r from-pink to-purple"
-          title="NewsLetter"
-          textColor="text-white"
-          marginClass="ml-5"
-          onClick={envoyer} // Gère l'envoi du formulaire
-        />
-      </div>
-      {message && (
-        <div className=" left-0 top-6 mt-2 rounded px-4 py-2 text-white">
-          {message}
+          <ul className={'list-disc px-5 py-2'}>
+            <li>
+              {' '}
+              Offres exclusives : Accédez à des promotions réservées uniquement à
+              nos abonnés.
+            </li>
+            <li>
+              {' '}
+              Contenu Premium : Recevez des articles et des guides spécialement
+              conçus pour vous.
+            </li>
+            <li>
+              {' '}
+              Événements à venir : Soyez informé(e) en avant-première de nos
+              événements et lancements.
+            </li>
+            <li>
+              {' '}
+              Inscrivez-vous maintenant pour ne rien manquer de notre actualité et
+              profiter d’offres spéciales !
+            </li>
+          </ul>
         </div>
-      )}
+        <div className="mt-3 flex sm:w-2/4 lg:w-1/3">
+          <Input
+            placeholder="Adresse E-mail"
+            value={email} // Liaison avec l'état email
+            onChange={handleChange} // Gère les changements dans le champ de saisie
+          />
+          <Button
+            colorClass="bg-gradient-to-r from-pink to-purple"
+            title="NewsLetter"
+            textColor="text-white"
+            marginClass="ml-2"
+            onClick={envoyer} // Gère l'envoi du formulaire
+          />
+        </div>
+        {message && (
+          <div className=" left-0 top-6 mt-2 rounded px-4 py-2 text-white">
+            {message}
+          </div>
+        )}
+
+      </div>
+
     </section>
   );
 };

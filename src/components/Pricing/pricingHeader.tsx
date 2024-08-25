@@ -6,7 +6,7 @@ import { dataPriceOptions } from '@/data/data';
 
 const PricingHeader = () => {
   return (
-    <header className="mx-auto mt-10 flex max-w-7xl flex-col items-center font-poppins text-white">
+    <header className="mx-auto mt-10 flex  flex-col items-center font-poppins text-white">
       <Fade>
         <h1 className="m-5 text-6xl font-bold xxs:text-xl sm:text-4xl lg:text-6xl">
           Une tarification simple et transparente
