@@ -11,16 +11,14 @@ import { Fade } from "react-awesome-reveal";
 const AboutGrid = () => {
   return (
     <article className="mx-auto mt-20 grid grid-cols-3 justify-items-center gap-16 p-8 xxs:grid-cols-1 sm:grid-cols-3">
-      <Fade cascade delay={100}>
+      <Fade cascade triggerOnce >
         <AboutTeamCard imgSrc={String(react.src)} altText="React" />
         <AboutTeamCard imgSrc={String(nextjs.src)} altText="NextJs" />
         <AboutTeamCard imgSrc={String(tailwind.src)} altText="TailwindCss" />
         <AboutTeamCard imgSrc={String(nodejs.src)} altText="NodeJs" />
         <AboutTeamCard imgSrc={String(postGrey.src)} altText="PostGreySql" />
         <AboutTeamCard imgSrc={String(symfony.src)} altText="Symfony" />
-
       </Fade>
-
     </article>
   );
 };

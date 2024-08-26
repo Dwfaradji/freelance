@@ -6,8 +6,8 @@ import NewsLetters from '@/components/ui/Newsletters/newsLetters';
 
 const Footer = () => {
   return (
-    <div className="mt-10 w-full rounded-xl bg-lightblack p-8 md:p-20">
-      <footer className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center text-white">
+    <footer className="mt-10 w-full rounded-xl bg-lightblack p-8 md:p-20">
+      <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center text-white">
         <div className="flex w-full flex-wrap justify-between gap-8">
           <div className="sm:col-span-12 md:col-span-4">
             <h3 className="mb-5 text-left text-xl">Infos général</h3>
@@ -116,10 +116,10 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} DevEvoke - Tous droits réservés.
           </p>
         </div>
-      </footer>
+      </div>
 
       {/*</div>*/}
-    </div>
+    </footer>
   );
 };
 

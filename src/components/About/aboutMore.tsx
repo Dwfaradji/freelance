@@ -8,7 +8,7 @@ import aboutImg from '@/images/about/about-image.webp';
 const AboutMore = () => {
   return (
     <section className="mx-auto mt-10">
-      <div className="grid h-full lg:grid-cols-2 overflow-hidden xxs:grid-cols-1 xxs:gap-0  xs:grid-cols-1 sm:grid-cols-2 sm:gap-4">
+      <article className="grid h-full lg:grid-cols-2 overflow-hidden xxs:grid-cols-1 xxs:gap-0  xs:grid-cols-1 sm:grid-cols-2 sm:gap-4">
         <Fade direction={"bottom-left"}>
           <div className="col-start-1 col-end-3 overflow-hidden rounded-xl">
             <Image
@@ -31,10 +31,10 @@ const AboutMore = () => {
             />
           </div>
         </Fade>
-      </div>
+      </article>
 
-      <div className={'p-8 xxs:p-0'}>
-        <Fade direction={"right"} reverse={false} delay={1000}>
+      <article className={'p-8 xxs:p-0'}>
+        <Fade direction={"right"} delay={1000}>
           <p className="mt-10 text-lg text-white lg:text-2xl -z-10 relative">
             {`Mon voyage dans l'univers du développement web a débuté par une
             fascination pour la technologie et une curiosité insatiable pour les
@@ -56,7 +56,7 @@ const AboutMore = () => {
 
         <div
           className="h-full overflow-hidden ">
-          <Fade reverse={false} delay={1000} direction={"left"}>
+          <Fade delay={1000} direction={"left"}>
             <div className="col-start-3 overflow-hidden rounded-xl xxs:col-start-1 sm:col-start-3">
               <Image
                 className=" size-full z-10 relative"
@@ -70,7 +70,7 @@ const AboutMore = () => {
         </div>
 
 
-        <Fade direction={"down"} reverse={false} delay={1000} className={"-z-20 relative"}>
+        <Fade direction={"down"} delay={1000} className={"-z-20 relative"}>
           <p className=" mt-10 text-lg text-white lg:text-2xl">
             {`J'ai plongé dans l'écosystème React, embrassant Next.js pour ses
             capacités de rendu côté serveur et d'optimisation des performances.
@@ -91,7 +91,7 @@ const AboutMore = () => {
             révolutionnera la manière dont nous interagissons avec le web.`}
           </p>
         </Fade>
-      </div>
+      </article>
     </section>
   );
 };

@@ -50,9 +50,9 @@ const NewsLetters = () => {
   }, [message]);
 
   return (
-    <section className={'mx-auto my-20 h-auto'}>
-      <div className={"w-3/4 p-12 xxs:w-full xs:w-full sm:w-3/4"}>
-        <h2 className={'py-3 text-white'}>Rejoignez notre Communauté !</h2>
+    <section className={'mx-auto h-auto'}>
+      <div className={"w-full xxs:w-full xs:w-full sm:w-3/4"}>
+        <h2 className={'text-xl text-white lg:text-3xl py-3 '}>Rejoignez notre Communauté !</h2>
         <div className={'text-white '}>
           <p>
             En vous abonnant à notre newsletter, vous ne manquerez plus aucune de
@@ -82,11 +82,12 @@ const NewsLetters = () => {
             </li>
           </ul>
         </div>
-        <div className="mt-3 flex sm:w-2/4 lg:w-1/3">
+        <div className="mt-3 flex sm:w-2/4 lg:w-1/3 flex-wrap items-center gap-4">
           <Input
             placeholder="Adresse E-mail"
             value={email} // Liaison avec l'état email
             onChange={handleChange} // Gère les changements dans le champ de saisie
+
           />
           <Button
             colorClass="bg-gradient-to-r from-pink to-purple"

@@ -7,8 +7,8 @@ const AboutTeamBigCard = () => {
 
   return (
     <section className="mt-10">
-      <div className="flex size-full justify-around flex-col-reverse  items-center  rounded-xl bg-lightblack lg:flex-row">
-        <Fade className={"w-full lg:w-1/3 items-start flex p-4"} direction={"left"} reverse={false} duration={3000}>
+      <article className="flex size-full justify-around flex-col-reverse  items-center  rounded-xl bg-lightblack lg:flex-row">
+        <Fade className={"w-full lg:w-1/3 items-start flex p-4"} direction={"left"} duration={3000}>
           <Image
             width={400}
             height={400}
@@ -38,7 +38,7 @@ const AboutTeamBigCard = () => {
           </Fade>
 
         </div>
-      </div>
+      </article>
     </section>
   );
 };

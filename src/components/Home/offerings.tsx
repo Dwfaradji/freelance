@@ -6,7 +6,7 @@ const Offerings = () => {
   return (
     <section>
       <Fade cascade>
-        <div className=" mx-auto mt-20 px-8">
+        <article className=" mx-auto mt-20 px-8">
           <h2 className="text-xl font-bold text-white lg:text-3xl">
             Services proposés
           </h2>
@@ -28,7 +28,7 @@ const Offerings = () => {
                             Maintenance de site web,
                             Formation.`}
           </p>
-        </div>
+        </article>
       </Fade>
       <Fade cascade>
         <article className="mx-auto my-20 flex flex-row flex-wrap justify-between gap-10 xxs:flex-col xs:flex-col sm:flex-row p-2 ">

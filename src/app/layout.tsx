@@ -4,7 +4,6 @@ import './globals.css';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import Loading from '@/app/loading';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -37,18 +36,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      {/*<GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />*/}
+      <CookieBanner config={config} headerScripts={headerScripts} />
       <body className={`${inter.variable} antialiased `}>
         <Navbar />
         <main className={"mx-auto md:container max-w-7xl p-2"}>
           <Suspense fallback={<Loading />}>
-            <CookieBanner config={config} headerScripts={headerScripts} />
             {children}
           </Suspense>
         </main>
 
         <Footer />
-        <SpeedInsights />
+        {/*<SpeedInsights />*/}
       </body>
     </html>
   );

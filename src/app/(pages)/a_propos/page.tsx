@@ -7,12 +7,12 @@ import AboutGrid from '@/components/About/aboutGrid';
 
 const Page = () => {
   return (
-        <div>
+        <section>
           <AboutHeader />
           <AboutMore />
           <AboutTeamBigCard />
           <AboutGrid />
-        </div>
+        </section>
   );
 };
 

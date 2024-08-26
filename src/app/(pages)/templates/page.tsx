@@ -8,7 +8,7 @@ import { Fade } from 'react-awesome-reveal';
 const Page = () => {
   return (
       <div className={"pt-12"}>
-        <Fade cascade reverse={false} delay={500} direction={'left'}>
+        <Fade cascade delay={500} direction={'left'}>
           <h1
             className={
               'font-poppins  text-2xl font-semibold text-white lg:text-4xl xl:text-7xl '
@@ -41,7 +41,7 @@ const Page = () => {
             'mt-20 grid grid-cols-3 gap-20 rounded-2xl p-8 xxs:grid-cols-1 lg:grid-cols-3'
           }
         >
-          <Fade cascade reverse={false} delay={1000} direction={'bottom-left'}>
+          <Fade cascade triggerOnce delay={500} direction={'bottom-left'}>
             {articles.map((article, i) => (
               <div key={i}>
                 <Template

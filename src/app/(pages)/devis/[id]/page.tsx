@@ -7,10 +7,10 @@ import { data } from '@/data/dataSlideDevis';
 export default function Page({ params }: { params: { id: string } }) {
   const id = params.id;
   return (
-    <main>
+    <div className={"mainSwiperSlide h-dvh"}>
       {id === '0' && (
-        <section className="m-8 h-full">
-          <h1 className="m-6 text-center text-xl text-white"> SITE VITRINE </h1>
+        <section>
+          <h1 className=" text-center text-xl text-white"> SITE VITRINE </h1>
           <Slider data={data} />
         </section>
       )}
@@ -50,6 +50,6 @@ export default function Page({ params }: { params: { id: string } }) {
           <FormulaireDevis hrefLink={'/'} />
         </section>
       )}
-    </main>
+    </div>
   );
 }

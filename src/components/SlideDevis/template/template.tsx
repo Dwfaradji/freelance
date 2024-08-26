@@ -51,7 +51,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
   }, [selectedTemplateOption]);
 
   return (
-    <section>
+    <section className={"aspect-auto"}>
       <Swiper
         breakpointsBase={'window'}
         effect={'coverflow'}
@@ -69,19 +69,21 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
         pagination={false}
         allowTouchMove={true}
         modules={[EffectCoverflow, Pagination, Navigation]}
-        className="swipperTemplate"
+        className="swiperTemplate"
       >
         {articles.map((article, index) => (
           <SwiperSlide key={article.id}>
-            <article className="group relative flex cursor-pointer flex-col items-center justify-between  ">
+            <article className="group size-full relative flex cursor-pointer flex-col items-center justify-between  ">
               <Images
-                width={400}
+                width={600}
                 height={600}
                 src={article.image}
                 alt={article.title}
+                className="size-full"
+                priority={true}
               />
 
-              <div className="absolute flex size-full flex-col items-center justify-between rounded-2xl bg-black bg-opacity-0 p-1 text-xs text-white opacity-0  backdrop-blur-sm transition-opacity duration-300 group-hover:bg-opacity-50 group-hover:opacity-100 md:p-4 lg:text-base">
+              <div className="absolute size-full flex flex-col items-center justify-between rounded-2xl bg-black bg-opacity-0 p-1 text-xs text-white opacity-0  backdrop-blur-sm transition-opacity duration-300 group-hover:bg-opacity-50 group-hover:opacity-100 md:p-4 lg:text-base">
                 <p className=" flex h-full items-center justify-center text-left">
                   {article.description}
                 </p>
@@ -95,9 +97,9 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
               </div>
             </article>
 
-            <div className="border-sky-500 m-8 flex w-full flex-col  items-center justify-center rounded-2xl border p-2">
+            <div className="border-sky-500 my-8 flex w-full flex-col  items-center justify-center rounded-2xl border p-2">
               <label
-                className={' h-full cursor-pointer'}
+                className={'size-full cursor-pointer'}
                 htmlFor={String(article.id)}
               >
                 {article.title}

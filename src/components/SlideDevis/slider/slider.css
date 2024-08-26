@@ -1,8 +1,8 @@
-.mySwiperSlide {
+.mainSwiperSlide {
   z-index: 0;
 }
 
-.mySwiperSlide .swiper-slide {
+.mainSwiperSlide .swiper-slide {
   text-align: center;
   /* Center slide text vertically */
   display: flex;
@@ -11,29 +11,33 @@
   flex-direction: column;
 }
 
-.swiper-navigation {
+.mainSwiperSlide .swiper-navigation {
   text-align: center;
   display: flex;
   justify-content: space-around;
 }
 
-.mySwiperSlide .swiper-pagination-progressbar {
+.mainSwiperSlide .swiper-pagination-progressbar {
   top: 1em;
   padding: 5px;
   border-radius: 50px;
 }
 
-.swiper-navigation button {
+.mainSwiperSlide  .swiper-navigation button {
   cursor: pointer;
   text-align: center;
   display: flex;
   align-items: center;
 }
 
-.hiddenDisplay {
+.mainSwiperSlide  .swiper-wrapper{
+  align-items: flex-start;
+}
+
+  .hiddenDisplay {
   display: none !important;
 }
 
-.displayForm {
+ .displayForm {
   display: block !important;
 }

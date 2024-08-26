@@ -84,7 +84,7 @@ const Slider = ({ data }: Slide) => {
           navigation={false}
           modules={[Pagination, Navigation]}
           allowTouchMove={false}
-          className="mySwiperSlide"
+          className="mainSwiperSlide"
         >
           {data.map(({ title, content, ComponentType, props, icon }, index) => (
             <SwiperSlide key={index}>
@@ -103,7 +103,7 @@ const Slider = ({ data }: Slide) => {
                   />
                 </div>
               </Fade>
-              <div className="m-4 w-full ">
+              <div className="w-full mt-4 ">
                 <ComponentType {...props} />
               </div>
             </SwiperSlide>
@@ -141,7 +141,7 @@ const Slider = ({ data }: Slide) => {
       {/*Affiche le formulaire lorsque displaySlide est true*/}
       {displaySlide && (
         <Fade>
-          <div className="mx-auto text-white">
+          <article className="mx-auto text-white">
             <p className=" text-left">
               <span className="mb-2 block font-bold">
                 Prêt à donner vie à votre projet ?
@@ -163,7 +163,7 @@ const Slider = ({ data }: Slide) => {
               <h2 className="mb-5 text-xl text-white">{'Formulaire'}</h2>
               <FormulaireDevis onClickBack={back} hrefLink={'#'} />
             </div>
-          </div>
+          </article>
         </Fade>
       )}
     </>

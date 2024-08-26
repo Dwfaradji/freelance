@@ -16,7 +16,6 @@ import NewsLetters from '@/components/ui/Newsletters/newsLetters';
 const Page = () => {
   return (
     <MyProvider initialState={initialState} reducer={reducer}>
-        <div className=" h-auto w-full">
           <Header />
           <AnimatedStats />
           <Projects />
@@ -34,7 +33,6 @@ const Page = () => {
           <FeaturedTemplate />
           <Testimonial />
           <NewsLetters />
-        </div>
     </MyProvider>
   );
 };
