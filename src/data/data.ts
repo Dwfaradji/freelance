@@ -1,5 +1,5 @@
 // data file for the website
-import { Picture, Item, Project, Price, Service, PageInfo } from './typeFile';
+import { Project, Price, Service, PageInfo } from './typeFile';
 
 import fenixSolutions from '@/images/projects/fenixSolutions.webp';
 import kellerWilliams from '@/images/projects/kw.webp';
@@ -367,7 +367,7 @@ const pageInfosProcess: PageInfo[] = [
           site web, vous créez une expérience fluide et professionnelle.`,
   },
 ];
-const lienPolitiqueConfidentialité=`<a href='https://www.devevoke.com/politique-confidentialité'>politique de confidentialité</a>`
+const lienPolitiqueConfidentialite=`<a href='https://www.devevoke.com/politique-confidentialité'>politique de confidentialité</a>`
 const pageMentionsLegales: PageInfo[] = [
   {
     titleH1: 'Mentions légales',
@@ -391,7 +391,7 @@ const pageMentionsLegales: PageInfo[] = [
   },
   {
     title: 'Liens hypertextes et cookies.',
-    text: `Le site https://www.devevoke.com/ contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers https://www.devevoke.com/. La navigation sur le site https://www.devevoke.com/ est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. Un cookie est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par exemple. Vous avez la possibilité d’accepter ou de refuser les cookies en modifiant les paramètres de votre navigateur. Aucun cookie ne sera déposé sans votre consentement. Les cookies sont enregistrés pour une durée maximale de 5 mois. Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre ${lienPolitiqueConfidentialité}.`,
+    text: `Le site https://www.devevoke.com/ contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers https://www.devevoke.com/. La navigation sur le site https://www.devevoke.com/ est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. Un cookie est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par exemple. Vous avez la possibilité d’accepter ou de refuser les cookies en modifiant les paramètres de votre navigateur. Aucun cookie ne sera déposé sans votre consentement. Les cookies sont enregistrés pour une durée maximale de 5 mois. Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre ${lienPolitiqueConfidentialite}.`,
   },
   {
     title: 'Droit applicable et attribution de juridiction.',

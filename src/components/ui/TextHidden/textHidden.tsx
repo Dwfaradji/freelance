@@ -10,7 +10,7 @@ interface TextProps {
 const TextHidden = ({ text, style, heightVisible }: TextProps) => {
   const [visibleText, setVisibleText] = useState(heightVisible);
   const [textButton, setTextButton] = useState('Lire la suite ...');
-  const handleShowText = (e: any) => {
+  const handleShowText = () => {
     setVisibleText('h-full');
     setTextButton('Fermer');
 

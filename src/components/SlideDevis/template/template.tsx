@@ -13,14 +13,9 @@ import { EffectCoverflow, Pagination,Navigation } from 'swiper/modules';
 // Import Swiper styles
 import './template.css';
 
-interface MultiCheckboxProps {
-  options: string[];
-  selectedOption: string;
-  onTemplateSelect: (option: string) => void;
-}
 
 //DATA
-const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
+const Template = () => {
   const [{}, dispatch] = useMyContext();
   const [selectedTemplateOption, setSelectedTemplateOption] = useState(''); // Option par défaut
 
@@ -31,7 +26,7 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
     } else {
       setDisplayNav(true);
     }
-    window.addEventListener('resize', (e) => {
+    window.addEventListener('resize', () => {
       if (window.innerWidth <= 640) {
         setDisplayNav(false);
       } else {
@@ -59,19 +54,13 @@ const Template = ({ onTemplateSelect }: MultiCheckboxProps) => {
         centeredSlides={true}
         navigation={displayNav}
         slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
+
         pagination={false}
         allowTouchMove={true}
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swiperTemplate"
       >
-        {articles.map((article, index) => (
+        {articles.map((article) => (
           <SwiperSlide key={article.id}>
             <article className="group size-full relative flex cursor-pointer flex-col items-center justify-between  ">
               <Images

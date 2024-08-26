@@ -24,7 +24,7 @@ const FeaturedTemplate = () => {
                     dont vous avez besoin pour réussir en ligne.`}
       </p>
       <article className="h-50 mt-10 grid grid-cols-3 gap-4 xxs:grid-cols-1 lg:grid-cols-3">
-        {templateFilter.map((article, i) => (
+        {templateFilter.map((article) => (
           <Template
             key={article.id}
             image={article.image}

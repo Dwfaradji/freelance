@@ -1,15 +1,4 @@
 // Type file for the data
-interface Picture {
-  id: number;
-  imageUrl: string;
-  alt: string;
-}
-
-interface Item {
-  title: string;
-  link: string;
-  scroll: boolean;
-}
 
 interface Project {
   id: number;
@@ -94,8 +83,6 @@ interface Question {
 }
 
 export type {
-  Picture,
-  Item,
   Project,
   Price,
   Service,

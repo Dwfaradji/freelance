@@ -86,7 +86,7 @@ const Slider = ({ data }: Slide) => {
           allowTouchMove={false}
           className="mainSwiperSlide"
         >
-          {data.map(({ title, content, ComponentType, props, icon }, index) => (
+          {data.map(({ title, content, ComponentType, props }, index) => (
             <SwiperSlide key={index}>
               <Fade>
                 <h2 className=" m-10 text-xl">{title}</h2>

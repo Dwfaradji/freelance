@@ -13,9 +13,7 @@ interface MultiColorPickerProps {
   onColorsSelect: (colors: Colors) => void;
 }
 
-const MultiColorPicker: React.FC<MultiColorPickerProps> = ({
-  onColorsSelect,
-}) => {
+const MultiColorPicker: React.FC<MultiColorPickerProps> = () => {
   const [{}, dispatch] = useMyContext();
 
   const [selectColors, setSelectColors] = useState<Colors>({
@@ -36,7 +34,6 @@ const MultiColorPicker: React.FC<MultiColorPickerProps> = ({
     if (selectColors) {
       dispatch({ type: 'ADD_COLORS', payload: selectColors });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectColors]);
 
   return (

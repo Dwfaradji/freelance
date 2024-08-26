@@ -14,6 +14,7 @@ interface Selections {
 }
 
 const MultiCheckbox = ({ page, options, valueDefault }: MultiCheckboxProps) => {
+  //TODO -- Voir si bug si je retire "checkbox"
   const [{ checkbox }, dispatch] = useMyContext();
   const [selections, setSelections] = useState<Selections>({
     [page]: valueDefault,

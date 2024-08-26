@@ -4,7 +4,6 @@ import Button from '@/components/ui/Atoms/button';
 import { Fade } from 'react-awesome-reveal';
 import Modal from '@/components/ui/Modal/modal';
 import { prices } from '@/data/data';
-import Link from "next/link";
 
 const PricingMain = () => {
   const [isOpen, setIsOpen] = useState(false);

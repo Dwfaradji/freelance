@@ -14,7 +14,7 @@ const AboutTeamBigCard = () => {
             height={400}
             className={"rounded-full overflow-hidden w-1/6 lg:w-[80%] "}
             src={myPhoto}
-            alt={'photo_du_gerant_devevoke'}
+            alt={'photo_du_gérant_devevoke'}
           />
         </Fade>
 

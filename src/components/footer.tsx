@@ -2,7 +2,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { FacebookOutlined, LinkedIn, X, GitHub } from '@mui/icons-material';
-import NewsLetters from '@/components/ui/Newsletters/newsLetters';
 
 const Footer = () => {
   return (
