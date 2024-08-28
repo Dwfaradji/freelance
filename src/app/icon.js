@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import Images from 'next/image';
 
 // Image metadata
 export const size = {
@@ -22,10 +23,12 @@ export default function Icon() {
           borderRadius: '25%',
         }}
       >
-        <img
+        <Images
           src={`${process.env.URL_WEBSITE}/favicon/logo.svg`} // Utilisation de l'URL absolue
           alt="Logo"
           style={{ width: '100%', height: '100%' }} // Ajuster la taille du logo
+          width={50}
+          height={50}
         />
       </div>
     ),
