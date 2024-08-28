@@ -52,13 +52,14 @@ const Projects = () => {
               {projects &&
                 projects.map((project) => (
                   <SwiperSlide key={project.id}>
-                    <div className="aspect-video">
+                    <div>
                       <Image
                         src={project.image}
                         alt={project.alt}
-                        width={1000}
-                        height={1000}
+                        width={800}
+                        height={500}
                         priority={true}
+                        className={"aspect-video"}
                       />
                     </div>
                   </SwiperSlide>

@@ -53,10 +53,11 @@ const Header = () => {
         <div className="h-auto w-full overflow-hidden rounded-xl">
           <Image
             priority
-            width={1000}
-            height={1000}
+            width={400}
+            height={300}
             src={HeaderImage}
             alt="Photo_ordinateur_sur_bureau"
+            className={"aspect-video"}
           />
         </div>
       </div>

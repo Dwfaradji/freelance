@@ -23,7 +23,7 @@ export default function Icon() {
           borderRadius: '25%',
         }}
       >
-        <Images
+        <img
           src={`https://www.devevoke.com/favicon/logo.svg`} // Utilisation de l'URL absolue
           alt="Logo"
           style={{ width: '100%', height: '100%' }} // Ajuster la taille du logo
