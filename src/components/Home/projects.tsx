@@ -58,7 +58,6 @@ const Projects = () => {
                         alt={project.alt}
                         width={1000}
                         height={1000}
-                        className="size-full"
                         priority={true}
                       />
                     </div>

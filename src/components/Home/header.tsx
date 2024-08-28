@@ -55,7 +55,6 @@ const Header = () => {
             priority
             width={1000}
             height={1000}
-            className="size-full"
             src={HeaderImage}
             alt="Photo_ordinateur_sur_bureau"
           />
