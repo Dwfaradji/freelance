@@ -24,7 +24,7 @@ export default function Icon() {
         }}
       >
         <Images
-          src={`${process.env.URL_WEBSITE}/favicon/logo.svg`} // Utilisation de l'URL absolue
+          src={`https://www.devevoke.com/favicon/logo.svg`} // Utilisation de l'URL absolue
           alt="Logo"
           style={{ width: '100%', height: '100%' }} // Ajuster la taille du logo
           width={50}
