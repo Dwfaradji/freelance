@@ -9,13 +9,13 @@ interface PropsTemplate {
   id: number;
 }
 
-const Template = ({  image, link, name, id }: PropsTemplate) => {
+const Template = ({ image, link, name, id }: PropsTemplate) => {
   return (
     <div
       key={id}
       className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100 "
     >
-      <Link href={link} >
+      <Link href={link}>
         <Image
           src={image}
           width={1000}

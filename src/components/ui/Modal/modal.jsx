@@ -36,7 +36,7 @@ const Modal = ({ showModal, setIsOpen, contentModal, prices }) => {
   }, [showModal, contentModal, prices]);
   return (
     <div
-      style={{zIndex:"1000",position:"fixed"}}
+      style={{ zIndex: '1000', position: 'fixed' }}
       id="modal"
       tabIndex="1"
       aria-hidden="true"

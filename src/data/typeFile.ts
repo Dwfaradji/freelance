@@ -89,5 +89,5 @@ export type {
   PageInfo,
   BlogProps,
   Question,
-  IFormData
+  IFormData,
 };

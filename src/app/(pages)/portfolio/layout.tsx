@@ -8,10 +8,6 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.devevoke.com/portfolio',
   },
-  robots: {
-    follow: true,
-    index: true,
-  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

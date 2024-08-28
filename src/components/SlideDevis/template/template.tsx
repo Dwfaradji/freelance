@@ -9,10 +9,9 @@ import { articles } from '@/data/dataSlideDevis';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination,Navigation } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 // Import Swiper styles
 import './template.css';
-
 
 //DATA
 const Template = () => {
@@ -46,7 +45,7 @@ const Template = () => {
   }, [selectedTemplateOption]);
 
   return (
-    <section className={"aspect-auto"}>
+    <section className={'aspect-auto'}>
       <Swiper
         breakpointsBase={'window'}
         effect={'coverflow'}
@@ -54,7 +53,6 @@ const Template = () => {
         centeredSlides={true}
         navigation={displayNav}
         slidesPerView={'auto'}
-
         pagination={false}
         allowTouchMove={true}
         modules={[EffectCoverflow, Pagination, Navigation]}
@@ -62,7 +60,7 @@ const Template = () => {
       >
         {articles.map((article) => (
           <SwiperSlide key={article.id}>
-            <article className="group size-full relative flex cursor-pointer flex-col items-center justify-between  ">
+            <article className="group relative flex size-full cursor-pointer flex-col items-center justify-between  ">
               <Images
                 width={600}
                 height={600}
@@ -72,7 +70,7 @@ const Template = () => {
                 priority={true}
               />
 
-              <div className="absolute size-full flex flex-col items-center justify-between rounded-2xl bg-black bg-opacity-0 p-1 text-xs text-white opacity-0  backdrop-blur-sm transition-opacity duration-300 group-hover:bg-opacity-50 group-hover:opacity-100 md:p-4 lg:text-base">
+              <div className="absolute flex size-full flex-col items-center justify-between rounded-2xl bg-black bg-opacity-0 p-1 text-xs text-white opacity-0  backdrop-blur-sm transition-opacity duration-300 group-hover:bg-opacity-50 group-hover:opacity-100 md:p-4 lg:text-base">
                 <p className=" flex h-full items-center justify-center text-left">
                   {article.description}
                 </p>

@@ -50,7 +50,6 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
   useEffect(() => {
     if (form) {
       sendDevis();
-
     }
   }, [form, dispatch]);
 
@@ -76,9 +75,9 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
       if (response.data.status === 200) {
         await dispatch({ type: 'ADD_STATUS', payload: true });
         router.push('/devis/confirmation');
-        reset()
-      }else{
-        setErrorMsg(true)
+        reset();
+      } else {
+        setErrorMsg(true);
       }
     } catch (error) {
       console.error(
@@ -89,7 +88,7 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
   }
 
   return (
-    <section className="mx-auto columns-1 gap-8 text-left text-white md:w-4/5 lg:w-2/4 dark:bg-white dark:text-black rounded-xl">
+    <section className="mx-auto columns-1 gap-8 rounded-xl text-left text-white md:w-4/5 lg:w-2/4 dark:bg-white dark:text-black">
       <form className={`p-3`} onSubmit={handleSubmit(onSubmit)}>
         {/* Champ pour le nom ou la société */}
         <div className={'1-partie text-white dark:text-black'}>
@@ -270,7 +269,6 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
           {/* Bouton de soumission du formulaire et du bouton retour*/}
 
           <>
-
             <Link
               scroll={true}
               className={
@@ -288,13 +286,13 @@ const FormulaireDevis = ({ onClickBack, hrefLink }: any) => {
             >
               <SendOutlinedIcon className={'-rotate-45'} />
             </button>
-
-
           </>
-
         </div>
-        {errorMsg &&(
-          <p className={"mt-3"}> {"Une erreur s'est produite lors de l'envoie du devis"}</p>
+        {errorMsg && (
+          <p className={'mt-3'}>
+            {' '}
+            {"Une erreur s'est produite lors de l'envoie du devis"}
+          </p>
         )}
       </form>
     </section>

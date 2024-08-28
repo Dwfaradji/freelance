@@ -10381,7 +10381,7 @@ http://www.gnu.org/licenses/gpl.html
               .addClass('slick-cloned');
         s.$slideTrack
           .find('.slick-cloned')
-          .find('[id]')
+          .find('[slug]')
           .each(function () {
             i(this).attr('id', '');
           });
@@ -33574,7 +33574,7 @@ http://www.gnu.org/licenses/gpl.html
       stop: null,
     },
 
-    // Number of pages in a slider
+    // Number of app in a slider
     // (how many times can you page up/down to go through the whole range)
     numPages: 5,
 

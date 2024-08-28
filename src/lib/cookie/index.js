@@ -27,7 +27,7 @@ const config = {
       type: 'Analytics',
       value: 'analytics',
       description:
-        "Les cookies d'analyse nous permettent de compter les visites et les sources de trafic afin de mesurer et d'améliorer les performances de notre site. Ils nous aident à savoir quelles pages sont les plus et les moins populaires et à voir comment les visiteurs se déplacent sur le site.",
+        "Les cookies d'analyse nous permettent de compter les visites et les sources de trafic afin de mesurer et d'améliorer les performances de notre site. Ils nous aident à savoir quelles app sont les plus et les moins populaires et à voir comment les visiteurs se déplacent sur le site.",
     },
   ],
 };

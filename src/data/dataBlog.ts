@@ -9,36 +9,38 @@ import { BlogProps } from './typeFile';
 
 const blogData: BlogProps[] = [
   {
-    id: "1",
-    title: "Optimisez Votre Entreprise avec une Appli Interne",
-    descriptionShort: "Découvrez comment le développement d'une application interne peut transformer vos opérations quotidiennes, améliorer la communication entre les équipes et offrir un avantage concurrentiel significatif.",
+    id: '1',
+    title: 'Optimisez Votre Entreprise avec une Appli Interne',
+    descriptionShort:
+      "Découvrez comment le développement d'une application interne peut transformer vos opérations quotidiennes, améliorer la communication entre les équipes et offrir un avantage concurrentiel significatif.",
     descriptionLong: [
       {
         title: "Amélioration de l'efficacité opérationnelle",
-        text: "Développer une application interne pour votre entreprise peut transformer vos opérations quotidiennes en automatisant de nombreuses tâches répétitives et chronophages. Imaginez un système où la gestion des stocks, la facturation ou le suivi des commandes sont gérés de manière transparente et automatique. Une telle application peut réduire considérablement les erreurs humaines et accélérer les processus internes. Par exemple, une application interne peut mettre à jour automatiquement les inventaires à chaque transaction, éliminant ainsi les comptages manuels fastidieux. Les rappels automatiques pour les tâches cruciales, comme les paiements ou les rendez-vous, assurent que rien n'est laissé au hasard, améliorant ainsi la fiabilité et l'efficacité de vos opérations."
+        text: "Développer une application interne pour votre entreprise peut transformer vos opérations quotidiennes en automatisant de nombreuses tâches répétitives et chronophages. Imaginez un système où la gestion des stocks, la facturation ou le suivi des commandes sont gérés de manière transparente et automatique. Une telle application peut réduire considérablement les erreurs humaines et accélérer les processus internes. Par exemple, une application interne peut mettre à jour automatiquement les inventaires à chaque transaction, éliminant ainsi les comptages manuels fastidieux. Les rappels automatiques pour les tâches cruciales, comme les paiements ou les rendez-vous, assurent que rien n'est laissé au hasard, améliorant ainsi la fiabilité et l'efficacité de vos opérations.",
       },
       {
-        title: "Meilleure communication et collaboration interne",
-        text: "Une application interne dédiée améliore considérablement la communication et la collaboration entre les équipes. Elle offre des canaux de communication instantanés, comme les notifications push et les messageries internes, permettant à vos employés de rester informés et connectés en permanence. En centralisant les informations et en facilitant l'accès à des documents partagés, une application interne encourage la collaboration et la coordination entre les différents départements. Par exemple, les équipes peuvent facilement partager des mises à jour de projet, des rapports ou des idées, ce qui favorise un environnement de travail plus cohésif et productif."
+        title: 'Meilleure communication et collaboration interne',
+        text: "Une application interne dédiée améliore considérablement la communication et la collaboration entre les équipes. Elle offre des canaux de communication instantanés, comme les notifications push et les messageries internes, permettant à vos employés de rester informés et connectés en permanence. En centralisant les informations et en facilitant l'accès à des documents partagés, une application interne encourage la collaboration et la coordination entre les différents départements. Par exemple, les équipes peuvent facilement partager des mises à jour de projet, des rapports ou des idées, ce qui favorise un environnement de travail plus cohésif et productif.",
       },
       {
-        title: "Accroissement de la visibilité et de l'accessibilité des informations",
-        text: "Une application interne permet à vos employés d'accéder aux informations cruciales 24/7, où qu'ils se trouvent. Cela signifie que les équipes peuvent consulter des données, des rapports ou des documents nécessaires à leurs tâches à tout moment, sans être limitées par les heures de bureau. Cette accessibilité accrue assure que les employés disposent toujours des informations les plus récentes et peuvent prendre des décisions informées rapidement. De plus, en centralisant les informations dans une application unique, vous réduisez le temps passé à chercher des documents ou des données, ce qui augmente l'efficacité générale de l'entreprise."
+        title:
+          "Accroissement de la visibilité et de l'accessibilité des informations",
+        text: "Une application interne permet à vos employés d'accéder aux informations cruciales 24/7, où qu'ils se trouvent. Cela signifie que les équipes peuvent consulter des données, des rapports ou des documents nécessaires à leurs tâches à tout moment, sans être limitées par les heures de bureau. Cette accessibilité accrue assure que les employés disposent toujours des informations les plus récentes et peuvent prendre des décisions informées rapidement. De plus, en centralisant les informations dans une application unique, vous réduisez le temps passé à chercher des documents ou des données, ce qui augmente l'efficacité générale de l'entreprise.",
       },
       {
-        title: "Collecte et analyse des données en temps réel",
-        text: "Une application interne bien conçue permet de collecter des données en temps réel sur les opérations et les performances des employés. Ces informations peuvent ensuite être analysées pour identifier les domaines à améliorer, optimiser les processus et prendre des décisions stratégiques basées sur des données concrètes. Par exemple, en suivant les temps de réponse des employés aux requêtes internes ou aux tâches assignées, vous pouvez identifier les goulets d'étranglement et mettre en place des solutions pour améliorer l'efficacité. Les tableaux de bord et les rapports analytiques intégrés dans l'application fournissent une vue d'ensemble des performances en temps réel, facilitant la prise de décisions éclairées."
+        title: 'Collecte et analyse des données en temps réel',
+        text: "Une application interne bien conçue permet de collecter des données en temps réel sur les opérations et les performances des employés. Ces informations peuvent ensuite être analysées pour identifier les domaines à améliorer, optimiser les processus et prendre des décisions stratégiques basées sur des données concrètes. Par exemple, en suivant les temps de réponse des employés aux requêtes internes ou aux tâches assignées, vous pouvez identifier les goulets d'étranglement et mettre en place des solutions pour améliorer l'efficacité. Les tableaux de bord et les rapports analytiques intégrés dans l'application fournissent une vue d'ensemble des performances en temps réel, facilitant la prise de décisions éclairées.",
       },
       {
-        title: "Avantage concurrentiel et innovation",
-        text: "Dans un marché compétitif, une application interne bien conçue peut offrir un avantage concurrentiel significatif. Elle permet d'introduire des fonctionnalités innovantes qui améliorent la productivité et l'efficacité des employés. Par exemple, l'intégration de technologies telles que l'intelligence artificielle pour des recommandations de tâches automatisées ou l'utilisation de la réalité augmentée pour la formation des employés peut rendre vos processus internes plus efficaces et vos équipes plus compétentes. Ces innovations montrent également que votre entreprise est à la pointe de la technologie, ce qui peut attirer des talents et renforcer votre position sur le marché."
-      }
+        title: 'Avantage concurrentiel et innovation',
+        text: "Dans un marché compétitif, une application interne bien conçue peut offrir un avantage concurrentiel significatif. Elle permet d'introduire des fonctionnalités innovantes qui améliorent la productivité et l'efficacité des employés. Par exemple, l'intégration de technologies telles que l'intelligence artificielle pour des recommandations de tâches automatisées ou l'utilisation de la réalité augmentée pour la formation des employés peut rendre vos processus internes plus efficaces et vos équipes plus compétentes. Ces innovations montrent également que votre entreprise est à la pointe de la technologie, ce qui peut attirer des talents et renforcer votre position sur le marché.",
+      },
     ],
     img: article8,
-    alt: "image_blog_application_interne",
+    alt: 'image_blog_application_interne',
     readingTime: 10,
-    category: "Business",
-    date: "2024-05-17"
+    category: 'Business',
+    date: '2024-05-17',
   },
 
   {
@@ -120,13 +122,11 @@ const blogData: BlogProps[] = [
   {
     id: '4',
     title: 'Pourquoi avoir un blog sur son site ?',
-    descriptionShort:
-      `Aujourd’hui, il est important pour les entreprises d’avoir un site internet professionnel et de qualité. Cependant, avoir un site internet ne suffit pas, il faut également le faire vivre ! Et, c’est là que le blog intervient.`,
+    descriptionShort: `Aujourd’hui, il est important pour les entreprises d’avoir un site internet professionnel et de qualité. Cependant, avoir un site internet ne suffit pas, il faut également le faire vivre ! Et, c’est là que le blog intervient.`,
 
     descriptionLong: [
       {
-        title:
-          "Les avantages d'un blog pour booster votre visibilité en ligne",
+        title: "Les avantages d'un blog pour booster votre visibilité en ligne",
         text: "De nos jours, il est primordial pour toute entreprise de disposer d'un site internet professionnel et de qualité. Cependant, posséder un site web ne suffit pas, il est également essentiel de le rendre attractif et dynamique. C'est là que le blog intervient en tant qu'outil indispensable. En effet, un blog permet d'alimenter régulièrement votre site en contenu de qualité, ce qui joue un rôle crucial dans l'optimisation de votre référencement. De plus, il offre l'opportunité d'établir une relation de confiance avec vos visiteurs et de les fidéliser. En proposant un contenu pertinent et en répondant à leurs questions, vous démontrez que vous êtes à l'écoute de leur satisfaction et que vous vous souciez de leur bien-être. Enfin, un blog constitue un moyen naturel de promouvoir votre entreprise ainsi que vos produits ou services, en mettant en avant vos atouts et en répondant aux besoins de vos visiteurs.",
       },
       {
@@ -165,7 +165,6 @@ const blogData: BlogProps[] = [
         title: 'Conclusion',
         text: "Vous l'aurez compris, de nombreux sites en ligne proposent un blog pour profiter des multiples avantages qu'il offre. Que ce soit pour améliorer votre référencement, mettre en place une stratégie marketing ou simplement communiquer sur votre expertise, un blog peut apporter de nombreux bénéfices. Alors n'attendez plus, prenez votre clavier et rédigez les meilleurs paragraphes qui captiveront vos lecteurs.",
       },
-
     ],
 
     img: articleHeader,
@@ -215,72 +214,71 @@ const blogData: BlogProps[] = [
     date: '2024-03-04',
   },
   {
-    id: "6",
-    title: "Un Webmaster pour Votre Entreprise",
-    descriptionShort: "Découvrez pourquoi avoir un webmaster dédié peut faire toute la différence dans votre stratégie numérique et favoriser la croissance de votre entreprise.",
+    id: '6',
+    title: 'Un Webmaster pour Votre Entreprise',
+    descriptionShort:
+      'Découvrez pourquoi avoir un webmaster dédié peut faire toute la différence dans votre stratégie numérique et favoriser la croissance de votre entreprise.',
     descriptionLong: [
       {
-        title: "Expertise Technique",
-        text: "Un webmaster est un professionnel qualifié dans la gestion technique et le développement de sites web. Grâce à son expertise, il peut s'assurer que votre site fonctionne de manière optimale, qu'il soit convivial pour les utilisateurs et qu'il offre une expérience de navigation fluide."
+        title: 'Expertise Technique',
+        text: "Un webmaster est un professionnel qualifié dans la gestion technique et le développement de sites web. Grâce à son expertise, il peut s'assurer que votre site fonctionne de manière optimale, qu'il soit convivial pour les utilisateurs et qu'il offre une expérience de navigation fluide.",
       },
       {
-        title: "Maintenance Régulière",
-        text: "Avoir un webmaster signifie que votre site sera constamment surveillé et mis à jour. De la correction des bogues et des erreurs à l'ajout de nouvelles fonctionnalités et à l'optimisation des performances, le webmaster veille à ce que votre site reste à jour et fonctionne de manière optimale en tout temps."
+        title: 'Maintenance Régulière',
+        text: "Avoir un webmaster signifie que votre site sera constamment surveillé et mis à jour. De la correction des bogues et des erreurs à l'ajout de nouvelles fonctionnalités et à l'optimisation des performances, le webmaster veille à ce que votre site reste à jour et fonctionne de manière optimale en tout temps.",
       },
       {
-        title: "Optimisation pour les Moteurs de Recherche (SEO)",
-        text: "Un webmaster compétent comprend les tenants et les aboutissants du référencement naturel (SEO) et peut mettre en œuvre des stratégies pour améliorer le classement de votre site dans les résultats de recherche. En utilisant des techniques telles que l'optimisation des mots-clés, l'amélioration de la structure du site et la création de contenu de qualité, le webmaster peut aider votre entreprise à attirer un trafic organique de haute qualité."
+        title: 'Optimisation pour les Moteurs de Recherche (SEO)',
+        text: "Un webmaster compétent comprend les tenants et les aboutissants du référencement naturel (SEO) et peut mettre en œuvre des stratégies pour améliorer le classement de votre site dans les résultats de recherche. En utilisant des techniques telles que l'optimisation des mots-clés, l'amélioration de la structure du site et la création de contenu de qualité, le webmaster peut aider votre entreprise à attirer un trafic organique de haute qualité.",
       },
       {
-        title: "Gestion de Contenu",
-        text: "Le webmaster est également responsable de la gestion du contenu de votre site. Cela comprend la création et la publication de nouveaux articles de blog, la mise à jour des pages existantes, la gestion des médias sociaux et bien plus encore. En veillant à ce que votre site soit constamment alimenté en contenu frais et pertinent, le webmaster contribue à renforcer l'engagement des utilisateurs et à maintenir l'intérêt de votre audience."
+        title: 'Gestion de Contenu',
+        text: "Le webmaster est également responsable de la gestion du contenu de votre site. Cela comprend la création et la publication de nouveaux articles de blog, la mise à jour des app existantes, la gestion des médias sociaux et bien plus encore. En veillant à ce que votre site soit constamment alimenté en contenu frais et pertinent, le webmaster contribue à renforcer l'engagement des utilisateurs et à maintenir l'intérêt de votre audience.",
       },
       {
-        title: "Support Technique",
-        text: "Enfin, avoir un webmaster à portée de main signifie que vous disposez d'un support technique fiable en cas de problème. Que ce soit pour résoudre des problèmes techniques, répondre à des questions des utilisateurs ou fournir des conseils et des recommandations, le webmaster est là pour vous aider à chaque étape du processus."
-      }
+        title: 'Support Technique',
+        text: "Enfin, avoir un webmaster à portée de main signifie que vous disposez d'un support technique fiable en cas de problème. Que ce soit pour résoudre des problèmes techniques, répondre à des questions des utilisateurs ou fournir des conseils et des recommandations, le webmaster est là pour vous aider à chaque étape du processus.",
+      },
     ],
     img: article6,
-    alt: "image_blog_webmaster",
+    alt: 'image_blog_webmaster',
     readingTime: 8,
-    category: "Technologie",
-    date: "2024-05-07"
+    category: 'Technologie',
+    date: '2024-05-07',
   },
   {
-    id: "7",
+    id: '7',
     title: "Pourquoi Je N'ai Pas de Clients pour Mon Entreprise ?",
-    descriptionShort: "Découvrez les raisons possibles pour lesquelles votre entreprise pourrait ne pas attirer de clients, ainsi que des solutions pour y remédier efficacement.",
+    descriptionShort:
+      'Découvrez les raisons possibles pour lesquelles votre entreprise pourrait ne pas attirer de clients, ainsi que des solutions pour y remédier efficacement.',
     descriptionLong: [
       {
-        title: "Manque de Visibilité",
-        text: "L'une des principales raisons pour lesquelles vous pourriez ne pas avoir de clients est le manque de visibilité de votre entreprise. Si votre marque n'est pas suffisamment présente sur les canaux de communication pertinents pour votre secteur d'activité, il est probable que les clients potentiels ne vous trouveront pas lorsqu'ils recherchent les produits ou services que vous proposez. Pour remédier à cela, investissez dans le référencement naturel (SEO) pour améliorer la visibilité de votre site web dans les moteurs de recherche. Utilisez également les médias sociaux et le marketing de contenu pour accroître la notoriété de votre marque et atteindre un public plus large. Enfin, envisagez de collaborer avec des influenceurs ou des partenaires stratégiques pour bénéficier de leur audience déjà établie."
+        title: 'Manque de Visibilité',
+        text: "L'une des principales raisons pour lesquelles vous pourriez ne pas avoir de clients est le manque de visibilité de votre entreprise. Si votre marque n'est pas suffisamment présente sur les canaux de communication pertinents pour votre secteur d'activité, il est probable que les clients potentiels ne vous trouveront pas lorsqu'ils recherchent les produits ou services que vous proposez. Pour remédier à cela, investissez dans le référencement naturel (SEO) pour améliorer la visibilité de votre site web dans les moteurs de recherche. Utilisez également les médias sociaux et le marketing de contenu pour accroître la notoriété de votre marque et atteindre un public plus large. Enfin, envisagez de collaborer avec des influenceurs ou des partenaires stratégiques pour bénéficier de leur audience déjà établie.",
       },
       {
-        title: "Positionnement Inadéquat",
-        text: "Un positionnement incorrect de votre entreprise peut également être un facteur limitant pour attirer des clients. Si votre offre ne correspond pas aux besoins ou aux attentes de votre public cible, il est peu probable que vous parveniez à susciter leur intérêt. Il est donc essentiel de revoir votre positionnement et d'adapter votre offre en fonction des besoins du marché. Pour ce faire, conduisez une analyse approfondie du marché pour mieux comprendre les besoins et les attentes de votre public cible. Affinez ensuite votre proposition de valeur pour la rendre plus attrayante et différenciée par rapport à celle de vos concurrents. Enfin, effectuez des enquêtes ou des sondages auprès de vos clients potentiels pour obtenir des commentaires et des insights précieux."
+        title: 'Positionnement Inadéquat',
+        text: "Un positionnement incorrect de votre entreprise peut également être un facteur limitant pour attirer des clients. Si votre offre ne correspond pas aux besoins ou aux attentes de votre public cible, il est peu probable que vous parveniez à susciter leur intérêt. Il est donc essentiel de revoir votre positionnement et d'adapter votre offre en fonction des besoins du marché. Pour ce faire, conduisez une analyse approfondie du marché pour mieux comprendre les besoins et les attentes de votre public cible. Affinez ensuite votre proposition de valeur pour la rendre plus attrayante et différenciée par rapport à celle de vos concurrents. Enfin, effectuez des enquêtes ou des sondages auprès de vos clients potentiels pour obtenir des commentaires et des insights précieux.",
       },
       {
-        title: "Stratégie de Marketing Inefficace",
-        text: "Une stratégie de marketing inefficace peut également expliquer pourquoi votre entreprise ne parvient pas à attirer des clients. Si vos efforts de marketing ne sont pas bien ciblés ou ne parviennent pas à communiquer de manière convaincante la valeur de vos produits ou services, il est peu probable que vous réussissiez à convertir les prospects en clients. Pour remédier à cela, segmentez votre audience pour mieux cibler vos efforts marketing et personnaliser votre message en fonction des besoins spécifiques de chaque segment. Investissez également dans des canaux de marketing numérique efficaces tels que la publicité en ligne, le marketing par e-mail et le marketing d'influence. Enfin, mesurez et analysez régulièrement les performances de votre stratégie marketing afin d'identifier les domaines à améliorer et d'ajuster vos tactiques en conséquence."
+        title: 'Stratégie de Marketing Inefficace',
+        text: "Une stratégie de marketing inefficace peut également expliquer pourquoi votre entreprise ne parvient pas à attirer des clients. Si vos efforts de marketing ne sont pas bien ciblés ou ne parviennent pas à communiquer de manière convaincante la valeur de vos produits ou services, il est peu probable que vous réussissiez à convertir les prospects en clients. Pour remédier à cela, segmentez votre audience pour mieux cibler vos efforts marketing et personnaliser votre message en fonction des besoins spécifiques de chaque segment. Investissez également dans des canaux de marketing numérique efficaces tels que la publicité en ligne, le marketing par e-mail et le marketing d'influence. Enfin, mesurez et analysez régulièrement les performances de votre stratégie marketing afin d'identifier les domaines à améliorer et d'ajuster vos tactiques en conséquence.",
       },
       {
-        title: "Service Client Médiocre",
-        text: "Un service client médiocre peut dissuader les clients potentiels de faire affaire avec votre entreprise. Si vos clients ne reçoivent pas le niveau de service attendu ou si leurs problèmes ne sont pas résolus de manière satisfaisante, ils seront susceptibles de chercher des alternatives ailleurs. Investir dans l'amélioration de votre service client peut donc être crucial pour fidéliser vos clients et en attirer de nouveaux. Pour ce faire, formez et sensibilisez votre personnel à l'importance du service client et à la manière de fournir une assistance de qualité. Mettez en place des processus et des systèmes efficaces pour gérer les demandes des clients de manière rapide et efficace. Enfin, recueillez régulièrement des commentaires clients et utilisez ces informations pour identifier les domaines à améliorer et mettre en œuvre des solutions appropriées."
+        title: 'Service Client Médiocre',
+        text: "Un service client médiocre peut dissuader les clients potentiels de faire affaire avec votre entreprise. Si vos clients ne reçoivent pas le niveau de service attendu ou si leurs problèmes ne sont pas résolus de manière satisfaisante, ils seront susceptibles de chercher des alternatives ailleurs. Investir dans l'amélioration de votre service client peut donc être crucial pour fidéliser vos clients et en attirer de nouveaux. Pour ce faire, formez et sensibilisez votre personnel à l'importance du service client et à la manière de fournir une assistance de qualité. Mettez en place des processus et des systèmes efficaces pour gérer les demandes des clients de manière rapide et efficace. Enfin, recueillez régulièrement des commentaires clients et utilisez ces informations pour identifier les domaines à améliorer et mettre en œuvre des solutions appropriées.",
       },
       {
-        title: "Manque de Différenciation",
-        text: "Enfin, le manque de différenciation par rapport à vos concurrents peut également expliquer pourquoi vous ne parvenez pas à attirer des clients. Si votre entreprise ne parvient pas à se démarquer de la concurrence en offrant quelque chose de distinctif ou de valeur ajoutée, les clients auront peu d'incitation à choisir vos produits ou services plutôt que ceux de vos concurrents. Pour remédier à cela, identifiez vos points forts et uniques en tant qu'entreprise et mettez-les en avant dans votre communication marketing. Innovez continuellement et proposez des produits ou services nouveaux et différents de ce qui est proposé sur le marché. Enfin, créez une expérience client exceptionnelle en offrant un service personnalisé, des avantages exclusifs et un soutien continu après-vente."
-      }
+        title: 'Manque de Différenciation',
+        text: "Enfin, le manque de différenciation par rapport à vos concurrents peut également expliquer pourquoi vous ne parvenez pas à attirer des clients. Si votre entreprise ne parvient pas à se démarquer de la concurrence en offrant quelque chose de distinctif ou de valeur ajoutée, les clients auront peu d'incitation à choisir vos produits ou services plutôt que ceux de vos concurrents. Pour remédier à cela, identifiez vos points forts et uniques en tant qu'entreprise et mettez-les en avant dans votre communication marketing. Innovez continuellement et proposez des produits ou services nouveaux et différents de ce qui est proposé sur le marché. Enfin, créez une expérience client exceptionnelle en offrant un service personnalisé, des avantages exclusifs et un soutien continu après-vente.",
+      },
     ],
     img: article7,
-    alt: "image_blog_clients",
+    alt: 'image_blog_clients',
     readingTime: 10,
-    category: "Business",
-    date: "2024-05-07"
+    category: 'Business',
+    date: '2024-05-07',
   },
-
-
-
 ];
 
 export default blogData;

@@ -9,7 +9,7 @@
  * @author Bartosz Wojciechowski
  * @author David Deutsch
  * @license The MIT License (MIT)
- * @todo Lazy Load Icon
+ * @todo Lazy Load favicon
  * @todo prevent animationend bubling
  * @todo itemsScaleUp
  * @todo Test Zepto

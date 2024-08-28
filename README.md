@@ -46,4 +46,3 @@ Le déploiement de ce projet est géré via la [plateforme Vercel](https://verce
 Pour plus d'informations sur la gestion et la personnalisation de votre déploiement, consultez la [documentation de Vercel](https://vercel.com/docs).
 
 ---
-

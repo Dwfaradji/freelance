@@ -28,7 +28,7 @@ export async function POST(request: Request) {
   // Donner la clé API
   const apiKey = process.env.KEY_SENDGRID_API;
   if (!apiKey) {
-    return res.json({ status:400,  message: "Key_SENDGRID_API_KEY_MISSING" });
+    return res.json({ status: 400, message: 'Key_SENDGRID_API_KEY_MISSING' });
   }
   // Syntaxe adresse email
   const pattern =
@@ -63,7 +63,7 @@ export async function POST(request: Request) {
       },
     };
     await sgMail.send(msg);
-    return res.json({ status: 200 , message:"EMAIL_SENT" });
+    return res.json({ status: 200, message: 'EMAIL_SENT' });
   } catch (error) {
     return res.json({ status: 400, message: 'EMAIL_SENDING_FAILED' });
   }

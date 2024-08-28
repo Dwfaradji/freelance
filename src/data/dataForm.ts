@@ -1,4 +1,4 @@
-import { Question } from "@/data/typeFile";
+import { Question } from '@/data/typeFile';
 
 const questions: Question[] = [
   // Définition des questions ici...
@@ -62,4 +62,4 @@ const questions: Question[] = [
     label2: 'Non',
   },
 ];
-export default  questions
+export default questions;

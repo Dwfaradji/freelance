@@ -1,24 +1,38 @@
 {
   "name": "DevEvoke",
   "short_name": "DevEvoke",
+  "description": "DevEvoke Agence web & mobile experte à Perpignan. Développez votre succès numérique avec des solutions innovantes et intuitives.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#black",
+  "theme_color": "#ffffff",
+  "orientation": "any",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/favicon/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/favicon/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/favicon/apple-touch-icon.png",
       "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/favicon-16x16.png",
+      "sizes": "16x16",
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "prefer_related_applications": true
 }

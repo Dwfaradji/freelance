@@ -103,7 +103,7 @@ const Slider = ({ data }: Slide) => {
                   />
                 </div>
               </Fade>
-              <div className="w-full mt-4 ">
+              <div className="mt-4 w-full ">
                 <ComponentType {...props} />
               </div>
             </SwiperSlide>

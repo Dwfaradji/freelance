@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import ImportLogo from '@/components/ui/Logo/importLogo';
 import OtherHousesIcon from '@mui/icons-material/OtherHouses';
-import { Fade } from "react-awesome-reveal";
+import { Fade } from 'react-awesome-reveal';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -94,7 +94,7 @@ const Navbar = () => {
           </div>
           <div className="-mr-2 flex md:hidden">
             <button
-              aria-label={"navbar"}
+              aria-label={'navbar'}
               onClick={handleMenuClick}
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:text-gray-300 focus:outline-none dark:text-white"
             >
@@ -113,7 +113,11 @@ const Navbar = () => {
         </div>
       </div>
       {(openMenu || isAnimating) && (
-        <Fade direction="left" triggerOnce className="backdrop-blur-lg md:hidden">
+        <Fade
+          direction="left"
+          triggerOnce
+          className="backdrop-blur-lg md:hidden"
+        >
           <div className="space-y-1 pb-3 pt-2 sm:px-3 md:px-2">
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"

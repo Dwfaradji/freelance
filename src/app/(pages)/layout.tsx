@@ -5,11 +5,9 @@ import { initialState, reducer } from '@/context/reducer';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-      <MyProvider initialState={initialState} reducer={reducer}>
-        <div>
-          {children}
-        </div>
-      </MyProvider>
+    <MyProvider initialState={initialState} reducer={reducer}>
+      <div>{children}</div>
+    </MyProvider>
   );
 };
 

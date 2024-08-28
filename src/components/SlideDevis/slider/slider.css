@@ -23,21 +23,21 @@
   border-radius: 50px;
 }
 
-.mainSwiperSlide  .swiper-navigation button {
+.mainSwiperSlide .swiper-navigation button {
   cursor: pointer;
   text-align: center;
   display: flex;
   align-items: center;
 }
 
-.mainSwiperSlide  .swiper-wrapper{
+.mainSwiperSlide .swiper-wrapper {
   align-items: flex-start;
 }
 
-  .hiddenDisplay {
+.hiddenDisplay {
   display: none !important;
 }
 
- .displayForm {
+.displayForm {
   display: block !important;
 }

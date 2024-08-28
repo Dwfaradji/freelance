@@ -17,7 +17,7 @@ const Offerings = () => {
                             application web.`}
           </p>
 
-          <h2 className="mt-5 mb-2 text-white text-2xl font-poppins">
+          <h2 className="mb-2 mt-5 font-poppins text-2xl text-white">
             Nos services incluent :
           </h2>
           <p className=" text-lg text-white opacity-50 lg:text-2xl">
@@ -31,11 +31,11 @@ const Offerings = () => {
         </article>
       </Fade>
       <Fade cascade>
-        <article className="mx-auto my-20 flex flex-row flex-wrap justify-between gap-10 xxs:flex-col xs:flex-col sm:flex-row p-2 ">
+        <article className="mx-auto my-20 flex flex-row flex-wrap justify-between gap-10 p-2 xxs:flex-col xs:flex-col sm:flex-row ">
           {services.map((service, i) => (
             <div
               key={i}
-              className="flex rounded-xl hover:bg-gradient-to-r hover:from-pink sm:full lg:w-[30%]"
+              className="sm:full flex rounded-xl hover:bg-gradient-to-r hover:from-pink lg:w-[30%]"
             >
               <article className="flex h-full flex-col justify-between px-8">
                 <h2 className="my-3 text-2xl text-white">{service.title}</h2>

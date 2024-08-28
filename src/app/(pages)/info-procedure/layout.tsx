@@ -7,10 +7,6 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.devevoke.com/info-procedure',
   },
-  robots: {
-    follow: true,
-    index: true,
-  },
 };
 
 export default function ProcessLayout({

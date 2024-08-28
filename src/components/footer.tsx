@@ -66,7 +66,9 @@ const Footer = () => {
                 contact@devevoke.com
               </a>
             </p>
-            <p className={'mb-1 flex flex-wrap justify-between'}>Téléphone: 04 34 29 76 40</p>
+            <p className={'mb-1 flex flex-wrap justify-between'}>
+              Téléphone: 04 34 29 76 40
+            </p>
             <p className={'mb-1 flex flex-wrap justify-between'}>
               Adresse: 5 impasse des vergers,
               <br /> 66370 Pézilla la rivière

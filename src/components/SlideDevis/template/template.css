@@ -23,8 +23,6 @@
   text-align: center !important;
 }
 
-
-
 @media screen and (max-width: 600px) {
   .swiperTemplate .swiper-slide {
     width: 100%;

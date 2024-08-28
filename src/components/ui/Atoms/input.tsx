@@ -4,10 +4,10 @@ interface InputProps {
   placeholder?: string;
   onChange?: any;
   id?: string;
-  value?:string;
+  value?: string;
 }
 
-const Input = ({ placeholder, onChange, id , value }: InputProps) => {
+const Input = ({ placeholder, onChange, id, value }: InputProps) => {
   return (
     <input
       id={id}

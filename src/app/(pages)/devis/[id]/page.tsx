@@ -7,7 +7,7 @@ import { data } from '@/data/dataSlideDevis';
 export default function Page({ params }: { params: { id: string } }) {
   const id = params.id;
   return (
-    <div className={"mainSwiperSlide h-dvh"}>
+    <div className={'mainSwiperSlide h-dvh'}>
       {id === '0' && (
         <section>
           <h1 className=" text-center text-xl text-white"> SITE VITRINE </h1>
@@ -31,16 +31,16 @@ export default function Page({ params }: { params: { id: string } }) {
             Application Web
           </h1>
           <p className=" text-left text-white">
-              <span className="mb-2 block font-bold">
-                Prêt à donner vie à votre Application ?
-              </span>
+            <span className="mb-2 block font-bold">
+              Prêt à donner vie à votre Application ?
+            </span>
             Commencez par remplir notre formulaire complémentaire. Ce premier
             pas essentiel nous permet de comprendre en profondeur vos
             aspirations et besoins spécifiques, assurant que chaque aspect de
-            votre site reflète parfaitement votre vision et vos objectifs.
-            Chez Devevoke, chaque projet débute par une écoute attentive et
-            une planification minutieuse, garantissant une personnalisation
-            sans faille. <br />
+            votre site reflète parfaitement votre vision et vos objectifs. Chez
+            Devevoke, chaque projet débute par une écoute attentive et une
+            planification minutieuse, garantissant une personnalisation sans
+            faille. <br />
           </p>
           <p className="mt-2 block font-bold">
             Remplissez le formulaire dès maintenant et embarquez vers la

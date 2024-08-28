@@ -1,6 +1,6 @@
 import React from 'react';
 // @ts-ignore
-import style from "./pagesInfo.module.css" ;
+import style from './pagesInfo.module.css';
 
 interface Text {
   titleH1?: string;
@@ -24,7 +24,7 @@ const PagesInfo = ({ infosText }: PagesInfoProps) => {
       </header>
       <section className={style.tarifsSection}>
         {infosText.map((item, i) => (
-          <article key={i.toString()} className= {style.tarifCard}>
+          <article key={i.toString()} className={style.tarifCard}>
             <h2 className={'mb-3 mt-8 text-xl'}>{item.title}</h2>
             <p
               dangerouslySetInnerHTML={{ __html: item.text ?? '' }} // Fournir une chaîne vide par défaut

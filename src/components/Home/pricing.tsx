@@ -29,7 +29,7 @@ const PricingMain = () => {
               </span>
               <div className="w-full p-8  sm:w-3/5">
                 <h2 className="text-3xl font-bold">{tarif.title}</h2>
-                <h2 className="text-2xl font-poppins">{tarif.subtitle}</h2>
+                <h2 className="font-poppins text-2xl">{tarif.subtitle}</h2>
                 <br />
                 <p>{tarif.description}</p>
               </div>

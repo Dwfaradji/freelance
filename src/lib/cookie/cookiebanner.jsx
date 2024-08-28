@@ -31,7 +31,7 @@ const CookieBanner = ({ config, headerScripts }) => {
             tagScript.async = true;
             tagScript.src = script.value;
             const firstScript = document.getElementsByTagName('script')[0];
-            firstScript.parentNode.insertBefore(tagScript,firstScript);
+            firstScript.parentNode.insertBefore(tagScript, firstScript);
 
             // Inject inline configuration script
             tagScript.onload = () => {

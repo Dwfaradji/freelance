@@ -10,7 +10,7 @@ const Contact = () => {
   const [sendMsg, setSendMsg] = React.useState(false);
   const [sendText, setSendText] = React.useState('');
   const [buttonSendMsg, setButtonSendMsg] = React.useState(true);
-  const [buttonText, setButtonText] = React.useState("Envoyer-nous un message");
+  const [buttonText, setButtonText] = React.useState('Envoyer-nous un message');
   //Variables
   const {
     register,
@@ -19,24 +19,24 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data: {}) => {
-
     const response = await callApi({ url: '/api/contact', data: data });
     try {
       // Traitez la réponse de l'API
       if (response.data.status === 200) {
         console.log("L'e-mail a été envoyé avec succès.");
         window.location.hash = 'confirmation';
-        setSendText("Votre message a bien été envoyé")
-        setSendMsg(true)
+        setSendText('Votre message a bien été envoyé');
+        setSendMsg(true);
         setButtonSendMsg(false);
         reset();
-        return
-      }
-      else{
+        return;
+      } else {
         window.location.hash = 'Erreur_send';
-        setButtonText('Réessayer')
-        setSendMsg(true)
-        setSendText("Une erreur ses produite lors de l'envoie veuillez réessayer ultérieurement")
+        setButtonText('Réessayer');
+        setSendMsg(true);
+        setSendText(
+          "Une erreur ses produite lors de l'envoie veuillez réessayer ultérieurement",
+        );
       }
     } catch (error) {
       console.error("Erreur lors de l'envoi de l'e-mail", error);
@@ -144,7 +144,6 @@ const Contact = () => {
                 <p>{sendText}</p>
               </div>
             )}
-
           </form>
         </div>
         <div className="m-5 w-1/4 overflow-hidden rounded-xl xxs:hidden sm:block">

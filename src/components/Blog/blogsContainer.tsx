@@ -5,6 +5,7 @@ import { Fade } from 'react-awesome-reveal';
 import Link from 'next/link';
 import blogData from '@/data/dataBlog';
 import Image from 'next/image';
+import { slugify } from '@/utils/slugify';
 
 const BlogsContainer = () => {
   const sortByDateDescending = blogData.sort((a: any, b: any) => {
@@ -16,12 +17,12 @@ const BlogsContainer = () => {
   return (
     <section className="mx-auto mt-10 text-white">
       <article className="grid grid-cols-3 gap-4 xxs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        <Fade cascade delay={500} >
+        <Fade cascade delay={500}>
           {dataHeader.map((blog, i) => (
             <Link
               key={i}
               className="flex justify-center"
-              href={`/blog/${blog.id.toString()}`}
+              href={`/blog/${slugify(blog.title).toString()}`}
             >
               <div id={blog.id} className={'m-3'}>
                 <div className="h-72 w-full overflow-hidden rounded-xl xxs:w-full sm:w-full">

@@ -21,7 +21,7 @@ const PricingHeader = () => {
           {dataPriceOptions.map((dataOption, i) => (
             <div key={i}>
               <div className="flex flex-col justify-between rounded-xl bg-lightblack p-10">
-                <h2 className="text-gradient bg-gradient-to-r from-pink to-purple text-2xl ">
+                <h2 className="bg-gradient-to-r from-pink to-purple text-2xl text-gradient ">
                   {dataOption.title}
                 </h2>
                 <h2 className="mt-2 text-4xl font-bold"> {dataOption.price}</h2>

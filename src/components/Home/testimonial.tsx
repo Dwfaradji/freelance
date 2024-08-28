@@ -2,8 +2,8 @@ import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import logo from '@/images/logocv.svg';
 import Image from 'next/image';
-import Link from "next/link";
-import Button from "@/components/ui/Atoms/button";
+import Link from 'next/link';
+import Button from '@/components/ui/Atoms/button';
 
 const Testimonial = () => {
   return (
@@ -56,7 +56,6 @@ const Testimonial = () => {
           </div>
         </article>
       </Fade>
-
     </section>
   );
 };

@@ -46,7 +46,7 @@ const BlogPage = ({ id }: PropsBlogPage) => {
                   priority
                 />
               </div>
-              <div className={"m-3"}>
+              <div className={'m-3'}>
                 <ButtonNetwork id={contentBlog.id} />
               </div>
               <div className="">

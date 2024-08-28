@@ -16,14 +16,14 @@
   margin: 15px 0 5px 0;
 }
 
- .tarifsSection {
+.tarifsSection {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tarifsSection a {
   text-decoration: none;
   color: #33d1ee;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

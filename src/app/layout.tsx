@@ -1,3 +1,4 @@
+// layout.tsx
 import React, { Suspense } from 'react';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -5,27 +6,23 @@ import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import Loading from '@/app/loading';
 
+import AppHead from '@/config/AppHead';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
-import CookieBanner from '@/lib/cookie/cookiebanner';
-import { config, headerScripts } from '@/lib/cookie/index.js';
+import { Metadata as NextMetadata } from 'next/dist/lib/metadata/types/metadata-interface';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
-export const metadata = {
+export const metadata: NextMetadata = {
   title:
     'DevEvoke : Développement Web & Applications de Qualité Supérieure à Perpignan',
   description:
-    "DevEvoke Agence web & mobile experte à Perpignan. Développez votre succès numérique avec des solutions innovantes et intuitives. Sites web | Applications | Logiciels sur mesure 5+ans d'expérience | Code propre & Maintenable | Devis gratuit",
-
+    'DevEvoke Agence web & mobile experte à Perpignan. Développez votre succès numérique avec des solutions innovantes et intuitives.',
   alternates: {
     canonical: 'https://www.devevoke.com/',
-  },
-  robots: {
-    follow: true,
-    index: true,
   },
 };
 
@@ -35,18 +32,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
-      <CookieBanner config={config} headerScripts={headerScripts} />
-      <body className={`${inter.variable} antialiased `}>
+    <html>
+      <AppHead />
+      <body className={`${inter.variable} antialiased`}>
         <Navbar />
-        <main className={"mx-auto md:container max-w-7xl p-2"}>
-          <Suspense fallback={<Loading />}>
-            {children}
-          </Suspense>
+        <main className={'mx-auto max-w-7xl p-2 md:container'}>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </main>
-
         <Footer />
-        {/*<SpeedInsights />*/}
       </body>
     </html>
   );

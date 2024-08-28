@@ -51,19 +51,21 @@ const NewsLetters = () => {
 
   return (
     <section className={'mx-auto h-auto'}>
-      <div className={"w-full xxs:w-full xs:w-full sm:w-3/4"}>
-        <h2 className={'text-xl text-white lg:text-3xl py-3 '}>Rejoignez notre Communauté !</h2>
+      <div className={'w-full xxs:w-full xs:w-full sm:w-3/4'}>
+        <h2 className={'py-3 text-xl text-white lg:text-3xl '}>
+          Rejoignez notre Communauté !
+        </h2>
         <div className={'text-white '}>
           <p>
-            En vous abonnant à notre newsletter, vous ne manquerez plus aucune de
-            nos actualités ! Bénéficiez d’avantages uniques :
+            En vous abonnant à notre newsletter, vous ne manquerez plus aucune
+            de nos actualités ! Bénéficiez d’avantages uniques :
           </p>
 
           <ul className={'list-disc px-5 py-2'}>
             <li>
               {' '}
-              Offres exclusives : Accédez à des promotions réservées uniquement à
-              nos abonnés.
+              Offres exclusives : Accédez à des promotions réservées uniquement
+              à nos abonnés.
             </li>
             <li>
               {' '}
@@ -77,17 +79,16 @@ const NewsLetters = () => {
             </li>
             <li>
               {' '}
-              Inscrivez-vous maintenant pour ne rien manquer de notre actualité et
-              profiter d’offres spéciales !
+              Inscrivez-vous maintenant pour ne rien manquer de notre actualité
+              et profiter d’offres spéciales !
             </li>
           </ul>
         </div>
-        <div className="mt-3 flex sm:w-2/4 lg:w-1/3 flex-wrap items-center gap-4">
+        <div className="mt-3 flex flex-wrap items-center gap-4 sm:w-2/4 lg:w-1/3">
           <Input
             placeholder="Adresse E-mail"
             value={email} // Liaison avec l'état email
             onChange={handleChange} // Gère les changements dans le champ de saisie
-
           />
           <Button
             colorClass="bg-gradient-to-r from-pink to-purple"
@@ -102,9 +103,7 @@ const NewsLetters = () => {
             {message}
           </div>
         )}
-
       </div>
-
     </section>
   );
 };

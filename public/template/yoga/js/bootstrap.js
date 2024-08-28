@@ -4370,7 +4370,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.0.0): index.js
+   * Bootstrap (v4.0.0): index.tsx
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */

@@ -19,7 +19,7 @@ const ProjectsHeader = () => {
       <div className={'mx-auto'}>
         <Fade cascade>
           <div className="mt-10 flex flex-wrap justify-center  lg:flex-nowrap ">
-            <div className="m-2 flex flex-col justify-between rounded-xl bg-lightblack p-3 text-white w-full">
+            <div className="m-2 flex w-full flex-col justify-between rounded-xl bg-lightblack p-3 text-white">
               <h2 className="text-sm font-semibold opacity-50 ">
                 {' '}
                 Keller Williams
@@ -58,35 +58,33 @@ const ProjectsHeader = () => {
               <div className="relative m-2  size-full overflow-hidden rounded-xl">
                 <div
                   className={
-                    "  absolute size-full items-center justify-center opacity-0  hover:flex hover:bg-gray-800 hover:bg-opacity-50 hover:opacity-95"
+                    '  absolute size-full items-center justify-center opacity-0  hover:flex hover:bg-gray-800 hover:bg-opacity-50 hover:opacity-95'
                   }
                 >
-
-                  <Link href="https://kwoxygene.fr/" target={"_blank"}>
+                  <Link href="https://kwoxygene.fr/" target={'_blank'}>
                     <Button
                       colorClass="bg-gradient-to-r from-pink to-purple "
                       title="Voir le site"
                       textColor="text-white text-xl"
                     ></Button>
                   </Link>
-
                 </div>
 
                 <Image
                   src={projectKw}
-                  alt={"image_project_kw"}
+                  alt={'image_project_kw'}
                   width={950}
                   height={400}
-                  className={"size-full"}
+                  className={'size-full'}
                 />
               </div>
-              </div>
             </div>
+          </div>
         </Fade>
 
         <Fade cascade>
           <div className="mt-10 flex flex-row-reverse flex-wrap justify-center lg:flex-nowrap">
-            <div className="m-2 flex  flex-col justify-between rounded-xl bg-lightblack p-3 text-white w-full">
+            <div className="m-2 flex  w-full flex-col justify-between rounded-xl bg-lightblack p-3 text-white">
               <h2 className="text-sm font-semibold opacity-50">
                 {' '}
                 Fenix Solutions{' '}

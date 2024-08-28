@@ -9,10 +9,10 @@ import {
 } from 'next-share';
 
 interface PropsButtonNetwork {
-  id:string
+  id: string;
 }
 
-const ButtonNetwork = ({id}:PropsButtonNetwork) => {
+const ButtonNetwork = ({ id }: PropsButtonNetwork) => {
   const shareUrl = `https://www.devevoke/blog/${id}`; // Remplacez cela par l'URL de votre article de blog
 
   return (
