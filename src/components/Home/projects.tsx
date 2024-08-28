@@ -52,12 +52,12 @@ const Projects = () => {
               {projects &&
                 projects.map((project) => (
                   <SwiperSlide key={project.id}>
-                    <div>
+                    <div className={"flex justify-center items-center w-full"}>
                       <Image
                         src={project.image}
                         alt={project.alt}
-                        width={1000}
-                        height={1000}
+                        width={664}
+                        height={373}
                         priority={true}
                         className={"aspect-video"}
                       />
