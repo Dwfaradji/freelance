@@ -23,7 +23,7 @@ export default function Icon() {
         }}
       >
         <img
-          src={'http://localhost:3000/favicon/logo.svg'} // Utilisation de l'URL absolue
+          src={`${process.env.URL_WEBSITE}/favicon/logo.svg`} // Utilisation de l'URL absolue
           alt="Logo"
           style={{ width: '100%', height: '100%' }} // Ajuster la taille du logo
         />
