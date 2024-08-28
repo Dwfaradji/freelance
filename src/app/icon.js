@@ -14,7 +14,6 @@ export default function Icon() {
     (
       <div
         style={{
-          background: 'black',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -27,8 +26,6 @@ export default function Icon() {
           src={`https://www.devevoke.com/favicon/logo.svg`} // Utilisation de l'URL absolue
           alt="Logo"
           style={{ width: '100%', height: '100%' }} // Ajuster la taille du logo
-          width={50}
-          height={50}
         />
       </div>
     ),

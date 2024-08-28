@@ -50,11 +50,11 @@ const Header = () => {
         </div>
       </Fade>
       <div className="mx-auto  mt-10">
-        <div className="h-auto w-full overflow-hidden rounded-xl">
+        <div className="h-auto flex justify-center overflow-hidden rounded-xl mx-auto ">
           <Image
             priority
-            width={400}
-            height={300}
+            width={800}
+            height={450}
             src={HeaderImage}
             alt="Photo_ordinateur_sur_bureau"
             className={"aspect-video"}

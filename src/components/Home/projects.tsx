@@ -56,8 +56,8 @@ const Projects = () => {
                       <Image
                         src={project.image}
                         alt={project.alt}
-                        width={800}
-                        height={500}
+                        width={1000}
+                        height={1000}
                         priority={true}
                         className={"aspect-video"}
                       />
