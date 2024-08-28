@@ -29,7 +29,7 @@ const BlogHeader = () => {
                 width={1000}
                 height={800}
                 alt={dataHeader.alt}
-                priority
+                priority={true}
               />
             </article>
             <article className="m-5">

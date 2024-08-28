@@ -1,7 +1,11 @@
 import React from 'react';
 
-// Fonction pour afficher le SVG
-function logoSVG(colors) {
+interface LogoProps {
+  colorPrimary: string;
+  colorSecondary: string;
+}
+
+function LogoSVG(colors: LogoProps) {
   return (
     <svg
       className="size-full"
@@ -155,4 +159,4 @@ c206 90 298 208 321 414 6 52 9 411 6 890 -3 865 -2 840 -56 947 -52 100 -162
   );
 }
 
-export default logoSVG;
+export default LogoSVG;

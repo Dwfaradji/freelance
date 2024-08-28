@@ -4,7 +4,7 @@
   "description": "DevEvoke Agence web & mobile experte à Perpignan. Développez votre succès numérique avec des solutions innovantes et intuitives.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#black",
+  "background_color": "#000000FF",
   "theme_color": "#ffffff",
   "orientation": "any",
   "icons": [

@@ -12,6 +12,5 @@
     <orderEntry type="library" name="uc" level="application" />
     <orderEntry type="library" name="enterprise" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
-    <orderEntry type="module" module-name="untitled1" />
   </component>
 </module>

@@ -5,24 +5,37 @@ import ImportLogo from '@/components/ui/Logo/importLogo';
 import OtherHousesIcon from '@mui/icons-material/OtherHouses';
 import { Fade } from 'react-awesome-reveal';
 
+enum LogoColor {
+  ColorS = 'colorS',
+  ColorP = 'colorP',
+}
+
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [colorLogo, setColorLogo] = useState<string>();
 
+  const [colorLogo, setColorLogo] = useState<LogoColor | undefined>(LogoColor.ColorS);
+
+// Ensuite, dans le useEffect
   useEffect(() => {
-    window.addEventListener('scroll', function () {
+    const handleScroll = () => {
       if (window.scrollY > 100) {
-        setColorLogo('colorP');
+        setColorLogo(LogoColor.ColorP);
       } else {
-        setColorLogo('colorS');
+        setColorLogo(LogoColor.ColorS);
       }
-    });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
 
   const handleMenuClick = () => {
     if (openMenu) {
-      // Si le menu est ouvert et qu'on veut le fermer
       setIsAnimating(true);
       setTimeout(() => {
         setOpenMenu(false);
@@ -94,7 +107,8 @@ const Navbar = () => {
           </div>
           <div className="-mr-2 flex md:hidden">
             <button
-              aria-label={'navbar'}
+              aria-label={openMenu ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={openMenu}
               onClick={handleMenuClick}
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:text-gray-300 focus:outline-none dark:text-white"
             >

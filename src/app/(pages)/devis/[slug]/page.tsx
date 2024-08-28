@@ -3,32 +3,39 @@ import React from 'react';
 import FormulaireDevis from '@/components/SlideDevis/formDevis';
 import Slider from '@/components/SlideDevis/slider/slider';
 import { data } from '@/data/dataSlideDevis';
+import blogData from "@/data/dataBlog";
+import { slugify } from "@/utils/slugify";
+import { prices } from "@/data/data";
 
-export default function Page({ params }: { params: { id: string } }) {
-  const id = params.id;
+type Props = {
+  params: { slug: string };
+};
+
+export default function Page({ params }: Props ) {
+  const { slug } = params;
+
+  // Trouver les données du blog correspondant en utilisant le slug
+  const devis = prices.find((devis) => slugify(devis.title) === slug);
+
+if(!devis){
+  return <div>Devis no exist</div>
+}
+  console.log(devis.id);
   return (
-    <div className={'mainSwiperSlide h-dvh'}>
-      {id === '0' && (
-        <section>
-          <h1 className=" text-center text-xl text-white"> SITE VITRINE </h1>
-          <Slider data={data} />
-        </section>
-      )}
+    <div className={'mainSwiperSlide'}>
+      {prices.map((price,i)=>(
+        devis.id === price.id && devis.id !== "2" && (
+            <section key={i}>
+              <h1 className=" text-center text-xl text-white"> {devis.subtitle}</h1>
+              <Slider data={data} />
+            </section>
+          )
+      ))}
 
-      {id === '1' && (
+      {devis.id === '2' && (
         <section className="m-8 h-full">
           <h1 className="m-6 text-center text-xl text-white">
-            {' '}
-            Site E-commerce
-          </h1>
-          <Slider data={data} />
-        </section>
-      )}
-
-      {id === '2' && (
-        <section className="m-8 h-full">
-          <h1 className="m-6 text-center text-xl text-white">
-            Application Web
+            {devis.subtitle}
           </h1>
           <p className=" text-left text-white">
             <span className="mb-2 block font-bold">

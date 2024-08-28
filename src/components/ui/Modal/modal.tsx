@@ -2,53 +2,58 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { slugify } from '@/utils/slugify';
 
-const Modal = ({ showModal, setIsOpen, contentModal, prices }) => {
-  const [open, setOpen] = useState('hidden');
-  const [modal, setModal] = useState('');
+interface ModalProps {
+  showModal: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  contentModal: string;
+  prices: Array<{
+    id: string;
+    subtitle: string;
+    details: string[];
+    price: string;
+    title: string;
+  }>;
+}
+
+const Modal: React.FC<ModalProps> = ({ showModal, setIsOpen, contentModal, prices }) => {
+  const [open, setOpen] = useState<string>('hidden');
+  const [modal, setModal] = useState<ModalProps['prices'][number] | null>(null);
 
   useEffect(() => {
-    // Fonction pour ouvrir ou fermer la modal
-    const toggleModal = () => {
-      if (showModal) {
-        setOpen('');
-        document.body.classList.add('modal-open');
-      } else {
-        setOpen('hidden');
-        document.body.classList.remove('modal-open');
-      }
-    };
+    if (showModal) {
+      setOpen('');
+      document.body.classList.add('modal-open');
+    } else {
+      setOpen('hidden');
+      document.body.classList.remove('modal-open');
+    }
 
-    // Appliquer le style de la modal
-    prices.forEach((data) => {
-      if (contentModal === data.id) {
-        return setModal(data);
-      }
-    });
+    const selectedModal = prices.find(data => data.id === contentModal);
+    setModal(selectedModal || null);
 
-    // Appeler la fonction toggleModal lorsqu'il y a un changement dans showModal
-    toggleModal();
-
-    // Nettoyer l'effet
     return () => {
       document.body.classList.remove('modal-open');
     };
   }, [showModal, contentModal, prices]);
+
   return (
     <div
-      style={{ zIndex: '1000', position: 'fixed' }}
+      style={{ zIndex: 1000, position: 'fixed' }}
       id="modal"
-      tabIndex="1"
-      aria-hidden="true"
-      className={`${open} inset-0 flex h-screen w-screen items-center justify-center  backdrop-blur-lg`}
+      tabIndex={-1}
+      aria-hidden={!showModal}
+      aria-modal="true"
+      role="dialog"
+      className={`${open} inset-0 flex h-screen w-screen items-center justify-center backdrop-blur-lg`}
     >
-      <div className="relative mx-auto  max-h-full max-w-2xl p-4 text-center">
+      <div className="relative mx-auto max-h-full max-w-2xl p-4 text-center">
         <div className="relative rounded-lg bg-white shadow dark:bg-black">
           <div className="flex items-center justify-between rounded-t border-b p-4 md:p-5 dark:border-gray-600">
             <h3 className="text-center font-semibold text-gray-900 xxs:text-xl md:text-2xl dark:text-white">
               {modal && modal.subtitle}
             </h3>
-
             <button
               type="button"
               className="ms-auto inline-flex size-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
@@ -75,23 +80,23 @@ const Modal = ({ showModal, setIsOpen, contentModal, prices }) => {
           </div>
 
           <div className="space-y-4 p-4 md:p-5">
-            <ul className="text-left leading-relaxed text-gray-500  xxs:text-xs md:text-xl dark:text-white">
-              {modal &&
-                modal.details.map((detail, i) => (
-                  <li key={i.toString()}>
-                    <ArrowRightIcon className="text-blue" /> {detail}
-                  </li>
-                ))}
+            <ul className="text-left leading-relaxed text-gray-500 xxs:text-xs md:text-xl dark:text-white">
+              {modal && modal.details.map((detail, i) => (
+                <li key={i.toString()}>
+                  <ArrowRightIcon className="text-blue" /> {detail}
+                </li>
+              ))}
             </ul>
-            <h3 className={'dark:text-white'}>
-              À partir de: {modal && modal.price}
-            </h3>
+            <h3 className="dark:text-white">À partir de: {modal && modal.price}</h3>
           </div>
+
           <div className="flex w-full items-center justify-center rounded-b border-t border-gray-200 p-4 md:p-5 dark:border-black">
-            <Link href={`/devis/${modal && modal.id}`}>
+            <Link
+              href={modal ? `/devis/${slugify(modal.title)}` : '#'}
+              onClick={() => setIsOpen(false)} // Fermer la modal lors de la navigation
+            >
               <div className="relative inline-flex">
                 <button
-                  onClick={() => setIsOpen(true)}
                   data-modal-hide="static-modal"
                   type="button"
                   className="hover:text-blue-700 ms-3 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-black dark:bg-gray-800 dark:text-white dark:hover:bg-white dark:hover:text-black dark:focus:ring-gray-700"
@@ -104,6 +109,7 @@ const Modal = ({ showModal, setIsOpen, contentModal, prices }) => {
                 </div>
               </div>
             </Link>
+
           </div>
         </div>
       </div>
