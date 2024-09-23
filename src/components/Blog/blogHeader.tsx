@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Image from 'next/image';
 import blogData from '@/data/dataBlog';
@@ -26,7 +26,7 @@ const BlogHeader = () => {
         >
           <section
             id={dataHeader.id}
-            className="mx-auto columns-2 mt-10 flex text-white xxs:flex-col sm:flex-row "
+            className="mx-auto mt-10 flex columns-2 text-white xxs:flex-col sm:flex-row "
           >
             <article className="m-5 h-full overflow-hidden rounded-xl object-cover">
               <Image
@@ -35,13 +35,11 @@ const BlogHeader = () => {
                 height={1000}
                 alt={dataHeader.alt}
                 priority={true}
-                objectFit={'contain'}
-
                 className={'h-full'}
               />
             </article>
             <article className="m-5">
-              <h2 className="text-sm opacity-50 mb-2">Develop Process</h2>
+              <h2 className="mb-2 text-sm opacity-50">Develop Process</h2>
               <h1 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl">
                 {dataHeader.title}
               </h1>
@@ -60,7 +58,9 @@ const BlogHeader = () => {
                 </div>
                 <div className="ml-2">
                   <h2>Boucif Faradji</h2>
-                  <h4 className="text-xs opacity-50">{String(formattedDate)}</h4>
+                  <h4 className="text-xs opacity-50">
+                    {String(formattedDate)}
+                  </h4>
                 </div>
               </div>
             </article>
