@@ -8,6 +8,7 @@ import { useMyContext } from '@/context/context';
 import Loading from '@/app/loading';
 
 const Page = () => {
+
   const router = useRouter();
   const [{ status }] = useMyContext();
   useEffect(() => {

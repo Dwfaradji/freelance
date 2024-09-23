@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export const metadata = {
   title: 'À propos de DevEvoke - Découvrez notre histoire et notre mission',
   description:

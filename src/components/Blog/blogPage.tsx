@@ -13,10 +13,12 @@ interface PropsBlogPage {
 
 const BlogPage = ({ id }: PropsBlogPage) => {
   const [contentBlog, setContentBlog] = useState<BlogProps>();
+  const[formattedDate, setFormattedDate] = useState<string>();
 
   useEffect(() => {
     blogData.map((data) => {
       if (data.id === id) {
+        setFormattedDate(new Date(data.date).toLocaleDateString('fr-FR'));
         setContentBlog(data);
         return data;
       }
@@ -30,6 +32,7 @@ const BlogPage = ({ id }: PropsBlogPage) => {
   //     })
   //     .slice(0, 2);
   //
+
   return (
     <div>
       {contentBlog && (
@@ -50,14 +53,14 @@ const BlogPage = ({ id }: PropsBlogPage) => {
                 <ButtonNetwork id={contentBlog.id} />
               </div>
               <div className="">
-                <div className="mt-5 flex items-center">
-                  <div className="size-10 overflow-hidden rounded-full object-cover">
-                    {/*<Image className="h-10 w-10" priority={true} width={300} height={300} src={""}*/}
-                    {/*       alt={"article_blog"}/>*/}
-                  </div>
-                  <div className="ml-2">
+                <div className=" flex items-center">
+                  {/*<div className="size-10 overflow-hidden rounded-full object-cover">*/}
+                  {/*  /!*<Image className="h-10 w-10" priority={true} width={300} height={300} src={""}*!/*/}
+                  {/*  /!*       alt={"article_blog"}/>*!/*/}
+                  {/*</div>*/}
+                  <div className="text-left mb-6">
                     <h2>Boucif Faradji</h2>
-                    <h4 className="text-xs opacity-50">{contentBlog.date}</h4>
+                    <h4 className="text-xs opacity-50">{formattedDate}</h4>
                   </div>
                 </div>
                 <Fade>

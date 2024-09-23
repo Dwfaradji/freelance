@@ -16,9 +16,9 @@ const Header = () => {
           </h2>
 
           <h1 className="font-poppins  text-2xl font-semibold text-white lg:text-4xl xl:text-7xl ">
-            Développeur Freelance <br></br> Expert{' '}
+            Agence Digital <br></br>
             <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-              React NextJs
+         Expert Web et Mobile
             </span>
             <br />
           </h1>
