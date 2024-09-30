@@ -9,16 +9,14 @@ type Props = {
 
 const Page = ({ params }: Props) => {
   const { slug } = params;
-
   // Trouver les données du blog correspondant en utilisant le slug
   const blog = blogData.find((blog) => slugify(blog.title) === slug);
-
   if (!blog) {
     return <div>Blog not found</div>;
   }
   return (
     <div>
-      <BlogPage id={blog.id} />
+      <BlogPage blog={blog} />
     </div>
   );
 };

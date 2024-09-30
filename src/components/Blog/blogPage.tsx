@@ -7,17 +7,19 @@ import Image from 'next/image';
 import blogData from '@/data/dataBlog';
 import { BlogProps } from '@/data/typeFile';
 import ButtonNetwork from '@/components/ui/ButtonNetwork/buttonNetwork';
+import myPhoto from '@/images/about/photo-profil.png';
+
 interface PropsBlogPage {
-  id: string;
+  blog:  BlogProps ;
 }
 
-const BlogPage = ({ id }: PropsBlogPage) => {
+const BlogPage = ({ blog }: PropsBlogPage) => {
   const [contentBlog, setContentBlog] = useState<BlogProps>();
   const[formattedDate, setFormattedDate] = useState<string>();
 
   useEffect(() => {
     blogData.map((data) => {
-      if (data.id === id) {
+      if (data.id === blog.id) {
         setFormattedDate(new Date(data.date).toLocaleDateString('fr-FR'));
         setContentBlog(data);
         return data;
@@ -49,16 +51,16 @@ const BlogPage = ({ id }: PropsBlogPage) => {
                   priority
                 />
               </div>
-              <div className={'m-3'}>
-                <ButtonNetwork id={contentBlog.id} />
+              <div className={'m-3 '}>
+                <ButtonNetwork url={contentBlog} />
               </div>
               <div className="">
-                <div className=" flex items-center">
-                  {/*<div className="size-10 overflow-hidden rounded-full object-cover">*/}
-                  {/*  /!*<Image className="h-10 w-10" priority={true} width={300} height={300} src={""}*!/*/}
-                  {/*  /!*       alt={"article_blog"}/>*!/*/}
-                  {/*</div>*/}
-                  <div className="text-left mb-6">
+                <div className=" flex items-center my-6">
+                  <div className="size-10 overflow-hidden rounded-full object-cover">
+                    <Image className="h-10 w-10" priority={true} width={300} height={300} src={myPhoto}
+                           alt={"article_blog"}/>
+                  </div>
+                  <div className="text-left ml-2">
                     <h2>Boucif Faradji</h2>
                     <h4 className="text-xs opacity-50">{formattedDate}</h4>
                   </div>

@@ -7,33 +7,44 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from 'next-share';
+import { slugify } from "@/utils/slugify";
+import { BlogProps } from "@/data/typeFile";
 
 interface PropsButtonNetwork {
-  id: string;
+  url: BlogProps;
+
 }
 
-const ButtonNetwork = ({ id }: PropsButtonNetwork) => {
-  const shareUrl = `https://www.devevoke/blog/${id}`; // Remplacez cela par l'URL de votre article de blog
-
+const ButtonNetwork = ({ url }: PropsButtonNetwork) =>{
+  const shareUrl = `https://www.devevoke.com/blog/${slugify( url.title)}`; // Assurez-vous que l'URL de base soit correcte
   return (
-    <div className={'flex w-1/4 justify-between'}>
+    <div className="gap-x-5 flex" aria-label="Boutons de partage sur les réseaux sociaux">
+      {/* Facebook Share Button */}
       <FacebookShareButton
         url={shareUrl}
-        quote={'Découvrez le blog devevoke'}
+        quote={`Découvrez cet article intéressant sur Devevoke : ${shareUrl}`} // Inclut le lien dans le post Facebook
         hashtag={'#devevoke'}
+        aria-label="Partager sur Facebook"
       >
-        <FacebookIcon size={32} round />
+        <FacebookIcon size={32} round aria-label="Facebook Icon" />
       </FacebookShareButton>
 
+      {/* Twitter Share Button */}
       <TwitterShareButton
         url={shareUrl}
-        title={'Découvrez le blog de devevoke'}
+        title={`Découvrez cet article sur Devevoke : ${shareUrl}`} // Inclut le lien dans le tweet
+        aria-label="Partager sur Twitter"
       >
-        <TwitterIcon size={32} round />
+        <TwitterIcon size={32} round aria-label="Twitter Icon" />
       </TwitterShareButton>
 
-      <LinkedinShareButton url={shareUrl}>
-        <LinkedinIcon size={32} round />
+      {/* LinkedIn Share Button */}
+      <LinkedinShareButton
+        url={shareUrl}
+        summary={`Un nouvel article est disponible sur Devevoke : ${shareUrl}`} // Inclut le lien dans le post LinkedIn
+        aria-label="Partager sur LinkedIn"
+      >
+        <LinkedinIcon size={32} round aria-label="LinkedIn Icon" />
       </LinkedinShareButton>
     </div>
   );

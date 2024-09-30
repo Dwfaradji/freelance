@@ -24,10 +24,10 @@ const AboutHeader = () => {
             priority={true}
           />
           <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            Nous sommes une entreprise innovante, spécialisée dans [insérer domaine]. Notre mission est de fournir des
+            Nous sommes une entreprise innovante, spécialisée dans développement digital. Notre mission est de fournir des
             solutions sur mesure qui répondent aux besoins spécifiques de nos clients, en utilisant des technologies de
             pointe pour atteindre l'excellence. Découvrez notre histoire, nos valeurs, et la façon dont nous
-            transformons [domaine spécifique] grâce à une approche centrée sur l'innovation et la qualité.
+            transformons votre entreprise grâce à une approche centrée sur l'innovation et la qualité.
           </p>
         </article>
       </section>

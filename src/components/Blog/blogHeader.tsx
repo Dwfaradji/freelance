@@ -4,6 +4,7 @@ import Image from 'next/image';
 import blogData from '@/data/dataBlog';
 import Link from 'next/link';
 import { slugify } from '@/utils/slugify';
+import myPhoto from '@/images/about/photo-profil.png';
 
 const BlogHeader = () => {
   //Tri par date
@@ -40,7 +41,7 @@ const BlogHeader = () => {
             </article>
             <article className="m-5">
               <h2 className="mb-2 text-sm opacity-50">Develop Process</h2>
-              <h1 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl">
+              <h1 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl lg:text-4xl">
                 {dataHeader.title}
               </h1>
               <p className="mt-4 text-lg opacity-50 xxs:text-sm sm:text-lg">
@@ -48,13 +49,13 @@ const BlogHeader = () => {
               </p>
               <div className="mt-5 flex items-center">
                 <div className="size-10 overflow-hidden rounded-full object-cover">
-                  {/*<Image*/}
-                  {/*  width={30}*/}
-                  {/*  height={30}*/}
-                  {/*  className="h-10 w-10"*/}
-                  {/*  src={""}*/}
-                  {/*  alt={"auteur"}*/}
-                  {/*/>*/}
+                  <Image
+                    width={30}
+                    height={30}
+                    className="h-10 w-10"
+                    src={myPhoto}
+                    alt={"auteur"}
+                  />
                 </div>
                 <div className="ml-2">
                   <h2>Boucif Faradji</h2>

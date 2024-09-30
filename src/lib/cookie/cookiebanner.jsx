@@ -128,98 +128,94 @@ const CookieBanner = ({ config, headerScripts }) => {
   };
 
   return (
-    isBannerVisible && (
-      <div
-        className={`cookie-banner ${config.themeMode} display-${config.displayPosition} full-width-${config.fullWidth}`}
-      >
-        <div className="title-wrap">
-          <h4>{config.title}</h4>
-        </div>
-        <div className="content-wrap">
-          <div className="msg-wrap">
-            <p>
-              {config.description}{' '}
-              <a
-                href={config.moreInfoBtnLink}
-                style={{ color: config.primaryColor }}
-              >
-                {config.moreInfoBtnLabel}
-              </a>
-            </p>
-            <div id="cookieSettings" onClick={handleSettingsToggle}>
-              {config.settingsBtnLabel}
-            </div>
-            {isSettingsVisible && (
-              <div id="cookieTypes">
-                <h5>{config.cookieTypesTitle}</h5>
-                <ul>
-                  <li>
-                    <input
-                      type="checkbox"
-                      name="gdprPrefItem"
-                      value="necessary"
-                      checked
-                      disabled
-                    />
-                    <label title={config.necessaryCookieTypeDesc}>
-                      {config.necessaryCookieTypeLabel}
-                    </label>
-                  </li>
-                  {config.cookieTypes.map((cookieType, index) => (
-                    <li key={index}>
+    <>
+      {isBannerVisible && (
+        <div className={`cookie-banner ${config.themeMode} display-${config.displayPosition} full-width-${config.fullWidth}`}>
+          <div className="title-wrap">
+            <h4>{config.title}</h4>
+          </div>
+          <div className="content-wrap">
+            <div className="msg-wrap">
+              <p>
+                {config.description}{' '}
+                <a href={config.moreInfoBtnLink} style={{ color: config.primaryColor }}>
+                  {config.moreInfoBtnLabel}
+                </a>
+              </p>
+              <div id="cookieSettings" onClick={handleSettingsToggle}>
+                {config.settingsBtnLabel}
+              </div>
+              {isSettingsVisible && (
+                <div id="cookieTypes">
+                  <h5>{config.cookieTypesTitle}</h5>
+                  <ul>
+                    <li>
                       <input
                         type="checkbox"
-                        id={`gdprPrefItem${cookieType.value}`}
                         name="gdprPrefItem"
-                        value={cookieType.value}
-                        checked={cookies[cookieType.value]}
-                        onChange={() =>
-                          setCookies({
-                            ...cookies,
-                            [cookieType.value]: !cookies[cookieType.value],
-                          })
-                        }
+                        value="necessary"
+                        checked
+                        disabled
                       />
-                      <label
-                        htmlFor={`gdprPrefItem${cookieType.value}`}
-                        title={cookieType.description}
-                      >
-                        {cookieType.type}
+                      <label title={config.necessaryCookieTypeDesc}>
+                        {config.necessaryCookieTypeLabel}
                       </label>
                     </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-          <div className="btn-wrap">
-            <button
-              id="cookieAccept"
-              style={{
-                color: config.lightColor,
-                background: config.primaryColor,
-                border: `1px solid ${config.primaryColor}`,
-              }}
-              onClick={handleAccept}
-            >
-              {config.acceptBtnLabel}
-            </button>
-            {config.showDeclineBtn && (
+                    {config.cookieTypes.map((cookieType, index) => (
+                      <li key={index}>
+                        <input
+                          type="checkbox"
+                          id={`gdprPrefItem${cookieType.value}`}
+                          name="gdprPrefItem"
+                          value={cookieType.value}
+                          checked={cookies[cookieType.value]}
+                          onChange={() =>
+                            setCookies({
+                              ...cookies,
+                              [cookieType.value]: !cookies[cookieType.value],
+                            })
+                          }
+                        />
+                        <label htmlFor={`gdprPrefItem${cookieType.value}`} title={cookieType.description}>
+                          {cookieType.type}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div className="btn-wrap">
               <button
-                id="cookieReject"
+                id="cookieAccept"
                 style={{
-                  color: config.primaryColor,
+                  color: config.lightColor,
+                  background: config.primaryColor,
                   border: `1px solid ${config.primaryColor}`,
                 }}
-                onClick={handleReject}
+                onClick={handleAccept}
               >
-                {config.declineInfoBtnLabel}
+                {config.acceptBtnLabel}
               </button>
-            )}
+              {config.showDeclineBtn && (
+                <button
+                  id="cookieReject"
+                  style={{
+                    color: config.primaryColor,
+                    border: `1px solid ${config.primaryColor}`,
+                  }}
+                  onClick={handleReject}
+                >
+                  {config.declineInfoBtnLabel}
+                </button>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    )
+      )}
+
+    </>
+
   );
 };
 

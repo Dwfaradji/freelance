@@ -9,7 +9,7 @@ const PricingCTA = () => {
         Besoin d'un coup de pouce pour faire le bon choix ?
       </h2>
       {/*<p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">*/}
-        <p className="mt-5 w-2/4 text-justify opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
+        <p className="m-3 text-justify opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
           Trouver la solution idéale parmi tant d’options peut sembler
           décourageant, mais ne vous inquiétez plus ! Nos templates sont conçus
           pour vous simplifier la tâche. Que vous recherchiez un design moderne,

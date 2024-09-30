@@ -59,7 +59,7 @@ const AboutMore = () => {
               <Image
                 className=" relative z-10 size-full"
                 src={aboutImg}
-                alt={'image_personne_costume'}
+                alt={'banner_about'}
                 width={800}
                 height={300}
               />
