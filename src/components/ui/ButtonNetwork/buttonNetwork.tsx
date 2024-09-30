@@ -22,7 +22,7 @@ const ButtonNetwork = ({ url }: PropsButtonNetwork) =>{
       {/* Facebook Share Button */}
       <FacebookShareButton
         url={shareUrl}
-        quote={`Découvrez cet article intéressant sur Devevoke : ${shareUrl}`} // Inclut le lien dans le post Facebook
+        quote={`Découvrez cet article intéressant sur Devevoke :`} // Inclut le lien dans le post Facebook
         hashtag={'#devevoke'}
         aria-label="Partager sur Facebook"
       >
@@ -32,7 +32,7 @@ const ButtonNetwork = ({ url }: PropsButtonNetwork) =>{
       {/* Twitter Share Button */}
       <TwitterShareButton
         url={shareUrl}
-        title={`Découvrez cet article sur Devevoke : ${shareUrl}`} // Inclut le lien dans le tweet
+        title={`Découvrez cet article sur Devevoke :`} // Inclut le lien dans le tweet
         aria-label="Partager sur Twitter"
       >
         <TwitterIcon size={32} round aria-label="Twitter Icon" />
@@ -41,7 +41,7 @@ const ButtonNetwork = ({ url }: PropsButtonNetwork) =>{
       {/* LinkedIn Share Button */}
       <LinkedinShareButton
         url={shareUrl}
-        summary={`Un nouvel article est disponible sur Devevoke : ${shareUrl}`} // Inclut le lien dans le post LinkedIn
+        title={`Un nouvel article est disponible sur Devevoke :`} // Inclut le lien dans le post LinkedIn
         aria-label="Partager sur LinkedIn"
       >
         <LinkedinIcon size={32} round aria-label="LinkedIn Icon" />
