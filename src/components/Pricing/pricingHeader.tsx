@@ -7,7 +7,7 @@ import { dataPriceOptions } from '@/data/data';
 const PricingHeader = () => {
   return (
     <header className="mx-auto mt-10 flex  flex-col items-center font-poppins text-white">
-      <Fade direction={'up'} delay={1000}>
+      <Fade direction={'up'}>
         <div className="flex flex-col items-center px-2">
           <h1 className="m-5 bg-gradient-to-r from-pink to-purple text-6xl font-bold text-gradient xxs:text-xl sm:text-4xl lg:text-6xl">
             Une tarification simple et Efficace

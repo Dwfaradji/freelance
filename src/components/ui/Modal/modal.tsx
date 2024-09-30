@@ -91,9 +91,9 @@ const Modal: React.FC<ModalProps> = ({ showModal, setIsOpen, contentModal, price
                   </li>
                 ))}
             </ul>
-            <h3 className="dark:text-white text-gray-500">
-              À partir de: {" "}
-              <span className="animate-pulse bg-gradient-to-l from-pink to-purple text-gradient">
+            <h3 className="dark:text-white text-gray-500 flex justify-center">
+              À partir de: {"   "}
+              <span className="animate-bounce bg-gradient-to-l from-pink to-purple text-gradient block ml-2">
                {modal && modal.price}
               </span>
             </h3>
@@ -108,7 +108,7 @@ const Modal: React.FC<ModalProps> = ({ showModal, setIsOpen, contentModal, price
                 <button
                   data-modal-hide="static-modal"
                   type="button"
-                  className=" hover:text-blue-700 ms-3 animate-bounce rounded-lg border border-gray-200 bg-gradient-to-t from-pink to-purple  px-5 py-2.5 text-sm font-medium text-white hover:bg-white hover:bg-gradient-to-t hover:from-pink hover:text-black focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-black dark:bg-gray-800 dark:text-white dark:hover:bg-white dark:hover:text-black dark:focus:ring-gray-700"
+                  className=" hover:text-blue-700 ms-3 hover:animate-bounce animate-pulse rounded-lg border border-gray-200 bg-gradient-to-t from-pink to-purple  px-5 py-2.5 text-sm font-medium text-white hover:bg-white hover:bg-gradient-to-t hover:from-pink hover:text-black focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-black dark:bg-gray-800 dark:text-white dark:hover:bg-white dark:hover:text-black dark:focus:ring-gray-700"
                 >
                   Demander un devis
                 </button>

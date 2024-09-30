@@ -73,7 +73,7 @@ const Slider = ({ data }: Slide) => {
 
   return (
     <>
-      <section className={`${hiddenSlide} text-white`}>
+      <section className={`${hiddenSlide} text-white `}>
         <Swiper
           onSwiper={(swiper: any) => (swiperRef.current = swiper)} // Mise à jour correcte de la référence
           pagination={{
@@ -89,7 +89,7 @@ const Slider = ({ data }: Slide) => {
           {data.map(({ title, content, ComponentType, props }, index) => (
             <SwiperSlide key={index}>
               <Fade>
-                <h2 className=" m-10 text-xl">{title}</h2>
+                <h2 className=" m-10 text-xl bg-gradient-to-r from-pink to-purple text-gradient">{title}</h2>
                 <div className={'hidden md:block'}>
                   <p className="m-0 mb-7 h-6 min-h-max overflow-hidden text-left hover:h-full md:m-3 md:h-auto">
                     {content}
