@@ -18,14 +18,14 @@ const Header = () => {
           <h1 className="font-poppins  text-2xl font-semibold text-white lg:text-4xl xl:text-7xl ">
             Agence Digital <br></br>
             <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-         Expert Web et Mobile
+              Expert Web et Mobile
             </span>
             <br />
           </h1>
           <h2 className="mt-8 text-xl text-white lg:text-3xl">
             Créez Votre Présence en Ligne avec Nos Services
           </h2>
-          <p className={'mt-2 text-lg text-white lg:text-2xl'}>
+          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             Bienvenue sur{' '}
             <span className="bg-gradient-to-r from-pink to-purple text-gradient">
               DevEvoke
@@ -50,14 +50,16 @@ const Header = () => {
         </div>
       </Fade>
       <div className="mx-auto  mt-10">
-        <div className="h-auto flex justify-center overflow-hidden rounded-xl mx-auto ">
+        <div className="mx-auto flex h-auto justify-center overflow-hidden rounded-xl ">
           <Image
             priority
             width={800}
             height={450}
             src={HeaderImage}
             alt="Photo_ordinateur_sur_bureau"
-            className={"aspect-video"}
+            className={
+              'animate-wiggle animate-flicker mx-auto aspect-video  bg-black'
+            }
           />
         </div>
       </div>

@@ -7,14 +7,15 @@ import { dataPriceOptions } from '@/data/data';
 const PricingHeader = () => {
   return (
     <header className="mx-auto mt-10 flex  flex-col items-center font-poppins text-white">
-      <Fade>
-        <h1 className="m-5 text-6xl font-bold xxs:text-xl sm:text-4xl lg:text-6xl">
+      <Fade direction={"up"} delay={1000}>
+        <h1
+          className="m-5 text-6xl font-bold xxs:text-xl sm:text-4xl lg:text-6xl bg-gradient-to-r from-pink to-purple text-gradient">
           Une tarification simple et transparente
         </h1>
-        <h2 className="text-center text-base opacity-50 xxs:text-sm sm:text-lg">
-          Obtenez le plan Devevoke qui correspond à vos besoins avec une
-          introduction spéciale de prix.
-        </h2>
+          <h2 className="opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
+            Obtenez le plan Devevoke qui correspond à vos besoins avec une
+            introduction spéciale de prix.
+          </h2>
       </Fade>
       <Fade cascade>
         <div className="mt-10 grid grid-cols-2 gap-4 xxs:grid-cols-1 sm:grid-cols-2">
@@ -25,13 +26,13 @@ const PricingHeader = () => {
                   {dataOption.title}
                 </h2>
                 <h2 className="mt-2 text-4xl font-bold"> {dataOption.price}</h2>
-                <p className="mt-2 text-sm opacity-50">
+                <p className="mt-2 text-sm opacity-75">
                   {dataOption.description}
                 </p>
 
                 <ul className="mt-5">
                   {dataOption.details.map((details, i) => (
-                    <li key={i} className="py-2 text-sm opacity-70">
+                    <li key={i} className="py-2 text-sm opacity-75">
                       <Done className={'mr-2 text-blue'} />
                       {details}
                     </li>

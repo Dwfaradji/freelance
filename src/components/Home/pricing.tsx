@@ -28,7 +28,15 @@ const PricingMain = () => {
                 <span className="relative inline-flex size-3 rounded-full bg-gradient-to-r from-pink to-purple"></span>
               </span>
               <div className="w-full p-8  sm:w-3/5">
-                <h2 className="text-3xl font-bold">{tarif.title}</h2>
+                <Fade direction={'down'}>
+                  <h2 className="text-3xl font-bold">
+              <span className="bg-gradient-to-r from-pink to-purple text-gradient">
+            {tarif.title}
+              </span>
+                  </h2>
+                </Fade>
+
+                {/*<h2 className="text-3xl font-bold">{tarif.title}</h2>*/}
                 <h2 className="font-poppins text-2xl">{tarif.subtitle}</h2>
                 <br />
                 <p>{tarif.description}</p>

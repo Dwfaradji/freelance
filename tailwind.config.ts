@@ -17,6 +17,23 @@ const config: Config = {
       textColor: {
         gradient: 'linear-gradient(to right, #3c9dda, #3c9dda)',
       },
+      keyframes: {
+        wiggle: {
+          '0%': { opacity: '0' },
+          '25%': { opacity: '0,2' },
+          '50%': { opacity: '0,3' },
+          '75%': { opacity: '0,4' },
+          '100%': { opacity: '1' },
+        },
+        flicker: {
+          '0%, 100%': { opacity: '0.2' },
+          '50%': { opacity: '1' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 4s ease-in',
+        // flicker: 'flicker 0.2s ease-in-out 3',
+      },
     },
     colors: {
       black: colors.black,

@@ -3,6 +3,7 @@ import { articles } from '@/data/dataSlideDevis';
 import Template from '@/components/Template/template';
 import Button from '@/components/ui/Atoms/button';
 import Link from 'next/link';
+import { Fade } from "react-awesome-reveal";
 
 const FeaturedTemplate = () => {
   const sortByDateDescending = articles.sort((a: any, b: any) => {
@@ -14,10 +15,15 @@ const FeaturedTemplate = () => {
 
   return (
     <section className="mx-auto mt-20 px-8">
-      <h2 className="font-poppins text-xl font-bold text-white lg:text-3xl">
-        Découvrez <br /> Chaque Mois <br /> Nos Nouveaux Templates <br />
-      </h2>
-      <p className="mt-5 w-3/4 text-lg text-white opacity-50 xxs:w-full lg:w-3/4 lg:text-2xl">
+
+      <Fade direction={'up'}>
+        <h2 className="font-poppins text-xl font-bold text-white lg:text-3xl">
+              <span className="bg-gradient-to-r from-pink to-purple text-gradient">
+               Découvrez <br /> Chaque Mois <br /> Nos Nouveaux Templates <br />
+              </span>
+        </h2>
+      </Fade>
+      <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
         {`Explorez notre collection de modèles de site web dès aujourd'hui et trouvez celui qui correspond le
                     mieux à votre entreprise. Restez à l'affût des dernières nouveautés en vous abonnant à notre newsletter
                     ou en nous suivant sur les réseaux sociaux. Chez DevEvoke, nous vous offrons les outils

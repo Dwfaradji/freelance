@@ -28,7 +28,7 @@ const AboutTeamBigCard = () => {
           </div>
 
           <Fade direction={'right'} reverse={false} duration={2000}>
-            <p className=" flex  size-full items-center p-6 text-lg text-white lg:text-2xl">
+            <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
               {`Je suis un développeur Full Stack freelance passionné par la
               création d'applications web innovantes. Je suis spécialisé dans le
               développement frontend et backend, ainsi que dans la conception de

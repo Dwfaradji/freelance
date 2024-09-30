@@ -12,16 +12,25 @@ const Projects = () => {
     <section>
       <Fade cascade>
         <article className="mt-20 px-8">
-          <h2 className="text-xl font-bold text-white lg:text-3xl">
-            Découvrez Nos Réalisations Web
-          </h2>
-          <p className="mt-5 text-lg text-white opacity-50 lg:text-2xl">
+          <Fade direction={'up'}>
+            <h2 className="text-xl font-bold text-white lg:text-3xl">
+              <span className="bg-gradient-to-r from-pink to-purple text-gradient">
+                Découvrez Nos Réalisations Web
+              </span>
+            </h2>
+          </Fade>
+
+          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             {`Notre portfolio présente une sélection de projets web que j'ai réalisés en tant que développeur web freelance. Vous y trouverez des sites web, des applications web et des solutions informatiques personnalisées pour répondre aux besoins spécifiques de chaque client.`}
             <br />
             <br />
-            Vous cherchez un développeur web freelance pour donner vie à votre
-            projet ?
-            <br />
+          </p>
+          <span className="text-lg text-white lg:text-2xl">
+            Vous souhaitez créer un projet web pour votre entreprise ou pour
+            votre équipe ?
+          </span>
+          <br />
+          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             Que ce soit pour créer un site web vitrine, une boutique en ligne,
             ou une application mobile, je mets mes compétences en développement
             web au service de votre réussite. Découvrez mes réalisations et
@@ -52,14 +61,14 @@ const Projects = () => {
               {projects &&
                 projects.map((project) => (
                   <SwiperSlide key={project.id}>
-                    <div className={"flex justify-center items-center w-full"}>
+                    <div className={'flex w-full items-center justify-center'}>
                       <Image
                         src={project.image}
                         alt={project.alt}
                         width={664}
                         height={373}
                         priority={true}
-                        className={"aspect-video"}
+                        className={'aspect-video'}
                       />
                     </div>
                   </SwiperSlide>
@@ -68,12 +77,13 @@ const Projects = () => {
           </div>
 
           {/* Text Bloc */}
-          <div className="flex w-full flex-col justify-between rounded-xl bg-gradient-to-t from-pink p-8 lg:w-1/2 lg:bg-gradient-to-l">
+          <div
+            className="flex w-full flex-col justify-between rounded-xl bg-gradient-to-t from-pink p-8 lg:w-1/2 lg:bg-gradient-to-l">
             <h2 className="text-xl text-white lg:text-3xl">
               Explorez nos réalisations et laissez-vous inspirer
             </h2>
 
-            <p className="mt-8 text-lg text-white opacity-50 lg:text-2xl">
+            <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
               Vous souhaitez donner vie à votre projet web ? Découvrez notre
               portfolio et laissez-vous inspirer par nos réalisations. Notre
               équipe de développeurs web freelance met à votre disposition son
@@ -81,7 +91,7 @@ const Projects = () => {
               mobiles performantes et esthétiques.
             </p>
 
-            <p className="my-5 text-lg text-white opacity-50 lg:text-2xl">
+            <p className="my-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
               Prêts à relever de nouveaux défis ?
             </p>
 

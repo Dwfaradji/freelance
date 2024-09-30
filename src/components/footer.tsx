@@ -9,7 +9,8 @@ const Footer = () => {
       <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center text-white">
         <div className="flex w-full flex-wrap justify-between gap-8">
           <div className="sm:col-span-12 md:col-span-4">
-            <h3 className="mb-5 text-left text-xl">Infos général</h3>
+
+            <h3 className="mb-5 text-left text-xl bg-gradient-to-r from-pink to-purple text-gradient">Infos général</h3>
             <ul className={''}>
               <li>
                 <Link
@@ -47,7 +48,7 @@ const Footer = () => {
           </div>
 
           <div className="footer__section">
-            <h3 className="mb-5 text-left text-xl">Services</h3>
+            <h3 className="mb-5 text-left text-xl bg-gradient-to-r from-pink to-purple text-gradient">Services</h3>
             <ul>
               <li className="mb-1">Web design</li>
               <li>Développement web</li>
@@ -59,7 +60,7 @@ const Footer = () => {
           </div>
 
           <div className="footer__section">
-            <h3 className="mb-5 text-left text-xl">Contact</h3>
+            <h3 className="mb-5 text-left text-xl bg-gradient-to-r from-pink to-purple text-gradient">Contact</h3>
             <p className={'mb-1 flex flex-wrap justify-between'}>
               Email:
               <a className="ml-1 text-white" href="mailto:contact@devevoke.com">

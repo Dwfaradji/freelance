@@ -9,13 +9,16 @@ import Button from '@/components/ui/Atoms/button';
 const ProjectsHeader = () => {
   return (
     <div className="mx-auto">
-      <h1
-        className={
-          'mb-8 text-center font-poppins text-2xl font-semibold text-white lg:text-4xl xl:text-7xl'
-        }
-      >
-        Nos projets
-      </h1>
+      <Fade direction={'up'} delay={1000}>
+        <h1
+          className={
+            'mb-8 text-center font-poppins text-2xl font-semibold text-white lg:text-4xl xl:text-7xl bg-gradient-to-r from-pink to-purple text-gradient'
+          }
+        >
+         Découvrez nos projets
+        </h1>
+      </Fade>
+
       <div className={'mx-auto'}>
         <Fade cascade>
           <div className="mt-10 flex flex-wrap justify-center  lg:flex-nowrap ">

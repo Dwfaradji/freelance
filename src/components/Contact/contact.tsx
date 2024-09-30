@@ -48,10 +48,10 @@ const Contact = () => {
       <section className="mx-auto mt-10 flex max-w-7xl text-white xxs:flex-col sm:flex-row">
         <div className="m-5 rounded-xl bg-lightblack p-10 xxs:m-0 xxs:p-7 md:m-5 md:w-3/4">
           <h2 className="text-xs opacity-50">Entrer en contact</h2>
-          <h1 className="mt-2 font-poppins text-2xl font-bold lg:text-4xl xl:text-7xl">
+          <h1 className="mt-2 bg-gradient-to-t from-pink to-purple font-poppins text-2xl font-bold text-gradient lg:text-4xl xl:text-7xl">
             Travaillons ensemble
           </h1>
-          <p className="mt-2 w-full text-lg opacity-50 lg:text-2xl">
+          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             {`Besoin d'aide ou simplement envie de discuter de votre prochain projet passionnant ? Nous sommes
                             tout ouïe ! Laissez-nous un message et nous vous contacterons dans les plus brefs délais pour
                             discuter de la façon dont nous pouvons concrétiser vos idées. Votre prochaine grande aventure

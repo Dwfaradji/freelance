@@ -35,7 +35,7 @@ const AboutMore = () => {
 
       <article className={'p-8 xxs:p-0'}>
         <Fade direction={'right'} delay={1000}>
-          <p className="relative -z-10 mt-10 text-lg text-white lg:text-2xl">
+          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             {`Mon voyage dans l'univers du développement web a débuté par une
             fascination pour la technologie et une curiosité insatiable pour les
             dernières innovations. Au fil des années, j'ai forgé un parcours qui
@@ -68,7 +68,7 @@ const AboutMore = () => {
         </div>
 
         <Fade direction={'down'} delay={1000} className={'relative -z-20'}>
-          <p className=" mt-10 text-lg text-white lg:text-2xl">
+          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             {`J'ai plongé dans l'écosystème React, embrassant Next.js pour ses
             capacités de rendu côté serveur et d'optimisation des performances.
             J'ai également maîtrisé Redux pour gérer l'état global des
