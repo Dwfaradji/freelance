@@ -1,14 +1,17 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Mentions légales - DevEvoke',
+  title: 'Politique de confidentialité - DevEvoke',
   description:
-    'Mentions légales du site DevEvoke. Découvrez les mentions légales du site DevEvoke.',
+    "Découvrez la politique de confidentialité de DevEvoke. Apprenez comment nous collectons, utilisons et protégeons vos données personnelles lorsque vous utilisez notre site.",
   alternates: {
-    canonical: 'https://www.devevoke.com/mentions-legal',
+    canonical: 'https://www.devevoke.com/politique-confidentialite',
+  },
+  robots: {
+    follow: true,
+    index: true,
   },
 };
-
 export default function MentionsLayout({
   children,
 }: {

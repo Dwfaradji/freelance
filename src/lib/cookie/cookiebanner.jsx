@@ -7,7 +7,7 @@ const CookieBanner = ({ config, headerScripts }) => {
   const [isSettingsVisible, setIsSettingsVisible] = useState(false);
   const [cookies, setCookies] = useState({
     necessary: true,
-    analytics: false,
+    analytics: true,
     marketing: false,
     preferences: false,
   });

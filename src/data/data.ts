@@ -367,7 +367,7 @@ const pageInfosProcess: PageInfo[] = [
           site web, vous créez une expérience fluide et professionnelle.`,
   },
 ];
-const lienPolitiqueConfidentialite = `<a href='https://www.devevoke.com/politique-confidentialité'>politique de confidentialité</a>`;
+const lienPolitiqueConfidentialite = `<a href='https://www.devevoke.com/politique-confidentialite'>politique de confidentialité</a>`;
 const pageMentionsLegales: PageInfo[] = [
   {
     titleH1: 'Mentions légales',

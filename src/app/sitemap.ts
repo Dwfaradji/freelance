@@ -57,12 +57,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: 'https://www.devevoke.com/mentions-legal',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
       url: 'https://www.devevoke.com/politique-confidentialite',
       lastModified: new Date(),
       changeFrequency: 'yearly',
