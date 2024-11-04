@@ -41,14 +41,11 @@ const BlogPage = ({ blog }: PropsBlogPage) => {
         <div>
           <Fade>
             <section className="relative mt-10 flex flex-col text-white xxs:px-3 lg:px-20">
-              <div className={ "flex flex-col-reverse" }>
+              <div className={'flex flex-col-reverse'}>
                 <Fade>
                   <h1 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl">
                     {contentBlog.title}
                   </h1>
-                  <p className="my-4 text-lg opacity-50 xxs:text-sm sm:text-lg">
-                    {contentBlog.descriptionShort}
-                  </p>
                 </Fade>
                 <div className="overflow-hidden rounded-xl">
                   <Image
@@ -57,32 +54,36 @@ const BlogPage = ({ blog }: PropsBlogPage) => {
                     height={800}
                     alt={contentBlog.alt}
                     className={'w-full md:h-[80dvh] '}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority
                   />
-                  <div className={'m-3 '}>
+                  <div className={'m-3 flex justify-between'}>
+                    <div className=" my-6 flex items-center">
+                      <div className="size-10 overflow-hidden rounded-full object-cover">
+                        <Image
+                          className="h-10 w-10"
+                          priority={true}
+                          width={300}
+                          height={300}
+                          src={myPhoto}
+                          alt={'article_blog'}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </div>
+                      <div className="ml-2 text-left">
+                        <h2>Boucif Faradji</h2>
+                        <h4 className="text-xs opacity-50">{formattedDate}</h4>
+                      </div>
+                    </div>
                     <ButtonNetwork url={contentBlog} />
                   </div>
                 </div>
               </div>
 
-
               <div className="">
-                <div className=" my-6 flex items-center">
-                  <div className="size-10 overflow-hidden rounded-full object-cover">
-                    <Image
-                      className="h-10 w-10"
-                      priority={true}
-                      width={300}
-                      height={300}
-                      src={myPhoto}
-                      alt={'article_blog'}
-                    />
-                  </div>
-                  <div className="ml-2 text-left">
-                    <h2>Boucif Faradji</h2>
-                    <h4 className="text-xs opacity-50">{formattedDate}</h4>
-                  </div>
-                </div>
+                <p className="my-4 text-lg opacity-50 xxs:text-sm sm:text-lg">
+                  {contentBlog.descriptionShort}
+                </p>
 
                 <article className="mt-8">
                   {contentBlog.descriptionLong &&

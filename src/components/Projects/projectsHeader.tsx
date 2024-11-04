@@ -58,7 +58,7 @@ const ProjectsHeader = () => {
               </div>
             </div>
             <div className=" m-2 overflow-hidden rounded-xl ">
-              <div className="relative m-2  size-full overflow-hidden rounded-xl">
+              <div className="relative size-full overflow-hidden rounded-xl">
                 <div
                   className={
                     '  absolute size-full items-center justify-center opacity-0  hover:flex hover:bg-gray-800 hover:bg-opacity-50 hover:opacity-95'
@@ -76,9 +76,10 @@ const ProjectsHeader = () => {
                 <Image
                   src={projectKw}
                   alt={'image_project_kw'}
-                  width={950}
-                  height={400}
-                  className={'size-full'}
+                  width={1000}
+                  height={800}
+                  className={'relative -z-10 size-full'}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
             </div>
@@ -143,6 +144,7 @@ const ProjectsHeader = () => {
                 width={1000}
                 height={800}
                 className={'relative -z-10 size-full'}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>

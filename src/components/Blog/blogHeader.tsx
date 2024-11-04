@@ -37,6 +37,7 @@ const BlogHeader = () => {
                 alt={dataHeader.alt}
                 priority={true}
                 className={'h-full'}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </article>
             <article className="m-5">
@@ -55,6 +56,7 @@ const BlogHeader = () => {
                     className="h-10 w-10"
                     src={myPhoto}
                     alt={"auteur"}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="ml-2">

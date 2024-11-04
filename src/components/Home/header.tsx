@@ -52,14 +52,15 @@ const Header = () => {
       <div className="mx-auto  mt-10">
         <div className="mx-auto flex h-auto justify-center overflow-hidden rounded-xl ">
           <Image
-            priority
-            width={800}
-            height={450}
+            width={1920}
+            height={1280}
             src={HeaderImage}
             alt="Photo_ordinateur_sur_bureau"
             className={
               'animate-wiggle animate-flicker mx-auto aspect-video  bg-black'
             }
+            priority // Optionnel, mais peut être utilisé pour les images importantes
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       </div>

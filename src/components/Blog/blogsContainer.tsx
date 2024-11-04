@@ -17,7 +17,7 @@ const BlogsContainer = () => {
   return (
     <section className="mx-auto mt-10 text-white">
       <article className="grid grid-cols-3 gap-4 xxs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        <Fade cascade delay={500}>
+        <Fade duration={1000} direction="down">
           {dataHeader.map((blog, i) => (
             <Link
               key={i}
@@ -32,6 +32,7 @@ const BlogsContainer = () => {
                     className="size-full object-cover"
                     src={blog.img}
                     alt={blog.alt}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <h2 className="mt-2 font-poppins text-3xl font-bold">
