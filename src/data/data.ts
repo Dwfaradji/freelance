@@ -44,7 +44,7 @@ const projects: Project[] = [
 // //Tarifs
 const prices: Price[] = [
   {
-    id: '0',
+    id: '1',
     title: 'Formule Essentielle',
     subtitle: 'Site Vitrine',
     price: '999€',
@@ -70,7 +70,7 @@ const prices: Price[] = [
     ],
   },
   {
-    id: '1',
+    id: '2',
     title: 'Formule Premium',
     subtitle: 'Site E-commerce',
     price: '2499€',
@@ -95,7 +95,7 @@ const prices: Price[] = [
     ],
   },
   {
-    id: '2',
+    id: '3',
     title: 'Formule Pro',
     subtitle: 'Application Web',
     price: '4999€',
@@ -119,6 +119,32 @@ const prices: Price[] = [
       "Mise en production de l'application",
       'Support et maintenance',
       "Formation à l'utilisation de l'application",
+    ],
+  },
+  {
+    id: '4',
+    title: 'Formule Blockchain',
+    subtitle: 'Application Web3',
+    price: '9999€',
+    description: `Entrez dans l'ère du Web3 avec une application blockchain sur mesure. Notre équipe d'experts 
+                développera une solution décentralisée intégrant les smart contracts et les technologies blockchain 
+                les plus avancées. Que ce soit pour les NFTs, la DeFi, ou une DAO, nous créons des applications 
+                sécurisées et innovantes qui exploitent pleinement le potentiel de la blockchain.`,
+    details: [
+      'Analyse des besoins et architecture blockchain',
+      'Développement de smart contracts',
+      'Audit de sécurité des smart contracts',
+      'Intégration Web3 (MetaMask, WalletConnect)',
+      'Tests sur réseaux de test (testnet)',
+      'Déploiement sur mainnet',
+      'Documentation technique complète',
+      "Formation à l'utilisation",
+      'Support post-déploiement',
+      'Optimisation des coûts en gas',
+      'Interface utilisateur Web3',
+      'Intégration IPFS si nécessaire',
+      'Monitoring de la blockchain',
+      'Maintenance et mises à jour',
     ],
   },
 ];
@@ -163,12 +189,12 @@ const services: Service[] = [
       `,
 
     items: [
-      { id: 1, title: 'WordPress' },
+      { id: 1, title: 'WordPress, React & NextJs 13' },
       {
         id: 2,
-        title: 'Design responsive',
+        title: 'Design responsive, Tailwind CSS',
       },
-      { id: 3, title: 'Certifié W3C' },
+      { id: 3, title: 'Certifié W3C, SEO' },
     ],
   },
   {
@@ -178,9 +204,9 @@ const services: Service[] = [
     utilisant les dernières technologies et frameworks. DevEvoke vous accompagne
     de la conception à la mise en œuvre, en intégrant des fonctionnalités avancées et une interface utilisateur intuitive.
     Que vous ayez besoin d'une application de gestion,
-    d'une plateforme e-commerce ou d'un outil collaboratif, nous concevons des solutions adaptées à vos besoins`,
+    d'une plateforme e-commerce, d'un outil collaboratif ou d'une blockchain, nous concevons des solutions adaptées à vos besoins`,
     items: [
-      { id: 1, title: 'React & NextJs 13' },
+      { id: 1, title: 'React & NextJs 13, Web3' },
       {
         id: 2,
         title: 'Symfony 5 & PHP 8',
@@ -248,7 +274,7 @@ const pageInfosPrice: PageInfo[] = [
   },
   {
     title: 'Tarif journalier',
-    text: `Mon tjm standard est de 350€ Ce tarif journalier est
+    text: `Mon tjm standard est de 600€ Ce tarif journalier est
         applicable à tous les projets de développement web, y compris la
         conception de sites web, le développement d'applications web et
         l'intégration de systèmes tiers. Le tarif journalier est calculé en

@@ -15,7 +15,7 @@ const AboutTeamBigCard = () => {
           <Image
             width={400}
             height={400}
-            className={'w-1/6 overflow-hidden rounded-full lg:w-[80%] '}
+            className={'w-1/6 overflow-hidden rounded-full lg:w-4/5'}
             src={myPhoto}
             alt={'photo_du_gérant_devevoke'}
           />
