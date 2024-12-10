@@ -3,6 +3,7 @@ import { Project, Price, Service, PageInfo } from './typeFile';
 
 import fenixSolutions from '@/images/projects/fenixSolutions.webp';
 import kellerWilliams from '@/images/projects/kw.webp';
+import pizzeriaMenu from '@/images/projects/appPizza-home-1920.webp';
 
 //Project
 const projects: Project[] = [
@@ -21,6 +22,14 @@ const projects: Project[] = [
     alt: 'image du projet keller williams',
     tech: ['Next,', ' React,', ' Symfony,', ' Docker'],
     link: 'https://kwoxygene.fr/',
+  },
+  {
+    id: 2,
+    title: 'Pizzeria Menu',
+    image: String(pizzeriaMenu.src),
+    alt: 'image du projet pizzeria menu',
+    tech: ['Next.js', 'Tailwind CSS', 'React.js', 'GitHub', 'Vercel'],
+    link: '"https://restaurant-pizza-rho.vercel.app/"',
   },
 ];
 

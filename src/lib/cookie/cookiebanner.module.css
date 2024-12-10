@@ -1,0 +1,123 @@
+.banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--banner-bg-color, #f9f9f9);
+  color: var(--banner-text-color, #333);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 1rem;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.banner.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.banner h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.banner p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: var(--banner-secondary-text-color, #555);
+}
+
+.banner a {
+  text-decoration: underline;
+  color: var(--banner-link-color, #007bff);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.banner .settingsToggle {
+  display: inline-block;
+  background: none;
+  color: var(--banner-link-color, #007bff);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.banner .settings {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--settings-bg-color, #ffffff);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.banner .settings h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.banner .settings ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.banner .settings ul li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.banner .settings ul li input[type='checkbox'] {
+  margin-right: 0.5rem;
+}
+
+.banner .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.banner button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border 0.3s;
+}
+
+.banner button#cookieAccept {
+  background: var(--button-primary-bg, #007bff);
+  color: var(--button-primary-text, #fff);
+  border: 1px solid var(--button-primary-bg, #007bff);
+}
+
+.banner button#cookieAccept:hover {
+  background: var(--button-primary-hover-bg, #0056b3);
+  border-color: var(--button-primary-hover-bg, #0056b3);
+}
+
+.banner button#cookieReject {
+  background: var(--button-secondary-bg, transparent);
+  color: var(--button-secondary-text, #007bff);
+  border: 1px solid var(--button-secondary-border, #007bff);
+}
+
+.banner button#cookieReject:hover {
+  background: var(--button-secondary-hover-bg, rgba(0, 123, 255, 0.1));
+}
