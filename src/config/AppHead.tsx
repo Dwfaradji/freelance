@@ -39,7 +39,10 @@ const AppHead: React.FC = () => {
     <>
       <meta name="theme-color" content="#ffffff" />
 
-      <CookieBanner config={config} headerScripts={headerScripts} />
+      <CookieBanner
+        config={config as any}
+        headerScripts={headerScripts as any}
+      />
       {/* Icons */}
       {metadata.icons.icon.map((icon, index) => (
         <link

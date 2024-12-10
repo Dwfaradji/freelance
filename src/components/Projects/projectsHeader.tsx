@@ -4,6 +4,7 @@ import Image from 'next/image';
 import projectKw from '@/images/projects/kw-1920.webp';
 import projectFs from '@/images/projects/fenixSolutions-1920.webp';
 import projectPizza from '@/images/projects/appPizza-card-1920.webp';
+import projectComm from '@/images/projects/appCom-Dash-1920.webp';
 import Link from 'next/link';
 import Button from '@/components/ui/Atoms/button';
 
@@ -171,10 +172,11 @@ const ProjectsHeader = () => {
                   aux appareils mobiles.
                 </p>
                 <p>
-                  📈 Résultats : une augmentation de l'engagement des clients
+                  📈
+                  {`Résultats : une augmentation de l'engagement des clients
                   grâce à une navigation fluide et une présentation visuellement
                   attrayante des produits. Les propriétaires peuvent gérer les
-                  mises à jour de leur menu via un système simple.
+                  mises à jour de leur menu via un système simple.`}
                 </p>
                 <br />
                 <p>
@@ -200,6 +202,71 @@ const ProjectsHeader = () => {
               <Image
                 src={projectPizza}
                 alt={'Menu interactif pour pizzeria'}
+                width={1000}
+                height={800}
+                className={'relative -z-10 size-full'}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+          </div>
+        </Fade>
+
+        {/* ------------------ */}
+
+        <Fade cascade>
+          <div className="mt-10 flex flex-row flex-wrap justify-center lg:flex-nowrap">
+            <div className="m-2 flex w-full flex-col justify-between rounded-xl bg-lightblack p-3 text-white">
+              <h2 className="text-sm font-semibold opacity-50">
+                {' '}
+                Solutions Commerciales{' '}
+              </h2>
+              <h2 className="text-xl font-bold lg:text-3xl">
+                Application Interactive pour les Commerces
+              </h2>
+              <div className="flex h-full flex-col justify-around overflow-hidden">
+                <p className="my-5 text-lg opacity-70 lg:text-2xl">
+                  🚀
+                  {`En tant que développeur Front-End, j'ai conçu une application web innovante qui permet aux commerces de moderniser leur présentation de produits et services grâce à une interface interactive.`}
+                </p>
+                <p className="xxl:block hidden">
+                  🛠️ Notre mission : offrir aux entreprises une solution
+                  digitale clé en main, leur permettant de captiver leur
+                  clientèle avec un affichage moderne et intuitif, optimisé pour
+                  tous les appareils.
+                </p>
+                <p>
+                  📈{' '}
+                  {`Résultats : une augmentation de la satisfaction et de la
+                  fidélité des clients grâce à une expérience utilisateur
+                  améliorée. Les commerçants bénéficient d'un outil facile à
+                  utiliser pour personnaliser et gérer leurs contenus en temps
+                  réel.`}
+                </p>
+                <br />
+                <p>
+                  🔧 Technologies Clés : Next.js, Tailwind CSS, React.js,
+                  GitHub, Vercel.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative m-2 overflow-hidden rounded-xl">
+              <div className="absolute size-full items-center justify-center opacity-0 hover:flex hover:bg-gray-800 hover:bg-opacity-50 hover:opacity-95">
+                <Link
+                  href="https://app-commercial.vercel.app/"
+                  target={'_blank'}
+                >
+                  <Button
+                    colorClass="bg-gradient-to-r from-pink to-purple"
+                    title="Voir le site"
+                    textColor="text-white text-xl"
+                  ></Button>
+                </Link>
+              </div>
+
+              <Image
+                src={projectComm}
+                alt={'Project app commercial'}
                 width={1000}
                 height={800}
                 className={'relative -z-10 size-full'}

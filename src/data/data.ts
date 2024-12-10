@@ -4,6 +4,7 @@ import { Project, Price, Service, PageInfo } from './typeFile';
 import fenixSolutions from '@/images/projects/fenixSolutions.webp';
 import kellerWilliams from '@/images/projects/kw.webp';
 import pizzeriaMenu from '@/images/projects/appPizza-home-1920.webp';
+import commApp from '@/images/projects/appCom-conect-1920.webp';
 
 //Project
 const projects: Project[] = [
@@ -30,6 +31,14 @@ const projects: Project[] = [
     alt: 'image du projet pizzeria menu',
     tech: ['Next.js', 'Tailwind CSS', 'React.js', 'GitHub', 'Vercel'],
     link: '"https://restaurant-pizza-rho.vercel.app/"',
+  },
+  {
+    id: 3,
+    title: 'Commercial App',
+    image: String(commApp.src),
+    alt: 'image du projet pizzeria menu',
+    tech: ['Next.js', 'Tailwind CSS', 'React.js', 'GitHub', 'Vercel', 'Sql'],
+    link: 'https://app-commercial.vercel.app/',
   },
 ];
 
