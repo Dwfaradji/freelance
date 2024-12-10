@@ -4,7 +4,7 @@ import { Project, Price, Service, PageInfo } from './typeFile';
 import fenixSolutions from '@/images/projects/fenixSolutions.webp';
 import kellerWilliams from '@/images/projects/kw.webp';
 import pizzeriaMenu from '@/images/projects/appPizza-home-1920.webp';
-import commApp from '@/images/projects/appCom-conect-1920.webp';
+import commApp from '@/images/projects/appCom-customers-1920.webp';
 
 //Project
 const projects: Project[] = [

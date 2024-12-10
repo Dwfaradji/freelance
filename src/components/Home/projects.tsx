@@ -71,7 +71,7 @@ const Projects = () => {
                         width={664}
                         height={373}
                         priority={true}
-                        className="aspect-video rounded-lg object-cover"
+                        className=" rounded-lg object-cover"
                       />
                     </div>
                   </SwiperSlide>
