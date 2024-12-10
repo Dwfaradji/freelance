@@ -1,7 +1,12 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFlip, Navigation, Pagination } from 'swiper/modules';
+import {
+  Autoplay,
+  EffectCreative,
+  Navigation,
+  Pagination,
+} from 'swiper/modules';
 import Link from 'next/link';
 import Image from 'next/image';
 import { projects } from '@/data/data'; // Assurez-vous que ce fichier contient bien des projets
@@ -36,11 +41,25 @@ const Projects = () => {
           {/* Swiper Bloc */}
           <div className="flex w-full items-center rounded-xl bg-gradient-to-b from-pink p-8 lg:w-1/2 lg:bg-gradient-to-r">
             <Swiper
-              effect={'flip'}
+              effect={'creative'}
               grabCursor={true}
-              pagination={true}
-              navigation={true}
-              modules={[EffectFlip, Pagination, Navigation]}
+              autoplay={{
+                delay: 3500,
+              }}
+              creativeEffect={{
+                prev: {
+                  shadow: true,
+                  origin: 'left center',
+                  translate: ['-5%', 0, -200],
+                  rotate: [0, 100, 0],
+                },
+                next: {
+                  origin: 'right center',
+                  translate: ['5%', 0, -200],
+                  rotate: [0, -100, 0],
+                },
+              }}
+              modules={[EffectCreative, Autoplay]}
             >
               {projects && projects.length > 0 ? (
                 projects.map((project) => (

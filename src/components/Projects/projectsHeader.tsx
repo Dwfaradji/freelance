@@ -214,7 +214,7 @@ const ProjectsHeader = () => {
         {/* ------------------ */}
 
         <Fade cascade>
-          <div className="mt-10 flex flex-row flex-wrap justify-center lg:flex-nowrap">
+          <div className="mt-10 flex flex-row-reverse flex-wrap justify-center lg:flex-nowrap">
             <div className="m-2 flex w-full flex-col justify-between rounded-xl bg-lightblack p-3 text-white">
               <h2 className="text-sm font-semibold opacity-50">
                 {' '}
