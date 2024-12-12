@@ -11,6 +11,10 @@ const projects: Project[] = [
   {
     id: 0,
     title: 'Fénix Solutions',
+    subtitle: 'Création Carousel Youtube',
+    description: `En tant que développeur Full-Stack, j'ai contribué à la création d'une plateforme de gestion des tâches collaboratives.`,
+    details: `Notre mission : concevoir une application web flexible pour la gestion efficace des projets et des équipes, avec des fonctionnalités de chat en temps réel.`,
+    results: `Résultats : une augmentation significative de la productivité des équipes, une meilleure communication et une gestion plus efficace des projets.`,
     image: String(fenixSolutions.src),
     alt: 'image du projet fenix solutions',
     tech: ['Vue3,', ' Node,', ' ApiRest'],
@@ -19,6 +23,11 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'Keller Williams',
+    subtitle: 'Création site web et application',
+    description: `En tant que développeur Front-End, j'ai contribué à la création d'une plateforme immobilière intuitive.`,
+    details: `Notre mission : concevoir une plateforme conviviale pour les agents immobiliers, avec un tableau de bord personnalisable.`,
+    results: `Résultats : une expérience utilisateur exceptionnelle, avec un tableau de bord permettant aux agents de modeler leur espace virtuel en toute simplicité.`,
+
     image: String(kellerWilliams.src),
     alt: 'image du projet keller williams',
     tech: ['Next,', ' React,', ' Symfony,', ' Docker'],
@@ -27,6 +36,11 @@ const projects: Project[] = [
   {
     id: 2,
     title: 'Pizzeria Menu',
+    subtitle: 'Menu interactif pour Pizzeria',
+    description: `En tant que développeur Front-End, j'ai conçu une application web intuitive permettant aux pizzerias de présenter un menu interactif à leurs clients.`,
+    details: `Notre mission : proposer une solution moderne et élégante pour les pizzerias, leur permettant de digitaliser leur menu tout en offrant une expérience utilisateur fluide.`,
+    results: `Résultats : une augmentation de l'engagement des clients grâce à une navigation fluide et une présentation visuellement attrayante des produits.`,
+
     image: String(pizzeriaMenu.src),
     alt: 'image du projet pizzeria menu',
     tech: ['Next.js', 'Tailwind CSS', 'React.js', 'GitHub', 'Vercel'],
@@ -34,7 +48,12 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Commercial App',
+    title: 'Solutions Commerciales',
+    subtitle: 'Application Interactive pour les Commerces',
+    description: `En tant que développeur Front-End, j'ai conçu une application web innovante qui permet aux commerces de moderniser leur présentation de produits et services grâce à une interface interactive.`,
+    details: `Notre mission : offrir aux entreprises une solution digitale clé en main, leur permettant de captiver leur clientèle avec un affichage moderne.`,
+    results: `Résultats : une augmentation de la satisfaction et de la fidélité des clients grâce à une expérience utilisateur améliorée.`,
+
     image: String(commApp.src),
     alt: 'image du projet pizzeria menu',
     tech: ['Next.js', 'Tailwind CSS', 'React.js', 'GitHub', 'Vercel', 'Sql'],

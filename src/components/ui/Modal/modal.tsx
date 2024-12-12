@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { slugify } from '@/utils/slugify';
+import { Fade } from 'react-awesome-reveal';
 
 interface ModalProps {
   showModal: boolean;
@@ -84,9 +85,11 @@ const Modal: React.FC<ModalProps> = ({
           <div className="space-y-4 p-4 md:p-5">
             <ul className="text-left leading-relaxed text-gray-500 xxs:text-xs md:text-xl dark:text-white">
               {modal?.details.map((detail, i) => (
-                <li key={i}>
-                  <ArrowRightIcon className="text-blue" /> {detail}
-                </li>
+                <Fade cascade direction={'up'} delay={1} key={i}>
+                  <li key={i}>
+                    <ArrowRightIcon className="text-blue" /> {detail}
+                  </li>
+                </Fade>
               ))}
             </ul>
             <h3 className="flex justify-center text-gray-500 dark:text-white">
@@ -100,7 +103,7 @@ const Modal: React.FC<ModalProps> = ({
           <div className="flex w-full items-center justify-center rounded-b border-t border-gray-200 p-4 md:p-5 dark:border-black">
             <button
               type="button"
-              className="ms-3 animate-pulse rounded-lg border border-gray-200 bg-gradient-to-t from-pink to-purple px-5 py-2.5 text-sm font-medium text-white hover:bg-white hover:bg-gradient-to-t hover:from-pink hover:text-black focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-black dark:bg-gray-800 dark:text-white dark:hover:bg-white dark:hover:text-black dark:focus:ring-gray-700"
+              className="ms-3 animate-pulse rounded-lg border border-gray-200 bg-gradient-to-t from-pink to-purple px-5 py-2.5 text-sm font-medium text-white focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-black dark:bg-gray-800 dark:text-white dark:hover:bg-white dark:hover:text-black dark:focus:ring-gray-700"
               onClick={handleRedirect}
             >
               Demander un devis

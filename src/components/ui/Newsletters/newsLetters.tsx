@@ -69,26 +69,28 @@ const NewsLetters = () => {
           </p>
 
           <ul className={'list-disc px-5 py-2'}>
-            <li>
-              {' '}
-              Offres exclusives : Accédez à des promotions réservées uniquement
-              à nos abonnés.
-            </li>
-            <li>
-              {' '}
-              Contenu Premium : Recevez des articles et des guides spécialement
-              conçus pour vous.
-            </li>
-            <li>
-              {' '}
-              Événements à venir : Soyez informé(e) en avant-première de nos
-              événements et lancements.
-            </li>
-            <li>
-              {' '}
-              Inscrivez-vous maintenant pour ne rien manquer de notre actualité
-              et profiter d’offres spéciales !
-            </li>
+            <Fade direction={'left'} delay={100}>
+              <li>
+                {' '}
+                Offres exclusives : Accédez à des promotions réservées
+                uniquement à nos abonnés.
+              </li>
+              <li>
+                {' '}
+                Contenu Premium : Recevez des articles et des guides
+                spécialement conçus pour vous.
+              </li>
+              <li>
+                {' '}
+                Événements à venir : Soyez informé(e) en avant-première de nos
+                événements et lancements.
+              </li>
+              <li>
+                {' '}
+                Inscrivez-vous maintenant pour ne rien manquer de notre
+                actualité et profiter d’offres spéciales !
+              </li>
+            </Fade>
           </ul>
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-4 sm:w-2/4 lg:w-1/3">

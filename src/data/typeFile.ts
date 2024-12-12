@@ -3,6 +3,10 @@
 interface Project {
   id: number;
   title: string;
+  subtitle: string;
+  description: string;
+  details: string;
+  results: string;
   image: string;
   alt: string;
   tech: string[];

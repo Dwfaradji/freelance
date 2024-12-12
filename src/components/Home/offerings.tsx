@@ -3,9 +3,9 @@ import { Fade } from 'react-awesome-reveal';
 import { services } from '@/data/data';
 
 const Offerings = () => {
-  const servicesString= [
+  const servicesString = [
     'Création et refonte de sites web',
-    'Développement d\'applications web et mobile',
+    "Développement d'applications web et mobile",
     'Optimisation et référencement SEO',
     'Hébergement web',
     'Maintenance de site web',
@@ -51,7 +51,7 @@ const Offerings = () => {
           {services.map((service, i) => (
             <div
               key={i}
-              className="sm:full flex rounded-xl hover:bg-gradient-to-t hover:from-pink lg:w-[30%]"
+              className="flex rounded-xl hover:bg-gradient-to-t hover:from-pink lg:w-[30%]"
             >
               <article className="flex h-full flex-col ">
                 <Fade direction={'up'}>
@@ -62,22 +62,18 @@ const Offerings = () => {
                   </h2>
                 </Fade>
 
-                <div className="flex justify-between p-5 flex-col h-full">
+                <div className="flex h-full flex-col justify-between p-5">
                   <p className="h-full text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
                     {service.description}
                   </p>
-                  <ul className={'my-3 text-white list-disc pl-5'}>
+                  <ul className={'my-3 list-disc pl-5 text-white'}>
                     {service.items.map((item, i) => (
-                      <li key={i}>
-                        {/*<i className="fa-solid fa-caret-up fa-rotate-90"></i>*/}
-                        {item.title}
-                      </li>
+                      <Fade direction={'left'} delay={100} key={i}>
+                        <li>{item.title}</li>
+                      </Fade>
                     ))}
                   </ul>
                 </div>
-
-                {/*<p className="mt-10 text-white opacity-50 text-sm">{service.description}</p>*/}
-
               </article>
             </div>
           ))}

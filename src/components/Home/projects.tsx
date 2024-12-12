@@ -27,10 +27,11 @@ const Projects = () => {
           </Fade>
 
           <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            {`Explorez une sélection de projets web que j'ai réalisés, incluant des sites vitrines, des boutiques en ligne et des applications interactives. Ces réalisations reflètent mon expertise et ma capacité à répondre aux besoins spécifiques de mes clients.`}
+            {`Plongez dans notre portfolio et explorez une variété de projets web réalisés avec passion. Qu'il s'agisse de sites vitrines professionnels, de boutiques en ligne performantes ou d'applications interactives, chaque réalisation illustre notre expertise et notre engagement à répondre aux besoins uniques de nos clients.
+Explorez une sélection de projets web que j'ai réalisés, incluant des sites vitrines, des boutiques en ligne et des applications interactives. Ces réalisations reflètent mon expertise et ma capacité à répondre aux besoins spécifiques de mes clients.`}
           </p>
           <p className="mt-4 text-lg text-white lg:text-2xl">
-            Vous avez un projet en tête ? Contactez-moi pour lui donner vie !
+            Vous avez un projet en tête ?
           </p>
         </article>
       </Fade>
@@ -87,15 +88,26 @@ const Projects = () => {
           {/* Text Bloc */}
           <div className="flex w-full flex-col justify-between rounded-xl bg-gradient-to-t from-pink p-8 lg:w-1/2 lg:bg-gradient-to-l">
             <h2 className="text-xl text-white lg:text-3xl">
-              Explorez nos réalisations et laissez-vous inspirer
+              Transformez votre idée en réalité
             </h2>
-
-            <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-              Notre application interactive pour pizzeria offre une interface
-              élégante et intuitive, permettant aux clients de consulter le
-              menu, découvrir les offres et personnaliser leurs commandes en
-              quelques clics.
-            </p>
+            <ul className={'list-disc px-5 py-2 text-white'}>
+              <Fade direction={'left'} delay={100}>
+                <li>
+                  Fenix Solutions : Site vitrine moderne et ergonomique pour une
+                  entreprise innovante.
+                </li>
+                <li>
+                  Keller Williams : Plateforme immobilière optimisée pour une
+                  navigation fluide.
+                </li>
+                <li>
+                  Menu Interactif pour Pizzeria : Une interface intuitive
+                  permettant de consulter le menu, découvrir les offres et
+                  personnaliser les commandes en toute simplicité.
+                </li>
+                <li>EvokeFlow : Application pour prise de commande client</li>
+              </Fade>
+            </ul>
 
             <p className="my-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
               Prêts à transformer votre restaurant avec une solution moderne et
