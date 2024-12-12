@@ -3,35 +3,15 @@
 } */
 
 .mainSwiperSlide .swiper-slide {
-  text-align: center;
   /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
-.mainSwiperSlide .swiper-navigation {
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
 .mainSwiperSlide .swiper-pagination-progressbar {
   top: 1em;
   padding: 5px;
   border-radius: 50px;
-}
-
-.mainSwiperSlide .swiper-navigation button {
-  cursor: pointer;
-  text-align: center;
-  display: flex;
-  align-items: center;
-}
-
-.mainSwiperSlide .swiper-wrapper {
-  align-items: flex-start;
 }
 
 .hiddenDisplay {

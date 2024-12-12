@@ -29,10 +29,19 @@ const config: Config = {
           '0%, 100%': { opacity: '0.2' },
           '50%': { opacity: '1' },
         },
+        shimmer: {
+          '0%': {
+            transform: 'translateX(-100%)',
+          },
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
       },
       animation: {
         wiggle: 'wiggle 4s ease-in',
-        // flicker: 'flicker 0.2s ease-in-out 3',
+        shimmer: 'shimmer 2s infinite',
+        flicker: 'flicker 0.2s ease-in-out 3',
       },
     },
     colors: {

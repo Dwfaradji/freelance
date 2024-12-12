@@ -1,17 +1,17 @@
+'use client';
 import React from 'react';
 
-const Loading = () => {
-  const shimmer =
-    'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent';
-
+const Loading: React.FC = () => {
   return (
-    <div
-      className={`${shimmer} flex h-screen w-full items-center justify-center rounded-lg border border-gray-200 bg-gray-50 text-center dark:border-gray-700 dark:bg-gray-800`}
-    >
-      <div role="status">
+    <div className="flex h-screen w-full items-center justify-center rounded-lg border border-gray-200 bg-gray-50 text-center dark:border-gray-700 dark:bg-gray-800">
+      <div role="status" aria-live="polite" className="relative">
+        {/* Shimmer Animation */}
+        <div className="absolute inset-0 animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+
+        {/* Spinner */}
         <svg
           aria-hidden="true"
-          className="mx-auto size-14 animate-spin fill-blue text-gray-200 dark:text-gray-600"
+          className="mx-auto size-16 animate-spin fill-blue text-gray-200 dark:text-gray-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,11 @@ const Loading = () => {
             fill="currentFill"
           />
         </svg>
-        <span className="mt-20 block text-blue">Chargement...</span>
+
+        {/* Texte de chargement */}
+        <span className="mt-4 block text-blue dark:text-blue">
+          Chargement...
+        </span>
       </div>
     </div>
   );

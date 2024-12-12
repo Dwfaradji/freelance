@@ -73,7 +73,7 @@ const Slider = ({ data }: Slide) => {
 
   return (
     <>
-      <section className={`${hiddenSlide} text-white `}>
+      <article className={`${hiddenSlide}  text-white `}>
         <Swiper
           onSwiper={(swiper: any) => (swiperRef.current = swiper)} // Mise à jour correcte de la référence
           pagination={{
@@ -84,14 +84,17 @@ const Slider = ({ data }: Slide) => {
           navigation={false}
           modules={[Pagination, Navigation]}
           allowTouchMove={false}
-          className="mainSwiperSlide"
+          className="mainSwiperSlide text-center"
         >
           {data.map(({ title, content, ComponentType, props }, index) => (
             <SwiperSlide key={index}>
-              <Fade>
-                <h2 className=" m-10 text-xl bg-gradient-to-r from-pink to-purple text-gradient">{title}</h2>
+              <div className=" ">
+                <h2 className="mt-10 bg-gradient-to-r from-pink to-purple text-xl text-gradient">
+                  {title}
+                </h2>
+
                 <div className={'hidden md:block'}>
-                  <p className="m-0 mb-7 h-6 min-h-max overflow-hidden text-left hover:h-full md:m-3 md:h-auto">
+                  <p className="m-0  h-6 min-h-max overflow-hidden text-left hover:h-full md:m-3 md:h-auto">
                     {content}
                   </p>
                 </div>
@@ -102,19 +105,19 @@ const Slider = ({ data }: Slide) => {
                     heightVisible={'h-16'}
                   />
                 </div>
-              </Fade>
-              <div className="mt-4 w-full ">
-                <ComponentType {...props} />
+                <div className="pt-12 md:h-96">
+                  <ComponentType {...props} />
+                </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/*Bouton de navigation*/}
-        <div className="swiper-navigation lg:mt-6">
+        <div className="flex w-full items-end justify-around p-3 lg:mt-6">
           <button
             aria-label="precedent"
-            className={`${display}  w-1/4 scale-100 justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between`}
+            className={`${display} flex w-1/4 scale-100 items-center justify-around rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between`}
             onClick={() => {
               getPrevSlideTitle();
               setActiveSlide((prev) => Math.max(prev - 1, 0)); // Mise à jour de activeSlide
@@ -126,7 +129,7 @@ const Slider = ({ data }: Slide) => {
           <button
             aria-label="suivant"
             className={
-              'w-1/4 scale-100 justify-center rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between'
+              'flex w-1/4 scale-100 justify-around rounded-lg bg-blue px-3 py-2 text-sm transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95 md:w-2/6 lg:w-60 lg:justify-between'
             }
             onClick={() => {
               getNextSlideTitle();
@@ -137,7 +140,7 @@ const Slider = ({ data }: Slide) => {
             <ArrowForwardOutlinedIcon />
           </button>
         </div>
-      </section>
+      </article>
       {/*Affiche le formulaire lorsque displaySlide est true*/}
       {displaySlide && (
         <Fade>

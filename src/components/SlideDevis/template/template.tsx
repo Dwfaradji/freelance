@@ -45,7 +45,7 @@ const Template = () => {
   }, [selectedTemplateOption]);
 
   return (
-    <section className={'aspect-auto'}>
+    <>
       <Swiper
         breakpointsBase={'window'}
         effect={'coverflow'}
@@ -66,7 +66,7 @@ const Template = () => {
                 height={600}
                 src={article.image}
                 alt={article.title}
-                className="size-full"
+                className="size-full rounded-3xl"
                 priority={true}
               />
 
@@ -102,7 +102,7 @@ const Template = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </>
   );
 };
 

@@ -1,17 +1,6 @@
-.swiperTemplate {
-  cursor: auto;
-}
-
-.swiperTemplate .swiper-container {
-  cursor: pointer; /* Ou tout autre style de curseur que vous préférez */
-}
-
 .swiperTemplate .swiper-slide {
-  background-position: center;
-  background-size: cover;
   width: 50%;
   display: flex;
-  justify-content: space-between !important;
 }
 
 .swiperTemplate .swiper-slide img {
@@ -28,5 +17,6 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding: 0;
   }
 }
