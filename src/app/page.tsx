@@ -12,6 +12,7 @@ import { initialState, reducer } from '@/context/reducer';
 import Link from 'next/link';
 import Button from '@/components/ui/Atoms/button';
 import NewsLetters from '@/components/ui/Newsletters/newsLetters';
+import BlogHome from '@/components/Home/blogHome';
 
 const Page = () => {
   return (
@@ -32,6 +33,7 @@ const Page = () => {
       </div>
       <FeaturedTemplate />
       <Testimonial />
+      <BlogHome />
       <NewsLetters />
     </MyProvider>
   );

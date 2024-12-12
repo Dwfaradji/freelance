@@ -19,25 +19,24 @@ const BlogHeader = () => {
   const dataHeader = sortByDateDescending[0];
 
   return (
-    <div>
-      <Fade>
+    <>
+      <Fade triggerOnce={true}>
         <Link
           className="flex justify-center"
           href={`/blog/${slugify(dataHeader.title).toString()}`}
         >
           <section
             id={dataHeader.id}
-            className="mx-auto mt-10 flex columns-2 text-white xxs:flex-col sm:flex-row "
+            className="mx-auto flex columns-2 text-white xxs:flex-col sm:flex-row "
           >
-            <article className="m-5 h-full overflow-hidden rounded-xl object-cover">
+            <article className=" h-full overflow-hidden rounded-xl object-cover">
               <Image
                 src={dataHeader.img}
-                width={1000}
-                height={1000}
+                width={500}
+                height={500}
                 alt={dataHeader.alt}
                 priority={true}
                 className={'h-full'}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </article>
             <article className="m-5">
@@ -55,7 +54,7 @@ const BlogHeader = () => {
                     height={30}
                     className="h-10 w-10"
                     src={myPhoto}
-                    alt={"auteur"}
+                    alt={'auteur'}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
@@ -70,7 +69,7 @@ const BlogHeader = () => {
           </section>
         </Link>
       </Fade>
-    </div>
+    </>
   );
 };
 

@@ -11,6 +11,7 @@ const AboutTeamBigCard = () => {
           className={'flex w-full items-start p-4 lg:w-1/3'}
           direction={'left'}
           duration={3000}
+          triggerOnce={true}
         >
           <Image
             width={400}
@@ -27,7 +28,12 @@ const AboutTeamBigCard = () => {
             <h3 className="text-lg font-bold opacity-50">Fondateur</h3>
           </div>
 
-          <Fade direction={'right'} reverse={false} duration={2000}>
+          <Fade
+            direction={'right'}
+            reverse={false}
+            duration={2000}
+            triggerOnce={true}
+          >
             <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
               {`Je suis un développeur Full Stack freelance passionné par la
               création d'applications web innovantes. Je suis spécialisé dans le

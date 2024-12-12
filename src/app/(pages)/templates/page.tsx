@@ -4,11 +4,13 @@ import React from 'react';
 import { articles } from '@/data/dataSlideDevis';
 import Template from '@/components/Template/template';
 import { Fade } from 'react-awesome-reveal';
+import Link from 'next/link';
+import Button from '@/components/ui/Atoms/button';
 
 const Page = () => {
   return (
-    <div className={'pt-12'}>
-      <Fade cascade delay={500} direction={'up'}>
+    <section className={'pt-12'}>
+      <Fade cascade direction={'up'} triggerOnce={true}>
         <h1
           className={
             'bg-gradient-to-r  from-pink to-purple font-poppins text-2xl font-semibold  text-gradient text-white lg:text-4xl xl:text-7xl'
@@ -38,10 +40,10 @@ const Page = () => {
 
       <article
         className={
-          'mt-20 grid grid-cols-3 gap-20 rounded-2xl p-8 xxs:grid-cols-1 lg:grid-cols-3'
+          'i mt-20 grid grid-cols-3 gap-20 rounded-2xl p-8 xxs:grid-cols-1 lg:grid-cols-3'
         }
       >
-        <Fade cascade triggerOnce delay={500} direction={'bottom-left'}>
+        <Fade cascade triggerOnce={true} direction={'bottom-left'}>
           {articles.map((article, i) => (
             <div key={i}>
               <Template
@@ -54,7 +56,16 @@ const Page = () => {
           ))}
         </Fade>
       </article>
-    </div>
+      <div className="mt-3 mt-4 text-center">
+        <Link href={'/devis/formule-essentielle'}>
+          <Button
+            colorClass="bg-gradient-to-r from-pink to-purple "
+            title="Je veux ce template"
+            textColor="text-white text-xl"
+          ></Button>
+        </Link>
+      </div>
+    </section>
   );
 };
 

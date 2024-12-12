@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Input from '../Atoms/input';
 import Button from '../Atoms/button';
 import callApi from '../../../utils/callApi';
-import { Fade } from "react-awesome-reveal";
+import { Fade } from 'react-awesome-reveal';
 
 const NewsLetters = () => {
   const [email, setEmail] = useState<string>('');
@@ -51,13 +51,15 @@ const NewsLetters = () => {
   }, [message]);
 
   return (
-    <section className={'mx-auto h-auto'}>
+    <section className={'my-20'}>
       <div className={'w-full xxs:w-full xs:w-full sm:w-3/4'}>
         <Fade direction={'up'}>
-          <h2 className={'py-3 text-xl text-white lg:text-3xl '}>
-            <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-              Rejoignez notre Communauté !
-            </span>
+          <h2
+            className={
+              'mb-10 bg-gradient-to-r from-pink to-purple py-3 text-xl text-gradient text-white lg:text-3xl'
+            }
+          >
+            Rejoignez notre Communauté !
           </h2>
         </Fade>
         <div className={'text-white '}>

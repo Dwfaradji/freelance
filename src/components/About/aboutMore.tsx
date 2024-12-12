@@ -9,7 +9,7 @@ const AboutMore = () => {
   return (
     <section className="mx-auto mt-10">
       <article className="grid h-full overflow-hidden xxs:grid-cols-1 xxs:gap-0 xs:grid-cols-1  sm:grid-cols-2 sm:gap-4 lg:grid-cols-2">
-        <Fade direction={'bottom-left'}>
+        <Fade direction={'bottom-left'} triggerOnce={true}>
           <div className="col-start-1 col-end-3 overflow-hidden rounded-xl">
             <Image
               width={800}
@@ -20,7 +20,7 @@ const AboutMore = () => {
             />
           </div>
         </Fade>
-        <Fade direction={'bottom-right'}>
+        <Fade direction={'bottom-right'} triggerOnce={true}>
           <div className="col-start-3 h-96 overflow-hidden rounded-xl xxs:col-start-1 sm:col-start-3 ">
             <Image
               className=" size-full"
@@ -34,7 +34,7 @@ const AboutMore = () => {
       </article>
 
       <article className={'p-8 xxs:p-0'}>
-        <Fade direction={'right'} delay={1000}>
+        <Fade direction={'right'} delay={1000} triggerOnce={true}>
           <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             {`Mon voyage dans l'univers du développement web a débuté par une
             fascination pour la technologie et une curiosité insatiable pour les
@@ -54,7 +54,7 @@ const AboutMore = () => {
         </Fade>
 
         <div className="h-full overflow-hidden ">
-          <Fade delay={1000} direction={'left'}>
+          <Fade delay={1000} direction={'left'} triggerOnce={true}>
             <div className="col-start-3 overflow-hidden rounded-xl xxs:col-start-1 sm:col-start-3">
               <Image
                 className=" relative z-10 size-full"
@@ -67,7 +67,12 @@ const AboutMore = () => {
           </Fade>
         </div>
 
-        <Fade direction={'down'} delay={1000} className={'relative -z-20'}>
+        <Fade
+          direction={'down'}
+          delay={1000}
+          className={'relative -z-20'}
+          triggerOnce={true}
+        >
           <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             {`J'ai plongé dans l'écosystème React, embrassant Next.js pour ses
             capacités de rendu côté serveur et d'optimisation des performances.

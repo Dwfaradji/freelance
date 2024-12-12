@@ -6,7 +6,7 @@ import headerAbout from '@/images/about/aboutHeader.webp';
 const AboutHeader = () => {
   return (
     <section className="mx-auto">
-      <Fade direction={'down'} delay={1000}>
+      <Fade direction={'down'} triggerOnce={true}>
         <article className="mb-10">
           <span className="text-sm text-white opacity-50">A propos</span>
           <h1 className="bg-gradient-to-r from-pink to-purple font-poppins font-semibold leading-snug text-gradient xxs:text-lg xs:text-lg sm:text-3xl lg:text-7xl">

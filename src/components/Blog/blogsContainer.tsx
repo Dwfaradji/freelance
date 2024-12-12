@@ -17,7 +17,7 @@ const BlogsContainer = () => {
   return (
     <section className="mx-auto mt-10 text-white">
       <article className="grid grid-cols-3 gap-4 xxs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        <Fade duration={1000} direction="down">
+        <Fade direction="down" triggerOnce={true}>
           {dataHeader.map((blog, i) => (
             <Link
               key={i}
