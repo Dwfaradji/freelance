@@ -56,9 +56,7 @@ const Header = () => {
             height={1280}
             src={HeaderImage}
             alt="Photo_ordinateur_sur_bureau"
-            className={
-              'animate-wiggle animate-flicker mx-auto aspect-video  bg-black'
-            }
+            className={'mx-auto aspect-video animate-wiggle  bg-black'}
             priority // Optionnel, mais peut être utilisé pour les images importantes
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />

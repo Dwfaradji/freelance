@@ -10,7 +10,7 @@ const Page = () => {
     <div>
       <ProjectsHeader />
       <ProjectsRoles />
-      <div className="mt-3 mt-4 text-center">
+      <div className="my-20 text-center">
         <Link href={'/tarifs'}>
           <Button
             colorClass="bg-gradient-to-r from-pink to-purple "

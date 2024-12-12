@@ -30,9 +30,9 @@ const PricingMain = () => {
               <div className="w-full p-8  sm:w-3/5">
                 <Fade direction={'down'}>
                   <h2 className="text-3xl font-bold">
-              <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-            {tarif.title}
-              </span>
+                    <span className="bg-gradient-to-r from-pink to-purple text-gradient">
+                      {tarif.title}
+                    </span>
                   </h2>
                 </Fade>
 
@@ -41,7 +41,7 @@ const PricingMain = () => {
                 <br />
                 <p>{tarif.description}</p>
               </div>
-              <div className="flex  w-full flex-col items-center justify-center rounded-r-lg  bg-pink p-8 sm:w-2/5">
+              <div className="flex  w-full flex-col items-center justify-center rounded-r-lg  bg-pink bg-gradient-to-t from-black to-purple p-8 sm:w-2/5 ">
                 <h2 className="text-xl text-white">À partir de</h2>
                 <h3 className="mt-2 text-4xl font-bold text-white lg:text-7xl">
                   {tarif.price}
@@ -49,7 +49,8 @@ const PricingMain = () => {
                 <div className="mt-5">
                   <Button
                     id={tarif.id}
-                    colorClass="bg-white"
+                    colorClass="bg-gradient-to-r from-white to-gray-400  "
+                    textColor="text-xl"
                     title=" En savoir plus"
                     onClick={handleOpenModal}
                   ></Button>

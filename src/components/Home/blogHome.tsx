@@ -10,7 +10,7 @@ const BlogHome = () => {
       <Fade direction={'up'}>
         <h2
           className={
-            'mb-10 bg-gradient-to-r from-pink to-purple text-xl text-gradient text-white lg:text-3xl'
+            'mb-10 bg-gradient-to-r from-pink to-purple text-xl text-gradient lg:text-3xl'
           }
         >
           Découvrez notre Blog

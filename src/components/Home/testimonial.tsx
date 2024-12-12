@@ -8,17 +8,16 @@ import Button from '@/components/ui/Atoms/button';
 const Testimonial = () => {
   return (
     <section className="mx-auto my-20 h-auto">
+      <Fade direction={'up'}>
+        <h2 className="mb-10 text-xl text-white lg:text-3xl ">
+          <span className="bg-gradient-to-r from-pink to-purple text-gradient">
+            Expertise digitale à votre service
+          </span>
+        </h2>
+      </Fade>
       <Fade>
-        <article className="flex w-full flex-row justify-between rounded-lg bg-gradient-to-t from-pink align-middle xxs:flex-col xs:flex-col sm:flex-row  ">
+        <article className="flex w-full flex-row justify-between rounded-lg bg-gradient-to-b from-black from-pink to-purple   align-middle xxs:flex-col xs:flex-col sm:flex-row ">
           <div className="w-3/4 p-12 xxs:w-full xs:w-full sm:w-3/4">
-            <Fade direction={'up'}>
-              <h2 className="text-xl text-white lg:text-3xl">
-                <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-                  Expertise digitale à votre service
-                </span>
-              </h2>
-            </Fade>
-
             <p className="mt-10 text-lg text-white opacity-50 lg:text-2xl">
               {`DevEvoke est une entreprise de développement web et mobile. Nous
               sommes spécialisés dans la création de sites web et d'applications
@@ -32,7 +31,7 @@ const Testimonial = () => {
             <div className="mt-10 w-full items-center justify-center xxs:flex xxs:flex-row  ">
               <Link href={'/a_propos'}>
                 <Button
-                  colorClass="bg-gradient-to-r from-pink to-purple "
+                  colorClass="bg-gradient-to-r from-white to-gray-400  "
                   title="Qui nous sommes ?"
                   textColor="text-white text-xl"
                 ></Button>
