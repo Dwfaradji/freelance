@@ -15,17 +15,19 @@ const ProjectCard = ({
   image,
 }: Project) => {
   return (
-    <div className="m-6 mx-auto flex w-full max-w-4xl flex-col items-center gap-8 rounded-xl bg-white p-6 shadow-md transition-all hover:scale-105 lg:flex-row">
+    <div className="m-6 mx-auto flex w-full max-w-4xl flex-col items-center gap-8 rounded-xl border border-white bg-transparent p-6 text-white shadow-md transition-all hover:scale-105 lg:flex-row">
       {/* Content Section */}
       <div className="flex w-full flex-col lg:w-1/2">
-        <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-        <h4 className="mt-2 text-2xl font-bold text-gray-900">{subtitle}</h4>
-        <p className="mt-4 text-gray-600">{description}</p>
+        <h3 className="text-xl font-semibold ">{title}</h3>
+        <h4 className="mt-2 bg-gradient-to-r from-pink to-purple text-2xl font-bold text-gradient">
+          {subtitle}
+        </h4>
+        <p className="mt-4 text-gray-200">{description}</p>
         {details && (
-          <p className="mt-2 text-sm text-gray-500">{`🛠️ ${details}`}</p>
+          <p className="mt-2 text-sm text-gray-400">{`🛠️ ${details}`}</p>
         )}
-        <p className="mt-4 text-gray-700">{`📈 ${results}`}</p>
-        <p className="mt-4 text-sm font-medium text-gray-600">{`🔧 Technologies : ${tech}`}</p>
+        <p className="mt-4 text-gray-200">{`📈 ${results}`}</p>
+        <p className="mt-4 text-sm font-medium text-gray-400">{`🔧 Technologies : ${tech}`}</p>
       </div>
 
       {/* Image Section */}
@@ -36,7 +38,7 @@ const ProjectCard = ({
           alt={`Project ${title}`}
           width={1000}
           height={600}
-          className="h-full w-full transform rounded-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-sm"
+          className="size-full transform rounded-lg object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-sm"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
 

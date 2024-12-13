@@ -17,7 +17,7 @@ const PricingMain = () => {
   return (
     <section className="mx-auto w-full lg:block">
       <Fade>
-        <div className="flex w-full flex-col items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-pink  ">
+        <div className="flex w-full flex-col items-center justify-center gap-3 rounded-xl border border-white ">
           {prices.map((tarif, i) => (
             <article
               key={i.toString()}
@@ -41,7 +41,7 @@ const PricingMain = () => {
                 <br />
                 <p>{tarif.description}</p>
               </div>
-              <div className="flex  w-full flex-col items-center justify-center rounded-r-lg  bg-pink bg-gradient-to-t from-black to-purple p-8 sm:w-2/5 ">
+              <div className="flex  w-full flex-col items-center justify-center rounded-b-lg bg-pink bg-gradient-to-t from-black to-purple p-8 sm:w-2/5 sm:rounded-b-none sm:rounded-r-lg ">
                 <h2 className="text-xl text-white">À partir de</h2>
                 <h3 className="mt-2 text-4xl font-bold text-white lg:text-7xl">
                   {tarif.price}

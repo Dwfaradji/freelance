@@ -7,10 +7,12 @@ import ProjectCard from '../Projects/projectCard';
 const ProjectsHeader = () => {
   return (
     <div className="mx-auto">
-      <Fade direction="up" delay={1000}>
+      <Fade direction="up" triggerOnce>
         <h1 className="mb-8 bg-gradient-to-r from-pink to-purple text-center font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
           Découvrez nos projets
         </h1>
+      </Fade>
+      <Fade direction="up" triggerOnce>
         <p className="text-center text-lg text-white lg:text-xl">
           Nous sommes fiers de partager avec vous nos projets les plus récents,
           réalisés avec passion et expertise. Chacun de nos projets est conçu
@@ -22,7 +24,7 @@ const ProjectsHeader = () => {
       </Fade>
       <div className="mx-auto my-20">
         {projects.map((project, index) => (
-          <Fade key={index} cascade>
+          <Fade key={index} direction="up" delay={100} triggerOnce>
             <ProjectCard {...project} />
           </Fade>
         ))}

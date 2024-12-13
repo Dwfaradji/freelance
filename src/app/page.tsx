@@ -13,6 +13,7 @@ import Link from 'next/link';
 import Button from '@/components/ui/Atoms/button';
 import NewsLetters from '@/components/ui/Newsletters/newsLetters';
 import BlogHome from '@/components/Home/blogHome';
+import { Fade } from 'react-awesome-reveal';
 
 const Page = () => {
   return (
@@ -21,6 +22,12 @@ const Page = () => {
       <AnimatedStats />
       <Projects />
       <Offerings />
+      <Fade direction={'up'}>
+        <h2 className="mb-8 bg-gradient-to-r from-pink to-purple px-4 text-xl text-xl font-bold font-bold text-gradient text-white text-white lg:text-3xl">
+          Découvrez Toutes Nos Formules
+        </h2>
+      </Fade>
+
       <Pricing />
       <div className="mx-auto mt-8 max-w-7xl px-6 text-center lg:block">
         <Link href={'/tarifs'}>

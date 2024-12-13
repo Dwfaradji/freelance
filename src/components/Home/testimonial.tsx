@@ -1,64 +1,70 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
-import logo from '@/images/logocv.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/ui/Atoms/button';
+import logo from '@/images/logocv.svg';
 
 const Testimonial = () => {
   return (
-    <section className="mx-auto my-20 h-auto">
-      <Fade direction={'up'}>
-        <h2 className="mb-10 text-xl text-white lg:text-3xl ">
-          <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-            Expertise digitale à votre service
+    <section className="relative mx-auto my-20 text-white">
+      <Fade direction="up" triggerOnce>
+        <h2 className="text-xl font-bold text-white lg:text-3xl">
+          <span className="bg-gradient-to-r from-pink to-purple bg-clip-text text-transparent">
+            Notre Expertise au Service de Votre Vision
           </span>
         </h2>
       </Fade>
-      <Fade>
-        <article className="flex w-full flex-row justify-between rounded-lg bg-gradient-to-b from-black from-pink to-purple   align-middle xxs:flex-col xs:flex-col sm:flex-row ">
-          <div className="w-3/4 p-12 xxs:w-full xs:w-full sm:w-3/4">
-            <p className="mt-10 text-lg text-white opacity-50 lg:text-2xl">
-              {`DevEvoke est une entreprise de développement web et mobile. Nous
-              sommes spécialisés dans la création de sites web et d'applications
-              mobiles. Nous proposons également des services de référencement et
-              de web marketing. Nous sommes situés à Perpignan, mais nous
-              travaillons avec des clients du monde entier. Nous sommes une équipe
-              de développeurs passionnés par notre travail. Nous sommes toujours à
-              la recherche de nouveaux défis et de nouvelles technologies. Nous
-              sommes à votre disposition pour vous aider à réaliser vos projets.`}
+
+      <Fade triggerOnce>
+        <div className="mt-12 grid grid-cols-1 gap-8 rounded-lg border border-white shadow-lg lg:grid-cols-2">
+          <div className="p-6 md:p-10">
+            <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+              DevEvoke est une entreprise dédiée à la transformation numérique.
+              Nous aidons les entreprises à se démarquer grâce à des solutions
+              modernes, incluant le développement web et mobile, le
+              référencement, et le marketing digital. Basés à Perpignan, nous
+              collaborons avec des partenaires du monde entier.
             </p>
-            <div className="mt-10 w-full items-center justify-center xxs:flex xxs:flex-row  ">
-              <Link href={'/a_propos'}>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link href="/a_propos">
                 <Button
-                  colorClass="bg-gradient-to-r from-white to-gray-400  "
-                  title="Qui nous sommes ?"
-                  textColor="text-white text-xl"
-                ></Button>
+                  colorClass="bg-gradient-to-r from-pink to-purple hover:text-white py-2 px-4 rounded-md shadow-md md:py-3 md:px-6"
+                  title="En savoir plus"
+                  textColor="text-sm font-semibold md:text-lg"
+                />
+              </Link>
+              <Link href="/contact">
+                <Button
+                  colorClass="bg-gray-200 hover:bg-gray text-gray-800 py-2 px-4 rounded-md shadow-md md:py-3 md:px-6"
+                  title="Contactez-nous"
+                  textColor="text-sm font-semibold md:text-lg"
+                />
               </Link>
             </div>
+
             <div className="mt-10">
-              <h2 className="font-poppins text-xl font-bold text-white">
-                Boucif Faradji{' '}
-              </h2>
-              <h3 className="font-poppins text-sm font-semibold text-white opacity-50">
-                Développeur
+              <h3 className="bg-gradient-to-r from-pink to-purple text-xl font-bold text-gradient md:text-2xl">
+                Boucif Faradji
               </h3>
+              <p className="md:text-md text-sm font-medium">
+                Fondateur & Développeur
+              </p>
             </div>
           </div>
-          <div className="flex w-1/4 items-center justify-center overflow-hidden align-middle xxs:hidden sm:flex">
-            <div className={'overflow-hidden py-8 pl-8'}>
+
+          <div className="from-indigo-500 to-pink-500 flex hidden items-center justify-center bg-gradient-to-r p-6 lg:flex">
+            <div className="relative h-56 w-56 rounded-full shadow-lg sm:h-64 sm:w-64 md:h-72 md:w-72">
               <Image
-                width={100}
-                height={100}
-                src={logo.src}
-                alt={'logo_devevoke'}
-                className="size-auto overflow-hidden rounded-xl"
-                // src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                src={logo}
+                alt="Logo DevEvoke"
+                layout="fill"
+                className="rounded-full object-contain"
               />
             </div>
           </div>
-        </article>
+        </div>
       </Fade>
     </section>
   );

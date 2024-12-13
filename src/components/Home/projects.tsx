@@ -40,7 +40,7 @@ Explorez une sélection de projets web que j'ai réalisés, incluant des sites v
       <Fade cascade>
         <article className="mt-8 flex h-full flex-col gap-y-8 px-4 sm:px-6 md:px-8 lg:flex-row lg:gap-x-8 lg:gap-y-0">
           {/* Swiper Bloc */}
-          <div className="flex w-full items-center rounded-xl bg-gradient-to-b from-pink p-8 lg:w-1/2 lg:bg-gradient-to-r">
+          <div className="flex w-full items-center rounded-xl  p-8 lg:w-1/2 lg:bg-gradient-to-r">
             <Swiper
               effect={'creative'}
               grabCursor={true}
@@ -113,19 +113,18 @@ Explorez une sélection de projets web que j'ai réalisés, incluant des sites v
               Prêts à transformer votre restaurant avec une solution moderne et
               fonctionnelle ?
             </p>
-
-            <div className="flex justify-center">
-              <Link href={'/portfolio'}>
-                <Button
-                  colorClass="bg-gradient-to-r from-pink to-purple"
-                  title="Voir Tous Nos Projets"
-                  textColor="text-white text-xl"
-                />
-              </Link>
-            </div>
           </div>
         </article>
       </Fade>
+      <div className="mt-10 flex justify-center">
+        <Link href={'/portfolio'}>
+          <Button
+            colorClass="bg-gradient-to-r from-pink to-purple"
+            title="Voir Tous Nos Projets"
+            textColor="text-white text-xl"
+          />
+        </Link>
+      </div>
     </section>
   );
 };
