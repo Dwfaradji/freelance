@@ -16,7 +16,7 @@ const Testimonial = () => {
         </h2>
       </Fade>
 
-      <Fade triggerOnce>
+      <Fade>
         <div className="mt-12 grid grid-cols-1 gap-8 rounded-lg border border-white shadow-lg lg:grid-cols-2">
           <div className="p-6 md:p-10">
             <p className="text-base leading-relaxed sm:text-lg md:text-xl">

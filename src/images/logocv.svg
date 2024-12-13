@@ -1,20 +1,28 @@
 
+
+
+
+
 <svg
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        width="2000.000000pt"
-        height="1247.000000pt"
-        viewBox="0 0 2000.000000 1247.000000"
-        preserveAspectRatio="xMidYMid meet"
+    version="1.0"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="2000.000000pt"
+    height="1247.000000pt"
+    viewBox="0 0 2000.000000 1247.000000"
+    preserveAspectRatio="xMidYMid meet"
 >
+
+
+
+
     <g
-            transform="translate(200.000000,1247.000000) scale(0.100000,-0.100000)"
-            fill="#000000"
-            stroke="none"
+           transform="translate(200.000000,1247.000000) scale(0.100000,-0.100000)"
+        
     >
         <path
                 id="D--1"
-                fill="#ffffff"
+                fill="white" 
                 d="M6600 12465 c-8 -2 -49 -9 -90 -15 -155 -25 -339 -102 -457 -191
         -106 -79 -190 -239 -230 -432 -15 -74 -17 -230 -20 -1629 l-4 -1548 926 0 925
         0 0 1125 0 1125 1891 0 c2093 0 2005 3 2201 -64 226 -77 365 -211 489 -470 61
@@ -22,7 +30,16 @@
         397 -5 783 -10 857 -37 495 -183 909 -438 1249 -75 99 -215 245 -305 317 -40
         32 -79 66 -87 75 -27 30 -300 188 -485 279 -361 178 -653 273 -945 309 -57 8
         -925 11 -2700 10 -1438 -1 -2622 -3 -2630 -4z"
-        />
+        >
+             <animate
+                attributeName="fill"
+                from="black"
+                to="white"
+                dur="5s"
+                repeatCount="1"
+            />
+
+</path>
         <path
                 id="v-1"
                 fill="#ffffff"
@@ -141,21 +158,34 @@
         />
         <path
                 id="D--2"
-                fill="#3c9dda"
-
+                    fill="white" 
+          
                 d="M5803 2203 c3 -1787 -2 -1659 65 -1805 92 -200 255 -315 532 -375
         123 -26 480 -26 595 1 178 41 332 124 450 241 86 86 127 152 167 270 l23 70 3
         1608 2 1607 -920 0 -920 0 3 -1617z"
-        />
+           >
+         <animate
+        attributeName="fill"
+        from="black"
+        to="white" 
+        dur="5s"
+        repeatCount="1" />
+        </path>
         <path
                 id="D--3"
-                fill="#ffffff"
-
+                 fill="white" 
                 d="M12350 3293 c0 -291 -5 -587 -10 -659 -12 -156 -44 -290 -99 -416
         -135 -307 -314 -456 -637 -529 -99 -23 -101 -23 -1344 -29 -1156 -6 -1249 -7
         -1305 -24 -221 -66 -365 -231 -415 -476 -75 -364 3 -745 189 -931 71 -70 140
         -109 229 -128 70 -15 2806 -15 2937 -1 306 34 617 130 931 288 722 363 1110
         801 1279 1446 83 316 95 482 95 1324 l0 662 -925 0 -925 0 0 -527z"
-        />
+              >
+         <animate
+        attributeName="fill"
+        from="black"
+        to="white" 
+        dur="5s"
+        repeatCount="1" />
+</path>
     </g>
 </svg>

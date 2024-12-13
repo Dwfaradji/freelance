@@ -17,7 +17,7 @@ const projects: Project[] = [
     results: `Résultats : une augmentation significative de la productivité des équipes, une meilleure communication et une gestion plus efficace des projets.`,
     image: String(fenixSolutions.src),
     alt: 'image du projet fenix solutions',
-    tech: ['Vue3,', ' Node,', ' ApiRest'],
+    tech: ['Vue3', ' Node', ' ApiRest'],
     link: 'https://www.fenixsolutions.fr/',
   },
   {
@@ -30,7 +30,7 @@ const projects: Project[] = [
 
     image: String(kellerWilliams.src),
     alt: 'image du projet keller williams',
-    tech: ['Next,', ' React,', ' Symfony,', ' Docker'],
+    tech: ['Next', ' React', ' Symfony', ' Docker'],
     link: 'https://kwoxygene.fr/',
   },
   {
@@ -43,8 +43,8 @@ const projects: Project[] = [
 
     image: String(pizzeriaMenu.src),
     alt: 'image du projet pizzeria menu',
-    tech: ['Next.js', 'Tailwind CSS', 'React.js', 'GitHub', 'Vercel'],
-    link: '"https://restaurant-pizza-rho.vercel.app/"',
+    tech: ['Next.js', ' Tailwind CSS', ' React.js', ' GitHub', ' Vercel'],
+    link: 'https://restaurant-pizza-rho.vercel.app/',
   },
   {
     id: 3,
@@ -56,27 +56,17 @@ const projects: Project[] = [
 
     image: String(commApp.src),
     alt: 'image du projet pizzeria menu',
-    tech: ['Next.js', 'Tailwind CSS', 'React.js', 'GitHub', 'Vercel', 'Sql'],
+    tech: [
+      'Next.js',
+      ' Tailwind CSS',
+      ' React.js',
+      ' GitHub',
+      ' Vercel',
+      ' Sql',
+    ],
     link: 'https://app-commercial.vercel.app/',
   },
 ];
-
-// // images du header background
-// const picturesCarousel: Picture = {
-//   id: 1,
-//   imageUrl: images.pictureHeader,
-//   alt: "image d'arrière plan",
-// };
-// //Navigation
-// const navItems: Item[] = [
-//   { title: "Accueil", link: "accueil", scroll: true },
-//   { title: "Projet", link: "project", scroll: true },
-//   { title: "Tarif", link: "tarif", scroll: true },
-//   { title: "Contact", link: "contact", scroll: true },
-//   { title: "Services", link: "services", scroll: true },
-//   { title: "A propos", link: "About", scroll: true },
-//   { title: "Blog", link: "blog", scroll: false },
-// ];
 
 // //Tarifs
 const prices: Price[] = [
