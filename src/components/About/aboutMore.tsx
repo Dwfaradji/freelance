@@ -10,11 +10,9 @@ import Link from 'next/link';
 
 const AboutMore = () => {
   return (
-    <section className="mx-auto mt-16">
-      <article className="grid h-full overflow-hidden xxs:grid-cols-1 xxs:gap-0 xs:grid-cols-1 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2 lg:gap-8"></article>
-
-      <article className={'p-8 xxs:p-0'}>
-        <div className="mt-8 h-full overflow-hidden">
+    <section className="mx-auto">
+      <article className={'p-8 xxs:p-0 '}>
+        <div className="m-8 h-full overflow-hidden">
           <Fade delay={1200} direction={'left'} triggerOnce={true}>
             <div className="relative overflow-hidden rounded-xl shadow-lg">
               <Image
@@ -28,7 +26,7 @@ const AboutMore = () => {
           </Fade>
         </div>
 
-        <div className="container mx-auto bg-black px-8 py-16 text-white">
+        <div className="text-white">
           <Fade direction={'right'} delay={1000} triggerOnce={true}>
             <h2 className="bg-gradient-to-r from-pink to-purple text-4xl font-bold text-gradient opacity-90">
               Notre Vision
@@ -42,9 +40,8 @@ const AboutMore = () => {
             </p>
           </Fade>
           {/* Nos Services */}
-          <section className="my-">
-            <Offerings />
-          </section>
+
+          <Offerings />
 
           {/* Pourquoi Choisir Devevoke */}
           <section className="mx-auto mt-16">

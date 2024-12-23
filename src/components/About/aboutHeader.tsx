@@ -30,7 +30,7 @@ const AboutHeader = () => {
           priority={true}
         />
       </article>
-      <p className=" my-8 text-xl text-gray-300">
+      <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
         Devevoke est une entreprise innovante spécialisée dans le développement
         d’applications et de sites web. Nous accompagnons les PME, TPE et
         start-ups dans la création de solutions digitales adaptées à leurs
