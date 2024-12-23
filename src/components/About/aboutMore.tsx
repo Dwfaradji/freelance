@@ -4,95 +4,169 @@ import Image from 'next/image';
 import setup from '@/images/about/setup.webp';
 import me from '@/images/about/presentation.webp';
 import aboutImg from '@/images/about/about-image.webp';
+import Offerings from '../Home/offerings';
+import Button from '../ui/Atoms/button';
+import Link from 'next/link';
 
 const AboutMore = () => {
   return (
-    <section className="mx-auto mt-10">
-      <article className="grid h-full overflow-hidden xxs:grid-cols-1 xxs:gap-0 xs:grid-cols-1  sm:grid-cols-2 sm:gap-4 lg:grid-cols-2">
-        <Fade direction={'bottom-left'} triggerOnce={true}>
-          <div className="col-start-1 col-end-3 overflow-hidden rounded-xl">
-            <Image
-              width={800}
-              height={300}
-              src={setup}
-              alt={'image_decor'}
-              className="hidden h-96 w-full object-cover sm:block"
-            />
-          </div>
-        </Fade>
-        <Fade direction={'bottom-right'} triggerOnce={true}>
-          <div className="col-start-3 h-96 overflow-hidden rounded-xl xxs:col-start-1 sm:col-start-3 ">
-            <Image
-              className=" size-full"
-              src={me}
-              alt={'image_personne_costume'}
-              width={800}
-              height={300}
-            />
-          </div>
-        </Fade>
-      </article>
+    <section className="mx-auto mt-16">
+      <article className="grid h-full overflow-hidden xxs:grid-cols-1 xxs:gap-0 xs:grid-cols-1 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2 lg:gap-8"></article>
 
       <article className={'p-8 xxs:p-0'}>
-        <Fade direction={'right'} delay={1000} triggerOnce={true}>
-          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            {`Mon voyage dans l'univers du développement web a débuté par une
-            fascination pour la technologie et une curiosité insatiable pour les
-            dernières innovations. Au fil des années, j'ai forgé un parcours qui
-            reflète mon engagement envers l'excellence et ma passion pour la
-            programmation. Les Fondations : Une Passion pour le Code Tout a
-            commencé par des projets personnels, des sites web pour des amis et
-            des connaissances, où j'ai rapidement saisi l'importance de la
-            structure et de l'organisation du code. J'ai alors décidé de
-            renforcer mes compétences en intégrant une formation spécialisée en
-            développement web, où j'ai pu me familiariser avec les fondamentaux
-            de la programmation et les langages clés de l'industrie. L'Ascension
-            : Maîtrise des Frameworks Modernes Ma rencontre avec React a été un
-            tournant décisif. J'ai été captivé par sa flexibilité et son
-            potentiel pour créer des expériences utilisateurs dynamiques.`}
-          </p>
-        </Fade>
-
-        <div className="h-full overflow-hidden ">
-          <Fade delay={1000} direction={'left'} triggerOnce={true}>
-            <div className="col-start-3 overflow-hidden rounded-xl xxs:col-start-1 sm:col-start-3">
+        <div className="mt-8 h-full overflow-hidden">
+          <Fade delay={1200} direction={'left'} triggerOnce={true}>
+            <div className="relative overflow-hidden rounded-xl shadow-lg">
               <Image
-                className=" relative z-10 size-full"
+                className="relative z-10 h-full w-full rounded-lg object-cover"
                 src={aboutImg}
                 alt={'banner_about'}
-                width={800}
-                height={300}
+                width={1000}
+                height={500}
               />
             </div>
           </Fade>
         </div>
 
-        <Fade
-          direction={'down'}
-          delay={1000}
-          className={'relative -z-20'}
-          triggerOnce={true}
-        >
-          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            {`J'ai plongé dans l'écosystème React, embrassant Next.js pour ses
-            capacités de rendu côté serveur et d'optimisation des performances.
-            J'ai également maîtrisé Redux pour gérer l'état global des
-            applications avec précision et élégance. L'Élargissement : Vers le
-            Full Stack avec Symfony Conscient que le développement front-end
-            n'était qu'une partie de l'équation, j'ai étendu mon expertise au
-            back-end. Le framework Symfony s'est révélé être l'outil idéal pour
-            construire des back-ends robustes et évolutifs, me permettant de
-            livrer des solutions complètes et intégrées. La Réalisation :
-            Projets Complets et Satisfactions Clients Au cours de ma carrière,
-            j'ai eu l'opportunité de travailler sur des projets variés, allant
-            de startups innovantes à des entreprises de renom. Ces
-            collaborations m'ont permis de raffiner mes compétences et d'adopter
-            une approche agile et réactive aux besoins en constante évolution du
-            domaine web. Aujourd'hui, je continue d'apprendre, d'explorer et de
-            me dépasser, toujours à la recherche de la prochaine innovation qui
-            révolutionnera la manière dont nous interagissons avec le web.`}
-          </p>
-        </Fade>
+        <div className="container mx-auto bg-black px-8 py-16 text-white">
+          <Fade direction={'right'} delay={1000} triggerOnce={true}>
+            <h2 className="bg-gradient-to-r from-pink to-purple text-4xl font-bold text-gradient opacity-90">
+              Notre Vision
+            </h2>
+            <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
+              Chez Devevoke, nous croyons que chaque entreprise mérite une
+              présence numérique à la hauteur de ses ambitions. Nous
+              redéfinissons l'expérience digitale en créant des solutions sur
+              mesure, alliant innovation et efficacité. <br />
+              Découvrez l'engagement de notre équipe pour votre réussite.
+            </p>
+          </Fade>
+          {/* Nos Services */}
+          <section className="my-">
+            <Offerings />
+          </section>
+
+          {/* Pourquoi Choisir Devevoke */}
+          <section className="mx-auto mt-16">
+            <Fade cascade>
+              <article className="mx-auto mt-20 px-8">
+                <Fade direction={'up'}>
+                  <h2 className="text-xl font-bold text-white lg:text-3xl">
+                    <span className="bg-gradient-to-r from-pink to-purple text-gradient">
+                      Pourquoi Choisir Devevoke ?
+                    </span>
+                  </h2>
+                </Fade>
+                <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
+                  Nous sommes une équipe passionnée, déterminée à vous offrir
+                  des solutions digitales adaptées à vos besoins. Voici pourquoi
+                  vous devriez nous choisir :
+                </p>
+
+                <h2 className="mt-5 text-lg text-white lg:text-2xl">
+                  Nos points forts :
+                </h2>
+                <div className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
+                  <ul className="list-disc pl-5 text-white">
+                    <Fade direction={'left'} delay={100}>
+                      <li>
+                        <strong>Une équipe d’experts dédiés</strong> : Composée
+                        de développeurs passionnés, designers créatifs, et
+                        experts SEO.
+                      </li>
+                    </Fade>
+                    <Fade direction={'left'} delay={200}>
+                      <li>
+                        <strong>Une approche personnalisée</strong> : Chaque
+                        projet est unique, et nous offrons des solutions sur
+                        mesure.
+                      </li>
+                    </Fade>
+                    <Fade direction={'left'} delay={300}>
+                      <li>
+                        <strong>Une présence internationale</strong> : Nous
+                        travaillons principalement en Europe, aux États-Unis et
+                        aux Émirats Arabes.
+                      </li>
+                    </Fade>
+                    <Fade direction={'left'} delay={400}>
+                      <li>
+                        <strong>Transparence et flexibilité</strong> : Paiement
+                        flexible avec 30% à la commande et le solde à la
+                        livraison.
+                      </li>
+                    </Fade>
+                  </ul>
+                </div>
+              </article>
+            </Fade>
+
+            {/* Nos Valeurs */}
+            <Fade cascade>
+              <section className="mb-16 rounded-xl  py-12 shadow-lg">
+                <Fade direction={'up'}>
+                  <h2 className="mb-6 bg-gradient-to-r from-pink to-purple text-center text-4xl font-semibold text-gradient">
+                    Nos Valeurs
+                  </h2>
+                </Fade>
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                  <Fade direction={'up'} delay={100}>
+                    <div className="rounded-lg  p-6 shadow-lg hover:bg-gradient-to-t hover:from-pink">
+                      <h3 className="mb-4 text-xl font-semibold text-white">
+                        Innovation
+                      </h3>
+                      <p className="text-gray-300">
+                        Nous restons à la pointe des nouvelles technologies pour
+                        vous offrir des solutions avant-gardistes.
+                      </p>
+                    </div>
+                  </Fade>
+                  <Fade direction={'up'} delay={200}>
+                    <div className="rounded-lg p-6 shadow-lg hover:bg-gradient-to-t hover:from-pink">
+                      <h3 className="mb-4 text-xl font-semibold text-white">
+                        Fiabilité
+                      </h3>
+                      <p className="text-gray-300">
+                        Nous nous engageons à livrer des projets de haute
+                        qualité dans les délais convenus.
+                      </p>
+                    </div>
+                  </Fade>
+                  <Fade direction={'up'} delay={300}>
+                    <div className="rounded-lg  p-6 shadow-lg hover:bg-gradient-to-t hover:from-pink">
+                      <h3 className="mb-4 text-xl font-semibold text-white">
+                        Satisfaction client
+                      </h3>
+                      <p className="text-gray-300">
+                        Votre satisfaction est au cœur de notre démarche. Nous
+                        mettons tout en œuvre pour vous offrir un service
+                        irréprochable.
+                      </p>
+                    </div>
+                  </Fade>
+                </div>
+              </section>
+            </Fade>
+
+            {/* Contact */}
+            <Fade cascade>
+              <section className="text-center">
+                <p className="mb-6 text-lg text-gray-300">
+                  Vous avez un projet ? Vous souhaitez en savoir plus sur nos
+                  services ? Contactez-nous dès aujourd’hui pour discuter de vos
+                  besoins et de la manière dont nous pouvons vous accompagner.
+                </p>
+                <Link href={'/contact'}>
+                  <Button
+                    colorClass="bg-gradient-to-r from-pink to-purple "
+                    title="Contactez-Nous"
+                    textColor="text-white text-xl"
+                  ></Button>
+                </Link>
+              </section>
+            </Fade>
+          </section>
+        </div>
       </article>
     </section>
   );

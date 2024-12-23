@@ -30,11 +30,14 @@ const Header = () => {
             <span className="bg-gradient-to-r from-pink to-purple text-gradient">
               DevEvoke
             </span>
-            , votre partenaire de confiance pour tous vos besoins en
-            développement web et référencement SEO. En tant que développeur web
-            freelance, nous nous engageons à vous fournir des solutions sur
-            mesure pour optimiser votre présence en ligne et augmenter votre
-            visibilité sur les moteurs de recherche.
+            , votre partenaire digital de confiance. Spécialisés dans le
+            développement web et le référencement SEO, nous accompagnons les
+            entreprises dans leur transformation numérique en leur proposant des
+            solutions sur mesure. Notre mission est de renforcer votre présence
+            en ligne, d’améliorer votre visibilité sur les moteurs de recherche
+            et de créer des plateformes performantes qui soutiennent la
+            croissance de votre activité. Avec DevEvoke, chaque projet est une
+            opportunité de dépasser vos attentes.
           </p>
         </div>
       </Fade>

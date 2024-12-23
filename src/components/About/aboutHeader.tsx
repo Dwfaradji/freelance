@@ -12,6 +12,12 @@ const AboutHeader = () => {
           <h1 className="bg-gradient-to-r from-pink to-purple font-poppins font-semibold leading-snug text-gradient xxs:text-lg xs:text-lg sm:text-3xl lg:text-7xl">
             Qui nous sommes ?
           </h1>
+          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
+            Nous sommes une équipe passionnée, déterminée à transformer vos
+            idées en solutions digitales performantes. À travers des
+            technologies de pointe et un service client de qualité, nous vous
+            aidons à exceller dans l'univers numérique.
+          </p>
         </article>
       </Fade>
       <article className="overflow-hidden rounded-xl">
@@ -23,16 +29,15 @@ const AboutHeader = () => {
           alt={'photo_de_group'}
           priority={true}
         />
-        <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-          Nous sommes une entreprise innovante, spécialisée dans développement
-          digital. Notre mission est de fournir des solutions sur mesure qui
-          répondent aux besoins spécifiques de nos clients, en utilisant des
-          technologies de pointe pour atteindre l'excellence. Découvrez notre
-          histoire, nos valeurs, et la façon dont nous transformons votre
-          entreprise grâce à une approche centrée sur l'innovation et la
-          qualité.
-        </p>
       </article>
+      <p className=" my-8 text-xl text-gray-300">
+        Devevoke est une entreprise innovante spécialisée dans le développement
+        d’applications et de sites web. Nous accompagnons les PME, TPE et
+        start-ups dans la création de solutions digitales adaptées à leurs
+        besoins spécifiques. Notre équipe de professionnels passionnés met à
+        votre disposition son expertise pour vous aider à réussir dans l'univers
+        numérique en constante évolution.
+      </p>
     </section>
   );
 };
