@@ -12,6 +12,7 @@ interface SendGridMail {
     business: string;
     email: string;
     subject: string;
+    message_body: string; // Insérer le contenu HTML propre
   };
 }
 
@@ -41,11 +42,11 @@ export async function POST(request: Request) {
   }
 
   // Transformer les retours à la ligne pour le HTML
-  const message = content
-    .replace(/\n/g, '<br>')
-    .replace(/\r/g, '<br>')
-    .replace(/\t/g, '<br>')
-    .replace(/<(?!br\s*\/?)[^>]+>/g, ''); // supprime tout le html en autorisant uniquement les balises <br>
+  const cleanMessage = content
+    .replace(/\n/g, '<br>') // Remplacer les retours à la ligne par des <br>
+    .replace(/\r/g, '<br>') // Remplacer les retours chariot par des <br>
+    .replace(/\t/g, '    ') // Remplacer les tabulations par 4 espaces simples
+    .replace(/<(?!br\s*\/?)[^>]+>/g, ''); // Supprimer toutes les balises HTML sauf <br>ttoyer les entités HTML mal échappées// supprime tout le html en autorisant uniquement les balises <br>
 
   // Configuration de SendGrid
   sgMail.setApiKey(apiKey);
@@ -59,7 +60,8 @@ export async function POST(request: Request) {
         firstname: String(firstname),
         business: String(business),
         email: String(email),
-        subject: String(message),
+        subject: 'Nouveau message de ' + String(firstname),
+        message_body: cleanMessage, // Insérer le contenu HTML propre
       },
     };
     await sgMail.send(msg);

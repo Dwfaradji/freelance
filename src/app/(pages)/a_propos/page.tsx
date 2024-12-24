@@ -14,9 +14,9 @@ const Page = () => {
       <AboutHeader />
       <AboutMore />
       <AboutTeamBigCard />
-      <AboutGrid />
       <TeamSection />
-      <div className="mt-3 mt-4 text-center">
+      <AboutGrid />
+      <div className="mt-4 text-center">
         <Link href={'/portfolio'}>
           <Button
             colorClass="bg-gradient-to-r from-pink to-purple "

@@ -12,7 +12,7 @@ const projects: Project[] = [
     id: 0,
     title: 'Fénix Solutions',
     subtitle: 'Création Carousel Youtube',
-    description: `En tant que développeur Full-Stack, j'ai contribué à la création d'une plateforme de gestion des tâches collaboratives.`,
+    description: `Devevoke a contribué à la création d'une plateforme de gestion des tâches collaboratives.`,
     details: `Notre mission : concevoir une application web flexible pour la gestion efficace des projets et des équipes, avec des fonctionnalités de chat en temps réel.`,
     results: `Résultats : une augmentation significative de la productivité des équipes, une meilleure communication et une gestion plus efficace des projets.`,
     image: String(fenixSolutions.src),
@@ -24,7 +24,7 @@ const projects: Project[] = [
     id: 1,
     title: 'Keller Williams',
     subtitle: 'Création site web et application',
-    description: `En tant que développeur Front-End, j'ai contribué à la création d'une plateforme immobilière intuitive.`,
+    description: `Nous avons contribué à la création d'une plateforme immobilière intuitive.`,
     details: `Notre mission : concevoir une plateforme conviviale pour les agents immobiliers, avec un tableau de bord personnalisable.`,
     results: `Résultats : une expérience utilisateur exceptionnelle, avec un tableau de bord permettant aux agents de modeler leur espace virtuel en toute simplicité.`,
 
@@ -37,7 +37,7 @@ const projects: Project[] = [
     id: 2,
     title: 'Pizzeria Menu',
     subtitle: 'Menu interactif pour Pizzeria',
-    description: `En tant que développeur Front-End, j'ai conçu une application web intuitive permettant aux pizzerias de présenter un menu interactif à leurs clients.`,
+    description: `Devevoke a conçu une application web intuitive permettant aux pizzerias de présenter un menu interactif à leurs clients, en tant que développeur Front-End.`,
     details: `Notre mission : proposer une solution moderne et élégante pour les pizzerias, leur permettant de digitaliser leur menu tout en offrant une expérience utilisateur fluide.`,
     results: `Résultats : une augmentation de l'engagement des clients grâce à une navigation fluide et une présentation visuellement attrayante des produits.`,
 
@@ -50,7 +50,7 @@ const projects: Project[] = [
     id: 3,
     title: 'Solutions Commerciales',
     subtitle: 'Application Interactive pour les Commerces',
-    description: `En tant que développeur Front-End, j'ai conçu une application web innovante qui permet aux commerces de moderniser leur présentation de produits et services grâce à une interface interactive.`,
+    description: `Devevoke a développé une application web innovante permettant aux commerces de moderniser la présentation de leurs produits et services grâce à une interface interactive.`,
     details: `Notre mission : offrir aux entreprises une solution digitale clé en main, leur permettant de captiver leur clientèle avec un affichage moderne.`,
     results: `Résultats : une augmentation de la satisfaction et de la fidélité des clients grâce à une expérience utilisateur améliorée.`,
 
@@ -220,12 +220,8 @@ const services: Service[] = [
   {
     id: 0,
     title: 'Création et Refonte de sites web sur mesure',
-    description: `Confiez-nous votre site web ! En tant que développeurs web freelance,
-    nous concevons des sites personnalisés et modernes, adaptés à vos besoins spécifiques.
-    Que vous souhaitiez créer un nouveau site ou donner un coup de neuf à votre site existant,
-    nous sommes là pour vous.
-    Nous nous occupons du design, de la programmation et de l'optimisation pour les appareils mobiles.
-      `,
+    description: `Chez Devevoke, nous concevons des sites web personnalisés et modernes, parfaitement adaptés à vos besoins spécifiques. Que vous souhaitiez créer un tout nouveau site ou redynamiser un site existant, notre équipe met son expertise à votre service.
+Nous nous chargeons de l’ensemble du processus, du design à la programmation, tout en optimisant votre site pour une expérience fluide et performante sur tous les appareils mobiles.  `,
 
     items: [
       { id: 1, title: 'WordPress, React & NextJs 13' },

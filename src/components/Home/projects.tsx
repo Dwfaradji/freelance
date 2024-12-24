@@ -28,7 +28,7 @@ const Projects = () => {
 
           <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             {`Plongez dans notre portfolio et explorez une variété de projets web réalisés avec passion. Qu'il s'agisse de sites vitrines professionnels, de boutiques en ligne performantes ou d'applications interactives, chaque réalisation illustre notre expertise et notre engagement à répondre aux besoins uniques de nos clients.
-Explorez une sélection de projets web que j'ai réalisés, incluant des sites vitrines, des boutiques en ligne et des applications interactives. Ces réalisations reflètent mon expertise et ma capacité à répondre aux besoins spécifiques de mes clients.`}
+Explorez une sélection de projets web que nous avons réalisés, incluant des sites vitrines, des boutiques en ligne et des applications interactives. Ces réalisations reflètent mon expertise et ma capacité à répondre aux besoins spécifiques de mes clients.`}
           </p>
           <p className="mt-4 text-lg text-white lg:text-2xl">
             Vous avez un projet en tête ?

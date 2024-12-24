@@ -35,10 +35,10 @@ const TeamSection = () => {
               alt={'photo_du_gérant_devevoke'}
             />
             <h3 className="text-xl font-semibold text-white">George Palonga</h3>
-            <p className="text-lg text-gray-300">Développeuse Frontend</p>
+            <p className="text-lg text-gray-300">Développeur Frontend</p>
             <p className="mt-2 text-center text-white opacity-75">
               Spécialisée dans la création d'interfaces utilisateur modernes et
-              fluides, Marie s'assure que chaque projet offre une expérience
+              fluides, George s'assure que chaque projet offre une expérience
               utilisateur optimale.
             </p>
           </div>
@@ -58,7 +58,7 @@ const TeamSection = () => {
             <h3 className="text-xl font-semibold text-white">Léo Zang</h3>
             <p className="text-lg text-gray-300">Développeur Backend</p>
             <p className="mt-2 text-center text-white opacity-75">
-              Paul est un expert en architecture de systèmes et en gestion de
+              Léo est un expert en architecture de systèmes et en gestion de
               bases de données. Il crée des infrastructures robustes pour des
               applications performantes.
             </p>
