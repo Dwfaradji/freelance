@@ -56,7 +56,11 @@ const Navbar = () => {
       <div className="mx-auto px-3 py-2 backdrop-blur-lg">
         <div className="flex h-16 items-center justify-between">
           <div className="flex w-full items-center justify-between">
-            <Link className="shrink-0 font-poppins" href="/">
+            <Link
+              className="shrink-0 font-poppins"
+              href="/"
+              aria-label="Retour à l'accueil de DevEvoke"
+            >
               <ImportLogo displayColor={colorLogo} />
             </Link>
             <div className="hidden md:block">

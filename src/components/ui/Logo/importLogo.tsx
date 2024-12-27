@@ -43,7 +43,7 @@ const ImportLogo = ({ displayColor }: ILogoProps) => {
 
   const svgElement = logoSVG(colors);
 
-  return <div className={'h-20 w-20'}>{svgElement}</div>;
+  return <div className={'size-20'}>{svgElement}</div>;
 };
 
 export default ImportLogo;
