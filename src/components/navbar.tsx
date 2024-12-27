@@ -14,9 +14,11 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const [colorLogo, setColorLogo] = useState<LogoColor | undefined>(LogoColor.ColorS);
+  const [colorLogo, setColorLogo] = useState<LogoColor | undefined>(
+    LogoColor.ColorS,
+  );
 
-// Ensuite, dans le useEffect
+  // Ensuite, dans le useEffect
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -32,7 +34,6 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
 
   const handleMenuClick = () => {
     if (openMenu) {
@@ -68,7 +69,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/a_propos'}
+                  href={'/a-propos'}
                 >
                   A propos
                 </Link>

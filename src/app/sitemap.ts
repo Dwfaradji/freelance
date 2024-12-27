@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: 'https://www.devevoke.com/a_propos',
+      url: 'https://www.devevoke.com/a-propos',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -58,6 +58,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.devevoke.com/politique-confidentialite',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: 'https://www.devevoke.com/foire-aux-questions',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.5,

@@ -20,7 +20,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 export const metadata: NextMetadata = {
   title: 'Agence Web & Mobile à Perpignan – Sites et Applications sur Mesure',
   description:
-    'DevEvoke, votre agence experte en développement web et mobile à Perpignan. Boostez votre présence numérique avec des solutions sur mesure, performantes et innovantes.',
+    'DevEvoke, agence web à Perpignan. Offrez à votre entreprise des solutions innovantes, sur mesure et performantes pour réussir votre transformation numérique.',
   alternates: {
     canonical: 'https://www.devevoke.com/',
   },

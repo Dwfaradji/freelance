@@ -28,7 +28,7 @@ const Testimonial = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/a_propos">
+              <Link href="/a-propos">
                 <Button
                   colorClass="bg-gradient-to-r from-pink to-purple hover:text-white py-2 px-4 rounded-md shadow-md md:py-3 md:px-6"
                   title="En savoir plus"
@@ -54,8 +54,8 @@ const Testimonial = () => {
             </div>
           </div>
 
-          <div className="from-indigo-500 to-pink-500 flex hidden items-center justify-center bg-gradient-to-r p-6 lg:flex">
-            <div className="relative h-56 w-56 rounded-full shadow-lg sm:h-64 sm:w-64 md:h-72 md:w-72">
+          <div className=" hidden items-center justify-center bg-gradient-to-r p-6 lg:flex">
+            <div className="relative size-56 rounded-full shadow-lg sm:size-64  md:size-72">
               <Image
                 src={logo}
                 alt="Logo DevEvoke"
