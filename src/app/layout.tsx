@@ -18,10 +18,9 @@ import GoogleAnalytics from '@/lib/GoogleAnalytics';
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: NextMetadata = {
-  title:
-    'DevEvoke : Développement Web & Applications de Qualité Supérieure à Perpignan',
+  title: 'Agence Web & Mobile à Perpignan – Sites et Applications sur Mesure',
   description:
-    'DevEvoke Agence web & mobile experte à Perpignan. Développez votre succès numérique avec des solutions innovantes et intuitives.',
+    'DevEvoke, votre agence experte en développement web et mobile à Perpignan. Boostez votre présence numérique avec des solutions sur mesure, performantes et innovantes.',
   alternates: {
     canonical: 'https://www.devevoke.com/',
   },

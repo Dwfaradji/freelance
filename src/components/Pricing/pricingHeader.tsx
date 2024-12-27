@@ -8,14 +8,14 @@ const PricingHeader = () => {
   return (
     <header className="mx-auto mt-10 flex  flex-col items-center font-poppins text-white">
       <Fade direction={'up'}>
-        <div className="flex flex-col items-center px-2">
-          <h1 className="m-5 bg-gradient-to-r from-pink to-purple text-6xl font-bold text-gradient xxs:text-xl sm:text-4xl lg:text-6xl">
+        <div className="px-2">
+          <h1 className="mb-8 bg-gradient-to-r from-pink to-purple font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
             Une tarification simple et Efficace
           </h1>
-          <h2 className="opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
+          <p className="opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             Obtenez le plan Devevoke qui correspond à vos besoins avec une
             introduction spéciale de prix.
-          </h2>
+          </p>
         </div>
       </Fade>
       <Fade cascade>

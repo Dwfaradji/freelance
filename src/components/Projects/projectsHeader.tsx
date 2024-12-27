@@ -8,12 +8,12 @@ const ProjectsHeader = () => {
   return (
     <div className="mx-auto">
       <Fade direction="up" triggerOnce>
-        <h1 className="mb-8 bg-gradient-to-r from-pink to-purple text-center font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
+        <h1 className="mb-8 bg-gradient-to-r from-pink to-purple font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
           Découvrez nos projets
         </h1>
       </Fade>
       <Fade direction="up" triggerOnce>
-        <p className="text-center text-lg text-white lg:text-xl">
+        <p className="text-lg text-white lg:text-xl">
           Nous sommes fiers de partager avec vous nos projets les plus récents,
           réalisés avec passion et expertise. Chacun de nos projets est conçu
           pour répondre aux besoins spécifiques de nos clients, en utilisant les

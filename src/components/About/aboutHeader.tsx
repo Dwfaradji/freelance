@@ -9,7 +9,8 @@ const AboutHeader = () => {
       <Fade direction={'down'} triggerOnce={true}>
         <article className="mb-10">
           <span className="text-sm text-white opacity-50">A propos</span>
-          <h1 className="bg-gradient-to-r from-pink to-purple font-poppins font-semibold leading-snug text-gradient xxs:text-lg xs:text-lg sm:text-3xl lg:text-7xl">
+
+          <h1 className="mb-8 bg-gradient-to-r from-pink to-purple  font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
             Qui nous sommes ?
           </h1>
           <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">

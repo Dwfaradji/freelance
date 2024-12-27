@@ -41,9 +41,9 @@ const BlogHeader = () => {
             </article>
             <article className="m-5">
               <h2 className="mb-2 text-sm opacity-50">Develop Process</h2>
-              <h1 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl lg:text-4xl">
+              <h2 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl lg:text-4xl">
                 {dataHeader.title}
-              </h1>
+              </h2>
               <p className="mt-4 text-lg opacity-50 xxs:text-sm sm:text-lg">
                 {dataHeader.descriptionShort}
               </p>
