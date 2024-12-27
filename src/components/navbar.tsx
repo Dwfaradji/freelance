@@ -143,7 +143,7 @@ const Navbar = () => {
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/a_propos'}
+              href={'/a-propos'}
               onClick={handleLinkClick}
             >
               A propos
