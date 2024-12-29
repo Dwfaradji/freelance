@@ -4,14 +4,15 @@ import blogData from '@/data/dataBlog';
 import { slugify } from '@/utils/slugify';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>; // La promesse est explicitée ici
 };
 
 export const generateMetadata = async (
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> => {
-  const { slug } = params;
+  // Résolution de la promesse pour obtenir `slug`
+  const { slug } = await params;
 
   // Trouver les données du blog correspondant en utilisant le slug
   const blog = blogData.find((blog) => slugify(blog.title) === slug);

@@ -7,8 +7,9 @@ import { data } from '@/data/dataSlideDevis';
 import { prices } from '@/data/data';
 import { slugify } from '@/utils/slugify';
 
+
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 type Price = {
@@ -136,7 +137,7 @@ const SectionContent = ({ devis }: { devis: Price }) => {
 };
 
 export default function Page({ params }: Props) {
-  const { slug } = params;
+  const { slug } = React.use(params); // Utilisation de React.use() pour résoudre params
 
   // Trouver les données correspondantes avec le slug
   const devis = prices.find((devis) => slugify(devis.title) === slug);
@@ -146,7 +147,7 @@ export default function Page({ params }: Props) {
   }
 
   return (
-    <div className=" p-6 text-white">
+    <div className="p-6 text-white">
       <SectionContent devis={devis} />
     </div>
   );

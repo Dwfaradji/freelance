@@ -4,11 +4,11 @@ import blogData from '@/data/dataBlog';
 import { slugify } from '@/utils/slugify';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 const Page = ({ params }: Props) => {
-  const { slug } = params;
+  const { slug } = React.use(params); // Util
   // Trouver les données du blog correspondant en utilisant le slug
   const blog = blogData.find((blog) => slugify(blog.title) === slug);
   if (!blog) {
