@@ -1,10 +1,10 @@
 import React from 'react';
 import AboutTeamCard from './aboutTeamCard';
-import react from '@/images/about/react.webp';
-import nextJs from '@/images/about/nextjs.webp';
+import react from '@/images/about/react-1920.webp';
+import nextJs from '@/images/about/nextjs-1920.webp';
 import tailwind from '@/images/about/tailwind.webp';
 import nodejs from '@/images/about/nodejs.webp';
-import postGrey from '@/images/about/postgresql.webp';
+import postGrey from '@/images/about/postgresql-1920.webp';
 import symfony from '@/images/about/symphony.webp';
 import { Fade } from 'react-awesome-reveal';
 

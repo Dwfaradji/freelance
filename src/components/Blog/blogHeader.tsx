@@ -4,7 +4,8 @@ import Image from 'next/image';
 import blogData from '@/data/dataBlog';
 import Link from 'next/link';
 import { slugify } from '@/utils/slugify';
-import myPhoto from '@/images/about/photo-profil.png';
+import myPhoto from '@/images/about/photo-profil-688.webp';
+import Images from '@/images/images';
 
 const BlogHeader = () => {
   //Tri par date
@@ -29,14 +30,13 @@ const BlogHeader = () => {
             id={dataHeader.id}
             className="mx-auto flex columns-2 text-white xxs:flex-col sm:flex-row "
           >
-            <article className=" h-full overflow-hidden rounded-xl object-cover">
+            <article className=" overflow-hidden rounded-xl object-cover">
               <Image
                 src={dataHeader.img}
                 width={500}
                 height={500}
                 alt={dataHeader.alt}
-                priority={true}
-                className={'h-full'}
+                className="h-full"
               />
             </article>
             <article className="m-5">
@@ -47,17 +47,16 @@ const BlogHeader = () => {
               <p className="mt-4 text-lg opacity-50 xxs:text-sm sm:text-lg">
                 {dataHeader.descriptionShort}
               </p>
-              <div className="mt-5 flex items-center">
-                <div className="size-10 overflow-hidden rounded-full object-cover">
-                  <Image
-                    width={30}
-                    height={30}
-                    className="h-10 w-10"
-                    src={myPhoto}
-                    alt={'auteur'}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
+              <div className="mt-5 flex">
+                <Image
+                  width={50}
+                  height={50}
+                  className="overflow-hidden rounded-full"
+                  src={myPhoto.src}
+                  alt={'auteur'}
+                  sizes="(max-width: 600px) 480px, (max-width: 1200px) 1024px, 1600px"
+                />
+
                 <div className="ml-2">
                   <h2>Boucif Faradji</h2>
                   <h4 className="text-xs opacity-50">

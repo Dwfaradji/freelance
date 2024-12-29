@@ -1,22 +1,20 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Image from 'next/image';
-import setup from '@/images/about/setup.webp';
-import me from '@/images/about/presentation.webp';
-import aboutImg from '@/images/about/about-image.webp';
+import aboutImg from '@/images/about/about-image-1920.webp';
 import Offerings from '../Home/offerings';
 import Button from '../ui/Atoms/button';
 import Link from 'next/link';
 
 const AboutMore = () => {
   return (
-    <section className="mx-auto">
-      <article className={'p-8 xxs:p-0 '}>
-        <div className="m-8 h-full overflow-hidden">
+    <div className="mx-auto">
+      <section className={'p-8 xxs:p-0 '}>
+        <article className="m-8 h-full overflow-hidden">
           <Fade delay={1200} direction={'left'} triggerOnce={true}>
             <div className="relative overflow-hidden rounded-xl shadow-lg">
               <Image
-                className="relative z-10 h-full w-full rounded-lg object-cover"
+                className="relative z-10 size-full rounded-lg object-cover"
                 src={aboutImg}
                 alt={'banner_about'}
                 width={1000}
@@ -24,19 +22,20 @@ const AboutMore = () => {
               />
             </div>
           </Fade>
-        </div>
+        </article>
 
-        <div className="text-white">
+        <section className="text-white">
           <Fade direction={'right'} delay={1000} triggerOnce={true}>
             <h2 className="bg-gradient-to-r from-pink to-purple text-4xl font-bold text-gradient opacity-90">
               Notre Vision
             </h2>
             <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-              Chez Devevoke, nous croyons que chaque entreprise mérite une
+              {`Chez Devevoke, nous croyons que chaque entreprise mérite une
               présence numérique à la hauteur de ses ambitions. Nous
               redéfinissons l'expérience digitale en créant des solutions sur
-              mesure, alliant innovation et efficacité. <br />
-              Découvrez l'engagement de notre équipe pour votre réussite.
+              mesure, alliant innovation et efficacité.`}
+              <br />
+              {`Découvrez l'engagement de notre équipe pour votre réussite.`}
             </p>
           </Fade>
           {/* Nos Services */}
@@ -44,9 +43,9 @@ const AboutMore = () => {
           <Offerings />
 
           {/* Pourquoi Choisir Devevoke */}
-          <section className="mx-auto mt-16">
+          <article className="mx-auto mt-16">
             <Fade cascade>
-              <article className="mx-auto mt-20 px-8">
+              <div className="mx-auto mt-20 px-8">
                 <Fade direction={'up'}>
                   <h2 className="text-xl font-bold text-white lg:text-3xl">
                     <span className="bg-gradient-to-r from-pink to-purple text-gradient">
@@ -95,12 +94,12 @@ const AboutMore = () => {
                     </Fade>
                   </ul>
                 </div>
-              </article>
+              </div>
             </Fade>
 
             {/* Nos Valeurs */}
             <Fade cascade>
-              <section className="mb-16 rounded-xl  py-12 shadow-lg">
+              <article className="mb-16 rounded-xl  py-12 shadow-lg">
                 <Fade direction={'up'}>
                   <h2 className="mb-6 bg-gradient-to-r from-pink to-purple text-center text-4xl font-semibold text-gradient">
                     Nos Valeurs
@@ -142,12 +141,12 @@ const AboutMore = () => {
                     </div>
                   </Fade>
                 </div>
-              </section>
+              </article>
             </Fade>
 
             {/* Contact */}
             <Fade cascade>
-              <section className="text-center">
+              <article className="text-center">
                 <p className="mb-6 text-lg text-gray-300">
                   Vous avez un projet ? Vous souhaitez en savoir plus sur nos
                   services ? Contactez-nous dès aujourd’hui pour discuter de vos
@@ -160,12 +159,12 @@ const AboutMore = () => {
                     textColor="text-white text-xl"
                   ></Button>
                 </Link>
-              </section>
+              </article>
             </Fade>
-          </section>
-        </div>
-      </article>
-    </section>
+          </article>
+        </section>
+      </section>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import myPhoto from '@/images/about/photo-profil.png';
+import myPhoto from '@/images/about/photo-profil-1920.webp';
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
 
@@ -35,11 +35,11 @@ const AboutTeamBigCard = () => {
             triggerOnce={true}
           >
             <p className="m-4 text-lg text-white text-opacity-80 lg:text-xl ">
-              Passionné par l'innovation et les nouvelles technologies, je suis
+              {`  Passionné par l'innovation et les nouvelles technologies, je suis
               un développeur Full Stack avec plus de 5 ans d'expérience dans la
               conception de solutions numériques sur mesure. Mon objectif est de
               transformer vos idées en applications web et mobiles performantes,
-              évolutives et adaptées à vos besoins spécifiques.
+              évolutives et adaptées à vos besoins spécifiques.`}
               <br />
               <br />
               Devevoke est le fruit de ma vision : offrir aux entreprises une

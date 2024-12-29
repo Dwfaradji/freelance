@@ -29,7 +29,6 @@ const BlogsContainer = () => {
                   <Image
                     width={500}
                     height={300}
-                    className="size-full object-cover"
                     src={blog.img}
                     alt={blog.alt}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

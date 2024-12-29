@@ -1,10 +1,17 @@
 // data file for the website
 import { Project, Price, Service, PageInfo } from './typeFile';
 
-import fenixSolutions from '@/images/projects/fenixSolutions.webp';
-import kellerWilliams from '@/images/projects/kw.webp';
+import fenixSolutions from '@/images/projects/fenixSolutions-1920.webp';
+import fenixSolutionsMobile from '@/images/projects/fenixSolutions-1920.webp';
+
+import kellerWilliams from '@/images/projects/kw-1920.webp';
+import kellerWilliamsMobile from '@/images/projects/kw-688.webp';
+
 import pizzeriaMenu from '@/images/projects/appPizza-home-1920.webp';
+import pizzeriaMenuMobile from '@/images/projects/appPizza-home-688.webp';
+
 import commApp from '@/images/projects/appCom-customers-1920.webp';
+import commAppMobile from '@/images/projects/appCom-customers-1920.webp';
 
 //Project
 const projects: Project[] = [
@@ -16,6 +23,7 @@ const projects: Project[] = [
     details: `Notre mission : concevoir une application web flexible pour la gestion efficace des projets et des équipes, avec des fonctionnalités de chat en temps réel.`,
     results: `Résultats : une augmentation significative de la productivité des équipes, une meilleure communication et une gestion plus efficace des projets.`,
     image: String(fenixSolutions.src),
+    imageMobile: String(fenixSolutionsMobile.src),
     alt: 'image du projet fenix solutions',
     tech: ['Vue3', ' Node', ' ApiRest'],
     link: 'https://www.fenixsolutions.fr/',
@@ -27,8 +35,8 @@ const projects: Project[] = [
     description: `Nous avons contribué à la création d'une plateforme immobilière intuitive.`,
     details: `Notre mission : concevoir une plateforme conviviale pour les agents immobiliers, avec un tableau de bord personnalisable.`,
     results: `Résultats : une expérience utilisateur exceptionnelle, avec un tableau de bord permettant aux agents de modeler leur espace virtuel en toute simplicité.`,
-
     image: String(kellerWilliams.src),
+    imageMobile: String(kellerWilliamsMobile.src),
     alt: 'image du projet keller williams',
     tech: ['Next', ' React', ' Symfony', ' Docker'],
     link: 'https://kwoxygene.fr/',
@@ -42,6 +50,7 @@ const projects: Project[] = [
     results: `Résultats : une augmentation de l'engagement des clients grâce à une navigation fluide et une présentation visuellement attrayante des produits.`,
 
     image: String(pizzeriaMenu.src),
+    imageMobile: String(pizzeriaMenuMobile.src),
     alt: 'image du projet pizzeria menu',
     tech: ['Next.js', ' Tailwind CSS', ' React.js', ' GitHub', ' Vercel'],
     link: 'https://restaurant-pizza-rho.vercel.app/',
@@ -53,8 +62,8 @@ const projects: Project[] = [
     description: `Devevoke a développé une application web innovante permettant aux commerces de moderniser la présentation de leurs produits et services grâce à une interface interactive.`,
     details: `Notre mission : offrir aux entreprises une solution digitale clé en main, leur permettant de captiver leur clientèle avec un affichage moderne.`,
     results: `Résultats : une augmentation de la satisfaction et de la fidélité des clients grâce à une expérience utilisateur améliorée.`,
-
     image: String(commApp.src),
+    imageMobile: String(commAppMobile.src),
     alt: 'image du projet pizzeria menu',
     tech: [
       'Next.js',

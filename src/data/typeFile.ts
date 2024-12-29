@@ -8,6 +8,7 @@ interface Project {
   details: string;
   results: string;
   image: string;
+  imageMobile: string;
   alt: string;
   tech: string[];
   link: string;
@@ -50,7 +51,7 @@ interface BlogProps {
   title: string;
   descriptionShort: string;
   descriptionLong: Text[];
-  img: any;
+  img: string;
   alt: string;
   readingTime: number;
   category: string;

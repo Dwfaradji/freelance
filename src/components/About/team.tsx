@@ -1,12 +1,11 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import myPhoto from '@/images/about/photo-profil.png';
-import back from '@/images/about/Nakamoto.jpg';
-import front from '@/images/about/africain.jpg';
-import design from '@/images/about/designer.jpg';
+import back from '@/images/about/Nakamoto-1920.webp';
+import front from '@/images/about/africain-1920.webp';
+import design from '@/images/about/designer-1920.webp';
 
 import Image from 'next/image';
-import { abort } from 'process';
 
 const TeamSection = () => {
   return (
@@ -16,10 +15,10 @@ const TeamSection = () => {
       </h2>
 
       <p className="mb-8 px-4 text-center text-lg text-gray-300 sm:px-10">
-        Chez Devevoke, nous croyons que le succès d'un projet repose sur la
+        {` Chez Devevoke, nous croyons que le succès d'un projet repose sur la
         collaboration et l'expertise de chaque membre de l'équipe. Voici les
         talents qui contribuent à la réalisation de vos projets numériques, avec
-        passion et professionnalisme.
+        passion et professionnalisme.`}
       </p>
 
       {/* Grid d'équipe */}
@@ -37,9 +36,9 @@ const TeamSection = () => {
             <h3 className="text-xl font-semibold text-white">George Palonga</h3>
             <p className="text-lg text-gray-300">Développeur Frontend</p>
             <p className="mt-2 text-center text-white opacity-75">
-              Spécialisée dans la création d'interfaces utilisateur modernes et
+              {`Spécialisée dans la création d'interfaces utilisateur modernes et
               fluides, George s'assure que chaque projet offre une expérience
-              utilisateur optimale.
+              utilisateur optimale.`}
             </p>
           </div>
         </Fade>

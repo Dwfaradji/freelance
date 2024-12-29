@@ -7,7 +7,7 @@ import Button from '@/components/ui/Atoms/button';
 
 const Page = () => {
   return (
-    <div>
+    <>
       <ProjectsHeader />
       <ProjectsRoles />
       <div className="my-20 text-center">
@@ -19,7 +19,7 @@ const Page = () => {
           ></Button>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 

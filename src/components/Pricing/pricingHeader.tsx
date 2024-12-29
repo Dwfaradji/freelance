@@ -6,9 +6,10 @@ import { dataPriceOptions } from '@/data/data';
 
 const PricingHeader = () => {
   return (
-    <header className="mx-auto mt-10 flex  flex-col items-center font-poppins text-white">
-      <Fade direction={'up'}>
-        <div className="px-2">
+    <>
+      <header className="mx-auto flex  flex-col  font-poppins text-white">
+        <span className="text-sm text-white opacity-50">Tarifs</span>
+        <Fade cascade direction={'up'}>
           <h1 className="mb-8 bg-gradient-to-r from-pink to-purple font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
             Une tarification simple et Efficace
           </h1>
@@ -16,13 +17,17 @@ const PricingHeader = () => {
             Obtenez le plan Devevoke qui correspond à vos besoins avec une
             introduction spéciale de prix.
           </p>
-        </div>
-      </Fade>
-      <Fade cascade>
-        <div className="mt-10 grid grid-cols-2 gap-4 xxs:grid-cols-1 sm:grid-cols-2">
-          {dataPriceOptions.map((dataOption, i) => (
-            <div key={i}>
-              <div className="flex flex-col justify-between rounded-xl bg-lightblack p-10">
+        </Fade>
+      </header>
+
+      <section>
+        <Fade cascade>
+          <div className="mt-10 grid grid-cols-2 gap-4 font-poppins text-white xxs:grid-cols-1 sm:grid-cols-2">
+            {dataPriceOptions.map((dataOption, i) => (
+              <article
+                key={i}
+                className="flex flex-col justify-between rounded-xl bg-lightblack p-10"
+              >
                 <h2 className="bg-gradient-to-r from-pink to-purple text-2xl text-gradient ">
                   {dataOption.title}
                 </h2>
@@ -45,12 +50,12 @@ const PricingHeader = () => {
                 >
                   Commencez
                 </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Fade>
-    </header>
+              </article>
+            ))}
+          </div>
+        </Fade>
+      </section>
+    </>
   );
 };
 

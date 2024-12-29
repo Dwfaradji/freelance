@@ -48,7 +48,7 @@ const Testimonial = () => {
               <h3 className="bg-gradient-to-r from-pink to-purple text-xl font-bold text-gradient md:text-2xl">
                 Boucif Faradji
               </h3>
-              <p className="md:text-md text-sm font-medium">
+              <p className="text-sm font-medium md:text-base">
                 Fondateur & Développeur
               </p>
             </div>
@@ -59,7 +59,8 @@ const Testimonial = () => {
               <Image
                 src={logo}
                 alt="Logo DevEvoke"
-                layout="fill"
+                width={500}
+                height={500}
                 className="rounded-full object-contain"
               />
             </div>

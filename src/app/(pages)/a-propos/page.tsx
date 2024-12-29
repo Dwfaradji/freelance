@@ -10,7 +10,7 @@ import TeamSection from '@/components/About/team';
 
 const Page = () => {
   return (
-    <section>
+    <>
       <AboutHeader />
       <AboutMore />
       <AboutTeamBigCard />
@@ -25,7 +25,7 @@ const Page = () => {
           ></Button>
         </Link>
       </div>
-    </section>
+    </>
   );
 };
 

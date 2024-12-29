@@ -9,12 +9,14 @@ import { Fade } from 'react-awesome-reveal';
 
 const Page = () => {
   return (
-    <div>
-      <Fade direction="up" triggerOnce>
-        <h1 className="mb-8 bg-gradient-to-r from-pink to-purple font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
-          Découvrez notre Blogs
-        </h1>
-        <Fade direction="up" triggerOnce>
+    <>
+      <header>
+        <span className="text-sm text-white opacity-50">Blogs</span>
+        <Fade cascade direction="up" triggerOnce>
+          <h1 className="mb-8 bg-gradient-to-r from-pink to-purple font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
+            Découvrez notre Blogs
+          </h1>
+
           <p className="my-7 text-lg text-white lg:text-xl">
             Nous sommes fiers de partager avec vous nos projets les plus
             récents, réalisés avec passion et expertise. Chacun de nos projets
@@ -24,7 +26,7 @@ const Page = () => {
             découvrez comment nous transformons des idées en succès concrets.
           </p>
         </Fade>
-      </Fade>
+      </header>
       <BlogHeader />
       <BlogsContainer />
       <div className="mt-4 text-center">
@@ -36,7 +38,7 @@ const Page = () => {
           ></Button>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 

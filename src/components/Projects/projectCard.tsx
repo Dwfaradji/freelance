@@ -15,7 +15,7 @@ const ProjectCard = ({
   image,
 }: Project) => {
   return (
-    <div className="m-6 mx-auto flex w-full max-w-4xl flex-col items-center gap-8 rounded-xl border border-white bg-transparent p-6 text-white shadow-md transition-all hover:scale-105 lg:flex-row">
+    <article className="m-6 mx-auto flex w-full max-w-4xl flex-col items-center gap-8 rounded-xl border border-white bg-transparent p-6 text-white shadow-md transition-all hover:scale-105 lg:flex-row">
       {/* Content Section */}
       <div className="flex w-full flex-col lg:w-1/2">
         <h3 className="text-xl font-semibold ">{title}</h3>
@@ -53,7 +53,7 @@ const ProjectCard = ({
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

@@ -1,9 +1,21 @@
-import design from '@/images/templates/design_interieur.webp';
-import energy from '@/images/templates/energyTemplate.webp';
-import hairdresser from '@/images/templates/hairdresser.webp';
-import medical from '@/images/templates/medicalTemplate.webp';
-import organic from '@/images/templates/organic-farm.webp';
-import yoga from '@/images/templates/yogaTemplate.webp';
+import design from '@/images/templates/design_interieur-1920.webp';
+import designMobile from '@/images/templates/design_interieur-688.webp';
+
+import energy from '@/images/templates/energyTemplate-1920.webp';
+import energyMobile from '@/images/templates/energyTemplate-688.webp';
+
+import hairdresser from '@/images/templates/hairdresser-1920.webp';
+import hairdresserMobile from '@/images/templates/hairdresser-688.webp';
+
+import medical from '@/images/templates/medicalTemplate-1920.webp';
+import medicalMobile from '@/images/templates/medicalTemplate-688.webp';
+
+import organic from '@/images/templates/organic-farm-1920.webp';
+import organicMobile from '@/images/templates/organic-farm-688.webp';
+
+import yoga from '@/images/templates/yogaTemplate-1920.webp';
+import yogaMobile from '@/images/templates/yogaTemplate-688.webp';
+
 import Template from '@/components/SlideDevis/template/template';
 import MultiColorPicker from '@/components/SlideDevis/multiColorPicker/multiColorPicker';
 import MultiFontsChoice from '@/components/SlideDevis/multiFontsChoice';
@@ -13,7 +25,8 @@ import ColorLensIcon from '@mui/icons-material/ColorLens';
 interface Article {
   id: number;
   title: string;
-  image: any;
+  image: string;
+  imageMobile: string;
   description: string;
   link: string;
   date: string;
@@ -27,7 +40,8 @@ const articles: Article[] = [
   {
     id: 1,
     title: 'Clinique Bien-Être ⚕️',
-    image: medical,
+    image: medical.src,
+    imageMobile: medicalMobile.src,
     description:
       'Créez un site web professionnel et rassurant pour votre clinique médicale avec ce template intuitif et personnalisable.',
     link: `/template/mediplus/index.html/`,
@@ -37,7 +51,8 @@ const articles: Article[] = [
   {
     id: 2,
     title: 'Éveil Intérieur ‍♀️',
-    image: yoga,
+    image: yoga.src,
+    imageMobile: yogaMobile.src,
     description:
       'Trouvez votre équilibre intérieur et explorez votre potentiel avec ce template conçu pour les yogis de tous niveaux.',
     link: `/template/yoga/index.html/`,
@@ -47,7 +62,8 @@ const articles: Article[] = [
   {
     id: 3,
     title: 'Éco-Futur',
-    image: energy,
+    image: energy.src,
+    imageMobile: energyMobile.src,
     description:
       "Engagez-vous dans la transition écologique et donnez vie à votre projet d'énergie renouvelable avec ce template dynamique et informatif.",
     link: `/template/renewableEnergy/index.html/`,
@@ -58,7 +74,8 @@ const articles: Article[] = [
   {
     id: 4,
     title: 'Studio Créatif',
-    image: design,
+    image: design.src,
+    imageMobile: designMobile.src,
     description:
       'Exprimez votre vision unique et présentez votre entreprise avec style grâce à ce template flexible et adaptable à tous les domaines du design.',
     link: `/template/design-interieur/index.html`,
@@ -69,7 +86,8 @@ const articles: Article[] = [
   {
     id: 5,
     title: 'Terre nourricière',
-    image: organic,
+    image: organic.src,
+    imageMobile: organicMobile.src,
     description:
       'Valorisez votre exploitation agricole et partagez votre passion avec ce template authentique et convivial.',
     link: `/template/organic-farm/index.html`,
@@ -80,7 +98,8 @@ const articles: Article[] = [
   {
     id: 6,
     title: 'Salon Tendance ‍♀',
-    image: hairdresser,
+    image: hairdresser.src,
+    imageMobile: hairdresserMobile.src,
     description:
       'Mettez en valeur votre talent et attirez de nouveaux clients avec ce template élégant et moderne dédié aux professionnels de la coiffure.',
     link: `/template/hairdresser/index.html`,

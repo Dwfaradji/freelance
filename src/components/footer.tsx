@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FacebookOutlined, LinkedIn, X, GitHub } from '@mui/icons-material';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -56,7 +57,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer__section">
+          <div>
             <h3 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
               Services
             </h3>
@@ -70,7 +71,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer__section">
+          <div>
             <h3 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
               Contact
             </h3>
@@ -126,7 +127,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="col-12 mb-5 text-center">
+        <div className="mb-5 w-full text-center">
           <p>
             &copy; {new Date().getFullYear()} DevEvoke - Tous droits réservés.
           </p>

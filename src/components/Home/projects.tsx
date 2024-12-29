@@ -65,16 +65,14 @@ Explorez une sélection de projets web que nous avons réalisés, incluant des s
               {projects && projects.length > 0 ? (
                 projects.map((project) => (
                   <SwiperSlide key={project.id}>
-                    <div className="flex justify-center">
-                      <Image
-                        src={project.image}
-                        alt={project.alt || 'Illustration de projet'}
-                        width={664}
-                        height={373}
-                        priority={true}
-                        className=" rounded-lg object-cover"
-                      />
-                    </div>
+                    <Image
+                      src={project.imageMobile}
+                      alt={project.alt || 'Illustration de projet'}
+                      width={664}
+                      height={373}
+                      className="rounded-lg object-cover "
+                      sizes="(max-width: 600px) 480px, (max-width: 1200px) 1024px, 1600px"
+                    />
                   </SwiperSlide>
                 ))
               ) : (

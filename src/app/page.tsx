@@ -23,7 +23,7 @@ const Page = () => {
       <Projects />
       <Offerings />
       <Fade direction={'up'}>
-        <h2 className="mb-8 bg-gradient-to-r from-pink to-purple px-4 text-xl text-xl font-bold font-bold text-gradient text-white text-white lg:text-3xl">
+        <h2 className="mb-8 bg-gradient-to-r from-pink to-purple px-4 text-xl font-bold text-gradient lg:text-3xl">
           Découvrez Toutes Nos Formules
         </h2>
       </Fade>

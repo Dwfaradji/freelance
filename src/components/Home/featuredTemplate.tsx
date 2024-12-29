@@ -3,7 +3,7 @@ import { articles } from '@/data/dataSlideDevis';
 import Template from '@/components/Template/template';
 import Button from '@/components/ui/Atoms/button';
 import Link from 'next/link';
-import { Fade } from "react-awesome-reveal";
+import { Fade } from 'react-awesome-reveal';
 
 const FeaturedTemplate = () => {
   const sortByDateDescending = articles.sort((a: any, b: any) => {
@@ -15,12 +15,11 @@ const FeaturedTemplate = () => {
 
   return (
     <section className="mx-auto mt-20 px-8">
-
       <Fade direction={'up'}>
         <h2 className="font-poppins text-xl font-bold text-white lg:text-3xl">
-              <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-               Découvrez <br /> Chaque Mois <br /> Nos Nouveaux Templates <br />
-              </span>
+          <span className="bg-gradient-to-r from-pink to-purple text-gradient">
+            Découvrez <br /> Chaque Mois <br /> Nos Nouveaux Templates <br />
+          </span>
         </h2>
       </Fade>
       <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
@@ -29,7 +28,7 @@ const FeaturedTemplate = () => {
                     ou en nous suivant sur les réseaux sociaux. Chez DevEvoke, nous vous offrons les outils
                     dont vous avez besoin pour réussir en ligne.`}
       </p>
-      <article className="h-50 mt-10 grid grid-cols-3 gap-4 xxs:grid-cols-1 lg:grid-cols-3">
+      <article className="mt-10 grid grid-cols-3 gap-4 xxs:grid-cols-1 lg:grid-cols-3">
         {templateFilter.map((article) => (
           <Template
             key={article.id}

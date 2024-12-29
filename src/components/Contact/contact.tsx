@@ -46,16 +46,15 @@ const Contact = () => {
   return (
     <Fade cascade>
       <section className="mx-auto mt-10 flex max-w-7xl text-white xxs:flex-col sm:flex-row">
-        <div className="m-5 rounded-xl bg-lightblack p-10 xxs:m-0 xxs:p-7 md:m-5 md:w-3/4">
+        <article className="m-5 rounded-xl bg-lightblack p-10 xxs:m-0 xxs:p-7  md:w-3/4">
           <h2 className="text-xs opacity-50">Entrer en contact</h2>
-          <h1 className="mt-2 bg-gradient-to-t from-pink to-purple font-poppins text-2xl font-bold text-gradient lg:text-4xl xl:text-7xl">
-            Travaillons ensemble
-          </h1>
           <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            {`Besoin d'aide ou simplement envie de discuter de votre prochain projet passionnant ? Nous sommes
-                            tout ouïe ! Laissez-nous un message et nous vous contacterons dans les plus brefs délais pour
-                            discuter de la façon dont nous pouvons concrétiser vos idées. Votre prochaine grande aventure
-                            commence ici !`}
+            Besoin d'aide ou simplement envie de discuter de votre prochain
+            projet passionnant ? <br /> Nous sommes tout ouïe ! <br />{' '}
+            Laissez-nous un message et nous vous contacterons dans les plus
+            brefs délais pour discuter de la façon dont nous pouvons concrétiser
+            vos idées.
+            <br /> Votre prochaine grande aventure commence ici !
           </p>
           <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex xxs:flex-col sm:flex-row">
@@ -145,8 +144,8 @@ const Contact = () => {
               </div>
             )}
           </form>
-        </div>
-        <div className="m-5 w-1/4 overflow-hidden rounded-xl xxs:hidden sm:block">
+        </article>
+        <div className="ml-2 w-1/4 overflow-hidden rounded-xl xxs:hidden sm:block">
           <Image
             width={200}
             height={200}
