@@ -59,9 +59,9 @@ const BlogHeader = () => {
 
                 <div className="ml-2">
                   <h2>Boucif Faradji</h2>
-                  <h4 className="text-xs opacity-50">
+                  <h3 className="text-xs opacity-50">
                     {String(formattedDate)}
-                  </h4>
+                  </h3>
                 </div>
               </div>
             </article>

@@ -107,7 +107,7 @@ const AboutMore = () => {
                 </Fade>
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                   <Fade direction={'up'} delay={100}>
-                    <div className="rounded-lg  p-6 shadow-lg hover:bg-gradient-to-t hover:from-pink">
+                    <div className="h-full  rounded-lg border bg-lightblack p-6 shadow-lg hover:border-purple  hover:bg-gradient-to-t hover:from-pink">
                       <h3 className="mb-4 text-xl font-semibold text-white">
                         Innovation
                       </h3>
@@ -118,7 +118,7 @@ const AboutMore = () => {
                     </div>
                   </Fade>
                   <Fade direction={'up'} delay={200}>
-                    <div className="rounded-lg p-6 shadow-lg hover:bg-gradient-to-t hover:from-pink">
+                    <div className="h-full rounded-lg border bg-lightblack p-6 shadow-lg hover:border-purple  hover:bg-gradient-to-t hover:from-pink">
                       <h3 className="mb-4 text-xl font-semibold text-white">
                         Fiabilité
                       </h3>
@@ -129,7 +129,7 @@ const AboutMore = () => {
                     </div>
                   </Fade>
                   <Fade direction={'up'} delay={300}>
-                    <div className="rounded-lg  p-6 shadow-lg hover:bg-gradient-to-t hover:from-pink">
+                    <div className="h-full  rounded-lg border bg-lightblack p-6 shadow-lg hover:border-purple  hover:bg-gradient-to-t hover:from-pink">
                       <h3 className="mb-4 text-xl font-semibold text-white">
                         Satisfaction client
                       </h3>

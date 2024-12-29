@@ -66,6 +66,7 @@ const Navbar = () => {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4 text-red-600">
                 <Link
+                  aria-label="accueil"
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
                   href={'/'}
                 >

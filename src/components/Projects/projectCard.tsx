@@ -15,13 +15,13 @@ const ProjectCard = ({
   image,
 }: Project) => {
   return (
-    <article className="m-6 mx-auto flex w-full max-w-4xl flex-col items-center gap-8 rounded-xl border border-white bg-transparent p-6 text-white shadow-md transition-all hover:scale-105 lg:flex-row">
+    <article className="m-5 m-6 mx-auto flex w-full max-w-4xl cursor-pointer flex-col items-center gap-8 rounded-xl rounded-xl border bg-lightblack p-5 text-left hover:border-purple lg:flex-row">
       {/* Content Section */}
-      <div className="flex w-full flex-col lg:w-1/2">
-        <h3 className="text-xl font-semibold ">{title}</h3>
-        <h4 className="mt-2 bg-gradient-to-r from-pink to-purple text-2xl font-bold text-gradient">
+      <div className="flex w-full flex-col text-white lg:w-1/2">
+        <h2 className="text-xl font-semibold ">{title}</h2>
+        <h3 className="mt-2 bg-gradient-to-r from-pink to-purple text-2xl font-bold text-gradient">
           {subtitle}
-        </h4>
+        </h3>
         <p className="mt-4 text-gray-200">{description}</p>
         {details && (
           <p className="mt-2 text-sm text-gray-400">{`🛠️ ${details}`}</p>

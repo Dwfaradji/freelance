@@ -51,7 +51,7 @@ const Offerings = () => {
           {services.map((service, i) => (
             <div
               key={i}
-              className="flex rounded-xl hover:bg-gradient-to-t hover:from-pink lg:w-[30%]"
+              className="flex rounded-xl border bg-lightblack hover:border-purple hover:bg-gradient-to-t hover:from-pink  lg:w-[30%]"
             >
               <article className="flex h-full flex-col ">
                 <Fade direction={'up'}>

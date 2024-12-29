@@ -10,9 +10,9 @@ const Footer = () => {
       <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-center text-white">
         <div className="flex w-full flex-wrap justify-between gap-8">
           <div className="sm:col-span-12 md:col-span-4">
-            <h3 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
+            <h2 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
               Infos général
-            </h3>
+            </h2>
             <ul className={''}>
               <li>
                 <Link
@@ -58,9 +58,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
+            <h2 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
               Services
-            </h3>
+            </h2>
             <ul>
               <li className="mb-1">Web design</li>
               <li>Développement web</li>

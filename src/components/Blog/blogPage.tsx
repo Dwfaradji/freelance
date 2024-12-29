@@ -18,15 +18,12 @@ const BlogPage = ({ blog }: PropsBlogPage) => {
   const [formattedDate, setFormattedDate] = useState<string>();
 
   useEffect(() => {
-    blogData.map((data) => {
-      if (data.id === blog.id) {
-        setFormattedDate(new Date(data.date).toLocaleDateString('fr-FR'));
-        setContentBlog(data);
-        return data;
-      }
-    });
-  }, []);
-
+    const data = blogData.find((data) => data.id === blog.id);
+    if (data) {
+      setFormattedDate(new Date(data.date).toLocaleDateString('fr-FR'));
+      setContentBlog(data);
+    }
+  }, [blog.id]);
   // nouveau tableau qui contient les 2 derniers articles publiés en fonction de la date de publication
   // const lastBlog = blog
   //     .sort((a, b) => {
@@ -38,38 +35,35 @@ const BlogPage = ({ blog }: PropsBlogPage) => {
   return (
     <>
       {contentBlog && (
-        <div className="relative mt-10 flex flex-col text-white xxs:px-3 lg:px-20">
+        <div className="relative mt-10 flex size-full flex-col text-white xxs:px-3 lg:px-20">
           <h2 className="mb-2 text-sm text-white opacity-50">
             {contentBlog.descriptionShort}
           </h2>
 
           <header className={'flex flex-col-reverse'}>
-            <Fade cascade>
-              <h1 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl">
-                {contentBlog.title}
-              </h1>
-            </Fade>
-            <div className="overflow-hidden rounded-xl">
+            <h1 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl">
+              {contentBlog.title}
+            </h1>
+
+            <div className="size-full overflow-hidden">
               <Image
-                src={contentBlog.img}
-                width={1000}
-                height={800}
-                alt={contentBlog.alt}
-                className={'w-full md:h-[80dvh] '}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
+                src={contentBlog.img}
+                width={1920}
+                height={1280}
+                alt={contentBlog.alt}
+                className="size-full rounded-xl object-cover object-center "
               />
               <div className={'m-3 flex justify-between'}>
                 <div className=" my-6 flex items-center">
                   <div className="size-10 overflow-hidden rounded-full object-cover">
                     <Image
-                      className="h-10 w-10"
-                      priority={true}
+                      priority
                       width={300}
                       height={300}
                       src={myPhoto}
-                      alt={'article_blog'}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      alt={'photo_gérant_devevoke'}
+                      className="size-full bg-black object-cover object-center"
                     />
                   </div>
                   <div className="ml-2 text-left">
