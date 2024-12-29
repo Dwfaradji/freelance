@@ -51,11 +51,11 @@ const Header = () => {
       </Fade>
 
       <Image
-        width={1700}
-        height={100}
+        width={1920}
+        height={800}
         src={HeaderImage.src}
         alt={'photo'}
-        className="mx-auto"
+        className="mx-auto animate-wiggle  object-cover object-center"
         priority
       />
     </header>

@@ -9,7 +9,7 @@ const Page = () => {
   return (
     <>
       <ProjectsHeader />
-      <ProjectsRoles />
+      {/**<ProjectsRoles />**/}
       <div className="my-20 text-center">
         <Link href={'/tarifs'}>
           <Button

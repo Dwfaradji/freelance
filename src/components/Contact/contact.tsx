@@ -147,11 +147,11 @@ const Contact = () => {
         </article>
         <div className="ml-2 w-1/4 overflow-hidden rounded-xl xxs:hidden sm:block">
           <Image
-            width={200}
-            height={200}
-            className="size-full object-cover"
-            priority={true}
-            src={pictureContact}
+            width={1920}
+            height={1200}
+            className="size-full object-cover object-center"
+            priority
+            src={pictureContact.src}
             alt={'image_contact'}
           />
         </div>

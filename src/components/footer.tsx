@@ -16,7 +16,9 @@ const Footer = () => {
             <ul className={''}>
               <li>
                 <Link
-                  className={' xxs:block xxs:h-12 md:h-auto'}
+                  className={
+                    ' hover:bg-gradient-to-r hover:from-pink hover:to-purple hover:text-gradient xxs:block xxs:h-12 md:h-auto'
+                  }
                   href={'/info-procedure'}
                 >
                   Procédure
@@ -24,7 +26,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={' xxs:block xxs:h-12 md:h-auto'}
+                  className={
+                    ' hover:bg-gradient-to-r hover:from-pink hover:to-purple hover:text-gradient xxs:block xxs:h-12 md:h-auto'
+                  }
                   href={'/info-tarif'}
                 >
                   Les tarifs
@@ -32,7 +36,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={' xxs:block xxs:h-12 md:h-auto'}
+                  className={
+                    ' hover:bg-gradient-to-r hover:from-pink hover:to-purple hover:text-gradient xxs:block xxs:h-12 md:h-auto'
+                  }
                   href={'/mentions-legal'}
                 >
                   Mentions légal
@@ -40,7 +46,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={' xxs:block xxs:h-12 md:h-auto'}
+                  className={
+                    ' hover:bg-gradient-to-r hover:from-pink hover:to-purple hover:text-gradient xxs:block xxs:h-12 md:h-auto'
+                  }
                   href={'/politique-confidentialite'}
                 >
                   Politique de confidentialité
@@ -48,7 +56,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={' xxs:block xxs:h-12 md:h-auto'}
+                  className={
+                    ' hover:bg-gradient-to-r hover:from-pink hover:to-purple hover:text-gradient xxs:block xxs:h-12 md:h-auto'
+                  }
                   href={'/foire-aux-questions'}
                 >
                   F.A.Q
@@ -58,7 +68,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h2 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
+            <h2 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient ">
               Services
             </h2>
             <ul>
@@ -75,16 +85,17 @@ const Footer = () => {
             <h3 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
               Contact
             </h3>
-            <p className={'mb-1 flex flex-wrap justify-between'}>
+            <p className={'mb-1 flex flex-wrap '}>
               Email:
-              <a className="ml-1 text-white" href="mailto:contact@devevoke.com">
+              <Link
+                className="ml-1 text-white"
+                href="mailto:contact@devevoke.com"
+              >
                 contact@devevoke.com
-              </a>
+              </Link>
             </p>
-            <p className={'mb-1 flex flex-wrap justify-between'}>
-              Téléphone: 04 34 29 76 40
-            </p>
-            <p className={'mb-1 flex flex-wrap justify-between'}>
+            <p className={'mb-1 flex flex-wrap '}>Téléphone: 04 34 29 76 40</p>
+            <p className={'mb-1 flex flex-wrap '}>
               Adresse: 5 impasse des vergers,
               <br /> 66370 Pézilla la rivière
             </p>
