@@ -2,7 +2,7 @@ import React from 'react';
 
 export const metadata = {
   title:
-    'Découvrez les dernières actualités et conseils en développement web sur le blog de DevEvoke',
+    'Actualités et conseils en dev web sur le blog de DevEvoke',
   description:
     'Découvrez des articles, tutoriels et conseils sur le développement web, la programmation et les dernières tendances technologiques sur le blog de DevEvoke.',
   alternates: {

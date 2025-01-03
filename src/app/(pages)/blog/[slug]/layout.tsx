@@ -36,17 +36,18 @@ export const generateMetadata = async (
       canonical: `https://www.devevoke.com/blog/${slugify(blog.title)}`, // Lien canonique pour SEO
     },
     openGraph: {
-      title: blog.title,
-      description: blog.descriptionShort || 'Lisez cet article sur Devevoke.',
-      url: `https://www.devevoke.com/blog/${slugify(blog.title)}`,
-      images: [blog.img, ...previousImages], // Ajout des images dans OpenGraph
+      title: blog.title, // og:title
+      description: blog.descriptionShort || 'Lisez cet article sur DevEvoke.', // og:description
+      url: `https://www.devevoke.com/blog/${slugify(blog.title)}`, // og:url
+      images: [blog.img, ...previousImages], // og:image
+      type: 'article', // og:type
     },
     twitter: {
-      card: 'summary_large_image',
-      title: blog.title,
-      description: blog.descriptionShort || 'Découvrez cet article sur notre blog.',
-      site: `https://www.devevoke.com/blog/${slugify(blog.title)}`,
-      images: [blog.img],
+      card: 'summary_large_image', // twitter:card
+      title: blog.title, // twitter:title
+      description: blog.descriptionShort || 'Découvrez cet article sur notre blog.', // twitter:description
+      site: `https://www.devevoke.com/blog/${slugify(blog.title)}`, // twitter:site
+      images: [blog.img], // twitter:image
     },
   };
 };
