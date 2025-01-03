@@ -215,7 +215,7 @@ const blogData: BlogProps[] = [
     ],
 
     img: articleIa.src,
-    metaDescription:"Explorez l’impact de l’intelligence artificielle sur notre société, ses applications variées, et découvrez comment elle façonne notre futur, tout en relevant ses défis.",
+    metaDescription:"Explorez l’impact de l’I.A sur notre société, ses applications variées, et découvrez comment elle façonne notre futur, tout en relevant ses défis.",
     alt: 'image_blog_intelligence_artificielle',
     readingTime: 12,
     category: 'Technologie',
