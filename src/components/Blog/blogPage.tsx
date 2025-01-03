@@ -1,10 +1,9 @@
 'use client';
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Button from '@/components/ui/Atoms/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import blogData from '@/data/dataBlog';
 import { BlogProps } from '@/data/typeFile';
 import ButtonNetwork from '@/components/ui/ButtonNetwork/buttonNetwork';
 import myPhoto from '@/images/about/photo-profil-1920.webp';
@@ -15,12 +14,11 @@ interface PropsBlogPage {
 }
 
 const BlogPage = ({ blog }: PropsBlogPage) => {
-  const [contentBlog] = useState<BlogProps | null>(null);
 
   // Utilisation de useMemo pour éviter le recalcul à chaque rendu
   const formattedDate = useMemo(() => {
-    return contentBlog ? new Date(blog.date).toLocaleDateString('fr-FR') : '';
-  }, [contentBlog]);
+    return blog ? new Date(blog.date).toLocaleDateString('fr-FR') : '';
+  }, [blog]);
 
   return (
     <div className="mt-10 flex flex-col text-white xxs:px-3 lg:px-20">
@@ -56,7 +54,7 @@ const BlogPage = ({ blog }: PropsBlogPage) => {
               </div>
               <div className="ml-2 text-left">
                 <h2>Boucif Faradji</h2>
-                <h4 className="text-xs opacity-50">{formattedDate}</h4>
+                <h3 className="text-xs opacity-50">{formattedDate}</h3>
               </div>
             </div>
             <ButtonNetwork url={blog} />
