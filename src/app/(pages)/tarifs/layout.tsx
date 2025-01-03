@@ -4,7 +4,7 @@ export const metadata = {
   title:
     'Plans et tarifs de DevEvoke - Découvrez nos offres de formation en développement web',
   description:
-    "Découvrez les plans et tarifs de DevEvoke pour accéder à nos formations en développement web. Choisissez parmi une gamme d'options pour développer vos compétences en programmation et progresser dans votre carrière. Trouvez le plan qui vous convient le mieux et commencez dès aujourd'hui votre parcours vers le succès en développement web.",
+`Découvrez les services de développement web de DevEvoke. Choisissez parmi nos offres adaptées à vos besoins et lancez votre projet numérique dès aujourd’hui.`,
   alternates: {
     canonical: 'https://www.devevoke.com/tarifs',
   },

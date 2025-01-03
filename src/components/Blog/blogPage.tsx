@@ -36,9 +36,7 @@ const BlogPage = ({ blog }: PropsBlogPage) => {
     <>
       {contentBlog && (
         <div className="relative mt-10 flex size-full flex-col text-white xxs:px-3 lg:px-20">
-          <h2 className="mb-2 text-sm text-white opacity-50">
-            {contentBlog.descriptionShort}
-          </h2>
+       
 
           <header className={'flex flex-col-reverse'}>
             <h1 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl">
@@ -46,6 +44,9 @@ const BlogPage = ({ blog }: PropsBlogPage) => {
             </h1>
 
             <div className="size-full overflow-hidden">
+            <h2 className="mb-2 text-sm text-white opacity-50">
+            {contentBlog.descriptionShort}
+          </h2>
               <Image
                 priority
                 src={contentBlog.img}

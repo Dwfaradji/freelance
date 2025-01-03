@@ -4,8 +4,8 @@ export const metadata = {
   title:
     'Templates de DevEvoke - Explorez nos modèles pour vos projets web',
   description:
-    "Découvrez une variété de templates proposés par DevEvoke pour accélérer vos projets web. Parcourez notre collection de modèles conçus pour différents besoins, du commerce en ligne aux blogs personnels. Trouvez le template idéal pour donner vie à vos idées et démarrez votre projet web dès aujourd'hui.",
-  alternates: {
+`Explorez les templates DevEvoke pour vos projets web. Trouvez des modèles adaptés à vos besoins, du e-commerce au blog, et lancez votre projet rapidement.`,
+ alternates: {
     canonical: 'https://www.devevoke.com/templates',
   },
   robots: {

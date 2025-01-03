@@ -4,7 +4,7 @@ export const metadata = {
   title:
     'Découvrez les dernières actualités et conseils en développement web sur le blog de DevEvoke',
   description:
-    'Explorez notre blog pour trouver des articles informatifs, des tutoriels et des conseils sur le développement web, la programmation et les dernières tendances technologiques. Restez à jour avec les dernières actualités et astuces pour améliorer vos compétences en développement.',
+    'Découvrez des articles, tutoriels et conseils sur le développement web, la programmation et les dernières tendances technologiques sur le blog de DevEvoke.',
   alternates: {
     canonical: 'https://www.devevoke.com/blog',
   },

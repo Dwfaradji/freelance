@@ -31,7 +31,7 @@ export const generateMetadata = async (
   // Générer les métadonnées pour la page de blog
   return {
     title: blog.title,
-    description: blog.descriptionShort || 'Découvrez cet article sur notre blog.',
+    description: blog.metaDescription || 'Découvrez cet article sur notre blog.',
     alternates: {
       canonical: `https://www.devevoke.com/blog/${slugify(blog.title)}`, // Lien canonique pour SEO
     },

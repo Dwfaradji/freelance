@@ -56,6 +56,7 @@ interface BlogProps {
   readingTime: number;
   category: string;
   date: string;
+  metaDescription:string
 }
 
 interface IFormData {
