@@ -108,8 +108,8 @@ Explorez une sélection de projets web que nous avons réalisés, incluant des s
             </ul>
 
             <p className="my-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-              Prêts à transformer votre entreprise avec des solutions moderne et
-              fonctionnelle ?
+              Prêts à transformer votre entreprise avec des solutions modernes et
+              fonctionnelles ?
             </p>
           </div>
         </article>

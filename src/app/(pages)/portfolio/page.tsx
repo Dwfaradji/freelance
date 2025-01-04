@@ -14,7 +14,7 @@ const Page = () => {
         <Link href={'/tarifs'}>
           <Button
             colorClass="bg-gradient-to-r from-pink to-purple "
-            title="Je suis Intéressé"
+            title="Je suis Intéressé(e)"
             textColor="text-white text-xl"
           ></Button>
         </Link>

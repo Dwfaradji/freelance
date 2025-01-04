@@ -36,7 +36,7 @@ const TeamSection = () => {
             <h3 className="text-xl font-semibold text-white">George Palonga</h3>
             <p className="text-lg text-gray-300">Développeur Frontend</p>
             <p className="mt-2 text-center text-white opacity-75">
-              {`Spécialisée dans la création d'interfaces utilisateur modernes et
+              {`Spécialisé dans la création d'interfaces utilisateur modernes et
               fluides, George s'assure que chaque projet offre une expérience
               utilisateur optimale.`}
             </p>

@@ -12,7 +12,7 @@ const AboutHeader = () => {
         <article className="mb-10">
           <Fade cascade direction={'up'} triggerOnce={true}>
             <h1 className="mb-8 bg-gradient-to-r from-pink to-purple  font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
-              Qui nous sommes ?
+              Qui sommes-nous ?
             </h1>
 
             <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">

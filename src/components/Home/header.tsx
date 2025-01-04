@@ -14,7 +14,7 @@ const Header = () => {
       </h2>
       <Fade cascade direction={'up'}>
         <h1 className="font-poppins  text-2xl font-semibold text-white lg:text-4xl xl:text-7xl ">
-          Agence Digital <br></br>
+          Agence Digitale <br></br>
           <span className="bg-gradient-to-r from-pink to-purple text-gradient">
             Expert Web et Mobile
           </span>

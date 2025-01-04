@@ -21,7 +21,7 @@ const BlogHome = () => {
         <Link href={'/blog'}>
           <Button
             colorClass="bg-gradient-to-r from-pink to-purple "
-            title="Tout nos Articles"
+            title="Tous nos Articles"
             textColor="text-white text-xl"
           ></Button>
         </Link>

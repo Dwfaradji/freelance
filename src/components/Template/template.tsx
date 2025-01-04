@@ -15,7 +15,7 @@ const Template = ({ image, link, name, id }: PropsTemplate) => {
       key={id}
       className="relative overflow-hidden rounded-xl opacity-70 hover:opacity-100 "
     >
-      <Link href={link} prefetch={true}>
+      <Link href={link} prefetch={false}>
         <Image
           src={image}
           width={1000}

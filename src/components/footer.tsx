@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex w-full flex-wrap justify-between gap-8">
           <div className="sm:col-span-12 md:col-span-4">
             <h2 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
-              Infos général
+              Infos générales
             </h2>
             <ul className={''}>
               <li>
@@ -21,7 +21,7 @@ const Footer = () => {
                   }
                   href={'/info-procedure'}
                 >
-                  Procédure
+                  Notre Processus
                 </Link>
               </li>
               <li>
@@ -31,7 +31,7 @@ const Footer = () => {
                   }
                   href={'/info-tarif'}
                 >
-                  Les tarifs
+                 Offres et Prestations
                 </Link>
               </li>
               <li>
@@ -41,7 +41,7 @@ const Footer = () => {
                   }
                   href={'/mentions-legal'}
                 >
-                  Mentions légal
+                  Mentions légales
                 </Link>
               </li>
               <li>

@@ -318,123 +318,104 @@ const pageInfosPrice: PageInfo[] = [
   },
   {
     title: 'Tarif journalier',
-    text: `Mon tjm standard est de 600€ Ce tarif journalier est
-        applicable à tous les projets de développement web, y compris la
-        conception de sites web, le développement d'applications web et
-        l'intégration de systèmes tiers. Le tarif journalier est calculé en
-        fonction du temps total passé sur le projet, y compris la communication
-        avec le client, la planification, le développement, les tests et la mise
-        en production du site web. Je m'assure de respecter les délais convenus
-        et de fournir un travail de haute qualité à chaque étape du processus.`,
+    text: `Chez Devevoke, notre tarif journalier moyen (TJM) est de 600€. Ce tarif
+        s'applique à une large gamme de projets, incluant la conception de sites web, 
+        le développement d'applications web et l'intégration de systèmes tiers. 
+        Le TJM couvre l'ensemble des étapes nécessaires au bon déroulement du projet : 
+        planification, développement, tests, mise en production et communication avec le client. 
+        Nous nous engageons à respecter les délais établis et à fournir un travail d'excellence à chaque étape.`,
   },
   {
     title: 'Tarif forfaitaire',
-    text: `Je propose également des forfaits pour les projets de développement web. Le prix forfaitaire est
-        calculé en fonction de la complexité du projet, du temps estimé pour le développement et de la
-        valeur ajoutée pour le client. Le prix forfaitaire est fixé avant le début du projet et ne change pas
-        pendant le développement. Je m'assure de respecter les délais convenus et de fournir un travail
-        de haute qualité à chaque étape du processus.`,
+    text: `Devevoke propose également des tarifs forfaitaires adaptés à vos projets. 
+        Ces tarifs sont établis en fonction de la complexité du projet, du temps estimé 
+        pour le développement et de la valeur ajoutée pour votre entreprise. Une fois le prix forfaitaire défini, 
+        celui-ci reste fixe, garantissant ainsi une transparence totale pour nos clients. 
+        Nous veillons à ce que chaque projet soit livré dans les délais impartis, tout en maintenant un niveau 
+        élevé de qualité.`,
   },
   {
     title: 'Forfaits personnalisés',
-    text: `Je propose également des forfaits
-          personnalisés pour des projets plus importants ou des besoins
-          spécifiques. Les forfaits sont conçus pour offrir une solution complète
-          et incluent généralement des fonctionnalités supplémentaires telles que
-          l'intégration de systèmes tiers, la création de pages supplémentaires,
-          l'optimisation du référencement, etc. Les tarifs des forfaits peuvent
-          varier en fonction de la portée du projet et des exigences spécifiques
-          du client. Pour plus d'informations sur les forfaits disponibles, veuillez
-          me contacter.`,
+    text: `Pour les projets complexes ou nécessitant des solutions spécifiques, Devevoke propose des forfaits 
+        personnalisés. Ces offres incluent souvent des fonctionnalités avancées telles que l'intégration de systèmes tiers, 
+        l'ajout de pages supplémentaires, l'optimisation SEO, et bien plus encore. Les tarifs des forfaits 
+        sont ajustés selon la portée du projet et les exigences spécifiques du client. Pour obtenir davantage 
+        d'informations sur nos forfaits personnalisés, nous vous invitons à nous contacter.`,
   },
   {
     title: 'Devis personnalisé',
-    text: `Chaque projet est unique, c'est pourquoi je propose des devis
-          personnalisés en fonction des besoins spécifiques de chaque client.
-          Lorsque vous me contactez pour discuter de votre projet, je prendrai en
-          compte vos exigences, vos objectifs et votre budget pour vous fournir un
-          devis détaillé et transparent. Le devis comprendra une estimation du
-          temps nécessaire, les fonctionnalités incluses et le coût total du
-          projet. Je m'assure de fournir des devis précis et transparents afin que
-          vous sachiez exactement ce que vous obtenez et combien cela vous coûtera
-          avant de commencer le projet.
-          `,
+    text: `Chaque projet est unique, c'est pourquoi Devevoke offre des devis personnalisés adaptés 
+        aux besoins spécifiques de chaque client. Lors de votre prise de contact, nous analyserons vos objectifs, 
+        vos exigences et votre budget pour établir un devis clair et détaillé. Ce devis inclura une estimation du temps 
+        nécessaire, les fonctionnalités prévues et le coût total du projet. Nous garantissons une transparence totale 
+        afin que vous sachiez exactement ce que vous obtenez avant le lancement du projet.`,
   },
   {
     title: 'Modalités de paiement',
-    text: `Les modalités de paiement sont flexibles et peuvent être convenues avec
-          chaque client en fonction de ses préférences. Généralement, je demande
-          un acompte initial avant de commencer le projet, suivi de paiements
-          échelonnés à des étapes clés du développement. Les modalités de paiement
-          précises seront discutées et formalisées dans le contrat de services.`,
+    text: `Chez Devevoke, nous adoptons des modalités de paiement flexibles et adaptées à vos besoins. 
+        En règle générale, un acompte initial de 30 % est demandé à la commande, suivi du règlement 
+        du solde à la livraison du projet. Ces modalités peuvent être ajustées selon vos préférences 
+        et seront formalisées dans le contrat de services. Nous travaillons toujours dans une optique 
+        de collaboration claire et respectueuse.`,
   },
 ];
 
 const pageInfosProcess: PageInfo[] = [
   {
-    titleH1: "Processus de réalisation d'un site web",
+    titleH1: "Processus de réalisation de projets numériques",
   },
   {
     title: 'Étape 1 : Compréhension des besoins du client',
     text: `Le processus commence par une communication approfondie avec le client
           afin de comprendre ses objectifs, ses besoins et ses préférences pour le
-          site web. Il est important de poser des questions pertinentes pour
-          obtenir toutes les informations nécessaires.`,
+          projet (site web, application mobile, SaaS, etc.). Il est crucial de poser 
+          des questions pertinentes pour obtenir toutes les informations nécessaires.`,
   },
   {
     title: 'Étape 2 : Analyse et planification',
-    text: `Sur la base des informations recueillies, le développeur freelance
-          effectue une analyse approfondie des besoins du client. Cette étape
-          implique la définition des fonctionnalités requises, la sélection des
-          technologies appropriées et l'estimation du temps et des ressources
-          nécessaires pour le projet. `,
+    text: `Sur la base des informations recueillies, une analyse approfondie des
+          besoins du client est réalisée. Cette étape implique la définition des 
+          fonctionnalités requises, la sélection des technologies appropriées 
+          (par exemple, React Native pour une application mobile ou Next.js pour un site web), 
+          et l’estimation du temps et des ressources nécessaires au projet.`,
   },
   {
     title: 'Étape 3 : Conception et prototypage',
-    text: `Une fois la planification terminée, le développeur freelance crée une
-          maquette ou un prototype du site web. Cela permet au client de
-          visualiser le design, la disposition et la structure du site avant de
-          passer à la phase de développement.`,
+    text: `Une fois la planification terminée, une maquette ou un prototype interactif
+          est créé. Que ce soit pour un site web, une application mobile ou une plateforme SaaS,
+          cela permet au client de visualiser le design et la structure du projet 
+          avant de passer à la phase de développement.`,
   },
-
   {
-    title: 'Étape 4 : Développement du site web',
-    text: `Dans cette phase, le développeur freelance utilise les langages de
-          programmation et les technologies appropriées pour créer le site web
-          selon les spécifications convenues. Il assure également l'optimisation
-          des performances, la compatibilité avec les navigateurs et la prise en
-          compte des bonnes pratiques en matière de sécurité.`,
+    title: 'Étape 4 : Développement',
+    text: `Cette phase consiste à utiliser les technologies appropriées pour construire
+          le projet selon les spécifications convenues. Les performances, la compatibilité 
+          avec différentes plateformes et la sécurité sont optimisées à chaque étape.`,
   },
   {
     title: 'Étape 5 : Tests et corrections',
-    text: `Une fois le développement terminé, le site web est soumis à des tests
-          approfondis pour vérifier son bon fonctionnement, son accessibilité et
-          sa convivialité. Si des problèmes ou des bogues sont identifiés, des
-          corrections sont apportées pour garantir la qualité du site final.`,
+    text: `Une fois le développement terminé, le projet est soumis à des tests approfondis 
+          pour vérifier son bon fonctionnement, son accessibilité, et son adaptabilité 
+          (par exemple, tests sur iOS et Android pour une application mobile). 
+          Les éventuels problèmes ou bogues sont corrigés pour assurer une qualité optimale.`,
   },
   {
     title: 'Étape 6 : Livraison et déploiement',
-    text: `Une fois que le site web est testé et validé, il est prêt à être livré
-          au client. Le développeur freelance peut aider le client à déployer le
-          site sur un serveur ou un hébergement web, en s'assurant que tout est
-          configuré correctement pour une mise en ligne réussie.`,
+    text: `Une fois le projet validé, il est livré au client. Nous vous accompagnons 
+          pour déployer le projet : mise en ligne d'un site web, publication d'une 
+          application sur les stores mobiles ou lancement d'une plateforme SaaS.`,
   },
   {
     title: 'Étape 7 : Maintenance et support',
-    text: `Après la livraison du site web, le développeur freelance peut proposer
-          des services de maintenance et de support supplémentaires. Cela peut
-          inclure la résolution des problèmes techniques, les mises à jour du
-          site, la surveillance de la sécurité et l'assistance continue au client
-          en cas de besoin.`,
+    text: `Après la livraison, nous proposons des services de maintenance et de support 
+          adaptés à vos besoins : résolution de problèmes techniques, mises à jour régulières, 
+          surveillance des performances et accompagnement continu.`,
   },
   {
     title: 'Le travail bien fait',
-    text: `Le processus de réalisation d'un site web en tant que développeur
-          freelance, suivre un processus structuré pour la réalisation d'un site
-          web est essentiel pour garantir la satisfaction du client et la qualité
-          du travail fourni. En comprenant les besoins du client, en planifiant
-          soigneusement, en concevant, en développant, en testant et en livrant le
-          site web, vous créez une expérience fluide et professionnelle.`,
+    text: `Nous suivons un processus structuré pour garantir la satisfaction du client 
+          et la qualité du travail fourni. Que ce soit pour un site web, une application mobile, 
+          ou une solution SaaS, notre objectif est de créer une expérience fluide et professionnelle.`,
   },
 ];
 const lienPolitiqueConfidentialite = `<a href='https://www.devevoke.com/politique-confidentialite'>politique de confidentialité</a>`;
@@ -538,7 +519,7 @@ const politiqueConfidentialite: PageInfo[] = [
 export {
   projects,
   services,
-  prices,
+  prices,   
   dataPriceOptions,
   pageInfosPrice,
   pageInfosProcess,

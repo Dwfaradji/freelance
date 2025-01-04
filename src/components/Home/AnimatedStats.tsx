@@ -9,7 +9,7 @@ const AnimatedStats = () => (
         <h2 className="text-5xl text-white">
           <CountUp start={0} end={15} duration={2.75} />
         </h2>
-        <h3 className="text-white">Projet réaliser</h3>
+        <h3 className="text-white">Projets réalisés</h3>
       </article>
       <article className="flex flex-col content-center justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack p-5 text-center align-middle transition duration-500 ease-in-out hover:from-purple hover:to-pink ">
         <h2 className="text-5xl text-white">

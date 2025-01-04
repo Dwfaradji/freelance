@@ -43,7 +43,7 @@ const FeaturedTemplate = () => {
         <Link href={'/templates'}>
           <Button
             colorClass="bg-gradient-to-r from-pink to-purple "
-            title="Voir Tout Les Templates"
+            title="Voir Tous Les Templates"
             textColor="text-white text-xl"
           ></Button>
         </Link>

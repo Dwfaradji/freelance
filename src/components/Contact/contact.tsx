@@ -10,7 +10,7 @@ const Contact = () => {
   const [sendMsg, setSendMsg] = React.useState(false);
   const [sendText, setSendText] = React.useState('');
   const [buttonSendMsg, setButtonSendMsg] = React.useState(true);
-  const [buttonText, setButtonText] = React.useState('Envoyer-nous un message');
+  const [buttonText, setButtonText] = React.useState('Envoyez-nous un message');
   //Variables
   const {
     register,
