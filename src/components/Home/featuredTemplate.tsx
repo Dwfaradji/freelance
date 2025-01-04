@@ -14,7 +14,7 @@ const FeaturedTemplate = () => {
   const templateFilter = sortByDateDescending.slice(0, 3);
 
   return (
-    <section className="mx-auto mt-20 px-8">
+    <section id="section4" className="mx-auto mt-20 px-8" >
       <Fade direction={'up'}>
         <h2 className="font-poppins text-xl font-bold text-white lg:text-3xl">
           <span className="bg-gradient-to-r from-pink to-purple text-gradient">

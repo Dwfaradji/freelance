@@ -4,9 +4,9 @@ import { pageInfosProcess } from '@/data/data';
 
 const Page = () => {
   return (
-    <main>
+    <>
       <PagesInfo infosText={pageInfosProcess} />
-    </main>
+    </>
   );
 };
 

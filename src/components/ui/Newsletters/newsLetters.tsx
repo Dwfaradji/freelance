@@ -51,7 +51,7 @@ const NewsLetters = () => {
   }, [message]);
 
   return (
-    <section className={'my-20'}>
+    <section id="section7" className={'my-20'}>
       <div className={'w-full xxs:w-full xs:w-full sm:w-3/4'}>
         <Fade direction={'up'}>
           <h2

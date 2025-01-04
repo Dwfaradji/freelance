@@ -5,6 +5,7 @@ import { Fade } from 'react-awesome-reveal';
 
 const Page = () => {
   return (
+    <>
     <header>
       <h2 className="text-sm text-white opacity-50">Contact</h2>
       <Fade cascade direction="up" triggerOnce>
@@ -12,8 +13,10 @@ const Page = () => {
           Travaillons ensemble
         </h1>
       </Fade>
+      </header>
       <Contact />
-    </header>
+    </>
+
   );
 };
 

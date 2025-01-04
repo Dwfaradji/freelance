@@ -7,7 +7,7 @@ import logo from '@/images/logocv.svg';
 
 const Testimonial = () => {
   return (
-    <section className="relative mx-auto my-20 text-white">
+    <section id="section5"  className="relative mx-auto my-20 text-white">
       <Fade direction="up" triggerOnce>
         <h2 className="text-xl font-bold text-white lg:text-3xl">
           <span className="bg-gradient-to-r from-pink to-purple bg-clip-text text-transparent">

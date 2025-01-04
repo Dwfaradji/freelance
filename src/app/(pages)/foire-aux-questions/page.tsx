@@ -4,9 +4,9 @@ import PricingFAQ from '@/components/Pricing/pricingFAQ';
 
 const Page = () => {
   return (
-    <div>
+    <>
       <PricingFAQ />
-    </div>
+    </>
   );
 };
 

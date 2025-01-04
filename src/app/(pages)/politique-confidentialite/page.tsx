@@ -4,9 +4,9 @@ import { politiqueConfidentialite } from '@/data/data';
 
 const Page = () => {
   return (
-    <main>
+    <>
       <PagesInfo infosText={politiqueConfidentialite} />
-    </main>
+    </>
   );
 };
 

@@ -14,7 +14,7 @@ import Button from '@/components/ui/Atoms/button';
 
 const Projects = () => {
   return (
-    <section>
+    <section id="section1">
       {/* Header Section */}
       <Fade cascade>
         <article className="mt-20 px-4 sm:px-6 md:px-8">

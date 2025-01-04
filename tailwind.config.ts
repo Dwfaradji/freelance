@@ -17,6 +17,7 @@ const config: Config = {
       textColor: {
         gradient: 'linear-gradient(to right, #3c9dda, #3c9dda)',
       },
+    
       keyframes: {
         wiggle: {
           '0%': { opacity: '0' },

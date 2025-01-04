@@ -6,7 +6,7 @@ import Button from '../ui/Atoms/button';
 
 const BlogHome = () => {
   return (
-    <section className="my-20 text-white">
+    <section id="section6" className="my-20 text-white">
       <Fade direction={'up'}>
         <h2
           className={

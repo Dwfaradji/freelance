@@ -15,9 +15,9 @@ const PricingMain = () => {
   };
 
   return (
-    <section className="mx-auto w-full lg:block">
+    <section  >
       <Fade>
-        <div className="flex w-full flex-col items-center justify-center gap-3 rounded-xl border border-white ">
+        <div className="flex w-full flex-col items-center justify-center gap-3 rounded-xl border border-white mx-auto w-full lg:block ">
           {prices.map((tarif, i) => (
             <article
               key={i.toString()}

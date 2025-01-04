@@ -13,7 +13,7 @@ const Offerings = () => {
   ];
 
   return (
-    <section>
+    <section id="section2" className="min-h-screen" >
       <Fade cascade>
         <article className=" mx-auto mt-20 px-8">
           <Fade direction={'up'}>
