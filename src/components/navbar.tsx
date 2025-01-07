@@ -104,6 +104,12 @@ const Navbar = () => {
                 </Link>
                 <Link
                   className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
+                  href={'/services'}
+                >
+                  Services
+                </Link>
+                <Link
+                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
                   href={'/contact'}
                 >
                   Contact
@@ -180,6 +186,13 @@ const Navbar = () => {
               onClick={handleLinkClick}
             >
               Portfolio
+            </Link>
+            <Link
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
+              href={'/services'}
+              onClick={handleLinkClick}
+            >
+              Services
             </Link>
             <Link
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"

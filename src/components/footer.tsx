@@ -66,20 +66,37 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          <div>
-            <h2 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient ">
-              Services
-            </h2>
-            <ul>
-              <li className="mb-1">Web design</li>
-              <li>Développement web</li>
-              <li>{"Développement d'applications mobiles"}</li>
-              <li>Référencement (SEO)</li>
-              <li>Hébergement</li>
-              <li>Maintenance</li>
-            </ul>
-          </div>
+          <div className="sm:col-span-12 md:col-span-4">
+  <h2 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
+    Services
+  </h2>
+  <ul>
+    {[
+      { id: 'service-0', label: 'Sites Web' },
+      { id: 'service-1', label: "Développement d'applications mobiles" },
+      { id: 'service-2', label: 'Référencement (SEO)' },
+      { id: 'service-3', label: 'Hébergement' },
+      { id: 'service-4', label: 'Maintenance' },
+      { id: 'service-5', label: 'Formation' },
+    ].map(({ id, label }) => (
+      <li className="mb-1" key={id}>
+        <a
+          href={`#${id}`} // Lien ancré vers les sections correspondantes
+          onClick={(e) => {
+            e.preventDefault();
+            const section = document.getElementById(id);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }}
+          className="hover:bg-gradient-to-r hover:from-pink hover:to-purple hover:text-gradient xxs:block xxs:h-12 md:h-auto"
+        >
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
 
           <div>
             <h3 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient">
@@ -103,14 +120,16 @@ const Footer = () => {
         </div>
 
         <div className=" w-full p-8 md:w-3/4 lg:w-2/4">
-          <div className="my-8 flex justify-between">
+        <h2 className="mb-5 bg-gradient-to-r from-pink to-purple text-left text-xl text-gradient text-center">
+        Suivez-nous sur les réseaux Sociaux </h2>
+          <div className="my-8 flex justify-between rounded-full p-3  bg-white drop-shadow-2xl ">
             <Link
               href="https://www.facebook.com/profile.php?id=100094324716136"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="facebook"
             >
-              <FacebookOutlined className="text-blue" />
+              <FacebookOutlined className="text-[#0766ff] bg-white overflow-hidden" />
             </Link>
             <Link
               href="https://github.com/Dwfaradji"
@@ -118,7 +137,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label={'github'}
             >
-              <GitHub className="text-blue" />
+              <GitHub className='text-black'/>
             </Link>
             <Link
               href="https://www.linkedin.com/company/devevoke/"
@@ -126,7 +145,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label={'linkedin'}
             >
-              <LinkedIn className="text-blue" />
+              <LinkedIn className="text-[#0a66c2]" />
             </Link>
             <Link
               href="https://twitter.com/DevEvoke"
@@ -134,7 +153,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               aria-label={'twitter'}
             >
-              <X className="text-blue" />
+              <X className='text-black'/>
             </Link>
           </div>
         </div>

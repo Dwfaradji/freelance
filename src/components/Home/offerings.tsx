@@ -13,10 +13,10 @@ const Offerings = () => {
   ];
 
   return (
-    <section id="section2" className="min-h-screen" >
+    <section id="section2" className="min-h-screen">
       <Fade cascade>
-        <article className=" mx-auto mt-20 px-8">
-          <Fade direction={'up'}>
+        <article className="mx-auto mt-20 px-8">
+          <Fade direction="up">
             <h2 className="text-xl font-bold text-white lg:text-3xl">
               <span className="bg-gradient-to-r from-pink to-purple text-gradient">
                 Services proposés
@@ -30,14 +30,12 @@ const Offerings = () => {
                             application web et mobile.`}
           </p>
 
-          <h2 className="mt-5  text-lg text-white lg:text-2xl">
-            Nos services incluent :
-          </h2>
+          <h2 className="mt-5 text-lg text-white lg:text-2xl">Nos services incluent :</h2>
           <div className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
             <ul className="list-disc pl-5 text-white">
               {servicesString.map((service, i) => (
-                <Fade direction={'left'} delay={100} key={i}>
-                  <li key={i}>
+                <Fade direction="left" delay={100} key={i}>
+                  <li>
                     <span>{service}</span>
                   </li>
                 </Fade>
@@ -47,15 +45,16 @@ const Offerings = () => {
         </article>
       </Fade>
       <Fade cascade>
-        <article className="mx-auto my-20 flex flex-row flex-wrap justify-between gap-10 p-2 xxs:flex-col xs:flex-col sm:flex-row ">
+        <article className="mx-auto my-20 flex flex-row flex-wrap justify-between gap-10 p-2 xxs:flex-col xs:flex-col sm:flex-row">
           {services.map((service, i) => (
             <div
+              id={`service-${i}`} // Correspondance avec les IDs du footer
               key={i}
-              className="flex rounded-xl border bg-lightblack hover:border-purple hover:bg-gradient-to-t hover:from-pink  lg:w-[30%]"
+              className="flex rounded-xl border bg-lightblack hover:border-purple hover:bg-gradient-to-t hover:from-pink lg:w-[30%]"
             >
-              <article className="flex h-full flex-col ">
-                <Fade direction={'up'}>
-                  <h2 className=" p-5 text-2xl text-white">
+              <article className="flex h-full flex-col">
+                <Fade direction="up">
+                  <h2 className="p-5 text-2xl text-white">
                     <span className="bg-gradient-to-r from-pink to-purple text-gradient">
                       {service.title}
                     </span>
@@ -66,9 +65,9 @@ const Offerings = () => {
                   <p className="h-full text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
                     {service.description}
                   </p>
-                  <ul className={'my-3 list-disc pl-5 text-white'}>
+                  <ul className="my-3 list-disc pl-5 text-white">
                     {service.items.map((item, i) => (
-                      <Fade direction={'left'} delay={100} key={i}>
+                      <Fade direction="left" delay={100} key={i}>
                         <li>{item.title}</li>
                       </Fade>
                     ))}

@@ -38,9 +38,7 @@ const AboutMore = () => {
               {`Découvrez l'engagement de notre équipe pour votre réussite.`}
             </p>
           </Fade>
-          {/* Nos Services */}
-
-          <Offerings />
+        
 
           {/* Pourquoi Choisir Devevoke */}
           <article className="mx-auto mt-16">
