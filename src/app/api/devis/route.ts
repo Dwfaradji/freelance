@@ -1,44 +1,7 @@
 import { NextResponse } from 'next/server';
-import sgMail from '@sendgrid/mail';
+import nodemailer from 'nodemailer';
 
 const res = NextResponse;
-
-interface SendGridMailDevis {
-  to: string;
-  from: string;
-  templateId: string;
-  dynamic_template_data: {
-    template: string;
-    colors: { Principal: string; Secondaire: string; Texte: string };
-    fonts: { primary: string; secondary: string };
-    checkbox: {
-      Nombre_de_page: string;
-      Hebergement: string;
-      Maintenance: string;
-      Personnalisation: string;
-    };
-    form: {
-      radioSelections: {
-        typeClient: string;
-        projet: string;
-        maquette: string;
-        cahier: string;
-        logo: string;
-        images: string;
-        textPresentation: string;
-        textServices: string;
-      };
-      dateDebut: string;
-      nom: string;
-      email: string;
-      telephone: string;
-      descriptionProjet: string;
-      commentaires: string;
-      budgetEstime: string;
-      siret: string;
-    };
-  };
-}
 
 const isObject = (obj: any): obj is Record<string, any> =>
   obj && typeof obj === 'object';
@@ -55,26 +18,31 @@ const areAllValuesNonEmpty = (obj: Record<string, any>) =>
 
 // POST
 export async function POST(request: Request) {
-  // Récupérer les données du formulaire
   const data = await request.json();
   const { form } = data;
 
-  form.commentaires === ''
-    ? (form.commentaires = 'Pas de commentaires particulier')
-    : form.commentaires;
-  form.siret === '' ? (form.siret = 'Particulier') : form.siret;
-  // Teste si tous les champs sont bien rempli
+  // Valeurs par défaut
+  if (form.commentaires === '') form.commentaires = 'Pas de commentaires particulier';
+  if (form.siret === '') form.siret = 'Particulier';
+
+  // Vérification des champs
   if (!areAllValuesNonEmpty(data)) {
     return res.json({
       message: 'Des champs vides ont été trouvés dans la requête.',
     });
   }
-  // Donner la clé API
-  const apiKey = process.env.KEY_SENDGRID_API;
-  if (!apiKey) {
-    return res.json({ status: 400, message: 'Key_SENDGRID_API_KEY_MISSING' });
+
+  // Config SMTP
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = process.env.SMTP_PORT;
+
+  if (!smtpUser || !smtpPass || !smtpHost || !smtpPort) {
+    return res.json({ status: 400, message: 'SMTP_CONFIG_MISSING' });
   }
-  // Syntaxe adresse email
+
+  // Vérification email
   const pattern =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!pattern.test(form.email)) {
@@ -82,59 +50,68 @@ export async function POST(request: Request) {
       message: 'EMAIL_SYNTAX_INCORRECT',
     });
   }
-  // Configuration de SendGrid
-  sgMail.setApiKey(apiKey);
+
+  // Création transporteur Nodemailer
+  const transporter = nodemailer.createTransport({
+    host: smtpHost,
+    port: Number(smtpPort),
+    secure: Number(smtpPort) === 465, // TLS pour 465
+    auth: {
+      user: smtpUser,
+      pass: smtpPass,
+    },
+  });
+
+  // Génération du HTML du devis
+  const html = `
+    <h2>Nouveau devis reçu</h2>
+    <h3>Informations client</h3>
+    <p><strong>Nom :</strong> ${form.nom}</p>
+    <p><strong>Email :</strong> ${form.email}</p>
+    <p><strong>Téléphone :</strong> ${form.telephone}</p>
+    <p><strong>SIRET :</strong> ${form.siret}</p>
+    <p><strong>Date de début :</strong> ${form.dateDebut}</p>
+    <p><strong>Budget estimé :</strong> ${form.budgetEstime}</p>
+
+    <h3>Projet</h3>
+    <p><strong>Description :</strong> ${form.descriptionProjet}</p>
+    <p><strong>Commentaires :</strong> ${form.commentaires}</p>
+
+    <h3>Choix de l’utilisateur</h3>
+    <p><strong>Nombre de pages :</strong> ${data.checkbox.Nombre_de_page}</p>
+    <p><strong>Hébergement :</strong> ${data.checkbox.Hebergement}</p>
+    <p><strong>Maintenance :</strong> ${data.checkbox.Maintenance}</p>
+    <p><strong>Personnalisation :</strong> ${data.checkbox.Personnalisation}</p>
+
+    <h3>Sélections radio</h3>
+    <ul>
+      <li><strong>Type client :</strong> ${form.radioSelections.typeClient}</li>
+      <li><strong>Projet :</strong> ${form.radioSelections.projet}</li>
+      <li><strong>Maquette :</strong> ${form.radioSelections.maquette}</li>
+      <li><strong>Cahier des charges :</strong> ${form.radioSelections.cahier}</li>
+      <li><strong>Logo :</strong> ${form.radioSelections.logo}</li>
+      <li><strong>Images :</strong> ${form.radioSelections.images}</li>
+      <li><strong>Texte présentation :</strong> ${form.radioSelections.textPresentation}</li>
+      <li><strong>Texte services :</strong> ${form.radioSelections.textServices}</li>
+    </ul>
+
+    <h3>Style</h3>
+    <p><strong>Template :</strong> ${data.template}</p>
+    <p><strong>Couleurs :</strong> Principal ${data.colors.Principal}, Secondaire ${data.colors.Secondaire}, Texte ${data.colors.Texte}</p>
+    <p><strong>Polices :</strong> ${data.fonts.primary} / ${data.fonts.secondary}</p>
+  `;
 
   try {
-    const devis: SendGridMailDevis = {
+    await transporter.sendMail({
+      from: smtpUser,
       to: String(process.env.EMAIL_TO),
-      from: String(process.env.EMAIL_TO),
-      templateId: String(process.env.TEMPLATE_ID_DEVIS),
-      dynamic_template_data: {
-        template: String(data.template),
-        colors: {
-          Principal: String(data.colors.Principal),
-          Secondaire: String(data.colors.Secondaire),
-          Texte: String(data.colors.Texte),
-        },
-        fonts: {
-          primary: String(data.fonts.primary),
-          secondary: String(data.fonts.secondary),
-        },
-        checkbox: {
-          Hebergement: String(data.checkbox.Hebergement),
-          Nombre_de_page: String(data.checkbox.Nombre_de_page),
-          Maintenance: String(data.checkbox.Maintenance),
-          Personnalisation: String(data.checkbox.Personnalisation),
-        },
-        form: {
-          radioSelections: {
-            typeClient: String(data.form.radioSelections.typeClient),
-            projet: String(data.form.radioSelections.projet),
-            maquette: String(data.form.radioSelections.maquette),
-            cahier: String(data.form.radioSelections.cahier),
-            logo: String(data.form.radioSelections.logo),
-            images: String(data.form.radioSelections.images),
-            textPresentation: String(
-              data.form.radioSelections.textPresentation,
-            ),
-            textServices: String(data.form.radioSelections.textServices),
-          },
-          dateDebut: String(data.form.dateDebut),
-          nom: String(data.form.nom),
-          email: String(data.form.email),
-          telephone: String(data.form.telephone),
-          descriptionProjet: String(data.form.descriptionProjet),
-          commentaires: String(data.form.commentaires),
-          budgetEstime: String(data.form.budgetEstime),
-          siret: String(data.form.siret),
-        },
-      },
-    };
+      subject: `Nouveau devis de ${form.nom}`,
+      html,
+    });
 
-    await sgMail.send(devis);
     return res.json({ status: 200, message: 'DEVIS_SEND' });
   } catch (error) {
+    console.error('EMAIL ERROR:', error);
     return res.json({ status: 400, message: 'DEVIS_SENDING_FAILED' });
   }
 }

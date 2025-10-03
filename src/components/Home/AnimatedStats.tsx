@@ -1,39 +1,33 @@
 import React from 'react';
 import CountUp from 'react-countup';
-import { Fade } from 'react-awesome-reveal'; // Assurez-vous que vous avez importé Fade
+import { Fade } from 'react-awesome-reveal';
 
 const AnimatedStats = () => (
-  <section className="mt-10 grid size-full  grid-cols-1 justify-between  gap-4  md:grid-cols-4">
+  <section className="mt-10 grid size-full grid-cols-1 gap-4 md:grid-cols-4">
     <Fade cascade>
-      <article className="flex  flex-col content-center justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack p-5 text-center align-middle transition duration-500 ease-in-out hover:from-purple hover:to-pink ">
+      <article className="flex flex-col justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack p-5 text-center transition duration-500 ease-in-out hover:from-purple hover:to-pink">
         <h2 className="text-5xl text-white">
-          <CountUp start={0} end={15} duration={2.75} />
+          <CountUp start={0} end={20} duration={2.75} suffix="+" />
         </h2>
-        <h3 className="text-white">Projets réalisés</h3>
+        <h3 className="text-white">Projets livrés</h3>
       </article>
-      <article className="flex flex-col content-center justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack p-5 text-center align-middle transition duration-500 ease-in-out hover:from-purple hover:to-pink ">
+      <article className="flex flex-col justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack p-5 text-center transition duration-500 ease-in-out hover:from-purple hover:to-pink">
         <h2 className="text-5xl text-white">
-          <CountUp start={0} end={800} duration={3} suffix="h" separator={''} />
+          <CountUp start={0} end={15} duration={3} suffix="+" />
         </h2>
-        <h3 className="text-white">Formation</h3>
+        <h3 className="text-white">Clients accompagnés</h3>
       </article>
-      <article className="flex flex-col content-center justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack p-5 text-center align-middle transition duration-500 ease-in-out hover:from-purple hover:to-pink ">
+      <article className="flex flex-col justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack p-5 text-center transition duration-500 ease-in-out hover:from-purple hover:to-pink">
         <h2 className="text-5xl text-white">
           <CountUp start={0} end={99} duration={2} suffix="%" />
         </h2>
-        <h3 className="text-white">Taux Satisfaction</h3>
+        <h3 className="text-white">Satisfaction client</h3>
       </article>
-      <article className="flex flex-col content-center justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack p-5 text-center align-middle transition duration-500 ease-in-out hover:from-purple hover:to-pink ">
+      <article className="flex flex-col justify-center rounded-xl bg-gradient-to-r from-lightblack to-lightblack p-5 text-center transition duration-500 ease-in-out hover:from-purple hover:to-pink">
         <h2 className="text-5xl text-white">
-          <CountUp
-            start={0}
-            end={49208}
-            duration={3.5}
-            suffix="€"
-            separator=","
-          />
+          <CountUp start={0} end={8} duration={3.5} suffix="+" />
         </h2>
-        <h3 className="text-white">{"Chiffre d'affaires"}</h3>
+        <h3 className="text-white">Technologies maîtrisées</h3>
       </article>
     </Fade>
   </section>
