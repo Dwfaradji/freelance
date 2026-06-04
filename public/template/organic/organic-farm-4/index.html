@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier Frais - Maraîchage Local</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-zinc-800">
+
+    <!-- Nav -->
+    <nav class="bg-white sticky top-0 z-50 border-b border-zinc-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-black text-green-600 tracking-tight">Panier<span class="text-orange-500">Frais</span></div>
+            <div class="hidden md:flex space-x-8 font-bold text-zinc-500">
+                <a href="#paniers" class="hover:text-green-600 transition">Nos Paniers</a>
+                <a href="#ferme" class="hover:text-green-600 transition">La Ferme</a>
+            </div>
+            <a href="#commande" class="bg-orange-500 text-white px-6 py-2 rounded-xl font-bold hover:bg-orange-600 transition shadow-lg shadow-orange-200">S'abonner</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <div class="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-bold mb-6">Circuit Court 🚜</div>
+            <h1 class="text-5xl md:text-7xl font-black text-zinc-900 leading-tight mb-6 tracking-tighter">
+                Du champ à<br>votre <span class="text-green-600">assiette.</span>
+            </h1>
+            <p class="text-lg text-zinc-500 mb-10 leading-relaxed font-medium max-w-md">
+                Des légumes bio, de saison, cultivés avec amour à moins de 20km de chez vous. Livrés chaque semaine.
+            </p>
+            <div class="flex gap-4">
+                <a href="#paniers" class="bg-green-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-green-700 transition shadow-xl shadow-green-200">Découvrir les paniers</a>
+            </div>
+            <div class="mt-8 flex gap-8">
+                <div>
+                    <div class="font-black text-2xl text-zinc-900">100%</div>
+                    <div class="text-zinc-500 text-sm font-semibold">Agriculture Bio</div>
+                </div>
+                <div>
+                    <div class="font-black text-2xl text-zinc-900">-24h</div>
+                    <div class="text-zinc-500 text-sm font-semibold">De la récolte à la livraison</div>
+                </div>
+            </div>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="absolute inset-0 bg-orange-100 rounded-full transform -translate-x-8 translate-y-8 -z-10"></div>
+            <img src="https://loremflickr.com/800/800/vegetables,harvest?lock=84" alt="Légumes" class="w-full object-cover rounded-3xl border-8 border-white shadow-2xl transform rotate-2 hover:rotate-0 transition duration-500">
+        </div>
+    </section>
+
+    <!-- Paniers -->
+    <section id="paniers" class="py-24 bg-zinc-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-black text-center mb-16 text-zinc-900 tracking-tight">Choisissez votre formule</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-zinc-100 hover:border-green-500 transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-green-500 text-white font-bold text-xs px-4 py-1 rounded-bl-xl">Best-seller</div>
+                    <h3 class="text-2xl font-black mb-2 text-zinc-900">Le Duo</h3>
+                    <p class="text-zinc-500 font-medium mb-6">Parfait pour 2 personnes. 4 à 5 variétés de légumes de saison.</p>
+                    <div class="text-4xl font-black text-green-600 mb-8">18€ <span class="text-lg text-zinc-400 font-semibold">/semaine</span></div>
+                    <button class="w-full bg-green-50 text-green-600 font-bold py-3 rounded-xl hover:bg-green-600 hover:text-white transition">Sélectionner</button>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-zinc-100 hover:border-orange-500 transition duration-300">
+                    <h3 class="text-2xl font-black mb-2 text-zinc-900">La Tribu</h3>
+                    <p class="text-zinc-500 font-medium mb-6">Idéal pour 4 personnes. 6 à 8 variétés de légumes + des œufs frais.</p>
+                    <div class="text-4xl font-black text-orange-500 mb-8">32€ <span class="text-lg text-zinc-400 font-semibold">/semaine</span></div>
+                    <button class="w-full bg-orange-50 text-orange-600 font-bold py-3 rounded-xl hover:bg-orange-500 hover:text-white transition">Sélectionner</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="commande" class="bg-green-600 text-green-50 py-16 text-center">
+        <h2 class="text-3xl font-black mb-6">Soutenez votre maraîcher local</h2>
+        <p class="mb-8 font-semibold text-green-200">Abonnement sans engagement. Annulation en 1 clic.</p>
+    </footer>
+
+</body>
+</html>

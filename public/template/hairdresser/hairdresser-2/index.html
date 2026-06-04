@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Barber Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body, p, .font-sans { font-family: 'Roboto', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#1a1512] text-[#e0c9a3]">
+
+    <!-- Nav -->
+    <nav class="border-b border-[#e0c9a3]/20 py-6">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <div class="text-3xl font-serif font-black tracking-widest uppercase">The Barber</div>
+            <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest text-[#a89679]">
+                <a href="#services" class="hover:text-[#e0c9a3] transition">Prestations</a>
+                <a href="#book" class="border border-[#e0c9a3] px-6 py-2 hover:bg-[#e0c9a3] hover:text-[#1a1512] transition">Prendre RDV</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/2">
+            <h1 class="text-6xl md:text-8xl font-serif font-black leading-none mb-6">
+                Le rasage<br><span class="text-transparent bg-clip-text bg-gradient-to-b from-[#e0c9a3] to-[#8a724d] italic">traditionnel.</span>
+            </h1>
+            <p class="font-sans text-lg text-[#a89679] mb-10 max-w-sm">Coupe ciseaux, taille de barbe au coupe-choux et soins à la serviette chaude. L'artisanat masculin à l'état pur.</p>
+            <a href="#book" class="bg-[#e0c9a3] text-[#1a1512] font-bold uppercase tracking-widest px-8 py-4 inline-block hover:bg-white transition">Réserver son fauteuil</a>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="absolute inset-0 border-2 border-[#e0c9a3]/30 transform translate-x-6 translate-y-6"></div>
+            <img src="https://loremflickr.com/800/1000/barber,beard?lock=41" alt="Barbier" class="relative z-10 w-full h-[600px] object-cover filter sepia-[0.3] contrast-125">
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-[#14100e]">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-serif text-center mb-16 uppercase tracking-widest">Le Menu</h2>
+            <div class="space-y-8 font-sans">
+                <div class="flex flex-col md:flex-row justify-between items-baseline border-b border-[#e0c9a3]/10 pb-4">
+                    <div>
+                        <h3 class="text-2xl font-serif mb-2">Coupe Classique</h3>
+                        <p class="text-[#a89679] text-sm">Shampoing, coupe ciseaux/tondeuse, coiffage.</p>
+                    </div>
+                    <div class="text-2xl font-serif text-[#e0c9a3] mt-4 md:mt-0">28€</div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-baseline border-b border-[#e0c9a3]/10 pb-4">
+                    <div>
+                        <h3 class="text-2xl font-serif mb-2">Taille de Barbe & Soin</h3>
+                        <p class="text-[#a89679] text-sm">Taille, contour au coupe-choux, serviette chaude, huile.</p>
+                    </div>
+                    <div class="text-2xl font-serif text-[#e0c9a3] mt-4 md:mt-0">22€</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="book" class="py-20 text-center font-sans border-t border-[#e0c9a3]/20">
+        <h2 class="text-3xl font-serif mb-6">Ouvert du Mardi au Samedi</h2>
+        <p class="text-[#a89679] mb-8">42 Avenue des Artisans, Paris</p>
+        <button class="bg-transparent border border-[#e0c9a3] text-[#e0c9a3] px-8 py-3 uppercase tracking-widest hover:bg-[#e0c9a3] hover:text-[#1a1512] transition">01 23 45 67 89</button>
+    </footer>
+
+</body>
+</html>

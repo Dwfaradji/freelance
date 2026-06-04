@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Affineur - Fromagerie Artisanale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Merriweather', serif; }
+        body, p, .font-sans { font-family: 'Open Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#fffdf8] text-[#3e2723]">
+
+    <!-- Nav -->
+    <nav class="border-b border-[#3e2723]/10">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+            <div class="text-3xl font-serif font-bold text-[#f57f17]">L'Affineur.</div>
+            <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest text-[#5d4037]">
+                <a href="#cave" class="hover:text-[#f57f17] transition">Notre Cave</a>
+                <a href="#plateaux" class="hover:text-[#f57f17] transition">Plateaux</a>
+            </div>
+            <a href="#boutique" class="bg-[#3e2723] text-[#fffdf8] px-6 py-2 font-serif italic hover:bg-[#f57f17] transition">Boutique en ligne</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/2">
+            <div class="text-[#f57f17] font-bold tracking-widest uppercase text-xs mb-6">Maison fondée en 1982</div>
+            <h1 class="text-6xl md:text-7xl font-serif font-bold leading-tight mb-8">
+                Le temps au service du <span class="italic text-[#f57f17]">goût.</span>
+            </h1>
+            <p class="font-sans text-lg text-[#5d4037] mb-12 leading-relaxed">
+                Fromages fermiers au lait cru, affinés dans nos caves voûtées avec passion et rigueur. Découvrez notre sélection de terroirs.
+            </p>
+            <a href="#plateaux" class="border-2 border-[#3e2723] text-[#3e2723] px-8 py-3 font-bold uppercase tracking-widest text-sm hover:bg-[#3e2723] hover:text-[#fffdf8] transition">Commander un plateau</a>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="absolute inset-0 bg-[#fff3e0] transform translate-x-4 translate-y-4 -z-10 rounded-t-full"></div>
+            <img src="https://loremflickr.com/800/1000/cheese,farm?lock=81" alt="Fromage" class="w-full h-[600px] object-cover rounded-t-full border-8 border-white shadow-xl">
+        </div>
+    </section>
+
+    <!-- Cave -->
+    <section id="cave" class="py-24 bg-[#3e2723] text-[#fffdf8]">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-serif italic mb-16 text-[#f57f17]">Les Trésors de la Cave</h2>
+            <div class="grid md:grid-cols-3 gap-12 text-left">
+                <div class="border-t border-[#f57f17]/30 pt-6">
+                    <h3 class="text-2xl font-serif mb-3">Pâtes Pressées</h3>
+                    <p class="font-sans text-[#d7ccc8] text-sm leading-relaxed">Comtés affinés 36 mois, Beauforts d'alpage et tommes paysannes au caractère fruité.</p>
+                </div>
+                <div class="border-t border-[#f57f17]/30 pt-6">
+                    <h3 class="text-2xl font-serif mb-3">Pâtes Persillées</h3>
+                    <p class="font-sans text-[#d7ccc8] text-sm leading-relaxed">Roqueforts artisanaux, Fourmes d'Ambert crémeuses et Gorgonzola à la cuillère.</p>
+                </div>
+                <div class="border-t border-[#f57f17]/30 pt-6">
+                    <h3 class="text-2xl font-serif mb-3">Pâtes Molles</h3>
+                    <p class="font-sans text-[#d7ccc8] text-sm leading-relaxed">Camemberts au lait cru moulés à la louche et Bries truffés par nos soins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="boutique" class="bg-[#f57f17] text-[#3e2723] py-20 text-center font-serif">
+        <h2 class="text-4xl mb-6 font-bold">Livraison ChronoFresh 24h</h2>
+        <p class="italic text-lg mb-8">Vos fromages arrivent parfaitement emballés et réfrigérés.</p>
+        <button class="bg-[#3e2723] text-white px-10 py-3 uppercase tracking-widest text-sm font-sans hover:bg-white hover:text-[#3e2723] transition">Visiter l'E-shop</button>
+    </footer>
+
+</body>
+</html>

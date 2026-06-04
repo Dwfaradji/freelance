@@ -24,7 +24,7 @@ const Page = () => {
 
         <div className="glass relative z-10 mx-auto flex flex-col items-center justify-center rounded-3xl p-10 sm:p-16 text-center text-white border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] max-w-2xl">
           <div className="w-20 h-20 rounded-full bg-primary-500/20 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/30">
-      
+            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
           </div>
           
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight">

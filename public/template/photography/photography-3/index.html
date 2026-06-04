@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STREET - Urban Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-heading { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        body, p, .font-sans { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-black text-zinc-300">
+
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 p-6 mix-blend-difference flex justify-between items-center">
+        <div class="text-3xl font-heading font-bold text-white tracking-tighter">RAW<span class="text-yellow-400">.</span>JPG</div>
+        <a href="#gallery" class="text-white font-heading tracking-widest hover:text-yellow-400 transition">WORKS</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="h-screen flex items-end p-6 md:p-12 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://loremflickr.com/1920/1080/street,night?lock=94" class="w-full h-full object-cover filter grayscale contrast-150">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        
+        <div class="relative z-10 w-full flex justify-between items-end">
+            <div>
+                <h1 class="text-6xl md:text-9xl font-heading font-bold text-white leading-none mb-4">
+                    CITY<br><span class="text-transparent text-stroke text-stroke-white text-stroke-2">PULSE</span>
+                </h1>
+                <p class="font-sans max-w-sm text-zinc-400">
+                    Photographie urbaine, architecture brutaliste et reportage de rue. Basé à Tokyo.
+                </p>
+            </div>
+            <div class="hidden md:block w-32 h-32 border-4 border-yellow-400 rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
+                <span class="font-heading font-bold text-yellow-400 text-xs tracking-widest text-center">SCROLL<br>DOWN</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-24 bg-zinc-950">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
+                <div class="space-y-8 md:mt-24">
+                    <img src="https://loremflickr.com/800/1000/architecture,brutalist?lock=95" class="w-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition duration-500 border border-zinc-800">
+                    <div class="flex justify-between items-center font-sans text-xs font-bold text-zinc-500 uppercase tracking-widest">
+                        <span>Concrete Jungle</span>
+                        <span>London, UK</span>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <img src="https://loremflickr.com/800/1200/neon,cyberpunk?lock=96" class="w-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition duration-500 border border-zinc-800">
+                    <div class="flex justify-between items-center font-sans text-xs font-bold text-zinc-500 uppercase tracking-widest">
+                        <span>Night Ride</span>
+                        <span>Tokyo, JP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-yellow-400 text-black py-24 text-center">
+        <h2 class="text-5xl md:text-8xl font-heading font-bold mb-6">SHOOT ME.</h2>
+        <a href="mailto:hello@raw.jpg" class="font-sans font-bold text-xl hover:underline">hello@raw.jpg</a>
+    </footer>
+
+</body>
+</html>

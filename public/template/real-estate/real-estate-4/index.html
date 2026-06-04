@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natura Habitat - Immobilier Éco-Responsable</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-heading { font-family: 'Quicksand', sans-serif; }
+        body, p, .font-sans { font-family: 'Nunito', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#fcfaf8] text-[#3d4035]">
+
+    <!-- Nav -->
+    <nav class="absolute w-full z-50 bg-[#fcfaf8]/90 backdrop-blur-sm border-b border-[#e5e7eb]">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2 text-2xl font-heading font-bold text-[#4a7c59]">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                Natura Habitat
+            </div>
+            <div class="hidden md:flex space-x-8 font-sans font-semibold text-[#5c6052]">
+                <a href="#projets" class="hover:text-[#4a7c59] transition">Projets Neufs</a>
+                <a href="#engagement" class="hover:text-[#4a7c59] transition">Notre Engagement</a>
+            </div>
+            <a href="#contact" class="bg-[#4a7c59] text-white px-6 py-2 rounded-full font-sans font-semibold hover:bg-[#386044] transition shadow-md">Prendre RDV</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-[#c8d5b9] rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+            <div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-[#8fc0a9] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
+            <div class="md:w-1/2">
+                <span class="text-[#4a7c59] font-sans font-bold tracking-wider uppercase text-sm mb-4 block">Habiter Demain</span>
+                <h1 class="text-5xl md:text-6xl font-heading font-bold text-[#2d3026] leading-tight mb-6">
+                    Votre maison, <br>en harmonie avec <br><span class="text-[#4a7c59]">la nature.</span>
+                </h1>
+                <p class="font-sans text-lg text-[#5c6052] mb-8 leading-relaxed">
+                    Découvrez nos programmes immobiliers éco-conçus. Matériaux biosourcés, haute performance énergétique et respect de la biodiversité.
+                </p>
+                <a href="#projets" class="inline-block bg-[#4a7c59] text-white px-8 py-4 rounded-full font-sans font-semibold text-lg hover:bg-[#386044] hover:shadow-lg transition transform hover:-translate-y-1">Voir nos programmes</a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://loremflickr.com/800/600/ecohouse,nature?lock=157" class="rounded-3xl shadow-2xl object-cover h-[500px] w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projets" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold mb-4">Programmes en cours</h2>
+                <p class="font-sans text-[#5c6052] max-w-2xl mx-auto">Des résidences pensées pour le bien-être de leurs occupants et le respect de l'environnement.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="bg-[#fcfaf8] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-[#e5e7eb]">
+                    <div class="relative h-64">
+                        <img src="https://loremflickr.com/600/400/woodhouse,modern?lock=158" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-[#4a7c59] px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                            🌱 RE2020
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-heading font-bold mb-2">Les Jardins d'Éden</h3>
+                        <p class="text-[#8fc0a9] font-sans font-semibold mb-4">Annecy • T3 au T5 • Dès 340 000€</p>
+                        <p class="font-sans text-[#5c6052] mb-6">Structure bois, toiture végétalisée et chauffage géothermique. Une résidence qui respire au rythme des saisons.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#e5e7eb]">
+                            <span class="text-sm text-[#5c6052] font-semibold">Livraison : T4 2024</span>
+                            <button class="text-[#4a7c59] font-bold hover:underline">Découvrir le projet</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-[#fcfaf8] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-[#e5e7eb]">
+                    <div class="relative h-64">
+                        <img src="https://loremflickr.com/600/400/greenroof,architecture?lock=159" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-[#4a7c59] px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                            ☀️ Bepos
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-heading font-bold mb-2">L'Oasis Urbaine</h3>
+                        <p class="text-[#8fc0a9] font-sans font-semibold mb-4">Nantes • T2 au T4 • Dès 280 000€</p>
+                        <p class="font-sans text-[#5c6052] mb-6">Un îlot de fraîcheur en ville. Bâtiment à énergie positive, panneaux solaires et récupération des eaux de pluie.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#e5e7eb]">
+                            <span class="text-sm text-[#5c6052] font-semibold">Livraison : T1 2025</span>
+                            <button class="text-[#4a7c59] font-bold hover:underline">Découvrir le projet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#2d3026] text-[#fcfaf8] py-16 text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-3xl font-heading font-bold mb-4">Prêt à investir durablement ?</h2>
+            <p class="font-sans text-[#c8d5b9] mb-8">Discutons de votre projet immobilier éco-responsable.</p>
+            <button class="bg-[#c8d5b9] text-[#2d3026] px-8 py-3 rounded-full font-sans font-bold hover:bg-white transition">Être recontacté(e)</button>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoltTech - Électricité & Domotique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#0a192f] text-slate-300">
+
+    <!-- Nav -->
+    <nav class="border-b border-[#ffd700]/20 bg-[#0a192f]/90 backdrop-blur-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-black text-white flex items-center gap-2">
+                <span class="text-[#ffd700]">⚡</span> VOLT<span class="text-slate-400">TECH</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-bold text-sm tracking-wider uppercase text-slate-400">
+                <a href="#services" class="hover:text-[#ffd700] transition">Interventions</a>
+                <a href="#domotique" class="hover:text-[#ffd700] transition">Maison Connectée</a>
+            </div>
+            <a href="tel:0600000000" class="bg-[#ffd700] text-[#0a192f] px-6 py-2 rounded font-bold uppercase tracking-widest hover:bg-white transition animate-pulse">Urgence 24/7</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <div class="inline-block border border-[#ffd700] text-[#ffd700] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Artisan Agréé</div>
+            <h1 class="text-5xl md:text-7xl font-black text-white leading-none mb-6">
+                La puissance en <br><span class="text-[#ffd700]">toute sécurité.</span>
+            </h1>
+            <p class="text-lg text-slate-400 mb-10 leading-relaxed font-medium">
+                Dépannage rapide, mise aux normes électriques et installation de systèmes domotiques pour rendre votre maison intelligente.
+            </p>
+            <div class="flex gap-4">
+                <a href="#devis" class="bg-[#ffd700] text-[#0a192f] px-8 py-4 rounded font-bold uppercase tracking-widest hover:bg-white transition shadow-[0_0_20px_rgba(255,215,0,0.3)]">Devis Gratuit</a>
+            </div>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="absolute inset-0 bg-[#ffd700] transform translate-x-4 translate-y-4 -z-10 rounded"></div>
+            <img src="https://loremflickr.com/800/800/electrician,tools?lock=104" alt="Électricien" class="w-full object-cover rounded border-4 border-[#0a192f] filter contrast-125 saturate-50">
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-[#112240]">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-black text-white mb-16 uppercase tracking-wider">Domaines d'expertise</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-slate-700 hover:border-[#ffd700] transition duration-300 rounded bg-[#0a192f]">
+                    <div class="text-4xl mb-4">🔌</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tableaux Électriques</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Remplacement et mise aux normes NF C 15-100 de vos installations vétustes.</p>
+                </div>
+                <div class="p-8 border border-slate-700 hover:border-[#ffd700] transition duration-300 rounded bg-[#0a192f]">
+                    <div class="text-4xl mb-4">💡</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Éclairage LED</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Étude et installation d'éclairage architectural et économique pour intérieur/extérieur.</p>
+                </div>
+                <div class="p-8 border border-slate-700 hover:border-[#ffd700] transition duration-300 rounded bg-[#0a192f]">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Domotique</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Contrôlez votre chauffage, vos volets et votre alarme depuis votre smartphone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="devis" class="border-t border-slate-800 py-16 text-center">
+        <h2 class="text-2xl font-black text-white mb-6 uppercase tracking-wider">Besoin d'une intervention ?</h2>
+        <p class="text-slate-400 mb-8 font-medium">Déplacement gratuit dans un rayon de 30km.</p>
+        <button class="border-2 border-[#ffd700] text-[#ffd700] px-10 py-3 font-bold uppercase tracking-widest hover:bg-[#ffd700] hover:text-[#0a192f] transition">Nous contacter</button>
+    </footer>
+
+</body>
+</html>

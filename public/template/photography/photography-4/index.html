@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Into The Wild - Nature Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .parallax { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+    </style>
+</head>
+<body class="bg-[#1c2321] text-[#e0e2db]">
+
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 p-8 flex justify-between items-center transition-all duration-300">
+        <div class="text-sm font-semibold tracking-[0.3em] uppercase">Expeditions.</div>
+        <a href="#gallery" class="text-xs uppercase tracking-[0.2em] hover:text-[#7d9888] transition">Galerie</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="h-screen parallax relative flex items-center justify-center" style="background-image: url('https://loremflickr.com/1920/1080/forest,fog?lock=97');">
+        <div class="absolute inset-0 bg-[#1c2321]/40"></div>
+        <div class="relative z-10 text-center px-6">
+            <h1 class="text-5xl md:text-7xl font-light tracking-widest mb-6">INTO THE WILD</h1>
+            <p class="text-sm uppercase tracking-[0.4em] text-[#7d9888]">Photographie Animalière & Paysages Extrêmes</p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <div class="w-[1px] h-20 bg-white/30"></div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-32">
+        <div class="max-w-[1600px] mx-auto px-6">
+            <div class="flex flex-col gap-32">
+                <!-- Image 1 -->
+                <div class="relative w-full h-[70vh]">
+                    <img src="https://loremflickr.com/1600/900/mountains,snow?lock=98" class="w-full h-full object-cover">
+                    <div class="absolute -bottom-8 left-10 bg-[#1c2321] p-6 text-xs uppercase tracking-[0.2em]">01 — Les Alpes, 2023</div>
+                </div>
+                <!-- Image 2 -->
+                <div class="relative w-3/4 h-[80vh] ml-auto">
+                    <img src="https://loremflickr.com/1200/1000/wildlife,bear?lock=99" class="w-full h-full object-cover">
+                    <div class="absolute -bottom-8 right-10 bg-[#1c2321] p-6 text-xs uppercase tracking-[0.2em]">02 — Yukon, 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#151a19] py-32 text-center border-t border-white/5">
+        <p class="text-sm font-light text-[#7d9888] mb-8 max-w-xl mx-auto leading-loose">
+            Chaque image est disponible en tirage d'art limité (Fine Art Baryta), signé et numéroté par l'auteur.
+        </p>
+        <a href="mailto:contact@wild.com" class="inline-block border border-[#7d9888] text-[#7d9888] px-8 py-3 text-xs uppercase tracking-widest hover:bg-[#7d9888] hover:text-[#1c2321] transition">Demander le catalogue</a>
+    </footer>
+
+</body>
+</html>

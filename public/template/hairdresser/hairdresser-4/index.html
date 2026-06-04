@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haute Coiffure - Maison Parisienne</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', serif; }
+        body, p, .font-sans { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-black">
+
+    <!-- Nav -->
+    <nav class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center bg-white">
+        <div class="hidden md:flex space-x-12 text-xs uppercase tracking-[0.2em] font-sans">
+            <a href="#salon" class="hover:opacity-50 transition">La Maison</a>
+            <a href="#tarifs" class="hover:opacity-50 transition">Prestations</a>
+        </div>
+        <div class="text-4xl font-serif tracking-widest uppercase">Maison Parisienne</div>
+        <div class="text-xs uppercase tracking-[0.2em] font-sans">
+            <a href="#booking" class="border border-black px-6 py-2 hover:bg-black hover:text-white transition">Réservation</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-12 border-t border-black">
+        <div class="md:w-1/2">
+            <h1 class="text-6xl md:text-8xl font-serif leading-[0.9] mb-8">
+                L'art<br><span class="italic text-gray-500 font-light">du sur-mesure.</span>
+            </h1>
+            <p class="font-sans text-sm text-gray-500 mb-12 max-w-sm leading-relaxed tracking-wide">
+                Un salon confidentiel dédié à la beauté absolue du cheveu. Visagisme, coupe à sec et soins profonds.
+            </p>
+            <a href="#booking" class="inline-block bg-black text-white px-8 py-4 text-xs font-sans uppercase tracking-[0.2em] hover:bg-gray-800 transition">Prendre rendez-vous</a>
+        </div>
+        <div class="md:w-1/2 w-full">
+            <img src="https://loremflickr.com/800/1000/fashion,hair?lock=47" alt="Model" class="w-full h-[700px] object-cover grayscale">
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="salon" class="py-24 bg-gray-50 mt-12">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-serif italic mb-8">"Chaque coupe est une architecture."</h2>
+            <p class="font-sans text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                Loin du tumulte de la ville, notre Maison vous accueille dans un écrin minimaliste. Nos experts visagistes prennent le temps d'analyser vos traits pour sculpter une coupe qui révèle votre personnalité.
+            </p>
+        </div>
+    </section>
+
+    <footer id="booking" class="bg-black text-white py-24 text-center">
+        <div class="text-2xl font-serif tracking-widest uppercase mb-6">Maison Parisienne</div>
+        <p class="font-sans text-xs tracking-widest uppercase text-gray-500 mb-8">12 Place Vendôme, Paris</p>
+        <button class="bg-white text-black font-sans text-xs uppercase tracking-[0.2em] px-8 py-3">Contacter le Concierge</button>
+    </footer>
+
+</body>
+</html>

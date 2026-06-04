@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreFlow - Studio Pilates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-zinc-800">
+
+    <!-- Nav -->
+    <nav class="border-b border-zinc-100 sticky top-0 bg-white/80 backdrop-blur-md z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-xl font-extrabold tracking-tighter text-rose-500">CORE<span class="text-zinc-900">FLOW</span></div>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-zinc-500">
+                <a href="#planning" class="hover:text-rose-500 transition">Planning</a>
+                <a href="#studio" class="hover:text-rose-500 transition">Le Studio</a>
+            </div>
+            <a href="#booking" class="bg-zinc-900 text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-rose-500 transition rounded-full">S'inscrire</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/2">
+            <div class="inline-block bg-rose-50 text-rose-500 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Pilates Reformer & Mat</div>
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-none mb-6 tracking-tighter text-zinc-900">
+                Renforcez votre <span class="text-rose-500">centre.</span>
+            </h1>
+            <p class="text-zinc-500 mb-10 max-w-md font-medium leading-relaxed">
+                Des cours en petits groupes pour sculpter votre corps, améliorer votre posture et retrouver une mobilité fluide.
+            </p>
+            <div class="flex gap-4">
+                <a href="#booking" class="bg-rose-500 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-zinc-900 transition shadow-lg shadow-rose-200">Essai à 15€</a>
+            </div>
+        </div>
+        <div class="md:w-1/2 relative w-full h-[600px]">
+            <div class="absolute inset-0 bg-rose-100 rounded-[3rem] transform translate-x-6 translate-y-6 -z-10"></div>
+            <img src="https://loremflickr.com/800/1000/pilates,stretching?lock=114" alt="Pilates" class="w-full h-full object-cover rounded-[3rem] border-8 border-white">
+        </div>
+    </section>
+
+    <!-- Planning -->
+    <section id="planning" class="py-24 bg-zinc-50 mt-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-extrabold text-center mb-16 tracking-tight">Nos Formats de Cours</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-10 rounded-[2rem] shadow-sm border border-zinc-100 hover:border-rose-300 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Reformer Flow</h3>
+                    <p class="text-rose-500 text-xs font-bold uppercase tracking-widest mb-4">Machines - 6 personnes max</p>
+                    <p class="text-zinc-500 text-sm font-medium mb-6">Le travail sur machine Reformer offre une résistance douce idéale pour tonifier les muscles profonds sans impact.</p>
+                    <div class="font-bold text-lg">25€ / séance</div>
+                </div>
+                
+                <div class="bg-white p-10 rounded-[2rem] shadow-sm border border-zinc-100 hover:border-rose-300 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Mat Pilates</h3>
+                    <p class="text-rose-500 text-xs font-bold uppercase tracking-widest mb-4">Tapis - 10 personnes max</p>
+                    <p class="text-zinc-500 text-sm font-medium mb-6">La méthode classique au sol, avec utilisation de petits matériels (Magic Circle, Foam Roller) pour intensifier le travail.</p>
+                    <div class="font-bold text-lg">18€ / séance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="booking" class="bg-zinc-900 text-white py-24 text-center">
+        <h2 class="text-4xl font-extrabold tracking-tight mb-6">Rejoignez le mouvement</h2>
+        <p class="text-zinc-400 font-medium mb-8">Téléchargez notre application pour réserver vos cours facilement.</p>
+        <button class="bg-rose-500 text-white px-10 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-zinc-900 transition">Voir le planning</button>
+    </footer>
+
+</body>
+</html>

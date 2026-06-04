@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éveil Intérieur - Studio de Yoga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', serif; }
+        body, p, .font-sans { font-family: 'Jost', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#fcf9f5] text-stone-800">
+
+    <!-- Navigation -->
+    <nav class="absolute w-full z-50 top-0 left-0 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <div class="text-3xl font-serif font-bold text-stone-900 tracking-wide">
+                Éveil Intérieur
+            </div>
+            <div class="hidden md:flex space-x-12 text-sm uppercase tracking-widest font-medium text-stone-700">
+                <a href="#about" class="hover:text-[#a68e6f] transition">Le Studio</a>
+                <a href="#classes" class="hover:text-[#a68e6f] transition">Nos Cours</a>
+                <a href="#schedule" class="hover:text-[#a68e6f] transition">Planning</a>
+            </div>
+            <div>
+                <a href="#contact" class="bg-[#a68e6f] text-white px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-stone-900 transition duration-300">Essai Gratuit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-[90vh]">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div>
+                <h1 class="text-6xl md:text-8xl font-serif text-stone-900 leading-none mb-8">
+                    Respirez.<br>
+                    <span class="italic text-[#a68e6f]">Reconnectez.</span>
+                </h1>
+                <p class="text-xl text-stone-600 mb-10 max-w-md font-light leading-relaxed">
+                    Un havre de paix au cœur de la ville pour cultiver l'harmonie entre le corps et l'esprit grâce à la pratique millénaire du yoga.
+                </p>
+                <div class="flex items-center gap-6">
+                    <a href="#classes" class="bg-stone-900 text-white px-10 py-4 rounded-full text-sm uppercase tracking-widest hover:bg-[#a68e6f] transition duration-300">Découvrir les cours</a>
+                    <a href="#about" class="text-stone-900 underline underline-offset-8 text-sm uppercase tracking-widest hover:text-[#a68e6f] transition">Notre philosophie</a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-[#e8e1d5] rounded-t-full transform translate-x-6 translate-y-6 -z-10"></div>
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" alt="Yoga Pose" class="rounded-t-full w-full h-[600px] object-cover shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes -->
+    <section id="classes" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-serif text-stone-900 mb-4">Nos Pratiques</h2>
+                <div class="w-24 h-1 bg-[#a68e6f] mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Class 1 -->
+                <div class="group text-center">
+                    <div class="overflow-hidden rounded-[2rem] mb-6">
+                        <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&q=80" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-700" alt="Vinyasa Flow">
+                    </div>
+                    <h3 class="text-3xl font-serif text-stone-900 mb-3">Vinyasa Flow</h3>
+                    <p class="text-stone-600 font-light px-4">Une pratique dynamique où le mouvement est synchronisé avec la respiration pour créer un flow fluide et énergisant.</p>
+                </div>
+                <!-- Class 2 -->
+                <div class="group text-center mt-0 md:mt-12">
+                    <div class="overflow-hidden rounded-[2rem] mb-6">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-700" alt="Hatha Yoga">
+                    </div>
+                    <h3 class="text-3xl font-serif text-stone-900 mb-3">Hatha Yoga</h3>
+                    <p class="text-stone-600 font-light px-4">Idéal pour les débutants. Des postures tenues plus longtemps pour travailler l'alignement et la concentration.</p>
+                </div>
+                <!-- Class 3 -->
+                <div class="group text-center mt-0 md:mt-24">
+                    <div class="overflow-hidden rounded-[2rem] mb-6">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-700" alt="Yin Yoga">
+                    </div>
+                    <h3 class="text-3xl font-serif text-stone-900 mb-3">Yin & Méditation</h3>
+                    <p class="text-stone-600 font-light px-4">Une pratique douce et lente visant le relâchement profond des tissus et l'apaisement total de l'esprit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter / Contact CTA -->
+    <section id="contact" class="py-24 bg-[#e8e1d5] text-stone-900 text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-5xl font-serif mb-6">Rejoignez le Studio</h2>
+            <p class="text-lg mb-10 font-light">Inscrivez-vous pour votre cours d'essai gratuit ou recevez nos conseils bien-être hebdomadaires.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <input type="email" placeholder="Votre adresse email" class="px-6 py-4 rounded-full bg-white border-none focus:ring-2 focus:ring-[#a68e6f] outline-none w-full sm:w-96 text-stone-800">
+                <button class="bg-[#a68e6f] text-white px-8 py-4 rounded-full uppercase tracking-widest text-sm hover:bg-stone-900 transition">S'inscrire</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-12 text-center text-sm font-light tracking-wide">
+        <p>© 2024 Éveil Intérieur. Namaste.</p>
+    </footer>
+
+</body>
+</html>

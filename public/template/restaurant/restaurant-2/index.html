@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Épure - Bistronomie Végétale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', serif; }
+        body, p, .font-sans { font-family: 'Lato', sans-serif; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Navigation (Minimalist Transparent) -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            <div class="hidden md:flex space-x-10 text-sm tracking-[0.2em] uppercase font-bold text-stone-500">
+                <a href="#philosophie" class="hover:text-emerald-800 transition">Philosophie</a>
+                <a href="#menu" class="hover:text-emerald-800 transition">La Carte</a>
+            </div>
+            
+            <a href="#" class="text-3xl font-serif tracking-widest text-emerald-900">L'ÉPURE</a>
+            
+            <div class="flex space-x-6 items-center">
+                <a href="#reservation" class="border border-emerald-900 text-emerald-900 px-6 py-2 text-sm uppercase tracking-widest hover:bg-emerald-900 hover:text-white transition duration-300">Réserver</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Asymmetrical Split) -->
+    <section class="min-h-screen pt-24 flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center">
+            <div class="z-10 py-20 pr-10">
+                <p class="text-emerald-800 tracking-[0.3em] uppercase text-sm mb-6">Cuisine d'Auteur</p>
+                <h1 class="text-6xl md:text-8xl font-serif text-stone-900 leading-[0.9] mb-8">
+                    Le retour<br><span class="italic text-stone-500 font-light">à l'essentiel.</span>
+                </h1>
+                <p class="text-lg text-stone-600 mb-12 font-light leading-relaxed max-w-md">
+                    Une expérience culinaire délicate, rythmée par les saisons et le respect absolu du produit brut.
+                </p>
+                <a href="#menu" class="inline-flex items-center text-emerald-900 uppercase tracking-widest text-sm font-bold group">
+                    Découvrir notre carte
+                    <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+            <div class="relative h-[80vh] w-full hidden md:block">
+                <div class="absolute inset-0 bg-stone-200 translate-x-4 translate-y-4"></div>
+                <img src="https://loremflickr.com/1200/1600/plating,food?lock=1" alt="Plat" class="absolute inset-0 w-full h-full object-cover shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophie (Centered Elegant) -->
+    <section id="philosophie" class="py-32 bg-white">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <svg class="w-8 h-8 mx-auto text-stone-300 mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <h2 class="text-4xl font-serif italic text-stone-800 mb-8 leading-snug">
+                "Nous ne cuisinons pas des ingrédients, nous racontons l'histoire des artisans qui les ont cultivés avec passion."
+            </h2>
+            <div class="text-sm uppercase tracking-widest text-emerald-800 font-bold mb-2">Chef Antoine Dupont</div>
+            <div class="text-xs text-stone-400">1 Étoile Michelin</div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights (Offset Grid) -->
+    <section id="menu" class="py-32 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl font-serif text-stone-900 mb-4">L'Inspiration du Moment</h2>
+                <p class="text-stone-500 tracking-widest uppercase text-xs">Menu en 5 temps — 85€</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-20 items-center mb-24">
+                <img src="https://loremflickr.com/1200/800/vegetables,organic?lock=2" alt="Entrée" class="w-full h-96 object-cover shadow-xl">
+                <div>
+                    <h3 class="text-3xl font-serif text-emerald-900 mb-4">La Terre</h3>
+                    <p class="text-stone-600 font-light leading-relaxed mb-6">Asperges vertes croquantes de la ferme voisine, émulsion à l'ail des ours, noisettes torréfiées et tuile de sarrasin.</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-20 items-center md:flex-row-reverse">
+                <div class="md:order-2">
+                    <img src="https://loremflickr.com/1200/800/seafood,fine?lock=3" alt="Plat" class="w-full h-96 object-cover shadow-xl">
+                </div>
+                <div class="md:order-1 md:text-right">
+                    <h3 class="text-3xl font-serif text-emerald-900 mb-4">La Mer</h3>
+                    <p class="text-stone-600 font-light leading-relaxed mb-6">Filet de Saint-Pierre sauvage nacré, bouillon d'algues infusé au yuzu, déclinaison de fenouil confit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation -->
+    <section id="reservation" class="py-32 bg-emerald-900 text-stone-100 text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-5xl font-serif mb-8 text-white">Prendre Table</h2>
+            <p class="font-light text-emerald-200 mb-12">Notre établissement accueille 24 convives par service. Une réservation anticipée est recommandée.</p>
+            <a href="mailto:contact@lepure.com" class="bg-white text-emerald-900 px-10 py-4 uppercase tracking-widest text-sm font-bold hover:bg-stone-200 transition">Réserver en ligne</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-stone-200 text-center">
+        <div class="text-2xl font-serif tracking-widest text-stone-900 mb-4">L'ÉPURE</div>
+        <p class="text-sm text-stone-500 mb-6">12 Rue de la Paix, 75000 Paris</p>
+        <p class="text-xs uppercase tracking-widest text-stone-300">© 2024 L'Épure. Design Exclusif.</p>
+    </footer>
+
+</body>
+</html>

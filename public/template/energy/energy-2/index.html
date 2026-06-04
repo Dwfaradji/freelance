@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarPro - Solutions Photovoltaïques</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#f0f4f8] text-[#334155]">
+
+    <!-- Nav -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-black text-[#0ea5e9] flex items-center gap-2">
+                <span class="text-[#f59e0b]">☀️</span> SOLAR<span class="text-[#334155]">PRO</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-bold text-sm tracking-wider uppercase text-[#64748b]">
+                <a href="#rentabilite" class="hover:text-[#0ea5e9] transition">Rentabilité</a>
+                <a href="#installations" class="hover:text-[#0ea5e9] transition">Installations</a>
+            </div>
+            <a href="#simulation" class="bg-[#f59e0b] text-white px-6 py-2 rounded font-bold uppercase tracking-widest hover:bg-[#d97706] transition shadow-md">Simuler mes économies</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <div class="inline-block bg-[#e0f2fe] text-[#0284c7] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Aides de l'État 2024</div>
+            <h1 class="text-5xl md:text-7xl font-black text-[#0f172a] leading-tight mb-6">
+                L'énergie de demain,<br><span class="text-[#0ea5e9]">dès aujourd'hui.</span>
+            </h1>
+            <p class="text-lg text-[#64748b] mb-10 leading-relaxed font-medium">
+                Passez à l'autoconsommation solaire. Réduisez vos factures d'électricité jusqu'à 70% et valorisez votre patrimoine immobilier.
+            </p>
+            <div class="flex gap-4">
+                <a href="#simulation" class="bg-[#0ea5e9] text-white px-8 py-4 rounded font-bold uppercase tracking-widest hover:bg-[#0284c7] transition shadow-lg shadow-[#0ea5e9]/30">Étude Gratuite</a>
+            </div>
+            <div class="mt-8 flex items-center gap-6">
+                <div>
+                    <div class="font-black text-2xl text-[#0f172a]">+2500</div>
+                    <div class="text-[#64748b] text-xs font-bold uppercase">Installations</div>
+                </div>
+                <div>
+                    <div class="font-black text-2xl text-[#0f172a]">25 ans</div>
+                    <div class="text-[#64748b] text-xs font-bold uppercase">Garantie Matériel</div>
+                </div>
+            </div>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="absolute inset-0 bg-[#fef3c7] transform translate-x-4 translate-y-4 -z-10 rounded-2xl"></div>
+            <img src="https://loremflickr.com/800/800/solar,panels?lock=117" alt="Panneaux Solaires" class="w-full object-cover rounded-2xl border-4 border-white shadow-xl">
+        </div>
+    </section>
+
+    <!-- Rentabilité -->
+    <section id="rentabilite" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-black text-[#0f172a] mb-16 text-center">Pourquoi passer au solaire ?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-[#e2e8f0] hover:border-[#0ea5e9] transition duration-300 rounded-2xl bg-[#f8fafc]">
+                    <div class="text-4xl mb-4 text-[#f59e0b]">📉</div>
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-3">Réduisez vos factures</h3>
+                    <p class="text-[#64748b] text-sm leading-relaxed">Produisez votre propre électricité et protégez-vous contre la hausse constante des prix de l'énergie.</p>
+                </div>
+                <div class="p-8 border border-[#e2e8f0] hover:border-[#0ea5e9] transition duration-300 rounded-2xl bg-[#f8fafc]">
+                    <div class="text-4xl mb-4 text-[#f59e0b]">💶</div>
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-3">Revendez le surplus</h3>
+                    <p class="text-[#64748b] text-sm leading-relaxed">L'électricité non consommée est réinjectée dans le réseau et vous rapporte un revenu annuel garanti.</p>
+                </div>
+                <div class="p-8 border border-[#e2e8f0] hover:border-[#0ea5e9] transition duration-300 rounded-2xl bg-[#f8fafc]">
+                    <div class="text-4xl mb-4 text-[#f59e0b]">🌍</div>
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-3">Agissez pour la planète</h3>
+                    <p class="text-[#64748b] text-sm leading-relaxed">Une énergie 100% verte, locale et inépuisable pour réduire drastiquement votre empreinte carbone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="simulation" class="bg-[#0f172a] text-white py-20 text-center">
+        <h2 class="text-3xl font-black mb-6">Testez l'éligibilité de votre toiture</h2>
+        <p class="text-[#94a3b8] mb-8 font-medium">Réponse immédiate. Sans engagement.</p>
+        <button class="bg-[#0ea5e9] text-white px-10 py-4 font-bold uppercase tracking-widest rounded hover:bg-white hover:text-[#0ea5e9] transition">Démarrer la simulation</button>
+    </footer>
+
+</body>
+</html>

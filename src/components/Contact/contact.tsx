@@ -6,12 +6,28 @@ import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import callApi from '@/utils/callApi';
 
-const Contact = () => {
+interface ContactProps {
+  prefilledMessage?: string;
+  hideImage?: boolean;
+  title?: string;
+  subtitle?: string;
+  description?: React.ReactNode;
+}
+
+const Contact = ({ prefilledMessage = '', hideImage = false, title = 'Entrer en contact', subtitle, description }: ContactProps) => {
   const [sendMsg, setSendMsg] = React.useState(false);
   const [sendText, setSendText] = React.useState('');
   const [buttonSendMsg, setButtonSendMsg] = React.useState(true);
   const [buttonText, setButtonText] = React.useState('Envoyez-nous un message');
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+
+  interface FormData {
+    firstname: string;
+    business: string;
+    email: string;
+    phone: string;
+    content: string;
+  }
 
   // Variables
   const {
@@ -19,7 +35,15 @@ const Contact = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>({
+    defaultValues: {
+      firstname: '',
+      business: '',
+      email: '',
+      phone: '',
+      content: prefilledMessage
+    }
+  });
 
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
@@ -58,13 +82,16 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-5 relative z-10">
           {/* Formulaire */}
-          <article className="p-8 sm:p-12 lg:col-span-3 flex flex-col justify-center">
+          <article className={`p-8 sm:p-12 flex flex-col justify-center ${hideImage ? 'lg:col-span-5' : 'lg:col-span-3'}`}>
             <div className="mb-8">
+              {subtitle && (
+                <h2 className="text-3xl font-bold text-white mb-4">{subtitle}</h2>
+              )}
               <span className="inline-block px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-semibold uppercase tracking-wider mb-4">
-                Entrer en contact
+                {title}
               </span>
               <p className="text-muted leading-relaxed text-lg">
-                Besoin d'aide ou simplement envie de discuter de votre prochain projet passionnant ? Nous sommes tout ouïe ! Laissez-nous un message et nous vous contacterons dans les plus brefs délais.
+                {description || "Besoin d'aide ou simplement envie de discuter de votre prochain projet passionnant ? Nous sommes tout ouïe ! Laissez-nous un message et nous vous contacterons dans les plus brefs délais."}
               </p>
             </div>
 
@@ -171,18 +198,20 @@ const Contact = () => {
           </article>
 
           {/* Image */}
-          <div className="hidden lg:block lg:col-span-2 relative">
-            <Image
-              fill
-              className="object-cover object-center"
-              priority
-              src={pictureContact.src}
-              alt="Développeur au travail"
-              sizes="(max-width: 1024px) 0vw, 40vw"
-            />
-            {/* Overlay gradient for smooth blending */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-surface)] via-transparent to-transparent" />
-          </div>
+          {!hideImage && (
+            <div className="hidden lg:block lg:col-span-2 relative">
+              <Image
+                fill
+                className="object-cover object-center"
+                priority
+                src={pictureContact.src}
+                alt="Développeur au travail"
+                sizes="(max-width: 1024px) 0vw, 40vw"
+              />
+              {/* Overlay gradient for smooth blending */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-surface)] via-transparent to-transparent" />
+            </div>
+          )}
         </div>
       </section>
     </Fade>

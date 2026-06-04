@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Clinic - Centre Ophtalmologique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-zinc-900">
+
+    <!-- Nav -->
+    <nav class="border-b border-zinc-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter flex items-center gap-2">
+                <div class="w-6 h-6 bg-teal-500 rounded-full"></div>
+                VISION<span class="text-zinc-400">CLINIC</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-zinc-500">
+                <a href="#techno" class="hover:text-teal-600 transition">Technologie</a>
+                <a href="#chirurgie" class="hover:text-teal-600 transition">Chirurgie Laser</a>
+            </div>
+            <a href="#rdv" class="bg-black text-white px-6 py-2 text-sm font-bold hover:bg-teal-500 transition">Prendre Rendez-vous</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/2">
+            <div class="text-teal-600 font-bold tracking-widest uppercase text-xs mb-4">Centre Laser & Ophtalmologie</div>
+            <h1 class="text-6xl md:text-7xl font-extrabold leading-none mb-6 tracking-tighter">
+                Voyez la vie<br>avec <span class="text-teal-500">netteté.</span>
+            </h1>
+            <p class="text-lg text-zinc-500 mb-10 max-w-md">
+                Des diagnostics ultra-précis et des chirurgies réfractives de dernière génération pour vous libérer de vos lunettes.
+            </p>
+            <div class="flex gap-4 border-l-4 border-teal-500 pl-4 mb-8">
+                <div>
+                    <div class="font-bold text-xl">100%</div>
+                    <div class="text-zinc-500 text-sm">Chirurgie sans lame</div>
+                </div>
+                <div class="ml-8">
+                    <div class="font-bold text-xl">20 min</div>
+                    <div class="text-zinc-500 text-sm">Durée d'intervention</div>
+                </div>
+            </div>
+            <a href="#rdv" class="bg-teal-500 text-white px-8 py-4 font-bold hover:bg-black transition inline-block">Bilan pré-opératoire gratuit</a>
+        </div>
+        <div class="md:w-1/2">
+            <img src="https://loremflickr.com/800/800/eye,laser?lock=72" alt="Laser Oculaire" class="w-full h-[600px] object-cover rounded-sm grayscale contrast-125">
+        </div>
+    </section>
+
+    <!-- Technologies -->
+    <section id="techno" class="py-24 bg-zinc-50 border-t border-zinc-200">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold mb-12 tracking-tight">Plateau Technique d'Excellence</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="bg-white p-8 border border-zinc-200 shadow-sm">
+                    <div class="text-teal-500 font-bold mb-2">01</div>
+                    <h3 class="text-xl font-bold mb-3">Lasik 100% Laser</h3>
+                    <p class="text-zinc-500 text-sm">Correction de la myopie, de l'hypermétropie et de l'astigmatisme avec une récupération visuelle en 24h.</p>
+                </div>
+                <div class="bg-white p-8 border border-zinc-200 shadow-sm">
+                    <div class="text-teal-500 font-bold mb-2">02</div>
+                    <h3 class="text-xl font-bold mb-3">Chirurgie Cataracte</h3>
+                    <p class="text-zinc-500 text-sm">Implants premium multifocaux pour corriger simultanément la vision de loin et de près.</p>
+                </div>
+                <div class="bg-white p-8 border border-zinc-200 shadow-sm">
+                    <div class="text-teal-500 font-bold mb-2">03</div>
+                    <h3 class="text-xl font-bold mb-3">Dépistage Rétine</h3>
+                    <p class="text-zinc-500 text-sm">OCT haute définition pour le diagnostic précoce de la DMLA et du glaucome.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="rdv" class="bg-black text-white py-20 text-center">
+        <h2 class="text-3xl font-extrabold mb-6 tracking-tight">Retrouvez une vue parfaite</h2>
+        <p class="text-zinc-400 mb-8">Consultations sur rendez-vous uniquement.</p>
+        <button class="bg-teal-500 text-white px-10 py-3 font-bold hover:bg-white hover:text-black transition">Prendre RDV (Doctolib)</button>
+    </footer>
+
+</body>
+</html>

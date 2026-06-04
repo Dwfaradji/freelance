@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awakening - Retraite Spirituelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Cinzel', serif; }
+        body, p, .font-sans { font-family: 'Jost', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#0b0c10] text-[#c5c6c7]">
+
+    <!-- Nav -->
+    <nav class="absolute w-full z-50 py-10">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-[#c5c6c7]">
+            <div class="text-2xl font-serif tracking-[0.2em] text-[#66fcf1]">Awakening.</div>
+            <div class="hidden md:flex space-x-12 text-sm uppercase tracking-[0.2em] font-sans">
+                <a href="#retraites" class="hover:text-[#45a29e] transition">Retraites</a>
+                <a href="#philosophie" class="hover:text-[#45a29e] transition">La Voie</a>
+            </div>
+            <a href="#inscription" class="border border-[#66fcf1] text-[#66fcf1] px-8 py-2 font-sans text-xs uppercase tracking-[0.2em] hover:bg-[#66fcf1] hover:text-[#0b0c10] transition shadow-[0_0_15px_rgba(102,252,241,0.2)]">Rejoindre</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#45a29e] rounded-full mix-blend-screen filter blur-[150px] opacity-20 animate-pulse"></div>
+            <img src="https://loremflickr.com/1920/1080/universe,meditation?lock=116" class="w-full h-full object-cover opacity-20 filter grayscale contrast-125 mix-blend-overlay">
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-serif mb-8 text-white tracking-[0.1em] leading-tight">
+                Éveillez votre <br><span class="text-[#66fcf1]">conscience.</span>
+            </h1>
+            <p class="font-sans text-lg text-[#c5c6c7] leading-loose max-w-2xl mx-auto mb-12 tracking-wide font-light">
+                Des retraites immersives alliant méditation de pleine conscience, yoga kundalini et bains sonores pour se reconnecter à l'essentiel.
+            </p>
+            <div class="w-[1px] h-32 bg-gradient-to-b from-[#66fcf1] to-transparent mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Retraites -->
+    <section id="retraites" class="py-32 bg-[#1f2833]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-serif text-center mb-20 text-[#66fcf1] tracking-widest">Prochaines Cérémonies</h2>
+            
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="border border-[#45a29e]/30 p-8 hover:border-[#66fcf1] transition duration-500 bg-[#0b0c10]/50 relative group">
+                    <div class="absolute -top-4 -left-4 bg-[#66fcf1] text-[#0b0c10] font-sans text-xs font-bold px-4 py-1 uppercase tracking-widest">Complet</div>
+                    <div class="font-sans text-[#45a29e] text-xs uppercase tracking-[0.2em] mb-4">Du 12 au 15 Août — Bali</div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Retraite Silence & Souffle</h3>
+                    <p class="font-sans text-[#c5c6c7]/80 text-sm leading-relaxed font-light mb-8">4 jours de silence absolu (Vipassana) et de travail respiratoire (Pranayama) au cœur de la jungle.</p>
+                    <button class="font-sans text-[#c5c6c7] text-xs uppercase tracking-widest border-b border-[#c5c6c7] pb-1 opacity-50 cursor-not-allowed">Liste d'attente</button>
+                </div>
+                
+                <div class="border border-[#45a29e]/30 p-8 hover:border-[#66fcf1] transition duration-500 bg-[#0b0c10]/50 relative group">
+                    <div class="font-sans text-[#45a29e] text-xs uppercase tracking-[0.2em] mb-4">Du 20 au 24 Sept. — Atlas, Maroc</div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Sound Healing & Kundalini</h3>
+                    <p class="font-sans text-[#c5c6c7]/80 text-sm leading-relaxed font-light mb-8">Éveil de l'énergie vitale par le mouvement et bains de gongs sous le ciel étoilé du désert.</p>
+                    <button class="font-sans text-[#66fcf1] text-xs uppercase tracking-widest border-b border-[#66fcf1] pb-1 group-hover:text-white transition">Réserver sa place</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="inscription" class="bg-[#0b0c10] py-32 text-center border-t border-[#1f2833]">
+        <h2 class="text-4xl font-serif mb-8 text-white">L'Appel de l'Âme</h2>
+        <button class="bg-[#45a29e] text-white px-12 py-4 font-sans text-xs uppercase tracking-[0.2em] hover:bg-[#66fcf1] hover:text-[#0b0c10] transition shadow-[0_0_20px_rgba(69,162,158,0.3)]">Recevoir la newsletter lunaire</button>
+    </footer>
+
+</body>
+</html>

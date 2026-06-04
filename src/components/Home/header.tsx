@@ -103,7 +103,7 @@ export default function Header() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-[100svh] w-full flex flex-col items-center justify-center overflow-hidden bg-[#030712] pt-24 pb-12 perspective-[1000px]"
+      className="relative min-h-[100svh] w-full flex flex-col items-center justify-start lg:justify-center overflow-hidden bg-[#030712] pt-28 pb-16 lg:pt-0 lg:pb-0 perspective-[1000px]"
     >
       {/* 1. INTERACTIVE BACKGROUND */}
       <motion.div
@@ -112,7 +112,7 @@ export default function Header() {
       />
       <div className="absolute inset-0 bg-grid opacity-[0.15] pointer-events-none z-0 mask-image:linear-gradient(to_bottom,transparent,black,transparent)" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-20 my-auto">
 
         {/* LEFT COLUMN: TYPOGRAPHY & CTAs */}
         <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
@@ -134,7 +134,7 @@ export default function Header() {
           </motion.div>
 
           {/* Cinematic Title */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold tracking-tighter leading-[1.05] text-white mb-6">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold tracking-tighter leading-[1.1] text-white mb-6">
             <BlurRevealText text="Sculptez le" delay={0.1} /> <br className="hidden sm:block" />
             <motion.span
               initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
@@ -162,7 +162,7 @@ export default function Header() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.9 }}
-            className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto"
           >
             {/* Magnetic Primary Button */}
             <motion.div style={{ x: btnSmoothX, y: btnSmoothY }} className="relative group w-full sm:w-auto">

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nördik - Design Minimaliste</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="max-w-7xl mx-auto px-6 py-10 flex justify-between items-center">
+        <div class="text-3xl font-semibold tracking-widest text-gray-900">NÖRDIK</div>
+        <div class="hidden md:flex space-x-12 text-sm tracking-widest text-gray-500 uppercase">
+            <a href="#projets" class="hover:text-gray-900 transition">Projets</a>
+            <a href="#studio" class="hover:text-gray-900 transition">Le Studio</a>
+            <a href="#contact" class="hover:text-gray-900 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-20">
+        <div class="md:w-1/2">
+            <h1 class="text-6xl md:text-8xl font-light text-gray-900 leading-tight mb-8">
+                L'art du<br><span class="font-semibold">moins.</span>
+            </h1>
+            <p class="text-xl text-gray-500 font-light max-w-md mb-12">
+                Un design d'intérieur scandinave centré sur la lumière, l'espace et les matériaux naturels.
+            </p>
+            <a href="#contact" class="inline-block bg-gray-900 text-white px-10 py-4 text-sm tracking-widest uppercase hover:bg-gray-800 transition">Démarrer un projet</a>
+        </div>
+        <div class="md:w-1/2 relative h-[700px] w-full">
+            <img src="https://loremflickr.com/800/1000/scandinavian,interior?lock=20" alt="Intérieur clair" class="absolute inset-0 w-full h-full object-cover rounded-sm shadow-xl">
+            <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-gray-200 -z-10"></div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projets" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-light text-gray-900 mb-16">Sélection</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                    <img src="https://loremflickr.com/800/600/minimalist,living?lock=21" alt="Projet 1" class="w-full h-96 object-cover mb-6 hover:opacity-90 transition">
+                    <h3 class="text-2xl font-semibold">Maison CPH</h3>
+                    <p class="text-gray-500 font-light mt-2">Rénovation complète • Copenhague</p>
+                </div>
+                <div class="md:mt-32">
+                    <img src="https://loremflickr.com/800/600/minimalist,bedroom?lock=22" alt="Projet 2" class="w-full h-96 object-cover mb-6 hover:opacity-90 transition">
+                    <h3 class="text-2xl font-semibold">Appartement Lume</h3>
+                    <p class="text-gray-500 font-light mt-2">Aménagement intérieur • Oslo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-50 py-24 text-center">
+        <h2 class="text-3xl font-light mb-8">Parlez-nous de votre intérieur</h2>
+        <a href="mailto:hello@nordik.com" class="text-2xl font-semibold border-b border-gray-900 pb-1">hello@nordik.com</a>
+    </footer>
+
+</body>
+</html>

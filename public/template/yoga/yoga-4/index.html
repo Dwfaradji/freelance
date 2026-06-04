@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Herboriste - Naturopathie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Quicksand', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#f4f1ea] text-[#4a5d23]">
+
+    <!-- Nav -->
+    <nav class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-bold flex items-center gap-2 text-[#4a5d23]">
+            L'Herboriste 🌿
+        </div>
+        <div class="hidden md:flex space-x-8 font-semibold text-[#8b9c64]">
+            <a href="#approche" class="hover:text-[#c45a3a] transition">Mon approche</a>
+            <a href="#consultation" class="hover:text-[#c45a3a] transition">Consultations</a>
+        </div>
+        <a href="#contact" class="border border-[#4a5d23] text-[#4a5d23] px-6 py-2 rounded-full font-bold hover:bg-[#4a5d23] hover:text-[#f4f1ea] transition">Prendre RDV</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-6 pb-20 flex flex-col md:flex-row items-center gap-16 -mt-8">
+        <div class="md:w-1/2 z-10">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-8 text-[#2c3e18]">
+                L'équilibre naturel de <br><span class="text-[#c45a3a]">votre corps.</span>
+            </h1>
+            <p class="text-lg text-[#6b7c41] mb-12 font-medium leading-relaxed max-w-md">
+                Naturopathie, phytothérapie et rééquilibrage alimentaire. Accompagnement holistique pour retrouver votre vitalité.
+            </p>
+            <a href="#contact" class="bg-[#c45a3a] text-white px-8 py-4 rounded-full font-bold shadow-md hover:bg-[#a34426] transition inline-block">Bilan de vitalité (1h30)</a>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="absolute -inset-4 bg-[#e2dec9] rounded-full mix-blend-multiply opacity-50 blur-2xl"></div>
+            <img src="https://loremflickr.com/800/1000/herbs,tea?lock=115" alt="Herboristerie" class="w-full object-cover rounded-[3rem] border-[12px] border-[#f4f1ea] shadow-xl relative z-10">
+        </div>
+    </section>
+
+    <!-- Approche -->
+    <section id="approche" class="py-24 bg-white rounded-t-[4rem]">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16 text-[#4a5d23]">Les 3 piliers de ma pratique</h2>
+            
+            <div class="grid md:grid-cols-3 gap-12 text-left">
+                <div>
+                    <div class="text-4xl mb-4">🥗</div>
+                    <h3 class="text-xl font-bold mb-3 text-[#2c3e18]">Nutrition</h3>
+                    <p class="text-[#8b9c64] font-medium leading-relaxed">L'alimentation comme première médecine. Programmes sur mesure anti-inflammatoires ou détox.</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">🌸</div>
+                    <h3 class="text-xl font-bold mb-3 text-[#2c3e18]">Phytothérapie</h3>
+                    <p class="text-[#8b9c64] font-medium leading-relaxed">L'usage ciblé des plantes médicinales (tisanes, huiles essentielles, bourgeons) pour soutenir l'organisme.</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">🧘</div>
+                    <h3 class="text-xl font-bold mb-3 text-[#2c3e18]">Hygiène de vie</h3>
+                    <p class="text-[#8b9c64] font-medium leading-relaxed">Gestion du stress, qualité du sommeil et mouvement. Une approche préventive globale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#4a5d23] text-[#f4f1ea] py-16 text-center rounded-t-[4rem] mt-12">
+        <h2 class="text-3xl font-bold mb-6">Prêt à prendre soin de vous ?</h2>
+        <p class="font-medium text-[#8b9c64] mb-8">Consultations au cabinet (Lyon) ou en visio.</p>
+        <button class="bg-[#f4f1ea] text-[#4a5d23] px-10 py-3 rounded-full font-bold shadow-sm hover:bg-white transition">Agenda en ligne</button>
+    </footer>
+
+</body>
+</html>

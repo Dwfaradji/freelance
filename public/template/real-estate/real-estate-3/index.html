@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Lofts - Agence Immobilière</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-heading { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        body, p, .font-sans { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#f4f4f5] text-[#18181b]">
+
+    <!-- Nav -->
+    <nav class="bg-white border-b-4 border-[#e11d48]">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-3xl font-heading font-bold tracking-tight">URBAN<span class="text-[#e11d48]">LOFTS</span></div>
+            <div class="hidden md:flex space-x-8 font-heading text-lg text-[#52525b]">
+                <a href="#acheter" class="hover:text-[#e11d48] transition">Acheter</a>
+                <a href="#louer" class="hover:text-[#e11d48] transition">Louer</a>
+            </div>
+            <a href="#contact" class="bg-[#18181b] text-white px-6 py-2 font-heading text-lg hover:bg-[#e11d48] transition">Estimer mon bien</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 z-10">
+                <div class="bg-[#e11d48] text-white font-heading text-sm px-3 py-1 inline-block mb-6">SPÉCIALISTE CENTRES URBAINS</div>
+                <h1 class="text-6xl md:text-8xl font-heading font-bold text-[#18181b] leading-none mb-6">
+                    TROUVEZ VOTRE <br><span class="text-[#e11d48]">PROCHAIN SPOT.</span>
+                </h1>
+                <p class="font-sans text-lg text-[#52525b] mb-10 max-w-md border-l-4 border-[#e11d48] pl-4">
+                    Lofts industriels, ateliers d'artistes et appartements atypiques. Nous dénichons les biens qui ont une véritable âme.
+                </p>
+                <form class="flex bg-[#f4f4f5] p-2 rounded-sm max-w-md">
+                    <input type="text" placeholder="Ville, quartier..." class="bg-transparent flex-1 outline-none px-4 font-sans font-semibold">
+                    <button class="bg-[#e11d48] text-white px-8 py-3 font-heading text-xl hover:bg-[#18181b] transition">CHERCHER</button>
+                </form>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="absolute inset-0 bg-[#e11d48] transform translate-x-4 translate-y-4"></div>
+                <img src="https://loremflickr.com/800/800/loft,apartment?lock=153" class="w-full relative z-10 object-cover border-4 border-[#18181b] filter contrast-125">
+            </div>
+        </div>
+    </section>
+
+    <!-- Listings -->
+    <section id="acheter" class="py-24 bg-[#18181b] text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <h2 class="text-5xl font-heading">SÉLECTION <span class="text-[#e11d48]">ATYPIQUE</span></h2>
+                <a href="#" class="font-heading text-xl text-[#a1a1aa] hover:text-white transition hidden md:block">VOIR TOUT →</a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white text-[#18181b] border-2 border-[#18181b] group hover:-translate-y-2 transition duration-300">
+                    <div class="relative overflow-hidden h-64 border-b-2 border-[#18181b]">
+                        <img src="https://loremflickr.com/600/400/brickwall,loft?lock=154" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#e11d48] text-white font-heading px-3 py-1">À VENDRE</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="font-heading text-2xl text-[#e11d48] mb-1">680 000 €</div>
+                        <h3 class="font-heading text-xl mb-3">Ancienne Imprimerie</h3>
+                        <p class="font-sans text-[#52525b] text-sm mb-4">Lyon 1er • 125 m² • 3 Pièces</p>
+                        <button class="w-full border-2 border-[#18181b] py-2 font-heading text-lg group-hover:bg-[#18181b] group-hover:text-white transition">DÉCOUVRIR</button>
+                    </div>
+                </div>
+                <div class="bg-white text-[#18181b] border-2 border-[#18181b] group hover:-translate-y-2 transition duration-300">
+                    <div class="relative overflow-hidden h-64 border-b-2 border-[#18181b]">
+                        <img src="https://loremflickr.com/600/400/industrial,kitchen?lock=155" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#18181b] text-white font-heading px-3 py-1">À LOUER</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="font-heading text-2xl text-[#e11d48] mb-1">1 850 € / mois</div>
+                        <h3 class="font-heading text-xl mb-3">Canut Rénové</h3>
+                        <p class="font-sans text-[#52525b] text-sm mb-4">Croix-Rousse • 85 m² • 2 Pièces</p>
+                        <button class="w-full border-2 border-[#18181b] py-2 font-heading text-lg group-hover:bg-[#18181b] group-hover:text-white transition">DÉCOUVRIR</button>
+                    </div>
+                </div>
+                <div class="bg-white text-[#18181b] border-2 border-[#18181b] group hover:-translate-y-2 transition duration-300">
+                    <div class="relative overflow-hidden h-64 border-b-2 border-[#18181b]">
+                        <img src="https://loremflickr.com/600/400/rooftop,terrace?lock=156" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#e11d48] text-white font-heading px-3 py-1">À VENDRE</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="font-heading text-2xl text-[#e11d48] mb-1">950 000 €</div>
+                        <h3 class="font-heading text-xl mb-3">Rooftop Industriel</h3>
+                        <p class="font-sans text-[#52525b] text-sm mb-4">Paris 11ème • 110 m² + Terrasse</p>
+                        <button class="w-full border-2 border-[#18181b] py-2 font-heading text-lg group-hover:bg-[#18181b] group-hover:text-white transition">DÉCOUVRIR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#e11d48] text-white py-20 text-center border-t-8 border-[#18181b]">
+        <h2 class="text-5xl font-heading mb-6">VOUS VENDEZ ?</h2>
+        <p class="font-sans text-xl mb-10 max-w-xl mx-auto">Nous connaissons la valeur des biens atypiques. Obtenez une estimation juste en 48h.</p>
+        <button class="bg-[#18181b] text-white px-12 py-4 font-heading text-2xl hover:bg-white hover:text-[#18181b] transition">CONTACTEZ-NOUS</button>
+    </footer>
+
+</body>
+</html>

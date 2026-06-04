@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Performance - Personal Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body, p, .font-sans { font-family: 'Lato', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-slate-200">
+
+    <!-- Nav -->
+    <nav class="max-w-7xl mx-auto px-6 py-10 flex justify-between items-center border-b border-slate-800">
+        <div class="text-2xl font-serif text-[#d4af37]">ELITE PERFORMANCE</div>
+        <div class="hidden md:flex space-x-12 text-sm uppercase tracking-widest text-slate-400 font-sans">
+            <a href="#method" class="hover:text-[#d4af37] transition">La Méthode</a>
+            <a href="#contact" class="hover:text-[#d4af37] transition">Candidature</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/2">
+            <h1 class="text-5xl md:text-7xl font-serif leading-tight mb-6 text-white">
+                L'excellence<br><span class="italic text-[#d4af37]">sur-mesure.</span>
+            </h1>
+            <p class="font-sans text-lg text-slate-400 font-light mb-10 max-w-md leading-relaxed">
+                Un accompagnement privé de très haut niveau combinant préparation physique, nutrition et optimisation de la récupération.
+            </p>
+            <a href="#contact" class="inline-block bg-[#d4af37] text-[#0f172a] px-8 py-3 font-sans font-bold uppercase tracking-widest text-sm hover:bg-white transition">Commencer l'évaluation</a>
+        </div>
+        <div class="md:w-1/2 relative">
+            <!-- Decorative border -->
+            <div class="absolute inset-0 border border-[#d4af37] transform translate-x-4 translate-y-4"></div>
+            <img src="https://loremflickr.com/800/1000/gym,luxury?lock=36" alt="Luxury Gym" class="relative z-10 w-full h-[600px] object-cover filter grayscale contrast-125">
+        </div>
+    </section>
+
+    <!-- Method -->
+    <section id="method" class="py-24 bg-[#090e1a] border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-serif text-[#d4af37] mb-16">L'Approche Scientifique</h2>
+            <div class="grid md:grid-cols-3 gap-12 text-left">
+                <div>
+                    <div class="text-3xl font-serif text-slate-700 mb-4">01.</div>
+                    <h3 class="text-xl font-serif text-white mb-4">Bilan Biométrique</h3>
+                    <p class="font-sans text-sm text-slate-400 font-light leading-relaxed">Analyse complète de la composition corporelle, de la posture et des déséquilibres musculaires.</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-serif text-slate-700 mb-4">02.</div>
+                    <h3 class="text-xl font-serif text-white mb-4">Programmation</h3>
+                    <p class="font-sans text-sm text-slate-400 font-light leading-relaxed">Cycles d'entraînement millimétrés et plans nutritionnels adaptés à votre génétique et vos objectifs.</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-serif text-slate-700 mb-4">03.</div>
+                    <h3 class="text-xl font-serif text-white mb-4">Exécution Privée</h3>
+                    <p class="font-sans text-sm text-slate-400 font-light leading-relaxed">Séances 1-to-1 dans un studio privé sans regards extérieurs. Correction biomécanique stricte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-20 text-center">
+        <h2 class="text-3xl font-serif mb-6 text-white">Prêt à transformer votre physique ?</h2>
+        <p class="font-sans text-slate-500 mb-8">Nous n'acceptons que 10 clients simultanément pour garantir la qualité du suivi.</p>
+        <a href="mailto:vip@elite-performance.com" class="font-sans text-[#d4af37] text-xl border-b border-[#d4af37] pb-1">Soumettre votre candidature</a>
+    </footer>
+
+</body>
+</html>
