@@ -1,210 +1,140 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import ImportLogo from '@/components/ui/Logo/importLogo';
-import OtherHousesIcon from '@mui/icons-material/OtherHouses';
-import { Fade } from 'react-awesome-reveal';
 
-enum LogoColor {
-  ColorS = 'colorS',
-  ColorP = 'colorP',
-}
+const navLinks = [
+  { href: '/a-propos', label: 'À propos' },
+  { href: '/services', label: 'Services' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/templates', label: 'Templates' },
+  { href: '/tarifs', label: 'Tarifs' },
+  { href: '/blog', label: 'Blog' },
+];
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const pathname = usePathname();
 
-  const [colorLogo, setColorLogo] = useState<LogoColor | undefined>(
-    LogoColor.ColorS,
-  );
-
-  // Ensuite, dans le useEffect
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setColorLogo(LogoColor.ColorP);
-      } else {
-        setColorLogo(LogoColor.ColorS);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMenuClick = () => {
-    if (openMenu) {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setOpenMenu(false);
-        setIsAnimating(false);
-      }, 500); // La durée de l'animation doit correspondre à celle définie pour le composant Fade
-    } else {
-      setOpenMenu(true);
-    }
-  };
+  // Fermer le menu mobile au changement de route
+  useEffect(() => {
+    setOpenMenu(false);
+  }, [pathname]);
 
-  const handleLinkClick = () => {
-    handleMenuClick(); // Fermer le menu lors du clic sur un lien
-  };
+  // Bloquer le scroll quand le menu mobile est ouvert
+  useEffect(() => {
+    document.body.style.overflow = openMenu ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [openMenu]);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-30 w-full text-blue">
-      <div className="mx-auto px-3 py-2 backdrop-blur-lg">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex w-full items-center justify-between">
-            <Link
-              className="shrink-0 font-poppins"
-              href="/"
-              aria-label="Retour à l'accueil de DevEvoke"
-            >
-              <ImportLogo displayColor={colorLogo} />
-            </Link>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4 text-red-600">
+    <>
+      <nav
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? 'bg-bg/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl'
+            : 'bg-transparent'
+        }`}
+        style={{ height: '72px' }}
+      >
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 md:px-6 lg:px-8">
+          {/* Logo */}
+          <Link
+            href="/"
+            aria-label="Retour à l'accueil de DevEvoke"
+            className="relative z-10 shrink-0"
+          >
+            <ImportLogo displayColor="colorS" />
+          </Link>
+
+          {/* Nav Desktop */}
+          <div className="hidden items-center gap-1 md:flex">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
                 <Link
-                  aria-label="accueil"
-                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/'}
+                  key={link.href}
+                  href={link.href}
+                  className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg group ${
+                    isActive
+                      ? 'text-white'
+                      : 'text-muted hover:text-white'
+                  }`}
                 >
-                  <OtherHousesIcon />
+                  {isActive && (
+                    <span className="absolute inset-0 rounded-lg bg-white/5" />
+                  )}
+                  <span className="relative">{link.label}</span>
+                  <span className={`absolute bottom-0 left-1/2 h-px -translate-x-1/2 bg-gradient-to-r from-primary to-secondary-400 transition-all duration-300 ${
+                    isActive ? 'w-4/5 opacity-100' : 'w-0 opacity-0 group-hover:w-4/5 group-hover:opacity-100'
+                  }`} />
                 </Link>
-                <Link
-                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/a-propos'}
-                >
-                  A propos
-                </Link>
-                <Link
-                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/templates'}
-                >
-                  Nos Templates
-                </Link>
-                <Link
-                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/blog'}
-                >
-                  Blog
-                </Link>
-                <Link
-                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/tarifs'}
-                >
-                  Tarifs
-                </Link>
-                <Link
-                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/portfolio'}
-                >
-                  Portfolio
-                </Link>
-                <Link
-                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/services'}
-                >
-                  Services
-                </Link>
-                <Link
-                  className="rounded-md px-3 py-2 font-poppins text-sm font-medium text-white opacity-50 hover:opacity-100"
-                  href={'/contact'}
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
+              );
+            })}
           </div>
-          <div className="-mr-2 flex md:hidden">
-            <button
-              aria-label={openMenu ? 'Fermer le menu' : 'Ouvrir le menu'}
-              aria-expanded={openMenu}
-              onClick={handleMenuClick}
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:text-gray-300 focus:outline-none dark:text-white"
+
+          {/* CTA Desktop */}
+          <div className="hidden items-center gap-3 md:flex">
+            <Link
+              href="/contact"
+              className="btn-primary text-sm"
             >
-              <svg
-                width="20"
-                height="20"
-                fill="white"
-                className="size-8"
-                viewBox="0 0 1792 1792"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z"></path>
+              Démarrer un projet
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </button>
+            </Link>
+          </div>
+
+          {/* Burger Mobile */}
+          <button
+            aria-label={openMenu ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={openMenu}
+            onClick={() => setOpenMenu(!openMenu)}
+            className="relative z-10 flex size-10 flex-col items-center justify-center gap-[5px] rounded-lg md:hidden"
+          >
+            <span className={`h-px w-6 bg-white transition-all duration-300 ${openMenu ? 'translate-y-[6px] rotate-45' : ''}`} />
+            <span className={`h-px w-6 bg-white transition-all duration-300 ${openMenu ? 'opacity-0' : ''}`} />
+            <span className={`h-px w-6 bg-white transition-all duration-300 ${openMenu ? '-translate-y-[6px] -rotate-45' : ''}`} />
+          </button>
+        </div>
+      </nav>
+
+      {/* Menu Mobile — Full Screen */}
+      <div className={`fixed inset-0 z-40 bg-bg/95 backdrop-blur-2xl transition-all duration-500 md:hidden ${
+        openMenu ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+      }`}>
+        <div className={`flex h-full flex-col items-center justify-center gap-2 transition-all duration-500 ${
+          openMenu ? 'translate-y-0' : 'translate-y-8'
+        }`}>
+          {navLinks.map((link, i) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`text-3xl font-bold text-white/60 hover:text-white transition-all duration-200 py-3 ${
+                pathname === link.href ? '!text-white' : ''
+              }`}
+              style={{ transitionDelay: openMenu ? `${i * 60}ms` : '0ms' }}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="mt-8">
+            <Link href="/contact" className="btn-primary text-base">
+              Démarrer un projet →
+            </Link>
           </div>
         </div>
       </div>
-      {(openMenu || isAnimating) && (
-        <Fade
-          direction="left"
-          triggerOnce
-          className="backdrop-blur-lg md:hidden"
-        >
-          <div className="space-y-1 pb-3 pt-2 sm:px-3 md:px-2">
-            <Link
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/'}
-              onClick={handleLinkClick}
-            >
-              <OtherHousesIcon />
-            </Link>
-            <Link
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/a-propos'}
-              onClick={handleLinkClick}
-            >
-              A propos
-            </Link>
-            <Link
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/templates'}
-              onClick={handleLinkClick}
-            >
-              Nos Templates
-            </Link>
-            <Link
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/blog'}
-              onClick={handleLinkClick}
-            >
-              Blog
-            </Link>
-            <Link
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/tarifs'}
-              onClick={handleLinkClick}
-            >
-              Tarifs
-            </Link>
-            <Link
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/portfolio'}
-              onClick={handleLinkClick}
-            >
-              Portfolio
-            </Link>
-            <Link
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/services'}
-              onClick={handleLinkClick}
-            >
-              Services
-            </Link>
-            <Link
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-blue dark:hover:text-white"
-              href={'/contact'}
-              onClick={handleLinkClick}
-            >
-              Contact
-            </Link>
-          </div>
-        </Fade>
-      )}
-    </nav>
+    </>
   );
 };
 

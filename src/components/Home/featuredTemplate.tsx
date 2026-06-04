@@ -1,52 +1,79 @@
+'use client';
 import React from 'react';
+import { motion } from 'motion/react';
 import { articles } from '@/data/dataSlideDevis';
 import Template from '@/components/Template/template';
-import Button from '@/components/ui/Atoms/button';
 import Link from 'next/link';
-import { Fade } from 'react-awesome-reveal';
 
 const FeaturedTemplate = () => {
-  const sortByDateDescending = articles.sort((a: any, b: any) => {
-    const dateA: Date = new Date(a.date);
-    const dateB: Date = new Date(b.date);
-    return dateB.getTime() - dateA.getTime();
-  });
-  const templateFilter = sortByDateDescending.slice(0, 3);
+  const templateFilter = [...articles]
+    .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
-    <section id="section4" className="mx-auto mt-20 px-8" >
-      <Fade direction={'up'}>
-        <h2 className="font-poppins text-xl font-bold text-white lg:text-3xl">
-          <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-            Découvrez <br /> Chaque Mois <br /> Nos Nouveaux Templates <br />
-          </span>
-        </h2>
-      </Fade>
-      <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-        {`Explorez notre collection de modèles de site web dès aujourd'hui et trouvez celui qui correspond le
-                    mieux à votre entreprise. Restez à l'affût des dernières nouveautés en vous abonnant à notre newsletter
-                    ou en nous suivant sur les réseaux sociaux. Chez DevEvoke, nous vous offrons les outils
-                    dont vous avez besoin pour réussir en ligne.`}
-      </p>
-      <article className="mt-10 grid grid-cols-3 gap-4 xxs:grid-cols-1 lg:grid-cols-3">
-        {templateFilter.map((article) => (
-          <Template
-            key={article.id}
-            image={article.image}
-            link={article.link}
-            name={article.type}
-            id={article.id}
-          />
-        ))}
-      </article>
-      <div className="mt-10 w-full items-center justify-center xxs:flex xxs:flex-row  ">
-        <Link href={'/templates'}>
-          <Button
-            colorClass="bg-gradient-to-r from-pink to-purple "
-            title="Voir Tous Les Templates"
-            textColor="text-white text-xl"
-          ></Button>
-        </Link>
+    <section id="section4" className="py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* En-tête */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+        >
+          <div>
+            <span className="section-label">Templates</span>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl max-w-xl">
+              Lancez-vous{' '}
+              <span
+                className="text-gradient"
+                style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))' }}
+              >
+                rapidement
+              </span>
+            </h2>
+            <p className="mt-3 max-w-lg text-muted text-base">
+              Découvrez chaque mois nos nouveaux templates prêts à l'emploi,
+              conçus pour vous faire gagner du temps et impressionner vos visiteurs.
+            </p>
+          </div>
+          <Link href="/templates" className="btn-outline self-start shrink-0 text-sm">
+            Voir tous les templates →
+          </Link>
+        </motion.div>
+
+        {/* Grille de templates */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {templateFilter.map((article: any, i: number) => (
+            <motion.div
+              key={article.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              <Template
+                image={article.image}
+                link={article.link}
+                name={article.type}
+                id={article.id}
+              />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA bas */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <Link href="/devis/formule-essentielle" className="btn-primary">
+            Je veux un site comme ça →
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

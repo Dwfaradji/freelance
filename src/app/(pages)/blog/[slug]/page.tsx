@@ -12,7 +12,7 @@ const Page = ({ params }: Props) => {
   // Trouver les données du blog correspondant en utilisant le slug
   const blog = blogData.find((blog) => slugify(blog.title) === slug);
   if (!blog) {
-    return 
+    return <div>Article introuvable</div>;
   }
   return (
     <>

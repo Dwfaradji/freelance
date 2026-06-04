@@ -5,68 +5,56 @@ import { articles } from '@/data/dataSlideDevis';
 import Template from '@/components/Template/template';
 import { Fade } from 'react-awesome-reveal';
 import Link from 'next/link';
-import Button from '@/components/ui/Atoms/button';
 
 const Page = () => {
   return (
     <>
-      <header>
-        <span className="text-sm text-white opacity-50">Templates</span>
-        <Fade cascade direction={'up'} triggerOnce={true}>
-          <h1
-            className={
-              'bg-gradient-to-r  from-pink to-purple font-poppins text-2xl font-semibold  text-gradient text-white lg:text-4xl xl:text-7xl'
-            }
-          >
-            Nos Templates
+      <header className="mx-auto mb-16 text-center mt-8 px-4">
+        <Fade direction="up" cascade damping={0.1} triggerOnce>
+          <span className="section-label mb-4 inline-block">Inspiration</span>
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Nos <span className="text-gradient drop-shadow-sm">Templates</span>
           </h1>
 
-          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            {`Bienvenue dans notre collection de modèles de site web ! Explorez dès
-          aujourd'hui notre sélection variée et trouvez le modèle parfaitement
-          adapté à votre entreprise. Chez DevEvoke, nous sommes déterminés à vous
-          fournir les outils nécessaires pour réussir en ligne.`}
+          <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto mb-4">
+            Bienvenue dans notre collection exclusive de modèles de sites web. Explorez notre sélection variée et trouvez l'inspiration parfaite pour votre projet.
           </p>
-          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            {` Restez à jour avec les dernières tendances en vous abonnant à notre
-          newsletter ou en nous suivant sur les réseaux sociaux. Ne manquez aucune
-          nouveauté et soyez toujours informé des opportunités pour améliorer
-          votre présence en ligne.`}
-          </p>
-          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            Découvrez comment nos modèles peuvent aider à renforcer votre image
-            de marque, à attirer de nouveaux clients et à maximiser votre succès
-            sur le web. Chez DevEvoke, votre réussite est notre priorité.
+          <p className="text-muted-light max-w-2xl mx-auto">
+            Chez DevEvoke, nous transformons ces bases solides en expériences uniques sur mesure pour renforcer votre image de marque et attirer de nouveaux clients.
           </p>
         </Fade>
       </header>
 
-      <section
-        className={
-          'i mt-20 grid grid-cols-3 gap-20 rounded-2xl p-8 xxs:grid-cols-1 lg:grid-cols-3'
-        }
-      >
-        <Fade cascade triggerOnce={true} direction={'bottom-left'}>
-          {articles.map((article, i) => (
-            <article key={i}>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Fade cascade triggerOnce direction="up" damping={0.1} fraction={0.2}>
+            {articles.map((article, i) => (
               <Template
+                key={i}
                 image={article.image}
                 link={article.link}
                 name={article.type}
                 id={article.id}
               />
-            </article>
-          ))}
-        </Fade>
+            ))}
+          </Fade>
+        </div>
       </section>
-      <section className="mt-3 mt-4 text-center">
-        <Link href={'/devis/formule-essentielle'}>
-          <Button
-            colorClass="bg-gradient-to-r from-pink to-purple "
-            title="Je veux ce template"
-            textColor="text-white text-xl"
-          ></Button>
-        </Link>
+
+      {/* Call to Action Final */}
+      <section className="py-24 px-4 relative overflow-hidden mb-16">
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
+        <div className="max-w-4xl mx-auto glass p-10 sm:p-16 rounded-3xl text-center border border-primary/20 shadow-[0_0_50px_rgba(59,130,246,0.15)] relative z-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            Un template vous a inspiré ?
+          </h2>
+          <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
+            Démarrez votre projet avec l'un de nos modèles de base. Nous nous chargeons de la personnalisation complète pour l'adapter parfaitement à votre image.
+          </p>
+          <Link href="/devis/formule-essentielle" className="btn-primary inline-flex">
+            Choisir mon template →
+          </Link>
+        </div>
       </section>
     </>
   );

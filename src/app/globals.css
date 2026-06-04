@@ -1,46 +1,344 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
 
-@layer components {
-  body {
-    background-color: black;
-    position: relative;
-    z-index: 0;
-  }
-  img {
-    object-fit: cover;
-  }
+/* ═══════════════════════════════════════════════
+   DESIGN SYSTEM — DevEvoke 3.0 (Tailwind v4)
+   Premium SaaS Dark Mode, WCAG 2.1 Compliant
+═══════════════════════════════════════════════ */
 
-  .modal-open {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-  }
-
-  a {
-    color: white;
-  }
-
-  input {
-    color: black;
-  }
-
-  textarea {
-    color: black;
-  }
-
-  footer li {
-    margin-bottom: 4px;
-    white-space: pre-wrap;
-  }
-
-  .text-gradient {
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+:root {
+  --navbar-h: 72px;
 }
 
 main {
-  margin-top: 6em;
+  margin-top: var(--navbar-h, 72px);
+}
+
+
+@theme {
+  /* ── Colors ── */
+  --color-bg: #030712;
+  /* gray-950 */
+  --color-surface: #0f172a;
+  /* slate-900 */
+  --color-surface-2: #1e293b;
+  /* slate-800 */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-light: rgba(255, 255, 255, 0.15);
+
+  /* Primary — Electric Blue */
+  --color-primary: #3b82f6;
+  /* blue-500 */
+  --color-primary-400: #60a5fa;
+  /* blue-400 */
+  --color-primary-600: #2563eb;
+  /* blue-600 */
+  --color-primary-glow: rgba(59, 130, 246, 0.4);
+
+  /* Secondary — Neon Cyan/Purple */
+  --color-secondary: #06b6d4;
+  /* cyan-500 */
+  --color-secondary-400: #22d3ee;
+  /* cyan-400 */
+  --color-accent: #8b5cf6;
+  /* violet-500 */
+
+  /* Text - High Contrast for WCAG */
+  --color-text: #f9fafb;
+  /* gray-50 */
+  --color-muted: #d1d5db;
+  /* gray-300 - Minimum 4.5:1 ratio */
+  --color-muted-light: #9ca3af;
+  /* gray-400 */
+
+  /* Legacy for compatibility */
+  --color-purple: #8b5cf6;
+  --color-pink: #06b6d4;
+  --color-lightblack: #0f172a;
+  --color-blue: #3b82f6;
+
+  /* ── Fonts ── */
+  --font-grotesk: var(--font-sans-var, 'Space Grotesk', sans-serif);
+  --font-sans: var(--font-sans-var, 'Inter', sans-serif);
+
+  /* ── Animations ── */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-blob: blob 10s ease-in-out infinite;
+  --animate-aurora: aurora 15s linear infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes blob {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  @keyframes aurora {
+    0% {
+      background-position: 50% 50%, 50% 50%;
+    }
+
+    100% {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════════════ */
+
+@utility text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-image: linear-gradient(135deg, var(--color-primary-400), var(--color-secondary-400));
+}
+
+@utility text-gradient-primary {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-image: linear-gradient(135deg, #ffffff, var(--color-muted-light));
+}
+
+@utility glass {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility glass-strong {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ═══════════════════════════════════════════════
+   BASE STYLES & WCAG FOCUS RINGS
+═══════════════════════════════════════════════ */
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  /* Accessibility: Focus rings */
+  *:focus-visible {
+    outline: 2px solid var(--color-primary-400);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    scrollbar-width: thin;
+    scrollbar-color: rgb(168, 165, 165) var(--color-bg);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.05), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05), transparent 25%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom Webkit Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(164, 14, 14, 0.15);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+  }
+
+  p {
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-primary-400);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   COMPONENTS
+═══════════════════════════════════════════════ */
+@layer components {
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--color-text);
+    color: var(--color-bg);
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    background: #e5e7eb;
+    /* gray-200 */
+    box-shadow: 0 4px 14px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: transparent;
+    color: var(--color-text);
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-border-light);
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text);
+    backdrop-filter: blur(8px);
+  }
+
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-primary-400);
+    margin-bottom: 1rem;
+    display: block;
+  }
+}
+
+/* Aurora Background */
+.bg-aurora {
+  background-image:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.15), transparent 40%);
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
 }

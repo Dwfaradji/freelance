@@ -1,95 +1,116 @@
 'use client';
 import React, { useMemo } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import Button from '@/components/ui/Atoms/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BlogProps } from '@/data/typeFile';
 import ButtonNetwork from '@/components/ui/ButtonNetwork/buttonNetwork';
 import myPhoto from '@/images/about/photo-profil-1920.webp';
 
-
 interface PropsBlogPage {
   blog: BlogProps;
 }
 
 const BlogPage = ({ blog }: PropsBlogPage) => {
-
-  // Utilisation de useMemo pour éviter le recalcul à chaque rendu
   const formattedDate = useMemo(() => {
-    return blog ? new Date(blog.date).toLocaleDateString('fr-FR') : '';
+    return blog ? new Date(blog.date).toLocaleDateString('fr-FR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }) : '';
   }, [blog]);
 
   return (
-    <div className="mt-10 flex flex-col text-white xxs:px-3 lg:px-20">
-      <h2 className="mb-2 text-sm text-white opacity-50">
-        {blog.descriptionShort}
-      </h2>
-
-      <header className="flex flex-col-reverse">
-        <h1 className="font-poppins text-5xl font-bold xxs:text-lg sm:text-5xl">
-          {blog.title}
-        </h1>
-
-        <div className="size-full overflow-hidden">
+    <article className="min-h-screen pb-24">
+      {/* Hero de l'article */}
+      <header className="relative w-full h-[60vh] min-h-[400px] max-h-[600px] flex flex-col justify-end">
+        {/* Image de fond avec overlay */}
+        <div className="absolute inset-0 z-0">
           <Image
             priority
             src={blog.img}
-            width={1920}
-            height={600} //
             alt={blog.alt}
-            className="size-full rounded-xl object-cover object-center"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
           />
-          <div className="m-3 flex justify-between">
-            <div className="my-6 flex items-center">
-              <div className="size-10 overflow-hidden rounded-full object-cover">
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-[var(--color-bg)]/80 to-transparent" />
+        </div>
+
+        {/* Contenu Hero */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-12">
+          <Fade direction="up" cascade damping={0.1} triggerOnce>
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
+                DevEvoke
+              </span>
+              <span className="text-sm font-medium text-muted-light">{formattedDate}</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6">
+              {blog.title}
+            </h1>
+
+            {/* Auteur & Partage */}
+            <div className="flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-white/10">
+              <div className="flex items-center gap-4">
                 <Image
                   priority
-                  width={300}
-                  height={300}
+                  width={48}
+                  height={48}
                   src={myPhoto}
-                  alt="photo_gérant_devevoke"
-                  className="size-full bg-black object-cover object-center"
+                  alt="Boucif Faradji"
+                  className="size-12 rounded-full object-cover ring-2 ring-white/10"
                 />
+                <div>
+                  <h3 className="font-semibold text-white">Boucif Faradji</h3>
+                  <p className="text-sm text-muted-light">Fondateur DevEvoke</p>
+                </div>
               </div>
-              <div className="ml-2 text-left">
-                <h2>Boucif Faradji</h2>
-                <h3 className="text-xs opacity-50">{formattedDate}</h3>
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-muted-light hidden sm:block">Partager cet article</span>
+                <ButtonNetwork url={blog} />
               </div>
             </div>
-            <ButtonNetwork url={blog} />
-          </div>
+          </Fade>
         </div>
       </header>
 
-      <section>
-        <p className="my-4 text-lg opacity-50 xxs:text-sm sm:text-lg">
+      {/* Corps de l'article */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <p className="text-xl md:text-2xl text-primary-200 font-medium leading-relaxed mb-12">
           {blog.descriptionShort}
         </p>
 
-        <article className="mt-8">
+        <div className="space-y-12">
           {blog.descriptionLong?.map((val, i) => (
-            <div key={i} className="my-8">
-              <Fade cascade direction="up">
-                <h2 className="mb-3 text-xl">{val.title}</h2>
-                <p>{val.text}</p>
-              </Fade>
-            </div>
+            <Fade direction="up" fraction={0.2} triggerOnce key={i}>
+              <div className="prose prose-invert prose-lg max-w-none">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-primary-500 pl-4">
+                  {val.title}
+                </h2>
+                <p className="text-muted leading-relaxed text-lg">
+                  {val.text}
+                </p>
+              </div>
+            </Fade>
           ))}
-        </article>
+        </div>
 
-        <article className="absolute xl:fixed xl:bottom-[50%] xl:left-0 2xl:left-0">
-          <Link href="/blog">
-            <Button
-              colorClass="bg-gradient-to-r from-pink to-purple"
-              textColor="text-white"
-              marginClass="ml-2"
-              title="Retour"
-            />
+        {/* Bouton Retour */}
+        <div className="mt-20 pt-10 border-t border-white/10 flex justify-center">
+          <Link 
+            href="/blog"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full glass border border-white/10 hover:border-white/20 hover:glass-strong text-white font-medium transition-all group"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:-translate-x-1 transition-transform">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Retour aux articles
           </Link>
-        </article>
-      </section>
-    </div>
+        </div>
+      </div>
+    </article>
   );
 };
 

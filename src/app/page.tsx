@@ -1,103 +1,68 @@
 'use client';
-import Testimonial from '@/components/Home/testimonial';
-import Pricing from '@/components/Home/pricing';
-import FeaturedTemplate from '@/components/Home/featuredTemplate';
+import React from 'react';
+import { motion } from 'motion/react';
+import { MyProvider } from '@/context/context';
+import { initialState, reducer } from '@/context/reducer';
+
+import Scroll from '@/components/ui/scroll';
+import Header from '@/components/Home/header';
 import AnimatedStats from '@/components/Home/AnimatedStats';
 import Projects from '@/components/Home/projects';
 import Offerings from '@/components/Home/offerings';
-import Header from '@/components/Home/header';
-import React, { useEffect ,useState} from 'react';
-import { MyProvider } from '@/context/context';
-import { initialState, reducer } from '@/context/reducer';
-import Button from '@/components/ui/Atoms/button';
-import NewsLetters from '@/components/ui/Newsletters/newsLetters';
+import Pricing from '@/components/Home/pricing';
+import FeaturedTemplate from '@/components/Home/featuredTemplate';
+import Testimonial from '@/components/Home/testimonial';
 import BlogHome from '@/components/Home/blogHome';
-import { Fade } from 'react-awesome-reveal';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Scroll from '@/components/ui/scroll';
-
+import NewsLetters from '@/components/ui/Newsletters/newsLetters';
+import Link from 'next/link';
 
 const Page: React.FC = () => {
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-  const [isLastSection, setIsLastSection] = useState(false); // Indique si on est sur la dernière section
-
-  const sectionIds = [
-    'section1',
-    'section2',
-    'section3',
-    'section4',
-    'section5',
-    'section6',
-    'section7',
-  ];
-
-  const navBarHeight = 80; // Hauteur approximative de votre barre de navigation en pixels.
-
-  const scrollToNextSection = () => {
-    if (isLastSection) {
-      // Si on est sur la dernière section, remonte tout en haut
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setCurrentSectionIndex(0); // Réinitialise à la première section
-    } else {
-      // Sinon, scrolle vers la section suivante
-      if (currentSectionIndex < sectionIds.length - 1) {
-        const nextSectionId = sectionIds[currentSectionIndex + 1];
-        const nextSection = document.getElementById(nextSectionId);
-        if (nextSection) {
-          const offsetPosition =
-            nextSection.getBoundingClientRect().top +
-            window.scrollY -
-            navBarHeight;
-          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-          setCurrentSectionIndex(currentSectionIndex + 1);
-        }
-      }
-    }
-  };
-
-  const checkIfLastSection = () => {
-    // Vérifie si la dernière section est visible
-    const lastSection = document.getElementById(sectionIds[sectionIds.length - 1]);
-    if (lastSection) {
-      const rect = lastSection.getBoundingClientRect();
-      const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-      setIsLastSection(isVisible);
-    }
-  };
-
-  useEffect(() => {
-    // Ajoute un écouteur pour détecter si on est sur la dernière section
-    window.addEventListener('scroll', checkIfLastSection);
-    return () => {
-      window.removeEventListener('scroll', checkIfLastSection);
-    };
-  }, []);
   return (
     <MyProvider initialState={initialState} reducer={reducer}>
-    <Scroll/>
+      <Scroll />
       <Header />
       <AnimatedStats />
-      <Projects  /> {/* Assurez-vous que la section occupe de l'espace */}
+      <Projects />
       <Offerings />
-      <Fade direction="up">
-        <h2 id="section3" className="mb-8 bg-gradient-to-r from-pink to-purple px-4 text-xl font-bold text-gradient lg:text-3xl">
-          Découvrez Toutes Nos Formules
-        </h2>
-      </Fade>
 
-      <Pricing  />
-      <div className="mx-auto mt-8 max-w-7xl px-6 text-center lg:block">
-        <Button
-          colorClass="bg-gradient-to-r from-pink to-purple"
-          title="Voir Nos Tarifs"
-          textColor="text-white text-xl"
-        />
-      </div>
-      <FeaturedTemplate  />
-      <Testimonial  />
-      <BlogHome   />
-      <NewsLetters  />
+      {/* Section Tarifs */}
+      <section id="section3" className="py-16 md:py-24 lg:py-32 relative">
+        {/* Section separator */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+          >
+            <div className="max-w-2xl">
+              <span className="section-label">Tarifs</span>
+              <h2 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl tracking-tight">
+                Des formules{' '}
+                <span className="text-gradient drop-shadow-sm">
+                  adaptées
+                </span>
+              </h2>
+              <p className="mt-6 text-lg text-muted leading-relaxed">
+                Choisissez la formule qui correspond à vos besoins et à votre budget.
+                Profitez d'un paiement flexible avec 30% à la commande et le solde à la livraison.
+              </p>
+            </div>
+            <Link href="/tarifs" className="btn-outline self-start shrink-0 mt-4 sm:mt-0 hover:bg-white/5">
+              Voir toutes les formules →
+            </Link>
+          </motion.div>
+          <Pricing />
+        </div>
+      </section>
+
+      <FeaturedTemplate />
+      <Testimonial />
+      <BlogHome />
+      <NewsLetters />
     </MyProvider>
   );
 };

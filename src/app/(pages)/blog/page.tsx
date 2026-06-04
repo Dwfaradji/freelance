@@ -2,43 +2,50 @@
 import React from 'react';
 import BlogHeader from '@/components/Blog/blogHeader';
 import BlogsContainer from '@/components/Blog/blogsContainer';
-
 import Link from 'next/link';
-import Button from '@/components/ui/Atoms/button';
 import { Fade } from 'react-awesome-reveal';
 
 const Page = () => {
   return (
-    <>
-      <header>
-        <span className="text-sm text-white opacity-50">Blogs</span>
-        <Fade cascade direction="up" triggerOnce>
-          <h1 className="mb-8 bg-gradient-to-r from-pink to-purple font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
-            Découvrez notre Blogs
+    <div className="overflow-hidden">
+      <header className="mx-auto mb-20 mt-8 text-center px-4">
+        <Fade direction="up" cascade damping={0.1} triggerOnce>
+          <span className="section-label mb-4 inline-block">Le Journal</span>
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Découvrez notre{' '}
+            <span className="text-gradient drop-shadow-sm">
+              Blog
+            </span>
           </h1>
-
-          <p className="my-7 text-lg text-white lg:text-xl">
-            Nous sommes fiers de partager avec vous nos projets les plus
-            récents, réalisés avec passion et expertise. Chacun de nos projets
-            est conçu pour répondre aux besoins spécifiques de nos clients, en
-            utilisant les technologies les plus avancées pour offrir des
-            solutions innovantes et performantes. Explorez nos réalisations et
-            découvrez comment nous transformons des idées en succès concrets.
+          <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
+            Nous partageons nos réflexions, nos découvertes technologiques, et des conseils pratiques sur le développement web, le design, et l'écosystème tech. Plongez dans nos articles rédigés avec passion.
           </p>
         </Fade>
       </header>
-      <BlogHeader />
-      <BlogsContainer />
-      <div className="mt-4 text-center">
-        <Link href={'/contact'}>
-          <Button
-            colorClass="bg-gradient-to-r from-pink to-purple "
-            title="Contactez-Nous"
-            textColor="text-white text-xl"
-          ></Button>
-        </Link>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <BlogHeader />
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">Articles Récents</h2>
+          <BlogsContainer />
+        </div>
       </div>
-    </>
+
+      <section className="py-24 px-4 relative overflow-hidden my-16">
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
+        <div className="max-w-4xl mx-auto glass p-10 sm:p-16 rounded-3xl text-center border border-primary/20 shadow-[0_0_50px_rgba(59,130,246,0.15)] relative z-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            Un projet en tête ?
+          </h2>
+          <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
+            Prêt à concrétiser vos idées ? Discutons de votre projet et trouvons ensemble la meilleure solution technologique.
+          </p>
+          <Link href="/contact" className="btn-primary inline-flex">
+            Contactez-Nous →
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 };
 

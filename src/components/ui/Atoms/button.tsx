@@ -6,8 +6,9 @@ interface ButtonProps {
   textColor?: string;
   marginClass?: string;
   id?: string;
-  type?: any;
-  onClick?: any;
+  type?: 'button' | 'submit' | 'reset';
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  children?: React.ReactNode;
 }
 
 const Button = ({
@@ -17,17 +18,34 @@ const Button = ({
   onClick,
   marginClass,
   id,
-  type,
+  type = 'button',
+  children,
 }: ButtonProps) => {
+  const isPrimary = colorClass?.includes('from-pink') || colorClass?.includes('from-blue') || colorClass?.includes('gradient');
+
+  if (isPrimary) {
+    return (
+      <button
+        type={type}
+        id={id}
+        onClick={onClick}
+        className={`btn-primary ${marginClass ?? ''} ${textColor?.includes('xl') ? 'text-base' : 'text-sm'}`}
+      >
+        {title}
+        {children}
+      </button>
+    );
+  }
+
   return (
     <button
       type={type}
       id={id}
       onClick={onClick}
-      className={`${colorClass} ${textColor} ${marginClass} sm:width-full md:width-full lg:width-full scale-100 transform rounded-lg border
-            border-white px-3 py-2 text-sm text-gradient transition hover:scale-110 focus:outline-none focus:ring-1 focus:ring-offset-1 active:scale-95`}
+      className={`btn-outline ${colorClass ?? ''} ${textColor ?? ''} ${marginClass ?? ''}`}
     >
       {title}
+      {children}
     </button>
   );
 };

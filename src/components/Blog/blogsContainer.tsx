@@ -1,70 +1,73 @@
+'use client';
 import React from 'react';
-import Input from '@/components/ui/Atoms/input';
-import Button from '@/components/ui/Atoms/button';
-import { Fade } from 'react-awesome-reveal';
-import Link from 'next/link';
-import blogData from '@/data/dataBlog';
+import { motion } from 'motion/react';
 import Image from 'next/image';
+import blogData from '@/data/dataBlog';
+import Link from 'next/link';
 import { slugify } from '@/utils/slugify';
+import myPhoto from '@/images/about/photo-profil-688.webp';
 
 const BlogsContainer = () => {
-  const sortByDateDescending = blogData.sort((a: any, b: any) => {
-    const dateA: Date = new Date(a.date);
-    const dateB: Date = new Date(b.date);
-    return dateB.getTime() - dateA.getTime();
-  });
-  const dataHeader = sortByDateDescending.slice(1, sortByDateDescending.length);
+  const sortedPosts = [...blogData].sort(
+    (a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  const posts = sortedPosts.slice(1);
+
   return (
-    <section className="mx-auto mt-10 text-white">
-      <article className="grid grid-cols-3 gap-4 xxs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        <Fade direction="down" triggerOnce={true}>
-          {dataHeader.map((blog, i) => (
-            <Link
-              key={i}
-              className="flex justify-center"
-              href={`/blog/${slugify(blog.title).toString()}`}
-            >
-              <div id={blog.id} className={'m-3'}>
-                <div className="h-72 w-full overflow-hidden rounded-xl xxs:w-full sm:w-full">
+    <section className="py-8">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((blog: any, i: number) => (
+          <motion.div
+            key={blog.id}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.07 }}
+          >
+            <Link href={`/blog/${slugify(blog.title)}`} className="group block h-full">
+              <article className="h-full flex flex-col overflow-hidden rounded-3xl glass border border-white/5 transition-all duration-300 hover:border-white/10 hover:glass-strong hover:-translate-y-1 shadow-lg">
+                {/* Image */}
+                <div className="relative h-56 overflow-hidden">
                   <Image
                     width={500}
                     height={300}
                     src={blog.img}
                     alt={blog.alt}
+                    className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/80 to-transparent" />
                 </div>
-                <h2 className="mt-2 font-poppins text-3xl font-bold">
-                  {blog.title}
-                </h2>
-                <div className={'h-[6] overflow-hidden'}>
-                  <p className="mt-2 line-clamp-4 text-sm opacity-50 hover:line-clamp-none ">
+
+                {/* Contenu */}
+                <div className="p-6 md:p-8 flex flex-col flex-grow">
+                  <p className="mb-3 text-xs font-semibold text-primary-400 uppercase tracking-wider">
+                    {new Date(blog.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  </p>
+                  <h2 className="font-bold text-white leading-tight text-xl group-hover:text-primary-300 transition-colors line-clamp-2 mb-3">
+                    {blog.title}
+                  </h2>
+                  <p className="text-sm text-muted-light line-clamp-3 leading-relaxed flex-grow">
                     {blog.descriptionShort}
                   </p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </Fade>
-      </article>
 
-      <div className="mt-10 hidden h-72 w-full flex-col items-center justify-center rounded-xl bg-gradient-to-r from-pink to-purple">
-        <h2 className="font-poppins text-3xl font-bold">
-          Rester dans la boucle
-        </h2>
-        <h2 className="mt-2 text-lg opacity-50">
-          Abonnez-vous à notre newsletter pour recevoir les meilleures nouvelles
-          avant tout le monde
-        </h2>
-        <div className="mt-10 flex-row">
-          <Input placeholder="email."></Input>
-          <Button
-            colorClass="bg-white"
-            title="S'abonner"
-            textColor="text-black"
-            marginClass="ml-5"
-          ></Button>
-        </div>
+                  {/* Auteur */}
+                  <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                    <Image
+                      width={32}
+                      height={32}
+                      className="size-8 rounded-full object-cover ring-2 ring-white/5"
+                      src={myPhoto.src}
+                      alt="Boucif Faradji"
+                      sizes="32px"
+                    />
+                    <span className="text-xs font-medium text-white">Boucif Faradji</span>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

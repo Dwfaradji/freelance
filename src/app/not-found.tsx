@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaceFrownIcon } from '@heroicons/react/24/outline';
-import Button from '../components/ui/Atoms/button';
+import Button from '@/components/ui/Atoms/button';
 
 const NotFound = () => {
   return (

@@ -1,5 +1,4 @@
 // layout.tsx
-
 import React, { Suspense } from 'react';
 import { Inter } from 'next/font/google';
 import Footer from '@/components/footer';
@@ -15,7 +14,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans-var',
+  display: 'swap',
+});
 
 export const metadata: NextMetadata = {
   title: 'Agence Web & Mobile à Perpignan – Sites et Applications sur Mesure',
@@ -32,12 +35,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className="scroll-smooth">
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
       <AppHead />
-      <body className={`${inter.variable} size-full antialiased`}>
+      <body className={`${inter.variable} min-h-screen antialiased`}>
         <Navbar />
-        <main className={'mx-auto max-w-7xl p-2 md:container'}>
+        <main className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
           <Suspense fallback={<Loading />}>{children}</Suspense>
         </main>
         <Footer />

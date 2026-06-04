@@ -1,127 +1,114 @@
+'use client';
 import React from 'react';
-import { Fade } from 'react-awesome-reveal';
+import { motion } from 'motion/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {
-  Autoplay,
-  EffectCreative,
-  Navigation,
-  Pagination,
-} from 'swiper/modules';
+import { Autoplay, EffectCards, Pagination } from 'swiper/modules';
 import Link from 'next/link';
 import Image from 'next/image';
-import { projects } from '@/data/data'; // Assurez-vous que ce fichier contient bien des projets
-import Button from '@/components/ui/Atoms/button';
+import { projects } from '@/data/data';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
 
 const Projects = () => {
   return (
-    <section id="section1">
-      {/* Header Section */}
-      <Fade cascade>
-        <article className="mt-20 px-4 sm:px-6 md:px-8">
-          <Fade direction={'up'}>
-            <h2 className="text-xl font-bold text-white lg:text-3xl">
-              <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-                Découvrez Nos Réalisations Web
+    <section id="section1" className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+      {/* Decorative background glow */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Texte (Gauche) */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex flex-col justify-center"
+          >
+            <span className="section-label mb-4">Portfolio</span>
+            <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-6">
+              Où l'idée prend{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+                vie
               </span>
             </h2>
-          </Fade>
+            <p className="text-gray-400 text-lg leading-relaxed mb-8 font-light">
+              Chaque ligne de code, chaque pixel, est pensé pour créer une expérience mémorable. Découvrez comment nous avons aidé nos clients à transformer leur vision en réalité digitale.
+            </p>
 
-          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            {`Plongez dans notre portfolio et explorez une variété de projets web réalisés avec passion. Qu'il s'agisse de sites vitrines professionnels, de boutiques en ligne performantes ou d'applications interactives, chaque réalisation illustre notre expertise et notre engagement à répondre aux besoins uniques de nos clients.
-Explorez une sélection de projets web que nous avons réalisés, incluant des sites vitrines, des boutiques en ligne et des applications interactives. Ces réalisations reflètent mon expertise et ma capacité à répondre aux besoins spécifiques de mes clients.`}
-          </p>
-          <p className="mt-4 text-lg text-white lg:text-2xl">
-            Vous avez un projet en tête ?
-          </p>
-        </article>
-      </Fade>
+            <ul className="space-y-4 mb-10">
+              {['Design sur-mesure', 'Performances extrêmes', 'Expérience utilisateur (UX) optimisée'].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-gray-300">
+                  <div className="flex-shrink-0 flex items-center justify-center size-6 rounded-full bg-primary-500/20 text-primary-400">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <span className="font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
 
-      {/* Projects Section */}
-      <Fade cascade>
-        <article className="mt-8 flex h-full flex-col gap-y-8 px-4 sm:px-6 md:px-8 lg:flex-row lg:gap-x-8 lg:gap-y-0">
-          {/* Swiper Bloc */}
-          <div className="flex w-full items-center rounded-xl  p-8 lg:w-1/2 lg:bg-gradient-to-r">
+            <Link href="/portfolio" className="btn-primary w-fit group">
+              Explorer le portfolio complet
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Link>
+          </motion.div>
+
+          {/* Carousel (Droite) - Effect Cards for a stacked premium look */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
+            whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 relative perspective-[2000px]"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 blur-[100px] pointer-events-none rounded-full" />
+            
             <Swiper
-              effect={'creative'}
+              effect={'cards'}
               grabCursor={true}
-              autoplay={{
-                delay: 3500,
-              }}
-              creativeEffect={{
-                prev: {
-                  shadow: true,
-                  origin: 'left center',
-                  translate: ['-5%', 0, -200],
-                  rotate: [0, 100, 0],
-                },
-                next: {
-                  origin: 'right center',
-                  translate: ['5%', 0, -200],
-                  rotate: [0, -100, 0],
-                },
-              }}
-              modules={[EffectCreative, Autoplay]}
+              modules={[EffectCards, Autoplay, Pagination]}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              pagination={{ clickable: true, dynamicBullets: true }}
+              className="w-[260px] sm:w-[320px] md:w-[400px] lg:w-[450px] aspect-[4/5] sm:aspect-[4/3] rounded-3xl shadow-2xl mx-auto"
             >
               {projects && projects.length > 0 ? (
-                projects.map((project) => (
-                  <SwiperSlide key={project.id}>
-                    <Image
-                      src={project.imageMobile}
-                      alt={project.alt || 'Illustration de projet'}
-                      width={664}
-                      height={373}
-                      className="rounded-lg object-cover "
-                      sizes="(max-width: 600px) 480px, (max-width: 1200px) 1024px, 1600px"
-                    />
+                projects.map((project, i) => (
+                  <SwiperSlide key={project.id} className="rounded-3xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
+                    <div className="relative w-full h-full group">
+                      <Image
+                        src={project.imageMobile || project.image}
+                        alt={project.title || 'Projet DevEvoke'}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 500px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80" />
+                      
+                      <div className="absolute bottom-0 left-0 p-8 w-full">
+                        <span className="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-primary-400 bg-primary-900/40 border border-primary-500/20 rounded-full uppercase">
+                          {project.type || 'Web App'}
+                        </span>
+                        <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+                      </div>
+                    </div>
                   </SwiperSlide>
                 ))
               ) : (
-                <p className="text-white">
-                  Aucun projet disponible pour le moment.
-                </p>
+                <SwiperSlide className="rounded-3xl border border-white/10 bg-[#0a0a0a] flex items-center justify-center">
+                  <span className="text-gray-500">Aucun projet</span>
+                </SwiperSlide>
               )}
             </Swiper>
-          </div>
+          </motion.div>
 
-          {/* Text Bloc */}
-          <div className="flex w-full flex-col justify-between rounded-xl bg-gradient-to-t from-pink p-8 lg:w-1/2 lg:bg-gradient-to-l">
-            <h2 className="text-xl text-white lg:text-3xl">
-              Transformez votre idée en réalité
-            </h2>
-            <ul className={'list-disc px-5 py-2 text-white'}>
-              <Fade direction={'left'} delay={100}>
-                <li>
-                  Fenix Solutions : Site vitrine moderne et ergonomique pour une
-                  entreprise innovante.
-                </li>
-                <li>
-                  Keller Williams : Plateforme immobilière optimisée pour une
-                  navigation fluide.
-                </li>
-                <li>
-                  Menu Interactif pour Pizzeria : Une interface intuitive
-                  permettant de consulter le menu, découvrir les offres et
-                  personnaliser les commandes en toute simplicité.
-                </li>
-                <li>EvokeFlow : Application pour prise de commande client</li>
-              </Fade>
-            </ul>
-
-            <p className="my-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-              Prêts à transformer votre entreprise avec des solutions modernes et
-              fonctionnelles ?
-            </p>
-          </div>
-        </article>
-      </Fade>
-      <div className="mt-10 flex justify-center">
-        <Link href={'/portfolio'}>
-          <Button
-            colorClass="bg-gradient-to-r from-pink to-purple"
-            title="Voir Tous Nos Projets"
-            textColor="text-white text-xl"
-          />
-        </Link>
+        </div>
       </div>
     </section>
   );

@@ -6,42 +6,52 @@ import headerAbout from '@/images/about/aboutHeader-1920.webp';
 const AboutHeader = () => {
   return (
     <>
-      <header className="mx-auto">
-        <h2 className="text-sm text-white opacity-50">A propos</h2>
-
-        <article className="mb-10">
-          <Fade cascade direction={'up'} triggerOnce={true}>
-            <h1 className="mb-8 bg-gradient-to-r from-pink to-purple  font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
-              Qui sommes-nous ?
-            </h1>
-
-            <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-              {` Nous sommes une équipe passionnée, déterminée à transformer vos
+      <header className="mx-auto mb-20 mt-8 text-center px-4">
+        <Fade direction="up" cascade damping={0.1} triggerOnce>
+          <span className="section-label mb-4 inline-block">L'Agence</span>
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Qui <span className="text-gradient drop-shadow-sm">sommes-nous ?</span>
+          </h1>
+          <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
+            Nous sommes une équipe passionnée, déterminée à transformer vos
             idées en solutions digitales performantes. À travers des
-            technologies de pointe et un service client de qualité, nous vous
-            aidons à exceller dans l'univers numérique.`}
-            </p>
-          </Fade>
-        </article>
-      </header>
-      <section>
-        <article className="overflow-hidden rounded-xl">
-          <Image
-            width={1264}
-            height={843}
-            src={headerAbout}
-            alt={'photo_de_group'}
-            priority={true}
-          />
-          <p className="mt-4 text-white opacity-75 xxs:text-sm xs:text-base sm:text-lg lg:text-xl">
-            {`Devevoke est une entreprise innovante spécialisée dans le développement
-        d’applications et de sites web. Nous accompagnons les PME, TPE et
-        start-ups dans la création de solutions digitales adaptées à leurs
-        besoins spécifiques. Notre équipe de professionnels passionnés met à
-        votre disposition son expertise pour vous aider à réussir dans l'univers
-        numérique en constante évolution.`}
+            technologies de pointe et un service client d'exception, nous vous
+            aidons à exceller dans l'univers numérique.
           </p>
-        </article>
+        </Fade>
+      </header>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
+        <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group">
+          {/* Overlay dégradé pour la lisibilité */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-[var(--color-bg)]/20 to-transparent opacity-90 z-10" />
+          
+          <Image
+            src={headerAbout}
+            alt="Équipe DevEvoke"
+            width={1920}
+            height={1080}
+            className="w-full h-[500px] md:h-[700px] object-cover transition-transform duration-1000 group-hover:scale-105"
+            priority
+          />
+          
+          {/* Bloc Vision flottant */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 z-20">
+            <Fade direction="up" delay={200} triggerOnce>
+              <div className="max-w-4xl glass-strong p-8 md:p-10 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-400/10 to-transparent pointer-events-none" />
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 relative z-10">Notre Vision</h2>
+                <p className="text-gray-300 text-base md:text-lg leading-relaxed relative z-10">
+                  Devevoke est une entreprise innovante spécialisée dans le développement
+                  d’applications et de sites web. Nous croyons que chaque entreprise mérite une
+                  présence numérique à la hauteur de ses ambitions. Nous
+                  redéfinissons l'expérience digitale en créant des solutions sur
+                  mesure, alliant innovation, design premium et efficacité redoutable.
+                </p>
+              </div>
+            </Fade>
+          </div>
+        </div>
       </section>
     </>
   );

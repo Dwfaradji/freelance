@@ -44,7 +44,7 @@ const MultiColorPicker: React.FC<MultiColorPickerProps> = () => {
             <div className="mix-blend-multiply">
               <div
                 style={{ boxShadow: `0px 15px 15px ${colorValue}` }} // Appliquer le shadow ici
-                className="bg-blue-500 input-color flex items-center justify-center overflow-hidden rounded-full p-1 shadow-lg"
+                className="bg-primary input-color flex items-center justify-center overflow-hidden rounded-full p-1 shadow-lg"
               >
                 <input
                   className="input-color"

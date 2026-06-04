@@ -7,14 +7,15 @@ import ProjectCard from '../Projects/projectCard';
 const ProjectsHeader = () => {
   return (
     <>
-      <header className="mx-auto">
-        <span className="text-sm text-white opacity-50">Projets</span>
-        <Fade cascade direction="up" triggerOnce>
-          <h1 className="mb-8 bg-gradient-to-r from-pink to-purple font-poppins text-2xl font-semibold text-gradient lg:text-4xl xl:text-7xl">
-            Découvrez nos projets
-          </h1>
+      <header className="mx-auto mb-20 mt-8 text-center px-4">
+        <Fade direction="up" cascade damping={0.1} triggerOnce>
+          <span className="section-label mb-4 inline-block">Portfolio</span>
 
-          <p className="text-lg text-white lg:text-xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Découvrez nos{' '}
+            <span className="text-gradient drop-shadow-sm">réalisations</span>
+          </h1>
+          <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
             Nous sommes fiers de partager avec vous nos projets les plus
             récents, réalisés avec passion et expertise. Chacun de nos projets
             est conçu pour répondre aux besoins spécifiques de nos clients, en
@@ -24,10 +25,11 @@ const ProjectsHeader = () => {
           </p>
         </Fade>
       </header>
+
       <section className="mx-auto my-20">
         {projects.map((project, index) => (
-          <Fade key={index} direction="up" delay={100} triggerOnce>
-            <ProjectCard {...project} />
+          <Fade key={index} direction="up" triggerOnce fraction={0.2}>
+            <ProjectCard {...project} index={index} />
           </Fade>
         ))}
       </section>
