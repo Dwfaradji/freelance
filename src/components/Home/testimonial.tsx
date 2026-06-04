@@ -30,7 +30,7 @@ const Testimonial = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   return (
-    <section ref={containerRef} id="section5" className="py-40 md:py-60 relative flex items-center justify-center overflow-hidden bg-[#030712]">
+    <section ref={containerRef} id="section5" className="py-24 md:py-40 relative flex items-center justify-center overflow-hidden bg-[#030712]">
       
       {/* Liquid Background orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

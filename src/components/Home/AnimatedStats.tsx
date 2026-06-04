@@ -64,7 +64,7 @@ const statsData = [
 const AnimatedStats = () => (
   <section className="relative w-full border-y border-white/5 bg-black/50 backdrop-blur-xl z-20 -mt-10 sm:-mt-16">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
         {statsData.map((stat, index) => (
           <motion.div
             key={index}
@@ -72,7 +72,11 @@ const AnimatedStats = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-center justify-center text-center group"
+            className={`flex flex-col items-center justify-center text-center group relative ${
+              index % 2 !== 0 ? '' : 'before:absolute before:inset-y-0 before:-right-4 sm:before:-right-6 before:w-px before:bg-white/5'
+            } ${
+              index < 3 ? 'md:after:absolute md:after:inset-y-0 md:after:-right-6 md:after:w-px md:after:bg-white/5' : ''
+            }`}
           >
             {/* Nombre */}
             <div className={`text-4xl sm:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-2 drop-shadow-sm`}>

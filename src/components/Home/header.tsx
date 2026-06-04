@@ -115,7 +115,7 @@ export default function Header() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
         {/* LEFT COLUMN: TYPOGRAPHY & CTAs */}
-        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
+        <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
 
           {/* Badge Vercel-style */}
           <motion.div
@@ -189,16 +189,16 @@ export default function Header() {
           </motion.div>
         </div>
 
-        {/* RIGHT COLUMN: 3D WIDGETS (Hidden on mobile) */}
-        <div className="flex-1 relative h-[500px] w-full hidden lg:flex items-center justify-center pointer-events-none">
+        {/* RIGHT COLUMN: 3D WIDGETS (Responsive) */}
+        <div className="w-full lg:flex-1 relative h-[350px] sm:h-[450px] lg:h-[500px] flex items-center justify-center pointer-events-none mt-10 lg:mt-0">
 
-          {/* Widget 1: Web Code (Top Left) */}
+          {/* Widget 1: Web Code (Top Left) - Hidden on mobile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
             style={{ x: widget1X, y: widget1Y, rotateX: widget1RotateX, rotateY: widget1RotateY }}
-            className="absolute top-4 -left-8 w-64 glass-strong rounded-2xl p-4 shadow-[0_30px_60px_rgba(0,0,0,0.6)] border-t border-white/20 z-20"
+            className="hidden md:block absolute top-4 -left-8 w-64 glass-strong rounded-2xl p-4 shadow-[0_30px_60px_rgba(0,0,0,0.6)] border-t border-white/20 z-20"
           >
             <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-3">
               <div className="flex gap-1.5">
@@ -219,13 +219,13 @@ export default function Header() {
             </div>
           </motion.div>
 
-          {/* Widget 2: SaaS Dashboard Chart (Bottom Right) */}
+          {/* Widget 2: SaaS Dashboard Chart (Bottom Right) - Hidden on mobile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
             style={{ x: widget2X, y: widget2Y, rotateX: widget2RotateX, rotateY: widget2RotateY }}
-            className="absolute bottom-10 -right-4 w-72 glass rounded-2xl p-5 shadow-[0_30px_60px_rgba(0,0,0,0.6)] border border-white/10 z-10"
+            className="hidden md:block absolute bottom-10 -right-4 w-72 glass rounded-2xl p-5 shadow-[0_30px_60px_rgba(0,0,0,0.6)] border border-white/10 z-10"
           >
             <div className="flex justify-between items-center mb-6">
               <span className="text-xs font-medium text-gray-300 uppercase tracking-widest">Performances</span>
@@ -244,29 +244,91 @@ export default function Header() {
             </div>
           </motion.div>
 
-          {/* Widget 3: Mobile UI (Center Overlapping) */}
+          {/* Widget 3: Mobile UI (Center Overlapping) - Visible on mobile but scaled */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            initial={{ opacity: 0, scale: 0.6, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
             style={{ x: widget3X, y: widget3Y, rotateX: widget3RotateX, rotateY: widget3RotateY }}
-            className="absolute top-1/2 left-1/2 -translate-x-8 -translate-y-1/2 w-52 h-[22rem] rounded-[2rem] bg-black/80 backdrop-blur-3xl shadow-[0_0_60px_rgba(59,130,246,0.3)] border-2 border-white/10 p-2 overflow-hidden z-30"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-[22rem] rounded-[2rem] bg-black/80 backdrop-blur-3xl shadow-[0_0_60px_rgba(59,130,246,0.3)] border-2 border-white/10 p-2 overflow-hidden z-30"
           >
             {/* Notch */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-b-xl z-20" />
 
             {/* Mobile App Screen */}
             <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden bg-[#0a0a0a] flex flex-col p-4 pt-8">
+              
+              {/* Top Bar: Avatar & Greeting */}
               <div className="flex justify-between items-center mb-6">
-                <div className="size-8 rounded-full bg-white/10" />
-                <div className="w-16 h-2 rounded-full bg-white/20" />
+                <div className="flex items-center gap-3">
+                  <div className="size-8 rounded-full bg-gradient-to-tr from-primary-500 to-secondary-500 p-[2px]">
+                    <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
+                      <div className="w-full h-full bg-white/10" />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-gray-400">Bonjour,</div>
+                    <div className="text-xs font-bold text-white">Alexandre</div>
+                  </div>
+                </div>
+                <div className="flex gap-1">
+                  <div className="size-1.5 rounded-full bg-white/20" />
+                  <div className="size-1.5 rounded-full bg-white/20" />
+                  <div className="size-1.5 rounded-full bg-white/20" />
+                </div>
               </div>
-              <div className="w-full h-32 rounded-xl bg-gradient-to-br from-primary-500/20 to-secondary-500/20 border border-white/10 mb-4" />
+
+              {/* Main Card: Revenue / Stats */}
+              <div className="w-full h-32 rounded-2xl bg-gradient-to-br from-primary-500/80 to-secondary-500/80 border border-white/20 mb-5 p-4 flex flex-col justify-between relative overflow-hidden shadow-[0_10px_30px_rgba(59,130,246,0.3)]">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
+                <div className="relative z-10">
+                  <div className="text-[10px] text-white/80 font-medium uppercase tracking-wider mb-1">Revenus (Mensuel)</div>
+                  <div className="text-2xl font-extrabold text-white">12 450 €</div>
+                </div>
+                <div className="relative z-10 flex items-center gap-2">
+                  <span className="px-2 py-0.5 rounded-full bg-green-400/20 text-green-300 text-[10px] font-bold border border-green-400/30">
+                    +15.3%
+                  </span>
+                  <span className="text-[9px] text-white/70">vs mois dernier</span>
+                </div>
+              </div>
+
+              {/* List: Recent Activity */}
               <div className="space-y-3">
-                <div className="w-full h-12 rounded-xl bg-white/5" />
-                <div className="w-full h-12 rounded-xl bg-white/5" />
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-[11px] font-bold text-white">Activité récente</span>
+                  <span className="text-[9px] text-primary-400 cursor-pointer">Voir tout</span>
+                </div>
+
+                <div className="w-full p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3 backdrop-blur-md">
+                  <div className="size-7 rounded-lg bg-green-500/20 flex items-center justify-center border border-green-500/20">
+                    <svg className="size-3.5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-[10px] font-bold text-white">Projet Validé</div>
+                    <div className="text-[8px] text-gray-400">Design System SaaS</div>
+                  </div>
+                  <div className="text-[10px] font-bold text-white">+ 3 200 €</div>
+                </div>
+
+                <div className="w-full p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3 backdrop-blur-md">
+                  <div className="size-7 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/20">
+                    <svg className="size-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-[10px] font-bold text-white">Nouveau Message</div>
+                    <div className="text-[8px] text-gray-400">Client potentiel</div>
+                  </div>
+                  <div className="size-2 rounded-full bg-primary-500" />
+                </div>
               </div>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-white/20 rounded-full" />
+
+              {/* Home Indicator */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-white/30 rounded-full" />
             </div>
           </motion.div>
 

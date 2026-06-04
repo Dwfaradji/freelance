@@ -41,8 +41,15 @@ const PricingHeader = () => {
                 <h2 className="text-2xl font-bold text-white mb-2">
                   {option.title}
                 </h2>
-                <div className="mt-3 flex items-baseline gap-1 mb-4">
-                  <span className="text-4xl font-bold text-gradient">{option.price}</span>
+                <div className="mt-3 flex flex-col gap-1 mb-4">
+                  {option.price.startsWith('À partir de') ? (
+                    <>
+                      <span className="text-sm font-medium text-muted uppercase tracking-wider">À partir de</span>
+                      <span className="text-4xl font-bold text-gradient">{option.price.replace('À partir de ', '')}</span>
+                    </>
+                  ) : (
+                    <span className="text-4xl font-bold text-gradient">{option.price}</span>
+                  )}
                 </div>
                 <p className="text-sm text-muted-light leading-relaxed mb-6">
                   {option.description}

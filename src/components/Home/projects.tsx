@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 
 const Projects = () => {
   return (
-    <section id="section1" className="py-32 relative overflow-hidden">
+    <section id="section1" className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
       {/* Decorative background glow */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 blur-[150px] rounded-full pointer-events-none" />
 
@@ -30,7 +30,7 @@ const Projects = () => {
             className="lg:col-span-5 flex flex-col justify-center"
           >
             <span className="section-label mb-4">Portfolio</span>
-            <h2 className="text-5xl font-extrabold text-white sm:text-6xl tracking-tight leading-[1.1] mb-6">
+            <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-6">
               Où l'idée prend{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
                 vie
@@ -76,7 +76,7 @@ const Projects = () => {
               modules={[EffectCards, Autoplay, Pagination]}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
               pagination={{ clickable: true, dynamicBullets: true }}
-              className="w-full max-w-[400px] sm:max-w-[500px] aspect-[4/5] sm:aspect-[4/3] rounded-3xl shadow-2xl"
+              className="w-[260px] sm:w-[320px] md:w-[400px] lg:w-[450px] aspect-[4/5] sm:aspect-[4/3] rounded-3xl shadow-2xl mx-auto"
             >
               {projects && projects.length > 0 ? (
                 projects.map((project, i) => (

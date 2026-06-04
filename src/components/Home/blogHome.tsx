@@ -15,7 +15,7 @@ const BlogHome = () => {
   const nextPosts = sortedPosts.slice(1, 4);
 
   return (
-    <section id="section6" className="py-32 relative">
+    <section id="section6" className="py-16 md:py-24 lg:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* En-tête de section */}

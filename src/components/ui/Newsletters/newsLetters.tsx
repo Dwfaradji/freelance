@@ -44,43 +44,51 @@ const NewsLetters = () => {
   }, [message]);
 
   return (
-    <section id="section7" className="py-32 relative">
+    <section id="section7" className="py-16 md:py-24 lg:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Massive CTA Section */}
+
+        {/* Massive CTA Section (Premium SaaS Style) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="relative overflow-hidden rounded-[3rem] bg-gradient-to-b from-surface-2 to-[#0a1628] border border-white/10 p-10 sm:p-20 text-center mb-16 shadow-2xl"
+          className="relative overflow-hidden rounded-3xl bg-[#030712] border border-white/5 p-10 sm:p-16 lg:p-20 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-12 mb-20"
         >
-          {/* Décorations */}
-          <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
-          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-full w-[800px] rounded-full opacity-20 blur-[120px]" style={{ background: 'radial-gradient(circle, var(--color-primary), transparent)' }} />
-          
-          <div className="relative z-10 flex flex-col items-center">
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6">
-              Prêt à dominer <br className="hidden sm:block" />
+          {/* Lueur d'ambiance asymétrique */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/15 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary-600/10 blur-[100px] rounded-full pointer-events-none -translate-x-1/3 translate-y-1/3" />
+
+          {/* Typography (Gauche) */}
+          <div className="relative z-10 flex flex-col items-start text-left max-w-2xl">
+            <h2 className="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold text-white tracking-tighter leading-[1.05] mb-6">
+              Prêt à dominer <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
                 votre marché ?
               </span>
             </h2>
-            <p className="max-w-2xl text-lg sm:text-xl text-gray-300 font-light mb-12">
-              Transformons votre vision en une plateforme digitale ultra-performante. 
-              Contactez-nous aujourd'hui pour obtenir un devis gratuit et personnalisé.
+            <p className="text-lg text-gray-400 font-light leading-relaxed mb-0">
+              Transformons votre vision en une plateforme digitale ultra-performante. Contactez-nous aujourd'hui pour obtenir un devis gratuit et personnalisé.
             </p>
-            
-            <Link 
-              href="/contact" 
-              className="group relative inline-flex items-center justify-center gap-3 px-12 py-6 bg-white text-black font-bold text-xl rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
+          </div>
+
+          {/* Bouton d'action (Droite) */}
+          <div className="relative z-10 shrink-0 w-full lg:w-auto flex justify-center lg:justify-end mt-4 lg:mt-0">
+            <Link
+              href="/contact"
+              className="relative group w-full sm:w-auto inline-block"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-primary-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-              Démarrer mon projet maintenant
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-2 transition-transform">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
+              {/* Glow Edge Effect (Signature Vercel) */}
+              <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 opacity-60 group-hover:opacity-100 transition duration-500 animate-gradient-x blur-[2px]" />
+              <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 opacity-80 group-hover:opacity-100 transition duration-500 animate-gradient-x" />
+              
+              <div className="relative flex items-center justify-center gap-3 px-10 py-5 bg-black text-white font-semibold text-lg rounded-full hover:bg-black/80 transition-all duration-300">
+                Démarrer mon projet
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
             </Link>
           </div>
         </motion.div>

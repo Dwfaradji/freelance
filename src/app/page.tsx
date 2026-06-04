@@ -26,7 +26,7 @@ const Page: React.FC = () => {
       <Offerings />
 
       {/* Section Tarifs */}
-      <section id="section3" className="py-32 relative">
+      <section id="section3" className="py-16 md:py-24 lg:py-32 relative">
         {/* Section separator */}
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         

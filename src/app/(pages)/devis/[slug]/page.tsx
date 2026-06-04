@@ -2,153 +2,65 @@
 
 import React from 'react';
 import FormulaireDevis from '@/components/SlideDevis/formDevis';
-import Slider from '@/components/SlideDevis/slider/slider';
-import { data } from '@/data/dataSlideDevis';
 import { prices } from '@/data/data';
 import { slugify } from '@/utils/slugify';
-
+import { motion } from 'motion/react';
+import { Fade } from 'react-awesome-reveal';
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
-type Price = {
-  id: string;
-  title: string;
-  subtitle: string;
-};
-
-const SectionContent = ({ devis }: { devis: Price }) => {
-  switch (devis.id) {
-    case '1':
-      return (
-        <section>
-          <h1 className="mb-4 text-center text-2xl font-bold">
-            {devis.subtitle}
-          </h1>
-          <Slider data={data} />
-        </section>
-      );
-
-    case '2':
-      return (
-        <section>
-          <h1 className="mb-4 text-center text-2xl font-bold">
-            {devis.subtitle}
-          </h1>
-          <article className="container mx-auto mb-8 w-3/4">
-            <h2 className="mb-2 block font-bold">
-              {' '}
-              Augmentez vos ventes en ligne !{' '}
-            </h2>
-            <p>
-              {`Offrez à vos clients une expérience d'achat fluide et optimisée
-              avec un site e-commerce conçu pour convertir vos visiteurs en
-              acheteurs fidèles. Nous vous accompagnons avec des fonctionnalités
-              modernes et une performance de haut niveau.`}
-            </p>
-            <h2 className="mt-2 block font-bold">
-              Prenez les devants en remplissant notre formulaire.
-            </h2>
-          </article>
-
-          <FormulaireDevis hrefLink={'/'} />
-        </section>
-      );
-
-    case '3':
-      return (
-        <section>
-          <h1 className="mb-4 text-center text-2xl font-bold">
-            {devis.subtitle}
-          </h1>
-          <article className="container mx-auto mb-8 w-3/4">
-            <h2 className="mb-2 block font-bold">
-              Optimisez votre gestion client !{' '}
-            </h2>
-            <p>
-              Simplifiez vos processus internes et renforcez vos relations
-              clients avec une solution CRM sur mesure. Augmentez votre
-              productivité et fidélisez vos clients grâce à des outils adaptés à
-              vos besoins.
-            </p>
-            <h2 className="mt-2 block font-bold">
-              Remplissez notre formulaire pour découvrir comment nous pouvons
-              vous accompagner.
-            </h2>
-          </article>
-
-          <FormulaireDevis hrefLink={'/'} />
-        </section>
-      );
-
-    case '4':
-      return (
-        <section>
-          <h1 className="mb-4 text-center text-2xl font-bold">
-            {devis.subtitle}
-          </h1>
-          <article className="container mx-auto mb-8 w-3/4">
-            <h2 className="mb-2 block font-bold">
-              Créez une solution SaaS innovante !{' '}
-            </h2>
-            <p>
-              {`Développez une plateforme SaaS robuste et évolutive pour relever
-              les défis de votre secteur. Grâce à notre expertise, nous vous
-              aidons à concevoir une solution performante, prête à s'adapter aux
-              besoins de votre entreprise.`}
-            </p>
-            <h2 className="mt-2 block font-bold">
-              Commencez en remplissant notre formulaire.
-            </h2>
-          </article>
-
-          <FormulaireDevis hrefLink={'/'} />
-        </section>
-      );
-
-    case '5':
-      return (
-        <section>
-          <h1 className="mb-4 text-center text-2xl font-bold">
-            {devis.subtitle}
-          </h1>
-          <article className="container mx-auto mb-8 w-3/4">
-            <h2 className="mb-2 block font-bold">
-              Explorez le potentiel de la blockchain !{' '}
-            </h2>
-            <p>
-              Offrez-vous des solutions sur mesure pour la blockchain : des
-              NFTs, des applications DeFi ou des DAO. Nous créons des solutions
-              sécurisées et innovantes, adaptées à vos projets ambitieux.
-            </p>
-            <h2 className="mt-2 block font-bold">
-              Remplissez le formulaire pour commencer cette collaboration.
-            </h2>
-          </article>
-
-          <FormulaireDevis hrefLink={'/'} />
-        </section>
-      );
-
-    default:
-      return <div className="text-center text-white">Section inconnue</div>;
-  }
-};
-
 export default function Page({ params }: Props) {
-  const { slug } = React.use(params); // Utilisation de React.use() pour résoudre params
+  const { slug } = React.use(params);
 
-  // Trouver les données correspondantes avec le slug
   const devis = prices.find((devis) => slugify(devis.title) === slug);
 
   if (!devis) {
-    return <div className="text-center text-red-500">Devis introuvable</div>;
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center text-center">
+        <div className="glass p-12 rounded-3xl border border-white/10">
+          <h1 className="text-3xl font-bold text-white mb-4">Devis introuvable</h1>
+          <p className="text-muted">La formule que vous cherchez n'existe pas ou plus.</p>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="p-6 text-white">
-      <SectionContent devis={devis} />
+    <div className="relative min-h-screen py-16 md:py-24">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-primary-600/15 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* En-tête de la page de devis */}
+        <header className="text-center mb-16">
+          <Fade direction="up" cascade damping={0.1} triggerOnce>
+            <span className="section-label mb-4 inline-block">Demande de devis</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+              {devis.title}
+            </h1>
+            <h2 className="text-xl sm:text-2xl font-medium text-secondary-400 mb-6">
+              {devis.subtitle}
+            </h2>
+            <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto">
+              Vous avez fait un excellent choix ! Remplissez le formulaire ci-dessous pour nous parler de votre projet. 
+              Notre équipe analysera votre demande et vous recontactera sous 48h.
+            </p>
+          </Fade>
+        </header>
+
+        {/* Conteneur du formulaire */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <FormulaireDevis hrefLink={'/tarifs'} />
+        </motion.div>
+
+      </div>
     </div>
   );
 }
