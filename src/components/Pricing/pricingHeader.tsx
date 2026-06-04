@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'motion/react';
+import { Fade } from 'react-awesome-reveal';
 import Link from 'next/link';
 import { dataPriceOptions } from '@/data/data';
 
@@ -8,37 +9,25 @@ const PricingHeader = () => {
   return (
     <>
       {/* Hero Tarifs */}
-      <header className="mb-16">
-        <span className="section-label">Tarifs</span>
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-          className="mt-2 text-4xl font-bold text-white sm:text-5xl lg:text-6xl xl:text-7xl"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-        >
-          Une tarification{' '}
-          <span
-            className="text-gradient"
-            style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))' }}
-          >
-            simple & efficace
-          </span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
-          className="mt-4 max-w-xl text-lg text-muted"
-        >
-          Obtenez le plan DevEvoke qui correspond à vos besoins.
-          Paiement flexible — 30% à la commande, solde à la livraison.
-        </motion.p>
+      <header className="mx-auto mb-20 mt-8 text-center px-4">
+        <Fade direction="up" cascade damping={0.1} triggerOnce>
+          <span className="section-label mb-4 inline-block">Tarifs</span>
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Une tarification{' '}
+            <span className="text-gradient drop-shadow-sm">
+              transparente
+            </span>
+          </h1>
+          <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
+            Obtenez le plan DevEvoke qui correspond parfaitement à vos besoins.
+            Paiement flexible : 30% à la commande, solde à la livraison du projet.
+          </p>
+        </Fade>
       </header>
 
-      {/* Grille de plans */}
-      <section>
-        <div className="grid gap-4 sm:grid-cols-2">
+      {/* Grille de services additionnels (Maintenance / Hébergement) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <div className="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
           {dataPriceOptions.map((option, i) => (
             <motion.article
               key={i}
@@ -46,46 +35,40 @@ const PricingHeader = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex flex-col justify-between rounded-2xl border border-border bg-surface p-8 transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5"
+              className="glass p-8 rounded-3xl border border-white/5 hover:border-white/10 hover:glass-strong transition-all duration-300 group flex flex-col justify-between"
             >
-              {/* Titre + Prix */}
               <div>
-                <h2
-                  className="text-2xl font-bold text-gradient"
-                  style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))' }}
-                >
+                <h2 className="text-2xl font-bold text-white mb-2">
                   {option.title}
                 </h2>
-                <div className="mt-3 flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-white">{option.price}</span>
+                <div className="mt-3 flex items-baseline gap-1 mb-4">
+                  <span className="text-4xl font-bold text-gradient">{option.price}</span>
                 </div>
-                <p className="mt-2 text-sm text-muted">{option.description}</p>
+                <p className="text-sm text-muted-light leading-relaxed mb-6">
+                  {option.description}
+                </p>
               </div>
 
               {/* Features */}
-              <ul className="mt-6 space-y-3">
+              <ul className="space-y-3 mb-8">
                 {option.details.map((detail, j) => (
-                  <li key={j} className="flex items-center gap-3 text-sm text-muted-light">
+                  <li key={j} className="flex items-start gap-3 text-sm text-gray-300">
                     <svg
-                      className="size-4 shrink-0 text-secondary-400"
-                      viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                      className="size-5 shrink-0 text-primary-400 mt-0.5"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                     >
-                      <polyline points="20 6 9 17 4 12" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
-                    {detail}
+                    <span>{detail}</span>
                   </li>
                 ))}
               </ul>
 
-              {/* CTA */}
               <Link
                 href="/contact"
-                className="btn-primary mt-8 justify-center"
+                className="btn-outline w-full justify-center"
               >
-                Commencer
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                Nous contacter
               </Link>
             </motion.article>
           ))}

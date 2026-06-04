@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import callApi from '../../../utils/callApi';
 
 const NewsLetters = () => {
@@ -43,89 +44,93 @@ const NewsLetters = () => {
   }, [message]);
 
   return (
-    <section id="section7" className="py-24">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d0d24] to-[#0a1628] border border-primary/15 p-10 lg:p-16 text-center"
-      >
-        {/* Décorations */}
-        <div
-          className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-48 w-96 rounded-full opacity-15 blur-3xl"
-          style={{ background: 'radial-gradient(ellipse, var(--color-primary), transparent)' }}
-        />
-        <div
-          className="pointer-events-none absolute -bottom-16 left-1/4 h-32 w-64 rounded-full opacity-10 blur-2xl"
-          style={{ background: 'radial-gradient(ellipse, var(--color-secondary), transparent)' }}
-        />
-
-        <div className="relative">
-          <span className="section-label block mx-auto w-fit">Newsletter</span>
-
-          <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-            Rejoignez la{' '}
-            <span
-              className="text-gradient"
-              style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))' }}
+    <section id="section7" className="py-32 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Massive CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="relative overflow-hidden rounded-[3rem] bg-gradient-to-b from-surface-2 to-[#0a1628] border border-white/10 p-10 sm:p-20 text-center mb-16 shadow-2xl"
+        >
+          {/* Décorations */}
+          <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
+          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-full w-[800px] rounded-full opacity-20 blur-[120px]" style={{ background: 'radial-gradient(circle, var(--color-primary), transparent)' }} />
+          
+          <div className="relative z-10 flex flex-col items-center">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6">
+              Prêt à dominer <br className="hidden sm:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+                votre marché ?
+              </span>
+            </h2>
+            <p className="max-w-2xl text-lg sm:text-xl text-gray-300 font-light mb-12">
+              Transformons votre vision en une plateforme digitale ultra-performante. 
+              Contactez-nous aujourd'hui pour obtenir un devis gratuit et personnalisé.
+            </p>
+            
+            <Link 
+              href="/contact" 
+              className="group relative inline-flex items-center justify-center gap-3 px-12 py-6 bg-white text-black font-bold text-xl rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
             >
-              communauté
-            </span>
-          </h2>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-primary-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              Démarrer mon projet maintenant
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-2 transition-transform">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Link>
+          </div>
+        </motion.div>
 
-          <p className="mt-4 mx-auto max-w-lg text-muted text-base sm:text-lg">
-            Recevez nos dernières actualités, conseils tech et offres exclusives
-            directement dans votre boîte mail.
+        {/* Newsletter Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <span className="section-label mb-2">Restez informé</span>
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Rejoignez notre newsletter
+          </h3>
+          <p className="text-gray-400 text-sm mb-8">
+            Recevez nos dernières actualités, conseils tech et offres exclusives, sans spam.
           </p>
 
-          {/* Avantages */}
-          <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-muted">
-            {['Offres exclusives', 'Guides & tutoriels', 'Avant-premières'].map((item) => (
-              <span key={item} className="flex items-center gap-1.5">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" strokeWidth="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                {item}
-              </span>
-            ))}
-          </div>
-
-          {/* Formulaire pill */}
-          <div className="mt-8 mx-auto flex max-w-md flex-col gap-3 sm:flex-row">
+          <div className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto relative">
             <input
               type="email"
               placeholder="votre@email.com"
               value={email}
               onChange={handleChange}
-              className="flex-1 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-white placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+              className="w-full rounded-full border border-white/10 bg-white/5 px-6 py-4 text-white placeholder:text-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition-all shadow-inner"
               onKeyDown={(e) => e.key === 'Enter' && envoyer()}
             />
             <button
               onClick={envoyer}
-              className="btn-primary shrink-0"
               disabled={!isFormValid}
+              className="absolute right-2 top-2 bottom-2 bg-primary-600 hover:bg-primary-500 disabled:bg-white/10 disabled:text-gray-500 text-white px-6 rounded-full font-medium transition-colors"
             >
-              S'abonner
+              Rejoindre
             </button>
           </div>
 
-          {/* Message de retour */}
           {message && (
             <motion.p
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`mt-4 text-sm ${isSuccess ? 'text-secondary-400' : 'text-red-400'}`}
+              className={`mt-6 text-sm font-medium ${isSuccess ? 'text-green-400' : 'text-red-400'}`}
             >
               {message}
             </motion.p>
           )}
+        </motion.div>
 
-          <p className="mt-4 text-xs text-muted">
-            Pas de spam. Désabonnement en un clic.
-          </p>
-        </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

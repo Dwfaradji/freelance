@@ -173,26 +173,25 @@ const prices: Price[] = [
   },
   {
     id: '5',
-    title: 'Formule Blockchain',
-    subtitle: 'Application Web3',
-    price: ' 15 000€',
-    description: `Transformez vos idées en réalité avec une application blockchain innovante. 
-      Idéale pour les projets NFT, DeFi, ou DAO, cette solution intègre les dernières technologies 
-      décentralisées, avec un focus sur les smart contracts et la sécurité.`,
+    title: 'Formule Mobile',
+    subtitle: 'Application iOS & Android',
+    price: '12 000 €',
+    description: `Concrétisez votre projet avec une application mobile performante et intuitive. 
+      Développée sur mesure pour iOS et Android (React Native), cette formule vous permet d'offrir 
+      une expérience utilisateur exceptionnelle directement dans la poche de vos clients.`,
     details: [
-      'Analyse des besoins et définition de l’architecture blockchain',
-      'Développement de smart contracts personnalisés',
-      'Audit de sécurité des smart contracts',
-      'Intégration Web3 (MetaMask, WalletConnect)',
-      'Tests sur testnet',
-      'Déploiement sur mainnet',
-      'Documentation technique détaillée',
-      'Formation à l’utilisation de la solution',
-      'Support et maintenance post-déploiement',
-      'Optimisation des coûts en gas',
-      'Interface utilisateur Web3 intuitive',
-      'Intégration IPFS (si nécessaire)',
-      'Monitoring et mises à jour',
+      'Analyse des besoins et cahier des charges',
+      'Conception UI/UX optimisée pour le mobile',
+      'Développement cross-platform (iOS et Android)',
+      'Intégration d\'API et back-end dédié',
+      'Mise en place de notifications push',
+      'Utilisation des fonctionnalités natives (Caméra, GPS, etc.)',
+      'Tests fonctionnels sur divers appareils',
+      'Soumission et publication sur l\'App Store et Google Play',
+      'Documentation utilisateur et technique',
+      'Formation à la gestion de l\'application',
+      'Support technique et maintenance évolutive',
+      'Intégration d\'outils d\'analyse (Analytics)'
     ],
   },
 ];

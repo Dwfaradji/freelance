@@ -62,43 +62,30 @@ const statsData = [
 ];
 
 const AnimatedStats = () => (
-  <section className="relative py-8">
-    {/* Séparateur */}
-    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-    <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-    <div className="grid grid-cols-2 gap-px bg-white/5 md:grid-cols-4 rounded-2xl overflow-hidden">
-      {statsData.map((stat, index) => (
-        <motion.article
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
-          className="flex flex-col items-center justify-center gap-3 bg-surface p-8 text-center group hover:bg-[#0d0d22] transition-colors duration-300"
-        >
-          {/* Icône */}
-          <div className={`flex size-12 items-center justify-center rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-10 p-0.5`}>
-            <div className="flex size-full items-center justify-center rounded-[10px] bg-surface">
-              <span className={`text-gradient bg-gradient-to-br ${stat.color}`}>
-                {stat.icon}
-              </span>
-            </div>
-          </div>
-
-          {/* Nombre */}
-          <div
-            className={`text-4xl font-bold text-gradient bg-gradient-to-r ${stat.color}`}
+  <section className="relative w-full border-y border-white/5 bg-black/50 backdrop-blur-xl z-20 -mt-10 sm:-mt-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
+        {statsData.map((stat, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col items-center justify-center text-center group"
           >
-            <CountUp start={0} end={stat.end} duration={2.5} suffix={stat.suffix} enableScrollSpy scrollSpyOnce />
-          </div>
+            {/* Nombre */}
+            <div className={`text-4xl sm:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-2 drop-shadow-sm`}>
+              <CountUp start={0} end={stat.end} duration={2.5} suffix={stat.suffix} />
+            </div>
 
-          {/* Label */}
-          <p className="text-sm text-muted group-hover:text-muted-light transition-colors">
-            {stat.label}
-          </p>
-        </motion.article>
-      ))}
+            {/* Label */}
+            <p className="text-sm sm:text-base font-medium text-gray-400 group-hover:text-white transition-colors duration-300">
+              {stat.label}
+            </p>
+          </motion.div>
+        ))}
+      </div>
     </div>
   </section>
 );

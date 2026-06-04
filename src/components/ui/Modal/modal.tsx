@@ -1,9 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { slugify } from '@/utils/slugify';
-import { Fade } from 'react-awesome-reveal';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface ModalProps {
   showModal: boolean;
@@ -32,6 +31,27 @@ const Modal: React.FC<ModalProps> = ({
     setModal(selectedModal || null);
   }, [contentModal, prices]);
 
+  // Handle escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    if (showModal) window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showModal, setIsOpen]);
+
+  // Prevent scroll when modal is open
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showModal]);
+
   const handleCloseModal = () => setIsOpen(false);
 
   const handleRedirect = () => {
@@ -41,77 +61,102 @@ const Modal: React.FC<ModalProps> = ({
   };
 
   return (
-    <div
-      style={{ zIndex: 1000, position: 'fixed' }}
-      id="modal"
-      tabIndex={-1}
-      aria-hidden={!showModal}
-      aria-modal="true"
-      role="dialog"
-      className={`inset-0 flex h-screen w-screen items-center justify-center backdrop-blur-lg ${showModal ? '' : 'hidden'}`}
-    >
-      <div className="relative mx-auto max-h-full max-w-2xl p-4 text-center">
-        <div className="relative rounded-lg bg-white shadow dark:bg-black">
-          <div className="flex items-center justify-between rounded-t border-b p-4 md:p-5 dark:border-gray-600">
-            <h3 className="text-center font-semibold text-gray-900 xxs:text-xl md:text-2xl dark:text-white">
-              <span className="bg-gradient-to-r from-pink to-purple text-gradient">
-                {modal?.subtitle}
-              </span>
-            </h3>
-            <button
-              type="button"
-              className="ms-auto inline-flex size-8 items-center justify-center rounded-lg text-sm hover:bg-gradient-to-t hover:from-pink hover:to-purple hover:text-white"
-              onClick={handleCloseModal}
-            >
-              <svg
-                className="size-3"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 14"
+    <AnimatePresence>
+      {showModal && (
+        <div
+          className="fixed inset-0 z-[1000] flex items-center justify-center p-4 sm:p-6"
+          role="dialog"
+          aria-modal="true"
+        >
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={handleCloseModal}
+            className="absolute inset-0 bg-[var(--color-bg)]/80 backdrop-blur-sm"
+          />
+
+          {/* Modal Content */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: "spring", duration: 0.5, bounce: 0 }}
+            className="relative w-full max-w-2xl max-h-[90vh] overflow-hidden rounded-3xl glass border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col"
+          >
+            {/* Header */}
+            <div className="flex-shrink-0 flex items-center justify-between border-b border-white/10 p-6 md:px-8 bg-black/20 backdrop-blur-md z-10">
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                  <span className="text-gradient drop-shadow-sm">
+                    {modal?.title}
+                  </span>
+                </h3>
+                {modal?.subtitle && (
+                  <p className="text-sm text-primary-400 font-medium mt-1 uppercase tracking-wider">{modal.subtitle}</p>
+                )}
+              </div>
+              <button
+                type="button"
+                className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-muted hover:text-white transition-colors border border-white/5"
+                onClick={handleCloseModal}
+                aria-label="Fermer"
               >
-                <path
+                <svg
+                  className="size-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
                   strokeWidth="2"
-                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                />
-              </svg>
-              <span className="sr-only">Close modal</span>
-            </button>
-          </div>
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
 
-          <div className="space-y-4 p-4 md:p-5">
-            <ul className="text-left leading-relaxed text-gray-500 xxs:text-xs md:text-xl dark:text-white">
-              {modal?.details.map((detail, i) => (
-                <Fade cascade direction={'up'} delay={1} key={i}>
-                  <li key={i}>
-                    <ArrowRightIcon className="text-blue" /> {detail}
-                  </li>
-                </Fade>
-              ))}
-            </ul>
-            <h3 className="flex justify-center text-gray-500 dark:text-white">
-              À partir de:{' '}
-              <span className="ml-2 block animate-bounce bg-gradient-to-l from-pink to-purple text-gradient">
-                {modal?.price}
-              </span>
-            </h3>
-          </div>
+            {/* Body */}
+            <div className="p-6 md:p-8 space-y-6 overflow-y-auto flex-grow custom-scrollbar">
+              <ul className="space-y-4">
+                {modal?.details.map((detail, i) => (
+                  <motion.li 
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + i * 0.05 }}
+                    key={i} 
+                    className="flex items-start gap-3 text-base md:text-lg text-gray-300 leading-relaxed"
+                  >
+                    <svg className="size-6 shrink-0 text-primary-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{detail}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="flex w-full items-center justify-center rounded-b border-t border-gray-200 p-4 md:p-5 dark:border-black">
-            <button
-              type="button"
-              className="ms-3 animate-pulse rounded-lg border border-gray-200 bg-gradient-to-t from-pink to-purple px-5 py-2.5 text-sm font-medium text-white focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-black dark:bg-gray-800 dark:text-white dark:hover:bg-white dark:hover:text-black dark:focus:ring-gray-700"
-              onClick={handleRedirect}
-            >
-              Demander un devis
-            </button>
-          </div>
+            {/* Footer */}
+            <div className="flex-shrink-0 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-white/10 bg-black/40 p-6 md:px-8 backdrop-blur-md z-10">
+              <div>
+                <span className="block text-sm font-medium text-muted uppercase tracking-wider mb-1">
+                  À partir de
+                </span>
+                <span className="text-4xl font-bold text-white drop-shadow-sm">
+                  {modal?.price}
+                </span>
+              </div>
+              <button
+                type="button"
+                className="btn-primary w-full sm:w-auto px-8 py-4 shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)]"
+                onClick={handleRedirect}
+              >
+                Demander un devis
+              </button>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </div>
+      )}
+    </AnimatePresence>
   );
 };
 

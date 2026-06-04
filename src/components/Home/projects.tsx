@@ -2,153 +2,112 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCreative, Pagination } from 'swiper/modules';
+import { Autoplay, EffectCards, Pagination } from 'swiper/modules';
 import Link from 'next/link';
 import Image from 'next/image';
 import { projects } from '@/data/data';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
+
 const Projects = () => {
   return (
-    <section id="section1" className="py-24">
-      <div className="mx-auto">
-        {/* En-tête */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <span className="section-label">Nos réalisations</span>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl max-w-lg">
-              Des projets qui{' '}
-              <span
-                className="text-gradient"
-                style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))' }}
-              >
-                parlent d'eux-mêmes
+    <section id="section1" className="py-32 relative overflow-hidden">
+      {/* Decorative background glow */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Texte (Gauche) */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex flex-col justify-center"
+          >
+            <span className="section-label mb-4">Portfolio</span>
+            <h2 className="text-5xl font-extrabold text-white sm:text-6xl tracking-tight leading-[1.1] mb-6">
+              Où l'idée prend{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+                vie
               </span>
             </h2>
-            <Link href="/portfolio" className="btn-outline self-start sm:self-auto shrink-0 text-sm">
-              Voir tout →
-            </Link>
-          </div>
-        </motion.div>
+            <p className="text-gray-400 text-lg leading-relaxed mb-8 font-light">
+              Chaque ligne de code, chaque pixel, est pensé pour créer une expérience mémorable. Découvrez comment nous avons aidé nos clients à transformer leur vision en réalité digitale.
+            </p>
 
-        {/* Layout deux colonnes */}
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* Carousel */}
+            <ul className="space-y-4 mb-10">
+              {['Design sur-mesure', 'Performances extrêmes', 'Expérience utilisateur (UX) optimisée'].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-gray-300">
+                  <div className="flex-shrink-0 flex items-center justify-center size-6 rounded-full bg-primary-500/20 text-primary-400">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <span className="font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <Link href="/portfolio" className="btn-primary w-fit group">
+              Explorer le portfolio complet
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Link>
+          </motion.div>
+
+          {/* Carousel (Droite) - Effect Cards for a stacked premium look */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="relative overflow-hidden rounded-2xl bg-surface border border-border"
+            initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
+            whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 relative perspective-[2000px]"
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 blur-[100px] pointer-events-none rounded-full" />
+            
             <Swiper
-              effect="creative"
-              grabCursor
-              autoplay={{ delay: 3500, disableOnInteraction: false }}
-              pagination={{ clickable: true }}
-              creativeEffect={{
-                prev: { shadow: true, origin: 'left center', translate: ['-5%', 0, -200], rotate: [0, 100, 0] },
-                next: { origin: 'right center', translate: ['5%', 0, -200], rotate: [0, -100, 0] },
-              }}
-              modules={[EffectCreative, Autoplay, Pagination]}
-              className="h-full min-h-[360px]"
+              effect={'cards'}
+              grabCursor={true}
+              modules={[EffectCards, Autoplay, Pagination]}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              pagination={{ clickable: true, dynamicBullets: true }}
+              className="w-full max-w-[400px] sm:max-w-[500px] aspect-[4/5] sm:aspect-[4/3] rounded-3xl shadow-2xl"
             >
               {projects && projects.length > 0 ? (
-                projects.map((project) => (
-                  <SwiperSlide key={project.id} className="relative">
-                    <Image
-                      src={project.imageMobile}
-                      alt={project.alt || 'Projet DevEvoke'}
-                      width={664}
-                      height={373}
-                      className="h-full w-full object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/80 via-transparent to-transparent" />
+                projects.map((project, i) => (
+                  <SwiperSlide key={project.id} className="rounded-3xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
+                    <div className="relative w-full h-full group">
+                      <Image
+                        src={project.imageMobile || project.image}
+                        alt={project.title || 'Projet DevEvoke'}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 500px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80" />
+                      
+                      <div className="absolute bottom-0 left-0 p-8 w-full">
+                        <span className="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-primary-400 bg-primary-900/40 border border-primary-500/20 rounded-full uppercase">
+                          {project.type || 'Web App'}
+                        </span>
+                        <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+                      </div>
+                    </div>
                   </SwiperSlide>
                 ))
               ) : (
-                <SwiperSlide>
-                  <div className="flex h-full min-h-[360px] items-center justify-center text-muted">
-                    Aucun projet disponible
-                  </div>
+                <SwiperSlide className="rounded-3xl border border-white/10 bg-[#0a0a0a] flex items-center justify-center">
+                  <span className="text-gray-500">Aucun projet</span>
                 </SwiperSlide>
               )}
             </Swiper>
           </motion.div>
 
-          {/* Texte + liste */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
-            className="flex flex-col justify-between gap-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border p-8"
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-white lg:text-3xl">
-                Transformez votre idée en réalité
-              </h3>
-              <p className="mt-4 text-muted leading-relaxed">
-                Prêts à transformer votre entreprise avec des solutions modernes,
-                rapides et fonctionnelles ?
-              </p>
-            </div>
-
-            {/* Projets en liste */}
-            <ul className="space-y-4">
-              {[
-                {
-                  name: 'Fenix Solutions',
-                  desc: 'Site vitrine moderne et ergonomique',
-                  tag: 'Vitrine',
-                },
-                {
-                  name: 'Keller Williams',
-                  desc: 'Plateforme immobilière optimisée',
-                  tag: 'Immobilier',
-                },
-                {
-                  name: 'Menu Pizzeria',
-                  desc: 'Interface interactive de commande',
-                  tag: 'Restaurant',
-                },
-                {
-                  name: 'EvokeFlow',
-                  desc: 'Application de prise de commande',
-                  tag: 'App',
-                },
-              ].map((project, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1, duration: 0.4 }}
-                  className="flex items-center gap-4 rounded-xl bg-white/3 border border-white/5 p-4 hover:border-primary/30 transition-all duration-200"
-                >
-                  <div className="size-2 rounded-full bg-gradient-to-r from-primary to-secondary-400 flex-shrink-0" />
-                  <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-white text-sm">{project.name}</div>
-                    <div className="text-xs text-muted truncate">{project.desc}</div>
-                  </div>
-                  <span className="shrink-0 rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary-400">
-                    {project.tag}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-
-            <Link href="/contact" className="btn-primary self-start">
-              Démarrer mon projet →
-            </Link>
-          </motion.div>
         </div>
       </div>
     </section>

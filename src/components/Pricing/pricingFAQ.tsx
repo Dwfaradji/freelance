@@ -46,7 +46,7 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="overflow-hidden rounded-xl border border-border bg-surface transition-all duration-200 hover:border-primary/30"
+      className="overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:border-white/10 hover:bg-white/[0.04]"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -56,7 +56,7 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
         <span className="font-semibold text-white text-sm sm:text-base leading-relaxed">
           {question}
         </span>
-        <span className={`flex size-7 shrink-0 items-center justify-center rounded-full border border-border text-muted transition-all duration-300 ${isOpen ? 'rotate-180 border-primary/40 bg-primary/10 text-primary-400' : ''}`}>
+        <span className={`flex size-7 shrink-0 items-center justify-center rounded-full border border-white/10 text-muted transition-all duration-300 ${isOpen ? 'rotate-180 border-primary/40 bg-primary/10 text-primary-400' : ''}`}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <polyline points="6 9 12 15 18 9" />
           </svg>
@@ -71,7 +71,7 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <div className="border-t border-border px-6 pb-6 pt-4 text-sm text-muted leading-relaxed">
+            <div className="border-t border-white/5 px-6 pb-6 pt-4 text-sm text-muted leading-relaxed">
               {answer}
             </div>
           </motion.div>
@@ -90,26 +90,23 @@ const PricingFAQ = () => {
   );
 
   return (
-    <section className="py-24">
+    <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* En-tête */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mb-12 text-center"
+        className="mb-16 text-center"
       >
-        <span className="section-label block mx-auto w-fit">FAQ</span>
-        <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+        <span className="section-label mb-4 inline-block mx-auto w-fit">FAQ</span>
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
           Questions{' '}
-          <span
-            className="text-gradient"
-            style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))' }}
-          >
+          <span className="text-gradient drop-shadow-sm">
             fréquentes
           </span>
         </h2>
-        <p className="mt-4 mx-auto max-w-lg text-muted">
+        <p className="max-w-2xl mx-auto text-lg text-muted">
           Vous avez une question ? Retrouvez les réponses aux questions les plus courantes.
         </p>
 

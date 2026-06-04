@@ -26,35 +26,37 @@ const Page: React.FC = () => {
       <Offerings />
 
       {/* Section Tarifs */}
-      <section id="section3" className="py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
-        >
-          <div>
-            <span className="section-label">Tarifs</span>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-              Des formules{' '}
-              <span
-                className="text-gradient"
-                style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))' }}
-              >
-                adaptées
-              </span>
-            </h2>
-            <p className="mt-3 max-w-lg text-muted">
-              Choisissez la formule qui correspond à vos besoins et à votre budget.
-              Paiement flexible — 30% à la commande, solde à la livraison.
-            </p>
-          </div>
-          <Link href="/tarifs" className="btn-outline self-start shrink-0 text-sm">
-            Toutes les formules →
-          </Link>
-        </motion.div>
-        <Pricing />
+      <section id="section3" className="py-32 relative">
+        {/* Section separator */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+          >
+            <div className="max-w-2xl">
+              <span className="section-label">Tarifs</span>
+              <h2 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl tracking-tight">
+                Des formules{' '}
+                <span className="text-gradient drop-shadow-sm">
+                  adaptées
+                </span>
+              </h2>
+              <p className="mt-6 text-lg text-muted leading-relaxed">
+                Choisissez la formule qui correspond à vos besoins et à votre budget.
+                Profitez d'un paiement flexible avec 30% à la commande et le solde à la livraison.
+              </p>
+            </div>
+            <Link href="/tarifs" className="btn-outline self-start shrink-0 mt-4 sm:mt-0 hover:bg-white/5">
+              Voir toutes les formules →
+            </Link>
+          </motion.div>
+          <Pricing />
+        </div>
       </section>
 
       <FeaturedTemplate />

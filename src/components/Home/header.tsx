@@ -1,137 +1,277 @@
 'use client';
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 
-const Header = () => {
+// Composant pour l'apparition cinématique mot par mot avec flou
+const BlurRevealText = ({ text, delay = 0, className = "" }: { text: string, delay?: number, className?: string }) => {
+  const words = text.split(" ");
   return (
-    <header className="relative min-h-[92vh] overflow-hidden flex flex-col items-center justify-center text-center px-4 pt-16 pb-24">
-      {/* Grille de fond animée */}
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
-
-      {/* Blobs lumineux */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="absolute -top-40 -left-40 h-96 w-96 rounded-full opacity-20 blur-3xl animate-blob"
-          style={{ background: 'radial-gradient(circle, var(--color-primary), transparent 70%)' }}
-        />
-        <div
-          className="absolute -bottom-20 -right-40 h-80 w-80 rounded-full opacity-15 blur-3xl animate-blob"
-          style={{
-            background: 'radial-gradient(circle, var(--color-secondary), transparent 70%)',
-            animationDelay: '3s',
-          }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full opacity-5 blur-3xl"
-          style={{ background: 'radial-gradient(circle, var(--color-accent), transparent 60%)' }}
-        />
-      </div>
-
-      {/* Dégradé de fond en bas */}
-      <div className="pointer-events-none absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[var(--color-bg)] to-transparent" />
-
-      {/* Contenu */}
-      <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0 }}
-          className="mb-8 inline-flex"
+    <span className={className}>
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
+          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          transition={{ duration: 0.8, delay: delay + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+          className="inline-block mr-[0.25em]"
         >
-          <span className="badge">
-            <span className="size-2 rounded-full bg-secondary-400 animate-pulse" />
-            Agence Web & Mobile — Perpignan
-          </span>
-        </motion.div>
-
-        {/* Titre principal */}
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
-          className="text-5xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-        >
-          Votre vision,{' '}
-          <span
-            className="text-gradient"
-            style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%)' }}
-          >
-            notre code
-          </span>
-          .
-        </motion.h1>
-
-        {/* Sous-titre */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
-          className="mt-6 max-w-2xl mx-auto text-lg leading-relaxed text-muted sm:text-xl"
-        >
-          Nous concevons des sites web et applications mobiles sur mesure,
-          performants et modernes. De l'idée au déploiement, nous transformons
-          vos projets en{' '}
-          <span className="text-muted-light font-medium">expériences digitales exceptionnelles</span>.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.45 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
-          <Link href="/contact" className="btn-primary">
-            Démarrer mon projet
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
-          <Link href="/portfolio" className="btn-outline">
-            Voir nos réalisations
-          </Link>
-        </motion.div>
-
-        {/* Stats rapides */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
-          className="mt-14 flex flex-wrap items-center justify-center gap-8 sm:gap-12"
-        >
-          {[
-            { value: '20+', label: 'Projets livrés' },
-            { value: '15+', label: 'Clients accompagnés' },
-            { value: '99%', label: 'Satisfaction client' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div
-                className="text-3xl font-bold text-gradient"
-                style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))' }}
-              >
-                {stat.value}
-              </div>
-              <div className="mt-1 text-sm text-muted">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted"
-      >
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <div className="h-10 w-px bg-gradient-to-b from-[var(--color-muted)] to-transparent" />
-      </motion.div>
-    </header>
+          {word}
+        </motion.span>
+      ))}
+    </span>
   );
 };
 
-export default Header;
+export default function Header() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // -- PARALLAX LOGIC --
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Configuration Spring pour un mouvement fluide et organique
+  const springConfig = { damping: 30, stiffness: 100, mass: 0.5 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+
+  // Background spotlight
+  const bgX = useTransform(smoothX, [-0.5, 0.5], ['-30%', '30%']);
+  const bgY = useTransform(smoothY, [-0.5, 0.5], ['-30%', '30%']);
+
+  // Floating Widgets Parallax (Inverse movement for 3D depth)
+  const widget1X = useTransform(smoothX, [-0.5, 0.5], [40, -40]);
+  const widget1Y = useTransform(smoothY, [-0.5, 0.5], [40, -40]);
+  const widget1RotateX = useTransform(smoothY, [-0.5, 0.5], [10, -10]);
+  const widget1RotateY = useTransform(smoothX, [-0.5, 0.5], [-10, 10]);
+
+  const widget2X = useTransform(smoothX, [-0.5, 0.5], [20, -20]);
+  const widget2Y = useTransform(smoothY, [-0.5, 0.5], [60, -60]);
+  const widget2RotateX = useTransform(smoothY, [-0.5, 0.5], [15, -15]);
+  const widget2RotateY = useTransform(smoothX, [-0.5, 0.5], [-15, 15]);
+
+  const widget3X = useTransform(smoothX, [-0.5, 0.5], [60, -60]);
+  const widget3Y = useTransform(smoothY, [-0.5, 0.5], [20, -20]);
+  const widget3RotateX = useTransform(smoothY, [-0.5, 0.5], [5, -5]);
+  const widget3RotateY = useTransform(smoothX, [-0.5, 0.5], [-5, 5]);
+
+  // -- MAGNETIC BUTTON LOGIC --
+  const btnRef = useRef<HTMLAnchorElement>(null);
+  const btnX = useMotionValue(0);
+  const btnY = useMotionValue(0);
+  const btnSmoothX = useSpring(btnX, { damping: 20, stiffness: 300 });
+  const btnSmoothY = useSpring(btnY, { damping: 20, stiffness: 300 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+    
+    // Normaliser entre -0.5 et 0.5
+    mouseX.set((clientX - left) / width - 0.5);
+    mouseY.set((clientY - top) / height - 0.5);
+
+    // Effet magnétique du bouton primaire
+    if (btnRef.current) {
+      const btnRect = btnRef.current.getBoundingClientRect();
+      const btnCenterX = btnRect.left + btnRect.width / 2;
+      const btnCenterY = btnRect.top + btnRect.height / 2;
+      
+      const distanceX = clientX - btnCenterX;
+      const distanceY = clientY - btnCenterY;
+      
+      // Rayon d'attraction magnétique de 100px
+      if (Math.abs(distanceX) < 100 && Math.abs(distanceY) < 100) {
+        btnX.set(distanceX * 0.2);
+        btnY.set(distanceY * 0.2);
+      } else {
+        btnX.set(0);
+        btnY.set(0);
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+    btnX.set(0);
+    btnY.set(0);
+  };
+
+  return (
+    <header 
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative min-h-[100svh] w-full flex flex-col items-center justify-center overflow-hidden bg-[#030712] pt-24 pb-12 perspective-[1000px]"
+    >
+      {/* 1. INTERACTIVE BACKGROUND */}
+      <motion.div 
+        style={{ x: bgX, y: bgY }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] rounded-full bg-primary-600/15 blur-[120px] pointer-events-none z-0" 
+      />
+      <div className="absolute inset-0 bg-grid opacity-[0.15] pointer-events-none z-0 mask-image:linear-gradient(to_bottom,transparent,black,transparent)" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        
+        {/* LEFT COLUMN: TYPOGRAPHY & CTAs */}
+        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
+          
+          {/* Badge Vercel-style */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-8 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-xl"
+          >
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary-400 opacity-75" />
+              <span className="relative inline-flex size-2 rounded-full bg-primary-500" />
+            </span>
+            <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-gray-300">
+              Disponibilité Limitée
+            </span>
+          </motion.div>
+
+          {/* Cinematic Title */}
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold tracking-tighter leading-[1.05] text-white mb-6">
+            <BlurRevealText text="Sculptez le" delay={0.1} /> <br className="hidden sm:block" />
+            <motion.span 
+              initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
+              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-secondary-400 to-primary-400 animate-gradient-x inline-block mt-1 sm:mt-2"
+            >
+              futur digital
+            </motion.span>
+          </h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
+            className="max-w-xl text-lg sm:text-xl text-gray-400 leading-relaxed font-light mb-12"
+          >
+            DevEvoke transforme vos idées en expériences interactives d'exception. 
+            Créons des solutions Web & Mobile conçues pour <strong className="text-white font-medium">marquer les esprits</strong>.
+          </motion.p>
+
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.9 }}
+            className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto"
+          >
+            {/* Magnetic Primary Button */}
+            <motion.div style={{ x: btnSmoothX, y: btnSmoothY }} className="relative group w-full sm:w-auto">
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 blur opacity-40 group-hover:opacity-100 transition duration-500" />
+              <Link 
+                ref={btnRef}
+                href="/contact" 
+                className="relative flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-4 bg-white text-black font-bold text-base rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+              >
+                Démarrer un projet
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </Link>
+            </motion.div>
+
+            <Link 
+              href="/portfolio" 
+              className="group flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 text-white font-medium text-base hover:bg-white/5 transition-colors duration-300"
+            >
+              Explorer nos réalisations
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* RIGHT COLUMN: 3D WIDGETS (Hidden on mobile) */}
+        <div className="flex-1 relative h-[500px] w-full hidden lg:flex items-center justify-center pointer-events-none">
+          
+          {/* Widget 1: Web Code (Top Left) */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            style={{ x: widget1X, y: widget1Y, rotateX: widget1RotateX, rotateY: widget1RotateY }}
+            className="absolute top-4 -left-8 w-64 glass-strong rounded-2xl p-4 shadow-[0_30px_60px_rgba(0,0,0,0.6)] border-t border-white/20 z-20"
+          >
+            <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-3">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-400/50" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/50" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400/50" />
+              </div>
+              <span className="text-[10px] text-gray-400 uppercase tracking-widest ml-2">page.tsx</span>
+            </div>
+            <div className="space-y-2 text-xs font-mono leading-relaxed">
+              <div className="text-primary-400">export default <span className="text-white">function</span> <span className="text-secondary-400">Hero()</span> {'{'}</div>
+              <div className="pl-4 text-gray-300">return (</div>
+              <div className="pl-8 text-white">{'<WowEffect>'}</div>
+              <div className="pl-12 text-gray-500">constantly innovating...</div>
+              <div className="pl-8 text-white">{'</WowEffect>'}</div>
+              <div className="pl-4 text-gray-300">);</div>
+              <div className="text-primary-400">{'}'}</div>
+            </div>
+          </motion.div>
+
+          {/* Widget 2: SaaS Dashboard Chart (Bottom Right) */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            style={{ x: widget2X, y: widget2Y, rotateX: widget2RotateX, rotateY: widget2RotateY }}
+            className="absolute bottom-10 -right-4 w-72 glass rounded-2xl p-5 shadow-[0_30px_60px_rgba(0,0,0,0.6)] border border-white/10 z-10"
+          >
+            <div className="flex justify-between items-center mb-6">
+              <span className="text-xs font-medium text-gray-300 uppercase tracking-widest">Performances</span>
+              <span className="text-xs font-bold text-green-400 bg-green-400/10 px-2 py-1 rounded-full">+148%</span>
+            </div>
+            <div className="flex items-end gap-2 h-24">
+              {[30, 50, 40, 70, 60, 90, 100].map((height, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ height: 0 }}
+                  animate={{ height: `${height}%` }}
+                  transition={{ duration: 1, delay: 1.6 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex-1 bg-gradient-to-t from-primary-500 to-secondary-400 rounded-t-md opacity-80"
+                />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Widget 3: Mobile UI (Center Overlapping) */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{ x: widget3X, y: widget3Y, rotateX: widget3RotateX, rotateY: widget3RotateY }}
+            className="absolute top-1/2 left-1/2 -translate-x-8 -translate-y-1/2 w-52 h-[22rem] rounded-[2rem] bg-black/80 backdrop-blur-3xl shadow-[0_0_60px_rgba(59,130,246,0.3)] border-2 border-white/10 p-2 overflow-hidden z-30"
+          >
+            {/* Notch */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-b-xl z-20" />
+            
+            {/* Mobile App Screen */}
+            <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden bg-[#0a0a0a] flex flex-col p-4 pt-8">
+              <div className="flex justify-between items-center mb-6">
+                <div className="size-8 rounded-full bg-white/10" />
+                <div className="w-16 h-2 rounded-full bg-white/20" />
+              </div>
+              <div className="w-full h-32 rounded-xl bg-gradient-to-br from-primary-500/20 to-secondary-500/20 border border-white/10 mb-4" />
+              <div className="space-y-3">
+                <div className="w-full h-12 rounded-xl bg-white/5" />
+                <div className="w-full h-12 rounded-xl bg-white/5" />
+              </div>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-white/20 rounded-full" />
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+    </header>
+  );
+}

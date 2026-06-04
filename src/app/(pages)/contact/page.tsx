@@ -5,18 +5,26 @@ import { Fade } from 'react-awesome-reveal';
 
 const Page = () => {
   return (
-    <>
-    <header>
-      <h2 className="text-sm text-white opacity-50">Contact</h2>
-      <Fade cascade direction="up" triggerOnce>
-        <h1 className="mt-2 bg-gradient-to-t from-pink to-purple font-poppins text-2xl font-bold text-gradient lg:text-4xl xl:text-7xl">
-          Travaillons ensemble
-        </h1>
-      </Fade>
+    <div className="overflow-hidden">
+      <header className="mx-auto mb-16 mt-8 text-center px-4">
+        <Fade direction="up" cascade damping={0.1} triggerOnce>
+          <span className="section-label mb-4 inline-block">Contact</span>
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Travaillons{' '}
+            <span className="text-gradient drop-shadow-sm">
+              ensemble
+            </span>
+          </h1>
+          <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto">
+            Prêt à concrétiser vos idées ? Laissez-nous un message et découvrez comment nous pouvons transformer votre vision en réalité.
+          </p>
+        </Fade>
       </header>
-      <Contact />
-    </>
-
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <Contact />
+      </div>
+    </div>
   );
 };
 
