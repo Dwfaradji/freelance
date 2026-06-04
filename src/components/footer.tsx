@@ -21,13 +21,10 @@ const footerLinks = {
     { href: '/services', label: 'Référencement SEO' },
     { href: '/services', label: 'Hébergement' },
   ],
-  'Légal': [
+  'Infos': [
     { href: '/info-procedure', label: 'Notre Processus' },
     { href: '/tarifs', label: 'Tarifs' },
     { href: '/foire-aux-questions', label: 'FAQ' },
-    { href: '/cgv', label: 'CGV' },
-    { href: '/mentions-legal', label: 'Mentions légales' },
-    { href: '/politique-confidentialite', label: 'Confidentialité' },
   ],
 };
 

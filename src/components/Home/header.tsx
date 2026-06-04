@@ -25,7 +25,7 @@ const BlurRevealText = ({ text, delay = 0, className = "" }: { text: string, del
 
 export default function Header() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // -- PARALLAX LOGIC --
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -66,7 +66,7 @@ export default function Header() {
     if (!containerRef.current) return;
     const { clientX, clientY } = e;
     const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-    
+
     // Normaliser entre -0.5 et 0.5
     mouseX.set((clientX - left) / width - 0.5);
     mouseY.set((clientY - top) / height - 0.5);
@@ -76,10 +76,10 @@ export default function Header() {
       const btnRect = btnRef.current.getBoundingClientRect();
       const btnCenterX = btnRect.left + btnRect.width / 2;
       const btnCenterY = btnRect.top + btnRect.height / 2;
-      
+
       const distanceX = clientX - btnCenterX;
       const distanceY = clientY - btnCenterY;
-      
+
       // Rayon d'attraction magnétique de 100px
       if (Math.abs(distanceX) < 100 && Math.abs(distanceY) < 100) {
         btnX.set(distanceX * 0.2);
@@ -99,24 +99,24 @@ export default function Header() {
   };
 
   return (
-    <header 
+    <header
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative min-h-[100svh] w-full flex flex-col items-center justify-center overflow-hidden bg-[#030712] pt-24 pb-12 perspective-[1000px]"
     >
       {/* 1. INTERACTIVE BACKGROUND */}
-      <motion.div 
+      <motion.div
         style={{ x: bgX, y: bgY }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] rounded-full bg-primary-600/15 blur-[120px] pointer-events-none z-0" 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] rounded-full bg-primary-600/15 blur-[120px] pointer-events-none z-0"
       />
       <div className="absolute inset-0 bg-grid opacity-[0.15] pointer-events-none z-0 mask-image:linear-gradient(to_bottom,transparent,black,transparent)" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-        
+
         {/* LEFT COLUMN: TYPOGRAPHY & CTAs */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
-          
+
           {/* Badge Vercel-style */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -136,7 +136,7 @@ export default function Header() {
           {/* Cinematic Title */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold tracking-tighter leading-[1.05] text-white mb-6">
             <BlurRevealText text="Sculptez le" delay={0.1} /> <br className="hidden sm:block" />
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
               animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -153,7 +153,7 @@ export default function Header() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
             className="max-w-xl text-lg sm:text-xl text-gray-400 leading-relaxed font-light mb-12"
           >
-            DevEvoke transforme vos idées en expériences interactives d'exception. 
+            DevEvoke transforme vos idées en expériences interactives d'exception.
             Créons des solutions Web & Mobile conçues pour <strong className="text-white font-medium">marquer les esprits</strong>.
           </motion.p>
 
@@ -167,9 +167,9 @@ export default function Header() {
             {/* Magnetic Primary Button */}
             <motion.div style={{ x: btnSmoothX, y: btnSmoothY }} className="relative group w-full sm:w-auto">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 blur opacity-40 group-hover:opacity-100 transition duration-500" />
-              <Link 
+              <Link
                 ref={btnRef}
-                href="/contact" 
+                href="/contact"
                 className="relative flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-4 bg-white text-black font-bold text-base rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)]"
               >
                 Démarrer un projet
@@ -180,8 +180,8 @@ export default function Header() {
               </Link>
             </motion.div>
 
-            <Link 
-              href="/portfolio" 
+            <Link
+              href="/portfolio"
               className="group flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 text-white font-medium text-base hover:bg-white/5 transition-colors duration-300"
             >
               Explorer nos réalisations
@@ -191,9 +191,9 @@ export default function Header() {
 
         {/* RIGHT COLUMN: 3D WIDGETS (Hidden on mobile) */}
         <div className="flex-1 relative h-[500px] w-full hidden lg:flex items-center justify-center pointer-events-none">
-          
+
           {/* Widget 1: Web Code (Top Left) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
@@ -220,7 +220,7 @@ export default function Header() {
           </motion.div>
 
           {/* Widget 2: SaaS Dashboard Chart (Bottom Right) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
@@ -233,7 +233,7 @@ export default function Header() {
             </div>
             <div className="flex items-end gap-2 h-24">
               {[30, 50, 40, 70, 60, 90, 100].map((height, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ height: 0 }}
                   animate={{ height: `${height}%` }}
@@ -245,7 +245,7 @@ export default function Header() {
           </motion.div>
 
           {/* Widget 3: Mobile UI (Center Overlapping) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
@@ -254,7 +254,7 @@ export default function Header() {
           >
             {/* Notch */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-b-xl z-20" />
-            
+
             {/* Mobile App Screen */}
             <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden bg-[#0a0a0a] flex flex-col p-4 pt-8">
               <div className="flex justify-between items-center mb-6">
