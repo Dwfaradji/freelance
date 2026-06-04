@@ -1,0 +1,23 @@
+/* .mainSwiperSlide {
+  z-index: 0;
+} */
+
+.mainSwiperSlide .swiper-slide {
+  /* Center slide text vertically */
+
+  flex-direction: column;
+}
+
+.mainSwiperSlide .swiper-pagination-progressbar {
+  top: 1em;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.hiddenDisplay {
+  display: none !important;
+}
+
+.displayForm {
+  display: block !important;
+}

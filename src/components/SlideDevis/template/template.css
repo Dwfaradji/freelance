@@ -1,0 +1,22 @@
+.swiperTemplate .swiper-slide {
+  width: 50%;
+  display: flex;
+}
+
+.swiperTemplate .swiper-slide img {
+  height: 30dvh;
+  border-radius: 15px;
+}
+
+.swiperTemplate .swiper-slide p {
+  text-align: center !important;
+}
+
+@media screen and (max-width: 600px) {
+  .swiperTemplate .swiper-slide {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+}
