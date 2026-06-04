@@ -27,6 +27,7 @@ const projects: Project[] = [
     alt: 'image du projet fenix solutions',
     tech: ['Vue3', ' Node', ' ApiRest'],
     link: 'https://www.fenixsolutions.fr/',
+    type:'Application Web'
   },
   {
     id: 1,
@@ -40,6 +41,7 @@ const projects: Project[] = [
     alt: 'image du projet keller williams',
     tech: ['Next', ' React', ' Symfony', ' Docker'],
     link: 'https://kwoxygene.fr/',
+    type:'Application Web'
   },
   {
     id: 2,
@@ -54,6 +56,7 @@ const projects: Project[] = [
     alt: 'image du projet pizzeria menu',
     tech: ['Next.js', ' Tailwind CSS', ' React.js', ' GitHub', ' Vercel'],
     link: 'https://restaurant-pizza-rho.vercel.app/',
+    type:'Application Web'
   },
   {
     id: 3,
@@ -74,6 +77,7 @@ const projects: Project[] = [
       ' Sql',
     ],
     link: 'https://app-commercial.vercel.app/',
+    type:'Application Web'
   },
 ];
 

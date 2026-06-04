@@ -6,7 +6,7 @@ import { pageInfosProcess } from '@/data/data';
 const ProcessTimeline = () => {
   // Filter out the H1 title and just get the steps (and final summary)
   const steps = pageInfosProcess.filter(step => step.title && step.text);
-  
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background glow */}
@@ -32,7 +32,7 @@ const ProcessTimeline = () => {
           <div className="space-y-12">
             {steps.map((step, index) => {
               const isEven = index % 2 === 0;
-              
+
               return (
                 <motion.div
                   key={index}
@@ -40,9 +40,8 @@ const ProcessTimeline = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-0 ${
-                    isEven ? 'md:flex-row-reverse' : ''
-                  }`}
+                  className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-0 ${isEven ? 'md:flex-row-reverse' : ''
+                    }`}
                 >
                   {/* Timeline Dot */}
                   <div className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-surface border border-primary/40 -translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.3)] z-10">
@@ -56,7 +55,7 @@ const ProcessTimeline = () => {
                         Étape {index + 1}
                       </span>
                       <h3 className="text-xl font-bold text-white mb-3">
-                        {step.title.replace(/^Étape \d+ : /, '')}
+                        {step.title?.replace(/^Étape \d+ : /, '') || ''}
                       </h3>
                       <p className="text-muted leading-relaxed text-sm">
                         {step.text}

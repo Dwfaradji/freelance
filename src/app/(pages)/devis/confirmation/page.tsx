@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMyContext } from '@/context/context';
 import Loading from '@/app/loading';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+
 
 const Page = () => {
   const router = useRouter();
@@ -24,7 +24,7 @@ const Page = () => {
 
         <div className="glass relative z-10 mx-auto flex flex-col items-center justify-center rounded-3xl p-10 sm:p-16 text-center text-white border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] max-w-2xl">
           <div className="w-20 h-20 rounded-full bg-primary-500/20 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/30">
-            <CheckCircleOutlineIcon fontSize="large" />
+      
           </div>
           
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight">
