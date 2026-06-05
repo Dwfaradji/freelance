@@ -22,7 +22,7 @@ const BlogHome = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
@@ -48,7 +48,7 @@ const BlogHome = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <BlogHeader />
@@ -69,9 +69,9 @@ const BlogHome = () => {
                 <motion.article
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                  className="group flex flex-col h-full overflow-hidden rounded-3xl border border-white/5 bg-white/[0.02] transition-all duration-500 hover:-translate-y-2 hover:border-white/10 hover:bg-white/[0.04] shadow-lg hover:shadow-primary-500/10"
+                  className="group flex flex-col h-full overflow-hidden rounded-3xl border border-white/5 bg-white/[0.02] transition-all duration-500 md:hover:-translate-y-2 hover:border-white/10 hover:bg-white/[0.04] shadow-lg hover:shadow-primary-500/10"
                 >
                   {/* Image Container */}
                   <div className="relative h-56 overflow-hidden">

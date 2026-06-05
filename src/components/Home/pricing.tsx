@@ -27,7 +27,7 @@ const PricingMain = () => {
               key={tarif.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`group relative overflow-hidden rounded-3xl transition-all duration-500 ${
                 isFeatured 
