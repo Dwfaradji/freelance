@@ -3,8 +3,6 @@ import React, { Suspense, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMyContext } from '@/context/context';
-import Loading from '@/app/loading';
-
 
 const Page = () => {
   const router = useRouter();
@@ -17,7 +15,7 @@ const Page = () => {
   }, [status, router]);
 
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={null}>
       <main className="min-h-[80vh] flex items-center justify-center relative py-20 px-4">
         {/* Glow de fond */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl h-[400px] bg-primary-600/10 blur-[100px] rounded-full pointer-events-none" />

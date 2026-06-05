@@ -103,7 +103,7 @@ export default function Header() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-[100svh] w-full flex flex-col items-center justify-start lg:justify-center overflow-hidden bg-[#030712] pt-28 pb-16 lg:pt-0 lg:pb-0 perspective-[1000px]"
+      className="relative min-h-[100svh] w-full flex flex-col items-center justify-start lg:justify-center overflow-hidden bg-[#030712] pt-28 pb-32 lg:pt-0 lg:pb-32 perspective-[1000px]"
     >
       {/* 1. INTERACTIVE BACKGROUND */}
       <motion.div
@@ -129,20 +129,20 @@ export default function Header() {
               <span className="relative inline-flex size-2 rounded-full bg-primary-500" />
             </span>
             <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-gray-300">
-              Disponibilité Limitée
+              ✨ Votre Partenaire Digital
             </span>
           </motion.div>
 
           {/* Cinematic Title */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold tracking-tighter leading-[1.1] text-white mb-6">
-            <BlurRevealText text="Sculptez le" delay={0.1} /> <br className="hidden sm:block" />
+            <BlurRevealText text="Donnez vie à vos" delay={0.1} /> <br className="hidden sm:block" />
             <motion.span
               initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
               animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-secondary-400 to-primary-400 animate-gradient-x inline-block mt-1 sm:mt-2"
             >
-              futur digital
+              ambitions digitales
             </motion.span>
           </h1>
 
@@ -153,8 +153,8 @@ export default function Header() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
             className="max-w-xl text-lg sm:text-xl text-gray-400 leading-relaxed font-light mb-12"
           >
-            DevEvoke transforme vos idées en expériences interactives d&apos;exception.
-            Créons des solutions Web & Mobile conçues pour <strong className="text-white font-medium">marquer les esprits</strong>.
+            DevEvoke conçoit des applications sur-mesure et des sites vitrines à fort impact.
+            Transformez vos visiteurs en clients grâce à des interfaces <strong className="text-white font-medium">modernes et taillées pour la conversion</strong>.
           </motion.p>
 
           {/* Buttons */}

@@ -6,11 +6,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: 'Googlebot',
         allow: ['/'],
-        disallow: '/public/',
+        disallow: ['/api/'],
       },
       {
         userAgent: ['Applebot', 'Bingbot'],
-        disallow: ['/public/'],
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://www.devevoke.com/sitemap.xml',

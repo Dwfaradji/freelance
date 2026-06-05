@@ -1,8 +1,6 @@
 'use client';
 import React from 'react';
 import { motion } from 'motion/react';
-import { MyProvider } from '@/context/context';
-import { initialState, reducer } from '@/context/reducer';
 
 import Scroll from '@/components/ui/scroll';
 import Header from '@/components/Home/header';
@@ -18,7 +16,7 @@ import Link from 'next/link';
 
 const Page: React.FC = () => {
   return (
-    <MyProvider initialState={initialState} reducer={reducer}>
+    <>
       <Scroll />
       <Header />
       <AnimatedStats />
@@ -39,16 +37,15 @@ const Page: React.FC = () => {
             className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
           >
             <div className="max-w-2xl">
-              <span className="section-label">Tarifs</span>
+              <span className="section-label">Transparence & Qualité</span>
               <h2 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl tracking-tight">
-                Des formules{' '}
+                Un investissement{' '}
                 <span className="text-gradient drop-shadow-sm">
-                  adaptées
+                  rentable
                 </span>
               </h2>
               <p className="mt-6 text-lg text-muted leading-relaxed">
-                Choisissez la formule qui correspond à vos besoins et à votre budget.
-                Profitez d&apos;un paiement flexible avec 30% à la commande et le solde à la livraison.
+                Des solutions haut de gamme, sans surprise. Choisissez la formule adaptée à votre croissance et bénéficiez d&apos;un paiement flexible avec 30% à la commande, le solde à la livraison.
               </p>
             </div>
             <Link href="/tarifs" className="btn-outline self-start shrink-0 mt-4 sm:mt-0 hover:bg-white/5">
@@ -63,7 +60,7 @@ const Page: React.FC = () => {
       <Testimonial />
       <BlogHome />
       <NewsLetters />
-    </MyProvider>
+    </>
   );
 };
 

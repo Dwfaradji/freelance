@@ -12,11 +12,20 @@ const GoogleAnalytics = ({ GA_TRACKING_ID }: GoogleAnalyticsProps) => {
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-        window.dataLayer = window.dataLayer || [];
+          window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+          
+          gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+          });
 
-          gtag('config', '${GA_TRACKING_ID}');
+          gtag('js', new Date());
+          gtag('config', '${GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
         `}
       </Script>
     </>

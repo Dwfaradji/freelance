@@ -7,11 +7,11 @@ import fenixSolutionsMobile from '@/images/projects/fenixSolutions-1920.webp';
 import kellerWilliams from '@/images/projects/kw-1920.webp';
 import kellerWilliamsMobile from '@/images/projects/kw-688.webp';
 
-import pizzeriaMenu from '@/images/projects/appPizza-home-1920.webp';
-import pizzeriaMenuMobile from '@/images/projects/appPizza-home-1920.webp';
+import gastronomicMenu from '@/images/projects/appGastronomic-home-1920.webp';
+import gastronomicMenuMobile from '@/images/projects/appGastronomic-home-688.webp';
 
-import commApp from '@/images/projects/appCom-customers-1920.webp';
-import commAppMobile from '@/images/projects/appCom-customers-1920.webp';
+import floticar from '@/images/projects/floticar-1920.webp';
+import floticarMobile from '@/images/projects/floticar-1920.webp';
 
 //Project
 const projects: Project[] = [
@@ -27,7 +27,7 @@ const projects: Project[] = [
     alt: 'image du projet fenix solutions',
     tech: ['Vue3', ' Node', ' ApiRest'],
     link: 'https://www.fenixsolutions.fr/',
-    type:'Application Web'
+    type: 'Application Web'
   },
   {
     id: 1,
@@ -41,43 +41,36 @@ const projects: Project[] = [
     alt: 'image du projet keller williams',
     tech: ['Next', ' React', ' Symfony', ' Docker'],
     link: 'https://kwoxygene.fr/',
-    type:'Application Web'
+    type: 'Application Web'
   },
   {
     id: 2,
-    title: 'Pizzeria Menu',
-    subtitle: 'Menu interactif pour Pizzeria',
-    description: `Devevoke a conçu une application web intuitive permettant aux pizzerias de présenter un menu interactif à leurs clients, en tant que développeur Front-End.`,
-    details: `Notre mission : proposer une solution moderne et élégante pour les pizzerias, leur permettant de digitaliser leur menu tout en offrant une expérience utilisateur fluide.`,
-    results: `Résultats : une augmentation de l'engagement des clients grâce à une navigation fluide et une présentation visuellement attrayante des produits.`,
+    title: 'Menu Gastronomique',
+    subtitle: 'Menu interactif pour Restaurant Gastronomique',
+    description: `Devevoke a conçu une application web intuitive permettant aux restaurants gastronomiques de présenter un menu interactif et raffiné à leurs clients, en tant que développeur Front-End.`,
+    details: `Notre mission : proposer une solution moderne, élégante et haut de gamme pour les restaurants gastronomiques, leur permettant de digitaliser leur menu tout en offrant une expérience utilisateur fluide.`,
+    results: `Résultats : une présentation visuellement attrayante des plats et un engagement accru des clients grâce à une navigation fluide reflétant l'excellence de l'établissement.`,
 
-    image: String(pizzeriaMenu.src),
-    imageMobile: String(pizzeriaMenuMobile.src),
-    alt: 'image du projet pizzeria menu',
+    image: String(gastronomicMenuMobile.src),
+    imageMobile: String(gastronomicMenuMobile.src),
+    alt: 'image du projet menu gastronomique',
     tech: ['Next.js', ' Tailwind CSS', ' React.js', ' GitHub', ' Vercel'],
     link: 'https://restaurant-pizza-rho.vercel.app/',
-    type:'Application Web'
+    type: 'Application Web'
   },
   {
     id: 3,
-    title: 'Solutions Commerciales',
-    subtitle: 'Application Interactive pour les Commerces',
-    description: `Devevoke a développé une application web innovante permettant aux commerces de moderniser la présentation de leurs produits et services grâce à une interface interactive.`,
-    details: `Notre mission : offrir aux entreprises une solution digitale clé en main, leur permettant de captiver leur clientèle avec un affichage moderne.`,
-    results: `Résultats : une augmentation de la satisfaction et de la fidélité des clients grâce à une expérience utilisateur améliorée.`,
-    image: String(commApp.src),
-    imageMobile: String(commAppMobile.src),
-    alt: 'image du projet pizzeria menu',
-    tech: [
-      'Next.js',
-      ' Tailwind CSS',
-      ' React.js',
-      ' GitHub',
-      ' Vercel',
-      ' Sql',
-    ],
-    link: 'https://app-commercial.vercel.app/',
-    type:'Application Web'
+    title: 'Floticar',
+    subtitle: 'Logiciel de Gestion de Flotte Automobile',
+    description: `Devevoke a conçu une application SaaS intuitive permettant aux PME de gérer leur flotte automobile de manière centralisée.`,
+    details: `Notre mission : développer une interface moderne et réactive pour le suivi des véhicules, des entretiens et des conducteurs en temps réel.`,
+    results: `Résultats : une centralisation des données optimale, permettant aux gestionnaires de flotte de gagner un temps précieux au quotidien.`,
+    image: String(floticar.src),
+    imageMobile: String(floticarMobile.src),
+    alt: 'image du projet floticar',
+    tech: ['Next.js', ' React', ' Tailwind CSS', ' TypeScript'],
+    link: 'https://floticar.com/',
+    type: 'Application Web'
   },
 ];
 
@@ -525,7 +518,7 @@ const politiqueConfidentialite: PageInfo[] = [
 export {
   projects,
   services,
-  prices,   
+  prices,
   dataPriceOptions,
   pageInfosPrice,
   pageInfosProcess,

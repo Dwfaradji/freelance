@@ -1,19 +1,17 @@
 'use client';
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
 
+import { reducer, initialState } from './reducer';
+
 // Création du Context
 const Context = createContext<any>(null);
 
 interface ProviderProps {
-  reducer: (state: any, action: any) => any;
-  initialState: any;
   children: ReactNode;
 }
 
 // Provider du Context
 export const MyProvider = ({
-  reducer,
-  initialState,
   children,
 }: ProviderProps) => (
   <Context.Provider value={useReducer(reducer, initialState)}>
