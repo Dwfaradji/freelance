@@ -8,7 +8,7 @@ import kellerWilliams from '@/images/projects/kw-1920.webp';
 import kellerWilliamsMobile from '@/images/projects/kw-688.webp';
 
 import pizzeriaMenu from '@/images/projects/appPizza-home-1920.webp';
-import pizzeriaMenuMobile from '@/images/projects/appPizza-home-688.webp';
+import pizzeriaMenuMobile from '@/images/projects/appPizza-home-1920.webp';
 
 import commApp from '@/images/projects/appCom-customers-1920.webp';
 import commAppMobile from '@/images/projects/appCom-customers-1920.webp';

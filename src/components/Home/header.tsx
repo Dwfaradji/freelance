@@ -153,7 +153,7 @@ export default function Header() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
             className="max-w-xl text-lg sm:text-xl text-gray-400 leading-relaxed font-light mb-12"
           >
-            DevEvoke transforme vos idées en expériences interactives d'exception.
+            DevEvoke transforme vos idées en expériences interactives d&apos;exception.
             Créons des solutions Web & Mobile conçues pour <strong className="text-white font-medium">marquer les esprits</strong>.
           </motion.p>
 

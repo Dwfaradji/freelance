@@ -9,12 +9,12 @@ import articleIa from '@/images/blogs/article-ia-1920.webp';
 import erreur from '@/images/blogs/erreur-1920.webp';
 import articleStore from '@/images/blogs/article-store-1920.webp';
 import articleApp from '@/images/blogs/article-app-1920.webp';
-import articlePwa from '@/images/blogs/article-pwa.png';
-import articleIaDesign from '@/images/blogs/article-ia-design.png';
-import articleSeo from '@/images/blogs/article-seo.png';
-import articleGreenIt from '@/images/blogs/article-green-it.png';
-import articleSecurite from '@/images/blogs/article-securite.png';
-import articleMvp from '@/images/blogs/article-mvp.png';
+import articlePwa from '@/images/blogs/article-pwa.webp';
+import articleIaDesign from '@/images/blogs/article-ia-design.webp';
+import articleSeo from '@/images/blogs/article-seo.webp';
+import articleGreenIt from '@/images/blogs/article-green-it.webp';
+import articleSecurite from '@/images/blogs/article-securite.webp';
+import articleMvp from '@/images/blogs/article-mvp.webp';
 import { BlogProps } from './typeFile';
 
 const blogData: BlogProps[] = [

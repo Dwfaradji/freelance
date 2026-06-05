@@ -119,7 +119,7 @@ const Testimonial = () => {
         >
           <Link href="/a-propos" className="group flex items-center gap-4 text-sm text-gray-400 hover:text-white transition-colors duration-300">
             <span className="w-12 h-[1px] bg-gray-600 group-hover:bg-primary-500 transition-colors" />
-            <span className="uppercase tracking-[0.15em] font-medium">Découvrir l'agence</span>
+            <span className="uppercase tracking-[0.15em] font-medium">{`Découvrir l'agence`}</span>
             <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
           </Link>
         </motion.div>

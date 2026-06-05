@@ -31,7 +31,7 @@ const Projects = () => {
           >
             <span className="section-label mb-4">Portfolio</span>
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-6">
-              Où l'idée prend{' '}
+              Où l&apos;idée prend{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
                 vie
               </span>

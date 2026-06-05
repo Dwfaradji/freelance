@@ -48,7 +48,7 @@ const Page: React.FC = () => {
               </h2>
               <p className="mt-6 text-lg text-muted leading-relaxed">
                 Choisissez la formule qui correspond à vos besoins et à votre budget.
-                Profitez d'un paiement flexible avec 30% à la commande et le solde à la livraison.
+                Profitez d&apos;un paiement flexible avec 30% à la commande et le solde à la livraison.
               </p>
             </div>
             <Link href="/tarifs" className="btn-outline self-start shrink-0 mt-4 sm:mt-0 hover:bg-white/5">
