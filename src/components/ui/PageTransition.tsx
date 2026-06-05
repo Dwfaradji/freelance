@@ -9,10 +9,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Afficher le loader à chaque changement de route
-    setIsLoading(true);
-    
-    // On bloque l'écran au minimum 2 secondes pour laisser le temps
+    // On bloque l'écran au minimum pour laisser le temps au premier chargement
     // aux images lourdes (comme le portfolio) de se télécharger en arrière-plan.
     const minTime = 2000;
     const startTime = Date.now();
@@ -33,7 +30,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
     }
 
     return () => window.removeEventListener('load', hideLoader);
-  }, [pathname]);
+  }, []); // Se lance uniquement au premier chargement du site
 
   // Si on scrolle pendant le loading, on force la position en haut
   useEffect(() => {
