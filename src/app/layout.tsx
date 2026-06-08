@@ -23,15 +23,15 @@ const inter = Inter({
 
 export const metadata: NextMetadata = {
   metadataBase: new URL('https://www.devevoke.com'),
-  title: 'DevEvoke | Agence Web & Mobile à Perpignan',
-  description: 'Agence web à Perpignan experte en création de sites internet, applications sur mesure et solutions numériques innovantes. Transformez votre vision en réalité.',
-  keywords: ['Agence Web Perpignan', 'Création de site internet', 'Application Mobile', 'Développement Sur Mesure', 'SEO', 'DevEvoke'],
+  title: 'DevEvoke | Agence Digital Santé & Logiciels Médico-Sociaux',
+  description: 'Agence experte en développement de logiciels et applications e-santé sur-mesure. Solutions sécurisées, hébergement HDS et conformité stricte au RGPD pour le secteur médico-social.',
+  keywords: ['Agence digitale santé', 'Logiciel EHPAD', 'Application e-santé', 'Hébergement HDS', 'Développement médico-social', 'Editeur logiciel santé', 'DevEvoke'],
   alternates: {
     canonical: 'https://www.devevoke.com/',
   },
   openGraph: {
-    title: 'DevEvoke | Agence Web & Mobile à Perpignan',
-    description: 'Agence web experte en création de sites internet et applications sur mesure.',
+    title: 'DevEvoke | Agence Digital Santé & Médico-Social',
+    description: 'Expertise technologique et développement sur-mesure pour les acteurs de la santé.',
     url: 'https://www.devevoke.com/',
     siteName: 'DevEvoke',
     images: [
@@ -47,8 +47,8 @@ export const metadata: NextMetadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DevEvoke | Agence Web à Perpignan',
-    description: 'Agence web experte en création de sites et applications.',
+    title: 'DevEvoke | Agence Digital Santé',
+    description: 'Agence experte en création de logiciels santé et médico-sociaux.',
     images: ['/icon.png'],
   },
 };
@@ -70,14 +70,14 @@ export default function RootLayout({
     '@type': 'LocalBusiness',
     name: 'DevEvoke',
     image: 'https://www.devevoke.com/icon.png',
-    description: 'Agence web et mobile à Perpignan experte en développement sur-mesure.',
+    description: 'Agence digitale spécialisée en e-santé, développement d\'applications médico-sociales et hébergement HDS.',
     url: 'https://www.devevoke.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Perpignan',
       addressCountry: 'FR',
     },
-    priceRange: '€€',
+    priceRange: '€€€',
   };
 
   return (

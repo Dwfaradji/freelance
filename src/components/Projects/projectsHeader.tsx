@@ -9,19 +9,15 @@ const ProjectsHeader = () => {
     <>
       <header className="mx-auto mb-20 mt-8 text-center px-4">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
-          <span className="section-label mb-4 inline-block">Portfolio</span>
+          <span className="section-label mb-4 inline-block">Cas d'usage cliniques</span>
 
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Découvrez nos{' '}
-            <span className="text-gradient drop-shadow-sm">réalisations</span>
+            Déploiements en{' '}
+            <span className="text-gradient drop-shadow-sm">milieu hospitalier</span>
           </h1>
           <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
-            Nous sommes fiers de partager avec vous nos projets les plus
-            récents, réalisés avec passion et expertise. Chacun de nos projets
-            est conçu pour répondre aux besoins spécifiques de nos clients, en
-            utilisant les technologies les plus avancées pour offrir des
-            solutions innovantes et performantes. Explorez nos réalisations et
-            découvrez comment nous transformons des idées en succès concrets.
+            Nous sommes fiers de partager avec vous nos déploiements les plus récents dans des EHPAD, CHU et cabinets médicaux. 
+            Découvrez comment nos architectures sécurisées (HDS) et nos interfaces ergonomiques permettent aux équipes soignantes de diviser leur charge administrative et de se recentrer sur l'essentiel : le patient.
           </p>
         </Fade>
       </header>

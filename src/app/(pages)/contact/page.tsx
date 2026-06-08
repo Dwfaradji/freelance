@@ -8,15 +8,15 @@ const Page = () => {
     <div className="overflow-hidden">
       <header className="mx-auto mb-16 mt-8 text-center px-4">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
-          <span className="section-label mb-4 inline-block">Contact</span>
+          <span className="section-label mb-4 inline-block">Projet e-Santé</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Travaillons{' '}
+            Digitalisons vos{' '}
             <span className="text-gradient drop-shadow-sm">
-              ensemble
+              parcours de soin
             </span>
           </h1>
           <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto">
-            Prêt à concrétiser vos idées ? Laissez-nous un message et découvrez comment nous pouvons transformer votre vision en réalité.
+            Besoin d'un Dossier Patient Informatisé (DPI) ou d'une application de télésurveillance ? Contactez nos experts pour échanger sur vos enjeux de conformité HDS et d'interopérabilité (Ségur).
           </p>
         </Fade>
       </header>

@@ -5,9 +5,9 @@ import { motion } from 'motion/react';
 
 const statsData = [
   {
-    end: 20,
+    end: 50,
     suffix: '+',
-    label: 'Projets livrés',
+    label: 'Établissements de santé',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="3" y="3" width="7" height="7" rx="2" />
@@ -21,7 +21,7 @@ const statsData = [
   {
     end: 15,
     suffix: '+',
-    label: 'Clients accompagnés',
+    label: 'Projets certifiés HDS',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -33,9 +33,9 @@ const statsData = [
     color: 'from-secondary-400 to-violet-400',
   },
   {
-    end: 99,
+    end: 100,
     suffix: '%',
-    label: 'Satisfaction client',
+    label: 'Conformité RGPD & CNIL',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="10" />
@@ -47,9 +47,9 @@ const statsData = [
     color: 'from-violet-400 to-primary-400',
   },
   {
-    end: 8,
-    suffix: '+',
-    label: 'Technologies maîtrisées',
+    end: 1,
+    suffix: 'M+',
+    label: 'Dossiers Patients Traités',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <polyline points="16 18 22 12 16 6" />

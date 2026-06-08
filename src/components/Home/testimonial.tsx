@@ -62,11 +62,11 @@ const Testimonial = () => {
         
         {/* Citation Monumentale */}
         <div className="text-center max-w-5xl mx-auto mb-20 flex flex-wrap justify-center gap-x-3 sm:gap-x-4 lg:gap-x-5 text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2]">
-          {["Nous", "ne", "construisons", "pas", "de", "simples", "sites", "web.", "Nous", "forgeons", "des"].map((word, i) => (
+          {["Nous", "ne", "développons", "pas", "de", "simples", "logiciels.", "Nous", "forgeons", "des"].map((word, i) => (
             <AnimatedWord key={i} delay={i * 0.03}>{word}</AnimatedWord>
           ))}
-          <AnimatedWord delay={11 * 0.03} highlight>expériences numériques</AnimatedWord>
-          {["qui", "propulsent", "votre", "entreprise", "vers", "de", "nouveaux", "sommets."].map((word, i) => (
+          <AnimatedWord delay={11 * 0.03} highlight>outils de santé</AnimatedWord>
+          {["qui", "simplifient", "le", "quotidien", "des", "soignants", "et", "des", "patients."].map((word, i) => (
             <AnimatedWord key={`end-${i}`} delay={(12 + i) * 0.03}>{word}</AnimatedWord>
           ))}
         </div>
@@ -103,7 +103,7 @@ const Testimonial = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
                 </span>
-                <span className="text-primary-400 font-semibold uppercase tracking-[0.2em] text-[10px]">Fondateur & Expert Digital</span>
+                <span className="text-primary-400 font-semibold uppercase tracking-[0.2em] text-[10px]">Fondateur & Expert E-Santé</span>
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import blogData from '@/data/dataBlog';
+import  blogData  from '@/data/dataBlog';
 import Link from 'next/link';
 import { slugify } from '@/utils/slugify';
 import myPhoto from '@/images/about/photo-profil-688.webp';

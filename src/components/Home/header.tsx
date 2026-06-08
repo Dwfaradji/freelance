@@ -129,20 +129,20 @@ export default function Header() {
               <span className="relative inline-flex size-2 rounded-full bg-primary-500" />
             </span>
             <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-gray-300">
-              ✨ Votre Partenaire Digital
+              ✨ Votre Partenaire Technologique Santé
             </span>
           </motion.div>
 
           {/* Cinematic Title */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold tracking-tighter leading-[1.1] text-white mb-6">
-            <BlurRevealText text="Donnez vie à vos" delay={0.1} /> <br className="hidden sm:block" />
+            <BlurRevealText text="Innovez dans le" delay={0.1} /> <br className="hidden sm:block" />
             <motion.span
               initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
               animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-secondary-400 to-primary-400 animate-gradient-x inline-block mt-1 sm:mt-2"
             >
-              ambitions digitales
+              parcours de soin
             </motion.span>
           </h1>
 
@@ -153,8 +153,8 @@ export default function Header() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
             className="max-w-xl text-lg sm:text-xl text-gray-400 leading-relaxed font-light mb-12"
           >
-            DevEvoke conçoit des applications sur-mesure et des sites vitrines à fort impact.
-            Transformez vos visiteurs en clients grâce à des interfaces <strong className="text-white font-medium">modernes et taillées pour la conversion</strong>.
+            DevEvoke conçoit des applications sur-mesure sécurisées (HDS) pour les professionnels de santé, cliniques et EHPAD.
+            Simplifiez le suivi de vos patients avec des interfaces <strong className="text-white font-medium">intuitives et conformes au RGPD</strong>.
           </motion.p>
 
           {/* Buttons */}
@@ -172,7 +172,7 @@ export default function Header() {
                 href="/contact"
                 className="relative flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-4 bg-white text-black font-bold text-base rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)]"
               >
-                Démarrer un projet
+                Démarrer un projet santé
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
@@ -206,20 +206,20 @@ export default function Header() {
                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/50" />
                 <div className="w-2.5 h-2.5 rounded-full bg-green-400/50" />
               </div>
-              <span className="text-[10px] text-gray-400 uppercase tracking-widest ml-2">page.tsx</span>
+              <span className="text-[10px] text-gray-400 uppercase tracking-widest ml-2">fhir_api.ts</span>
             </div>
             <div className="space-y-2 text-xs font-mono leading-relaxed">
-              <div className="text-primary-400">export default <span className="text-white">function</span> <span className="text-secondary-400">Hero()</span> {'{'}</div>
-              <div className="pl-4 text-gray-300">return (</div>
-              <div className="pl-8 text-white">{'<WowEffect>'}</div>
-              <div className="pl-12 text-gray-500">constantly innovating...</div>
-              <div className="pl-8 text-white">{'</WowEffect>'}</div>
-              <div className="pl-4 text-gray-300">);</div>
+              <div className="text-primary-400">async <span className="text-white">function</span> <span className="text-secondary-400">syncPatient()</span> {'{'}</div>
+              <div className="pl-4 text-gray-300">const res = await <span className="text-white">fetch(</span></div>
+              <div className="pl-8 text-green-400">'https://api.hds.fr/fhir/Patient'</div>
+              <div className="pl-4 text-white">);</div>
+              <div className="pl-4 text-gray-500">// HL7 Encrypted Payload</div>
+              <div className="pl-4 text-gray-300">return <span className="text-secondary-400">decrypt(res)</span>;</div>
               <div className="text-primary-400">{'}'}</div>
             </div>
           </motion.div>
 
-          {/* Widget 2: SaaS Dashboard Chart (Bottom Right) - Hidden on mobile */}
+          {/* Widget 2: Dashboard Chart (Bottom Right) - Hidden on mobile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -228,11 +228,11 @@ export default function Header() {
             className="hidden md:block absolute bottom-10 -right-4 w-72 glass rounded-2xl p-5 shadow-[0_30px_60px_rgba(0,0,0,0.6)] border border-white/10 z-10"
           >
             <div className="flex justify-between items-center mb-6">
-              <span className="text-xs font-medium text-gray-300 uppercase tracking-widest">Performances</span>
-              <span className="text-xs font-bold text-green-400 bg-green-400/10 px-2 py-1 rounded-full">+148%</span>
+              <span className="text-xs font-medium text-gray-300 uppercase tracking-widest">Uptime Serveur HDS</span>
+              <span className="text-xs font-bold text-green-400 bg-green-400/10 px-2 py-1 rounded-full">99.99%</span>
             </div>
             <div className="flex items-end gap-2 h-24">
-              {[30, 50, 40, 70, 60, 90, 100].map((height, i) => (
+              {[85, 90, 88, 95, 92, 98, 100].map((height, i) => (
                 <motion.div
                   key={i}
                   initial={{ height: 0 }}
@@ -282,21 +282,21 @@ export default function Header() {
               <div className="w-full h-32 rounded-2xl bg-gradient-to-br from-primary-500/80 to-secondary-500/80 border border-white/20 mb-5 p-4 flex flex-col justify-between relative overflow-hidden shadow-[0_10px_30px_rgba(59,130,246,0.3)]">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
                 <div className="relative z-10">
-                  <div className="text-[10px] text-white/80 font-medium uppercase tracking-wider mb-1">Revenus (Mensuel)</div>
-                  <div className="text-2xl font-extrabold text-white">12 450 €</div>
+                  <div className="text-[10px] text-white/80 font-medium uppercase tracking-wider mb-1">Dossiers Sécurisés</div>
+                  <div className="text-2xl font-extrabold text-white">12 450</div>
                 </div>
                 <div className="relative z-10 flex items-center gap-2">
                   <span className="px-2 py-0.5 rounded-full bg-green-400/20 text-green-300 text-[10px] font-bold border border-green-400/30">
-                    +15.3%
+                    Chiffré AES-256
                   </span>
-                  <span className="text-[9px] text-white/70">vs mois dernier</span>
+                  <span className="text-[9px] text-white/70">Conforme RGPD</span>
                 </div>
               </div>
 
               {/* List: Recent Activity */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-[11px] font-bold text-white">Activité récente</span>
+                  <span className="text-[11px] font-bold text-white">Activité clinique</span>
                   <span className="text-[9px] text-primary-400 cursor-pointer">Voir tout</span>
                 </div>
 
@@ -307,23 +307,23 @@ export default function Header() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <div className="text-[10px] font-bold text-white">Projet Validé</div>
-                    <div className="text-[8px] text-gray-400">Design System SaaS</div>
+                    <div className="text-[10px] font-bold text-white">CR d'Hospitalisation</div>
+                    <div className="text-[8px] text-gray-400">Validé par le Dr. Martin</div>
                   </div>
-                  <div className="text-[10px] font-bold text-white">+ 3 200 €</div>
+                  <div className="text-[10px] font-bold text-gray-400">10:42</div>
                 </div>
 
                 <div className="w-full p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3 backdrop-blur-md">
-                  <div className="size-7 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-500/20">
-                    <svg className="size-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  <div className="size-7 rounded-lg bg-red-500/20 flex items-center justify-center border border-red-500/20">
+                    <svg className="size-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <div className="text-[10px] font-bold text-white">Nouveau Message</div>
-                    <div className="text-[8px] text-gray-400">Client potentiel</div>
+                    <div className="text-[10px] font-bold text-white">Alerte Constantes</div>
+                    <div className="text-[8px] text-gray-400">Chambre 402 - Urgence</div>
                   </div>
-                  <div className="size-2 rounded-full bg-primary-500" />
+                  <div className="size-2 rounded-full border-2 border-red-500 animate-pulse" />
                 </div>
               </div>
 

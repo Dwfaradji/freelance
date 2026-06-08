@@ -17,60 +17,59 @@ import floticarMobile from '@/images/projects/floticar-1920.webp';
 const projects: Project[] = [
   {
     id: 0,
-    title: 'Fénix Solutions',
-    subtitle: 'Création Carousel Youtube',
-    description: `Devevoke a contribué à la création d'une plateforme de gestion des tâches collaboratives.`,
-    details: `Notre mission : concevoir une application web flexible pour la gestion efficace des projets et des équipes, avec des fonctionnalités de chat en temps réel.`,
-    results: `Résultats : une augmentation significative de la productivité des équipes, une meilleure communication et une gestion plus efficace des projets.`,
+    title: 'MediSync',
+    subtitle: 'Logiciel de Gestion EHPAD',
+    description: `Devevoke a conçu une plateforme centralisée pour la gestion des soins et du personnel en EHPAD.`,
+    details: `Notre mission : développer une application web sécurisée (HDS) permettant le suivi des constantes, la gestion des plannings soignants et la communication avec les familles.`,
+    results: `Résultats : un gain de temps de 30% pour les soignants sur la partie administrative, améliorant directement la qualité de la prise en charge.`,
     image: String(fenixSolutions.src),
     imageMobile: String(fenixSolutionsMobile.src),
-    alt: 'image du projet fenix solutions',
-    tech: ['Vue3', ' Node', ' ApiRest'],
-    link: 'https://www.fenixsolutions.fr/',
-    type: 'Application Web'
+    alt: 'image du projet MediSync EHPAD',
+    tech: ['React', ' Node', ' HDS', ' Chiffrement AES'],
+    link: '#',
+    type: 'Application Web Médicale'
   },
   {
     id: 1,
-    title: 'Keller Williams',
-    subtitle: 'Création site web et application',
-    description: `Nous avons contribué à la création d'une plateforme immobilière intuitive.`,
-    details: `Notre mission : concevoir une plateforme conviviale pour les agents immobiliers, avec un tableau de bord personnalisable.`,
-    results: `Résultats : une expérience utilisateur exceptionnelle, avec un tableau de bord permettant aux agents de modeler leur espace virtuel en toute simplicité.`,
+    title: 'TeleSoins+',
+    subtitle: 'Application de Télémédecine',
+    description: `Nous avons développé une plateforme sécurisée pour la consultation médicale à distance.`,
+    details: `Notre mission : concevoir une application mobile et web facilitant la prise de rendez-vous, la visioconférence chiffrée de bout en bout et l'échange d'ordonnances sécurisées.`,
+    results: `Résultats : une expérience patient optimisée, avec plus de 10 000 téléconsultations réalisées le premier mois de déploiement.`,
     image: String(kellerWilliams.src),
     imageMobile: String(kellerWilliamsMobile.src),
-    alt: 'image du projet keller williams',
-    tech: ['Next', ' React', ' Symfony', ' Docker'],
-    link: 'https://kwoxygene.fr/',
-    type: 'Application Web'
+    alt: 'image du projet TeleSoins',
+    tech: ['Next', ' WebRTC', ' Symfony', ' Docker'],
+    link: '#',
+    type: 'Application Mobile'
   },
   {
     id: 2,
-    title: 'Menu Gastronomique',
-    subtitle: 'Menu interactif pour Restaurant Gastronomique',
-    description: `Devevoke a conçu une application web intuitive permettant aux restaurants gastronomiques de présenter un menu interactif et raffiné à leurs clients, en tant que développeur Front-End.`,
-    details: `Notre mission : proposer une solution moderne, élégante et haut de gamme pour les restaurants gastronomiques, leur permettant de digitaliser leur menu tout en offrant une expérience utilisateur fluide.`,
-    results: `Résultats : une présentation visuellement attrayante des plats et un engagement accru des clients grâce à une navigation fluide reflétant l'excellence de l'établissement.`,
-
+    title: 'DPI Portail',
+    subtitle: 'Dossier Patient Informatisé Partagé',
+    description: `Devevoke a conçu une interface intuitive permettant aux cliniques de partager les dossiers médicaux entre professionnels de santé.`,
+    details: `Notre mission : proposer une solution interopérable (HL7) et ergonomique pour visualiser l'historique médical, les résultats labo et les comptes-rendus.`,
+    results: `Résultats : une coordination des soins accélérée et une réduction des erreurs liées à la perte d'information papier.`,
     image: String(gastronomicMenuMobile.src),
     imageMobile: String(gastronomicMenuMobile.src),
-    alt: 'image du projet menu gastronomique',
-    tech: ['Next.js', ' Tailwind CSS', ' React.js', ' GitHub', ' Vercel'],
-    link: 'https://restaurant-pizza-rho.vercel.app/',
-    type: 'Application Web'
+    alt: 'image du projet DPI',
+    tech: ['Next.js', ' Tailwind CSS', ' HL7', ' API Santé'],
+    link: '#',
+    type: 'Plateforme e-Santé'
   },
   {
     id: 3,
-    title: 'Floticar',
-    subtitle: 'Logiciel de Gestion de Flotte Automobile',
-    description: `Devevoke a conçu une application SaaS intuitive permettant aux PME de gérer leur flotte automobile de manière centralisée.`,
-    details: `Notre mission : développer une interface moderne et réactive pour le suivi des véhicules, des entretiens et des conducteurs en temps réel.`,
-    results: `Résultats : une centralisation des données optimale, permettant aux gestionnaires de flotte de gagner un temps précieux au quotidien.`,
+    title: 'AmbuTrack',
+    subtitle: 'Gestion de Flotte d\'Ambulances',
+    description: `Devevoke a conçu une application SaaS intuitive permettant aux sociétés d'ambulances de gérer leurs courses en temps réel.`,
+    details: `Notre mission : développer une interface de dispatch connectée aux systèmes hospitaliers pour le suivi des véhicules, des plannings et de la régulation.`,
+    results: `Résultats : une centralisation des données optimale, permettant aux régulateurs de diviser par deux les temps d'attente.`,
     image: String(floticar.src),
     imageMobile: String(floticarMobile.src),
-    alt: 'image du projet floticar',
-    tech: ['Next.js', ' React', ' Tailwind CSS', ' TypeScript'],
-    link: 'https://floticar.com/',
-    type: 'Application Web'
+    alt: 'image du projet AmbuTrack',
+    tech: ['React', ' Tailwind CSS', ' TypeScript', ' GPS API'],
+    link: '#',
+    type: 'SaaS Logistique Santé'
   },
 ];
 
@@ -78,90 +77,87 @@ const projects: Project[] = [
 const prices: Price[] = [
   {
     id: '1',
-    title: 'Présence Digitale',
-    subtitle: 'Site Vitrine Premium',
-    price: '1 490 €',
-    description: `Un site vitrine ultra-rapide et au design irréprochable. L'outil idéal pour imposer votre marque et convertir vos premiers visiteurs. 
-      Cette formule inclut une conception sur-mesure, l'intégration Next.js/React, une optimisation de base pour le SEO et un rendu 100% responsive.`,
+    title: 'Présence Digitale Santé',
+    subtitle: 'Site Vitrine Etablissement',
+    price: 'Sur Devis',
+    description: `Un site vitrine performant et au design rassurant, idéal pour un EHPAD, une clinique ou un cabinet médical. 
+      Cette formule inclut une conception sur-mesure, une présentation de l'équipe médicale, et une interface 100% accessible (RGAA).`,
     details: [
-      'Design exclusif et contemporain (SaaS UI)',
+      'Design exclusif et rassurant (Santé UI)',
       'Développement ultra-rapide (Next.js)',
-      'Animations fluides (Framer Motion)',
+      'Respect des normes d\'accessibilité',
       'Mise en place de votre contenu',
-      'Formulaire de contact dynamique',
-      'Optimisation SEO technique',
-      'Nom de domaine et hébergement 1 an',
-      'Livraison en 2 à 4 semaines',
+      'Formulaire de contact sécurisé',
+      'Optimisation SEO locale',
+      'Nom de domaine et hébergement',
+      'Conformité RGPD',
     ],
   },
   {
     id: '2',
-    title: 'Commerce Propulsé',
-    subtitle: 'Plateforme E-commerce',
-    price: '3 500 €',
-    description: `Une boutique en ligne conçue pour la conversion. Design attractif, paiements sécurisés et gestion des stocks fluide pour maximiser vos ventes. 
-      Nous créons une expérience d'achat sans friction adaptée à votre identité de marque.`,
+    title: 'Portail Patient',
+    subtitle: 'Espace Numérique Sécurisé',
+    price: 'Sur Devis',
+    description: `Une plateforme en ligne sécurisée permettant à vos patients d'accéder à leurs informations. Prise de RDV, partage de documents et formulaires de pré-admission.`,
     details: [
-      'Interface e-commerce optimisée pour la conversion',
-      'Back-office de gestion des stocks et commandes',
-      'Intégration de paiements sécurisés (Stripe, etc.)',
-      'Création des premières fiches produits',
-      'Optimisation SEO avancée',
-      'Configuration des méthodes de livraison',
+      'Interface patient optimisée',
+      'Connexion sécurisée (MFA)',
+      'Partage de documents chiffrés',
+      'Module de prise de rendez-vous',
+      'Hébergement certifié HDS',
+      'Notification SMS / Email',
       'Design adaptatif Mobile-First',
-      'Formation à l’utilisation du back-office',
+      'Formation à l’utilisation',
     ],
   },
   {
     id: '3',
-    title: 'Écosystème Interne',
-    subtitle: 'CRM & Outils Métiers',
-    price: '5 000 €',
-    description: `Digitalisez vos processus avec un outil sur mesure. Centralisez vos données, automatisez vos tâches répétitives et boostez la productivité de vos équipes avec une interface conçue exactement pour vos besoins métiers.`,
+    title: 'Écosystème Soins',
+    subtitle: 'Logiciel Métier & DPI',
+    price: 'Sur Devis',
+    description: `Digitalisez vos processus de soins avec un outil sur mesure. Centralisez les dossiers patients, automatisez la gestion des plannings soignants et boostez la coordination.`,
     details: [
       'Architecture logicielle sur mesure',
-      'Bases de données sécurisées et évolutives',
-      'Tableaux de bord et statistiques analytiques',
-      'Gestion avancée des droits utilisateurs',
-      'Outils d’automatisation des tâches',
-      'Support technique et maintenance',
-      'Respect strict des normes RGPD',
-      'Formation complète de vos équipes',
+      'Bases de données de santé sécurisées',
+      'Interopérabilité (API Santé)',
+      'Gestion avancée des droits',
+      'Traçabilité et logs des accès',
+      'Support technique critique',
+      'Respect strict de la CNIL',
+      'Formation de vos équipes',
     ],
   },
   {
     id: '4',
-    title: 'Scale-Up SaaS',
-    subtitle: 'Plateforme Web Complexe',
-    price: '10 000 €',
-    description: `Vous avez l'idée de la prochaine grande startup ? Nous construisons l'architecture complète de votre SaaS. 
-      De la conception de la base de données jusqu'à l'intégration de systèmes d'abonnements récurrents, nous livrons un produit prêt à scaler.`,
+    title: 'Scale-Up MedTech',
+    subtitle: 'SaaS e-Santé Complexe',
+    price: 'Sur Devis',
+    description: `Vous avez l'idée de la prochaine grande startup MedTech ? Nous construisons l'architecture complète de votre SaaS santé. De la conception à la sécurité.`,
     details: [
-      'Conception de l’architecture cloud',
-      'Développement Full-Stack (Next.js / Node.js)',
-      'Intégration des paiements récurrents (Stripe Billing)',
-      'Gestion complète des utilisateurs (Auth)',
-      'Conception UX/UI de l’application',
-      'Tests de sécurité et de montée en charge',
-      'Déploiement sur serveurs scalables (Vercel/AWS)',
-      'Accompagnement CTO as a Service',
+      'Conception de l’architecture HDS',
+      'Développement Full-Stack',
+      'Protocoles de chiffrement',
+      'Gestion complexe des utilisateurs',
+      'Conception UX/UI centrée santé',
+      'Tests d\'intrusion (Pentests)',
+      'Déploiement sur serveurs souverains',
+      'Accompagnement technico-légal',
     ],
   },
   {
     id: '5',
-    title: 'Mobile First',
-    subtitle: 'Application iOS & Android',
-    price: '12 000 €',
-    description: `Une application mobile native (React Native) performante, fluide et capable d'exploiter à 100% les capacités des smartphones de vos utilisateurs. 
-      Démarquez-vous sur l'App Store et Google Play avec une expérience irréprochable.`,
+    title: 'Mobile Santé',
+    subtitle: 'App Patient ou Soignant',
+    price: 'Sur Devis',
+    description: `Une application mobile native performante capable d'exploiter à 100% les capacités des smartphones en toute sécurité pour vos professionnels ou patients.`,
     details: [
-      'Maquettage UX/UI dédié au mobile',
-      'Développement React Native (iOS & Android)',
-      'Intégration des notifications Push',
-      'Fonctionnalités natives (Caméra, GPS, FaceID)',
-      'Synchronisation avec un back-end',
+      'Maquettage UX/UI dédié e-santé',
+      'Développement React Native',
+      'Notifications Push de rappels',
+      'Bluetooth (objets connectés)',
+      'Synchronisation sécurisée',
       'Gestion du mode Hors-ligne',
-      'Déploiement App Store et Google Play',
+      'Déploiement App Store & Play',
       'Maintenance évolutive',
     ],
   },
@@ -170,55 +166,55 @@ const prices: Price[] = [
 
 const dataPriceOptions = [
   {
-    title: 'Branding & UI/UX Design',
-    price: 'À partir de 1 500 €',
+    title: 'Design UX/UI Santé',
+    price: 'Sur Devis',
     description:
-      "La première impression est cruciale. Nous créons une identité visuelle forte et des interfaces pensées pour convertir.",
+      "Dans la santé, l'interface doit être claire, accessible et rassurante. Nous créons des parcours pensés pour les soignants et les patients.",
     details: [
-      'Création ou refonte de logo',
-      'Élaboration de la charte graphique',
-      'Design System complet sur Figma',
-      'Maquettage UX/UI haute fidélité',
-      'Recherche utilisateur et prototypage',
+      'Élaboration charte médicale',
+      'Design System sur Figma',
+      'Maquettage haute fidélité',
+      'Tests d\'utilisabilité',
+      'Ergonomie logicielle métier',
     ],
   },
   {
-    title: 'Audit & SEO Avancé',
-    price: 'À partir de 800 €',
+    title: 'Audit de Sécurité',
+    price: 'Sur Devis',
     description:
-      "Dominez les résultats Google. Nous analysons votre plateforme et mettons en place une stratégie d'acquisition durable.",
+      "Assurez-vous que votre application respecte les normes critiques de l'e-santé avant son lancement.",
     details: [
-      'Audit technique approfondi (Core Web Vitals)',
-      'Étude concurrentielle et mots-clés',
-      'Optimisation sémantique des contenus',
-      'Stratégie de netlinking (Backlinks)',
-      'Suivi de positionnement mensuel',
+      'Audit technique de sécurité',
+      'Vérification du chiffrement',
+      'Validation de l\'architecture HDS',
+      'Analyse d\'impact (AIPD)',
+      'Tests d\'intrusion',
     ],
   },
   {
-    title: 'Web3 & Blockchain',
-    price: 'À partir de 15 000 €',
+    title: 'Interopérabilité',
+    price: 'Sur Devis',
     description:
-      "Intégrez les technologies décentralisées à votre entreprise. Smart contracts, NFTs, et DApps sécurisées.",
+      "Connectez votre application à l'écosystème de santé national et systèmes tiers.",
     details: [
-      'Développement de Smart Contracts (Solidity)',
-      'Création de DApps (Web3.js / Ethers.js)',
-      'Intégration de wallets (MetaMask, WalletConnect)',
-      'Audit de sécurité des contrats',
-      'Déploiement sur Mainnet (Ethereum, Polygon)',
+      'Connecteurs HL7 / FHIR',
+      'Intégration annuaires (RPPS)',
+      'Interopérabilité laboratoires',
+      'Échange de documents',
+      'IoT médical',
     ],
   },
   {
-    title: 'Forfait Sérénité (Maintenance & Cloud)',
-    price: '99€/Mois',
+    title: 'Forfait Continuité (HDS)',
+    price: 'Sur Devis',
     description:
-      "Reposez-vous sur une infrastructure robuste. Nous garantissons la disponibilité, la sécurité et l'évolution de votre plateforme.",
+      "Nous garantissons la disponibilité critique, la sécurité et la sauvegarde de vos données de santé.",
     details: [
-      'Hébergement Cloud haute performance (AWS/Vercel)',
-      'Sauvegardes automatiques quotidiennes',
-      'Mises à jour de sécurité critiques',
+      'Hébergement certifié HDS',
+      'Sauvegardes chiffrées (PRA)',
+      'Mises à jour critiques',
       'SLA de 99.9% et monitoring 24/7',
-      'Assistance technique prioritaire',
+      'Assistance d\'urgence',
     ],
   },
 ];
@@ -227,85 +223,66 @@ const dataPriceOptions = [
 const services: Service[] = [
   {
     id: 0,
-    title: 'Création et Refonte de sites web sur mesure',
-    description: `Chez Devevoke, nous concevons des sites web personnalisés et modernes, parfaitement adaptés à vos besoins spécifiques. Que vous souhaitiez créer un tout nouveau site ou redynamiser un site existant, notre équipe met son expertise à votre service.
-Nous nous chargeons de l’ensemble du processus, du design à la programmation, tout en optimisant votre site pour une expérience fluide et performante sur tous les appareils mobiles.  `,
+    title: 'Dossiers Patients Informatisés (DPI)',
+    description: `Nous concevons des logiciels de Dossier Patient Informatisé sur-mesure. Centralisez les informations médicales, fluidifiez les transmissions entre soignants et sécurisez le parcours de soins.
+Notre expertise nous permet de créer des interfaces ergonomiques, pensées pour faire gagner du temps aux équipes médicales tout en garantissant l'intégrité des données.`,
 
     items: [
-      { id: 1, title: 'WordPress, React & NextJs 13' },
-      {
-        id: 2,
-        title: 'Design responsive, Tailwind CSS',
-      },
-      { id: 3, title: 'Certifié W3C, SEO' },
+      { id: 1, title: 'Centralisation' },
+      { id: 2, title: 'Transmissions' },
+      { id: 3, title: 'Traçabilité' },
     ],
   },
   {
     id: 1,
-    title: "Développement d'applications personnalisées et performantes",
-    description: `Nous sommes spécialisés dans le développement d'applications web sur mesure,
-    utilisant les dernières technologies et frameworks. DevEvoke vous accompagne
-    de la conception à la mise en œuvre, en intégrant des fonctionnalités avancées et une interface utilisateur intuitive.
-    Que vous ayez besoin d'une application de gestion,
-    d'une plateforme e-commerce, d'un outil collaboratif ou d'une blockchain, nous concevons des solutions adaptées à vos besoins`,
+    title: "Applications Mobiles et Télémédecine",
+    description: `Nous développons des applications mobiles natives et des plateformes de télémédecine sécurisées.
+    Que ce soit pour le suivi à domicile, la téléconsultation ou la gestion de plannings, nous fournissons des outils fluides intégrant visioconférence et partage sécurisé.`,
     items: [
-      { id: 1, title: 'React & NextJs 13, Web3' },
-      {
-        id: 2,
-        title: 'Symfony 5 & PHP 8',
-      },
-      { id: 3, title: 'MongoDB & MySQL' },
+      { id: 1, title: 'Visioconférence' },
+      { id: 2, title: 'IoT Santé' },
+      { id: 3, title: 'Rappels de soins' },
     ],
   },
   {
     id: 2,
-    title: 'Optimisation et référencement pour une visibilité maximale',
-    description: `Améliorez le classement de votre site web grâce à notre expertise en optimisation et référencement.
-    Nous utilisons des techniques avancées pour optimiser les balises, le contenu et les mots clés, afin de générer un
-    trafic qualifié. Notre objectif est d'augmenter votre visibilité sur les moteurs de recherche, notamment Google, en
-    mettant en place des stratégies de création de liens efficaces. Contactez-nous dès maintenant pour discuter de votre
-    projet de référencement et propulsez votre site web vers de nouveaux sommets.`,
+    title: 'Logiciels de Gestion pour EHPAD et Cliniques',
+    description: `Digitalisez l'administration de votre établissement. Nos solutions ERP/SaaS médico-sociales couvrent la gestion des admissions, la facturation, les plannings du personnel et la communication avec les familles.`,
     items: [
-      { id: 1, title: 'Audit de référencement' },
-      { id: 2, title: 'Optimisation de référencement' },
-      { id: 3, title: 'Suivi de référencement' },
+      { id: 1, title: 'Gestion unifiée' },
+      { id: 2, title: 'Ressources humaines' },
+      { id: 3, title: 'Portail Familles' },
     ],
   },
 
   {
     id: 3,
-    title: 'Hébergement',
-    description: `Maximisez la visibilité de votre site internet grâce à notre service d'hébergement de qualité.
-     Bénéficiez d'un hébergement sécurisé et performant adapté aux besoins spécifiques de votre site, favorisant
-      ainsi un meilleur référencement et une expérience utilisateur optimale.`,
+    title: 'Hébergement HDS & Sécurité',
+    description: `La protection des données de santé est une obligation légale et éthique. Nous gérons le déploiement de vos applications sur des serveurs souverains bénéficiant de la certification Hébergeur de Données de Santé (HDS).`,
     items: [
-      { id: 1, title: 'Qualité, sécurité, adaptation' },
-      { id: 2, title: 'Hébergement optimal' },
-      { id: 3, title: 'Service sur mesure' },
+      { id: 1, title: 'Certification HDS' },
+      { id: 2, title: 'Chiffrement AES' },
+      { id: 3, title: 'Plan de Reprise' },
     ],
   },
   {
     id: 4,
-    title: 'Maintenance',
-    description: `Assurez la stabilité et la performance de votre site internet grâce à notre service de maintenance
-     professionnelle. Notre équipe expérimentée veille à la mise à jour régulière de votre site, à la correction des
-      bugs et à la résolution rapide des problèmes techniques, assurant ainsi un fonctionnement fluide et sans interruption.`,
+    title: 'Interopérabilité et Normes',
+    description: `Une application médicale isolée perd de sa valeur. Nous assurons l'interopérabilité de vos logiciels avec l'écosystème de santé national et les systèmes existants de votre établissement.`,
     items: [
-      { id: 1, title: 'Essentielle pour votre site' },
-      { id: 2, title: 'Adaptée à vos besoins' },
-      { id: 3, title: 'Bon fonctionnement assuré' },
+      { id: 1, title: 'Standards HL7' },
+      { id: 2, title: 'API Santé' },
+      { id: 3, title: 'DMP & MSSanté' },
     ],
   },
   {
     id: 5,
-    title: 'Formation',
-    description: `Gagnez en autonomie et en confiance dans la gestion de votre site internet grâce à notre programme de
-    formation personnalisée. Apprenez les techniques de gestion de contenu, le référencement, l'optimisation des performances
-    et d'autres compétences essentielles pour vous démarquer et réussir en ligne.`,
+    title: 'Conformité RGPD & Accessibilité',
+    description: `Nous intégrons les contraintes légales dès la phase de conception (Privacy by design). Nos experts s'assurent que votre application respecte les recommandations de la CNIL concernant les données de santé.`,
     items: [
-      { id: 1, title: 'Autonomie garantie' },
-      { id: 2, title: 'Gestion de site simplifiée' },
-      { id: 3, title: 'Compétences acquises' },
+      { id: 1, title: 'Privacy by design' },
+      { id: 2, title: 'Audits de sécurité' },
+      { id: 3, title: 'Norme RGAA' },
     ],
   },
 ];
@@ -361,60 +338,31 @@ const pageInfosPrice: PageInfo[] = [
 
 const pageInfosProcess: PageInfo[] = [
   {
-    titleH1: "Processus de réalisation de projets numériques",
+    titleH1: "Processus de réalisation e-santé",
   },
   {
-    title: 'Étape 1 : Compréhension des besoins du client',
-    text: `Le processus commence par une communication approfondie avec le client
-          afin de comprendre ses objectifs, ses besoins et ses préférences pour le
-          projet (site web, application mobile, SaaS, etc.). Il est crucial de poser 
-          des questions pertinentes pour obtenir toutes les informations nécessaires.`,
+    title: 'Étape 1 : Cadrage Légal & Fonctionnel',
+    text: `Le processus commence par un audit de vos besoins métiers et une analyse stricte des contraintes légales (CNIL, RGPD, Hébergement de Données de Santé). Nous définissons l'architecture et les protocoles de sécurité.`,
   },
   {
-    title: 'Étape 2 : Analyse et planification',
-    text: `Sur la base des informations recueillies, une analyse approfondie des
-          besoins du client est réalisée. Cette étape implique la définition des 
-          fonctionnalités requises, la sélection des technologies appropriées 
-          (par exemple, React Native pour une application mobile ou Next.js pour un site web), 
-          et l’estimation du temps et des ressources nécessaires au projet.`,
+    title: 'Étape 2 : Conception et Sécurité (Privacy by Design)',
+    text: `Nous réalisons les maquettes et concevons l'architecture technique en appliquant les principes de Privacy by Design. Les choix de chiffrement, d'anonymisation et de gestion des accès (RBAC) sont fixés.`,
   },
   {
-    title: 'Étape 3 : Conception et prototypage',
-    text: `Une fois la planification terminée, une maquette ou un prototype interactif
-          est créé. Que ce soit pour un site web, une application mobile ou une plateforme SaaS,
-          cela permet au client de visualiser le design et la structure du projet 
-          avant de passer à la phase de développement.`,
+    title: 'Étape 3 : Développement et Interopérabilité',
+    text: `Nos développeurs experts construisent l'application en intégrant les standards de santé (HL7, FHIR, connecteurs DMP/MSSanté) pour garantir une intégration parfaite dans votre écosystème.`,
   },
   {
-    title: 'Étape 4 : Développement',
-    text: `Cette phase consiste à utiliser les technologies appropriées pour construire
-          le projet selon les spécifications convenues. Les performances, la compatibilité 
-          avec différentes plateformes et la sécurité sont optimisées à chaque étape.`,
+    title: 'Étape 4 : Tests d\'intrusion et Validation UX',
+    text: `Avant tout déploiement, la solution subit des audits de sécurité (Pentests) et des tests d'utilisabilité par des professionnels de santé pour garantir la robustesse et l'ergonomie.`,
   },
   {
-    title: 'Étape 5 : Tests et corrections',
-    text: `Une fois le développement terminé, le projet est soumis à des tests approfondis 
-          pour vérifier son bon fonctionnement, son accessibilité, et son adaptabilité 
-          (par exemple, tests sur iOS et Android pour une application mobile). 
-          Les éventuels problèmes ou bogues sont corrigés pour assurer une qualité optimale.`,
+    title: 'Étape 5 : Déploiement en environnement certifié HDS',
+    text: `La plateforme est déployée sur des serveurs souverains disposant de la certification Hébergeur de Données de Santé (HDS), garantissant une protection maximale.`,
   },
   {
-    title: 'Étape 6 : Livraison et déploiement',
-    text: `Une fois le projet validé, il est livré au client. Nous vous accompagnons 
-          pour déployer le projet : mise en ligne d'un site web, publication d'une 
-          application sur les stores mobiles ou lancement d'une plateforme SaaS.`,
-  },
-  {
-    title: 'Étape 7 : Maintenance et support',
-    text: `Après la livraison, nous proposons des services de maintenance et de support 
-          adaptés à vos besoins : résolution de problèmes techniques, mises à jour régulières, 
-          surveillance des performances et accompagnement continu.`,
-  },
-  {
-    title: 'Le travail bien fait',
-    text: `Nous suivons un processus structuré pour garantir la satisfaction du client 
-          et la qualité du travail fourni. Que ce soit pour un site web, une application mobile, 
-          ou une solution SaaS, notre objectif est de créer une expérience fluide et professionnelle.`,
+    title: 'Étape 6 : Formation et Continuité',
+    text: `Vos équipes soignantes sont formées à l'outil. Nous assurons ensuite un monitoring 24/7 et la maintenance évolutive de la solution.`,
   },
 ];
 const lienPolitiqueConfidentialite = `<a href='https://www.devevoke.com/politique-confidentialite'>politique de confidentialité</a>`;
@@ -451,67 +399,31 @@ const pageMentionsLegales: PageInfo[] = [
 
 const politiqueConfidentialite: PageInfo[] = [
   {
-    titleH1: 'Politique de confidentialité',
+    titleH1: 'Politique de confidentialité & Données de Santé',
   },
   {
-    title: 'Introduction',
-    text: 'La présente politique de confidentialité a pour but de vous informer de la manière dont nous traitons vos données personnelles lorsque vous utilisez notre site web ou nos services. Nous nous engageons à respecter votre vie privée et à protéger vos données personnelles conformément à la réglementation en vigueur.',
+    title: 'Introduction et Cadre Légal',
+    text: 'La présente politique définit nos engagements en tant que Sous-Traitant au sens du RGPD. En concevant des logiciels pour les établissements de santé, Devevoke traite potentiellement des données à caractère personnel et des données de santé couvertes par le secret médical.',
   },
   {
-    title: 'Données collectées',
-    text: `Lorsque vous utilisez notre site web ou nos services, nous sommes susceptibles de collecter les données personnelles suivantes :
-- Informations de base : nom, prénom, adresse e-mail, numéro de téléphone, adresse postale.
-- Données de connexion : adresse IP, type de navigateur, système d'exploitation, date et heure de connexion.
-- Données de contenu : contenu que vous publiez sur notre site web ou nos services, tels que des commentaires, des photos ou des vidéos.
-- Données de navigation : pages que vous visitez sur notre site web, liens sur lesquels vous cliquez.`,
+    title: 'Hébergement HDS (Données de Santé)',
+    text: 'Toutes les applications que nous déployons pour nos clients médicaux sont obligatoirement hébergées sur des serveurs disposant de la certification HDS (Hébergeur de Données de Santé) situés en France, garantissant la souveraineté et la sécurité absolue.',
   },
   {
-    title: 'Utilisation des données',
-    text: `Les données personnelles que nous collectons sont utilisées aux fins suivantes :
-- Fournir et améliorer nos services : nous utilisons vos données pour vous fournir les services que vous avez demandés et pour améliorer l'expérience utilisateur.
-- Communiquer avec vous : nous utilisons vos données pour vous contacter par e-mail, par téléphone ou par courrier postal afin de vous fournir des informations sur nos services ou pour répondre à vos questions.
-- Analyser les données : nous utilisons des outils d'analyse pour collecter des informations sur l'utilisation de notre site web et de nos services. Ces informations nous permettent d'améliorer nos services et de vous proposer des contenus plus pertinents.
-- Sécurité et prévention des fraudes : nous utilisons vos données pour garantir la sécurité de notre site web et de nos services et pour prévenir les fraudes.`,
+    title: 'Engagement de Sous-Traitance (DPA)',
+    text: 'Nous n\'utilisons jamais les données de santé pour notre propre compte. Nos accès sont limités aux stricts besoins de maintenance technique et de support, encadrés par des accords de confidentialité (NDA) rigoureux signés par tous nos collaborateurs.',
   },
   {
-    title: 'Partage des données',
-    text: `Nous ne partageons vos données personnelles avec des tiers que dans les cas suivants :
-- Avec votre consentement : nous ne partageons vos données personnelles avec des tiers qu'avec votre consentement explicite.
-- Avec des prestataires de services : nous partageons vos données personnelles avec des prestataires de services qui nous aident à fournir nos services, tels que des hébergeurs web ou des sociétés de marketing.
-- Pour des raisons légales : nous pouvons être amenés à partager vos données personnelles si la loi nous l'impose ou si nous pensons de bonne foi qu'il est nécessaire de le faire pour protéger nos droits ou ceux de tiers.`,
+    title: 'Chiffrement et Sécurité',
+    text: 'Toutes les données en transit et au repos sont chiffrées selon les standards industriels (AES-256). Nous appliquons des protocoles d\'anonymisation et de pseudonymisation pour les environnements de test.',
   },
   {
-    title: 'Conservation des données',
-    text: "Nous conservons vos données personnelles pendant la durée nécessaire à la réalisation des finalités pour lesquelles elles ont été collectées. Nous pouvons également conserver vos données personnelles pendant une période plus longue si la loi nous l'impose ou si nous pensons de bonne foi qu'il est nécessaire de le faire pour protéger nos droits ou ceux de tiers.",
+    title: 'Droits des patients (CNIL)',
+    text: 'Bien que nous fournissions l\'outil technique, l\'établissement de santé reste le Responsable de Traitement. Nous avons conçu nos applications pour permettre aux Délégués à la Protection des Données (DPO) de répondre facilement aux demandes d\'accès, de portabilité ou d\'effacement des patients.',
   },
   {
-    title: 'Vos droits',
-    text: `Vous disposez de plusieurs droits en ce qui concerne vos données personnelles, notamment :
-- Le droit d'accès : vous avez le droit de demander l'accès à vos données personnelles que nous détenons.
-- Le droit de rectification : vous avez le droit de demander la rectification de vos données personnelles si elles sont inexactes ou incomplètes.
-- Le droit à l'effacement : vous avez le droit de demander l'effacement de vos données personnelles dans certains cas.
-- Le droit de limitation du traitement : vous avez le droit de demander la limitation du traitement de vos données personnelles dans certains cas.
-- Le droit d'opposition : vous avez le droit de vous opposer au traitement de vos données personnelles dans certains cas.
-- Le droit à la portabilité des données : vous avez le droit de recevoir vos données personnelles dans un format structuré, couramment utilisé et lisible par machine, et de les transmettre à un autre responsable du traitement.`,
-  },
-  {
-    title: 'Contactez-nous',
-    text: `Pour exercer vos droits, vous pouvez nous contacter à l'adresse suivante :
-- Devevoke
-- contact@devevoke.com
-- 04 34 29 76 40`,
-  },
-  {
-    title: 'Modifications de la politique de confidentialité',
-    text: 'Nous nous réservons le droit de modifier la présente politique de confidentialité à tout moment. Nous vous informerons de toute modification importante en publiant un avis sur notre site web ou en vous envoyant un e-mail.',
-  },
-  {
-    title: 'Date de la dernière mise à jour',
-    text: 'Date de la dernière mise à jour : 18-08-2024',
-  },
-  {
-    title: 'Acceptation de la politique de confidentialité',
-    text: 'En utilisant notre site web ou nos services, vous acceptez la présente politique de confidentialité.',
+    title: 'Contact DPO',
+    text: 'Pour toute question relative à la sécurité ou à notre conformité, notre DPO est joignable à dpo@devevoke.com.',
   },
 ];
 

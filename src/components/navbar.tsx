@@ -6,9 +6,10 @@ import ImportLogo from '@/components/ui/Logo/importLogo';
 
 const navLinks = [
   { href: '/a-propos', label: 'À propos' },
+  { href: '/expertise-hds', label: 'Expertise HDS' },
   { href: '/services', label: 'Services' },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/templates', label: 'Templates' },
+  { href: '/portfolio', label: 'Cas Pratiques' },
+  { href: '/securite-et-conformite', label: 'Sécurité (RGPD)' },
   { href: '/tarifs', label: 'Tarifs' },
   { href: '/blog', label: 'Blog' },
 ];
@@ -87,7 +88,7 @@ const Navbar = () => {
               href="/contact"
               className="btn-primary text-sm"
             >
-              Démarrer un projet
+              Projet Santé
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -129,7 +130,7 @@ const Navbar = () => {
           ))}
           <div className="mt-8">
             <Link href="/contact" className="btn-primary text-base">
-              Démarrer un projet →
+              Projet Santé →
             </Link>
           </div>
         </div>

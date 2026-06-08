@@ -18,12 +18,12 @@ const Offerings = () => {
           transition={{ duration: 0.6 }}
           className="lg:col-span-5 flex flex-col justify-center mb-16"
         >
-          <span className="section-label">Notre Expertise</span>
+          <span className="section-label">Nos Domaines d'Expertise</span>
           <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl mb-6 tracking-tight">
-            Conçus pour <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 drop-shadow-sm">performer</span>
+            Conçus pour le <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 drop-shadow-sm">milieu clinique</span>
           </h2>
           <p className="text-gray-400 text-lg sm:text-xl font-light">
-            De la conception à la mise en ligne, nous maîtrisons chaque étape de votre succès technologique. Fini les sites vitrines obsolètes, place aux applications nouvelle génération.
+            De la télésurveillance aux Dossiers Patients Informatisés (DPI), nous développons des applications critiques qui respectent strictement les normes HDS, FHIR et RGPD Santé.
           </p>
         </motion.div>
 

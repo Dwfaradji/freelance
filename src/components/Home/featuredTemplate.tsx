@@ -22,23 +22,22 @@ const FeaturedTemplate = () => {
           className="mb-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
         >
           <div>
-            <span className="section-label">Templates</span>
+            <span className="section-label">Socles Logiciels Santé</span>
             <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl max-w-xl">
-              Lancez-vous{' '}
+              Accélérez votre{' '}
               <span
                 className="text-gradient"
                 style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))' }}
               >
-                rapidement
+                déploiement
               </span>
             </h2>
             <p className="mt-3 max-w-lg text-muted text-base">
-              Découvrez chaque mois nos nouveaux templates prêts à l'emploi,
-              conçus pour vous faire gagner du temps et impressionner vos visiteurs.
+              Découvrez nos socles pré-configurés pour le secteur médico-social (Portails Patients, Intranet EHPAD, Téléconsultation). Gagnez du temps et bénéficiez d'une conformité immédiate.
             </p>
           </div>
           <Link href="/templates" className="btn-outline self-start shrink-0 text-sm">
-            Voir tous les templates →
+            Voir tous les socles →
           </Link>
         </motion.div>
 
@@ -71,7 +70,7 @@ const FeaturedTemplate = () => {
           className="mt-12 text-center"
         >
           <Link href="/devis/formule-essentielle" className="btn-primary">
-            Je veux un site comme ça →
+            Je veux ce type de solution →
           </Link>
         </motion.div>
       </div>

@@ -11,22 +11,22 @@ const TeamSection = () => {
   const team = [
     {
       name: 'George Palonga',
-      role: 'Développeur Frontend',
-      desc: "Spécialisé dans la création d'interfaces utilisateur modernes et fluides, George s'assure que chaque projet offre une expérience optimale.",
+      role: 'Développeur Frontend Santé',
+      desc: "Ancien développeur d'applications critiques, George est spécialisé dans les interfaces de télésurveillance et les PWA (Progressive Web Apps) hors-ligne. Son code garantit une fluidité absolue pour le personnel soignant, même dans les zones blanches des hôpitaux.",
       image: front,
       color: 'from-blue-500/20'
     },
     {
       name: 'Léo Zang',
-      role: 'Développeur Backend',
-      desc: "Expert en architecture de systèmes et bases de données. Il crée des infrastructures robustes pour des applications performantes.",
+      role: 'Ingénieur Backend & Sécurité',
+      desc: "Léo est notre expert en architecture Cloud HDS. Il déploie des infrastructures Zéro Trust et s'assure de l'interopérabilité totale de nos systèmes (HL7, FHIR, API Ségur) pour garantir l'intégrité et le cloisonnement des dossiers médicaux.",
       image: back,
       color: 'from-violet-500/20'
     },
     {
       name: 'Sophie Cartin',
-      role: 'UX/UI Designer',
-      desc: "Passionnée par la création de designs intuitifs et esthétiques. Elle veille à ce que chaque projet soit agréable à utiliser.",
+      role: 'UX/UI Designer Clinique',
+      desc: "Formée aux sciences cognitives, Sophie conçoit des interfaces médicales selon les normes d'accessibilité RGAA. Elle pratique le design centré soignant pour limiter la fatigue d'alerte et réduire les erreurs de saisie en milieu clinique.",
       image: design,
       color: 'from-pink-500/20'
     }
@@ -66,18 +66,13 @@ const TeamSection = () => {
           <div className="flex-1 text-center md:text-left">
             <div className="mb-4">
               <h3 className="text-3xl font-bold text-white">Boucif Faradji</h3>
-              <p className="text-primary-400 font-medium tracking-wide uppercase text-sm mt-1">Fondateur & Lead Developer</p>
+              <p className="text-primary-400 font-medium tracking-wide uppercase text-sm mt-1">Fondateur & Architecte e-Santé</p>
             </div>
             <p className="text-muted leading-relaxed mb-4">
-              Passionné par l'innovation et les nouvelles technologies, je suis
-              un développeur Full Stack avec plus de 5 ans d'expérience dans la
-              conception de solutions numériques sur mesure. Mon objectif est de
-              transformer vos idées en applications web et mobiles performantes,
-              évolutives et adaptées à vos besoins spécifiques.
+              Passionné par l'innovation médicale et les nouvelles technologies, je suis un Architecte Logiciel spécialisé dans l'e-santé avec une forte expertise HDS et FHIR. Mon objectif est de transformer les défis complexes des hôpitaux et EHPAD en solutions web et mobiles performantes, hautement sécurisées, et parfaitement interopérables.
             </p>
             <p className="text-muted leading-relaxed">
-              Devevoke est le fruit de ma vision : offrir aux entreprises une
-              expertise technique de pointe alliée à un accompagnement personnalisé pour se démarquer dans un univers numérique en constante évolution.
+              Devevoke est le fruit de ma vision : offrir aux établissements de soins et startups MedTech une ingénierie de pointe alliée à une éthique irréprochable, pour redonner du temps médical aux soignants dans un univers numérique en pleine mutation.
             </p>
           </div>
         </div>

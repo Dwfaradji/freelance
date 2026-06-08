@@ -4,36 +4,36 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const faqs = [
   {
-    question: 'Quelles technologies utilisez-vous pour développer des sites web et des applications ?',
-    answer: 'Nous utilisons des frameworks modernes comme Next.js et React pour des interfaces réactives, TailwindCSS pour un design optimisé, et Docker pour des environnements d\'exécution fiables. Twig et GitLab complètent nos outils pour assurer un déploiement structuré et efficace.',
+    question: 'Hébergez-vous les données de santé en France ?',
+    answer: 'Absolument. Toutes nos infrastructures médicales sont déployées sur des serveurs souverains, localisés en France, et disposent obligatoirement de la certification HDS (Hébergeur de Données de Santé).',
   },
   {
-    question: 'Comment puis-je estimer le coût de développement de mon projet ?',
-    answer: 'Le coût dépend de plusieurs critères comme la complexité, le design, les délais et les ressources nécessaires. Nous fournissons une évaluation détaillée après une analyse approfondie de vos besoins. N\'hésitez pas à nous contacter pour un devis gratuit.',
+    question: 'Développez-vous des solutions conformes au Ségur du Numérique ?',
+    answer: 'Oui, nous intégrons nativement les référentiels d\'interopérabilité et de sécurité dictés par le Ségur de la Santé, y compris l\'intégration avec le DMP (Dossier Médical Partagé) et la MSSanté.',
   },
   {
-    question: 'Quelle est la différence entre un site web statique et un site web dynamique ?',
-    answer: 'Un site statique propose un contenu fixe. Un site dynamique s\'appuie sur des bases de données et des scripts côté serveur pour offrir du contenu interactif, adapté en fonction des actions des utilisateurs.',
+    question: 'Quelle est votre approche concernant la confidentialité (RGPD Santé) ?',
+    answer: 'Nous appliquons le principe de "Privacy by Design". Les données sont chiffrées de bout en bout (AES-256), les accès sont tracés, et nous vous accompagnons pour vos démarches AIPD (Analyse d\'Impact sur la Protection des Données) auprès de la CNIL.',
   },
   {
-    question: 'Pouvez-vous m\'aider à héberger mon site web ou mon application ?',
-    answer: 'Oui, nous accompagnons nos clients dans le choix de solutions d\'hébergement adaptées (AWS, Vercel, OVH, etc.) en fonction de la performance, de la scalabilité et du coût.',
+    question: 'Vos interfaces sont-elles accessibles à tous les patients ?',
+    answer: 'L\'inclusion numérique est essentielle. Nos portails patients respectent strictement les normes RGAA (Référentiel Général d\'Amélioration de l\'Accessibilité) pour garantir l\'accès aux personnes en situation de handicap.',
   },
   {
-    question: 'Proposez-vous des services de maintenance ?',
-    answer: 'Nous offrons des services de maintenance réguliers qui incluent la correction de bugs, la mise à jour de sécurité, les optimisations de performance et l\'ajout de nouvelles fonctionnalités selon vos besoins.',
+    question: 'Gérez-vous l\'interopérabilité avec les logiciels de notre clinique ?',
+    answer: 'Oui. Nous maîtrisons les protocoles d\'échanges standardisés comme HL7, FHIR et DICOM, ce qui nous permet d\'interfacer nos solutions avec vos logiciels existants (GAP, DPI, LIS).',
   },
   {
-    question: 'Quels sont les délais moyens pour terminer un projet ?',
-    answer: 'Un projet standard peut durer entre 4 et 12 semaines, selon sa portée. Les projets complexes, intégrant plusieurs fonctionnalités sur mesure, peuvent nécessiter plus de temps.',
+    question: 'Quels sont les délais pour concevoir un Dossier Patient Informatisé sur-mesure ?',
+    answer: 'La conception d\'un DPI dépend de la complexité de vos processus cliniques. En général, il faut compter entre 3 et 6 mois, incluant l\'audit clinique (Shadowing), le développement Zero Trust et la certification finale (Pentests).',
   },
   {
-    question: 'Travaillez-vous avec des entreprises de toutes tailles ?',
-    answer: 'Oui, nous collaborons aussi bien avec des startups cherchant à se lancer qu\'avec des PME et des grandes entreprises souhaitant moderniser leurs systèmes numériques.',
+    question: 'Faites-vous des tests d\'intrusion (Pentests) ?',
+    answer: 'Oui, la sécurité ne se suppose pas, elle se vérifie. Avant chaque mise en production d\'une application critique, des experts indépendants réalisent des tests d\'intrusion pour garantir l\'imperméabilité de vos systèmes.',
   },
   {
-    question: 'Quelle est votre politique en matière de confidentialité et de sécurité des données ?',
-    answer: 'Nous respectons des normes strictes pour garantir la confidentialité et la sécurité des données. Tous nos projets incluent des pratiques conformes au RGPD et des solutions de protection avancées.',
+    question: 'Assurez-vous la maintenance et le support critique ?',
+    answer: 'Parfaitement. Nous proposons des contrats de maintenance prévoyant un monitoring 24/7 de vos serveurs et une astreinte technique pour garantir une continuité de service vitale en milieu hospitalier (SLA de 99.99%).',
   },
 ];
 

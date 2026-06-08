@@ -4,9 +4,11 @@ import { motion } from 'motion/react';
 
 import Scroll from '@/components/ui/scroll';
 import Header from '@/components/Home/header';
+import TrustBar from '@/components/Home/trustBar';
 import AnimatedStats from '@/components/Home/AnimatedStats';
-import Projects from '@/components/Home/projects';
 import Offerings from '@/components/Home/offerings';
+import MedicalProcess from '@/components/Home/medicalProcess';
+import Projects from '@/components/Home/projects';
 import Pricing from '@/components/Home/pricing';
 import FeaturedTemplate from '@/components/Home/featuredTemplate';
 import Testimonial from '@/components/Home/testimonial';
@@ -19,9 +21,17 @@ const Page: React.FC = () => {
     <>
       <Scroll />
       <Header />
+      <TrustBar />
       <AnimatedStats />
-      <Projects />
+      
+      {/* Services/Expertise first */}
       <Offerings />
+      
+      {/* How we do it */}
+      <MedicalProcess />
+
+      {/* Projects after explaining how we work */}
+      <Projects />
 
       {/* Section Tarifs */}
       <section id="section3" className="py-16 md:py-24 lg:py-32 relative">
@@ -37,15 +47,15 @@ const Page: React.FC = () => {
             className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
           >
             <div className="max-w-2xl">
-              <span className="section-label">Transparence & Qualité</span>
-              <h2 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl tracking-tight">
-                Un investissement{' '}
+              <span className="section-label">Sécurité & Exigence</span>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mt-3">
+                Des solutions critiques{' '}
                 <span className="text-gradient drop-shadow-sm">
-                  rentable
+                  sans compromis
                 </span>
               </h2>
               <p className="mt-6 text-lg text-muted leading-relaxed">
-                Des solutions haut de gamme, sans surprise. Choisissez la formule adaptée à votre croissance et bénéficiez d&apos;un paiement flexible avec 30% à la commande, le solde à la livraison.
+                Hébergement souverain, certification HDS et conformité totale au RGPD Santé. Choisissez le socle technologique adapté à votre établissement pour numériser le parcours patient en toute sérénité.
               </p>
             </div>
             <Link href="/tarifs" className="btn-outline self-start shrink-0 mt-4 sm:mt-0 hover:bg-white/5">
