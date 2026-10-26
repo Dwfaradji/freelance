@@ -13,7 +13,7 @@ const Page = () => {
           <span className="section-label mb-4 inline-block">Le Journal</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Découvrez notre{' '}
-            <span className="text-gradient drop-shadow-sm">
+            <span className="text-highlight">
               Blog
             </span>
           </h1>

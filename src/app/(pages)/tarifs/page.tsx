@@ -19,9 +19,9 @@ const Page = () => {
       */}
       <div className="mt-8 mb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Forfaits d'<span className="text-gradient">Ingénierie e-Santé</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Accompagnement & <span className="text-highlight">Solutions Sur-Mesure</span></h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
-            Des architectures sécurisées conçues pour s'adapter à toutes les ambitions hospitalières. Chaque forfait inclut nativement le "Privacy by Design" et la préparation aux audits (HDS/CNIL).
+            Des architectures fiables conçues pour répondre aux besoins concrets des associations et établissements médico-sociaux. Chaque prestation inclut nativement le "Privacy by Design", l'hébergement souverain et la conformité RGPD.
           </p>
         </div>
         <PricingMain />

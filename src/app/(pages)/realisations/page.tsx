@@ -1,0 +1,180 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import {
+  Sparkles,
+  ArrowRight,
+  ShieldCheck,
+  Smartphone,
+  Cpu,
+  Layers,
+  CheckCircle2,
+  ExternalLink,
+} from 'lucide-react';
+import { projects } from '@/data/data';
+import ProjectCard from '@/components/Projects/projectCard';
+
+export default function RealisationsPage() {
+  const floticarProject = projects[0];
+  const otherProjects = projects.slice(1);
+
+  return (
+    <div className="min-h-screen bg-neutral-950 text-white selection:bg-primary-500/30 selection:text-primary-200">
+      {/* Header Hero */}
+      <section className="relative overflow-hidden pt-32 pb-20 border-b border-white/5">
+        <div className="absolute inset-0 bg-radial from-primary-900/20 via-neutral-950/80 to-neutral-950 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs sm:text-sm font-medium mb-6">
+            <Sparkles className="size-4" />
+            <span>Retours d’Expérience & Solutions Concrètes</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 max-w-4xl mx-auto">
+            Projets & réalisations numériques pour le{' '}
+            <span className="text-highlight">
+              secteur médico-social
+            </span>
+          </h1>
+
+          <p className="text-lg text-neutral-400 leading-relaxed max-w-3xl mx-auto mb-8">
+            Découvrez nos développements sur-mesure et nos solutions concrètes déployées pour des associations gestionnaires, IME, SESSAD et EHPAD. Des outils simples, sécurisés et pensés pour alléger la charge administrative des équipes de terrain.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-sm hover:opacity-95 shadow-lg shadow-primary-500/20 transition-all flex items-center gap-2"
+            >
+              <span>Parler de votre projet</span>
+              <ArrowRight className="size-4" />
+            </Link>
+            <Link
+              href="/solutions"
+              className="px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-sm transition-all"
+            >
+              Explorer nos solutions
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Case Study: Floticar */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/5">
+        <div className="relative rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-900/90 to-neutral-950 border border-primary-500/30 p-8 sm:p-12 overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 text-xs font-semibold">
+                <span>Étude de Cas à la Une — Édité par DevEvoke</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                Floticar : La dématérialisation du carnet de bord pour les flottes associatives
+              </h2>
+              <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
+                Né d’une problématique réelle rencontrée par des associations médico-sociales, Floticar remplace les carnets de bord papier par un QR code scannable sur smartphone sans téléchargement. Une application SaaS complète avec tableau de bord centralisé pour la direction.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-neutral-300">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-primary-400 shrink-0" />
+                  <span>Traçabilité 100% des conducteurs</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-primary-400 shrink-0" />
+                  <span>Alertes contrôles techniques & vidanges</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-primary-400 shrink-0" />
+                  <span>Signalement immédiat des anomalies</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-primary-400 shrink-0" />
+                  <span>Zéro amende non imputée</span>
+                </div>
+              </div>
+              <div className="pt-2 flex flex-wrap gap-4">
+                <Link
+                  href="/realisations/floticar"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-xs sm:text-sm hover:opacity-95 shadow-lg shadow-primary-500/20 transition-all flex items-center gap-2"
+                >
+                  <span>Lire l’étude de cas Floticar</span>
+                  <ArrowRight className="size-4" />
+                </Link>
+                <Link
+                  href="/logiciel-gestion-vehicules-medico-social"
+                  className="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-primary-300 hover:text-white font-medium text-xs sm:text-sm transition-all"
+                >
+                  Solution Gestion de Flotte
+                </Link>
+                <Link
+                  href="/demande-demo"
+                  className="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-xs sm:text-sm transition-all"
+                >
+                  Demander une démo
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                <Image
+                  src={floticarProject.image}
+                  alt="Logiciel Floticar gestion de flotte automobile médico-sociale"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Other Projects List */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Autres réalisations & typologies de projets
+          </h2>
+          <p className="text-neutral-400 text-sm">
+            Chaque structure médico-sociale a ses spécificités. Voici d’autres exemples de projets conçus pour le terrain.
+          </p>
+        </div>
+
+        <div className="space-y-16">
+          {otherProjects.map((project, idx) => (
+            <ProjectCard key={project.id} {...project} index={idx + 1} />
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Footer */}
+      <section className="py-20 border-t border-white/5 bg-gradient-to-b from-neutral-950 to-neutral-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            Vous avez un projet numérique pour votre structure ?
+          </h2>
+          <p className="text-neutral-400 text-sm sm:text-base max-w-2xl mx-auto">
+            Nous concevons des solutions logicielles et web sur-mesure pour répondre aux besoins opérationnels uniques des acteurs médico-sociaux. Parlons-en ensemble.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="px-8 py-4 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-sm hover:opacity-95 shadow-lg shadow-primary-500/25 transition-all flex items-center gap-2"
+            >
+              <span>Parler de votre projet</span>
+              <ArrowRight className="size-4" />
+            </Link>
+            <Link
+              href="/diagnostic-numerique"
+              className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-sm transition-all"
+            >
+              Faire un diagnostic en 3 minutes
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

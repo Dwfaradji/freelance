@@ -63,7 +63,7 @@ const NewsLetters = () => {
           <div className="relative z-10 flex flex-col items-start text-left max-w-2xl">
             <h2 className="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold text-white tracking-tighter leading-[1.05] mb-6">
               Prêt à dominer <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+              <span className="text-highlight">
                 votre marché ?
               </span>
             </h2>

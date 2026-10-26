@@ -1,10 +1,9 @@
 import React from 'react';
 
 export const metadata = {
-  title:
-    'Plans et tarifs DevEvoke - Nos offres en développement web',
+  title: 'Formules & Modalités d’Accompagnement Médico-Social',
   description:
-`Découvrez les services de développement web de DevEvoke. Choisissez parmi nos offres adaptées à vos besoins et lancez votre projet numérique dès aujourd’hui.`,
+    'Découvrez les modalités d’accompagnement, forfaits projets et devis sur-mesure de DevEvoke pour les établissements de santé, associations médico-sociales et EHPAD.',
   alternates: {
     canonical: 'https://www.devevoke.com/tarifs',
   },

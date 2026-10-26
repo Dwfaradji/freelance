@@ -12,7 +12,7 @@ const AnimatedWord = ({ children, delay, highlight = false }: { children: React.
       whileInView={{ y: 0, opacity: 1, rotate: 0 }}
       viewport={{ once: true, margin: "-10%" }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay }}
-      className={`inline-block ${highlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 font-extrabold drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]' : 'text-white'}`}
+      className={`inline-block ${highlight ? 'text-highlight font-extrabold' : 'text-white'}`}
     >
       {children}
     </motion.span>
@@ -65,8 +65,8 @@ const Testimonial = () => {
           {["Nous", "ne", "développons", "pas", "de", "simples", "logiciels.", "Nous", "forgeons", "des"].map((word, i) => (
             <AnimatedWord key={i} delay={i * 0.03}>{word}</AnimatedWord>
           ))}
-          <AnimatedWord delay={11 * 0.03} highlight>outils de santé</AnimatedWord>
-          {["qui", "simplifient", "le", "quotidien", "des", "soignants", "et", "des", "patients."].map((word, i) => (
+          <AnimatedWord delay={11 * 0.03} highlight>solutions numériques</AnimatedWord>
+          {["qui", "simplifient", "le", "quotidien", "des", "équipes", "et", "des", "usagers."].map((word, i) => (
             <AnimatedWord key={`end-${i}`} delay={(12 + i) * 0.03}>{word}</AnimatedWord>
           ))}
         </div>
@@ -103,7 +103,7 @@ const Testimonial = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
                 </span>
-                <span className="text-primary-400 font-semibold uppercase tracking-[0.2em] text-[10px]">Fondateur & Expert E-Santé</span>
+                <span className="text-primary-400 font-semibold uppercase tracking-[0.2em] text-[10px]">Fondateur & Lead Architecte Numérique Médico-Social</span>
               </div>
             </div>
           </div>

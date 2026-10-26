@@ -4,36 +4,32 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const faqs = [
   {
-    question: 'Hébergez-vous les données de santé en France ?',
-    answer: 'Absolument. Toutes nos infrastructures médicales sont déployées sur des serveurs souverains, localisés en France, et disposent obligatoirement de la certification HDS (Hébergeur de Données de Santé).',
+    question: 'Où sont hébergées vos applications et solutions SaaS comme Floticar ?',
+    answer: 'Toutes nos applications sont hébergées sur des infrastructures cloud souveraines situées exclusivement en France (centres de données sécurisés ISO 27001). Vos données restent soumises au droit français et européen, garantissant une conformité stricte au RGPD.',
   },
   {
-    question: 'Développez-vous des solutions conformes au Ségur du Numérique ?',
-    answer: 'Oui, nous intégrons nativement les référentiels d\'interopérabilité et de sécurité dictés par le Ségur de la Santé, y compris l\'intégration avec le DMP (Dossier Médical Partagé) et la MSSanté.',
+    question: 'Comment Floticar s’adapte-t-il à un IME, un SESSAD ou une association gestionnaire ?',
+    answer: 'Floticar a été pensé pour le fonctionnement concret des structures médico-sociales : gestion des réservations partagées, carnets de bord numériques accessibles par QR code sans installation sur smartphone, alertes automatiques d’entretiens et de contrôles techniques, et traçabilité des conducteurs.',
   },
   {
-    question: 'Quelle est votre approche concernant la confidentialité (RGPD Santé) ?',
-    answer: 'Nous appliquons le principe de "Privacy by Design". Les données sont chiffrées de bout en bout (AES-256), les accès sont tracés, et nous vous accompagnons pour vos démarches AIPD (Analyse d\'Impact sur la Protection des Données) auprès de la CNIL.',
+    question: 'Quelle est votre démarche concernant la protection des données et le RGPD ?',
+    answer: 'Nous appliquons le principe de Privacy by Design : chiffrement des flux (HTTPS / TLS 1.3), chiffrement des bases de données au repos (AES-256), cloisonnement strict des accès par rôles (RBAC) et respect du principe de minimisation des informations collectées.',
   },
   {
-    question: 'Vos interfaces sont-elles accessibles à tous les patients ?',
-    answer: 'L\'inclusion numérique est essentielle. Nos portails patients respectent strictement les normes RGAA (Référentiel Général d\'Amélioration de l\'Accessibilité) pour garantir l\'accès aux personnes en situation de handicap.',
+    question: 'Vos outils sont-ils adaptés aux équipes peu à l’aise avec l’informatique ?',
+    answer: 'Oui, c’est notre priorité absolue. Nous concevons des interfaces extrêmement sobres et intuitives. Pour les équipes nomades (SESSAD, SAVS), les applications fonctionnent même en mode déconnecté (hors-ligne) et se synchronisent automatiquement dès le retour du réseau.',
   },
   {
-    question: 'Gérez-vous l\'interopérabilité avec les logiciels de notre clinique ?',
-    answer: 'Oui. Nous maîtrisons les protocoles d\'échanges standardisés comme HL7, FHIR et DICOM, ce qui nous permet d\'interfacer nos solutions avec vos logiciels existants (GAP, DPI, LIS).',
+    question: 'Pouvez-vous connecter vos solutions à nos outils existants ?',
+    answer: 'Absolument. Nous concevons des API REST sécurisées pour synchroniser vos outils métiers, vos logiciels administratifs ou vos tableaux de bord de direction générale, évitant ainsi toute double saisie.',
   },
   {
-    question: 'Quels sont les délais pour concevoir un Dossier Patient Informatisé sur-mesure ?',
-    answer: 'La conception d\'un DPI dépend de la complexité de vos processus cliniques. En général, il faut compter entre 3 et 6 mois, incluant l\'audit clinique (Shadowing), le développement Zero Trust et la certification finale (Pentests).',
+    question: 'Quels sont les délais moyens de réalisation d’un projet ?',
+    answer: 'Pour le déploiement de Floticar, la mise en place se fait en quelques jours. Pour un logiciel métier sur-mesure ou une application mobile dédiée, le cycle de réalisation dure généralement de 1 à 3 mois, incluant cadrage des besoins, développement, tests et formation des utilisateurs.',
   },
   {
-    question: 'Faites-vous des tests d\'intrusion (Pentests) ?',
-    answer: 'Oui, la sécurité ne se suppose pas, elle se vérifie. Avant chaque mise en production d\'une application critique, des experts indépendants réalisent des tests d\'intrusion pour garantir l\'imperméabilité de vos systèmes.',
-  },
-  {
-    question: 'Assurez-vous la maintenance et le support critique ?',
-    answer: 'Parfaitement. Nous proposons des contrats de maintenance prévoyant un monitoring 24/7 de vos serveurs et une astreinte technique pour garantir une continuité de service vitale en milieu hospitalier (SLA de 99.99%).',
+    question: 'Assurez-vous la maintenance et le support technique dans la durée ?',
+    answer: 'Tout à fait. Nous proposons des forfaits d’accompagnement incluant la maintenance préventive, les mises à jour de sécurité régulières, les sauvegardes quotidiennes et un support technique réactif pour garantir la continuité de vos services.',
   },
 ];
 
@@ -56,7 +52,7 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
         <span className="font-semibold text-white text-sm sm:text-base leading-relaxed">
           {question}
         </span>
-        <span className={`flex size-7 shrink-0 items-center justify-center rounded-full border border-white/10 text-muted transition-all duration-300 ${isOpen ? 'rotate-180 border-primary/40 bg-primary/10 text-primary-400' : ''}`}>
+        <span className={`flex size-7 shrink-0 items-center justify-center rounded-full border border-white/10 text-muted transition-all duration-300 ${isOpen ? 'rotate-180 border-primary-500/40 bg-primary-500/10 text-primary-400' : ''}`}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <polyline points="6 9 12 15 18 9" />
           </svg>
@@ -82,68 +78,12 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
 };
 
 const PricingFAQ = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const filteredFaqs = faqs.filter((faq) =>
-    faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
-    <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* En-tête */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mb-16 text-center"
-      >
-        <span className="section-label mb-4 inline-block mx-auto w-fit">FAQ</span>
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-          Questions{' '}
-          <span className="text-gradient drop-shadow-sm">
-            fréquentes
-          </span>
-        </h2>
-        <p className="max-w-2xl mx-auto text-lg text-muted">
-          Vous avez une question ? Retrouvez les réponses aux questions les plus courantes.
-        </p>
-
-        {/* Recherche */}
-        <div className="mt-8 mx-auto max-w-md">
-          <div className="relative">
-            <svg
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-muted"
-              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.35-4.35" />
-            </svg>
-            <input
-              type="text"
-              placeholder="Rechercher une question..."
-              className="w-full rounded-full border border-white/10 bg-white/5 py-3 pl-12 pr-6 text-white placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Liste accordéon */}
-      <div className="mx-auto max-w-3xl space-y-3">
-        {filteredFaqs.map((faq, index) => (
-          <FAQItem key={index} {...faq} index={index} />
-        ))}
-
-        {filteredFaqs.length === 0 && (
-          <p className="py-12 text-center text-muted">
-            Aucune question ne correspond à votre recherche.
-          </p>
-        )}
-      </div>
-    </section>
+    <div className="max-w-3xl mx-auto space-y-4">
+      {faqs.map((faq, i) => (
+        <FAQItem key={i} question={faq.question} answer={faq.answer} index={i} />
+      ))}
+    </div>
   );
 };
 

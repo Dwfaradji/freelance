@@ -1,6 +1,6 @@
 // layout.tsx
 import React, { Suspense } from 'react';
-import { Inter } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import PageTransition from '@/components/ui/PageTransition';
@@ -21,25 +21,56 @@ const inter = Inter({
   display: 'swap',
 });
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-grotesk-var',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+});
+
 export const metadata: NextMetadata = {
   metadataBase: new URL('https://www.devevoke.com'),
-  title: 'DevEvoke | Agence Digital Santé & Logiciels Médico-Sociaux',
-  description: 'Agence experte en développement de logiciels et applications e-santé sur-mesure. Solutions sécurisées, hébergement HDS et conformité stricte au RGPD pour le secteur médico-social.',
-  keywords: ['Agence digitale santé', 'Logiciel EHPAD', 'Application e-santé', 'Hébergement HDS', 'Développement médico-social', 'Editeur logiciel santé', 'DevEvoke'],
+  title: {
+    default: 'DevEvoke | Agence digitale spécialisée dans le médico-social',
+    template: '%s | DevEvoke',
+  },
+  description:
+    'DevEvoke conçoit des solutions numériques pour les structures médico-sociales : sites web, applications, logiciels métier, SaaS et outils sur mesure.',
+  keywords: [
+    'Agence digitale médico-social',
+    'Agence digitale spécialisée médico-social',
+    'Agence web médico-social',
+    'Transformation numérique médico-social',
+    'Digitalisation médico-social',
+    'Solutions numériques médico-sociales',
+    'Logiciel médico-social',
+    'Logiciel sur mesure médico-social',
+    'Développement logiciel médico-social',
+    'Application médico-sociale',
+    'Application web sur mesure',
+    'Application mobile sur mesure',
+    'Logiciel métier médico-social',
+    'SaaS médico-social',
+    'Automatisation médico-social',
+    'Outil numérique médico-social',
+    'Conformité RGPD',
+    'DevEvoke',
+  ],
   alternates: {
     canonical: 'https://www.devevoke.com/',
   },
   openGraph: {
-    title: 'DevEvoke | Agence Digital Santé & Médico-Social',
-    description: 'Expertise technologique et développement sur-mesure pour les acteurs de la santé.',
+    title: 'DevEvoke | Agence Digitale Médico-Social & Solutions Numériques',
+    description:
+      'Solutions numériques, logiciels métiers et applications web/mobiles pour les associations et établissements médico-sociaux en France.',
     url: 'https://www.devevoke.com/',
     siteName: 'DevEvoke',
     images: [
       {
-        url: '/icon.png', // The dynamic high-res icon
+        url: '/icon.png',
         width: 800,
         height: 600,
-        alt: 'DevEvoke Logo',
+        alt: 'DevEvoke - Agence Digitale Médico-Social',
       },
     ],
     locale: 'fr_FR',
@@ -47,8 +78,9 @@ export const metadata: NextMetadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DevEvoke | Agence Digital Santé',
-    description: 'Agence experte en création de logiciels santé et médico-sociaux.',
+    title: 'DevEvoke | Agence Digitale Spécialisée Médico-Social',
+    description:
+      'Solutions logicielles, SaaS de gestion de flotte et applications pour le médico-social.',
     images: ['/icon.png'],
   },
 };
@@ -67,17 +99,54 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'DevEvoke',
-    image: 'https://www.devevoke.com/icon.png',
-    description: 'Agence digitale spécialisée en e-santé, développement d\'applications médico-sociales et hébergement HDS.',
-    url: 'https://www.devevoke.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Perpignan',
-      addressCountry: 'FR',
-    },
-    priceRange: '€€€',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': 'https://www.devevoke.com/#organization',
+        name: 'DevEvoke',
+        url: 'https://www.devevoke.com',
+        logo: 'https://www.devevoke.com/icon.png',
+        description:
+          'Agence digitale française spécialisée dans la conception de solutions numériques, logiciels métiers et outils SaaS pour le secteur médico-social et de la santé.',
+        sameAs: [
+          'https://www.linkedin.com/company/devevoke/',
+          'https://twitter.com/DevEvoke',
+          'https://github.com/Dwfaradji',
+        ],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'Customer Support',
+          email: 'contact@devevoke.com',
+          availableLanguage: ['French'],
+        },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://www.devevoke.com/#website',
+        url: 'https://www.devevoke.com',
+        name: 'DevEvoke',
+        publisher: {
+          '@id': 'https://www.devevoke.com/#organization',
+        },
+      },
+      {
+        '@type': 'LocalBusiness',
+        '@id': 'https://www.devevoke.com/#localbusiness',
+        name: 'DevEvoke',
+        image: 'https://www.devevoke.com/icon.png',
+        description:
+          'Agence digitale spécialisée dans les solutions numériques médico-sociales, développement de logiciels métiers et applications web/mobiles.',
+        url: 'https://www.devevoke.com',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Perpignan',
+          addressRegion: 'Occitanie',
+          postalCode: '66000',
+          addressCountry: 'FR',
+        },
+        priceRange: '€€€',
+      },
+    ],
   };
 
   return (
@@ -90,10 +159,17 @@ export default function RootLayout({
       </head>
       <GoogleAnalytics GA_TRACKING_ID={String(process.env.GA_TRACKING_ID)} />
       <AppHead />
-      <body className={`${inter.variable} min-h-screen antialiased`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans min-h-screen antialiased selection:bg-sky-500/30 selection:text-white`}>
+        {/* Lien d'accès rapide (Skip Link) pour l'accessibilité RGAA / WCAG */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2.5 focus:rounded-xl focus:bg-primary-500 focus:text-white focus:font-semibold focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white"
+        >
+          Aller au contenu principal
+        </a>
         <MyProvider>
           <Navbar />
-          <main className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+          <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 outline-none">
             <PageTransition>
               {children}
             </PageTransition>

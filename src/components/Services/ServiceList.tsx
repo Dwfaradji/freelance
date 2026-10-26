@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { services } from '@/data/data';
 
@@ -44,7 +45,7 @@ const ServiceList = () => {
                 </p>
 
                 {/* Sub-items / Tech */}
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   {service.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-white/80">
                       <div className="flex-shrink-0 mt-1">
@@ -56,6 +57,29 @@ const ServiceList = () => {
                     </li>
                   ))}
                 </ul>
+
+                {/* Direct link to dedicated solution */}
+                {(() => {
+                  const linksMap: Record<number, { href: string; label: string }> = {
+                    0: { href: '/solutions/logiciel-metier', label: 'Découvrir les logiciels métiers sur-mesure →' },
+                    1: { href: '/solutions/application-mobile', label: 'Découvrir nos applications mobiles terrain →' },
+                    2: { href: '/logiciel-gestion-vehicules-medico-social', label: 'Découvrir le logiciel Floticar de gestion de flotte →' },
+                    3: { href: '/securite-et-conformite', label: 'Consulter nos garanties sécurité & hébergement souverain →' },
+                    4: { href: '/solutions/automatisation', label: 'Découvrir nos solutions d’automatisation & API →' },
+                    5: { href: '/solutions/site-web', label: 'Découvrir nos sites web accessibles RGAA →' },
+                  };
+                  const target = linksMap[service.id];
+                  return target ? (
+                    <div>
+                      <Link
+                        href={target.href}
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
+                      >
+                        {target.label}
+                      </Link>
+                    </div>
+                  ) : null;
+                })()}
               </div>
             </motion.div>
           );

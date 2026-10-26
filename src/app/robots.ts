@@ -4,15 +4,12 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: 'Googlebot',
+        userAgent: '*',
         allow: ['/'],
-        disallow: ['/api/'],
-      },
-      {
-        userAgent: ['Applebot', 'Bingbot'],
         disallow: ['/api/'],
       },
     ],
     sitemap: 'https://www.devevoke.com/sitemap.xml',
+    host: 'https://www.devevoke.com',
   };
 }

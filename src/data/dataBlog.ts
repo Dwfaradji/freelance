@@ -66,7 +66,7 @@ const blogData: BlogProps[] = [
       },
       {
         title: '12. Conclusion : L\'HDS comme avantage concurrentiel et éthique',
-        text: 'Pour un éditeur de logiciels SaaS, obtenir et maintenir une architecture conforme aux exigences HDS représente un investissement colossal en temps, en compétences et en ressources financières. Le coût de la certification, de l\'infrastructure redondée, du chiffrement et des audits annuels est massif. Cependant, pour les établissements médico-sociaux (cliniques, EHPAD, centres de santé, SSIAD), choisir un partenaire technologique ne disposant pas de cette garantie n\'est tout simplement plus une option envisageable. Le risque pénal (amendes de la CNIL pouvant atteindre 4% du chiffre d\'affaires mondial), le risque réputationnel (perte de confiance des patients) et le risque clinique (paralysie des soins) sont beaucoup trop importants. En s\'associant à une agence de développement et de conseil comme DevEvoke, qui place le respect du RGPD, de la certification HDS et de la cybersécurité au sommet de son cahier des charges "Security by Design", les acteurs de la santé font le choix de la sérénité. Ils protègent non seulement leur responsabilité de dirigeants, mais ils honorent surtout le serment éthique fondamental de leur profession : protéger l\'intégrité, la dignité et la vie privée de chaque patient qui leur confie sa santé.'
+        text: 'Pour un éditeur de logiciels SaaS, concevoir une architecture conforme aux exigences réglementaires et de sécurité représente un investissement important en compétences et en rigueur. Le coût de l\'infrastructure redondée, du chiffrement et des audits est réel. Cependant, pour les organisations médico-sociales, choisir un partenaire technologique ne garantissant pas la sécurité de ses données n\'est tout simplement plus une option envisageable. Le risque pénal, réputationnel et organisationnel est beaucoup trop important. En s\'associant à une agence de développement et de conseil comme DevEvoke, qui place le respect du RGPD, de la souveraineté des données et de la sécurité web au sommet de son cahier des charges "Security by Design", les acteurs médico-sociaux font le choix de la sérénité. Ils protègent non seulement leur responsabilité de dirigeants, mais ils garantissent surtout la confidentialité des personnes accompagnées.'
       }
     ],
     img: article1.src,
@@ -237,7 +237,7 @@ const blogData: BlogProps[] = [
       },
       {
         title: '9. Le Plan de Reprise d\'Activité (PRA) et la simulation de crise',
-        text: 'Avoir des sauvegardes est une chose, être capable de les restaurer rapidement pour relancer l\'activité médicale en est une autre. C\'est tout l\'enjeu du Plan de Reprise d\'Activité (PRA). Le PRA documente méticuleusement les étapes techniques et humaines à suivre en cas de sinistre total (ransomware, incendie). Il définit le RTO (Recovery Time Objective, le temps maximal d\'interruption acceptable) et le RPO (Recovery Point Objective, la perte de données acceptable). Un PRA n\'est valable que s\'il est testé régulièrement. Chez DevEvoke, dans le cadre de notre hébergement certifié HDS, nous réalisons des simulations de désastre à l\'échelle réelle au moins une fois par an (Disaster Recovery Testing). Nous coupons les accès au datacenter principal et mesurons le temps qu\'il faut pour que les services basculent automatiquement sur le site de secours géographique.'
+        text: 'Avoir des sauvegardes est une chose, être capable de les restaurer rapidement pour relancer l\'activité en est une autre. C\'est tout l\'enjeu du Plan de Reprise d\'Activité (PRA). Le PRA documente méticuleusement les étapes techniques et humaines à suivre en cas d\'incident majeur (cyberattaque, sinistre datacenter). Il définit le RTO (temps maximal d\'interruption acceptable) et le RPO (perte de données acceptable). Dans les architectures sécurisées que nous concevons chez DevEvoke, nous intégrons des sauvegardes automatiques régulières et des mécanismes de redondance géographique pour assurer la continuité opérationnelle.'
       },
       {
         title: '10. La Chasse aux menaces (Threat Hunting) et le Pentesting',
@@ -249,7 +249,7 @@ const blogData: BlogProps[] = [
       },
       {
         title: '12. Conclusion : La Sécurité Dès La Conception (Security by Design)',
-        text: 'La protection contre les ransomwares n\'est pas une option que l\'on rajoute à la fin du développement d\'un logiciel, c\'est l\'ADN même du projet. C\'est ce que l\'on appelle le "Security by Design" (La sécurité dès la conception). Chez DevEvoke, chaque ligne de code écrite, chaque choix d\'architecture cloud, chaque décision fonctionnelle est soumise au crible de l\'analyse de risque sécuritaire et du respect du RGPD/HDS. Nous ne construisons pas de simples logiciels de gestion pour les cliniques et les EHPAD ; nous construisons des forteresses numériques agiles, permettant aux professionnels de santé d\'exercer leur noble mission en toute sérénité, en sachant que les données vitales de leurs patients sont sous la plus haute protection.'
+        text: 'La protection contre les cyberattaques n\'est pas une option que l\'on rajoute à la fin du développement d\'un logiciel, c\'est le socle du projet. C\'est ce que l\'on appelle le "Security by Design" (La sécurité dès la conception). Chez DevEvoke, chaque ligne de code écrite, chaque choix d\'infrastructure cloud et chaque décision fonctionnelle est soumise au crible de l\'analyse de risque sécuritaire et du respect du RGPD. Nous construisons des applications et outils fiables pour les associations et structures médico-sociales, leur permettant d\'exercer leur mission d\'accompagnement en toute sérénité, avec des données organisationnelles rigoureusement protégées.'
       }
     ],
     img: articleSecurite.src,
@@ -404,7 +404,7 @@ const blogData: BlogProps[] = [
       },
       {
         title: '5. Construire les fondations : Architecture Backend et Choix Technologiques',
-        text: 'Puisque le bidouillage est impossible, le développement d\'un MVP médical exige des fondations techniques professionnelles dès le premier jour (Day One). Chez DevEvoke, nous construisons les MVP de nos clients MedTech sur des architectures cloud souveraines (certifiées HDS). Nous utilisons des "Stacks" technologiques modernes et ultra-rapides, comme Next.js ou React pour les interfaces (Frontend), couplés à des API RESTful robustes sous Node.js ou NestJS pour le cœur du réacteur (Backend). Ces technologies permettent de coder très vite (Time-to-Market réduit) tout en garantissant une sécurité "Enterprise-Grade". De plus, ces langages sont scalables : lorsque le MVP aura prouvé son succès, il ne sera pas nécessaire de tout jeter et de tout recoder de zéro (ce qui arrive souvent avec le No-Code). Le code source du MVP servira de socle solide pour la V2 et la V3 du logiciel.'
+        text: 'Puisque la fiabilité est capitale, le développement d\'une application métier ou d\'un SaaS exige des fondations techniques professionnelles dès le premier jour (Day One). Chez DevEvoke, nous construisons les solutions de nos clients sur des architectures cloud souveraines, sécurisées et conformes au RGPD. Nous utilisons des technologies modernes et réactives, comme Next.js ou React pour les interfaces, couplés à des API RESTful robustes sous Node.js ou NestJS. Ces choix garantissent un Time-to-Market optimisé tout en assurant une sécurité de haut niveau et une scalabilité pérenne pour les évolutions futures.'
       },
       {
         title: '6. Le Design System : Créer la confiance par l\'esthétique',
@@ -416,7 +416,7 @@ const blogData: BlogProps[] = [
       },
       {
         title: '8. La phase de "Beta Test" en milieu clinique (Pilotage)',
-        text: 'Une fois le MVP (certifié HDS et sécurisé) développé, il est temps de le confronter au juge de paix suprême : le marché. La startup ne doit pas chercher à le vendre à 50 cliniques. Elle doit identifier un ou deux "Établissements Pilotes" (Early Adopters). Ce partenariat est un échange de bons procédés : la clinique teste la technologie gratuitement (ou à coût très réduit) et bénéficie d\'un logiciel taillé presque sur-mesure. En échange, la startup reçoit des retours terrains (feedbacks) quotidiens et inestimables. C\'est lors de cette phase pilote que les UX Designers vont observer les médecins utiliser le logiciel en situation réelle (Shadowing) pour repérer les points de friction (clics inutiles, lenteurs) qui n\'avaient pas été anticipés en laboratoire.'
+        text: 'Une fois le MVP sécurisé et testé développé, il est temps de le confronter au terrain. La structure doit identifier un ou deux établissements pilotes partenaires. Ce partenariat est un échange mutuellement bénéfique : l\'établissement teste la technologie et bénéficie d\'un logiciel taillé sur-mesure pour ses besoins. En échange, les concepteurs reçoivent des retours terrains quotidiens et inestimables pour affiner l\'ergonomie.'
       },
       {
         title: '9. Collecter et analyser la donnée utilisateur (Analytics RGPD)',
@@ -432,7 +432,7 @@ const blogData: BlogProps[] = [
       },
       {
         title: '12. Conclusion : S\'associer avec les experts du développement',
-        text: 'La construction d\'un MVP médical est un numéro d\'équilibriste. Le produit doit être "minimal" fonctionnellement pour sortir vite, mais il doit être "maximal" sécuritairement (HDS) et ergonomiquement pour être accepté par le corps médical. Confier le développement du cœur de votre startup à une agence généraliste ou à des développeurs juniors inexpérimentés en e-santé est une erreur qui se paie au prix fort (rejet des App Stores, amendes CNIL, échec commercial). En choisissant DevEvoke comme partenaire technologique (CTO as a Service), les startups MedTech font le choix de la rigueur réglementaire absolue, couplée à la vitesse d\'exécution foudroyante des startups modernes. Nous ne codons pas simplement votre idée ; nous sécurisons l\'avenir de votre entreprise.'
+        text: 'La construction d\'une solution logicielle est un équilibre subtil. Le produit doit être centré sur l\'essentiel fonctionnel pour sortir vite, tout en offrant une sécurité sans faille, une conformité stricte au RGPD et une ergonomie intuitive pour être adopté par les équipes opérationnelles. En choisissant DevEvoke comme partenaire technologique, les structures médico-sociales et porteurs de projets font le choix d\'une agence agile et rigoureuse, transformant leurs idées en solutions concrètes et durables.'
       }
     ],
     img: articleMvp.src,
@@ -554,7 +554,7 @@ const blogData: BlogProps[] = [
       },
       {
         title: '12. Conclusion : Prendre soin des humains sans détruire leur environnement',
-        text: 'L\'avenir du numérique en santé ne peut plus se contenter d\'être simplement fonctionnel et sécurisé. La crise climatique (chaleurs extrêmes, maladies vectorielles émergentes) impacte directement la santé des populations, devenant ainsi un enjeu de santé publique majeur. Il est hypocrite pour l\'industrie MedTech de sauver des vies avec des logiciels dont l\'empreinte carbone contribue silencieusement à la détérioration de la santé mondiale. En confiant la création ou la refonte de vos outils informatiques médicaux à DevEvoke, vous faites le choix d\'une ingénierie d\'élite qui conjugue l\'expertise réglementaire HDS, l\'excellence ergonomique (UX), et une conception Green IT stricte. La sobriété numérique n\'est pas un frein à l\'innovation médicale ; elle en est la plus noble expression éthique.'
+        text: 'L\'avenir du numérique ne peut plus se contenter d\'être simplement fonctionnel et sécurisé. La sobriété numérique est une nécessité écologique et managériale. En confiant la création ou la refonte de vos outils informatiques à DevEvoke, vous faites le choix d\'une ingénierie soignée qui conjugue conformité RGPD, hébergement souverain en France, excellence ergonomique (UX), et conception Green IT sobre. La sobriété numérique n\'est pas un frein à l\'innovation ; elle en est la plus noble expression éthique.'
       }
     ],
     img: articleGreenIt.src,
@@ -614,8 +614,8 @@ const blogData: BlogProps[] = [
         text: 'Créer une excellente application n\'est pas suffisant ; il faut trouver un modèle économique (Business Model). Longtemps, le modèle a été le "Business-to-Consumer" (B2C), où le patient payait l\'application. Mais en France, la culture de la gratuité des soins rend ce modèle très fragile. Le véritable relais de croissance est le "Business-to-Business-to-Consumer" (B2B2C) ou le remboursement direct. En France, les expérimentations (Article 51) et le programme ETAPES ont jeté les bases tarifaires de la télésurveillance. Aujourd\'hui, un médecin qui prescrit une solution de télésurveillance (l\'application) à un patient insuffisant cardiaque est rémunéré pour le temps passé à analyser les alertes, et l\'éditeur du logiciel est également rémunéré par l\'Assurance Maladie. La mHealth est passée du statut de "gadget technologique" à "acte médical remboursé".'
       },
       {
-        title: '12. Conclusion : Le prolongement numérique de l\'hôpital',
-        text: 'L\'application mHealth n\'est plus une simple application ; c\'est l\'hôpital qui s\'invite dans la poche du patient. Elle est l\'instrument central du passage d\'une médecine "curative et épisodique" à une médecine "préventive, prédictive, personnalisée et participative" (la médecine 4P). Cependant, la complexité de ce marché (normes HDS, Marquage CE, intégration IoT Bluetooth, enjeux de cybersécurité) est impitoyable pour les développeurs amateurs. C\'est pourquoi, en confiant l\'ingénierie de vos projets mHealth à DevEvoke, vous faites le choix de travailler avec un partenaire technologique expert qui comprend intimement la rigueur médicale, transformant votre vision e-santé en un Dispositif Médical sécurisé, certifié, et prêt à sauver des vies au quotidien.'
+        title: '12. Conclusion : Le prolongement numérique de l\'organisation',
+        text: 'L\'application mobile métier n\'est plus un simple gadget ; c\'est un prolongement direct de votre organisation sur le terrain. Elle améliore la communication entre les équipes sédentaires et mobiles et fiabilise la saisie de données. En confiant vos projets numériques à DevEvoke, vous bénéficiez d\'une expertise technique qui maîtrise les contraintes du terrain, le fonctionnement hors-ligne, et le développement d\'applications sur-mesure résilientes et sécurisées.'
       }
     ],
     img: articleApp.src,
@@ -798,7 +798,7 @@ const blogData: BlogProps[] = [
       },
       {
         title: '12. Conclusion : Le chef d\'orchestre de la révolution médico-sociale',
-        text: 'Le poste de DSI en EHPAD est l\'un des métiers les plus passionnants, les plus complexes et les plus stratégiques de la santé moderne. À la croisée des chemins entre l\'empathie du soin, la froideur du code informatique, le formalisme du droit européen et l\'adrénaline de la cybersécurité, le DSI tient entre ses mains la compétitivité et la sécurité de l\'entreprise. Pour réussir cette mission impossible, l\'isolement est son pire ennemi. Il doit s\'entourer de partenaires technologiques d\'excellence (CTO As A Service, agences de développement expertes HDS). DevEvoke se positionne exactement comme cette force de frappe externalisée, ce commando technologique qui permet au DSI d\'accélérer la numérisation de ses établissements avec l\'assurance d\'une qualité de code et d\'une sécurité irréprochables.'
+        text: 'Le poste de DSI ou de responsable informatique en établissement est un défi stratégique. Pour réussir la transition numérique sans s\'épuiser, l\'isolement est le pire ennemi. Il est essentiel de s\'entourer de partenaires technologiques d\'excellence. DevEvoke se positionne comme un partenaire agile de confiance qui permet aux directions d\'accélérer la numérisation de leurs établissements avec l\'assurance d\'une qualité logicielle et d\'une sécurité irréprochables.'
       }
     ],
     img: article6.src,
@@ -807,6 +807,68 @@ const blogData: BlogProps[] = [
     readingTime: 9,
     category: 'Stratégie Digitale',
     date: '2024-06-11',
+  },
+  {
+    id: '14',
+    title: 'Gestion des véhicules en association médico-sociale : comment optimiser la flotte d\'un IME ou SESSAD ?',
+    descriptionShort: 'Découvrez comment une solution de gestion de flotte comme Floticar aide les associations médico-sociales, IME et SESSAD à sécuriser les transports et réduire les coûts.',
+    descriptionLong: [
+      {
+        title: '1. Le rôle central de la flotte automobile dans les structures médico-sociales',
+        text: 'Dans une association médico-sociale ou un établissement comme un Institut Médico-Éducatif (IME) ou un Service d\'Éducation Spéciale et de Soins à Domicile (SESSAD), les véhicules ne sont pas un luxe mais le cœur battant de l\'activité quotidienne. Chaque jour, des minibus adaptés transportent des enfants et adolescents vers leur lieu d\'accueil, tandis que des voitures de service permettent aux éducateurs spécialisés, psychologues et rééducateurs d\'intervenir à domicile ou en milieu scolaire ordinaire. Sans véhicule opérationnel, la mission d\'accompagnement est directement compromise.'
+      },
+      {
+        title: '2. Les limites critiques des méthodes manuelles (cahiers papier et fichiers Excel)',
+        text: 'Malgré cet enjeu vital, une majorité d\'associations gèrent encore leur parc automobile au moyen de carnets de bord papier laissés dans les boîtes à gants et de tableaux Excel mis à jour sporadiquement. Les conséquences sont directes : conflits de réservation entre professionnels, oubli de contrôles techniques périodiques obligatoires, absence de traçabilité des kilomètres parcourus, et surcoûts budgétaires importants lors des restitutions de leasing.'
+      },
+      {
+        title: '3. Sécurité et responsabilité juridique des directions d\'établissements',
+        text: 'La responsabilité civile et pénale des directeurs d\'établissements et présidents d\'associations est directement engagée en cas d\'accident impliquant un véhicule dont le contrôle technique n\'était pas à jour ou dont l\'entretien avait été négligé. Déployer un logiciel spécialisé permet d\'automatiser les alertes d\'échéance légale et d\'interdire automatiquement la réservation d\'un véhicule présentant une anomalie critique signalée par un conducteur.'
+      },
+      {
+        title: '4. La réponse moderne : Floticar, le logiciel SaaS développé par DevEvoke',
+        text: 'Pour répondre concrètement aux contraintes du secteur médico-social, DevEvoke a développé Floticar, une solution SaaS 100% en ligne adaptée aux associations et gestionnaires multi-sites. Accessible sur ordinateur comme sur smartphone, Floticar permet aux professionnels de réserver un véhicule en quelques secondes, de consigner l\'état des lieux avec photos et d\'enregistrer le compteur kilométrique au départ comme au retour, sans aucune lourdeur administrative.'
+      },
+      {
+        title: '5. Maîtrise budgétaire et justification auprès des financeurs (ARS et Départements)',
+        text: 'Les associations gestionnaires doivent rendre des comptes précis à leurs financeurs publics (Agences Régionales de Santé et Conseils Départementaux). Floticar fournit des rapports analytiques détaillés sur le coût de revient kilométrique, la consommation de carburant et le taux d\'utilisation réel de chaque véhicule par structure, facilitant grandement les arrêtés de comptes et les demandes d\'investissements.'
+      }
+    ],
+    img: articleApp.src,
+    metaDescription: 'Guide complet pour optimiser la gestion de flotte automobile en association médico-sociale, IME et SESSAD. Sécurité, carnet de bord dématérialisé et Floticar.',
+    alt: 'Gestion flotte automobile association médico-sociale Floticar',
+    readingTime: 8,
+    category: 'Médico-Social & Flotte',
+    date: '2024-06-15',
+  },
+  {
+    id: '15',
+    title: 'Transformation numérique du médico-social : guide pratique pour les associations gestionnaires et DSI',
+    descriptionShort: 'Comment réussir la digitalisation d’une association médico-sociale sans heurter les équipes de terrain ? Méthodologie, choix d’outils et conformité RGPD.',
+    descriptionLong: [
+      {
+        title: '1. L\'accélération inéluctable du numérique dans le secteur social et médico-social',
+        text: 'Le médico-social vit une transformation numérique importante. Des portails administratifs aux plannings d\'équipes en passant par la gestion des moyens généraux, les outils digitaux sont désormais indispensables pour fluidifier les accompagnements et respecter les exigences de traçabilité.'
+      },
+      {
+        title: '2. L\'adhésion des équipes terrain : la clé de voûte de tout projet digital',
+        text: 'La principale cause d\'échec des projets informatiques dans le médico-social réside dans la lourdeur des outils pour les professionnels de terrain. Chez DevEvoke, nous prônons une démarche d\'immersion et de co-conception UX pour concevoir des applications évidentes à prendre en main dès la première minute.'
+      },
+      {
+        title: '3. Sécurité des flux administratifs et hébergement souverain en France',
+        text: 'Les données manipulées en établissement médico-social relèvent de la confidentialité professionnelle. Choisir une agence digitale comme DevEvoke, capable de concevoir des architectures robustes hébergées en France et conformes au RGPD, garantit la sérénité des associations gestionnaires.'
+      },
+      {
+        title: '4. Mutualisation des outils pour les associations gestionnaires multi-établissements',
+        text: 'Pour les associations gérant plusieurs établissements, l\'enjeu est de simplifier l\'outillage. En mutualisant les données administratives, en déployant des solutions communes comme Floticar pour le parc automobile et en reliant les applications métiers via des flux simples, l\'association réalise d\'importantes économies tout en offrant un meilleur confort de travail à ses collaborateurs.'
+      }
+    ],
+    img: articleHeader.src,
+    metaDescription: 'Guide de la transformation numérique médico-sociale : méthodologie pour associations gestionnaires, adoption par les équipes de terrain, conformité RGPD et hébergement souverain.',
+    alt: 'Transformation numérique association médico-sociale',
+    readingTime: 9,
+    category: 'Stratégie Médico-Sociale',
+    date: '2024-06-18',
   },
 ];
 export default blogData;

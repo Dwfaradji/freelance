@@ -1,170 +1,194 @@
 import { Metadata } from 'next';
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import {
+  ShieldCheck,
+  Lock,
+  Server,
+  FileCheck2,
+  Users,
+  EyeOff,
+  ArrowRight,
+  CheckCircle2,
+} from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Sécurité, Conformité et Hébergement HDS | Devevoke",
-  description: "Découvrez les engagements de Devevoke pour la protection des données médico-sociales : conformité stricte au RGPD, hébergement certifié HDS en France, sécurité avancée (MFA, chiffrement) et fiabilité.",
+  title: 'Sécurité Web & Conformité RGPD Médico-Sociale | DevEvoke',
+  description:
+    'Découvrez les standards de sécurité et de protection des données appliqués par DevEvoke pour les associations médico-sociales : conformité stricte au RGPD, hébergement souverain en France, chiffrement et sécurité applicative.',
+  alternates: {
+    canonical: 'https://www.devevoke.com/securite-et-conformite',
+  },
+  openGraph: {
+    title: 'Sécurité & Protection des Données Médico-Sociales | DevEvoke',
+    description:
+      'Engagements techniques et organisationnels de DevEvoke pour garantir la confidentialité et la sécurité des données des établissements médico-sociaux.',
+    url: 'https://www.devevoke.com/securite-et-conformite',
+    type: 'website',
+  },
 };
 
-const SecuriteConformitePage = () => {
+export default function SecuriteConformitePage() {
   return (
-    <div className="bg-white dark:bg-gray-900 py-16 sm:py-24">
-      <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:max-w-none text-center mb-16">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-            Sécurité, Conformité et Hébergement des Données de Santé
+    <main className="min-h-screen pt-28 pb-24 relative overflow-hidden">
+      {/* Background radial glow */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[500px] bg-primary-600/10 blur-[140px] pointer-events-none rounded-full" />
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <header className="text-center max-w-3xl mx-auto mb-16">
+          <span className="section-label mb-4 inline-block">
+            Confidentialité & Protection des Données
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
+            Sécurité Web & Conformité RGPD pour le{' '}
+            <span className="text-highlight">
+              secteur médico-social
+            </span>
           </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-            Chez Devevoke, nous sommes conscients que la confiance est le fondement de toute solution technologique déployée dans le secteur de la santé. Cette page détaille l'ensemble de nos engagements juridiques, techniques et organisationnels pour garantir la confidentialité et l'intégrité absolue de vos données sensibles.
+          <p className="text-base sm:text-lg text-muted leading-relaxed">
+            Dans le secteur médico-social, la protection des informations relatives aux usagers, aux familles et aux équipes constitue un prérequis incontournable. Voici nos engagements techniques et organisationnels pour concevoir des applications fiables et sécurisées.
           </p>
+        </header>
+
+        {/* Visuel Datacenter Souverain */}
+        <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl mb-16 group">
+          <div className="relative h-64 sm:h-80 w-full overflow-hidden">
+            <Image
+              src="/images/about/about_sovereign_security.jpg"
+              alt="Couloir de serveurs sécurisés en centre de données souverain français"
+              width={1400}
+              height={600}
+              className="size-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/30 inline-block mb-2">
+                  Datacenters en France métropolitaine
+                </span>
+                <p className="text-white font-semibold text-lg sm:text-xl">
+                  Infrastructures certifiées ISO 27001 & Droit européen
+                </p>
+              </div>
+              <span className="text-xs text-neutral-300 glass px-4 py-2 rounded-xl border border-white/10">
+                Chiffrement TLS 1.3 & AES-256
+              </span>
+            </div>
+          </div>
         </div>
 
-        <div className="space-y-12 text-gray-700 dark:text-gray-300">
-          <section className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              1. Devevoke : Votre Partenaire Technologique de Confiance
+        {/* 4 Piliers de Sécurité */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="glass p-8 rounded-3xl border border-white/10 space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-primary-500/10 border border-primary-500/20 text-primary-400 flex items-center justify-center">
+              <FileCheck2 className="w-6 h-6" />
+            </div>
+            <h2 className="text-xl font-bold text-white">
+              1. Conformité Stricte au RGPD
             </h2>
-            <p className="leading-relaxed">
-              Devevoke est un éditeur de logiciels spécialisé dans la conception de solutions numériques dédiées au secteur médico-social et à l’e-santé. Notre mission est d'accompagner les établissements (EHPAD, cliniques, centres de soins, associations de santé) en leur fournissant des outils performants, sécurisés et respectueux des réglementations en vigueur.
+            <p className="text-sm text-muted leading-relaxed">
+              Nous appliquons les principes de <em>Privacy by Design</em> (protection des données dès la conception) et de <em>Privacy by Default</em>. Les formulaires et bases de données respectent le principe de minimisation : seules les données strictement nécessaires au fonctionnement du service sont collectées.
             </p>
-          </section>
+          </div>
 
-          <section className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              2. Une Solution Conçue pour le Secteur Médico-Social
+          <div className="glass p-8 rounded-3xl border border-white/10 space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-secondary-500/10 border border-secondary-500/20 text-secondary-400 flex items-center justify-center">
+              <Server className="w-6 h-6" />
+            </div>
+            <h2 className="text-xl font-bold text-white">
+              2. Hébergement Souverain en France
             </h2>
-            <p className="leading-relaxed">
-              Notre application de gestion simplifie le suivi quotidien des patients tout en garantissant un haut niveau d'exigence technique. Pensée spécifiquement pour les professionnels du soin et de l'accompagnement, elle centralise les informations de santé, optimise les parcours de prise en charge et facilite la coordination inter-équipes au sein d'un environnement strictement contrôlé et cloisonné.
+            <p className="text-sm text-muted leading-relaxed">
+              Les applications web et plateformes conçues par DevEvoke (notamment la solution SaaS Floticar) sont hébergées sur des infrastructures cloud situées exclusivement en France (centres de données sécurisés ISO 27001). Vos données restent soumises au droit européen et français.
             </p>
-          </section>
+          </div>
 
-          <section className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              3. Conformité Stricte au RGPD et aux Exigences de la CNIL
+          <div className="glass p-8 rounded-3xl border border-white/10 space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+              <Lock className="w-6 h-6" />
+            </div>
+            <h2 className="text-xl font-bold text-white">
+              3. Chiffrement & Protection Réseau
             </h2>
-            <p className="leading-relaxed">
-              Le traitement des données à caractère personnel, et a fortiori des données de santé, requiert une rigueur absolue. Devevoke s’engage à respecter scrupuleusement le Règlement Général sur la Protection des Données (RGPD) ainsi que les recommandations de la Commission Nationale de l'Informatique et des Libertés (CNIL). Nos processus intègrent les principes de <strong className="font-semibold">Privacy by Design</strong> (protection des données dès la conception) et de <strong className="font-semibold">Privacy by Default</strong> (protection par défaut au plus haut niveau).
+            <p className="text-sm text-muted leading-relaxed">
+              Toutes les communications transitent par des protocoles chiffrés récents (HTTPS, TLS 1.3). Les mots de passe sont hachés avec des algorithmes robustes (bcrypt/argon2). Les données sensibles stockées bénéficient d’un chiffrement au repos (AES-256).
             </p>
-          </section>
+          </div>
 
-          <section className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-              4. Hébergement Certifié Données de Santé (HDS)
+          <div className="glass p-8 rounded-3xl border border-white/10 space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
+              <Users className="w-6 h-6" />
+            </div>
+            <h2 className="text-xl font-bold text-white">
+              4. Contrôle d’Accès & Traçabilité (RBAC)
             </h2>
-            <p className="leading-relaxed mb-4">
-              La souveraineté et la protection physique des données sont des prérequis non négociables.
+            <p className="text-sm text-muted leading-relaxed">
+              Les accès sont cloisonnés par profils et rôles stricts (Directeur, Responsable de service, Éducateur, Gestionnaire de flotte). Chaque utilisateur n’accède qu’aux informations nécessaires à sa mission, avec journalisation des connexions et actions sensibles.
             </p>
-            <p className="leading-relaxed">
-              Toutes les données générées et traitées par notre application sont stockées exclusivement en France, sur des infrastructures bénéficiant de la certification <strong className="font-semibold text-blue-600 dark:text-blue-400">Hébergeur de Données de Santé (HDS)</strong>. Cette certification, encadrée par l'Agence du Numérique en Santé (ANS), atteste d'un très haut niveau d'exigence en matière de sécurité physique et logique, garantissant ainsi l'intégrité et la disponibilité continue des dossiers patients.
-            </p>
-          </section>
+          </div>
+        </div>
 
-          <section className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-              5. Sécurité Avancée et Protection des Infrastructures
-            </h2>
-            <p className="leading-relaxed mb-6">
-              Nous déployons un arsenal de mesures techniques de pointe pour prévenir tout accès non autorisé :
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <span className="flex-shrink-0 h-6 w-6 text-green-500 mr-3">✔</span>
-                <span><strong className="font-semibold text-gray-900 dark:text-white">Chiffrement renforcé :</strong> Les données sont chiffrées de bout en bout, tant lors de leur transmission (protocoles TLS/SSL robustes) que lors de leur stockage au repos (AES-256).</span>
-              </li>
-              <li className="flex items-start">
-                <span className="flex-shrink-0 h-6 w-6 text-green-500 mr-3">✔</span>
-                <span><strong className="font-semibold text-gray-900 dark:text-white">Authentification Forte :</strong> L'accès à la solution est sécurisé par un système d'authentification multifacteur (MFA) systématique.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="flex-shrink-0 h-6 w-6 text-green-500 mr-3">✔</span>
-                <span><strong className="font-semibold text-gray-900 dark:text-white">Gestion des Accès (RBAC) :</strong> Les droits d'accès sont strictement définis selon le principe du moindre privilège. Chaque utilisateur n'accède qu'aux informations strictement nécessaires à ses fonctions.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="flex-shrink-0 h-6 w-6 text-green-500 mr-3">✔</span>
-                <span><strong className="font-semibold text-gray-900 dark:text-white">Traçabilité Inaltérable :</strong> Chaque action fait l'objet d'une journalisation (logs) horodatée de manière inaltérable, permettant un audit complet et continu.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="flex-shrink-0 h-6 w-6 text-green-500 mr-3">✔</span>
-                <span><strong className="font-semibold text-gray-900 dark:text-white">Sauvegardes et PRA :</strong> Des sauvegardes chiffrées quotidiennes, avec un Plan de Reprise d'Activité (PRA) testé régulièrement.</span>
-              </li>
-            </ul>
-          </section>
+        {/* Détails Pratiques */}
+        <div className="space-y-8 glass rounded-3xl p-8 sm:p-12 border border-white/10 mb-16">
+          <h2 className="text-2xl font-bold text-white mb-6">
+            Nos Pratiques de Sécurité Applicative
+          </h2>
 
-          <section className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-              6. Respect et Exercice des Droits des Patients
-            </h2>
-            <p className="leading-relaxed mb-4">
-              En conformité avec le cadre légal européen, notre logiciel intègre les fonctionnalités nécessaires pour faciliter la gestion des demandes liées aux droits des personnes concernées :
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Extraire les informations pour répondre aux demandes de <strong>droit d'accès</strong> et de <strong>portabilité</strong>.</li>
-              <li>Procéder aux demandes de <strong>rectification</strong> d'informations inexactes.</li>
-              <li>Gérer les durées de conservation légales et exécuter le <strong>droit à l'effacement</strong> de manière sécurisée et irréversible.</li>
-            </ul>
-          </section>
-
-          <section className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              7. Clarification des Responsabilités
-            </h2>
-            <p className="leading-relaxed mb-4">
-              Pour garantir une parfaite sécurité juridique et opérationnelle, les rôles sont clairement définis :
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-600">
-                <h3 className="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">L'Établissement de Santé (Vous)</h3>
-                <p className="text-sm">Agit en tant que <strong>Responsable de Traitement</strong>. Vous déterminez les finalités, recueillez le consentement, définissez les durées de conservation et gérez la relation avec le patient.</p>
-              </div>
-              <div className="p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-600">
-                <h3 className="font-semibold text-teal-600 dark:text-teal-400 mb-2">Devevoke (Nous)</h3>
-                <p className="text-sm">Agit exclusivement en qualité de <strong>Sous-Traitant</strong>. Nous traitons les données uniquement sur vos instructions documentées et déployons les moyens techniques pour assurer leur protection.</p>
+          <div className="space-y-4 text-sm text-muted">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-primary-400 shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-white">Validation stricte côté serveur :</strong>
+                <p className="mt-0.5">
+                  Chaque entrée utilisateur est validée et assainie pour prévenir les injections SQL, failles XSS et attaques CSRF.
+                </p>
               </div>
             </div>
-          </section>
 
-          <section className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              8. Accord de Traitement des Données (DPA)
-            </h2>
-            <p className="leading-relaxed">
-              Toute souscription à notre solution est encadrée par un Accord de Traitement des Données (Data Processing Agreement - DPA). Ce contrat juridique formel lie Devevoke à votre établissement. Il détaille exhaustivement nos obligations en matière de sécurité, d'assistance technique, de processus de notification en cas de violation de données, et les modalités de restitution ou de suppression définitive.
-            </p>
-          </section>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-primary-400 shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-white">Sauvegardes régulières automatisées :</strong>
+                <p className="mt-0.5">
+                  Sauvegardes quotidiennes externalisées et testées pour garantir un plan de reprise d’activité rapide en cas d’incident.
+                </p>
+              </div>
+            </div>
 
-          <section className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              9. Engagement pour l'Accessibilité Numérique
-            </h2>
-            <p className="leading-relaxed">
-              L'inclusion est au cœur de notre démarche éthique. Devevoke s'efforce de concevoir des interfaces conformes aux normes d'accessibilité (RGAA en France et recommandations internationales WCAG), afin de garantir que notre outil soit utilisable par l'ensemble des professionnels, y compris ceux en situation de handicap.
-            </p>
-          </section>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-primary-400 shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-white">Transparence & Droit des personnes :</strong>
+                <p className="mt-0.5">
+                  Possibilité technique d’exporter, modifier ou supprimer les données d’un utilisateur sur simple demande, conformément aux articles 15 à 22 du RGPD.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <section className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              10. Transparence, Fiabilité et Confiance Mutuelle
-            </h2>
-            <p className="leading-relaxed">
-              La sécurité n'est pas un état de fait, mais un processus continu. Nous mettons à disposition de nos clients des documentations claires et transparentes sur notre architecture de sécurité. De plus, nos systèmes font l'objet d'audits réguliers et de tests d'intrusion (pentests) par des organismes tiers et indépendants, afin de maintenir un niveau de fiabilité à toute épreuve face aux cybermenaces émergentes.
-            </p>
-          </section>
-
-          <section className="bg-red-50 dark:bg-red-900/20 p-8 rounded-2xl shadow-sm border border-red-100 dark:border-red-800/50">
-            <h2 className="text-2xl font-semibold text-red-800 dark:text-red-400 mb-4 flex items-center gap-2">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-              11. Avertissement Relatif à l'Usage de la Solution
-            </h2>
-            <p className="leading-relaxed text-red-900 dark:text-red-300">
-              Le logiciel édité par Devevoke est un outil d'assistance à la gestion administrative, à la coordination et au suivi du parcours médico-social. <strong className="font-semibold">Il ne constitue en aucun cas un dispositif médical.</strong> L'application ne délivre pas de diagnostic clinique ou médical automatisé. Elle est exclusivement conçue pour assister l'organisation et le jugement des professionnels de santé qualifiés, sans jamais se substituer à leur expertise médicale et à leur libre arbitre.
-            </p>
-          </section>
-
+        {/* CTA */}
+        <div className="text-center p-8 sm:p-12 glass rounded-3xl border border-primary-500/20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            Vous avez des questions sur la sécurité de vos outils ?
+          </h2>
+          <p className="text-sm sm:text-base text-muted max-w-xl mx-auto mb-8">
+            Échangez avec nos architectes pour étudier vos protocoles internes et sécuriser les accès de votre association médico-sociale.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/contact" className="btn-primary text-sm font-semibold">
+              <span>Échanger sur votre projet</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/diagnostic-numerique" className="btn-outline text-sm">
+              Faire le diagnostic numérique (3 min)
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   );
-};
-
-export default SecuriteConformitePage;
+}

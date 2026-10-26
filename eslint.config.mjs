@@ -12,12 +12,15 @@ const compat = new FlatCompat({
     allConfig: js.configs.all
 });
 
-export default [
+const eslintConfig = [
     ...nextCoreWebVitals,
     {
         rules: {
+            "react/no-unescaped-entities": "off",
             "react-hooks/set-state-in-effect": "off",
             "react-hooks/immutability": "off"
         }
     }
 ];
+
+export default eslintConfig;

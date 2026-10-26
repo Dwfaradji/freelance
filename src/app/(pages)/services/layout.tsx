@@ -1,11 +1,18 @@
 import React from 'react';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title:
-    'Découvrez les services de développement de DevEvoke.',
-  description: `Explorez nos services de développement web, mobile et SaaS sur mesure pour les PME, TPE et start-ups. Faites passer vos projets au niveau supérieur.`,
+export const metadata: Metadata = {
+  title: 'Services Numériques pour le Secteur Médico-Social | DevEvoke',
+  description:
+    'Découvrez les services d’ingénierie logicielle et de transformation numérique de DevEvoke pour le secteur médico-social : logiciels métiers sur-mesure, applications mobiles terrain, Floticar et conformité RGPD.',
   alternates: {
     canonical: 'https://www.devevoke.com/services',
+  },
+  openGraph: {
+    title: 'Services Numériques Médico-Sociaux | DevEvoke',
+    description:
+      'Solutions numériques et logiciels métiers conçus pour les associations et établissements médico-sociaux en France.',
+    url: 'https://www.devevoke.com/services',
   },
 };
 

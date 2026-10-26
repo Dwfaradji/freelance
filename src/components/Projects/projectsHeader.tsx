@@ -9,15 +9,14 @@ const ProjectsHeader = () => {
     <>
       <header className="mx-auto mb-20 mt-8 text-center px-4">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
-          <span className="section-label mb-4 inline-block">Cas d'usage cliniques</span>
+          <span className="section-label mb-4 inline-block">Réalisations & Retours d’Expérience</span>
 
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Déploiements en{' '}
-            <span className="text-gradient drop-shadow-sm">milieu hospitalier</span>
+            Projets numériques pour le{' '}
+            <span className="text-highlight">secteur médico-social</span>
           </h1>
           <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
-            Nous sommes fiers de partager avec vous nos déploiements les plus récents dans des EHPAD, CHU et cabinets médicaux. 
-            Découvrez comment nos architectures sécurisées (HDS) et nos interfaces ergonomiques permettent aux équipes soignantes de diviser leur charge administrative et de se recentrer sur l'essentiel : le patient.
+            Découvrez nos développements sur-mesure et nos solutions concrètes déployées pour des associations gestionnaires, IME, SESSAD et EHPAD. Des outils simples, sécurisés et pensés pour alléger la charge administrative des équipes de terrain.
           </p>
         </Fade>
       </header>

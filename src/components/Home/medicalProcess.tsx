@@ -1,38 +1,27 @@
 'use client';
 import React from 'react';
 import { motion } from 'motion/react';
+import { Search, Code2, Rocket } from 'lucide-react';
 
 const MedicalProcess = () => {
   const steps = [
     {
       number: "01",
-      title: "Audit Sécurité & Immersion",
-      description: "Avant la première ligne de code, nos UX Designers pratiquent l'immersion clinique (Shadowing) pour comprendre le quotidien de vos soignants. En parallèle, nos architectes auditent vos contraintes réglementaires (CNIL, HDS, Ségur).",
-      icon: (
-        <svg className="w-8 h-8 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-        </svg>
-      )
+      title: "Analyse des Besoins & Terrain",
+      description: "Nous échangeons avec vos directions, chefs de service et équipes de terrain pour cartographier vos processus réels, vos contraintes administratives et les irritants du quotidien.",
+      icon: <Search className="w-8 h-8 text-primary-400" />
     },
     {
       number: "02",
-      title: "Développement Zero Trust",
-      description: "Nous développons votre solution sur-mesure (DPI, App Patient) avec une architecture Zero Trust. L'interopérabilité HL7/FHIR est implémentée nativement pour une communication parfaite avec le DMP et vos logiciels existants.",
-      icon: (
-        <svg className="w-8 h-8 text-secondary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
-        </svg>
-      )
+      title: "Conception UX & Développement",
+      description: "Nos designers et développeurs conçoivent des interfaces simples, accessibles et ergonomiques : logiciels métiers, portails, applications mobiles terrain ou déploiement de Floticar.",
+      icon: <Code2 className="w-8 h-8 text-secondary-400" />
     },
     {
       number: "03",
-      title: "Déploiement HDS & Conformité",
-      description: "L'application est déployée sur des serveurs souverains certifiés HDS (Hébergeur de Données de Santé) en France. Nous vous accompagnons pour la validation finale (tests d'intrusion) et la formation des équipes cliniques.",
-      icon: (
-        <svg className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-        </svg>
-      )
+      title: "Déploiement, Formation & Suivi",
+      description: "Déploiement sur hébergement cloud souverain en France, conformité RGPD rigoureuse, prise en main immédiate par vos équipes et accompagnement technique dans la durée.",
+      icon: <Rocket className="w-8 h-8 text-emerald-400" />
     }
   ];
 
@@ -43,12 +32,12 @@ const MedicalProcess = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="section-label">Méthodologie Qualité</span>
+          <span className="section-label">Méthodologie Agence</span>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 mt-4">
-            Notre approche de <span className="text-gradient">conception clinique</span>
+            De l’irritant terrain à la <span className="text-highlight">solution adoptée</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Parce que les erreurs informatiques dans la santé ont des conséquences critiques, nous appliquons un processus de développement rigoureux (Privacy by Design).
+            Une approche pragmatique et humaine pour concevoir des outils numériques adaptés au rythme des établissements médico-sociaux et adoptés dès le premier jour par vos équipes.
           </p>
         </div>
 
@@ -61,26 +50,22 @@ const MedicalProcess = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="relative z-10 flex flex-col items-center text-center group"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="glass p-8 rounded-3xl border border-white/5 relative z-10 flex flex-col justify-between hover:border-primary-500/30 transition-all duration-300"
             >
-              {/* Cercle avec l'icône */}
-              <div className="w-24 h-24 rounded-full glass border border-white/10 flex items-center justify-center mb-8 relative group-hover:scale-110 group-hover:border-primary-500/50 transition-all duration-300 shadow-xl bg-[#030712]">
-                {/* Numéro flottant */}
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary-600 text-white text-xs font-bold flex items-center justify-center border-4 border-[#030712]">
-                  {step.number}
+              <div>
+                <div className="flex justify-between items-center mb-6">
+                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+                    {step.icon}
+                  </div>
+                  <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white/20 to-white/5">
+                    {step.number}
+                  </span>
                 </div>
-                {step.icon}
+                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
               </div>
-
-              {/* Texte */}
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-primary-400 transition-colors">
-                {step.title}
-              </h3>
-              <p className="text-gray-400 leading-relaxed font-light">
-                {step.description}
-              </p>
             </motion.div>
           ))}
         </div>

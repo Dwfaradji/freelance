@@ -20,15 +20,34 @@ const Page = () => {
 
   return (
     <div className="min-h-screen pb-24">
-      <header className="mx-auto mb-12 text-center mt-20 px-4 relative z-10">
+      {/* Fil d'Ariane SEO */}
+      <nav aria-label="Fil d'Ariane" className="pt-24 pb-2 text-sm text-neutral-400 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <ol className="flex items-center gap-2">
+          <li>
+            <Link href="/" className="hover:text-white transition-colors">
+              Accueil
+            </Link>
+          </li>
+          <li>/</li>
+          <li>
+            <Link href="/solutions" className="hover:text-white transition-colors">
+              Solutions
+            </Link>
+          </li>
+          <li>/</li>
+          <li className="text-white font-medium">Socles & Templates</li>
+        </ol>
+      </nav>
+
+      <header className="mx-auto mb-12 text-center mt-6 px-4 relative z-10">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
-          <span className="section-label mb-4 inline-block">Inspiration par métier</span>
+          <span className="section-label mb-4 inline-block">Socles & Architectures</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Nos <span className="text-gradient drop-shadow-sm">Templates</span>
+            Socles Numériques <span className="text-highlight">Métiers</span>
           </h1>
 
           <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto mb-4">
-            Bienvenue dans notre collection de modèles de sites web triés par profession. Explorez notre sélection et trouvez l'inspiration parfaite pour votre activité.
+            Découvrez nos modèles et socles pré-configurés pour le secteur médico-social et sanitaire (EHPAD, résidences autonomie, coordination de soins, services à domicile). Accélérez votre déploiement tout en assurant une conformité immédiate.
           </p>
         </Fade>
       </header>
@@ -95,7 +114,7 @@ const Page = () => {
           <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
             Démarrez votre projet avec l'un de nos modèles de base. Nous nous chargeons de la personnalisation complète pour l'adapter parfaitement à votre image.
           </p>
-          <Link href="/devis/presence-digitale" className="btn-primary inline-flex">
+          <Link href="/devis/site-web-portail-etablissement" className="btn-primary inline-flex">
             Choisir mon template →
           </Link>
         </div>

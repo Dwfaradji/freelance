@@ -11,22 +11,22 @@ const TeamSection = () => {
   const team = [
     {
       name: 'George Palonga',
-      role: 'Développeur Frontend Santé',
-      desc: "Ancien développeur d'applications critiques, George est spécialisé dans les interfaces de télésurveillance et les PWA (Progressive Web Apps) hors-ligne. Son code garantit une fluidité absolue pour le personnel soignant, même dans les zones blanches des hôpitaux.",
+      role: 'Développeur Web & Mobile Nomade',
+      desc: "Spécialisé dans les Progressive Web Apps (PWA) et les interfaces mobiles utilisables hors-ligne, George conçoit des outils réactifs et fluides pour les professionnels de terrain et éducateurs en déplacement.",
       image: front,
       color: 'from-blue-500/20'
     },
     {
       name: 'Léo Zang',
-      role: 'Ingénieur Backend & Sécurité',
-      desc: "Léo est notre expert en architecture Cloud HDS. Il déploie des infrastructures Zéro Trust et s'assure de l'interopérabilité totale de nos systèmes (HL7, FHIR, API Ségur) pour garantir l'intégrité et le cloisonnement des dossiers médicaux.",
+      role: 'Ingénieur Backend & Sécurité Cloud',
+      desc: "Léo conçoit des architectures logicielles et bases de données robustes. Il garantit le cloisonnement des données, la gestion stricte des droits d'accès (RBAC) et la conformité au RGPD.",
       image: back,
       color: 'from-violet-500/20'
     },
     {
       name: 'Sophie Cartin',
-      role: 'UX/UI Designer Clinique',
-      desc: "Formée aux sciences cognitives, Sophie conçoit des interfaces médicales selon les normes d'accessibilité RGAA. Elle pratique le design centré soignant pour limiter la fatigue d'alerte et réduire les erreurs de saisie en milieu clinique.",
+      role: 'UX/UI Designer Métier & Accessibilité',
+      desc: "Formée à l'ergonomie cognitive, Sophie conçoit des interfaces accessibles (RGAA) et épurées pour limiter la fatigue cognitive et faciliter la prise en main par les équipes d'établissements.",
       image: design,
       color: 'from-pink-500/20'
     }
@@ -35,9 +35,9 @@ const TeamSection = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Notre <span className="text-gradient drop-shadow-sm">Équipe</span></h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Notre <span className="text-highlight">Équipe</span></h2>
         <p className="text-muted max-w-2xl mx-auto text-lg">
-          Le succès d'un projet repose sur l'expertise de chaque membre. Voici les talents qui donnent vie à vos ambitions numériques.
+          Des compétences complémentaires en ingénierie logicielle, design et gestion de projet au service de vos défis numériques.
         </p>
       </div>
 
@@ -66,13 +66,13 @@ const TeamSection = () => {
           <div className="flex-1 text-center md:text-left">
             <div className="mb-4">
               <h3 className="text-3xl font-bold text-white">Boucif Faradji</h3>
-              <p className="text-primary-400 font-medium tracking-wide uppercase text-sm mt-1">Fondateur & Architecte e-Santé</p>
+              <p className="text-primary-400 font-medium tracking-wide uppercase text-sm mt-1">Fondateur & Architecte Logiciel</p>
             </div>
             <p className="text-muted leading-relaxed mb-4">
-              Passionné par l'innovation médicale et les nouvelles technologies, je suis un Architecte Logiciel spécialisé dans l'e-santé avec une forte expertise HDS et FHIR. Mon objectif est de transformer les défis complexes des hôpitaux et EHPAD en solutions web et mobiles performantes, hautement sécurisées, et parfaitement interopérables.
+              Ingénieur logiciel et architecte passionné par l’impact concret du numérique dans le secteur médico-social. Mon objectif est d’accompagner les associations gestionnaires et établissements (IME, SESSAD, ESAT, EHPAD) dans la conception d’outils sur-mesure (logiciels métiers, applications nomades, Floticar) qui résolvent leurs irritants opérationnels.
             </p>
             <p className="text-muted leading-relaxed">
-              Devevoke est le fruit de ma vision : offrir aux établissements de soins et startups MedTech une ingénierie de pointe alliée à une éthique irréprochable, pour redonner du temps médical aux soignants dans un univers numérique en pleine mutation.
+              DevEvoke est née d’une conviction : les organisations médico-sociales méritent des solutions numériques modernes, ergonomiques et souveraines, développées dans le respect le plus strict de la confidentialité et du RGPD.
             </p>
           </div>
         </div>

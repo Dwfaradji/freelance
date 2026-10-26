@@ -21,13 +21,6 @@ import lawyer5 from '@/images/templates/lawyer-5-1920.webp';
 import gym3 from '@/images/templates/gym-3-1920.webp';
 import restaurant2 from '@/images/templates/restaurant-2-1920.webp';
 
-import Template from '@/components/SlideDevis/template/template';
-import MultiColorPicker from '@/components/SlideDevis/multiColorPicker/multiColorPicker';
-import MultiFontsChoice from '@/components/SlideDevis/multiFontsChoice';
-import MultiCheckbox from '@/components/SlideDevis/multiCheckbox';
-import ColorLensIcon from '@mui/icons-material/ColorLens';
-import image from 'next/image';
-
 interface Article {
   id: number;
   title: string;
@@ -45,13 +38,13 @@ interface Article {
 const articles: Article[] = [
   {
     id: 1,
-    title: 'Portail Clinique & Hôpital 🏥',
+    title: 'Portail Établissement Médico-Social 🏢',
     image: medical.src,
     imageMobile: medicalMobile.src,
-    description: 'Une vitrine rassurante pour votre établissement de santé. Navigation fluide par spécialités et module d\'admission en ligne sécurisé (HDS).',
+    description: 'Une vitrine moderne et accessible pour votre établissement médico-social ou associatif. Navigation fluide par pôles d\'accompagnement et formulaire de contact sécurisé.',
     link: `/template/medical/medical-1/index.html`,
     date: '2024-06-04',
-    type: 'Santé & Médical',
+    type: 'Médico-Social & Santé',
   },
   {
     id: 2,
@@ -205,77 +198,5 @@ const articles: Article[] = [
   }
 ];
 
-const data = [
-  {
-    title: 'Catalogue de Templates',
-    content:
-      "Votre empreinte en ligne définit votre succès. Conçus pour les visionnaires, nos 50 templates haut de gamme allient design avant-gardiste et conversions optimisées. Chaque modèle est une promesse d\'excellence, vous garantissant une présence numérique mémorable, parfaitement adaptée à votre secteur d\'activité.",
-    ComponentType: Template,
-    button: 'Modèles',
-    icon: ColorLensIcon,
-  },
-  {
-    title: 'Identité Visuelle & Couleurs',
-    content:
-      "Parce que votre marque est unique, votre site doit l\'être aussi. Accédez à une personnalisation colorimétrique infinie pour refléter fidèlement votre identité. Chaque nuance est pensée pour valoriser votre image de marque et susciter l\'émotion juste auprès de vos futurs clients.",
-    ComponentType: MultiColorPicker,
-    button: 'Couleurs',
-  },
-  {
-    title: 'Typographie & Lisibilité',
-    content:
-      "La typographie est la voix de votre marque. Faites votre choix parmi une sélection rigoureuse de polices professionnelles. Qu\'il soit élégant, audacieux ou minimaliste, le lettrage de votre site sublimera votre message et offrira un confort de lecture optimal à vos visiteurs.",
-    ComponentType: MultiFontsChoice,
-    button: 'Typographie',
-  },
-  {
-    title: 'Architecture du Site',
-    content:
-      "De la simple Landing Page (One-Page) ultra-performante au site vitrine complet multi-pages, choisissez la structure qui répond précisément à vos objectifs commerciaux. Une navigation fluide et intuitive pensée pour maximiser la rétention de vos utilisateurs.",
-    ComponentType: MultiCheckbox,
-    props: {
-      options: ['1 page', '2 pages', '3 pages', '4 pages ou plus'],
-      page: 'Nombre_de_page',
-      valueDefault: '1 page',
-    },
-    button: 'Architecture',
-  },
-  {
-    title: 'Hébergement Sécurisé',
-    content:
-      "Profitez d\'une infrastructure cloud ultra-rapide et sécurisée. Nous garantissons des temps de chargement éclair, un certificat SSL (HTTPS) inclus et une disponibilité à 99,9%. Libérez-vous des contraintes techniques, nous propulsons votre site vers l\'excellence.",
-    ComponentType: MultiCheckbox,
-    props: {
-      options: ['1 an', '2 ans', '3 ans', "Sans hébergement"],
-      page: 'Hebergement',
-      valueDefault: '1 an',
-    },
-    button: 'Hébergement',
-  },
-  {
-    title: 'Maintenance Proactive',
-    content:
-      "Votre temps est précieux, concentrez-vous sur votre cœur de métier. Notre équipe assure une veille technique constante, effectue les mises à jour de sécurité et optimise les performances de votre site pour qu\'il reste à la pointe de la technologie au fil des mois.",
-    ComponentType: MultiCheckbox,
-    props: {
-      options: ['1 mois', '6 mois', '1 an', 'Sans maintenance'],
-      page: 'Maintenance',
-      valueDefault: '1 mois',
-    },
-    button: 'Maintenance',
-  },
-  {
-    title: 'Design 100% Sur-Mesure',
-    content:
-      "Vous avez une vision très précise qui dépasse nos templates ? Nos experts en UI/UX Design conçoivent et développent pour vous une interface totalement unique, pensée pixel par pixel pour captiver votre cible et écraser votre concurrence.",
-    ComponentType: MultiCheckbox,
-    props: {
-      options: ['Oui, projet sur-mesure', 'Non, template standard'],
-      page: 'Personnalisation',
-      valueDefault: 'Non, template standard',
-    },
-    button: 'Sur-Mesure',
-  },
-];
-
+const data: any[] = [];
 export { articles, data };

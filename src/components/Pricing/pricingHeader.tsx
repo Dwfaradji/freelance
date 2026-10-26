@@ -14,7 +14,7 @@ const PricingHeader = () => {
           <span className="section-label mb-4 inline-block">Tarifs</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Une tarification{' '}
-            <span className="text-gradient drop-shadow-sm">
+            <span className="text-highlight">
               transparente
             </span>
           </h1>

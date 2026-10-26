@@ -23,17 +23,28 @@ const icons = [
 ];
 
 const ProcessPage = () => {
-  // Enlève le premier élément qui est juste le grand titre (titleH1), et le dernier élément (conclusion) pour les étapes
-  const titleObj = pageInfosProcess[0];
-  const steps = pageInfosProcess.slice(1, pageInfosProcess.length - 1);
-  const conclusion = pageInfosProcess[pageInfosProcess.length - 1];
+  // All 6 steps from step 1 to step 6
+  const steps = pageInfosProcess.slice(1);
 
   return (
     <div className="overflow-hidden pb-24">
+      {/* Fil d'Ariane SEO */}
+      <nav aria-label="Fil d'Ariane" className="pt-6 pb-2 text-sm text-neutral-400 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ol className="flex items-center gap-2">
+          <li>
+            <Link href="/" className="hover:text-white transition-colors">
+              Accueil
+            </Link>
+          </li>
+          <li>/</li>
+          <li className="text-white font-medium">Processus & Méthodologie</li>
+        </ol>
+      </nav>
+
       {/* Hero Header */}
-      <header className="mx-auto mb-20 mt-8 text-center px-4">
+      <header className="mx-auto mb-20 mt-4 text-center px-4">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
-          <span className="section-label mb-4 inline-block">Méthodologie</span>
+          <span className="section-label mb-4 inline-block">Méthodologie Médico-Sociale</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl max-w-4xl mx-auto">
             Notre Processus de{' '}
             <span className="text-gradient drop-shadow-sm">
@@ -41,7 +52,7 @@ const ProcessPage = () => {
             </span>
           </h1>
           <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
-            De l'idée initiale à la mise en ligne, découvrez comment nous transformons vos ambitions en produits digitaux performants à travers une approche structurée et transparente.
+            De l'immersion initiale auprès des équipes jusqu'à la mise en production sur infrastructure souveraine, découvrez notre démarche méthodique et transparente.
           </p>
         </Fade>
       </header>
@@ -98,14 +109,19 @@ const ProcessPage = () => {
           <div className="glass rounded-3xl p-10 sm:p-16 border border-white/10 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-primary-500/10 to-transparent pointer-events-none" />
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 relative z-10">
-              {conclusion?.title || "Prêt à démarrer ?"}
+              Prêt à concrétiser la solution de votre structure ?
             </h2>
             <p className="text-muted text-lg leading-relaxed max-w-2xl mx-auto mb-10 relative z-10">
-              {conclusion?.text || "Notre objectif est de créer une expérience fluide et professionnelle."}
+              De l&apos;immersion initiale jusqu&apos;au déploiement et à la formation de vos équipes, DevEvoke vous garantit un accompagnement rigoureux, bienveillant et sécurisé.
             </p>
-            <Link href="/contact" className="btn-primary inline-flex relative z-10">
-              Parlez-nous de votre projet
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+              <Link href="/contact" className="btn-primary inline-flex">
+                Parlez-nous de votre projet
+              </Link>
+              <Link href="/services" className="btn-outline inline-flex">
+                Découvrir tous nos services
+              </Link>
+            </div>
           </div>
         </Fade>
       </div>

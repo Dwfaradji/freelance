@@ -20,14 +20,16 @@ const TextHidden = ({ text, style, heightVisible }: TextProps) => {
     }
   };
   useEffect(() => {
-    window.addEventListener('click', (e) => {
-      // @ts-ignore
-      if (e.target.id !== 'button') {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target?.id !== 'button') {
         setVisibleText(heightVisible);
         setTextButton('Lire la suite ...');
       }
-    });
-  }, []);
+    };
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+  }, [heightVisible]);
   return (
     <>
       <p className={`${visibleText} ${style} overflow-hidden break-all`}>

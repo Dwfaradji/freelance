@@ -68,8 +68,13 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <Link href={link} target="_blank" className="btn-primary self-start">
-          Visiter le projet →
+        <Link
+          href={link}
+          target={link.startsWith('http') ? '_blank' : undefined}
+          rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
+          className="btn-primary self-start"
+        >
+          Découvrir le projet →
         </Link>
       </div>
     </article>

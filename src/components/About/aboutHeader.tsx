@@ -1,7 +1,6 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Image from 'next/image';
-import headerAbout from '@/images/about/header_new.png';
 
 const AboutHeader = () => {
   return (
@@ -17,55 +16,61 @@ const AboutHeader = () => {
             <Fade direction="up" cascade damping={0.1} triggerOnce>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
-                <span className="text-sm font-medium text-white tracking-wide uppercase">Agence MedTech & e-Santé</span>
+                <span className="text-sm font-medium text-white tracking-wide uppercase">Agence Digitale Médico-Sociale</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                L'ingénierie au <span className="text-gradient drop-shadow-sm">service du soin.</span>
+                Le numérique au <span className="text-highlight">service de l'humain.</span>
               </h1>
               
               <p className="text-lg text-muted leading-relaxed mb-6">
-                Fondée par des experts en architecture logicielle, <strong>DevEvoke</strong> est l'agence MedTech de référence pour la transformation digitale du secteur médical et médico-social. Nous concevons des logiciels métiers sur-mesure (DUI, portails patients), des applications de télésurveillance (mHealth) et des infrastructures résilientes pour les hôpitaux, cliniques et EHPAD. 
+                Fondée par des experts en ingénierie logicielle et conception d'interface, <strong>DevEvoke</strong> est une agence digitale spécialisée dans la transformation numérique du secteur médico-social. Nous concevons des solutions logicielles métiers sur-mesure, des applications web et mobiles terrain, des automatisations administratives et des outils SaaS comme Floticar pour les associations gestionnaires, IME, SESSAD, ESAT, EHPAD et MAS.
               </p>
               <p className="text-lg text-muted leading-relaxed mb-10">
-                Notre mission est double : garantir une <strong>sécurité absolue (conformité HDS, RGPD)</strong> des données de santé, et <strong>réduire drastiquement la charge mentale</strong> des soignants grâce à des interfaces ergonomiques. Nous transformons la technologie en temps médical disponible.
+                Notre mission : <strong>réduire la charge administrative</strong> des équipes et des directions d'établissements grâce à des interfaces intuitives, tout en garantissant une <strong>stricte conformité au RGPD</strong> et un hébergement souverain en France.
               </p>
               
-              {/* Chiffres Clés */}
+              {/* Engagements Clés */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="glass p-4 rounded-2xl border border-white/5 border-l-primary-500 border-l-4">
-                  <div className="text-3xl font-bold text-white mb-1">+10 ans</div>
-                  <div className="text-sm text-muted-light">D'expertise combinée</div>
+                  <div className="text-2xl font-bold text-white mb-1">Sur-Mesure</div>
+                  <div className="text-xs text-muted-light">Calqué sur vos protocoles</div>
                 </div>
                 <div className="glass p-4 rounded-2xl border border-white/5 border-l-secondary-500 border-l-4">
-                  <div className="text-3xl font-bold text-white mb-1">100%</div>
-                  <div className="text-sm text-muted-light">Conformité HDS & RGPD</div>
+                  <div className="text-2xl font-bold text-white mb-1">100% RGPD</div>
+                  <div className="text-xs text-muted-light">Conformité CNIL stricte</div>
                 </div>
-                <div className="glass p-4 rounded-2xl border border-white/5 border-l-pink-500 border-l-4">
-                  <div className="text-3xl font-bold text-white mb-1">+50</div>
-                  <div className="text-sm text-muted-light">Projets e-Santé déployés</div>
+                <div className="glass p-4 rounded-2xl border border-white/5 border-l-emerald-500 border-l-4">
+                  <div className="text-2xl font-bold text-white mb-1">France</div>
+                  <div className="text-xs text-muted-light">Hébergement souverain</div>
                 </div>
-                <div className="glass p-4 rounded-2xl border border-white/5 border-l-violet-500 border-l-4">
-                  <div className="text-3xl font-bold text-white mb-1">Zéro</div>
-                  <div className="text-sm text-muted-light">Faille de sécurité (Zero Trust)</div>
+                <div className="glass p-4 rounded-2xl border border-white/5 border-l-sky-500 border-l-4">
+                  <div className="text-2xl font-bold text-white mb-1">Terrain</div>
+                  <div className="text-xs text-muted-light">Écoute & immersion réelle</div>
                 </div>
               </div>
             </Fade>
           </div>
 
-          {/* Colonne Image / Visuel 3D */}
+          {/* Colonne Image: Photographie authentique d'atelier collaboratif */}
           <div className="w-full lg:w-1/2 relative z-10">
             <Fade direction="up" delay={200} triggerOnce>
               <div className="relative rounded-[2.5rem] overflow-hidden glass border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] group">
                 <Image
-                  src={headerAbout}
-                  alt="Intelligence Artificielle et Médecine"
+                  src="/images/home/workshop_coconception.jpg"
+                  alt="Atelier collaboratif de conception numérique DevEvoke avec une direction d'association médico-sociale"
                   width={1000}
-                  height={1000}
-                  className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+                  height={750}
+                  className="w-full h-[420px] sm:h-[500px] object-cover object-center transform transition-transform duration-700 group-hover:scale-105 brightness-[0.95] contrast-[1.05]"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/80 via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/80 via-transparent to-transparent opacity-50" />
+                <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-neutral-900/80 border border-white/10 rounded-2xl p-4">
+                  <span className="text-xs font-bold text-white block">Immersion terrain & co-conception</span>
+                  <p className="text-[11px] text-neutral-300">
+                    Chaque solution est imaginée avec vos professionnels pour garantir une adoption naturelle.
+                  </p>
+                </div>
               </div>
             </Fade>
           </div>

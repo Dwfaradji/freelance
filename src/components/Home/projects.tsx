@@ -32,7 +32,7 @@ const Projects = () => {
             <span className="section-label mb-4">Portfolio</span>
             <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-6">
               Où l&apos;idée prend{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+              <span className="text-highlight">
                 vie
               </span>
             </h2>
@@ -51,8 +51,8 @@ const Projects = () => {
               ))}
             </ul>
 
-            <Link href="/portfolio" className="btn-primary w-fit group">
-              Explorer le portfolio complet
+            <Link href="/realisations" className="btn-primary w-fit group">
+              Explorer nos réalisations médico-sociales
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />

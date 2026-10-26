@@ -11,20 +11,20 @@ import symfony from '@/images/about/symphony.webp';
 
 const AboutGrid = () => {
   const techs = [
-    { name: 'React', desc: 'Interfaces dynamiques et fluides pour les plateformes de télésurveillance', img: react },
-    { name: 'Next.js', desc: 'Rendu ultra-rapide côté serveur, vital pour les situations d\'urgence', img: nextJs },
-    { name: 'Tailwind CSS', desc: 'Systèmes de design accessibles (RGAA) pour les professionnels de santé', img: tailwind },
-    { name: 'Node.js', desc: 'Architecture asynchrone hautement scalable pour traiter des millions de données IoT', img: nodejs },
-    { name: 'PostgreSQL', desc: 'Intégrité relationnelle absolue pour les Dossiers Patients Informatisés (DPI)', img: postGrey },
-    { name: 'Symfony', desc: 'Sécurité et robustesse bancaire appliquée aux flux d\'informations de santé', img: symfony }
+    { name: 'React', desc: 'Interfaces réactives, modernes et fluides pour la coordination d’équipes et la gestion de plannings.', img: react },
+    { name: 'Next.js', desc: 'Performance maximale, éco-conception et temps de chargement instantanés sur smartphone et ordinateur.', img: nextJs },
+    { name: 'Tailwind CSS', desc: 'Design systems accessibles et contrastés conformes aux normes RGAA pour une lisibilité irréprochable.', img: tailwind },
+    { name: 'Node.js', desc: 'Architectures d’API sécurisées pour synchroniser vos logiciels administratifs sans doubles saisies.', img: nodejs },
+    { name: 'PostgreSQL', desc: 'Bases de données relationnelles robustes et chiffrées pour centraliser vos processus d’établissement.', img: postGrey },
+    { name: 'TypeScript', desc: 'Rigueur de typage garantissant la stabilité, la sécurité et la pérennité de votre outil dans le temps.', img: symfony }
   ];
 
   return (
     <section className="py-20 mb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Notre Socle Technologique <span className="text-gradient drop-shadow-sm">e-Santé</span></h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Notre Socle Technologique <span className="text-highlight">Moderne</span></h2>
         <p className="text-muted max-w-2xl mx-auto text-lg">
-          Nous utilisons les frameworks les plus robustes et sécurisés du marché pour construire des applications médicales résilientes, interopérables et auditables (HDS).
+          Nous utilisons les frameworks les plus robustes et maintenables du marché (Next.js, TypeScript, React, Tailwind) pour concevoir des solutions performantes, pérennes et conformes au RGPD.
         </p>
       </div>
 

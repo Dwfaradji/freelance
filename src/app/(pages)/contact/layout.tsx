@@ -1,10 +1,11 @@
 import React from 'react';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title:
-    'Contactez DevEvoke pour vos questions sur le développement.',
-  description:`Contactez l’équipe de DevEvoke pour toute question ou collaboration en développement web. Nous sommes là pour vous aider à atteindre vos objectifs.`,
- alternates: {
+export const metadata: Metadata = {
+  title: 'Contactez Nos Experts en Digitalisation Médico-Social & E-Santé',
+  description:
+    'Prenez contact avec les experts DevEvoke pour échanger sur la digitalisation de votre établissement médico-social, vos besoins logiciels ou une démonstration de Floticar.',
+  alternates: {
     canonical: 'https://www.devevoke.com/contact',
   },
 };

@@ -19,9 +19,9 @@ const statsData = [
     color: 'from-primary to-secondary-400',
   },
   {
-    end: 15,
+    end: 25,
     suffix: '+',
-    label: 'Projets certifiés HDS',
+    label: 'Outils & Logiciels Déployés',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -79,7 +79,7 @@ const AnimatedStats = () => (
             }`}
           >
             {/* Nombre */}
-            <div className={`text-4xl sm:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-2 drop-shadow-sm`}>
+            <div className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-2 drop-shadow-[0_2px_12px_rgba(56,189,248,0.35)]">
               <CountUp start={0} end={stat.end} duration={2.5} suffix={stat.suffix} />
             </div>
 

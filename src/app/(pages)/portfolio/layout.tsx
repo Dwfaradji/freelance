@@ -1,12 +1,11 @@
 import React from 'react';
 
 export const metadata = {
-  title:
-    'Projets de développement web par DevEvoke - Découvrez notre portfolio',
+  title: 'Cas Pratiques & Déploiements E-Santé et Médico-Social',
   description:
-`Découvrez les projets réalisés par DevEvoke. Explorez notre portfolio et voyez comment nous pouvons concrétiser vos idées avec nos solutions sur mesure.`,
+    'Découvrez les réalisations et solutions logicielles déployées par DevEvoke : gestion de flotte (Floticar), applications cliniques, dossiers usagers et portails sécurisés.',
   alternates: {
-    canonical: 'https://www.devevoke.com/portfolio',
+    canonical: 'https://www.devevoke.com/realisations',
   },
 };
 

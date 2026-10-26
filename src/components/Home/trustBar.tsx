@@ -5,24 +5,24 @@ import { motion } from 'motion/react';
 const TrustBar = () => {
   const certifications = [
     {
-      name: "Hébergeur Données de Santé",
-      short: "HDS",
-      color: "from-blue-500 to-cyan-400"
-    },
-    {
       name: "Conformité Européenne",
       short: "RGPD",
-      color: "from-green-500 to-emerald-400"
+      color: "from-emerald-300 to-teal-200"
     },
     {
-      name: "Ségur du Numérique",
-      short: "SÉGUR",
-      color: "from-purple-500 to-pink-400"
+      name: "Hébergement Français",
+      short: "SOUVERAIN",
+      color: "from-sky-300 to-cyan-200"
     },
     {
-      name: "Architecture Sécurisée",
-      short: "Zero Trust",
-      color: "from-orange-500 to-red-400"
+      name: "Accessibilité Numérique",
+      short: "RGAA",
+      color: "from-violet-300 to-pink-200"
+    },
+    {
+      name: "Sécurité Applicative",
+      short: "CHIFFREMENT",
+      color: "from-amber-300 to-yellow-200"
     }
   ];
 
