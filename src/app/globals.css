@@ -16,50 +16,55 @@ main {
 
 
 @theme {
-  /* ── Colors ── */
+  /* ── Colors — Charte Graphique DevEvoke (D: Turquoise / E: Bleu Roi) ── */
   --color-bg: #030712;
-  /* gray-950 */
-  --color-surface: #0f172a;
-  /* slate-900 */
-  --color-surface-2: #1e293b;
-  /* slate-800 */
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-light: rgba(255, 255, 255, 0.15);
+  --color-surface: #0a1120;
+  --color-surface-2: #111e36;
+  --color-border: rgba(56, 198, 217, 0.12);
+  --color-border-light: rgba(255, 255, 255, 0.12);
 
-  /* Primary — Electric Blue */
-  --color-primary: #3b82f6;
-  /* blue-500 */
-  --color-primary-400: #60a5fa;
-  /* blue-400 */
-  --color-primary-600: #2563eb;
-  /* blue-600 */
-  --color-primary-glow: rgba(59, 130, 246, 0.4);
+  /* Primary — Turquoise / Cyan Lumineux (Lettre « D ») */
+  --color-primary: #38c6d9;
+  --color-primary-50: #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #a5f3fc;
+  --color-primary-300: #8cf0f8;
+  --color-primary-400: #38c6d9;
+  --color-primary-500: #2294b8;
+  --color-primary-600: #147491;
+  --color-primary-700: #0e5a8a;
+  --color-primary-800: #083b66;
+  --color-primary-900: #04192e;
+  --color-primary-950: #051329;
+  --color-primary-glow: rgba(56, 198, 217, 0.45);
 
-  /* Secondary — Luminous Electric Sky */
-  --color-secondary: #0ea5e9;
-  /* sky-500 */
-  --color-secondary-400: #38bdf8;
-  /* sky-400 */
-  --color-secondary-300: #7dd3fc;
-  /* sky-300 */
-  --color-secondary-200: #bae6fd;
-  /* sky-200 */
-  --color-accent: #818cf8;
-  /* indigo-400 - high luminance on dark */
+  /* Secondary — Bleu Roi / Saphir Profond (Lettre « E ») */
+  --color-secondary: #1e62a8;
+  --color-secondary-50: #eff6ff;
+  --color-secondary-100: #dbeafe;
+  --color-secondary-200: #bfdbfe;
+  --color-secondary-300: #93c5fd;
+  --color-secondary-400: #48a4e8;
+  --color-secondary-500: #2d82c9;
+  --color-secondary-600: #1e62a8;
+  --color-secondary-700: #175299;
+  --color-secondary-800: #0d3b73;
+  --color-secondary-900: #092b5a;
+  --color-secondary-950: #051329;
 
-  /* Text - High Contrast for WCAG */
+  /* Accent — Cyan Glacé / Transition */
+  --color-accent: #67b8f0;
+
+  /* Text - High Contrast for WCAG 2.1 */
   --color-text: #f9fafb;
-  /* gray-50 */
   --color-muted: #cbd5e1;
-  /* slate-300 - High contrast 7:1 ratio on black */
   --color-muted-light: #94a3b8;
-  /* slate-400 */
 
   /* Legacy for compatibility */
-  --color-purple: #818cf8;
-  --color-pink: #38bdf8;
-  --color-lightblack: #0f172a;
-  --color-blue: #38bdf8;
+  --color-purple: #48a4e8;
+  --color-pink: #38c6d9;
+  --color-lightblack: #0a1120;
+  --color-blue: #38c6d9;
 
   /* ── Fonts ── */
   --font-grotesk: var(--font-grotesk-var, 'Space Grotesk', sans-serif);
@@ -132,18 +137,18 @@ main {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #7dd3fc;
-  background-image: linear-gradient(135deg, #ffffff 0%, #93c5fd 40%, #38bdf8 100%);
-  filter: drop-shadow(0 2px 14px rgba(56, 189, 248, 0.4));
+  color: #38c6d9;
+  background-image: linear-gradient(135deg, #ffffff 0%, #8cf0f8 40%, #38c6d9 100%);
+  filter: drop-shadow(0 2px 14px rgba(56, 198, 217, 0.4));
 }
 
 @utility text-highlight {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #38bdf8;
-  background-image: linear-gradient(135deg, #ffffff 15%, #7dd3fc 50%, #38bdf8 100%);
-  filter: drop-shadow(0 2px 16px rgba(56, 189, 248, 0.45));
+  color: #38c6d9;
+  background-image: linear-gradient(135deg, #ffffff 15%, #8cf0f8 50%, #38c6d9 100%);
+  filter: drop-shadow(0 2px 16px rgba(56, 198, 217, 0.45));
   font-weight: 800;
 }
 
@@ -152,21 +157,21 @@ main {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #ffffff;
-  background-image: linear-gradient(180deg, #ffffff 30%, #cbd5e1 100%);
+  background-image: linear-gradient(180deg, #ffffff 30%, #a5f3fc 100%);
 }
 
 @utility glass {
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(10, 17, 32, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(56, 198, 217, 0.12);
 }
 
 @utility glass-strong {
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(10, 17, 32, 0.8);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(56, 198, 217, 0.2);
 }
 
 /* ═══════════════════════════════════════════════
@@ -212,8 +217,8 @@ main {
   body {
     background-color: var(--color-bg);
     background-image:
-      radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.05), transparent 25%),
-      radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05), transparent 25%);
+      radial-gradient(circle at 15% 50%, rgba(56, 198, 217, 0.07), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(30, 98, 168, 0.08), transparent 25%);
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -254,12 +259,12 @@ main {
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(164, 14, 14, 0.15);
+    background: rgba(56, 198, 217, 0.25);
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(56, 198, 217, 0.5);
   }
 
   h1,
@@ -328,21 +333,22 @@ main {
     gap: 8px;
     padding: 12px 24px;
     min-height: 44px;
-    background: rgba(14, 165, 233, 0.12);
-    color: #38bdf8;
+    background: rgba(56, 198, 217, 0.12);
+    color: #38c6d9;
     border-radius: 9999px;
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    border: 1px solid rgba(14, 165, 233, 0.3);
+    border: 1px solid rgba(56, 198, 217, 0.35);
     cursor: pointer;
   }
 
   .btn-secondary:hover {
-    background: rgba(14, 165, 233, 0.2);
-    border-color: rgba(14, 165, 233, 0.5);
+    background: rgba(56, 198, 217, 0.22);
+    border-color: rgba(56, 198, 217, 0.6);
     color: #ffffff;
     transform: translateY(-1px);
+    box-shadow: 0 4px 14px 0 rgba(56, 198, 217, 0.25);
   }
 
   .btn-outline {
@@ -416,20 +422,20 @@ main {
   }
 
   .card-modern:hover {
-    border-color: rgba(59, 130, 246, 0.35);
-    background: rgba(15, 23, 42, 0.85);
+    border-color: rgba(56, 198, 217, 0.35);
+    background: rgba(10, 17, 32, 0.85);
     transform: translateY(-2px);
-    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(56, 198, 217, 0.15);
   }
 
   .card-highlight {
-    background: linear-gradient(180deg, rgba(30, 58, 138, 0.2) 0%, rgba(15, 23, 42, 0.8) 100%);
+    background: linear-gradient(180deg, rgba(30, 98, 168, 0.22) 0%, rgba(10, 17, 32, 0.85) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(56, 198, 217, 0.3);
     border-radius: 1.25rem;
     padding: 1.5rem;
-    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.15);
+    box-shadow: 0 20px 40px -15px rgba(56, 198, 217, 0.18);
   }
 
   @media (min-width: 640px) {
@@ -484,8 +490,8 @@ main {
 /* Aurora Background */
 .bg-aurora {
   background-image:
-    radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 40%),
-    radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.15), transparent 40%);
+    radial-gradient(circle at top right, rgba(56, 198, 217, 0.16), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(30, 98, 168, 0.16), transparent 40%);
 }
 
 .bg-grid {

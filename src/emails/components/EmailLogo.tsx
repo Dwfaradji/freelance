@@ -29,15 +29,15 @@ export function EmailLogo({ size = 'md' }: EmailLogoProps) {
                   width: `${iconSize}px`,
                   height: `${iconSize}px`,
                   borderRadius: '7px',
-                  backgroundColor: '#1d4ed8',
-                  border: '1px solid #3b82f6',
+                  backgroundColor: '#1e62a8',
+                  border: '1px solid #38c6d9',
                   textAlign: 'center',
                   lineHeight: `${iconSize}px`,
                   color: '#ffffff',
                   fontWeight: 800,
                   fontSize: `${Math.round(iconSize * 0.55)}px`,
                   fontFamily: emailTokens.typography.fontFamily,
-                  boxShadow: '0 2px 8px rgba(59, 130, 246, 0.4)',
+                  boxShadow: '0 2px 8px rgba(56, 198, 217, 0.4)',
                 }}
               >
                 D
@@ -54,7 +54,7 @@ export function EmailLogo({ size = 'md' }: EmailLogoProps) {
                   lineHeight: '1',
                 }}
               >
-                Dev<span style={{ color: emailTokens.colors.primaryLight }}>Evoke</span>
+                Dev<span style={{ color: emailTokens.colors.primary }}>Evoke</span>
               </div>
               <div
                 style={{
