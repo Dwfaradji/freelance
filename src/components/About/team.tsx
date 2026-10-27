@@ -1,43 +1,43 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import { UserCheck, Code2, Layers, Cpu, ShieldCheck, HeartHandshake } from 'lucide-react';
 
 import myPhoto from '@/images/about/photo-profil-1920.webp';
-import back from '@/images/about/Nakamoto-1920.webp';
-import front from '@/images/about/africain-1920.webp';
-import design from '@/images/about/designer-1920.webp';
+
+const founderPillars = [
+  {
+    icon: UserCheck,
+    title: 'Interlocuteur Unique & Direct',
+    desc: 'Pas de commercial intermédiaire ni de déperdition d’information : vous échangez directement avec celui qui conçoit, développe et déploie votre solution.',
+  },
+  {
+    icon: Layers,
+    title: 'Compréhension du Besoin Métier',
+    desc: 'Chaque projet démarre par une immersion dans vos processus réels, vos contraintes d’équipe et vos objectifs opérationnels, avant tout choix technique.',
+  },
+  {
+    icon: Code2,
+    title: 'Maîtrise Technique Complète',
+    desc: 'De l’architecture logicielle (Next.js, TypeScript, PostgreSQL) à la sécurité, aux API et à la maintenance, l’ensemble de la chaîne est sous contrôle rigoureux.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Accompagnement de Bout en Bout',
+    desc: 'DevEvoke assure un suivi sur le long terme : conception, cadrage fonctionnel, développement, mise en production souveraine et évolutions régulières.',
+  },
+];
 
 const TeamSection = () => {
-  const team = [
-    {
-      name: 'George Palonga',
-      role: 'Développeur Web & Mobile Nomade',
-      desc: "Spécialisé dans les Progressive Web Apps (PWA) et les interfaces mobiles utilisables hors-ligne, George conçoit des outils réactifs et fluides pour les professionnels de terrain et éducateurs en déplacement.",
-      image: front,
-      color: 'from-blue-500/20'
-    },
-    {
-      name: 'Léo Zang',
-      role: 'Ingénieur Backend & Sécurité Cloud',
-      desc: "Léo conçoit des architectures logicielles et bases de données robustes. Il garantit le cloisonnement des données, la gestion stricte des droits d'accès (RBAC) et la conformité au RGPD.",
-      image: back,
-      color: 'from-violet-500/20'
-    },
-    {
-      name: 'Sophie Cartin',
-      role: 'UX/UI Designer Métier & Accessibilité',
-      desc: "Formée à l'ergonomie cognitive, Sophie conçoit des interfaces accessibles (RGAA) et épurées pour limiter la fatigue cognitive et faciliter la prise en main par les équipes d'établissements.",
-      image: design,
-      color: 'from-pink-500/20'
-    }
-  ];
-
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Notre <span className="text-highlight">Équipe</span></h2>
+        <span className="section-label mb-3 inline-block">Structure Indépendante & Proximité</span>
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+          Une agence portée par son <span className="text-highlight">fondateur</span>
+        </h2>
         <p className="text-muted max-w-2xl mx-auto text-lg">
-          Des compétences complémentaires en ingénierie logicielle, design et gestion de projet au service de vos défis numériques.
+          Chez DevEvoke, pas d&apos;intermédiaires superflus. Vous bénéficiez d&apos;un dialogue direct, d&apos;une agilité totale et d&apos;un haut niveau d&apos;exigence technique pour vos projets numériques.
         </p>
       </div>
 
@@ -52,61 +52,61 @@ const TeamSection = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-400/10 to-transparent opacity-50 z-0" />
         
         <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-10">
-          <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 rounded-full overflow-hidden border-4 border-white/5 shadow-2xl relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary opacity-20 mix-blend-overlay z-10" />
+          <div className="w-48 h-48 md:w-60 md:h-60 shrink-0 rounded-2xl overflow-hidden border-2 border-white/15 shadow-2xl relative">
             <Image
               src={myPhoto}
-              alt="Boucif Faradji - Fondateur"
+              alt="Boucif Faradji - Fondateur de DevEvoke"
               width={400}
               height={400}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
             />
           </div>
           
-          <div className="flex-1 text-center md:text-left">
-            <div className="mb-4">
+          <div className="flex-1 text-center md:text-left space-y-4">
+            <div>
               <h3 className="text-3xl font-bold text-white">Boucif Faradji</h3>
-              <p className="text-primary-400 font-medium tracking-wide uppercase text-sm mt-1">Fondateur & Architecte Logiciel</p>
+              <p className="text-primary-400 font-semibold tracking-wide uppercase text-sm mt-1">
+                Fondateur & Développeur Full-Stack
+              </p>
             </div>
-            <p className="text-muted leading-relaxed mb-4">
-              Ingénieur logiciel et architecte passionné par l’impact concret du numérique dans le secteur médico-social. Mon objectif est d’accompagner les associations gestionnaires et établissements (IME, SESSAD, ESAT, EHPAD) dans la conception d’outils sur-mesure (logiciels métiers, applications nomades, Floticar) qui résolvent leurs irritants opérationnels.
+            <p className="text-muted leading-relaxed">
+              Développeur passionné par l’ingénierie logicielle et les architectures web modernes, j&apos;ai créé DevEvoke avec une vision claire : concevoir des solutions numériques et des logiciels métier sur mesure qui répondent aux contraintes réelles des entreprises, des organisations et des structures médico-sociales.
             </p>
             <p className="text-muted leading-relaxed">
-              DevEvoke est née d’une conviction : les organisations médico-sociales méritent des solutions numériques modernes, ergonomiques et souveraines, développées dans le respect le plus strict de la confidentialité et du RGPD.
+              Que ce soit pour créer une plateforme SaaS complète comme Floticar, digitaliser un processus métier complexe ou bâtir une application mobile professionnelle, DevEvoke privilégie toujours l&apos;utilité concrète, la pérennité du code et la proximité humaine.
             </p>
+            <div className="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3 text-xs text-neutral-300">
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono">Next.js / React</span>
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono">TypeScript</span>
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono">Node.js / PostgreSQL</span>
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono">React Native</span>
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono">Hébergement France / RGPD</span>
+            </div>
           </div>
         </div>
       </motion.div>
 
-      {/* Team Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {team.map((member, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.15, duration: 0.5 }}
-            className="glass p-8 rounded-3xl border border-white/5 hover:border-white/10 hover:glass-strong transition-all duration-300 text-center group relative overflow-hidden"
-          >
-            <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-b ${member.color} blur-3xl opacity-50 z-0`} />
-            
-            <div className="relative z-10">
-              <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-white/10 shadow-lg">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+      {/* Pillars Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {founderPillars.map((p, i) => {
+          const Icon = p.icon;
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.4 }}
+              className="card-modern p-6 text-left space-y-3"
+            >
+              <div className="size-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-400">
+                <Icon className="size-5" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-              <p className="text-xs font-medium text-primary-400 uppercase tracking-wider mb-4">{member.role}</p>
-              <p className="text-muted-light text-sm leading-relaxed">{member.desc}</p>
-            </div>
-          </motion.div>
-        ))}
+              <h3 className="text-base font-bold text-white">{p.title}</h3>
+              <p className="text-xs text-muted leading-relaxed font-normal">{p.desc}</p>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

@@ -29,11 +29,11 @@ interface NeedItem {
 const needs: NeedItem[] = [
   {
     id: 'custom-software',
-    problem: '« Aucun logiciel du marché ne correspond exactement aux besoins de nos équipes »',
+    problem: '« Aucun logiciel du marché ne correspond exactement à nos processus réels »',
     solution: 'Logiciel métier sur-mesure',
     description:
-      'Conception d’outils internes, portails professionnels et plateformes web adaptés à vos protocoles d’accompagnement et à votre gouvernance associative.',
-    link: '/solutions/logiciel-metier',
+      'Conception d’outils internes, portails professionnels et plateformes web adaptés à votre gouvernance, vos protocoles et vos équipes.',
+    link: '/solutions-metier',
     ctaText: 'Voir notre approche logiciel',
     icon: Cpu,
     tag: 'Sur-mesure & Évolutif',
@@ -41,58 +41,58 @@ const needs: NeedItem[] = [
   },
   {
     id: 'website',
-    problem: '« Notre site internet est vieillissant et ne valorise pas nos établissements »',
-    solution: 'Création & Refonte de site web accessible',
+    problem: '« Notre site internet est vieillissant et ne génère pas de prospects qualifiés »',
+    solution: 'Développement web & plateformes performantes',
     description:
-      'Sites vitrines modernes et accessibles (RGAA), facilitant la prise de contact des familles, le recrutement de soignants et la visibilité des pôles.',
-    link: '/solutions/site-web',
-    ctaText: 'Découvrir la création de sites',
+      'Sites d’entreprise et plateformes web ultra-rapides sous Next.js, taillés pour la conversion, le référencement naturel (SEO) et l’image de marque.',
+    link: '/developpement-web',
+    ctaText: 'Découvrir le développement web',
     icon: Building2,
-    tag: 'Visibilité & Accessibilité',
+    tag: 'Performance & Visibilité',
   },
   {
     id: 'paperwork',
-    problem: '« Nos équipes perdent trop de temps sur des tâches administratives répétitives »',
-    solution: 'Automatisation & Dématérialisation',
+    problem: '« Nos équipes perdent un temps précieux sur des saisies manuelles répétitives »',
+    solution: 'Automatisation des flux & suppression double saisie',
     description:
-      'Suppression de la double saisie, synchronisation de données, génération automatique de bilans d’activité et circuits de validation simplifiés.',
-    link: '/solutions/automatisation',
-    ctaText: 'Explorer les automatisations',
+      'Suppression des ressaisies, synchronisation temps réel de vos outils via API et génération instantanée de bilans d’activité en PDF.',
+    link: '/automatisation',
+    ctaText: 'Explorer l’automatisation',
     icon: FileCheck2,
-    tag: 'Gain de temps terrain',
+    tag: 'Gain de temps opérationnel',
   },
   {
     id: 'field-teams',
-    problem: '« Nos professionnels en tournée manquent d’outils mobiles fiables »',
-    solution: 'Applications mobiles & tablettes nomades',
+    problem: '« Nos professionnels sur le terrain manquent d’outils mobiles fiables et hors-ligne »',
+    solution: 'Applications mobiles iOS & Android (Offline-First)',
     description:
-      'Outils pour éducateurs et soignants en déplacement : planning journalier, fiches usagers sécurisées, notes vocales et fonctionnement hors-ligne.',
-    link: '/solutions/application-mobile',
+      'Outils tactiles pour techniciens, commerciaux ou équipes itinérantes : plannings, comptes-rendus express et fonctionnement 100% hors-ligne.',
+    link: '/application-mobile',
     ctaText: 'Découvrir les applications mobiles',
     icon: Users,
-    tag: 'Usage Nomade SESSAD',
+    tag: 'Mobilité & Hors-Ligne',
   },
   {
-    id: 'multi-sites',
-    problem: '« Notre association gère plusieurs sites aux outils informatiques hétérogènes »',
-    solution: 'Centralisation & Tableaux de bord de direction',
+    id: 'saas-product',
+    problem: '« Nous voulons digitaliser notre offre ou lancer un produit SaaS B2B »',
+    solution: 'Conception de plateforme SaaS sur-mesure',
     description:
-      'Harmonisation du système d’information, consolidation multi-établissements, reporting de pilotage et visibilité en temps réel pour la direction.',
-    link: '/solutions/outils-metier',
-    ctaText: 'Découvrir les outils internes',
+      'Architecture cloud multi-tenant sécurisée, gestion des abonnements Stripe, facturation automatisée et espace client en libre-service.',
+    link: '/developpement-saas',
+    ctaText: 'Concevoir votre SaaS',
     icon: ShieldCheck,
-    tag: 'Gouvernance Multi-Sites',
+    tag: 'Produit Cloud B2B',
   },
   {
     id: 'fleet',
-    problem: '« Nous devons gérer et sécuriser une flotte de véhicules associatifs »',
-    solution: 'Floticar — Gestion de flotte médico-sociale',
+    problem: '« Nous avons besoin de fiabiliser la gestion d’une flotte ou de matériel »',
+    solution: 'Floticar — Gestion de flotte connectée',
     description:
-      'Carnet de bord numérique par QR code, suivi kilométrique, contrôle des permis et alertes entretiens. Une solution concrète développée par DevEvoke.',
-    link: '/realisations/floticar',
-    ctaText: 'Découvrir l’étude de cas Floticar',
+      'Carnet de bord numérique par QR code sur smartphone, alertes de contrôle technique et traçabilité des conducteurs. Conçu par DevEvoke.',
+    link: '/realisations',
+    ctaText: 'Découvrir l’étude de cas',
     icon: Car,
-    tag: 'Étude de cas & SaaS',
+    tag: 'Étude de cas concrète',
   },
 ];
 
@@ -117,7 +117,7 @@ export default function NeedsSection() {
             , nous concevons la solution.
           </h2>
           <p className="text-lg text-muted leading-relaxed">
-            Pas de jargon technique stérile : sélectionnez la problématique rencontrée dans votre établissement pour découvrir notre réponse numérique opérationnelle.
+            Pas de jargon technique stérile : sélectionnez la problématique rencontrée dans votre organisation pour découvrir notre réponse numérique opérationnelle.
           </p>
         </div>
 
@@ -188,14 +188,14 @@ export default function NeedsSection() {
               Votre besoin spécifique ne figure pas dans cette liste ?
             </h4>
             <p className="text-sm text-muted">
-              Nous étudions l’organisation et les contraintes de votre structure médico-sociale pour concevoir une réponse adaptée.
+              Nous étudions l’organisation et les contraintes de votre entreprise ou association pour concevoir une réponse technique adaptée.
             </p>
           </div>
           <Link
             href="/contact"
             className="btn-primary shrink-0 px-6 py-3 text-sm font-semibold whitespace-nowrap"
           >
-            Échanger avec un architecte
+            Échanger avec le fondateur
           </Link>
         </div>
       </div>

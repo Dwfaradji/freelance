@@ -37,7 +37,7 @@ const AppHead: React.FC = () => {
 
   return (
     <>
-      <meta name="theme-color" content="#ffffff" />
+      <meta name="theme-color" content="#030712" />
 
       <CookieBanner
         config={config as any}

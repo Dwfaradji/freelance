@@ -43,7 +43,7 @@ export default function FinalCTA() {
         <div className="pt-8 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-neutral-400">
           <span>• Réponse garantie sous 24 à 48h ouvrées</span>
           <span>• Confidentialité stricte des échanges (NDA)</span>
-          <span>• Accompagnement par un architecte logiciel</span>
+          <span>• Échange direct avec Boucif Faradji, fondateur</span>
         </div>
       </div>
     </section>

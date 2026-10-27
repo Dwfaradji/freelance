@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import PricingHeader from '@/components/Pricing/pricingHeader';
-import PricingMain from '@/components/Home/pricing';
+import PricingMain from '@/components/Pricing/pricingMain';
 import PricingFAQ from '@/components/Pricing/pricingFAQ';
 import PricingCTA from '@/components/Pricing/pricingCTA';
 

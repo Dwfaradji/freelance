@@ -50,7 +50,7 @@ const otherEstablishments = [
     sigle: 'FAM & MAS',
     title: 'Foyers & Maisons d’Accueil Spécialisées',
     focus: 'Organisation du quotidien des résidents, astreintes et traçabilité des interventions.',
-    href: '/secteurs/medico-social',
+    href: '/medico-social',
   },
   {
     sigle: 'Associations Multi-Sites',
@@ -62,7 +62,7 @@ const otherEstablishments = [
     sigle: 'Gestion de Parc',
     title: 'Flotte Automobile Associative',
     focus: 'Suivi par QR code, dématérialisation des carnets de bord et alertes de maintenance (Floticar).',
-    href: '/realisations/floticar',
+    href: '/realisations',
   },
 ];
 
@@ -75,13 +75,13 @@ export default function SectorSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="section-label">
             <Building2 className="size-3.5" />
-            Spécialisation Sectorielle
+            Pôle Sectoriel d’Excellence
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-tight">
-            Le numérique pensé pour la réalité de vos établissements
+            Une expertise éprouvée dans le médico-social & associatif
           </h2>
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
-            Nous concevons des solutions ancrées dans le quotidien des professionnels. Pas d&apos;outils abstraits, mais des interfaces humaines et opérationnelles.
+            Parce que les contraintes humaines et réglementaires du médico-social exigent une rigueur d’ingénierie absolue, DevEvoke y a développé un savoir-faire approfondi pour simplifier le quotidien des établissements.
           </p>
         </div>
 
@@ -175,10 +175,10 @@ export default function SectorSection() {
             </span>
           </div>
           <Link
-            href="/secteurs/medico-social"
+            href="/medico-social"
             className="text-white hover:text-primary-300 font-semibold whitespace-nowrap"
           >
-            En savoir plus sur notre approche sectorielle →
+            Explorer notre hub médico-social complet →
           </Link>
         </div>
 

@@ -6,55 +6,53 @@ import { usePathname } from 'next/navigation';
 import ImportLogo from '@/components/ui/Logo/importLogo';
 import {
   ChevronDown,
+  Globe,
   Cpu,
   Cloud,
-  Layout,
   Smartphone,
   Workflow,
-  Car,
-  Layers,
-  ArrowRight,
   ShieldCheck,
-  Building2,
+  ArrowRight,
   Sparkles,
+  Building2,
 } from 'lucide-react';
 
 const solutionItems = [
   {
-    title: 'Logiciels Métier Sur-Mesure',
-    desc: 'Outils internes adaptés à vos protocoles et suppression des tableurs.',
-    href: '/solutions/logiciel-metier',
-    icon: Cpu,
+    title: 'Développement Web & Plateformes',
+    desc: 'Sites d’entreprise Next.js, plateformes réactives et portails web.',
+    href: '/developpement-web',
+    icon: Globe,
   },
   {
-    title: 'Développement Logiciel Dédié',
-    desc: 'Conception logicielle sur-mesure pour structures et associations.',
-    href: '/developpement-logiciel-medico-social',
-    icon: Layout,
-  },
-  {
-    title: 'Gestion de Flotte Automobile',
-    desc: 'Dématérialisation des carnets par QR code avec Floticar.',
-    href: '/logiciel-gestion-vehicules-medico-social',
-    icon: Car,
-  },
-  {
-    title: 'Applications Mobiles Terrain',
-    desc: 'Outils tactiles hors-ligne pour professionnels nomades (SESSAD, SAVS).',
-    href: '/solutions/application-mobile',
+    title: 'Applications Mobiles & Tablettes',
+    desc: 'Outils tactiles iOS & Android hors-ligne pour équipes nomades.',
+    href: '/application-mobile',
     icon: Smartphone,
   },
   {
-    title: 'Plateformes SaaS',
-    desc: 'Solutions web multi-établissements pour associations gestionnaires.',
-    href: '/solutions/saas-sur-mesure',
+    title: 'Conception de Plateformes SaaS',
+    desc: 'Logiciels cloud multi-tenants, facturation Stripe et API REST.',
+    href: '/developpement-saas',
     icon: Cloud,
   },
   {
-    title: 'Automatisation & Dématérialisation',
-    desc: 'Élimination des doubles saisies et génération automatique de rapports.',
-    href: '/solutions/automatisation',
+    title: 'Logiciels Métier Sur-Mesure',
+    desc: 'Remplacement de tableurs Excel et outils de gestion internes.',
+    href: '/solutions-metier',
+    icon: Cpu,
+  },
+  {
+    title: 'Automatisation des Processus',
+    desc: 'Suppression des doubles saisies et synchronisation via API.',
+    href: '/automatisation',
     icon: Workflow,
+  },
+  {
+    title: 'Sécurité & Hébergement Souverain',
+    desc: 'Serveurs sécurisés ISO 27001 en France et conformité RGPD.',
+    href: '/securite-et-conformite',
+    icon: ShieldCheck,
   },
 ];
 
@@ -96,6 +94,15 @@ export default function Navbar() {
     }, 200);
   };
 
+  const isSolutionActive =
+    pathname.startsWith('/developpement-web') ||
+    pathname.startsWith('/application-mobile') ||
+    pathname.startsWith('/developpement-saas') ||
+    pathname.startsWith('/solutions-metier') ||
+    pathname.startsWith('/automatisation') ||
+    pathname.startsWith('/securite-et-conformite') ||
+    pathname.startsWith('/services');
+
   return (
     <>
       <nav
@@ -129,14 +136,14 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setSolutionsDropdown(!solutionsDropdown)}
                 className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                  pathname.startsWith('/solutions')
+                  isSolutionActive
                     ? 'text-white bg-white/5'
                     : 'text-neutral-300 hover:text-white hover:bg-white/5'
                 }`}
                 aria-expanded={solutionsDropdown}
                 aria-haspopup="true"
               >
-                <span>Solutions</span>
+                <span>Expertises</span>
                 <ChevronDown
                   className={`size-4 transition-transform duration-200 ${
                     solutionsDropdown ? 'rotate-180 text-primary-400' : 'text-neutral-400'
@@ -146,24 +153,25 @@ export default function Navbar() {
 
               {/* Mega-menu Dropdown */}
               {solutionsDropdown && (
-                <div className="absolute top-full left-0 mt-2 w-[520px] rounded-2xl bg-neutral-900/95 backdrop-blur-2xl border border-white/10 p-5 shadow-2xl shadow-black/60 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute top-full left-0 mt-2 w-[540px] rounded-2xl bg-neutral-900/95 backdrop-blur-2xl border border-white/10 p-5 shadow-2xl shadow-black/60 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/5">
                     <span className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">
-                      Nos pôles d'ingénierie
+                      Pôles d&apos;ingénierie logicielle
                     </span>
                     <div className="flex items-center gap-3">
                       <Link
-                        href="/solutions-medico-social"
+                        href="/medico-social"
                         className="text-xs text-secondary-400 hover:text-secondary-300 font-medium inline-flex items-center gap-1"
                       >
-                        <span>Par établissement</span>
+                        <Building2 className="size-3" />
+                        <span>Pôle Médico-Social</span>
                         <ArrowRight className="size-3" />
                       </Link>
                       <Link
-                        href="/solutions"
+                        href="/services"
                         className="text-xs text-primary-400 hover:text-primary-300 font-medium inline-flex items-center gap-1"
                       >
-                        <span>Hub solutions</span>
+                        <span>Tous les services</span>
                         <ArrowRight className="size-3" />
                       </Link>
                     </div>
@@ -196,16 +204,16 @@ export default function Navbar() {
 
                   <div className="mt-3 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
                     <Link
-                      href="/services"
+                      href="/a-propos"
                       className="text-neutral-400 hover:text-white transition-colors"
                     >
-                      Nos Services & Méthodologie →
+                      Notre Approche & Fondateur →
                     </Link>
                     <Link
-                      href="/logiciel-gestion-vehicules-medico-social"
+                      href="/realisations"
                       className="text-primary-400 hover:text-primary-300 transition-colors"
                     >
-                      Gestion de Flotte Automobile →
+                      Consulter les Réalisations →
                     </Link>
                   </div>
                 </div>
@@ -214,26 +222,14 @@ export default function Navbar() {
 
             {/* Direct Links */}
             <Link
-              href="/secteurs/medico-social"
+              href="/medico-social"
               className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                pathname === '/secteurs/medico-social'
+                pathname === '/medico-social'
                   ? 'text-white bg-white/5'
                   : 'text-neutral-300 hover:text-white hover:bg-white/5'
               }`}
             >
               Médico-Social
-            </Link>
-
-            <Link
-              href="/realisations/floticar"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors flex items-center gap-1.5 ${
-                pathname === '/realisations/floticar'
-                  ? 'text-white bg-white/5'
-                  : 'text-neutral-300 hover:text-white hover:bg-white/5'
-              }`}
-            >
-              <Car className="size-3.5 text-primary-400" />
-              <span>Floticar</span>
             </Link>
 
             <Link
@@ -329,47 +325,28 @@ export default function Navbar() {
           {/* Main Links */}
           <div className="space-y-1 border-b border-white/10 pb-6">
             <Link
-              href="/secteurs/medico-social"
+              href="/services"
               className="block py-2 text-xl font-bold text-white hover:text-primary-400"
             >
-              Secteur Médico-Social
+              Nos Expertises & Services
             </Link>
             <Link
-              href="/solutions-medico-social"
+              href="/medico-social"
               className="block py-2 text-xl font-bold text-white hover:text-primary-400"
             >
-              Solutions par Établissement
-            </Link>
-            <Link
-              href="/solutions"
-              className="block py-2 text-xl font-bold text-white hover:text-primary-400"
-            >
-              Hub des Solutions
-            </Link>
-            <Link
-              href="/logiciel-gestion-vehicules-medico-social"
-              className="flex items-center gap-2 py-2 text-xl font-bold text-white hover:text-primary-400"
-            >
-              <Car className="size-5 text-primary-400" />
-              <span>Gestion de Flotte Automobile</span>
+              Pôle Médico-Social
             </Link>
             <Link
               href="/realisations"
               className="block py-2 text-xl font-bold text-white hover:text-primary-400"
             >
-              Réalisations & Études
+              Réalisations & Études de Cas
             </Link>
             <Link
               href="/diagnostic-numerique"
               className="block py-2 text-xl font-bold text-white hover:text-primary-400"
             >
               Diagnostic Numérique Gratuit
-            </Link>
-            <Link
-              href="/services"
-              className="block py-2 text-xl font-bold text-white hover:text-primary-400"
-            >
-              Nos Services & Méthode
             </Link>
             <Link
               href="/blog"
@@ -381,7 +358,7 @@ export default function Navbar() {
               href="/a-propos"
               className="block py-2 text-xl font-bold text-white hover:text-primary-400"
             >
-              L’Agence DevEvoke
+              L’Agence & Fondateur
             </Link>
           </div>
 
@@ -391,26 +368,23 @@ export default function Navbar() {
               Solutions directes :
             </span>
             <div className="grid grid-cols-1 gap-2 text-sm text-neutral-300">
-              <Link href="/solutions/logiciel-metier" className="py-1 hover:text-primary-300">
-                • Logiciel métier sur-mesure
+              <Link href="/developpement-web" className="py-1 hover:text-primary-300">
+                • Développement Web & Plateformes
               </Link>
-              <Link href="/developpement-logiciel-medico-social" className="py-1 hover:text-primary-300">
-                • Développement logiciel dédié
+              <Link href="/application-mobile" className="py-1 hover:text-primary-300">
+                • Applications Mobiles & Nomades
               </Link>
-              <Link href="/solutions/application-mobile" className="py-1 hover:text-primary-300">
-                • Applications mobiles terrain (SESSAD)
+              <Link href="/developpement-saas" className="py-1 hover:text-primary-300">
+                • Conception de Plateformes SaaS
               </Link>
-              <Link href="/solutions/saas-sur-mesure" className="py-1 hover:text-primary-300">
-                • Plateformes SaaS multi-établissements
+              <Link href="/solutions-metier" className="py-1 hover:text-primary-300">
+                • Logiciels Métier Sur-Mesure
               </Link>
-              <Link href="/solutions/automatisation" className="py-1 hover:text-primary-300">
-                • Automatisation & Dématérialisation
+              <Link href="/automatisation" className="py-1 hover:text-primary-300">
+                • Automatisation & Synchronisation API
               </Link>
-              <Link href="/solutions/site-web" className="py-1 hover:text-primary-300">
-                • Sites web accessibles RGAA
-              </Link>
-              <Link href="/solutions/outils-metier" className="py-1 hover:text-primary-300">
-                • Outils internes & Services généraux
+              <Link href="/securite-et-conformite" className="py-1 hover:text-primary-300">
+                • Sécurité & Hébergement Souverain
               </Link>
             </div>
           </div>

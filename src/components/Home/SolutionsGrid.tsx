@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import {
+  Globe,
   Cpu,
   Cloud,
-  Layout,
   Smartphone,
   Workflow,
-  Car,
+  ShieldCheck,
   ArrowRight,
   Sparkles,
 } from 'lucide-react';
@@ -22,48 +22,48 @@ interface SolutionCardProps {
 
 const solutions: SolutionCardProps[] = [
   {
-    icon: Cpu,
-    title: 'Logiciels Métier Sur-Mesure',
-    tag: 'Processus & Centralisation',
-    description: 'Des outils adaptés aux processus réels de votre organisation pour en finir avec les fichiers Excel fragmentés et les progiciels rigides.',
-    href: '/solutions/logiciel-metier',
-    highlight: true,
-  },
-  {
-    icon: Cloud,
-    title: 'Plateformes SaaS',
-    tag: 'Multi-Établissements',
-    description: 'Des applications accessibles et évolutives pour piloter plusieurs établissements, consolider les indicateurs et mutualiser les outils.',
-    href: '/solutions/saas-sur-mesure',
-  },
-  {
-    icon: Layout,
-    title: 'Applications Web & Intranets',
-    tag: 'Espaces Professionnels',
-    description: 'Des outils métiers accessibles depuis vos postes de travail par simple navigateur sécurisé, avec gestion fine des droits d’accès.',
-    href: '/solutions/application-web',
+    icon: Globe,
+    title: 'Développement Web & Plateformes',
+    tag: 'Next.js & Performance',
+    description: 'Sites d’entreprise haut de gamme, portails de marque et dashboards interactifs ultra-rapides sous Next.js et React.',
+    href: '/developpement-web',
   },
   {
     icon: Smartphone,
-    title: 'Applications Mobiles Terrain',
-    tag: 'Équipes Nomades & SESSAD',
-    description: 'Des solutions tactiles adaptées aux équipes en tournée, avec fonctionnement hors-ligne garanti et saisie rapide d’interventions.',
-    href: '/solutions/application-mobile',
+    title: 'Applications Mobiles & Tablettes',
+    tag: 'Mode Hors-Ligne Garanti',
+    description: 'Outils tactiles iOS & Android sous React Native conçus pour les équipes terrain, techniciens et professionnels nomades.',
+    href: '/application-mobile',
+  },
+  {
+    icon: Cloud,
+    title: 'Conception de Plateformes SaaS',
+    tag: 'Produit Cloud B2B',
+    description: 'Logiciels cloud multi-tenants, facturation récurrente Stripe intégrée et API REST pour commercialiser votre savoir-faire.',
+    href: '/developpement-saas',
+    highlight: true,
+  },
+  {
+    icon: Cpu,
+    title: 'Logiciels Métier Sur-Mesure',
+    tag: 'Remplacement Excel',
+    description: 'Outils internes calqués sur vos protocoles pour centraliser vos processus réels et en finir avec les tableurs fragmentés.',
+    href: '/solutions-metier',
+    highlight: true,
   },
   {
     icon: Workflow,
-    title: 'Automatisation & Dématérialisation',
-    tag: 'Gain de Temps Administratif',
-    description: 'Réduire les tâches répétitives et administratives : suppression des doubles saisies, génération automatique de rapports et alertes.',
-    href: '/solutions/automatisation',
+    title: 'Automatisation des Processus',
+    tag: 'Zéro Double Saisie',
+    description: 'Suppression des ressaisies manuelles chronophages, synchronisation d’outils par API et génération de bilans en un clic.',
+    href: '/automatisation',
   },
   {
-    icon: Car,
-    title: 'Gestion de Flotte Automobile (Floticar)',
-    tag: 'SaaS Spécialisé',
-    description: 'Une solution dédiée au suivi des véhicules associatifs : carnet de bord par QR code sur smartphone, alertes de contrôle technique et suivi des conducteurs.',
-    href: '/realisations/floticar',
-    highlight: true,
+    icon: ShieldCheck,
+    title: 'Sécurité & Hébergement Souverain',
+    tag: 'Conformité RGPD France',
+    description: 'Infrastructures cloud sécurisées en France (ISO 27001), sauvegardes quotidiennes chiffrées et conformité réglementaire totale.',
+    href: '/securite-et-conformite',
   },
 ];
 
@@ -75,13 +75,13 @@ export default function SolutionsGrid() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="section-label">
             <Sparkles className="size-3.5" />
-            Nos Piliers Numériques
+            Nos Piliers d’Ingénierie
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
             Des réponses technologiques adaptées à vos usages
           </h2>
           <p className="text-base sm:text-lg text-neutral-400 leading-relaxed">
-            DevEvoke ne vend pas un logiciel unique générique. Nous concevons la solution logicielle ou web qui correspond exactement à l'organisation de votre structure.
+            DevEvoke ne vend pas un progiciel unique rigide. Nous concevons la solution logicielle ou web qui répond au millimètre près à votre organisation.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ export default function SolutionsGrid() {
                     href={item.href}
                     className="inline-flex items-center gap-2 text-xs font-semibold text-white group-hover:text-primary-300 transition-colors"
                   >
-                    <span>Découvrir cette solution</span>
+                    <span>Découvrir cette expertise</span>
                     <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -129,13 +129,13 @@ export default function SolutionsGrid() {
           })}
         </div>
 
-        {/* Bottom Link to Full Solutions Hub */}
+        {/* Bottom Link to Full Services */}
         <div className="mt-12 text-center">
           <Link
-            href="/solutions"
+            href="/services"
             className="btn-outline text-xs sm:text-sm inline-flex items-center gap-2"
           >
-            <span>Explorer le panorama complet de nos solutions</span>
+            <span>Consulter l’ensemble de nos services & méthodologie</span>
             <ArrowRight className="size-4" />
           </Link>
         </div>

@@ -148,7 +148,7 @@ export default function SolutionsPage() {
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  href="/secteurs/medico-social"
+                  href="/medico-social"
                   className="px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all"
                 >
                   Comprendre notre approche sectorielle

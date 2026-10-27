@@ -39,20 +39,20 @@ export default function Header() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500" />
               </span>
-              <span>Partenaire Numérique du Médico-Social & Associatif</span>
+              <span>Agence Digitale & Solutions Métier Sur-Mesure</span>
             </div>
 
             {/* Main H1 Title */}
             <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-extrabold tracking-tight text-white leading-[1.12]">
-              Des solutions numériques sur-mesure au service de l&apos;humain et du{' '}
+              Des solutions digitales pensées pour votre{' '}
               <span className="text-highlight">
-                médico-social
+                métier
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-neutral-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
-              DevEvoke conçoit des logiciels métiers, applications mobiles et outils de coordination qui allègent la charge administrative des équipes et renforcent le suivi des personnes accompagnées (IME, SESSAD, ESAT, EHPAD, MAS, FAM).
+              DevEvoke conçoit des logiciels métiers, plateformes web, applications mobiles et architectures SaaS sur-mesure pour les entreprises, PME, organisations et associations exigeantes.
             </p>
 
             {/* CTAs */}
@@ -65,10 +65,10 @@ export default function Header() {
                 <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/solutions"
+                href="/services"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-200 hover:text-white font-medium text-sm transition-all text-center backdrop-blur-sm"
               >
-                Découvrir nos solutions
+                Découvrir nos expertises
               </Link>
             </div>
 
@@ -84,7 +84,7 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
                 <Users className="size-4 text-sky-400 shrink-0" />
-                <span>Co-conception avec le terrain</span>
+                <span>Direct avec le fondateur</span>
               </div>
             </div>
           </motion.div>
@@ -104,7 +104,7 @@ export default function Header() {
               <div className="relative rounded-3xl overflow-hidden border border-white/15 bg-neutral-900 shadow-2xl">
                 <Image
                   src="/images/home/hero_medicosocial_team.jpg"
-                  alt="Équipe de coordination médico-sociale en pleine concertation avec une tablette numérique"
+                  alt="Session de travail et coordination sur logiciel métier sur-mesure"
                   width={800}
                   height={600}
                   priority
@@ -118,13 +118,13 @@ export default function Header() {
                 <div className="absolute top-4 left-4 sm:top-5 sm:left-5 backdrop-blur-md bg-neutral-950/75 border border-white/15 rounded-full px-3.5 py-1.5 shadow-xl flex items-center gap-2">
                   <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="text-[11px] sm:text-xs font-medium text-white">
-                    Coordination Multi-Sites Active
+                    Ingénierie Full-Stack Sur-Mesure
                   </span>
                 </div>
 
                 {/* Floating Glass Tag Top Right */}
                 <div className="absolute top-4 right-4 sm:top-5 sm:right-5 backdrop-blur-md bg-primary-950/80 border border-primary-500/30 rounded-xl px-3 py-1.5 shadow-xl text-[10px] sm:text-[11px] font-semibold text-primary-200">
-                  IME • SESSAD • ESAT • EHPAD
+                  Web • Mobile • SaaS • Métier
                 </div>
 
                 {/* Bottom Overlay Card: Real Impact */}
@@ -134,7 +134,7 @@ export default function Header() {
                       <div className="size-7 rounded-lg bg-primary-500/20 text-primary-300 flex items-center justify-center">
                         <CalendarCheck className="size-4" />
                       </div>
-                      <span className="text-xs font-bold text-white">Transmissions & Outils Métiers</span>
+                      <span className="text-xs font-bold text-white">Outils Métiers & Automatisation</span>
                     </div>
                     <span className="text-[10px] font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                       Zéro double saisie
@@ -142,7 +142,7 @@ export default function Header() {
                   </div>
 
                   <p className="text-[11px] text-neutral-300 leading-snug">
-                    Des interfaces simples créées avec vos professionnels pour libérer du temps d&apos;accompagnement.
+                    Des interfaces simples créées avec vos professionnels pour libérer du temps utile et éliminer la complexité.
                   </p>
 
                   <div className="flex items-center justify-between pt-1 border-t border-white/5 text-[10px] text-neutral-400">

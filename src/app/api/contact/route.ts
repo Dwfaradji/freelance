@@ -1,121 +1,200 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { validateFormRequest } from '@/lib/security/requestValidation';
+import { checkHoneypot } from '@/lib/security/honeypot';
+import { rateLimiter, getClientIp } from '@/lib/security/rateLimit';
+import { securityLogger, generateRequestId } from '@/lib/security/logger';
+import { generateReference } from '@/lib/security/reference';
+import { contactSubmissionSchema } from '@/lib/forms/schemas';
+import { sendTransactionalEmail, detectFormType } from '@/lib/email/sendTransactionalEmail';
+import { getEmailConfig } from '@/lib/email/config';
 
-const res = NextResponse;
-
-// Interface pour les données du mail
-interface MailData {
-  to: string;
-  from: string;
-  subject: string;
-  html: string;
-}
-
-// POST
 export async function POST(request: Request) {
-  // Récupérer les données du formulaire
-  const req = await request.json();
-  const {
-    firstname,
-    lastname,
-    business,
-    establishmentType,
-    siteCount,
-    role,
-    email,
-    phone,
-    projectType,
-    budget,
-    delay,
-    isDemoRequest,
-    content,
-  } = req;
+  const startTime = Date.now();
+  const requestId = generateRequestId();
+  const clientIp = getClientIp(request);
 
-  // Vérifier les données obligatoires du formulaire
-  if (!firstname || !business || !email || !content) {
-    return res.json({ status: 400, message: 'INVALID_PARAMETER' });
+  // 1. Validation de la requête HTTP (méthode, content-type, payload size < 50Ko)
+  const validation = await validateFormRequest(request, requestId);
+  if (!validation.valid || !validation.parsedBody) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'contact',
+      action: 'SUBMIT_ATTEMPT',
+      status: 'BLOCKED',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: 'Invalid HTTP request structure or payload size',
+    });
+    return validation.errorResponse!;
   }
 
-  // Vérifier la configuration SMTP
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const smtpHost = process.env.SMTP_HOST;
-  const smtpPort = process.env.SMTP_PORT;
+  const rawBody = validation.parsedBody;
 
-  if (!smtpUser || !smtpPass || !smtpHost || !smtpPort) {
-    return res.json({ status: 400, message: 'SMTP_CONFIG_MISSING' });
+  // 2. Détection Anti-Spam / Honeypot
+  const honeypotResult = checkHoneypot(rawBody);
+  if (honeypotResult.isBot) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'contact',
+      action: 'HONEYPOT_TRIGGERED',
+      status: 'BLOCKED',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: `Honeypot field filled: ${honeypotResult.fieldTriggered}`,
+    });
+    // Réponse feinte pour tromper les robots spammeurs sans générer d'email
+    return NextResponse.json({
+      success: true,
+      status: 200,
+      message: 'EMAIL_SENT',
+      referenceId: generateReference('BOT'),
+      requestId,
+    });
   }
 
-  // Vérification syntaxe email
-  const pattern =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (!pattern.test(email)) {
-    return res.json({ status: 400, message: 'EMAIL_SYNTAX_INCORRECT' });
+  // 3. Détermination du type de formulaire pour le Rate Limiting
+  const formType = detectFormType(rawBody);
+
+  // 4. Rate Limiting par IP et par type de formulaire
+  const rateLimitResult = rateLimiter.check(clientIp, formType);
+  if (!rateLimitResult.success) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: formType as any,
+      action: 'RATE_LIMITED',
+      status: 'BLOCKED',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: `Limit exceeded: ${rateLimitResult.limit} per window. Reset in ${rateLimitResult.resetSeconds}s`,
+    });
+
+    return NextResponse.json(
+      {
+        success: false,
+        status: 429,
+        message: 'RATE_LIMIT_EXCEEDED',
+        error: `Trop de requêtes soumises. Veuillez patienter ${rateLimitResult.resetSeconds} secondes avant de réessayer.`,
+        requestId,
+      },
+      {
+        status: 429,
+        headers: {
+          'Retry-After': String(rateLimitResult.resetSeconds),
+          'X-RateLimit-Limit': String(rateLimitResult.limit),
+          'X-RateLimit-Remaining': String(rateLimitResult.remaining),
+        },
+      }
+    );
   }
 
-  // Nettoyer le contenu pour HTML
-  const escapeHtml = (str: string = '') =>
-    str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
+  // 5. Validation stricte et sanitisation avec Zod
+  const parseResult = contactSubmissionSchema.safeParse(rawBody);
+  if (!parseResult.success) {
+    const formattedErrors = parseResult.error.flatten().fieldErrors;
+    securityLogger.logFormEvent({
+      requestId,
+      formType: formType as any,
+      action: 'VALIDATION_FAILED',
+      status: 'ERROR',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: 'Form validation failed',
+    });
 
-  const cleanMessage = escapeHtml(content).replace(/\n/g, '<br>');
+    return NextResponse.json(
+      {
+        success: false,
+        status: 400,
+        message: 'INVALID_PARAMETER',
+        error: 'Données de formulaire invalides. Veuillez corriger les champs signalés.',
+        fieldErrors: formattedErrors,
+        requestId,
+      },
+      { status: 400 }
+    );
+  }
 
-  // Créer le transport Nodemailer
-  const transporter = nodemailer.createTransport({
-    host: smtpHost,
-    port: Number(smtpPort),
-    secure: Number(smtpPort) === 465, // true pour 465, false sinon
-    auth: {
-      user: smtpUser,
-      pass: smtpPass,
-    },
-  });
+  const validatedData = parseResult.data;
 
+  // 6. Vérifier la configuration SMTP
+  const emailConfig = getEmailConfig();
+  if (!emailConfig.isConfigured) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: formType as any,
+      action: 'EMAIL_FAILED',
+      status: 'ERROR',
+      durationMs: Date.now() - startTime,
+      error: 'SMTP_CONFIG_MISSING',
+    });
+
+    return NextResponse.json(
+      {
+        success: false,
+        status: 503,
+        message: 'SMTP_CONFIG_MISSING',
+        error: 'Le service d’envoi d’emails est temporairement indisponible. Veuillez nous contacter directement par email.',
+        requestId,
+      },
+      { status: 503 }
+    );
+  }
+
+  // 7. Génération de la référence unique de dossier
+  const referenceId = generateReference('DEV');
+
+  // 8. Envoi des emails transactionnels (Interne DevEvoke + Confirmation Prospect)
   try {
-    const isDemo = Boolean(isDemoRequest);
-    const subjectPrefix = isDemo
-      ? '[DEMO FLOTICAR / SAAS]'
-      : '[PROJET MÉDICO-SOCIAL]';
-    const fullName = `${escapeHtml(firstname)} ${lastname ? escapeHtml(lastname) : ''}`.trim();
+    const sendResult = await sendTransactionalEmail({
+      formType,
+      data: validatedData,
+      referenceId,
+      requestId,
+    });
 
-    const mailOptions: MailData = {
-      to: String(process.env.EMAIL_TO || smtpUser),
-      from: String(smtpUser),
-      subject: `${subjectPrefix} Demande de ${fullName} (${escapeHtml(business)})`,
-      html: `
-        <h2>${isDemo ? 'Demande de démonstration' : 'Nouvelle prise de contact / projet'}</h2>
-        <table style="font-family: Arial, sans-serif; line-height: 1.6; border-collapse: collapse; width: 100%;">
-          <tr><td style="padding: 6px; font-weight: bold; width: 180px;">Nom complet :</td><td style="padding: 6px;">${fullName}</td></tr>
-          <tr><td style="padding: 6px; font-weight: bold;">Organisation / Association :</td><td style="padding: 6px;">${escapeHtml(business)}</td></tr>
-          ${role ? `<tr><td style="padding: 6px; font-weight: bold;">Fonction :</td><td style="padding: 6px;">${escapeHtml(role)}</td></tr>` : ''}
-          ${establishmentType ? `<tr><td style="padding: 6px; font-weight: bold;">Type d'établissement :</td><td style="padding: 6px;">${escapeHtml(establishmentType)}</td></tr>` : ''}
-          ${siteCount ? `<tr><td style="padding: 6px; font-weight: bold;">Nombre d'établissements / sites :</td><td style="padding: 6px;">${escapeHtml(String(siteCount))}</td></tr>` : ''}
-          <tr><td style="padding: 6px; font-weight: bold;">Email :</td><td style="padding: 6px;"><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
-          ${phone ? `<tr><td style="padding: 6px; font-weight: bold;">Téléphone :</td><td style="padding: 6px;"><a href="tel:${escapeHtml(phone)}">${escapeHtml(phone)}</a></td></tr>` : ''}
-          ${projectType ? `<tr><td style="padding: 6px; font-weight: bold;">Type de projet :</td><td style="padding: 6px;">${escapeHtml(projectType)}</td></tr>` : ''}
-          ${budget ? `<tr><td style="padding: 6px; font-weight: bold;">Budget indicatif :</td><td style="padding: 6px;">${escapeHtml(budget)}</td></tr>` : ''}
-          ${delay ? `<tr><td style="padding: 6px; font-weight: bold;">Délai souhaité :</td><td style="padding: 6px;">${escapeHtml(delay)}</td></tr>` : ''}
-        </table>
-        <hr style="margin: 20px 0; border: none; border-top: 1px solid #e2e8f0;" />
-        <h3>Description du besoin :</h3>
-        <div style="background-color: #f8fafc; padding: 15px; border-left: 4px solid #3b82f6; border-radius: 4px;">
-          ${cleanMessage}
-        </div>
-      `,
-    };
+    if (!sendResult.internalSent) {
+      return NextResponse.json(
+        {
+          success: false,
+          status: 500,
+          message: 'EMAIL_SENDING_FAILED',
+          error: 'Une erreur est survenue lors de l’envoi de votre demande. Veuillez réessayer dans quelques instants.',
+          requestId,
+          referenceId,
+        },
+        { status: 500 }
+      );
+    }
 
-    await transporter.sendMail(mailOptions);
+    return NextResponse.json(
+      {
+        success: true,
+        status: 200,
+        message: 'EMAIL_SENT',
+        referenceId,
+        requestId,
+      },
+      { status: 200 }
+    );
+  } catch (error: any) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: formType as any,
+      action: 'EMAIL_FAILED',
+      status: 'ERROR',
+      durationMs: Date.now() - startTime,
+      error: error?.message || 'Unexpected email sending error',
+    });
 
-    return res.json({ status: 200, message: 'EMAIL_SENT' });
-  } catch (error) {
-    console.error('EMAIL ERROR:', error);
-    return res.json({ status: 400, message: 'EMAIL_SENDING_FAILED' });
+    return NextResponse.json(
+      {
+        success: false,
+        status: 500,
+        message: 'EMAIL_SENDING_FAILED',
+        error: 'Une erreur inattendue est survenue. Veuillez réessayer plus tard.',
+        requestId,
+      },
+      { status: 500 }
+    );
   }
 }
-
-
-

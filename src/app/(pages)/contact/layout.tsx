@@ -2,9 +2,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contactez Nos Experts en Digitalisation Médico-Social & E-Santé',
+  title: 'Contact & Échange Projet',
   description:
-    'Prenez contact avec les experts DevEvoke pour échanger sur la digitalisation de votre établissement médico-social, vos besoins logiciels ou une démonstration de Floticar.',
+    'Échangez directement avec le fondateur de DevEvoke pour cadrer votre projet de site web, application mobile, plateforme SaaS, logiciel métier ou automatisation.',
   alternates: {
     canonical: 'https://www.devevoke.com/contact',
   },

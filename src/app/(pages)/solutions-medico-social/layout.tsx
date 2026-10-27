@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     'DevEvoke',
   ],
   alternates: {
-    canonical: 'https://www.devevoke.com/solutions',
+    canonical: 'https://www.devevoke.com/solutions-medico-social',
   },
   openGraph: {
     title: 'Solutions Numériques Médico-Social | DevEvoke',
     description:
       'Panorama complet des logiciels métiers, applications et outils SaaS développés par DevEvoke pour les organisations médico-sociales en France.',
-    url: 'https://www.devevoke.com/solutions',
+    url: 'https://www.devevoke.com/solutions-medico-social',
     siteName: 'DevEvoke',
     images: [
       {

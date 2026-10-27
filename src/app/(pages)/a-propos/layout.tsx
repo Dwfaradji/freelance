@@ -1,9 +1,9 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'À Propos de Notre Agence Digitale Médico-Sociale',
+  title: 'À Propos de l’Agence & Fondateur',
   description:
-    'Découvrez l’histoire, les valeurs et la mission de DevEvoke : concevoir des solutions numériques éthiques, ergonomiques et sécurisées pour les acteurs du médico-social.',
+    'Découvrez DevEvoke, agence digitale indépendante portée par son fondateur. Conception de sites web, applications mobiles, plateformes SaaS et logiciels métier sur mesure.',
   alternates: {
     canonical: 'https://www.devevoke.com/a-propos',
   },

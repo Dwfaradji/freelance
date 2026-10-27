@@ -43,11 +43,11 @@ export default function FloticarShowcase() {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
-                Floticar : La gestion de flotte pensée pour les établissements médico-sociaux
+                Floticar : La gestion de flotte pensée pour les organisations & établissements
               </h2>
 
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                Né des contraintes réelles constatées auprès d’associations gestionnaires, d’IME et de SESSAD, <strong className="text-white">Floticar</strong> élimine les carnets de bord papier égarés, responsabilise les conducteurs et protège le budget de l’établissement.
+                Né des contraintes réelles constatées auprès d’associations gestionnaires, d’IME, de SESSAD et d’entreprises, <strong className="text-white">Floticar</strong> élimine les carnets de bord papier, responsabilise les conducteurs et protège le budget de l’organisation.
               </p>
 
               {/* 6 Feature Points */}
@@ -66,17 +66,19 @@ export default function FloticarShowcase() {
               {/* CTAs */}
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Link
-                  href="/realisations/floticar"
+                  href="https://www.floticar.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-xs sm:text-sm hover:opacity-95 shadow-lg shadow-primary-500/20 transition-all flex items-center gap-2"
                 >
-                  <span>Découvrir l&apos;étude de cas Floticar</span>
+                  <span>Visiter le site officiel Floticar</span>
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  href="/demande-demo"
+                  href="/realisations"
                   className="px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-xs sm:text-sm transition-all"
                 >
-                  Demander une démonstration
+                  Voir nos études de cas
                 </Link>
               </div>
             </div>
@@ -87,7 +89,7 @@ export default function FloticarShowcase() {
               <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-neutral-900 group">
                 <Image
                   src="/images/home/floticar_real_action.jpg"
-                  alt="Conducteur d'une association médico-sociale scannant le QR code d'un minibus avec son smartphone"
+                  alt="Conducteur scannant le QR code d'un véhicule avec son smartphone"
                   width={600}
                   height={450}
                   className="w-full h-[320px] sm:h-[380px] object-cover object-center group-hover:scale-102 transition-transform duration-700 brightness-[0.95]"
@@ -101,7 +103,7 @@ export default function FloticarShowcase() {
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-neutral-200">
-                  <span className="font-semibold">Minibus & Véhicules de Tournée</span>
+                  <span className="font-semibold">Véhicules Partagés & Tournées</span>
                   <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[11px] border border-emerald-500/30">
                     Dématérialisation Immédiate
                   </span>
@@ -120,16 +122,18 @@ export default function FloticarShowcase() {
                   />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-xs font-bold text-white block">Tableau de bord Direction & Services Généraux</span>
+                  <span className="text-xs font-bold text-white block">Tableau de bord Direction & Gestionnaires</span>
                   <p className="text-[11px] text-neutral-400 truncate">
                     Consolidation kilométrique, calendrier des entretiens et export comptable.
                   </p>
                 </div>
                 <Link
-                  href="/realisations/floticar"
+                  href="https://www.floticar.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-xs font-semibold text-primary-400 hover:text-white shrink-0 pr-2"
                 >
-                  Voir l&apos;outil →
+                  Découvrir Floticar →
                 </Link>
               </div>
 

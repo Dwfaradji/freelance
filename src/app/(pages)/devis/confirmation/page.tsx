@@ -30,7 +30,7 @@ const Page = () => {
           </h1>
           
           <p className="text-lg text-muted-light mb-12 max-w-lg mx-auto leading-relaxed">
-            Merci de nous avoir contactés ! Notre équipe va étudier votre projet avec attention et reviendra vers vous sous 48h avec une proposition adaptée.
+            Merci de nous avoir contactés ! DevEvoke va étudier votre projet avec attention et reviendra vers vous sous 48h avec une proposition adaptée.
           </p>
 
           <Link href="/" className="btn-primary">

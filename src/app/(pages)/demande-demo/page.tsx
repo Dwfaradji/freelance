@@ -27,6 +27,8 @@ export default function DemandeDemoPage() {
   const [demoFocus, setDemoFocus] = useState('Floticar (Gestion de flotte & carnets de bord)');
   const [preferredSlot, setPreferredSlot] = useState('Dans la semaine (matin)');
   const [notes, setNotes] = useState('');
+  const [website, setWebsite] = useState(''); // Honeypot trap
+  const [referenceId, setReferenceId] = useState<string | null>(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -65,10 +67,12 @@ Notes / Attentes particulières : ${notes || 'Aucune'}
           projectType: `Démonstration : ${demoFocus}`,
           isDemoRequest: true,
           content: messageContent,
+          website,
         },
       });
 
-      if (response.data.status === 200) {
+      if (response?.data?.status === 200 || response?.data?.success) {
+        setReferenceId(response.data.referenceId || null);
         setSuccess(true);
       } else {
         setError(true);
@@ -166,14 +170,36 @@ Notes / Attentes particulières : ${notes || 'Aucune'}
                   </div>
                   <h2 className="text-2xl font-bold text-white">Demande de démo transmise avec succès !</h2>
                   <p className="text-sm text-muted max-w-md mx-auto leading-relaxed">
-                    Merci {firstname}. Nous vous envoyons une confirmation par email et vous contacterons rapidement pour caler le lien de visioconférence.
+                    Merci {firstname}. Un email de confirmation récapitulatif vient de vous être envoyé. Notre équipe vous contactera sous 24h ouvrées pour vous transmettre le lien de visioconférence.
                   </p>
-                  <Link href="/" className="btn-primary inline-block px-6 py-3 mt-4 text-sm font-semibold">
-                    Retour à l’accueil
-                  </Link>
+                  {referenceId && (
+                    <div className="pt-2">
+                      <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 border border-white/10 font-mono text-xs text-white">
+                        <span className="text-neutral-400">Référence demande :</span>
+                        <strong className="text-emerald-400">{referenceId}</strong>
+                      </span>
+                    </div>
+                  )}
+                  <div className="pt-4">
+                    <Link href="/" className="btn-primary inline-block px-6 py-3 text-sm font-semibold">
+                      Retour à l’accueil
+                    </Link>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot anti-spam */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    className="opacity-0 absolute -left-[9999px] w-1 h-1 pointer-events-none"
+                    aria-hidden="true"
+                  />
+
                   <h2 className="text-2xl font-bold text-white mb-6">
                     Réserver votre démonstration
                   </h2>

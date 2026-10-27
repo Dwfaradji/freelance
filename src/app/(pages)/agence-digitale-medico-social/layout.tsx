@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     'DevEvoke',
   ],
   alternates: {
-    canonical: 'https://www.devevoke.com/secteurs/medico-social',
+    canonical: 'https://www.devevoke.com/agence-digitale-medico-social',
   },
   openGraph: {
     title: 'Agence Digitale Médico-Social | DevEvoke',
     description:
       'Ingénierie logicielle et transformation numérique pour les établissements et associations médico-sociales en France. Logiciels métiers, conformité RGPD et gestion de flotte.',
-    url: 'https://www.devevoke.com/secteurs/medico-social',
+    url: 'https://www.devevoke.com/agence-digitale-medico-social',
     siteName: 'DevEvoke',
     images: [
       {

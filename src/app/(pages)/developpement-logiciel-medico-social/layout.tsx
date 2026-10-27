@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     'DevEvoke',
   ],
   alternates: {
-    canonical: 'https://www.devevoke.com/solutions/logiciel-metier',
+    canonical: 'https://www.devevoke.com/developpement-logiciel-medico-social',
   },
   openGraph: {
     title: 'Développement Logiciel Médico-Social Sur-Mesure | DevEvoke',
     description:
       'Créez le logiciel métier parfaitement adapté aux besoins de vos professionnels de terrain et directions médico-sociales. Sécurité web et conformité totale au RGPD.',
-    url: 'https://www.devevoke.com/solutions/logiciel-metier',
+    url: 'https://www.devevoke.com/developpement-logiciel-medico-social',
     siteName: 'DevEvoke',
     images: [
       {

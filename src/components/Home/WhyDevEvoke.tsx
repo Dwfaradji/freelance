@@ -53,10 +53,10 @@ export default function WhyDevEvoke() {
             Pourquoi Choisir DevEvoke
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-tight">
-            Un partenaire numérique qui comprend vos enjeux médico-sociaux
+            Un partenaire numérique qui comprend vos enjeux métier
           </h2>
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
-            Ce qui nous distingue : l’alliance entre une véritable expertise logicielle moderne et une immersion sincère dans le quotidien des établissements.
+            Ce qui nous distingue : l’alliance entre une véritable expertise logicielle moderne et une immersion sincère dans le quotidien de vos équipes.
           </p>
         </div>
 
@@ -117,14 +117,14 @@ export default function WhyDevEvoke() {
             {/* Quote & Signature */}
             <div className="space-y-3 flex-1">
               <blockquote className="text-base sm:text-lg font-medium text-neutral-200 italic leading-relaxed">
-                « Nous ne venons pas imposer un logiciel prêt à l&apos;emploi. Nous venons vous écouter, comprendre vos irritants et construire l&apos;outil simple qui libère du temps utile pour vos équipes et pour les personnes accompagnées. »
+                « Nous ne venons pas imposer un logiciel prêt à l&apos;emploi. Nous venons vous écouter, comprendre vos irritants et construire l&apos;outil simple qui libère du temps utile pour vos équipes. »
               </blockquote>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pt-1">
                 <span className="text-sm font-bold text-white">
                   Boucif Faradji
                 </span>
                 <span className="text-xs font-semibold uppercase tracking-wider text-primary-400">
-                  Fondateur & Lead Architecte Digital Médico-Social
+                  Fondateur & Développeur Full-Stack
                 </span>
               </div>
             </div>

@@ -11,17 +11,17 @@ const Page = () => {
       <header className="mx-auto mb-16 mt-8 text-center px-4 max-w-4xl">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
           <span className="section-label mb-4 inline-block">
-            Votre Projet Médico-Social
+            Échange Direct avec le Fondateur
           </span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Concevons ensemble la{' '}
             <span className="text-highlight">
-              solution numérique
+              solution digitale
             </span>{' '}
-            de votre établissement
+            pensée pour votre métier
           </h1>
           <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto">
-            Associations gestionnaires, IME, SESSAD, ESAT, EHPAD, MAS, FAM : échangez directement avec nos architectes logiciels pour cadrer votre projet de logiciel métier, d’application mobile nomade ou le déploiement de Floticar.
+            Entreprises, TPE, PME, startups, associations ou structures médico-sociales : échangez directement avec le fondateur et développeur pour cadrer votre projet de logiciel métier, d’application mobile, de plateforme SaaS ou d’automatisation.
           </p>
         </Fade>
       </header>
@@ -46,14 +46,14 @@ const Page = () => {
           </Link>
 
           <Link
-            href="/demande-demo"
+            href="/realisations"
             className="p-5 rounded-2xl glass border border-white/5 hover:border-secondary-500/30 hover:bg-white/5 transition-all group"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-secondary-400 block mb-1">
-              Floticar
+              Savoir-faire
             </span>
             <span className="text-sm font-bold text-white group-hover:text-secondary-300 transition-colors">
-              Démonstration 14 jours →
+              Nos Réalisations →
             </span>
           </Link>
 

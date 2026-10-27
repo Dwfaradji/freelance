@@ -46,7 +46,7 @@ const steps = [
     num: '05',
     name: 'Faire évoluer',
     title: 'Support & accompagnement continu',
-    desc: 'Mises à jour préventives, assistance réactive et évolutions continues selon les besoins de vos établissements.',
+    desc: 'Mises à jour préventives, assistance réactive et évolutions continues selon la croissance de votre organisation.',
     icon: RefreshCw,
   },
 ];
@@ -77,7 +77,7 @@ export default function MethodologySection() {
             <div className="lg:col-span-6 relative h-[320px] sm:h-[400px] lg:h-[440px] w-full overflow-hidden">
               <Image
                 src="/images/home/workshop_coconception.jpg"
-                alt="Atelier collaboratif de co-conception numérique entre DevEvoke et une directrice d'association médico-sociale"
+                alt="Atelier collaboratif de co-conception numérique entre DevEvoke et des décideurs d'organisation"
                 width={800}
                 height={600}
                 className="w-full h-full object-cover object-center brightness-[0.95] contrast-[1.05]"

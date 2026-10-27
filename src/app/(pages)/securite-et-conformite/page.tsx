@@ -12,6 +12,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from 'lucide-react';
+import TrustBar from '@/components/Home/trustBar';
 
 export const metadata: Metadata = {
   title: 'Sécurité Web & Conformité RGPD Médico-Sociale | DevEvoke',
@@ -78,6 +79,11 @@ export default function SecuriteConformitePage() {
               </span>
             </div>
           </div>
+        </div>
+
+        {/* Certifications & Conformités Clés */}
+        <div className="mb-16 rounded-3xl overflow-hidden">
+          <TrustBar />
         </div>
 
         {/* 4 Piliers de Sécurité */}

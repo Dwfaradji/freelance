@@ -61,12 +61,12 @@ const ServiceList = () => {
                 {/* Direct link to dedicated solution */}
                 {(() => {
                   const linksMap: Record<number, { href: string; label: string }> = {
-                    0: { href: '/solutions/logiciel-metier', label: 'Découvrir les logiciels métiers sur-mesure →' },
-                    1: { href: '/solutions/application-mobile', label: 'Découvrir nos applications mobiles terrain →' },
-                    2: { href: '/logiciel-gestion-vehicules-medico-social', label: 'Découvrir le logiciel Floticar de gestion de flotte →' },
-                    3: { href: '/securite-et-conformite', label: 'Consulter nos garanties sécurité & hébergement souverain →' },
-                    4: { href: '/solutions/automatisation', label: 'Découvrir nos solutions d’automatisation & API →' },
-                    5: { href: '/solutions/site-web', label: 'Découvrir nos sites web accessibles RGAA →' },
+                    0: { href: '/developpement-web', label: 'Découvrir le développement web sur-mesure →' },
+                    1: { href: '/application-mobile', label: 'Découvrir nos applications mobiles →' },
+                    2: { href: '/developpement-saas', label: 'Découvrir la conception & développement SaaS →' },
+                    3: { href: '/solutions-metier', label: 'Découvrir nos logiciels métier sur-mesure →' },
+                    4: { href: '/automatisation', label: 'Découvrir l’automatisation des processus & API →' },
+                    5: { href: '/securite-et-conformite', label: 'Consulter nos garanties sécurité & hébergement France →' },
                   };
                   const target = linksMap[service.id];
                   return target ? (

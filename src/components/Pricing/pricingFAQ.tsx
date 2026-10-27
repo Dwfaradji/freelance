@@ -4,32 +4,32 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const faqs = [
   {
-    question: 'Où sont hébergées vos applications et solutions SaaS comme Floticar ?',
-    answer: 'Toutes nos applications sont hébergées sur des infrastructures cloud souveraines situées exclusivement en France (centres de données sécurisés ISO 27001). Vos données restent soumises au droit français et européen, garantissant une conformité stricte au RGPD.',
+    question: 'Où sont hébergées vos applications web, plateformes SaaS et logiciels métier ?',
+    answer: 'Toutes nos solutions sont hébergées sur des infrastructures cloud souveraines situées exclusivement en France (centres de données sécurisés ISO 27001). Vos données restent soumises au droit français et européen, garantissant une conformité stricte au RGPD.',
   },
   {
-    question: 'Comment Floticar s’adapte-t-il à un IME, un SESSAD ou une association gestionnaire ?',
-    answer: 'Floticar a été pensé pour le fonctionnement concret des structures médico-sociales : gestion des réservations partagées, carnets de bord numériques accessibles par QR code sans installation sur smartphone, alertes automatiques d’entretiens et de contrôles techniques, et traçabilité des conducteurs.',
+    question: 'Quelle est la différence entre un logiciel standard du marché et une solution sur-mesure DevEvoke ?',
+    answer: 'Les progiciels généralistes imposent souvent des abonnements coûteux par utilisateur et forcent vos collaborateurs à s’adapter à des fonctionnalités rigides. DevEvoke conçoit un outil calqué sur vos flux réels, éliminant les fichiers Excel dispersés et centralisant exactement les informations indispensables à votre activité.',
   },
   {
-    question: 'Quelle est votre démarche concernant la protection des données et le RGPD ?',
-    answer: 'Nous appliquons le principe de Privacy by Design : chiffrement des flux (HTTPS / TLS 1.3), chiffrement des bases de données au repos (AES-256), cloisonnement strict des accès par rôles (RBAC) et respect du principe de minimisation des informations collectées.',
+    question: 'Pouvez-vous concevoir une plateforme SaaS complète de A à Z ?',
+    answer: 'Absolument. DevEvoke dispose d’une expertise éprouvée dans la création de produits SaaS, comme l’illustre Floticar (notre solution de gestion de flotte). Nous concevons l’architecture multi-organisations, les interfaces ergonomiques, les API, l’authentification sécurisée, la gestion des rôles (RBAC) et le déploiement cloud.',
   },
   {
-    question: 'Vos outils sont-ils adaptés aux équipes peu à l’aise avec l’informatique ?',
-    answer: 'Oui, c’est notre priorité absolue. Nous concevons des interfaces extrêmement sobres et intuitives. Pour les équipes nomades (SESSAD, SAVS), les applications fonctionnent même en mode déconnecté (hors-ligne) et se synchronisent automatiquement dès le retour du réseau.',
+    question: 'Développez-vous des applications mobiles professionnelles avec mode hors-ligne ?',
+    answer: 'Oui. Nous concevons des applications mobiles (iOS, Android, React Native / Expo ou PWA) adaptées aux équipes de terrain. Elles intègrent nativement un mode déconnecté (hors-ligne) avec synchronisation automatique des données dès le retour d’une connexion réseau.',
   },
   {
-    question: 'Pouvez-vous connecter vos solutions à nos outils existants ?',
-    answer: 'Absolument. Nous concevons des API REST sécurisées pour synchroniser vos outils métiers, vos logiciels administratifs ou vos tableaux de bord de direction générale, évitant ainsi toute double saisie.',
+    question: 'Pouvez-vous connecter vos solutions à nos outils existants via API ?',
+    answer: 'Absolument. Nous concevons des API REST sécurisées pour connecter vos nouvelles applications aux logiciels administratifs, ERP, CRM ou outils comptables déjà en place dans votre organisation, supprimant définitivement les doubles saisies.',
   },
   {
-    question: 'Quels sont les délais moyens de réalisation d’un projet ?',
-    answer: 'Pour le déploiement de Floticar, la mise en place se fait en quelques jours. Pour un logiciel métier sur-mesure ou une application mobile dédiée, le cycle de réalisation dure généralement de 1 à 3 mois, incluant cadrage des besoins, développement, tests et formation des utilisateurs.',
+    question: 'Quelle est votre méthode d’accompagnement et quels sont les délais moyens ?',
+    answer: 'Chaque projet démarre par un cadrage fonctionnel approfondi. Pour une application web ou un logiciel métier sur-mesure, le cycle moyen de réalisation est de 1 à 3 mois (conception UX, développement, tests, déploiement). Vous dialoguez directement avec le fondateur et développeur pour une réactivité optimale.',
   },
   {
     question: 'Assurez-vous la maintenance et le support technique dans la durée ?',
-    answer: 'Tout à fait. Nous proposons des forfaits d’accompagnement incluant la maintenance préventive, les mises à jour de sécurité régulières, les sauvegardes quotidiennes et un support technique réactif pour garantir la continuité de vos services.',
+    answer: 'Oui. DevEvoke assure un suivi sur le long terme : hébergement souverain, sauvegardes quotidiennes chiffrées, surveillance proactive, mises à jour préventives de sécurité et maintenance évolutive continue.',
   },
 ];
 

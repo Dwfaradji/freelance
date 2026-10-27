@@ -426,7 +426,7 @@ export default function AgenceDigitaleMedicoSocialPage() {
                     Des ateliers d’immersion pour concevoir avec vos équipes
                   </h3>
                   <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
-                    Nous ne concevons pas des logiciels depuis une tour d’ivoire. Nos designers s’assoient aux côtés de vos professionnels pour valider chaque écran en conditions réelles.
+                    Nous ne concevons pas des logiciels depuis une tour d’ivoire. DevEvoke s’assoit aux côtés de vos professionnels pour valider chaque écran en conditions réelles.
                   </p>
                 </div>
               </div>

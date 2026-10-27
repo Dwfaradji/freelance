@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     'DevEvoke',
   ],
   alternates: {
-    canonical: 'https://www.devevoke.com/realisations/floticar',
+    canonical: 'https://www.devevoke.com/logiciel-gestion-vehicules-medico-social',
   },
   openGraph: {
     title: 'Logiciel Gestion Véhicules & Flotte Association Médico-Sociale | Floticar',
     description:
       'Optimisez le suivi de votre parc automobile en association médico-sociale, IME ou SESSAD. Dématérialisation du carnet de bord, alertes entretiens et gestion des réservations.',
-    url: 'https://www.devevoke.com/realisations/floticar',
+    url: 'https://www.devevoke.com/logiciel-gestion-vehicules-medico-social',
     siteName: 'DevEvoke',
     images: [
       {

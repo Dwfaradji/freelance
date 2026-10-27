@@ -14,7 +14,7 @@ const MedicalProcess = () => {
     {
       number: "02",
       title: "Conception UX & Développement",
-      description: "Nos designers et développeurs conçoivent des interfaces simples, accessibles et ergonomiques : logiciels métiers, portails, applications mobiles terrain ou déploiement de Floticar.",
+      description: "DevEvoke conçoit des interfaces simples, accessibles et ergonomiques : logiciels métiers, portails web, applications mobiles terrain ou intégration de solutions.",
       icon: <Code2 className="w-8 h-8 text-secondary-400" />
     },
     {

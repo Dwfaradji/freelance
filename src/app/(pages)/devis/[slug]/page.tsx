@@ -63,7 +63,7 @@ export default function Page({ params }: Props) {
             </h2>
             <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto">
               Vous avez fait un excellent choix ! Remplissez le formulaire ci-dessous pour nous parler de votre projet. 
-              Notre équipe analysera votre demande et vous recontactera sous 48h avec une proposition adaptée.
+              DevEvoke analysera votre demande et vous recontactera sous 48h avec une proposition adaptée.
             </p>
           </Fade>
         </header>

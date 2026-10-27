@@ -62,7 +62,7 @@ export default function SolutionsAssociationsPage() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.devevoke.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Solutions Médico-Social', item: 'https://www.devevoke.com/solutions-medico-social' },
+      { '@type': 'ListItem', position: 2, name: 'Pôle Médico-Social', item: 'https://www.devevoke.com/medico-social' },
       { '@type': 'ListItem', position: 3, name: 'Associations Gestionnaires', item: 'https://www.devevoke.com/solutions-medico-social/associations' },
     ],
   };
@@ -78,7 +78,7 @@ export default function SolutionsAssociationsPage() {
           <ol className="flex items-center gap-2">
             <li><Link href="/" className="hover:text-white transition-colors">Accueil</Link></li>
             <li>/</li>
-            <li><Link href="/solutions-medico-social" className="hover:text-white transition-colors">Solutions Médico-Social</Link></li>
+            <li><Link href="/medico-social" className="hover:text-white transition-colors">Pôle Médico-Social</Link></li>
             <li>/</li>
             <li className="text-white font-medium">Associations Gestionnaires</li>
           </ol>

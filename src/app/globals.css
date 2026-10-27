@@ -431,3 +431,100 @@ main {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   mask-image: radial-gradient(circle at center, black, transparent 80%);
 }
+
+/* ═══════════════════════════════════════════════
+   PRINT & EXPORT PDF ENGINE
+   Garantit un export PDF A4 vierge de tout élément parasite,
+   sans barre de défilement, sans navbar, et sans modal interactive.
+═══════════════════════════════════════════════ */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 15mm 15mm;
+  }
+
+  /* Forcer un fond blanc et texte sombre propre */
+  html,
+  body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Masquer complètement la navbar, les footers, la page sous-jacente et les boutons */
+  header,
+  footer,
+  nav,
+  main,
+  aside,
+  button,
+  .no-print,
+  [data-print="hide"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Neutraliser le conteneur portal de la modal pour laisser s'écouler les pages */
+  [role="dialog"] {
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Masquer la boîte modale interactive (qui contient les boutons, animations et barre de scroll) */
+  [role="dialog"] > div:not(#printable-diagnostic-report) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Supprimer radicalement toutes les barres de défilement */
+  * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  /* Afficher et structurer le document A4 imprimable */
+  #printable-diagnostic-report {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Contrôle des sauts de page */
+  .page-break {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}

@@ -381,7 +381,7 @@ export default function SolutionsMedicoSocialPage() {
                 Sécurité & Conformité RGPD
               </Link>
               <Link href="/contact" className="btn-outline text-sm">
-                Échanger avec notre équipe
+                Échanger avec le fondateur
               </Link>
             </div>
           </div>

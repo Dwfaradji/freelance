@@ -40,7 +40,7 @@ export const AboutMethodology = () => {
             Une méthodologie de conception <span className="text-highlight">centrée sur le terrain</span>
           </h2>
           <p className="text-muted text-lg mb-6 leading-relaxed">
-            Dans le médico-social, nous savons qu&apos;un outil conçu uniquement depuis un bureau lointain est voué au rejet. Nos designers et architectes logiciels vont à la rencontre des éducateurs, équipes soignantes et secrétariats pour comprendre les véritables frictions opérationnelles (tournées nomades, zones blanches réseau, plannings éclatés).
+            Dans les entreprises comme dans le médico-social, nous savons qu&apos;un outil conçu uniquement depuis un bureau lointain est voué au rejet. DevEvoke va directement à la rencontre des équipes pour comprendre les véritables frictions opérationnelles (tournées nomades, zones blanches réseau, plannings éclatés).
           </p>
           <ul className="space-y-4">
             {[

@@ -16,37 +16,37 @@ const AboutHeader = () => {
             <Fade direction="up" cascade damping={0.1} triggerOnce>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
-                <span className="text-sm font-medium text-white tracking-wide uppercase">Agence Digitale Médico-Sociale</span>
+                <span className="text-sm font-medium text-white tracking-wide uppercase">Agence Digitale & Solutions Métier</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                Le numérique au <span className="text-highlight">service de l'humain.</span>
+                L&apos;ingénierie numérique pensée pour <span className="text-highlight">votre métier.</span>
               </h1>
               
               <p className="text-lg text-muted leading-relaxed mb-6">
-                Fondée par des experts en ingénierie logicielle et conception d'interface, <strong>DevEvoke</strong> est une agence digitale spécialisée dans la transformation numérique du secteur médico-social. Nous concevons des solutions logicielles métiers sur-mesure, des applications web et mobiles terrain, des automatisations administratives et des outils SaaS comme Floticar pour les associations gestionnaires, IME, SESSAD, ESAT, EHPAD et MAS.
+                <strong>DevEvoke</strong> est une agence digitale indépendante spécialisée dans la conception de plateformes web, applications mobiles, architectures SaaS et logiciels métier sur mesure. Nous accompagnons les entreprises, TPE, PME, startups, associations et établissements médico-sociaux dans la digitalisation durable et pragmatique de leurs activités.
               </p>
               <p className="text-lg text-muted leading-relaxed mb-10">
-                Notre mission : <strong>réduire la charge administrative</strong> des équipes et des directions d'établissements grâce à des interfaces intuitives, tout en garantissant une <strong>stricte conformité au RGPD</strong> et un hébergement souverain en France.
+                Notre engagement : <strong>supprimer les frictions opérationnelles</strong>, automatiser les tâches répétitives et concevoir des outils fiables que vos équipes adoptent avec enthousiasme, tout en garantissant un <strong>hébergement souverain en France</strong> et une conformité rigoureuse au RGPD.
               </p>
               
               {/* Engagements Clés */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="glass p-4 rounded-2xl border border-white/5 border-l-primary-500 border-l-4">
                   <div className="text-2xl font-bold text-white mb-1">Sur-Mesure</div>
-                  <div className="text-xs text-muted-light">Calqué sur vos protocoles</div>
+                  <div className="text-xs text-muted-light">Calqué sur vos processus réels</div>
                 </div>
                 <div className="glass p-4 rounded-2xl border border-white/5 border-l-secondary-500 border-l-4">
                   <div className="text-2xl font-bold text-white mb-1">100% RGPD</div>
-                  <div className="text-xs text-muted-light">Conformité CNIL stricte</div>
+                  <div className="text-xs text-muted-light">Sécurité et conformité CNIL</div>
                 </div>
                 <div className="glass p-4 rounded-2xl border border-white/5 border-l-emerald-500 border-l-4">
                   <div className="text-2xl font-bold text-white mb-1">France</div>
-                  <div className="text-xs text-muted-light">Hébergement souverain</div>
+                  <div className="text-xs text-muted-light">Hébergement cloud souverain</div>
                 </div>
                 <div className="glass p-4 rounded-2xl border border-white/5 border-l-sky-500 border-l-4">
-                  <div className="text-2xl font-bold text-white mb-1">Terrain</div>
-                  <div className="text-xs text-muted-light">Écoute & immersion réelle</div>
+                  <div className="text-2xl font-bold text-white mb-1">Proximité</div>
+                  <div className="text-xs text-muted-light">Interlocuteur direct & agilité</div>
                 </div>
               </div>
             </Fade>

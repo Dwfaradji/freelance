@@ -30,8 +30,8 @@ const Page = () => {
           </li>
           <li>/</li>
           <li>
-            <Link href="/solutions" className="hover:text-white transition-colors">
-              Solutions
+            <Link href="/services" className="hover:text-white transition-colors">
+              Services & Expertises
             </Link>
           </li>
           <li>/</li>
@@ -114,7 +114,7 @@ const Page = () => {
           <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
             Démarrez votre projet avec l'un de nos modèles de base. Nous nous chargeons de la personnalisation complète pour l'adapter parfaitement à votre image.
           </p>
-          <Link href="/devis/site-web-portail-etablissement" className="btn-primary inline-flex">
+          <Link href="/devis/site-web-plateforme-vitrine" className="btn-primary inline-flex">
             Choisir mon template →
           </Link>
         </div>

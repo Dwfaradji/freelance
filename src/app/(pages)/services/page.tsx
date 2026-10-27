@@ -13,13 +13,13 @@ const Page = () => {
         <Fade direction="up" triggerOnce>
           <span className="section-label mb-4 inline-block">Ingénierie & Transformation Numérique</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Nos Services{' '}
+            Nos Expertises &{' '}
             <span className="text-highlight">
-              Médico-Sociaux
+              Services Numériques
             </span>
           </h1>
           <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto">
-            DevEvoke accompagne les associations gestionnaires, IME, SESSAD, ESAT et EHPAD dans la conception d’outils numériques performants : logiciels métiers sur-mesure, applications mobiles nomades, gestion de flotte automobile (Floticar) et automatisations administratives.
+            DevEvoke accompagne les entreprises, PME, startups, associations et acteurs médico-sociaux dans la conception de solutions sur-mesure : développement web, applications mobiles, plateformes SaaS, logiciels métier et automatisation des processus.
           </p>
         </Fade>
       </header>
@@ -36,17 +36,17 @@ const Page = () => {
         <div className="max-w-4xl mx-auto glass p-10 sm:p-16 rounded-3xl text-center border border-primary/20 shadow-[0_0_50px_rgba(59,130,246,0.15)] relative z-10">
           <span className="section-label mb-3 inline-block">Échangeons sur vos besoins</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Un projet numérique pour votre établissement ?
+            Un projet numérique pour votre organisation ?
           </h2>
           <p className="text-muted text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-            Échangez directement avec nos architectes logiciels pour cadrer votre besoin, évaluer la faisabilité technique et recevoir une proposition adaptée à votre budget associatif.
+            Échangez directement avec le fondateur pour cadrer votre besoin, évaluer la faisabilité technique et concevoir une solution adaptée à votre budget et vos flux réels.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact" className="btn-primary inline-flex text-sm font-semibold">
               Parler de votre projet →
             </Link>
-            <Link href="/diagnostic-numerique" className="btn-outline inline-flex text-sm font-medium">
-              Diagnostic numérique gratuit (3 min)
+            <Link href="/medico-social" className="btn-secondary inline-flex text-sm font-medium">
+              Notre univers médico-social
             </Link>
           </div>
         </div>

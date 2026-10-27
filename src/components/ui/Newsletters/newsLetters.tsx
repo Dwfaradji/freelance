@@ -6,26 +6,42 @@ import callApi from '../../../utils/callApi';
 
 const NewsLetters = () => {
   const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState(''); // Honeypot trap
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
   const envoyer = async () => {
-    if (!isFormValid) {
-      setMessage('Veuillez entrer une adresse email valide.');
+    if (!isFormValid || isSubmitting) {
+      if (!isFormValid) setMessage('Veuillez entrer une adresse email valide.');
       return;
     }
+
+    setIsSubmitting(true);
     try {
-      await callApi({ url: '/api/newsletters', data: { email } });
-      setMessage('🎉 Bienvenue dans la communauté DevEvoke !');
-      setIsSuccess(true);
-      setEmail('');
-      setIsFormValid(false);
+      const response = await callApi({
+        url: '/api/newsletters',
+        data: { email, website },
+      });
+
+      if (response?.data?.status === 200 || response?.data?.success) {
+        setMessage('🎉 Bienvenue dans la communauté DevEvoke ! Un email de confirmation vous a été envoyé.');
+        setIsSuccess(true);
+        setEmail('');
+        setWebsite('');
+        setIsFormValid(false);
+      } else {
+        setMessage(response?.data?.error || 'Une erreur est survenue. Veuillez vérifier votre adresse.');
+        setIsSuccess(false);
+      }
     } catch {
-      setMessage("Une erreur est survenue. Veuillez réessayer.");
+      setMessage("Une erreur est survenue. Veuillez réessayer dans quelques instants.");
       setIsSuccess(false);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -110,6 +126,17 @@ const NewsLetters = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto relative">
+            {/* Honeypot anti-spam */}
+            <input
+              type="text"
+              name="website"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              className="opacity-0 absolute -left-[9999px] w-1 h-1 pointer-events-none"
+              aria-hidden="true"
+            />
             <input
               type="email"
               placeholder="votre@email.com"
@@ -120,10 +147,10 @@ const NewsLetters = () => {
             />
             <button
               onClick={envoyer}
-              disabled={!isFormValid}
-              className="absolute right-2 top-2 bottom-2 bg-primary-600 hover:bg-primary-500 disabled:bg-white/10 disabled:text-gray-500 text-white px-6 rounded-full font-medium transition-colors"
+              disabled={!isFormValid || isSubmitting}
+              className="absolute right-2 top-2 bottom-2 bg-primary-600 hover:bg-primary-500 disabled:bg-white/10 disabled:text-gray-500 text-white px-6 rounded-full font-medium transition-colors cursor-pointer"
             >
-              Rejoindre
+              {isSubmitting ? 'Envoi...' : 'Rejoindre'}
             </button>
           </div>
 

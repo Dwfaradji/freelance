@@ -262,7 +262,7 @@ export default function ApplicationWebPage() {
                 href="/contact"
                 className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-secondary-500 to-primary-500 text-white font-semibold text-sm hover:opacity-95 shadow-lg shadow-secondary-500/25 transition-all flex items-center gap-2"
               >
-                <span>Contactez notre équipe</span>
+                <span>Contactez DevEvoke</span>
                 <ArrowRight className="size-4" />
               </Link>
             </div>

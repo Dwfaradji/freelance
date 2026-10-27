@@ -31,38 +31,33 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: NextMetadata = {
   metadataBase: new URL('https://www.devevoke.com'),
   title: {
-    default: 'DevEvoke | Agence digitale spécialisée dans le médico-social',
+    default: 'DevEvoke | Agence digitale & solutions métier sur-mesure',
     template: '%s | DevEvoke',
   },
   description:
-    'DevEvoke conçoit des solutions numériques pour les structures médico-sociales : sites web, applications, logiciels métier, SaaS et outils sur mesure.',
+    'DevEvoke conçoit des solutions digitales pensées pour votre métier : développement web Next.js, applications mobiles nomades, plateformes SaaS, logiciels sur-mesure et automatisation. Basée à Perpignan (Occitanie & toute la France).',
   keywords: [
-    'Agence digitale médico-social',
-    'Agence digitale spécialisée médico-social',
-    'Agence web médico-social',
-    'Transformation numérique médico-social',
-    'Digitalisation médico-social',
-    'Solutions numériques médico-sociales',
-    'Logiciel médico-social',
-    'Logiciel sur mesure médico-social',
-    'Développement logiciel médico-social',
-    'Application médico-sociale',
-    'Application web sur mesure',
-    'Application mobile sur mesure',
-    'Logiciel métier médico-social',
-    'SaaS médico-social',
-    'Automatisation médico-social',
-    'Outil numérique médico-social',
-    'Conformité RGPD',
+    'Agence digitale Perpignan',
+    'Agence digitale Occitanie',
+    'Développement web sur-mesure',
+    'Solutions métier sur-mesure',
+    'Logiciel métier sur-mesure',
+    'Développement application mobile',
+    'Conception plateforme SaaS',
+    'Automatisation des processus',
+    'Agence Next.js France',
+    'Solutions médico-social',
+    'Hébergement souverain France',
+    'Boucif Faradji',
     'DevEvoke',
   ],
   alternates: {
     canonical: 'https://www.devevoke.com/',
   },
   openGraph: {
-    title: 'DevEvoke | Agence Digitale Médico-Social & Solutions Numériques',
+    title: 'DevEvoke | Agence Digitale & Solutions Métier Sur-Mesure',
     description:
-      'Solutions numériques, logiciels métiers et applications web/mobiles pour les associations et établissements médico-sociaux en France.',
+      'Des solutions digitales pensées pour votre métier : logiciels sur-mesure, applications mobiles nomades, plateformes SaaS et automatisation.',
     url: 'https://www.devevoke.com/',
     siteName: 'DevEvoke',
     images: [
@@ -70,7 +65,7 @@ export const metadata: NextMetadata = {
         url: '/icon.png',
         width: 800,
         height: 600,
-        alt: 'DevEvoke - Agence Digitale Médico-Social',
+        alt: 'DevEvoke - Agence Digitale & Solutions Métier',
       },
     ],
     locale: 'fr_FR',
@@ -78,9 +73,9 @@ export const metadata: NextMetadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DevEvoke | Agence Digitale Spécialisée Médico-Social',
+    title: 'DevEvoke | Agence Digitale & Solutions Métier Sur-Mesure',
     description:
-      'Solutions logicielles, SaaS de gestion de flotte et applications pour le médico-social.',
+      'Logiciels sur-mesure, développement web Next.js, applications mobiles et plateformes SaaS pour entreprises et organisations.',
     images: ['/icon.png'],
   },
 };
@@ -107,10 +102,14 @@ export default function RootLayout({
         url: 'https://www.devevoke.com',
         logo: 'https://www.devevoke.com/icon.png',
         description:
-          'Agence digitale française spécialisée dans la conception de solutions numériques, logiciels métiers et outils SaaS pour le secteur médico-social et de la santé.',
+          'Agence digitale française spécialisée dans la conception de solutions logicielles et numériques sur-mesure : développement web Next.js, applications mobiles, plateformes SaaS et automatisation.',
+        founder: {
+          '@type': 'Person',
+          name: 'Boucif Faradji',
+          jobTitle: 'Fondateur & Développeur Full-Stack',
+        },
         sameAs: [
           'https://www.linkedin.com/company/devevoke/',
-          'https://twitter.com/DevEvoke',
           'https://github.com/Dwfaradji',
         ],
         contactPoint: {
@@ -135,7 +134,7 @@ export default function RootLayout({
         name: 'DevEvoke',
         image: 'https://www.devevoke.com/icon.png',
         description:
-          'Agence digitale spécialisée dans les solutions numériques médico-sociales, développement de logiciels métiers et applications web/mobiles.',
+          'Agence digitale à Perpignan spécialisée dans le développement web Next.js, applications mobiles, plateformes SaaS et logiciels métiers sur-mesure.',
         url: 'https://www.devevoke.com',
         address: {
           '@type': 'PostalAddress',

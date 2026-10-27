@@ -60,7 +60,7 @@ export default function SolutionsEsatPage() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.devevoke.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Solutions Médico-Social', item: 'https://www.devevoke.com/solutions-medico-social' },
+      { '@type': 'ListItem', position: 2, name: 'Pôle Médico-Social', item: 'https://www.devevoke.com/medico-social' },
       { '@type': 'ListItem', position: 3, name: 'Solutions pour ESAT', item: 'https://www.devevoke.com/solutions-medico-social/esat' },
     ],
   };
@@ -76,7 +76,7 @@ export default function SolutionsEsatPage() {
           <ol className="flex items-center gap-2">
             <li><Link href="/" className="hover:text-white transition-colors">Accueil</Link></li>
             <li>/</li>
-            <li><Link href="/solutions-medico-social" className="hover:text-white transition-colors">Solutions Médico-Social</Link></li>
+            <li><Link href="/medico-social" className="hover:text-white transition-colors">Pôle Médico-Social</Link></li>
             <li>/</li>
             <li className="text-white font-medium">Solutions pour ESAT</li>
           </ol>
@@ -105,7 +105,7 @@ export default function SolutionsEsatPage() {
               Discuter d’un projet pour votre ESAT
               <ArrowRight className="size-4" />
             </Link>
-            <Link href="/solutions/logiciel-metier" className="btn-outline w-full sm:w-auto text-base">
+            <Link href="/solutions-metier" className="btn-outline w-full sm:w-auto text-base">
               Logiciels métier sur-mesure
             </Link>
           </div>
@@ -198,8 +198,8 @@ export default function SolutionsEsatPage() {
                 Demander un devis pour votre ESAT
                 <ArrowRight className="size-4" />
               </Link>
-              <Link href="/solutions-medico-social" className="btn-outline text-base">
-                Retour au catalogue de solutions
+              <Link href="/medico-social" className="btn-outline text-base">
+                Voir le Pôle Médico-Social
               </Link>
             </div>
 

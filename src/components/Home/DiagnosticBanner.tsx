@@ -24,7 +24,7 @@ export default function DiagnosticBanner() {
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-semibold uppercase tracking-wider">
                 <BarChart3 className="w-4 h-4" />
-                Outil Gratuit Décideurs Médico-Sociaux
+                Outil Gratuit Décideurs & Dirigeants
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -32,11 +32,11 @@ export default function DiagnosticBanner() {
                 <span className="text-highlight">
                   maturité numérique
                 </span>{' '}
-                de votre établissement ?
+                de votre organisation ?
               </h2>
 
               <p className="text-muted text-base sm:text-lg leading-relaxed max-w-2xl">
-                Répondez à 5 questions concrètes sur votre gestion de flotte, vos transmissions éducatives et vos outils administratifs. Obtenez votre score instantané et un plan d’action priorisé.
+                Répondez à quelques questions concrètes sur vos outils internes, vos processus terrain et votre gestion administrative. Obtenez votre score instantané et un plan d’action priorisé.
               </p>
 
               <div className="flex flex-wrap items-center gap-6 pt-2 text-xs text-gray-300">
@@ -50,7 +50,7 @@ export default function DiagnosticBanner() {
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-secondary-400" />
-                  Méthodologie médico-sociale
+                  Méthodologie pragmatique
                 </span>
               </div>
             </div>

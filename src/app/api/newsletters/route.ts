@@ -1,62 +1,192 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { validateFormRequest } from '@/lib/security/requestValidation';
+import { checkHoneypot } from '@/lib/security/honeypot';
+import { rateLimiter, getClientIp } from '@/lib/security/rateLimit';
+import { securityLogger, generateRequestId } from '@/lib/security/logger';
+import { generateReference } from '@/lib/security/reference';
+import { newsletterSubmissionSchema } from '@/lib/forms/schemas';
+import { sendTransactionalEmail } from '@/lib/email/sendTransactionalEmail';
+import { getEmailConfig } from '@/lib/email/config';
 
-const res = NextResponse;
-
-// POST
 export async function POST(request: Request) {
-  const req = await request.json();
-  const { email } = req;
+  const startTime = Date.now();
+  const requestId = generateRequestId();
+  const clientIp = getClientIp(request);
 
-  // Vérif param
-  if (!email) {
-    return res.json({ message: 'INVALID_PARAMETER' });
+  // 1. Validation de la requête HTTP
+  const validation = await validateFormRequest(request, requestId);
+  if (!validation.valid || !validation.parsedBody) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'newsletter',
+      action: 'SUBMIT_ATTEMPT',
+      status: 'BLOCKED',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: 'Invalid HTTP request structure or payload size',
+    });
+    return validation.errorResponse!;
   }
 
-  // Config SMTP
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const smtpHost = process.env.SMTP_HOST;
-  const smtpPort = process.env.SMTP_PORT;
+  const rawBody = validation.parsedBody;
 
-  if (!smtpUser || !smtpPass || !smtpHost || !smtpPort) {
-    return res.json({ status: 400, message: 'SMTP_CONFIG_MISSING' });
-  }
+  // 2. Détection Anti-Spam Honeypot
+  const honeypotResult = checkHoneypot(rawBody);
+  if (honeypotResult.isBot) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'newsletter',
+      action: 'HONEYPOT_TRIGGERED',
+      status: 'BLOCKED',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: `Honeypot field filled: ${honeypotResult.fieldTriggered}`,
+    });
 
-  // Vérif email
-  const pattern =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (!pattern.test(email)) {
-    return res.json({
-      message: 'EMAIL_SYNTAX_INCORRECT',
+    return NextResponse.json({
+      success: true,
+      status: 200,
+      message: 'EMAIL_SENT',
+      referenceId: generateReference('BOT'),
+      requestId,
     });
   }
 
-  // Transporter Nodemailer
-  const transporter = nodemailer.createTransport({
-    host: smtpHost,
-    port: Number(smtpPort),
-    secure: Number(smtpPort) === 465, // true si port 465
-    auth: {
-      user: smtpUser,
-      pass: smtpPass,
-    },
-  });
+  // 3. Rate Limiting (max 3 inscriptions / 10 minutes par IP)
+  const rateLimitResult = rateLimiter.check(clientIp, 'newsletter');
+  if (!rateLimitResult.success) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'newsletter',
+      action: 'RATE_LIMITED',
+      status: 'BLOCKED',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: `Rate limit exceeded: ${rateLimitResult.limit} per window`,
+    });
 
+    return NextResponse.json(
+      {
+        success: false,
+        status: 429,
+        message: 'RATE_LIMIT_EXCEEDED',
+        error: `Trop de requêtes. Veuillez patienter ${rateLimitResult.resetSeconds} secondes avant de réessayer.`,
+        requestId,
+      },
+      {
+        status: 429,
+        headers: {
+          'Retry-After': String(rateLimitResult.resetSeconds),
+        },
+      }
+    );
+  }
+
+  // 4. Validation Zod de l'email
+  const parseResult = newsletterSubmissionSchema.safeParse(rawBody);
+  if (!parseResult.success) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'newsletter',
+      action: 'VALIDATION_FAILED',
+      status: 'ERROR',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: 'Invalid email syntax',
+    });
+
+    return NextResponse.json(
+      {
+        success: false,
+        status: 400,
+        message: 'EMAIL_SYNTAX_INCORRECT',
+        error: 'Adresse email invalide. Veuillez renseigner une adresse email correcte.',
+        requestId,
+      },
+      { status: 400 }
+    );
+  }
+
+  const validatedData = parseResult.data;
+
+  // 5. Vérifier la configuration SMTP
+  const emailConfig = getEmailConfig();
+  if (!emailConfig.isConfigured) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'newsletter',
+      action: 'EMAIL_FAILED',
+      status: 'ERROR',
+      durationMs: Date.now() - startTime,
+      error: 'SMTP_CONFIG_MISSING',
+    });
+
+    return NextResponse.json(
+      {
+        success: false,
+        status: 503,
+        message: 'SMTP_CONFIG_MISSING',
+        error: 'Le service est temporairement indisponible.',
+        requestId,
+      },
+      { status: 503 }
+    );
+  }
+
+  // 6. Génération de référence
+  const referenceId = generateReference('NL');
+
+  // 7. Envoi de la notification et de la confirmation
   try {
-    await transporter.sendMail({
-      from: smtpUser,
-      to: String(process.env.EMAIL_TO), // Admin qui reçoit l’inscription
-      subject: 'Nouvelle inscription newsletter',
-      html: `
-        <h2>Nouvelle inscription à la newsletter</h2>
-        <p><strong>Email :</strong> ${email}</p>
-      `,
+    const sendResult = await sendTransactionalEmail({
+      formType: 'newsletter',
+      data: validatedData,
+      referenceId,
+      requestId,
     });
 
-    return res.json({ status: 200, message: 'EMAIL_SENT' });
-  } catch (error) {
-    console.error('EMAIL ERROR:', error);
-    return res.json({ status: 400, message: 'EMAIL_SENDING_FAILED', error });
+    if (!sendResult.internalSent) {
+      return NextResponse.json(
+        {
+          success: false,
+          status: 500,
+          message: 'EMAIL_SENDING_FAILED',
+          error: 'Une erreur est survenue lors de l’inscription. Veuillez réessayer.',
+          requestId,
+        },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json(
+      {
+        success: true,
+        status: 200,
+        message: 'EMAIL_SENT',
+        referenceId,
+        requestId,
+      },
+      { status: 200 }
+    );
+  } catch (error: any) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'newsletter',
+      action: 'EMAIL_FAILED',
+      status: 'ERROR',
+      durationMs: Date.now() - startTime,
+      error: error?.message || 'Unexpected newsletter subscription error',
+    });
+
+    return NextResponse.json(
+      {
+        success: false,
+        status: 500,
+        message: 'EMAIL_SENDING_FAILED',
+        error: 'Une erreur inattendue est survenue.',
+        requestId,
+      },
+      { status: 500 }
+    );
   }
 }

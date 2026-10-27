@@ -19,7 +19,12 @@ const AnimatedWord = ({ children, delay, highlight = false }: { children: React.
   </span>
 );
 
-const Testimonial = () => {
+interface TestimonialProps {
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+
+const Testimonial = ({ ctaHref = '/contact', ctaLabel = 'Discuter de votre projet' }: TestimonialProps) => {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -117,9 +122,9 @@ const Testimonial = () => {
           transition={{ duration: 1, delay: 1.2 }}
           className="mt-16"
         >
-          <Link href="/a-propos" className="group flex items-center gap-4 text-sm text-gray-400 hover:text-white transition-colors duration-300">
+          <Link href={ctaHref} className="group flex items-center gap-4 text-sm text-gray-400 hover:text-white transition-colors duration-300">
             <span className="w-12 h-[1px] bg-gray-600 group-hover:bg-primary-500 transition-colors" />
-            <span className="uppercase tracking-[0.15em] font-medium">{`Découvrir l'agence`}</span>
+            <span className="uppercase tracking-[0.15em] font-medium">{ctaLabel}</span>
             <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
           </Link>
         </motion.div>

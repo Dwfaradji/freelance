@@ -2,26 +2,27 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Réalisations & Études de Cas Médico-Sociales | DevEvoke',
+  title: 'Réalisations & Projets Numériques Sur-Mesure',
   description:
-    'Découvrez les solutions numériques conçues par DevEvoke pour les acteurs médico-sociaux : étude de cas SaaS Floticar, applications nomades SESSAD, gestion d’ateliers ESAT et portails de coordination.',
+    'Découvrez les solutions logicielles et digitales développées par DevEvoke : étude de cas SaaS Floticar, logiciels métier sur-mesure, applications mobiles et plateformes web.',
   keywords: [
-    'réalisations numériques médico-social',
-    'étude de cas floticar',
-    'projets web associations médico-sociales',
-    'applications médico-sociales développées',
+    'réalisations logicielles',
+    'projets numériques sur mesure',
+    'étude de cas floticar saas',
+    'développement web et mobile',
+    'logiciel métier entreprise',
     'DevEvoke',
   ],
   alternates: {
     canonical: 'https://www.devevoke.com/realisations',
   },
   openGraph: {
-    title: 'Réalisations & Retours d’Expérience Médico-Social | DevEvoke',
+    title: 'Réalisations & Projets Numériques Sur-Mesure | DevEvoke',
     description:
-      'Exemples concrets de solutions logicielles et web développées par DevEvoke pour répondre aux problématiques de terrain des structures médico-sociales.',
+      'Exemples concrets de solutions logicielles, plateformes SaaS et applications mobiles développées par DevEvoke.',
     url: 'https://www.devevoke.com/realisations',
     siteName: 'DevEvoke',
-    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Réalisations DevEvoke médico-social' }],
+    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Réalisations DevEvoke' }],
     locale: 'fr_FR',
     type: 'website',
   },

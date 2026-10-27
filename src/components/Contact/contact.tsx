@@ -30,12 +30,13 @@ interface FormData {
   delay: string;
   content: string;
   rgpdConsent: boolean;
+  website?: string; // Honeypot trap field
 }
 
 const Contact = ({
   prefilledMessage = '',
   hideImage = false,
-  title = 'Votre Projet Médico-Social',
+  title = 'Votre Projet Digital',
   subtitle,
   description,
   defaultProjectType = 'Logiciel métier sur-mesure',
@@ -44,6 +45,7 @@ const Contact = ({
   const [sendText, setSendText] = React.useState('');
   const [buttonSendMsg, setButtonSendMsg] = React.useState(true);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [referenceId, setReferenceId] = React.useState<string | null>(null);
 
   const {
     register,
@@ -56,8 +58,8 @@ const Contact = ({
       lastname: '',
       business: '',
       role: '',
-      establishmentType: 'Association gestionnaire',
-      siteCount: '1 site',
+      establishmentType: 'PME / Entreprise',
+      siteCount: '1 site unique',
       email: '',
       phone: '',
       projectType: defaultProjectType,
@@ -65,6 +67,7 @@ const Contact = ({
       delay: '1 à 3 mois',
       content: prefilledMessage,
       rgpdConsent: true,
+      website: '',
     },
   });
 
@@ -72,21 +75,21 @@ const Contact = ({
     setIsSubmitting(true);
     try {
       const response = await callApi({ url: '/api/contact', data });
-      if (response.data.status === 200) {
+      if (response?.data?.status === 200 || response?.data?.success) {
         window.location.hash = 'confirmation';
-        setSendText('Votre demande de projet a bien été envoyée. Un architecte vous recontactera sous 24 à 48 heures ouvrées.');
+        setReferenceId(response.data.referenceId || null);
+        setSendText('Votre demande de projet a bien été transmise à notre équipe.');
         setSendMsg(true);
         setButtonSendMsg(false);
         reset();
       } else {
         window.location.hash = 'Erreur_send';
         setSendMsg(true);
-        setSendText("Une erreur s'est produite lors de l'envoi. Veuillez vérifier vos données ou réessayer.");
+        setSendText(response?.data?.error || "Une erreur s'est produite lors de l'envoi. Veuillez vérifier vos données ou réessayer.");
       }
-    } catch (error) {
-      console.error("Erreur lors de l'envoi du formulaire", error);
+    } catch {
       setSendMsg(true);
-      setSendText('Erreur de connexion. Veuillez vérifier votre réseau.');
+      setSendText('Erreur de connexion. Veuillez vérifier votre réseau ou réessayer dans quelques instants.');
     } finally {
       setIsSubmitting(false);
     }
@@ -121,11 +124,21 @@ const Contact = ({
               </span>
               <p className="text-muted leading-relaxed text-sm sm:text-base">
                 {description ||
-                  'Vous envisagez un nouveau logiciel métier, la digitalisation de vos tournées ou le déploiement de Floticar ? Décrivez vos enjeux pour recevoir une proposition adaptée et chiffrée.'}
+                  'Vous envisagez un logiciel métier, une plateforme SaaS, une application mobile, un site web ou l’automatisation de vos processus ? Décrivez votre projet pour échanger directement avec le fondateur.'}
               </p>
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+              {/* Honeypot anti-spam (invisible pour les humains, piège à bots) */}
+              <input
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                className="opacity-0 absolute -left-[9999px] w-1 h-1 pointer-events-none"
+                aria-hidden="true"
+                {...register('website')}
+              />
+
               {/* Ligne 1 : Nom & Prénom */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -162,11 +175,11 @@ const Contact = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-300 mb-1">
-                    Association / Organisation *
+                    Entreprise / Organisation *
                   </label>
                   <input
                     className={inputClasses}
-                    placeholder="ex. Association Vivre Ensemble"
+                    placeholder="ex. Entreprise Martin / Association"
                     type="text"
                     id="business"
                     {...register('business', { required: true })}
@@ -182,7 +195,7 @@ const Contact = ({
                   </label>
                   <input
                     className={inputClasses}
-                    placeholder="ex. Directeur Général / DSI / Resp. Pédagogique"
+                    placeholder="ex. Dirigeant / DSI / Chef de projet"
                     type="text"
                     id="role"
                     {...register('role')}
@@ -190,32 +203,31 @@ const Contact = ({
                 </div>
               </div>
 
-              {/* Ligne 3 : Type d'établissement & Nombre de sites */}
+              {/* Ligne 3 : Type d'organisation & Périmètre */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-300 mb-1">
-                    Type d’établissement principal
+                    Type d’organisation
                   </label>
                   <select {...register('establishmentType')} className={selectClasses}>
-                    <option value="Association gestionnaire">Association gestionnaire multi-sites</option>
-                    <option value="IME (Institut Médico-Éducatif)">IME</option>
-                    <option value="SESSAD / SAVS (Service nomade)">SESSAD / SAVS</option>
-                    <option value="ESAT / Entreprise Adaptée">ESAT / Travail protégé</option>
-                    <option value="EHPAD / Résidence autonomie">EHPAD</option>
-                    <option value="MAS / FAM / Foyer d'accueil médicalisé">MAS / FAM</option>
-                    <option value="Structure sociale / CHRS">Structure sociale / Autre</option>
+                    <option value="PME / Entreprise">PME / Entreprise</option>
+                    <option value="TPE / Indépendant">TPE / Indépendant</option>
+                    <option value="Startup / Projet SaaS">Startup / Projet SaaS</option>
+                    <option value="Association gestionnaire / ESSMS">Association gestionnaire / Médico-Social</option>
+                    <option value="Association / Organisation professionnelle">Association / Organisation pro</option>
+                    <option value="Autre organisation">Autre structure</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold text-gray-300 mb-1">
-                    Nombre d’établissements / sites
+                    Périmètre / Nombre de sites
                   </label>
                   <select {...register('siteCount')} className={selectClasses}>
                     <option value="1 site unique">1 site unique</option>
                     <option value="2 à 5 sites">2 à 5 sites</option>
                     <option value="6 à 15 sites">6 à 15 sites</option>
-                    <option value="Plus de 15 sites">Plus de 15 sites</option>
+                    <option value="Plus de 15 sites">Plus de 15 sites / Multi-tenant</option>
                   </select>
                 </div>
               </div>
@@ -261,12 +273,12 @@ const Contact = ({
                   </label>
                   <select {...register('projectType')} className={selectClasses}>
                     <option value="Logiciel métier sur-mesure">Logiciel métier sur-mesure</option>
-                    <option value="Floticar (Gestion de flotte)">Floticar (Gestion flotte)</option>
-                    <option value="Application mobile éducateurs/soignants">Application mobile nomade</option>
-                    <option value="Automatisation & Processus">Automatisation & Dématérialisation</option>
-                    <option value="Portail Usagers & Familles">Portail Usagers & Familles</option>
-                    <option value="Tableau de bord / DSI">Tableau de bord & Reporting</option>
-                    <option value="Refonte site web associatif">Site web institutionnel</option>
+                    <option value="Conception & Développement SaaS">Plateforme SaaS</option>
+                    <option value="Application mobile (iOS / Android)">Application mobile nomade</option>
+                    <option value="Développement web & Espace client">Développement web & Espace client</option>
+                    <option value="Automatisation des processus">Automatisation des processus & API</option>
+                    <option value="Floticar (Gestion de flotte)">Floticar (Gestion de flotte)</option>
+                    <option value="Audit & Cadrage technique">Audit & Cadrage technique</option>
                   </select>
                 </div>
 
@@ -316,6 +328,7 @@ const Contact = ({
               <div className="flex items-start gap-2.5 pt-1">
                 <input
                   type="checkbox"
+                  defaultChecked={false}
                   id="rgpd"
                   {...register('rgpdConsent', { required: true })}
                   className="mt-1 rounded bg-white/5 border-white/20 text-primary-500 focus:ring-primary-500"
@@ -348,20 +361,37 @@ const Contact = ({
 
                 {sendMsg && (
                   <div
-                    className={`mt-4 p-4 rounded-xl border ${
+                    className={`mt-4 p-5 rounded-2xl border ${
                       !buttonSendMsg
                         ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300'
                         : 'bg-red-500/10 border-red-500/20 text-red-400'
                     }`}
                   >
-                    <p className="flex items-center gap-2 text-sm font-medium">
+                    <div className="flex items-start gap-3 text-sm">
                       {!buttonSendMsg ? (
-                        <CheckCircle2 className="size-5 shrink-0" />
+                        <CheckCircle2 className="size-5 shrink-0 text-emerald-400 mt-0.5" />
                       ) : (
-                        <ShieldCheck className="size-5 shrink-0" />
+                        <ShieldCheck className="size-5 shrink-0 text-red-400 mt-0.5" />
                       )}
-                      {sendText}
-                    </p>
+                      <div className="space-y-2">
+                        <p className="font-semibold text-white">{sendText}</p>
+                        {!buttonSendMsg && (
+                          <>
+                            <p className="text-xs text-neutral-300 leading-relaxed">
+                              Un email de confirmation récapitulatif vient de vous être envoyé. Notre équipe prendra contact avec vous dans un délai de 24 à 48 heures ouvrées.
+                            </p>
+                            {referenceId && (
+                              <div className="pt-1">
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/10 border border-white/10 font-mono text-xs text-white">
+                                  <span>Réf. dossier :</span>
+                                  <strong className="text-emerald-400">{referenceId}</strong>
+                                </span>
+                              </div>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>

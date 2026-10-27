@@ -1,11 +1,11 @@
 {
   "name": "DevEvoke",
   "short_name": "DevEvoke",
-  "description": "DevEvoke Agence web & mobile experte à Perpignan. Développez votre succès numérique avec des solutions innovantes et intuitives.",
+  "description": "DevEvoke - Agence digitale spécialisée dans le secteur médico-social : logiciels métiers, applications nomades, plateformes SaaS et conformité RGPD.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000FF",
-  "theme_color": "#ffffff",
+  "background_color": "#030712",
+  "theme_color": "#030712",
   "orientation": "any",
   "icons": [
     {

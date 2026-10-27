@@ -5,8 +5,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/images/logocv.svg';
 import { ArrowRight, ShieldCheck, Mail, MapPin } from 'lucide-react';
-import LinkedIn from '@mui/icons-material/LinkedIn';
-import GitHub from '@mui/icons-material/GitHub';
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+    </svg>
+  );
+}
+
+function GitHubIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,7 +45,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-neutral-400 leading-relaxed max-w-sm">
-              DevEvoke est une agence digitale française spécialisée dans la conception de solutions numériques sur mesure pour les acteurs du médico-social : logiciels métiers, applications nomades, plateformes SaaS et automatisation.
+              DevEvoke est une agence digitale française spécialisée dans la conception de solutions logicielles et numériques sur-mesure : développement web Next.js, applications mobiles nomades, plateformes SaaS et automatisation. Ancrage local à Perpignan (Occitanie) et accompagnement partout en France.
             </p>
             <div className="pt-2 flex items-center gap-3">
               <Link
@@ -41,7 +55,7 @@ export default function Footer() {
                 aria-label="DevEvoke sur LinkedIn"
                 className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-primary-500/40 hover:bg-primary-500/10 transition-all"
               >
-                <LinkedIn fontSize="small" />
+                <LinkedInIcon />
               </Link>
               <Link
                 href="https://github.com/Dwfaradji"
@@ -50,89 +64,64 @@ export default function Footer() {
                 aria-label="GitHub DevEvoke"
                 className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-primary-500/40 hover:bg-primary-500/10 transition-all"
               >
-                <GitHub fontSize="small" />
+                <GitHubIcon />
               </Link>
             </div>
           </div>
 
-          {/* Col 1: Solutions */}
+          {/* Col 1: Expertises */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-white">
-              Solutions Numériques
+              Expertises & Pôles
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/solutions/logiciel-metier" className="hover:text-white transition-colors">
+                <Link href="/developpement-web" className="hover:text-white transition-colors">
+                  Développement Web Sur-Mesure
+                </Link>
+              </li>
+              <li>
+                <Link href="/application-mobile" className="hover:text-white transition-colors">
+                  Applications Mobiles & Tablettes
+                </Link>
+              </li>
+              <li>
+                <Link href="/developpement-saas" className="hover:text-white transition-colors">
+                  Conception de Plateformes SaaS
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions-metier" className="hover:text-white transition-colors">
                   Logiciels Métier Sur-Mesure
                 </Link>
               </li>
               <li>
-                <Link href="/developpement-logiciel-medico-social" className="hover:text-white transition-colors">
-                  Développement Logiciel Dédié
-                </Link>
-              </li>
-              <li>
-                <Link href="/logiciel-gestion-vehicules-medico-social" className="hover:text-primary-300 text-primary-400 font-medium transition-colors">
-                  Gestion de Flotte Automobile
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions/saas-sur-mesure" className="hover:text-white transition-colors">
-                  Plateformes SaaS Dédiées
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions/application-web" className="hover:text-white transition-colors">
-                  Applications Web & Intranets
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions/application-mobile" className="hover:text-white transition-colors">
-                  Apps Mobiles Nomades (SESSAD)
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions/automatisation" className="hover:text-white transition-colors">
+                <Link href="/automatisation" className="hover:text-white transition-colors">
                   Automatisation des Processus
                 </Link>
               </li>
               <li>
-                <Link href="/solutions/outils-metier" className="hover:text-white transition-colors">
-                  Outils Internes & Logistique
+                <Link href="/securite-et-conformite" className="hover:text-white transition-colors">
+                  Sécurité & Hébergement Souverain
                 </Link>
               </li>
               <li>
-                <Link href="/solutions/site-web" className="hover:text-white transition-colors">
-                  Sites Web Accessibles RGAA
-                </Link>
-              </li>
-              <li>
-                <Link href="/templates" className="hover:text-white transition-colors">
-                  Socles & Templates Métiers
+                <Link href="/services" className="hover:text-primary-300 text-primary-400 font-medium transition-colors">
+                  Tous nos services & méthodologie →
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 2: Secteur & Réalisations */}
+          {/* Col 2: Pôle Médico-Social */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-white">
-              Secteur & Réalisations
+              Univers Médico-Social
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/agence-digitale-medico-social" className="hover:text-white transition-colors">
-                  Agence Digitale Médico-Social
-                </Link>
-              </li>
-              <li>
-                <Link href="/secteurs/medico-social" className="hover:text-white transition-colors">
-                  Approche Médico-Sociale
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions-medico-social" className="hover:text-white transition-colors">
-                  Catalogue Solutions Médico-Social
+                <Link href="/medico-social" className="hover:text-primary-300 text-primary-400 font-medium transition-colors">
+                  Hub Pôle Médico-Social
                 </Link>
               </li>
               <li>
@@ -142,7 +131,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/solutions-medico-social/sessad" className="hover:text-white transition-colors">
-                  Solutions pour SESSAD
+                  Solutions pour SESSAD & SAVS
                 </Link>
               </li>
               <li>
@@ -161,42 +150,42 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/realisations/floticar" className="hover:text-white transition-colors">
-                  Étude de Cas Floticar
-                </Link>
-              </li>
-              <li>
-                <Link href="/realisations" className="hover:text-white transition-colors">
-                  Toutes les Réalisations
+                <Link href="/diagnostic-numerique" className="hover:text-white transition-colors">
+                  Diagnostic Numérique Gratuit
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Entreprise & Ressources */}
+          {/* Col 3: Entreprise & Contact */}
           <div className="lg:col-span-2 space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-white">
-              Ressources & Contact
+              L’Agence & Contact
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
-                  Nos Services Médico-Sociaux
+                <Link href="/a-propos" className="hover:text-white transition-colors">
+                  L’Agence & Fondateur
+                </Link>
+              </li>
+              <li>
+                <Link href="/realisations" className="hover:text-white transition-colors">
+                  Réalisations & Projets
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://www.floticar.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-300 text-neutral-300 transition-colors"
+                >
+                  Étude de Cas Floticar ↗
                 </Link>
               </li>
               <li>
                 <Link href="/info-procedure" className="hover:text-white transition-colors">
                   Processus de Réalisation
-                </Link>
-              </li>
-              <li>
-                <Link href="/diagnostic-numerique" className="hover:text-white transition-colors">
-                  Diagnostic Numérique
-                </Link>
-              </li>
-              <li>
-                <Link href="/demande-demo" className="hover:text-white transition-colors">
-                  Demande de Démonstration
                 </Link>
               </li>
               <li>
@@ -210,18 +199,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/a-propos" className="hover:text-white transition-colors">
-                  À Propos de l'Agence
-                </Link>
-              </li>
-              <li>
                 <Link href="/tarifs" className="hover:text-white transition-colors">
                   Informations Tarifs
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-white font-medium hover:text-primary-300 transition-colors">
-                  Parler de votre projet →
+                  Échanger avec le fondateur →
                 </Link>
               </li>
             </ul>
@@ -231,7 +215,7 @@ export default function Footer() {
         {/* Bottom Banner with Hosting & Legal */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
           <div>
-            &copy; {currentYear} <span className="text-neutral-300 font-medium">DevEvoke</span>. Tous droits réservés. Hébergement souverain en France (OVH / Scaleway).
+            &copy; {currentYear} <span className="text-neutral-300 font-medium">DevEvoke</span> — Agence digitale & solutions métier sur-mesure (Perpignan, Occitanie & France). Hébergement souverain ISO 27001 en France.
           </div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <Link href="/mentions-legal" className="hover:text-white transition-colors">

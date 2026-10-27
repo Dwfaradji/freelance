@@ -31,11 +31,11 @@ export default function FoireAuxQuestionsPage() {
           </div>
 
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
-            Foire Aux Questions <span className="text-gradient drop-shadow-sm">Médico-Sociales</span>
+            Foire Aux Questions <span className="text-highlight">Solutions & Méthode</span>
           </h1>
 
           <p className="text-lg text-neutral-400 leading-relaxed max-w-2xl mx-auto">
-            Retrouvez les réponses à vos questions sur nos solutions logicielles, le déploiement de <strong>Floticar</strong>, notre hébergement souverain en France, la conformité RGPD et les modalités d’accompagnement associatif.
+            Retrouvez les réponses à vos questions sur la conception de logiciels métier sur-mesure, le développement de plateformes SaaS, les applications mobiles nomades, l’hébergement souverain en France et la conformité RGPD.
           </p>
         </Fade>
       </header>
@@ -55,10 +55,10 @@ export default function FoireAuxQuestionsPage() {
               <span>Vous avez une question spécifique ?</span>
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Nos consultants sont à votre écoute
+              DevEvoke est à votre écoute
             </h2>
             <p className="text-sm sm:text-base text-neutral-400 max-w-xl mx-auto">
-              Chaque association ou établissement médico-social a des contraintes d’organisation uniques. Échangeons directement pour évaluer la faisabilité de votre projet.
+              Chaque entreprise, association ou structure possède des processus uniques. Échangeons directement avec le fondateur pour évaluer la faisabilité et le cadrage de votre projet.
             </p>
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <Link
