@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { slugify } from '@/utils/slugify';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface ModalProps {
@@ -55,9 +54,8 @@ const Modal: React.FC<ModalProps> = ({
   const handleCloseModal = () => setIsOpen(false);
 
   const handleRedirect = () => {
-    if (modal) {
-      router.push(`/devis/${slugify(modal.title)}`);
-    }
+    setIsOpen(false);
+    router.push('/contact');
   };
 
   return (

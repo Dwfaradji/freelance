@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terre Nourricière - Ferme Bio & Locale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Merriweather', serif; }
+        body, p, .font-sans { font-family: 'Nunito', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#fcf8f2] text-gray-800">
+
+    <!-- Nav -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <svg class="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-2xl font-serif font-black text-green-900">Terre Nourricière</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-green-700 font-bold transition">Notre Ferme</a>
+                    <a href="#products" class="text-gray-600 hover:text-green-700 font-bold transition">Nos Produits</a>
+                    <a href="#market" class="text-gray-600 hover:text-green-700 font-bold transition">Point de Vente</a>
+                </div>
+                <div>
+                    <a href="#market" class="bg-green-700 text-white px-6 py-2.5 rounded-full font-bold hover:bg-green-800 shadow-lg shadow-green-200 transition">Commander en ligne</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-20 pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-green-700 font-bold tracking-widest uppercase text-sm mb-4 block">100% Biologique & Local</span>
+                    <h1 class="text-5xl lg:text-7xl font-serif font-black text-gray-900 leading-tight mb-6">
+                        De la terre à<br>votre assiette.
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
+                        Cultivé avec passion et respect de la nature. Découvrez nos paniers de légumes de saison, directement du producteur.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#products" class="bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-800 shadow-lg shadow-green-200 transition">Voir les Paniers Bio</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-green-200 rounded-[2rem] transform rotate-6 scale-105 -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1595855767280-993d052a2ec9?auto=format&fit=crop&q=80" alt="Légumes frais" class="rounded-[2rem] shadow-2xl object-cover h-[500px] w-full border-4 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-black text-gray-900 mb-4">La Récolte de Saison</h2>
+                <p class="text-lg text-gray-600">Frais, savoureux et sans aucun pesticide chimique.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-[#fcf8f2] rounded-3xl overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&q=80" alt="Pommes de terre" class="w-full h-64 object-cover">
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">Panier Solo</h3>
+                        <p class="text-gray-600 mb-4">Idéal pour 1 à 2 personnes. Légumes de saison assortis.</p>
+                        <div class="text-3xl font-black text-green-700 mb-6">15€ <span class="text-lg font-normal text-gray-500">/semaine</span></div>
+                        <button class="w-full bg-white border-2 border-green-700 text-green-700 font-bold py-3 rounded-xl hover:bg-green-700 hover:text-white transition">S'abonner</button>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="bg-green-700 text-white rounded-3xl overflow-hidden shadow-2xl transform md:-translate-y-4">
+                    <div class="bg-green-800 text-center py-2 text-sm font-bold tracking-widest uppercase">Le plus populaire</div>
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80" alt="Légumes divers" class="w-full h-64 object-cover">
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-serif font-bold mb-2">Panier Famille</h3>
+                        <p class="text-green-100 mb-4">Pour 3 à 4 personnes. Un grand assortiment de légumes frais et herbes.</p>
+                        <div class="text-3xl font-black mb-6">25€ <span class="text-lg font-normal text-green-200">/semaine</span></div>
+                        <button class="w-full bg-yellow-400 text-green-900 font-bold py-3 rounded-xl hover:bg-yellow-300 transition">S'abonner</button>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="bg-[#fcf8f2] rounded-3xl overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80" alt="Oeufs frais" class="w-full h-64 object-cover">
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">Panier Dégustation</h3>
+                        <p class="text-gray-600 mb-4">Légumes, œufs frais et fruits de saison de nos vergers.</p>
+                        <div class="text-3xl font-black text-green-700 mb-6">35€ <span class="text-lg font-normal text-gray-500">/semaine</span></div>
+                        <button class="w-full bg-white border-2 border-green-700 text-green-700 font-bold py-3 rounded-xl hover:bg-green-700 hover:text-white transition">S'abonner</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="market" class="bg-gray-900 text-gray-400 py-16 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-serif font-bold text-white mb-6">Vente à la ferme</h2>
+            <p class="mb-2">Tous les mercredis de 14h à 18h</p>
+            <p class="mb-8">Tous les samedis de 9h à 12h</p>
+            <p class="text-sm">© 2024 Terre Nourricière. Agriculture Biologique.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

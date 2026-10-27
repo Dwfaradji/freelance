@@ -114,8 +114,8 @@ const Page = () => {
           <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
             Démarrez votre projet avec l'un de nos modèles de base. Nous nous chargeons de la personnalisation complète pour l'adapter parfaitement à votre image.
           </p>
-          <Link href="/devis/site-web-plateforme-vitrine" className="btn-primary inline-flex">
-            Choisir mon template →
+          <Link href="/contact" className="btn-primary inline-flex">
+            Démarrer votre projet avec un socle →
           </Link>
         </div>
       </section>

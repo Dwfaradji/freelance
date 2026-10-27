@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Core - Salle de Sport</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-teko { font-family: 'Teko', sans-serif; }
+        body, .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-300">
+
+    <!-- Nav -->
+    <nav class="absolute w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-6 py-6 border-b border-zinc-800">
+            <div class="flex justify-between items-center text-white">
+                <div class="text-4xl font-teko font-bold uppercase tracking-wider text-red-600">
+                    Iron Core
+                </div>
+                <div class="hidden md:flex space-x-10 text-lg uppercase font-bold tracking-widest">
+                    <a href="#training" class="hover:text-red-600 transition">Training</a>
+                    <a href="#pricing" class="hover:text-red-600 transition">Abonnements</a>
+                    <a href="#contact" class="hover:text-red-600 transition">Rejoindre</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80" class="absolute inset-0 w-full h-full object-cover z-0 filter grayscale" alt="Gym">
+        <div class="relative z-20 text-center px-4 mt-20">
+            <h1 class="text-7xl md:text-9xl font-teko text-white uppercase tracking-wider mb-2">
+                Dépassez vos <span class="text-red-600">limites</span>
+            </h1>
+            <p class="text-2xl font-rajdhani text-zinc-300 uppercase tracking-[0.2em] mb-10">
+                La salle la plus hardcore de la ville.
+            </p>
+            <a href="#pricing" class="bg-red-600 text-white px-12 py-5 font-bold uppercase tracking-widest text-lg hover:bg-white hover:text-red-600 transition duration-300 transform hover:scale-105 inline-block">S'inscrire maintenant</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="training" class="py-24 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="p-8 border border-zinc-800 hover:border-red-600 transition duration-300 group">
+                    <div class="text-6xl mb-6 grayscale group-hover:grayscale-0 transition">🏋️‍♂️</div>
+                    <h3 class="text-4xl font-teko text-white uppercase mb-4">Espace Poids Libres</h3>
+                    <p class="text-lg font-rajdhani text-zinc-400">Plus de 5 tonnes de fonte, haltères jusqu'à 80kg et cages à squat professionnelles.</p>
+                </div>
+                <div class="p-8 border border-zinc-800 hover:border-red-600 transition duration-300 group">
+                    <div class="text-6xl mb-6 grayscale group-hover:grayscale-0 transition">🏃‍♂️</div>
+                    <h3 class="text-4xl font-teko text-white uppercase mb-4">Cardio & Cross-Training</h3>
+                    <p class="text-lg font-rajdhani text-zinc-400">Tapis, vélos, rameurs et espace fonctionnel avec cordes et box jump.</p>
+                </div>
+                <div class="p-8 border border-zinc-800 hover:border-red-600 transition duration-300 group">
+                    <div class="text-6xl mb-6 grayscale group-hover:grayscale-0 transition">🏆</div>
+                    <h3 class="text-4xl font-teko text-white uppercase mb-4">Coaching Personnalisé</h3>
+                    <p class="text-lg font-rajdhani text-zinc-400">Des athlètes certifiés pour vous accompagner vers vos objectifs physiques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 bg-zinc-900 border-t border-zinc-800">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-6xl font-teko text-white uppercase mb-16">Nos Tarifs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Basic -->
+                <div class="bg-zinc-950 p-12 border border-zinc-800">
+                    <h3 class="text-4xl font-teko text-white uppercase mb-2">Accès Libre</h3>
+                    <div class="text-5xl font-teko text-red-600 mb-8">29€ <span class="text-2xl text-zinc-500">/mois</span></div>
+                    <ul class="text-xl font-rajdhani space-y-4 mb-10 text-zinc-400 text-left">
+                        <li>✔️ Accès 6h - 23h</li>
+                        <li>✔️ Espace Musculation & Cardio</li>
+                        <li>✔️ Vestiaires & Douches</li>
+                        <li class="opacity-30">❌ Coaching Personnel</li>
+                    </ul>
+                    <button class="w-full border-2 border-red-600 text-red-600 py-4 font-bold uppercase tracking-widest hover:bg-red-600 hover:text-white transition">Choisir</button>
+                </div>
+                <!-- Pro -->
+                <div class="bg-red-600 p-12 text-white transform md:-translate-y-4 shadow-2xl shadow-red-900/50">
+                    <h3 class="text-4xl font-teko uppercase mb-2">Pack Élite</h3>
+                    <div class="text-5xl font-teko mb-8">89€ <span class="text-2xl text-red-200">/mois</span></div>
+                    <ul class="text-xl font-rajdhani space-y-4 mb-10 text-left">
+                        <li>✔️ Accès Illimité 24/7</li>
+                        <li>✔️ Espace Musculation & Cardio</li>
+                        <li>✔️ Vestiaires VIP & Sauna</li>
+                        <li>✔️ 2 Sessions Coaching / mois</li>
+                    </ul>
+                    <button class="w-full bg-white text-red-600 py-4 font-bold uppercase tracking-widest hover:bg-zinc-900 hover:text-white transition">Devenir VIP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black py-16 border-t border-red-600 text-center font-rajdhani text-xl">
+        <p>123 Rue de la Fonte, 75000 Paris</p>
+        <p class="text-red-600 mt-2 text-3xl font-bold">01 99 99 99 99</p>
+        <p class="text-zinc-600 mt-8 text-sm uppercase">© 2024 Iron Core Gym.</p>
+    </footer>
+
+</body>
+</html>

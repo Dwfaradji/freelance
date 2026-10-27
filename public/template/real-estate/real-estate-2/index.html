@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Estates - Immobilier de Luxe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body, p, .font-sans { font-family: 'Lato', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-[#f5f5f5]">
+
+    <!-- Nav -->
+    <nav class="absolute w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
+            <div class="text-3xl font-serif font-bold text-[#d4af37] tracking-widest uppercase">Prestige</div>
+            <div class="hidden md:flex space-x-12 font-sans text-sm tracking-[0.2em] uppercase text-white/70">
+                <a href="#biens" class="hover:text-[#d4af37] transition">Collections</a>
+                <a href="#services" class="hover:text-[#d4af37] transition">Conciergerie</a>
+            </div>
+            <a href="#contact" class="border border-[#d4af37] text-[#d4af37] px-8 py-3 font-sans text-sm tracking-widest uppercase hover:bg-[#d4af37] hover:text-[#0a0a0a] transition duration-300">Estimer un bien</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center text-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://loremflickr.com/1920/1080/mansion,luxury?lock=150" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/50 to-[#0a0a0a]"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6">
+            <h1 class="text-6xl md:text-8xl font-serif font-bold text-white mb-6 leading-tight">
+                L'art de vivre <br><span class="text-[#d4af37] italic font-light">à la française</span>
+            </h1>
+            <p class="font-sans text-lg md:text-xl text-white/60 mb-12 tracking-wide font-light max-w-2xl mx-auto">
+                Découvrez notre collection exclusive de propriétés de prestige, châteaux et hôtels particuliers.
+            </p>
+            <a href="#biens" class="bg-[#d4af37] text-[#0a0a0a] px-10 py-4 font-sans text-sm font-bold tracking-[0.2em] uppercase hover:bg-white transition duration-300">Explorer la collection</a>
+        </div>
+    </section>
+
+    <!-- Properties -->
+    <section id="biens" class="py-32 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24">
+                <span class="text-[#d4af37] font-sans text-sm tracking-[0.3em] uppercase mb-4 block">Sélection Exclusive</span>
+                <h2 class="text-4xl md:text-5xl font-serif">Biens d'Exception</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden mb-6 relative">
+                        <img src="https://loremflickr.com/800/600/villa,pool?lock=151" class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute top-6 right-6 bg-[#0a0a0a]/80 backdrop-blur text-[#d4af37] px-4 py-2 font-sans text-xs tracking-widest uppercase">Nouveau</div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-serif mb-2 group-hover:text-[#d4af37] transition">Villa Belle Époque</h3>
+                            <p class="text-white/50 font-sans font-light">Cap d'Antibes • 8 Pièces • 450 m²</p>
+                        </div>
+                        <div class="text-xl font-sans text-[#d4af37]">5 400 000 €</div>
+                    </div>
+                </div>
+                <div class="group cursor-pointer mt-12 md:mt-32">
+                    <div class="overflow-hidden mb-6">
+                        <img src="https://loremflickr.com/800/600/penthouse,paris?lock=152" class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-700 filter grayscale group-hover:grayscale-0">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-serif mb-2 group-hover:text-[#d4af37] transition">Penthouse Panoramique</h3>
+                            <p class="text-white/50 font-sans font-light">Paris 8ème • 6 Pièces • 280 m²</p>
+                        </div>
+                        <div class="text-xl font-sans text-[#d4af37]">Sur demande</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#111111] py-24 text-center border-t border-[#333]">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-4xl font-serif text-[#d4af37] mb-8">P</div>
+            <h2 class="text-3xl font-serif mb-6">Confiez-nous votre recherche</h2>
+            <p class="text-white/50 font-sans font-light mb-10">Nos courtiers experts sont à votre disposition pour un accompagnement confidentiel et sur mesure.</p>
+            <button class="border border-white text-white px-12 py-4 font-sans text-sm tracking-widest uppercase hover:bg-white hover:text-[#0a0a0a] transition duration-300">Prendre rendez-vous</button>
+        </div>
+    </footer>
+
+</body>
+</html>

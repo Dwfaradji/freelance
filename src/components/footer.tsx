@@ -106,6 +106,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/templates" className="hover:text-white transition-colors">
+                  Socles & Modèles (Templates)
+                </Link>
+              </li>
+              <li>
                 <Link href="/services" className="hover:text-primary-300 text-primary-400 font-medium transition-colors">
                   Tous nos services & méthodologie →
                 </Link>

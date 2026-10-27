@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw Studio - Loft Industriel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Space Mono', monospace; }
+        .bg-pattern { background-image: radial-gradient(#4b5563 1px, transparent 1px); background-size: 20px 20px; }
+    </style>
+</head>
+<body class="bg-zinc-100 text-zinc-900 bg-pattern">
+
+    <!-- Nav -->
+    <nav class="border-b-4 border-zinc-900 bg-yellow-400 p-4 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center font-bold uppercase">
+            <div class="text-2xl tracking-tighter">RAW_STUDIO</div>
+            <div class="hidden md:flex space-x-8 text-sm">
+                <a href="#concept" class="hover:bg-zinc-900 hover:text-yellow-400 px-2 transition">01.Concept</a>
+                <a href="#work" class="hover:bg-zinc-900 hover:text-yellow-400 px-2 transition">02.Work</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto p-6 md:p-12 mt-12 bg-white border-4 border-zinc-900 shadow-[8px_8px_0px_0px_rgba(24acc,201,15,1)] shadow-yellow-400">
+        <h1 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-6 leading-none">
+            Béton, Acier &<br>Lumière brute.
+        </h1>
+        <p class="text-lg text-zinc-600 mb-10 max-w-xl">
+            Transformation d'usines, d'entrepôts et création de lofts au design industriel sans compromis.
+        </p>
+        <div class="border-t-4 border-zinc-900 pt-8 flex justify-between items-end">
+            <a href="#contact" class="bg-zinc-900 text-white px-8 py-4 uppercase font-bold hover:bg-yellow-400 hover:text-zinc-900 transition">Demander un devis -></a>
+            <div class="text-4xl font-bold text-zinc-300">#05</div>
+        </div>
+    </section>
+
+    <!-- Images -->
+    <section id="work" class="max-w-7xl mx-auto p-6 mt-20 mb-32 grid md:grid-cols-2 gap-8">
+        <div class="border-4 border-zinc-900 p-2 bg-white relative group">
+            <div class="absolute top-4 left-4 bg-yellow-400 font-bold px-2 border-2 border-zinc-900 z-10">PROJECT ALPHA</div>
+            <img src="https://loremflickr.com/800/600/concrete,interior?lock=29" class="w-full h-80 object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+        </div>
+        <div class="border-4 border-zinc-900 p-2 bg-white relative group md:translate-y-12">
+            <div class="absolute top-4 left-4 bg-yellow-400 font-bold px-2 border-2 border-zinc-900 z-10">FACTORY 42</div>
+            <img src="https://loremflickr.com/800/600/industrial,loft?lock=30" class="w-full h-80 object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-zinc-900 text-yellow-400 p-12 text-center uppercase font-bold">
+        <p class="text-2xl mb-4">Transmission Incoming...</p>
+        <a href="mailto:build@rawstudio.com" class="text-xl hover:text-white transition">> build@rawstudio.com</a>
+    </footer>
+
+</body>
+</html>

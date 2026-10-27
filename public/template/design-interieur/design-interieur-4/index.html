@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Bohème - Design Organique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', serif; }
+        body, p, .font-sans { font-family: 'Nunito', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#fdfbf7] text-[#5c4a3d]">
+
+    <!-- Navigation -->
+    <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-[#8c7a6b]">
+            <a href="#about" class="hover:text-[#c48b71] transition">Approche</a>
+            <a href="#gallery" class="hover:text-[#c48b71] transition">Réalisations</a>
+        </div>
+        <div class="text-3xl font-serif text-[#c48b71] italic">Maison Bohème</div>
+        <a href="#contact" class="text-sm uppercase tracking-widest text-[#8c7a6b] hover:text-[#c48b71] transition">Contact</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 order-2 md:order-1">
+            <img src="https://loremflickr.com/800/1000/boho,interior?lock=24" alt="Boho Interior" class="w-full h-[600px] object-cover rounded-t-full shadow-lg">
+        </div>
+        <div class="md:w-1/2 order-1 md:order-2 text-center md:text-left">
+            <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight text-[#5c4a3d]">
+                Révéler<br>la douceur<br><span class="italic text-[#c48b71]">de votre intérieur.</span>
+            </h1>
+            <p class="text-lg font-sans text-[#8c7a6b] mb-10 max-w-sm mx-auto md:mx-0">
+                Lignes courbes, matières brutes et couleurs chaudes. Nous créons des refuges paisibles et organiques.
+            </p>
+            <a href="#contact" class="bg-[#c48b71] text-white px-8 py-3 rounded-full uppercase tracking-widest text-sm hover:bg-[#a6745d] transition">Discutons-en</a>
+        </div>
+    </section>
+
+    <!-- Images -->
+    <section id="gallery" class="py-24 bg-[#f4eee8] mt-20">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <img src="https://loremflickr.com/400/400/terracotta,wall?lock=25" class="w-full h-64 object-cover rounded-3xl rounded-tr-none">
+            <img src="https://loremflickr.com/400/400/linen,fabric?lock=26" class="w-full h-64 object-cover rounded-full">
+            <img src="https://loremflickr.com/400/400/ceramic,vase?lock=27" class="w-full h-64 object-cover rounded-3xl rounded-bl-none">
+            <img src="https://loremflickr.com/400/400/plants,interior?lock=28" class="w-full h-64 object-cover rounded-full">
+        </div>
+    </section>
+
+    <footer id="contact" class="py-20 text-center bg-[#5c4a3d] text-[#fdfbf7]">
+        <h2 class="text-4xl font-serif italic mb-6">Écrivez-nous</h2>
+        <p class="font-sans font-light opacity-80">bonjour@maisonboheme.fr</p>
+    </footer>
+
+</body>
+</html>

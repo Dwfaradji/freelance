@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confort Éco - Rénovation Énergétique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#f8fcf5] text-[#2c3e2b]">
+
+    <!-- Nav -->
+    <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-black flex items-center gap-2 text-[#4a7c36]">
+            🍃 ConfortÉco
+        </div>
+        <div class="hidden md:flex space-x-8 font-bold text-[#6b8e5c]">
+            <a href="#isolation" class="hover:text-[#8bc34a] transition">Isolation</a>
+            <a href="#chauffage" class="hover:text-[#8bc34a] transition">Chauffage</a>
+            <a href="#aides" class="hover:text-[#8bc34a] transition">Aides de l'État</a>
+        </div>
+        <a href="#contact" class="bg-[#8bc34a] text-white px-6 py-2 rounded-full font-black hover:bg-[#7cb342] transition shadow-md">Bilan thermique offert</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 z-10">
+            <h1 class="text-5xl md:text-6xl font-black leading-tight mb-6 text-[#1a2e19]">
+                Une maison chaleureuse,<br>des factures <span class="text-[#8bc34a]">allégées.</span>
+            </h1>
+            <p class="text-lg text-[#6b8e5c] mb-10 font-medium leading-relaxed max-w-md">
+                Spécialistes de la rénovation énergétique globale. Isolez votre habitat et passez à la pompe à chaleur pour un confort optimal été comme hiver.
+            </p>
+            <div class="flex gap-4">
+                <a href="#contact" class="bg-[#4a7c36] text-white px-8 py-4 rounded-full font-black shadow-lg hover:bg-[#386028] transition">Calculer mes aides (MaPrimeRénov')</a>
+            </div>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="absolute inset-0 bg-[#e6f2dc] rounded-full transform -translate-x-8 -translate-y-8 -z-10 blur-xl"></div>
+            <img src="https://loremflickr.com/800/800/house,warm?lock=118" alt="Maison écologique" class="w-full object-cover rounded-3xl border-8 border-white shadow-xl transform rotate-1">
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="isolation" class="py-24 bg-white rounded-[3rem] shadow-sm border border-[#e6f2dc]">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl font-black text-center mb-16 text-[#1a2e19]">Gagnez jusqu'à 3 classes énergétiques</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-[#f8fcf5] p-10 rounded-[2rem] hover:shadow-md transition duration-300">
+                    <div class="text-5xl mb-4">🧱</div>
+                    <h3 class="text-2xl font-black mb-3 text-[#4a7c36]">Isolation Thermique</h3>
+                    <p class="text-[#6b8e5c] font-medium mb-4">Mettez fin aux passoires thermiques. Nous isolons les combles, les murs par l'extérieur (ITE) et les planchers bas pour supprimer les ponts thermiques.</p>
+                    <ul class="text-sm font-bold text-[#8bc34a] space-y-2">
+                        <li>✓ Jusqu'à 30% d'économies d'énergie</li>
+                        <li>✓ Gain de confort immédiat</li>
+                    </ul>
+                </div>
+                <div class="bg-[#f8fcf5] p-10 rounded-[2rem] hover:shadow-md transition duration-300">
+                    <div class="text-5xl mb-4">♨️</div>
+                    <h3 class="text-2xl font-black mb-3 text-[#4a7c36]">Pompes à Chaleur</h3>
+                    <p class="text-[#6b8e5c] font-medium mb-4">Remplacez votre vieille chaudière fioul ou gaz par une PAC air/eau ultra-performante. Chauffage et eau chaude sanitaire écologiques.</p>
+                    <ul class="text-sm font-bold text-[#8bc34a] space-y-2">
+                        <li>✓ Division par 3 de la facture de chauffage</li>
+                        <li>✓ Système réversible (climatisation l'été)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#1a2e19] text-white py-20 text-center mt-12 rounded-t-[3rem]">
+        <h2 class="text-4xl font-black mb-6">Nous vous accompagnons de A à Z</h2>
+        <p class="font-medium text-[#8bc34a] mb-8">Audit, réalisation des travaux et montage des dossiers d'aides.</p>
+        <button class="bg-white text-[#4a7c36] px-10 py-4 rounded-full font-black shadow-md hover:bg-[#f8fcf5] transition">Demander un diagnostic</button>
+    </footer>
+
+</body>
+</html>

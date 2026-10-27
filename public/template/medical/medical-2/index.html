@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentalCare - Clinique du Sourire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+    </style>
+</head>
+<body class="bg-blue-50/30 text-slate-700">
+
+    <!-- Nav -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-black text-blue-600 flex items-center gap-2">
+                <span class="text-3xl">🦷</span> DentalCare
+            </div>
+            <div class="hidden md:flex space-x-8 font-semibold text-slate-500">
+                <a href="#services" class="hover:text-blue-600 transition">Nos soins</a>
+                <a href="#equipe" class="hover:text-blue-600 transition">Le cabinet</a>
+            </div>
+            <a href="#rdv" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Urgence Dentaire</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <h1 class="text-5xl md:text-6xl font-black text-slate-800 leading-tight mb-6">
+                Redonnez de l'éclat<br>à votre <span class="text-blue-600">sourire.</span>
+            </h1>
+            <p class="text-lg text-slate-500 mb-10 leading-relaxed max-w-md">
+                Une équipe de chirurgiens-dentistes experts pour des soins sans douleur, des implants dentaires et de l'orthodontie invisible.
+            </p>
+            <div class="flex gap-4">
+                <a href="#rdv" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition shadow-xl shadow-blue-200">Prendre RDV sur Doctolib</a>
+            </div>
+            <div class="mt-8 flex items-center gap-4 text-sm font-semibold text-slate-500">
+                <div class="flex -space-x-2">
+                    <img src="https://loremflickr.com/100/100/face,smile?lock=61" class="w-10 h-10 rounded-full border-2 border-white">
+                    <img src="https://loremflickr.com/100/100/face,smile?lock=62" class="w-10 h-10 rounded-full border-2 border-white">
+                    <img src="https://loremflickr.com/100/100/face,smile?lock=63" class="w-10 h-10 rounded-full border-2 border-white">
+                </div>
+                <span>Plus de 500 patients satisfaits</span>
+            </div>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="absolute inset-0 bg-blue-100 rounded-full transform translate-x-8 translate-y-8 -z-10"></div>
+            <img src="https://loremflickr.com/800/800/dentist?lock=64" alt="Dentiste" class="w-full object-cover rounded-full border-8 border-white shadow-2xl">
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-black text-slate-800 mb-16">Des soins de pointe</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-blue-50 rounded-3xl hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Esthétique</h3>
+                    <p class="text-slate-500 text-sm">Blanchiment dentaire au laser, facettes céramiques et alignement invisible.</p>
+                </div>
+                <div class="p-8 bg-blue-50 rounded-3xl hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">🔩</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Implantologie</h3>
+                    <p class="text-slate-500 text-sm">Remplacement de dents manquantes avec des implants en titane dernière génération.</p>
+                </div>
+                <div class="p-8 bg-blue-50 rounded-3xl hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">🩺</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Soins Conservateurs</h3>
+                    <p class="text-slate-500 text-sm">Traitement des caries, détartrage profond et prévention pour toute la famille.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="rdv" class="bg-blue-600 text-blue-50 py-16 text-center">
+        <h2 class="text-3xl font-black mb-6">Prêt à sourire ?</h2>
+        <p class="mb-8 font-semibold">Cabinet ouvert du lundi au samedi, de 8h à 20h.</p>
+        <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold shadow-lg">01 42 42 42 42</button>
+    </footer>
+
+</body>
+</html>

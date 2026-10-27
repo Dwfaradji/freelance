@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BATI-PRO - Maçonnerie & Gros Œuvre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-heading { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        body, p, .font-sans { font-family: 'Inter', sans-serif; }
+        .clip-path-slant { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+    </style>
+</head>
+<body class="bg-zinc-100 text-zinc-900">
+
+    <!-- Nav -->
+    <nav class="bg-zinc-900 text-white sticky top-0 z-50 border-b-4 border-orange-500">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-3xl font-heading font-bold tracking-tight">BATI<span class="text-orange-500">-</span>PRO</div>
+            <div class="hidden md:flex space-x-8 font-heading text-lg text-zinc-400">
+                <a href="#services" class="hover:text-orange-500 transition">Expertises</a>
+                <a href="#realisations" class="hover:text-orange-500 transition">Chantiers</a>
+            </div>
+            <a href="#contact" class="bg-orange-500 text-white px-6 py-2 font-heading text-lg hover:bg-orange-600 transition skew-x-[-10deg]"><span class="block skew-x-[10deg]">DEVIS RAPIDE</span></a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-[80vh] flex items-center bg-zinc-900 clip-path-slant">
+        <div class="absolute inset-0 z-0">
+            <img src="https://loremflickr.com/1920/1080/construction,concrete?lock=107" class="w-full h-full object-cover opacity-30 mix-blend-overlay grayscale">
+            <div class="absolute inset-0 bg-gradient-to-r from-zinc-900 via-zinc-900/80 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div class="bg-orange-500 text-white font-heading text-xl px-4 py-1 inline-block mb-6 skew-x-[-10deg]"><span class="block skew-x-[10deg]">GARANTIE DÉCENNALE</span></div>
+            <h1 class="text-6xl md:text-8xl font-heading font-bold text-white leading-none mb-6">
+                DES FONDATIONS<br><span class="text-orange-500">SOLIDES.</span>
+            </h1>
+            <p class="font-sans text-lg text-zinc-400 max-w-lg mb-10 border-l-4 border-orange-500 pl-4">
+                Spécialiste du gros œuvre, terrassement et maçonnerie générale pour vos projets de construction et d'extension.
+            </p>
+            <a href="#contact" class="bg-white text-zinc-900 px-8 py-4 font-heading text-2xl hover:bg-zinc-200 transition inline-block skew-x-[-10deg]"><span class="block skew-x-[10deg]">VOIR NOS TARIFS</span></a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-heading font-bold text-zinc-900">NOTRE SAVOIR-FAIRE</h2>
+                <div class="w-24 h-2 bg-orange-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 border-t-4 border-orange-500 shadow-lg transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-heading mb-4 text-zinc-900">Gros Œuvre</h3>
+                    <p class="font-sans text-zinc-600">Fondations, élévation des murs (parpaings, briques), dalles béton et planchers.</p>
+                </div>
+                <div class="bg-white p-8 border-t-4 border-orange-500 shadow-lg transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-heading mb-4 text-zinc-900">Terrassement</h3>
+                    <p class="font-sans text-zinc-600">Préparation des sols, tranchées pour réseaux (VRD), nivellement et évacuation des terres.</p>
+                </div>
+                <div class="bg-white p-8 border-t-4 border-orange-500 shadow-lg transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-heading mb-4 text-zinc-900">Aménagement Extérieur</h3>
+                    <p class="font-sans text-zinc-600">Murs de clôture, création de terrasses béton, allées carrossables et dallage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-zinc-900 text-white py-20 text-center border-t-8 border-orange-500">
+        <h2 class="text-4xl font-heading mb-6">PRÊT À CONSTRUIRE ?</h2>
+        <p class="font-sans text-zinc-400 mb-8">Devis sous 48h après visite du chantier.</p>
+        <button class="bg-orange-500 text-white px-12 py-4 font-heading text-2xl hover:bg-orange-600 transition skew-x-[-10deg]"><span class="block skew-x-[10deg]">06 12 34 56 78</span></button>
+    </footer>
+
+</body>
+</html>

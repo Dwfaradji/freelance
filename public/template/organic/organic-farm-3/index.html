@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Château Grand Cru - Domaine Viticole</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body, p, .font-cinzel { font-family: 'Cinzel', serif; text-transform: uppercase; }
+    </style>
+</head>
+<body class="bg-[#0f0a0a] text-[#ebd8b7]">
+
+    <!-- Nav -->
+    <nav class="absolute w-full z-50 py-8 border-b border-[#ebd8b7]/10 mix-blend-difference">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-cinzel tracking-[0.3em] font-semibold">Château Rivelin</div>
+            <div class="hidden md:flex space-x-12 text-xs font-cinzel tracking-[0.2em] text-white">
+                <a href="#vignoble" class="hover:text-[#c41e3a] transition">Le Terroir</a>
+                <a href="#vins" class="hover:text-[#c41e3a] transition">Les Millésimes</a>
+            </div>
+            <a href="#degustation" class="border border-[#ebd8b7] text-[#ebd8b7] px-6 py-2 font-cinzel text-xs tracking-widest hover:bg-[#ebd8b7] hover:text-black transition">Dégustation</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center text-center px-6">
+        <img src="https://loremflickr.com/1920/1080/vineyard,wine?lock=82" alt="Vignoble" class="absolute inset-0 w-full h-full object-cover opacity-40 filter sepia-[0.5] contrast-125">
+        <div class="relative z-10">
+            <div class="text-[#c41e3a] font-cinzel text-sm tracking-[0.4em] mb-6">Grand Cru Classé</div>
+            <h1 class="text-6xl md:text-8xl font-serif italic mb-8 drop-shadow-2xl text-white">
+                L'âme d'un <br>Grand Vin.
+            </h1>
+            <p class="font-cinzel text-xs tracking-widest text-zinc-400 max-w-xl mx-auto mb-10 leading-loose">
+                Depuis trois générations, nous cultivons la vigne dans le plus strict respect de la nature et de nos traditions familiales.
+            </p>
+            <div class="w-[1px] h-24 bg-gradient-to-b from-[#c41e3a] to-transparent mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Terroir -->
+    <section id="vignoble" class="py-32 bg-[#140e0e] border-y border-[#c41e3a]/20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="https://loremflickr.com/600/800/wine,grapes?lock=83" class="w-full h-[600px] object-cover filter grayscale hover:grayscale-0 transition duration-1000">
+            </div>
+            <div>
+                <h2 class="text-4xl font-serif text-white mb-8">Un Terroir d'Exception</h2>
+                <p class="font-cinzel text-xs text-zinc-500 leading-loose mb-6 text-justify">
+                    Niché sur un coteau argilo-calcaire baigné de soleil, notre vignoble bénéficie d'un microclimat unique. Le travail des sols est mécanique, les vendanges sont exclusivement manuelles.
+                </p>
+                <p class="font-cinzel text-xs text-[#c41e3a] leading-loose mb-10 tracking-widest">
+                    Agriculture Biologique certifiée depuis 2012.
+                </p>
+                <a href="#vins" class="font-cinzel text-sm border-b border-[#ebd8b7] pb-1 hover:text-white transition">Découvrir nos cuvées</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="degustation" class="bg-black py-24 text-center">
+        <h2 class="text-3xl font-serif italic text-white mb-6">Réserver une visite au Château</h2>
+        <p class="font-cinzel text-xs tracking-widest text-zinc-500 mb-10">Visite des caves et dégustation des 3 millésimes emblématiques.</p>
+        <button class="bg-[#c41e3a] text-white px-10 py-3 font-cinzel text-xs tracking-[0.2em] hover:bg-white hover:text-black transition">Réserver maintenant</button>
+    </footer>
+
+</body>
+</html>

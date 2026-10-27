@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Gourmet - Fine Dining</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body, p, .font-sans { font-family: 'Lato', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#faf8f5] text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="absolute w-full z-50 top-0 left-0">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="flex justify-between items-center text-white">
+                <div class="text-3xl font-serif font-bold tracking-widest uppercase">
+                    Le Gourmet
+                </div>
+                <div class="hidden md:flex space-x-10 text-sm tracking-widest uppercase">
+                    <a href="#menu" class="hover:text-[#d4af37] transition duration-300">La Carte</a>
+                    <a href="#about" class="hover:text-[#d4af37] transition duration-300">Notre Histoire</a>
+                    <a href="#reservation" class="hover:text-[#d4af37] transition duration-300">Réservation</a>
+                </div>
+                <div>
+                    <a href="#reservation" class="border border-[#d4af37] text-[#d4af37] px-6 py-2 uppercase tracking-widest text-sm hover:bg-[#d4af37] hover:text-white transition duration-300">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center text-center">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80" class="absolute inset-0 w-full h-full object-cover z-0" alt="Restaurant Interior">
+        <div class="relative z-20 text-white px-4">
+            <span class="block text-[#d4af37] text-xl italic font-serif mb-4">L'art de la gastronomie française</span>
+            <h1 class="text-6xl md:text-8xl font-bold mb-8">Une Expérience<br>Inoubliable</h1>
+            <a href="#menu" class="bg-[#d4af37] text-white px-8 py-4 uppercase tracking-widest text-sm hover:bg-white hover:text-[#d4af37] transition duration-300">Découvrir le menu</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?auto=format&fit=crop&q=80" alt="Chef" class="w-full h-auto object-cover rounded-sm shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-serif mb-6 text-gray-900">Notre Histoire</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Niché au cœur de la ville, Le Gourmet célèbre la tradition culinaire avec une touche de modernité. Notre chef étoilé sélectionne chaque matin les meilleurs produits locaux pour vous offrir des plats raffinés et créatifs.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        Laissez-vous transporter par une ambiance chaleureuse et un service attentionné, pensé pour faire de votre repas un moment d'exception.
+                    </p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Signature_placeholder.svg" alt="Signature" class="h-16 opacity-50">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlight -->
+    <section id="menu" class="py-24 bg-[#1a1a1a] text-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-serif mb-16 text-[#d4af37]">Les Signatures du Chef</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                <!-- Plat 1 -->
+                <div class="border-b border-gray-800 pb-6">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="text-2xl font-serif">Noix de Saint-Jacques</h3>
+                        <span class="text-[#d4af37] text-xl">32€</span>
+                    </div>
+                    <p class="text-gray-400">Purée de panais à la vanille, émulsion au beurre noisette.</p>
+                </div>
+                <!-- Plat 2 -->
+                <div class="border-b border-gray-800 pb-6">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="text-2xl font-serif">Filet de Bœuf Rossini</h3>
+                        <span class="text-[#d4af37] text-xl">45€</span>
+                    </div>
+                    <p class="text-gray-400">Foie gras poêlé, truffe noire, pommes Anna et sauce Périgueux.</p>
+                </div>
+                <!-- Plat 3 -->
+                <div class="border-b border-gray-800 pb-6">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="text-2xl font-serif">Bar de Ligne</h3>
+                        <span class="text-[#d4af37] text-xl">38€</span>
+                    </div>
+                    <p class="text-gray-400">Croûte d'herbes, risotto aux asperges, beurre blanc au yuzu.</p>
+                </div>
+                <!-- Plat 4 -->
+                <div class="border-b border-gray-800 pb-6">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="text-2xl font-serif">Soufflé au Chocolat</h3>
+                        <span class="text-[#d4af37] text-xl">16€</span>
+                    </div>
+                    <p class="text-gray-400">Chocolat Grand Cru 70%, cœur coulant, glace à la fève tonka.</p>
+                </div>
+            </div>
+            <div class="mt-16">
+                <a href="#" class="border border-[#d4af37] text-[#d4af37] px-8 py-3 uppercase tracking-widest text-sm hover:bg-[#d4af37] hover:text-white transition duration-300">Voir la carte complète</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="reservation" class="bg-[#faf8f5] py-20 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-3xl font-serif mb-8 text-gray-900">Réservez votre table</h2>
+            <p class="text-gray-600 mb-8">Ouvert du mardi au samedi, de 19h00 à 23h00.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
+                <input type="date" class="px-4 py-3 border border-gray-300 bg-transparent focus:outline-none focus:border-[#d4af37]">
+                <input type="time" class="px-4 py-3 border border-gray-300 bg-transparent focus:outline-none focus:border-[#d4af37]">
+                <select class="px-4 py-3 border border-gray-300 bg-transparent focus:outline-none focus:border-[#d4af37]">
+                    <option>2 Personnes</option>
+                    <option>3 Personnes</option>
+                    <option>4 Personnes</option>
+                    <option>5+ Personnes</option>
+                </select>
+                <button class="bg-[#d4af37] text-white px-8 py-3 uppercase tracking-widest text-sm hover:bg-gray-900 transition duration-300">Confirmer</button>
+            </div>
+            <p class="text-sm text-gray-400">© 2024 Le Gourmet. Template de démonstration.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

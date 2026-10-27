@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Tendance - Coiffure & Beauté</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Cinzel', serif; }
+        body, p, .font-sans { font-family: 'Jost', sans-serif; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Navigation -->
+    <nav class="absolute w-full z-50 top-0 left-0">
+        <div class="max-w-7xl mx-auto px-6 py-6 border-b border-white/20">
+            <div class="flex justify-between items-center text-white">
+                <div class="text-2xl font-serif font-bold tracking-[0.2em] uppercase">
+                    Salon Tendance
+                </div>
+                <div class="hidden md:flex space-x-12 text-xs tracking-widest uppercase">
+                    <a href="#services" class="hover:text-amber-200 transition">Prestations</a>
+                    <a href="#about" class="hover:text-amber-200 transition">L'Atelier</a>
+                    <a href="#contact" class="hover:text-amber-200 transition">Contact</a>
+                </div>
+                <div>
+                    <a href="#contact" class="bg-white text-stone-900 px-6 py-2 text-xs tracking-widest uppercase hover:bg-amber-200 transition duration-300">Rendez-vous</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center">
+        <div class="absolute inset-0 bg-stone-900 z-10 opacity-40"></div>
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80" class="absolute inset-0 w-full h-full object-cover z-0 object-top" alt="Hair Salon">
+        <div class="relative z-20 text-white px-6 max-w-4xl mx-auto text-center mt-20">
+            <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight uppercase tracking-widest">
+                Révélez votre<br>Vraie Nature
+            </h1>
+            <p class="text-xl font-light mb-10 tracking-wide">
+                Coupe, couleur et soins d'exception dans un espace dédié à votre beauté.
+            </p>
+            <a href="#services" class="inline-block border border-white px-10 py-4 text-sm tracking-widest uppercase hover:bg-white hover:text-stone-900 transition duration-300">Découvrir nos tarifs</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-serif mb-16 text-stone-900 uppercase tracking-widest">Nos Prestations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 text-left">
+                <!-- For Her -->
+                <div>
+                    <h3 class="text-2xl font-serif mb-8 border-b border-stone-200 pb-4 text-stone-900">Pour Elle</h3>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between items-baseline">
+                            <span class="text-lg">Coupe & Brushing</span>
+                            <span class="text-stone-400">À partir de 45€</span>
+                        </li>
+                        <li class="flex justify-between items-baseline">
+                            <span class="text-lg">Coloration sur mesure</span>
+                            <span class="text-stone-400">À partir de 65€</span>
+                        </li>
+                        <li class="flex justify-between items-baseline">
+                            <span class="text-lg">Balayage Signature</span>
+                            <span class="text-stone-400">À partir de 95€</span>
+                        </li>
+                        <li class="flex justify-between items-baseline">
+                            <span class="text-lg">Soin profond Kératine</span>
+                            <span class="text-stone-400">40€</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- For Him -->
+                <div>
+                    <h3 class="text-2xl font-serif mb-8 border-b border-stone-200 pb-4 text-stone-900">Pour Lui</h3>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between items-baseline">
+                            <span class="text-lg">Coupe Classique</span>
+                            <span class="text-stone-400">25€</span>
+                        </li>
+                        <li class="flex justify-between items-baseline">
+                            <span class="text-lg">Taille de Barbe complète</span>
+                            <span class="text-stone-400">18€</span>
+                        </li>
+                        <li class="flex justify-between items-baseline">
+                            <span class="text-lg">Forfait Coupe & Barbe</span>
+                            <span class="text-stone-400">38€</span>
+                        </li>
+                        <li class="flex justify-between items-baseline">
+                            <span class="text-lg">Soin Cuir Chevelu</span>
+                            <span class="text-stone-400">15€</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16">
+                <a href="#contact" class="bg-stone-900 text-white px-10 py-4 text-sm tracking-widest uppercase hover:bg-stone-800 transition duration-300">Prendre Rendez-Vous</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-stone-900 text-stone-400 py-20 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-serif mb-6 text-white uppercase tracking-widest">Salon Tendance</h2>
+            <p class="mb-2 tracking-widest">15 Avenue de la Beauté, Paris</p>
+            <p class="mb-10 tracking-widest">01 23 45 67 89</p>
+            <p class="text-xs uppercase tracking-widest opacity-50">© 2024 Salon Tendance. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

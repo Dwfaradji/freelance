@@ -204,10 +204,10 @@ export default function Navbar() {
 
                   <div className="mt-3 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
                     <Link
-                      href="/a-propos"
+                      href="/templates"
                       className="text-neutral-400 hover:text-white transition-colors"
                     >
-                      Notre Approche & Fondateur →
+                      Socles & Templates Métiers →
                     </Link>
                     <Link
                       href="/realisations"
@@ -385,6 +385,9 @@ export default function Navbar() {
               </Link>
               <Link href="/securite-et-conformite" className="py-1 hover:text-primary-300">
                 • Sécurité & Hébergement Souverain
+              </Link>
+              <Link href="/templates" className="py-1 hover:text-primary-300">
+                • Socles & Templates Métiers
               </Link>
             </div>
           </div>

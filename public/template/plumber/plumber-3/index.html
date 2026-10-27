@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier Boisé - Menuiserie & Agencement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body, p, .font-sans { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#fdfbf7] text-[#2c2a29]">
+
+    <!-- Nav -->
+    <nav class="max-w-6xl mx-auto px-6 py-10 flex justify-between items-center">
+        <div class="text-2xl font-serif text-[#2c2a29]">Atelier <span class="italic text-[#8c7a6b]">Boisé.</span></div>
+        <div class="hidden md:flex space-x-12 text-xs uppercase tracking-[0.2em] font-sans font-semibold">
+            <a href="#creations" class="hover:text-[#8c7a6b] transition">Nos Créations</a>
+            <a href="#savoir-faire" class="hover:text-[#8c7a6b] transition">Savoir-Faire</a>
+        </div>
+        <a href="#contact" class="border-b border-[#2c2a29] pb-1 font-sans text-xs uppercase tracking-widest hover:text-[#8c7a6b] hover:border-[#8c7a6b] transition">Prendre Rendez-vous</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-6 py-16 flex flex-col items-center text-center">
+        <h1 class="text-5xl md:text-7xl font-serif mb-8 text-[#2c2a29]">
+            L'élégance du <span class="italic text-[#8c7a6b]">sur-mesure.</span>
+        </h1>
+        <p class="font-sans text-[#5c5855] max-w-2xl mx-auto leading-relaxed mb-16 tracking-wide">
+            Artisans menuisiers et concepteurs d'espaces intérieurs. Nous imaginons et fabriquons des bibliothèques, dressings et cuisines uniques qui épousent votre intérieur.
+        </p>
+        
+        <div class="grid grid-cols-2 gap-4 w-full h-[600px]">
+            <img src="https://loremflickr.com/800/1000/interior,wood?lock=105" class="w-full h-full object-cover rounded-tl-[4rem] rounded-br-[4rem]">
+            <img src="https://loremflickr.com/800/1000/furniture,design?lock=106" class="w-full h-full object-cover rounded-tr-[4rem] rounded-bl-[4rem]">
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="creations" class="py-32 bg-[#2c2a29] text-[#fdfbf7]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <h2 class="text-4xl font-serif">Nos Domaines<br><span class="italic text-[#8c7a6b]">d'Intervention</span></h2>
+                <div class="w-1/3 h-[1px] bg-[#8c7a6b]/30 hidden md:block"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <div class="text-[#8c7a6b] font-sans text-xs tracking-widest mb-4 uppercase">01.</div>
+                    <h3 class="text-2xl font-serif mb-4">Bibliothèques</h3>
+                    <p class="font-sans text-sm text-[#a8a19d] leading-relaxed">Conception de bibliothèques murales, alcôves et meubles TV intégrés. Choix d'essences nobles (Chêne massif, Noyer).</p>
+                </div>
+                <div>
+                    <div class="text-[#8c7a6b] font-sans text-xs tracking-widest mb-4 uppercase">02.</div>
+                    <h3 class="text-2xl font-serif mb-4">Dressings</h3>
+                    <p class="font-sans text-sm text-[#a8a19d] leading-relaxed">Aménagement sous pente, penderies éclairées et tiroirs sur mesure pour optimiser chaque centimètre carré.</p>
+                </div>
+                <div>
+                    <div class="text-[#8c7a6b] font-sans text-xs tracking-widest mb-4 uppercase">03.</div>
+                    <h3 class="text-2xl font-serif mb-4">Agencement</h3>
+                    <p class="font-sans text-sm text-[#a8a19d] leading-relaxed">Création de claustras, têtes de lit et habillage mural en bois pour donner du cachet à vos pièces à vivre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-24 text-center">
+        <h2 class="text-3xl font-serif italic text-[#8c7a6b] mb-6">Discutons de votre projet</h2>
+        <p class="font-sans text-[#5c5855] text-sm mb-8 tracking-wide">Déplacement et devis gratuit sur la métropole.</p>
+        <button class="bg-[#2c2a29] text-[#fdfbf7] px-10 py-4 font-sans text-xs uppercase tracking-widest hover:bg-[#8c7a6b] transition">Demander une étude</button>
+    </footer>
+
+</body>
+</html>

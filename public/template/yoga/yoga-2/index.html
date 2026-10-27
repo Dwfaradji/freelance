@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Écrin - Spa & Détente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body, p, .font-sans { font-family: 'Lato', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#2c2621] text-[#e8ded1]">
+
+    <!-- Nav -->
+    <nav class="absolute w-full z-50 py-8">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center border-b border-[#cca352]/20 pb-6">
+            <div class="text-3xl font-serif text-[#cca352] tracking-widest">L'Écrin.</div>
+            <div class="hidden md:flex space-x-12 text-xs uppercase tracking-[0.2em] font-sans text-[#e8ded1]/70">
+                <a href="#soins" class="hover:text-[#cca352] transition">Carte des Soins</a>
+                <a href="#rituels" class="hover:text-[#cca352] transition">Rituels</a>
+            </div>
+            <a href="#reservation" class="border border-[#cca352] text-[#cca352] px-6 py-2 font-sans text-xs uppercase tracking-widest hover:bg-[#cca352] hover:text-[#2c2621] transition">Réserver</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center pt-24 pb-12">
+        <div class="absolute inset-0 z-0">
+            <img src="https://loremflickr.com/1920/1080/spa,massage?lock=111" class="w-full h-full object-cover opacity-30 filter sepia-[0.3]">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#2c2621] to-transparent"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10 w-full text-center">
+            <div class="text-[#cca352] font-sans text-xs uppercase tracking-[0.4em] mb-6">Maison de Beauté</div>
+            <h1 class="text-6xl md:text-8xl font-serif font-light mb-8">
+                L'art du <span class="italic text-[#cca352]">lâcher-prise.</span>
+            </h1>
+            <p class="font-sans text-[#e8ded1]/70 max-w-xl mx-auto leading-loose text-sm tracking-wide">
+                Un refuge sensoriel hors du temps dédié à la relaxation profonde, aux massages holistiques et aux rituels de beauté sur mesure.
+            </p>
+        </div>
+    </section>
+
+    <!-- Soins -->
+    <section id="soins" class="py-32 bg-[#231e1a]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-serif italic text-[#cca352] mb-6">La Carte des Soins</h2>
+                <div class="w-12 h-[1px] bg-[#cca352]/50 mx-auto"></div>
+            </div>
+            
+            <div class="space-y-16">
+                <!-- Soin 1 -->
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <img src="https://loremflickr.com/600/400/essential-oils?lock=112" class="w-full md:w-1/2 h-64 object-cover rounded-tl-[3rem] rounded-br-[3rem]">
+                    <div class="md:w-1/2">
+                        <div class="flex justify-between items-end border-b border-[#cca352]/20 pb-4 mb-4">
+                            <h3 class="text-2xl font-serif">Massage Signature L'Écrin</h3>
+                            <span class="font-sans text-[#cca352] tracking-widest text-sm">90 min — 135€</span>
+                        </div>
+                        <p class="font-sans text-[#e8ded1]/60 text-sm leading-relaxed">Un modelage corps complet associant des manœuvres fluides et enveloppantes à des huiles chaudes précieuses pour dénouer toutes les tensions.</p>
+                    </div>
+                </div>
+                
+                <!-- Soin 2 -->
+                <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                    <img src="https://loremflickr.com/600/400/facial,skincare?lock=113" class="w-full md:w-1/2 h-64 object-cover rounded-tr-[3rem] rounded-bl-[3rem]">
+                    <div class="md:w-1/2">
+                        <div class="flex justify-between items-end border-b border-[#cca352]/20 pb-4 mb-4">
+                            <h3 class="text-2xl font-serif">Rituel Soin Visage Éclat</h3>
+                            <span class="font-sans text-[#cca352] tracking-widest text-sm">60 min — 95€</span>
+                        </div>
+                        <p class="font-sans text-[#e8ded1]/60 text-sm leading-relaxed">Diagnostic de peau, gommage doux, masque aux actifs botaniques et modelage crânien pour une peau lumineuse et repulpée.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="reservation" class="py-24 text-center border-t border-[#cca352]/20">
+        <h2 class="text-3xl font-serif mb-8">Parenthèse de Douceur</h2>
+        <button class="bg-[#cca352] text-[#2c2621] px-10 py-4 font-sans text-xs uppercase tracking-widest hover:bg-[#e8ded1] transition">Offrir un Bon Cadeau</button>
+    </footer>
+
+</body>
+</html>

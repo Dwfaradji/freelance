@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReCycle - Économie Circulaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-heading { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        body, p, .font-sans { font-family: 'Karla', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#111111] text-[#f4ecd8]">
+
+    <!-- Nav -->
+    <nav class="bg-[#2c3e2e] text-[#f4ecd8] border-b-2 border-[#8db580]">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-3xl font-heading font-bold tracking-wider">RE<span class="text-[#8db580]">CYCLE.</span></div>
+            <div class="hidden md:flex space-x-8 font-heading text-lg text-[#f4ecd8]/70">
+                <a href="#mission" class="hover:text-[#8db580] transition">Notre Mission</a>
+                <a href="#services" class="hover:text-[#8db580] transition">Solutions Pros</a>
+            </div>
+            <a href="#contact" class="bg-[#8db580] text-[#111111] px-6 py-2 font-heading text-lg hover:bg-[#f4ecd8] transition">Bilan Déchets</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative py-32 bg-[#111111] overflow-hidden">
+        <div class="absolute right-0 top-0 w-1/2 h-full opacity-20">
+            <img src="https://loremflickr.com/1000/1000/recycle,cardboard?lock=120" class="w-full h-full object-cover filter grayscale sepia">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#111111] to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div class="bg-[#8db580] text-[#111111] font-heading text-xl px-4 py-1 inline-block mb-8">OBJECTIF ZÉRO DÉCHET</div>
+            <h1 class="text-7xl md:text-9xl font-heading font-bold text-[#f4ecd8] leading-none mb-8 tracking-tighter">
+                RIEN NE SE PERD.<br><span class="text-[#8db580]">TOUT SE TRANSFORME.</span>
+            </h1>
+            <p class="font-sans text-xl text-[#f4ecd8]/70 max-w-2xl mb-12 border-l-4 border-[#8db580] pl-6 leading-relaxed">
+                Nous accompagnons les entreprises dans la valorisation de leurs déchets, le tri à la source et le passage à l'économie circulaire.
+            </p>
+            <a href="#services" class="border-2 border-[#8db580] text-[#8db580] px-10 py-5 font-heading text-2xl hover:bg-[#8db580] hover:text-[#111111] transition inline-block">DÉCOUVRIR NOS SOLUTIONS</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-[#f4ecd8] text-[#111111]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-heading font-bold">COMMENT NOUS AGISSONS</h2>
+                <div class="w-24 h-2 bg-[#2c3e2e] mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 border-t-8 border-[#2c3e2e] shadow-xl">
+                    <h3 class="text-3xl font-heading mb-4 text-[#2c3e2e]">Audit & Conseil</h3>
+                    <p class="font-sans text-[#111111]/70 text-lg leading-relaxed">Analyse de vos flux de déchets actuels. Mise en place de process pour réduire à la source et optimiser le tri au sein de vos équipes.</p>
+                </div>
+                <div class="bg-white p-10 border-t-8 border-[#8db580] shadow-xl">
+                    <h3 class="text-3xl font-heading mb-4 text-[#8db580]">Collecte Sélective</h3>
+                    <p class="font-sans text-[#111111]/70 text-lg leading-relaxed">Mise à disposition de bacs de tri (Carton, plastique, D3E, biodéchets) et ramassage optimisé en flotte de véhicules électriques.</p>
+                </div>
+                <div class="bg-white p-10 border-t-8 border-[#2c3e2e] shadow-xl">
+                    <h3 class="text-3xl font-heading mb-4 text-[#2c3e2e]">Valorisation</h3>
+                    <p class="font-sans text-[#111111]/70 text-lg leading-relaxed">Orientation de vos matières vers les bonnes filières de recyclage locales ou de réemploi. Fourniture d'attestations de traçabilité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#2c3e2e] text-[#f4ecd8] py-24 text-center">
+        <h2 class="text-5xl font-heading mb-8">ENGAGEZ VOTRE ENTREPRISE</h2>
+        <p class="font-sans text-xl mb-12 max-w-xl mx-auto">Réduisez vos coûts de traitement tout en améliorant votre bilan RSE.</p>
+        <button class="bg-[#8db580] text-[#111111] px-12 py-5 font-heading text-3xl hover:bg-[#f4ecd8] transition">NOUS CONTACTER</button>
+    </footer>
+
+</body>
+</html>

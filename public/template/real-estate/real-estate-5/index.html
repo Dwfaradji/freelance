@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riviera Homes - Immobilier Côtier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-heading { font-family: 'Cormorant Garamond', serif; }
+        body, p, .font-sans { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#faf9f6] text-[#2c3e50]">
+
+    <!-- Nav -->
+    <nav class="absolute w-full z-50 p-6 flex justify-between items-center text-white">
+        <div class="text-2xl font-heading font-semibold tracking-widest">RIVIERA HOMES</div>
+        <div class="hidden md:flex space-x-10 font-sans text-xs tracking-[0.2em] uppercase">
+            <a href="#villas" class="hover:text-[#8fc1e3] transition">Villas</a>
+            <a href="#appartements" class="hover:text-[#8fc1e3] transition">Appartements</a>
+        </div>
+        <a href="#contact" class="border border-white/50 px-6 py-2 font-sans text-xs tracking-widest uppercase hover:bg-white hover:text-[#2c3e50] transition">Contact</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-[90vh] flex items-center justify-center text-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://loremflickr.com/1920/1080/ocean,house?lock=160" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#2c3e50]/80 via-[#2c3e50]/40 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-3xl mx-auto px-6 mt-20">
+            <h1 class="text-5xl md:text-7xl font-heading text-white mb-6">Réveillez-vous <br>face à la mer.</h1>
+            <p class="font-sans text-white/80 mb-10 tracking-widest uppercase text-sm leading-loose">
+                L'immobilier d'exception sur le littoral de la Côte d'Azur à la Côte Basque.
+            </p>
+            <button class="bg-[#8fc1e3] text-white px-10 py-4 font-sans text-xs tracking-[0.2em] uppercase hover:bg-[#68a0c2] transition shadow-lg">Voir les propriétés</button>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section id="villas" class="py-24 bg-[#faf9f6]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col items-center text-center mb-16">
+                <div class="w-12 h-0.5 bg-[#8fc1e3] mb-6"></div>
+                <h2 class="text-4xl font-heading text-[#2c3e50] mb-4">Villas Pieds dans l'Eau</h2>
+                <p class="font-sans text-[#7f8c8d] max-w-xl font-light">Une sélection rigoureuse de propriétés offrant un accès direct à la mer, des vues panoramiques et un cadre de vie idyllique.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Prop 1 -->
+                <div class="group">
+                    <div class="overflow-hidden relative mb-6 shadow-xl">
+                        <img src="https://loremflickr.com/800/600/coastal,villa?lock=161" class="w-full h-[400px] object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute top-4 left-4 bg-white text-[#2c3e50] px-4 py-2 font-sans text-xs tracking-widest uppercase">Exclusivité</div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-heading text-[#2c3e50] mb-2">Villa L'Horizon</h3>
+                        <p class="font-sans text-[#7f8c8d] text-sm tracking-widest uppercase mb-4">Biarritz • 250 m²</p>
+                        <p class="font-sans font-medium text-[#2c3e50]">3 200 000 €</p>
+                    </div>
+                </div>
+                <!-- Prop 2 -->
+                <div class="group md:mt-16">
+                    <div class="overflow-hidden relative mb-6 shadow-xl">
+                        <img src="https://loremflickr.com/800/600/seaview,terrace?lock=162" class="w-full h-[400px] object-cover group-hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-heading text-[#2c3e50] mb-2">La Corniche Blanche</h3>
+                        <p class="font-sans text-[#7f8c8d] text-sm tracking-widest uppercase mb-4">Saint-Tropez • 320 m²</p>
+                        <p class="font-sans font-medium text-[#2c3e50]">4 850 000 €</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#2c3e50] py-20 text-center text-white">
+        <h2 class="text-4xl font-heading mb-6">Trouvez votre refuge côtier</h2>
+        <p class="font-sans text-white/60 mb-10 font-light">Contactez nos agents spécialisés pour une présentation privée.</p>
+        <button class="border border-[#8fc1e3] text-[#8fc1e3] px-10 py-3 font-sans text-xs tracking-[0.2em] uppercase hover:bg-[#8fc1e3] hover:text-white transition">Nous écrire</button>
+    </footer>
+
+</body>
+</html>

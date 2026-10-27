@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Dubois & Associés - Avocats</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Libre Baskerville', serif; }
+        body, p, .font-sans { font-family: 'Open Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Topbar -->
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between">
+            <span>Consultation sur rendez-vous uniquement</span>
+            <span>Paris | Lyon | Genève</span>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <div class="text-xl font-serif font-bold text-slate-900">
+                Dubois & Associés<br><span class="text-xs text-slate-500 font-sans uppercase tracking-widest font-normal">Avocats à la Cour</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-700 uppercase tracking-wider">
+                <a href="#expertise" class="hover:text-blue-900 transition">Expertise</a>
+                <a href="#team" class="hover:text-blue-900 transition">Le Cabinet</a>
+                <a href="#contact" class="hover:text-blue-900 transition">Contact</a>
+            </div>
+            <div>
+                <a href="#contact" class="bg-blue-900 text-white px-6 py-3 text-sm uppercase tracking-wider hover:bg-slate-900 transition">Prendre Rendez-vous</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-[80vh] flex items-center">
+        <div class="absolute inset-0 bg-slate-900/70 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80" class="absolute inset-0 w-full h-full object-cover z-0" alt="Lawyer Office">
+        <div class="relative z-20 text-white max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-serif mb-6 leading-tight">Défendre vos droits,<br>Protéger vos intérêts.</h1>
+            <p class="text-lg font-sans font-light mb-10 max-w-2xl mx-auto">
+                Un cabinet d'excellence dédié au droit des affaires, droit du travail et droit pénal. Une équipe d'experts engagés à vos côtés.
+            </p>
+            <a href="#expertise" class="inline-block border border-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-white hover:text-slate-900 transition">Nos Domaines d'Intervention</a>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif text-slate-900 mb-4">Notre Expertise</h2>
+                <div class="w-16 h-1 bg-blue-900 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="p-8 border border-gray-200 hover:shadow-xl transition">
+                    <h3 class="text-xl font-serif text-slate-900 mb-4 border-b border-gray-200 pb-4">Droit des Affaires</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Création de sociétés, fusions-acquisitions, rédaction de contrats commerciaux et contentieux entre associés.</p>
+                </div>
+                <div class="p-8 border border-gray-200 hover:shadow-xl transition">
+                    <h3 class="text-xl font-serif text-slate-900 mb-4 border-b border-gray-200 pb-4">Droit du Travail</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Accompagnement des entreprises et des salariés. Licenciement, harcèlement, prud'hommes et rédaction de contrats de travail.</p>
+                </div>
+                <div class="p-8 border border-gray-200 hover:shadow-xl transition">
+                    <h3 class="text-xl font-serif text-slate-900 mb-4 border-b border-gray-200 pb-4">Droit Pénal</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Défense pénale d'urgence, assistance en garde à vue, droit pénal des affaires et cybercriminalité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="bg-blue-900 text-white py-24">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-serif mb-6">Demander une première consultation</h2>
+            <p class="mb-12 font-light text-blue-100">Exposez-nous brièvement votre situation, nous vous recontacterons sous 24h avec une proposition d'accompagnement.</p>
+            <form class="bg-white text-left p-8 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Nom complet</label>
+                        <input type="text" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-blue-900 text-slate-900">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Téléphone</label>
+                        <input type="tel" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-blue-900 text-slate-900">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Votre message / Objet du litige</label>
+                        <textarea rows="4" class="w-full border border-gray-300 p-2 focus:outline-none focus:border-blue-900 text-slate-900 mt-2"></textarea>
+                    </div>
+                </div>
+                <button type="button" class="bg-slate-900 text-white px-8 py-3 uppercase tracking-wider text-sm hover:bg-blue-900 transition w-full">Envoyer la demande</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm">
+        <p>© 2024 Dubois & Associés. Mentions Légales.</p>
+    </footer>
+
+</body>
+</html>

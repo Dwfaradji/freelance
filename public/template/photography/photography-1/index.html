@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture - Studio Photo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-syne { font-family: 'Syne', sans-serif; }
+        body, p, .font-sans { font-family: 'Inter', sans-serif; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+    </style>
+</head>
+<body class="bg-black text-white selection:bg-white selection:text-black">
+
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 top-0 mix-blend-difference p-8 flex justify-between items-center">
+        <div class="text-3xl font-syne font-extrabold uppercase tracking-widest">
+            Capture.
+        </div>
+        <div class="hidden md:flex space-x-12 text-xs uppercase tracking-[0.3em] font-bold">
+            <a href="#work" class="hover:line-through transition">Work</a>
+            <a href="#about" class="hover:line-through transition">About</a>
+            <a href="#contact" class="hover:line-through transition">Book</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="h-screen relative flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&q=80" class="absolute w-full h-full object-cover opacity-60" alt="Fashion Photo">
+        <div class="relative z-10 text-center">
+            <h1 class="text-[10vw] font-syne font-extrabold leading-none uppercase mix-blend-overlay">
+                Visual<br>Poetry
+            </h1>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section id="work" class="p-4 md:p-8">
+        <div class="gallery-grid">
+            <!-- P1 -->
+            <div class="group relative overflow-hidden aspect-[3/4]">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" alt="Fashion">
+            </div>
+            <!-- P2 -->
+            <div class="group relative overflow-hidden aspect-[3/4] md:translate-y-12">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" alt="Portrait">
+            </div>
+            <!-- P3 -->
+            <div class="group relative overflow-hidden aspect-[3/4]">
+                <img src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" alt="Editorial">
+            </div>
+            <!-- P4 -->
+            <div class="group relative overflow-hidden aspect-[3/4] md:translate-y-12">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" alt="Studio">
+            </div>
+        </div>
+    </section>
+
+    <!-- Info & Contact -->
+    <section id="contact" class="py-32 px-8 mt-20 border-t border-white/20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-syne font-extrabold uppercase mb-10">Let's Create<br>Something.</h2>
+            <p class="text-xl font-light text-gray-400 mb-12">Fashion | Portrait | Editorial | Commercial</p>
+            <a href="mailto:hello@capture.com" class="inline-block border border-white px-12 py-5 text-sm uppercase tracking-[0.2em] hover:bg-white hover:text-black transition duration-300">hello@capture.com</a>
+        </div>
+    </section>
+
+</body>
+</html>

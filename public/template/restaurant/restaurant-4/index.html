@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokyo Nights - Asian Street Food</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        .font-mono { font-family: 'Space Mono', monospace; }
+        body { font-family: 'Inter', sans-serif; }
+        .neon-text { text-shadow: 0 0 10px #d946ef, 0 0 20px #d946ef; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-300 selection:bg-fuchsia-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 mix-blend-difference p-6 flex justify-between items-center">
+        <div class="text-2xl font-black text-white tracking-tighter uppercase">Tokyo<span class="text-fuchsia-500">Nights</span></div>
+        <div class="hidden md:flex space-x-6 text-xs font-mono uppercase text-white">
+            <a href="#menu" class="hover:text-fuchsia-500">Menu //</a>
+            <a href="#vibe" class="hover:text-fuchsia-500">Vibe //</a>
+            <a href="#book" class="bg-fuchsia-600 px-4 py-1 text-black font-bold">Book</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden border-b-4 border-fuchsia-500">
+        <div class="absolute inset-0 bg-black/80 z-10"></div>
+        <img src="https://loremflickr.com/1920/1080/neon,tokyo?lock=5" class="absolute inset-0 w-full h-full object-cover z-0 filter contrast-125 saturate-150" alt="Cyberpunk Tokyo">
+        <div class="relative z-20 text-center">
+            <h1 class="text-7xl md:text-9xl font-black text-white uppercase tracking-tighter mb-4 neon-text">
+                Ramen & Neon
+            </h1>
+            <p class="font-mono text-fuchsia-400 tracking-widest uppercase mb-10">> Street Food Cyberpunk_</p>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-black text-white uppercase mb-8"><span class="text-fuchsia-500">01.</span> Menu</h2>
+                <div class="space-y-8 font-mono">
+                    <div class="border-b border-zinc-800 pb-4 hover:border-fuchsia-500 transition">
+                        <div class="flex justify-between text-white text-xl mb-2"><span>Spicy Tonkotsu</span><span class="text-fuchsia-500">16€</span></div>
+                        <p class="text-zinc-500 text-sm">Bouillon porc 24h, chashu grillé, oeuf mollet, piment rouge.</p>
+                    </div>
+                    <div class="border-b border-zinc-800 pb-4 hover:border-fuchsia-500 transition">
+                        <div class="flex justify-between text-white text-xl mb-2"><span>Cyber Sushi Set</span><span class="text-fuchsia-500">22€</span></div>
+                        <p class="text-zinc-500 text-sm">Saumon aburi, thon épicé, mayonnaise au yuzu kosho.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://loremflickr.com/800/800/ramen,food?lock=6" alt="Ramen" class="w-full aspect-square object-cover filter contrast-125 grayscale hover:grayscale-0 transition duration-500">
+                <div class="absolute -bottom-4 -left-4 bg-fuchsia-600 text-black font-black uppercase p-4 text-2xl transform -rotate-6">Spicy!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="book" class="bg-black py-20 text-center font-mono text-sm border-t border-zinc-900">
+        <a href="#" class="inline-block text-4xl font-black text-white uppercase mb-8 hover:text-fuchsia-500 transition">>_ Drop in</a>
+        <p class="text-zinc-600">Open until 4AM. Shibuya District, Neon Alley 42.</p>
+    </footer>
+
+</body>
+</html>

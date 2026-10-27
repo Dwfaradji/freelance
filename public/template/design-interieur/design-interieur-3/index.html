@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Gatsby - Art Déco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body, p, .font-sans { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+    <!-- Top border -->
+    <div class="h-2 w-full bg-amber-600"></div>
+
+    <!-- Navbar -->
+    <nav class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center border-b border-zinc-800">
+        <div class="text-amber-600 text-xs font-sans tracking-[0.3em] uppercase">Est. 1920</div>
+        <div class="text-4xl font-serif font-black tracking-widest text-white uppercase">Gatsby</div>
+        <a href="#contact" class="text-xs font-sans tracking-[0.3em] uppercase border border-amber-600 text-amber-600 px-6 py-2 hover:bg-amber-600 hover:text-black transition">Consultation</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 text-center max-w-4xl mx-auto px-6">
+        <h1 class="text-6xl md:text-8xl font-serif font-bold text-white mb-6 uppercase tracking-widest leading-tight">
+            L'Élégance <span class="text-amber-600">Absolue</span>
+        </h1>
+        <p class="font-sans text-zinc-400 text-lg mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+            Architecture d'intérieur de prestige. Symétrie parfaite, marbre, laiton et velours pour des espaces hors du temps.
+        </p>
+        <img src="https://loremflickr.com/1200/600/artdeco,interior?lock=23" alt="Luxe" class="w-full h-[500px] object-cover border-4 border-zinc-900 outline outline-1 outline-amber-600 p-2">
+    </section>
+
+    <!-- Expertise -->
+    <section class="py-24 bg-zinc-900 border-y border-amber-900/30">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
+            <div>
+                <h3 class="font-serif text-2xl text-amber-500 mb-4">Hôtellerie</h3>
+                <p class="font-sans text-sm text-zinc-400 font-light">Conception de lobbys majestueux et de suites présidentielles au design opulent.</p>
+            </div>
+            <div>
+                <h3 class="font-serif text-2xl text-amber-500 mb-4">Résidentiel</h3>
+                <p class="font-sans text-sm text-zinc-400 font-light">Appartements haussmanniens et hôtels particuliers sublimés par notre touche Art Déco.</p>
+            </div>
+            <div>
+                <h3 class="font-serif text-2xl text-amber-500 mb-4">Mobilier</h3>
+                <p class="font-sans text-sm text-zinc-400 font-light">Création de pièces sur-mesure en noyer, laiton brossé et marbre noir Marquina.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-24 text-center">
+        <div class="text-4xl font-serif font-black tracking-widest text-white uppercase mb-8">Gatsby</div>
+        <p class="font-sans text-sm text-amber-600 uppercase tracking-widest mb-2">Bureau Parisien</p>
+        <p class="font-sans text-sm text-zinc-500">Avenue Montaigne, Paris</p>
+    </footer>
+
+</body>
+</html>

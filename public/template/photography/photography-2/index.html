@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Memories - Photographe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', serif; }
+        body, p, .font-sans { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#faf9f7] text-[#4a4441]">
+
+    <!-- Nav -->
+    <nav class="absolute w-full z-50 py-10 mix-blend-multiply">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-[#4a4441]">
+            <div class="text-3xl font-serif tracking-widest">Juliette B.</div>
+            <div class="hidden md:flex space-x-12 text-xs uppercase tracking-[0.3em] font-sans">
+                <a href="#portfolio" class="hover:text-[#a89689] transition">Portfolio</a>
+                <a href="#experience" class="hover:text-[#a89689] transition">L'Expérience</a>
+            </div>
+            <a href="#contact" class="border border-[#4a4441] px-8 py-3 font-sans text-xs uppercase tracking-widest hover:bg-[#4a4441] hover:text-[#faf9f7] transition">Disponibilités</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6 text-center z-10 w-full">
+            <h1 class="text-6xl md:text-8xl font-serif font-light mb-12 text-[#2d2825]">
+                Capturer la lumière,<br><span class="italic text-[#a89689]">raconter l'amour.</span>
+            </h1>
+            <div class="grid grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
+                <img src="https://loremflickr.com/600/800/wedding,bride?lock=91" class="w-full h-64 md:h-[500px] object-cover filter brightness-110 contrast-75 mt-12">
+                <img src="https://loremflickr.com/600/800/wedding,couple?lock=92" class="w-full h-64 md:h-[500px] object-cover filter brightness-110 contrast-75 -mt-8 shadow-xl">
+                <img src="https://loremflickr.com/600/800/wedding,rings?lock=93" class="w-full h-64 md:h-[500px] object-cover filter brightness-110 contrast-75 mt-20">
+            </div>
+        </div>
+    </section>
+
+    <!-- Approche -->
+    <section id="experience" class="py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-serif italic mb-8 text-[#a89689]">Une approche "Fine Art"</h2>
+            <p class="font-sans text-sm text-[#4a4441] leading-relaxed max-w-2xl mx-auto tracking-wide">
+                Mon approche de la photographie de mariage est intimiste, lumineuse et éditoriale. Je travaille principalement en lumière naturelle pour créer des images intemporelles, douces, qui traverseront les générations sans prendre une ride.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact" class="bg-[#f0ece9] py-32 text-center">
+        <h2 class="text-5xl font-serif mb-8 text-[#2d2825]">Réservations 2025</h2>
+        <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#a89689] mb-12">Il ne reste que 4 dates disponibles pour la saison d'été.</p>
+        <button class="bg-[#4a4441] text-[#faf9f7] px-12 py-4 font-sans text-xs uppercase tracking-[0.2em] hover:bg-[#2d2825] transition">Demander la brochure</button>
+    </footer>
+
+</body>
+</html>
