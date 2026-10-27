@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { projects } from '@/data/data';
 import ProjectCard from '@/components/Projects/projectCard';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 
 export default function RealisationsPage() {
   const floticarProject = projects[0];
@@ -22,6 +23,11 @@ export default function RealisationsPage() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white selection:bg-primary-500/30 selection:text-primary-200">
+      <Breadcrumb
+        items={[{ label: 'Réalisations' }]}
+        backHref="/"
+        backLabel="Retour à l'accueil"
+      />
       {/* Header Hero */}
       <section className="relative overflow-hidden pt-10 sm:pt-20 pb-12 sm:pb-20 border-b border-white/5">
         <div className="absolute inset-0 bg-radial from-primary-900/20 via-neutral-950/80 to-neutral-950 pointer-events-none" />

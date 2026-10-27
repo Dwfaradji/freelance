@@ -4,6 +4,8 @@ import { pageInfosProcess } from '@/data/data';
 import { Fade } from '@/components/ui/Fade';
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import LegalNavSwitcher from '@/components/PagesInfo/LegalNavSwitcher';
 
 const icons = [
   // Étape 1 : Compréhension
@@ -28,18 +30,12 @@ const ProcessPage = () => {
 
   return (
     <div className="overflow-hidden pb-24">
-      {/* Fil d'Ariane SEO */}
-      <nav aria-label="Fil d'Ariane" className="pt-6 pb-2 text-sm text-neutral-400 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ol className="flex items-center gap-2">
-          <li>
-            <Link href="/" className="hover:text-white transition-colors">
-              Accueil
-            </Link>
-          </li>
-          <li>/</li>
-          <li className="text-white font-medium">Processus & Méthodologie</li>
-        </ol>
-      </nav>
+      {/* Fil d'Ariane & Navigation */}
+      <Breadcrumb
+        items={[{ label: 'Processus & Méthodologie' }]}
+        backLink={{ href: '/', label: 'Retour au site' }}
+      />
+      <LegalNavSwitcher />
 
       {/* Hero Header */}
       <header className="mx-auto mb-20 mt-4 text-center px-4">

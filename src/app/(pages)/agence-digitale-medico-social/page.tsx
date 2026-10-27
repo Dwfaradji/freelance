@@ -19,6 +19,8 @@ import {
   Clock,
   Sparkles
 } from 'lucide-react';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
 
 export default function AgenceDigitaleMedicoSocialPage() {
   const jsonLd = {
@@ -48,25 +50,6 @@ export default function AgenceDigitaleMedicoSocialPage() {
       '@type': 'Audience',
       audienceType: 'Directions d’établissements médico-sociaux, DSI, associations gestionnaires, IME, SESSAD, ESAT, EHPAD',
     },
-  };
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
-        item: 'https://www.devevoke.com/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Agence Digitale Médico-Social',
-        item: 'https://www.devevoke.com/agence-digitale-medico-social',
-      },
-    ],
   };
 
   const etablissements = [
@@ -164,24 +147,16 @@ export default function AgenceDigitaleMedicoSocialPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-
       <div className="overflow-hidden pb-24">
-        {/* Fil d'Ariane SEO */}
-        <nav aria-label="Fil d'Ariane" className="pt-6 pb-2 text-sm text-muted">
-          <ol className="flex items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-white transition-colors">
-                Accueil
-              </Link>
-            </li>
-            <li>/</li>
-            <li className="text-white font-medium">Agence Digitale Médico-Social</li>
-          </ol>
-        </nav>
+        <Breadcrumb
+          items={[
+            { label: 'Pôle Médico-Social', href: '/medico-social' },
+            { label: 'Agence Digitale Médico-Social' },
+          ]}
+          backHref="/medico-social"
+          backLabel="Retour au pôle médico-social"
+        />
+        <MedicoSocialNavSwitcher />
 
         {/* HERO SECTION */}
         <header className="relative py-16 md:py-24 text-center px-4 max-w-5xl mx-auto">

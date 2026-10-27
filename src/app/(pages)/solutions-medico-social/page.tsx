@@ -15,6 +15,8 @@ import {
   Server,
   Lock
 } from 'lucide-react';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
 
 export default function SolutionsMedicoSocialPage() {
   const jsonLd = {
@@ -64,25 +66,6 @@ export default function SolutionsMedicoSocialPage() {
         position: 7,
         name: 'Solutions pour Associations Gestionnaires',
         url: 'https://www.devevoke.com/solutions-medico-social/associations',
-      },
-    ],
-  };
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
-        item: 'https://www.devevoke.com/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Solutions Médico-Social',
-        item: 'https://www.devevoke.com/solutions-medico-social',
       },
     ],
   };
@@ -200,24 +183,16 @@ export default function SolutionsMedicoSocialPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-
       <div className="overflow-hidden pb-24">
-        {/* Fil d'Ariane SEO */}
-        <nav aria-label="Fil d'Ariane" className="pt-6 pb-2 text-sm text-muted">
-          <ol className="flex items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-white transition-colors">
-                Accueil
-              </Link>
-            </li>
-            <li>/</li>
-            <li className="text-white font-medium">Solutions Médico-Social</li>
-          </ol>
-        </nav>
+        <Breadcrumb
+          items={[
+            { label: 'Pôle Médico-Social', href: '/medico-social' },
+            { label: 'Catalogue des solutions' },
+          ]}
+          backHref="/medico-social"
+          backLabel="Retour au pôle médico-social"
+        />
+        <MedicoSocialNavSwitcher />
 
         {/* HERO */}
         <header className="relative py-16 md:py-24 text-center px-4 max-w-5xl mx-auto">

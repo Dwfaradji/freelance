@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import React from 'react';
 import { Fade } from '@/components/ui/Fade';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import LegalNavSwitcher from '@/components/PagesInfo/LegalNavSwitcher';
 
 interface Text {
   titleH1?: string;
@@ -20,8 +22,20 @@ const PagesInfo = ({ infosText }: PagesInfoProps) => {
 
   return (
     <div className="overflow-hidden pb-24">
+      {/* Fil d'Ariane & Bouton Retour */}
+      <Breadcrumb
+        items={[
+          { label: 'Informations', href: '/info-tarif' },
+          { label: mainTitle },
+        ]}
+        backLink={{ href: '/', label: 'Retour au site' }}
+      />
+
+      {/* Navigation entre documents légaux et tarifs */}
+      <LegalNavSwitcher />
+
       {/* Hero Header */}
-      <header className="mx-auto mb-16 mt-8 text-center px-4">
+      <header className="mx-auto mb-16 mt-4 text-center px-4">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
           <span className="section-label mb-4 inline-block">Informations</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">

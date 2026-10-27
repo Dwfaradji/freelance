@@ -16,6 +16,8 @@ import {
   Check,
   Lock,
 } from 'lucide-react';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import ServicesNavSwitcher from '@/components/ui/ServicesNavSwitcher';
 
 export default function SolutionsMetierPage() {
   const jsonLd = {
@@ -124,9 +126,18 @@ export default function SolutionsMetierPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen bg-neutral-950 text-white pt-28 pb-20">
+      <div className="min-h-screen bg-neutral-950 text-white pb-20">
+        <Breadcrumb
+          items={[
+            { label: 'Nos Expertises', href: '/services' },
+            { label: 'Logiciels Métier Sur-Mesure' },
+          ]}
+          backLink={{ href: '/services', label: 'Retour aux services' }}
+        />
+        <ServicesNavSwitcher />
+
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-16 lg:py-24 border-b border-white/5">
+        <section className="relative overflow-hidden py-12 lg:py-20 border-b border-white/5">
           <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-[550px] h-[400px] bg-primary-600/15 blur-[160px] pointer-events-none rounded-full" />
           <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[350px] bg-secondary-600/10 blur-[150px] pointer-events-none rounded-full" />
 

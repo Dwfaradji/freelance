@@ -4,11 +4,16 @@ import BlogHeader from '@/components/Blog/blogHeader';
 import BlogsContainer from '@/components/Blog/blogsContainer';
 import Link from 'next/link';
 import { Fade } from '@/components/ui/Fade';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 
 const Page = () => {
   return (
-    <div className="overflow-hidden">
-      <header className="mx-auto mb-20 mt-8 text-center px-4">
+    <div className="overflow-hidden pb-12">
+      <Breadcrumb
+        items={[{ label: 'Ressources & Guides' }]}
+        backLink={{ href: '/', label: 'Retour au site' }}
+      />
+      <header className="mx-auto mb-16 mt-4 text-center px-4">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
           <span className="section-label mb-4 inline-block">Le Journal</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">

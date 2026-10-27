@@ -6,6 +6,8 @@ import Template from '@/components/Template/template';
 import { Fade } from '@/components/ui/Fade';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import ServicesNavSwitcher from '@/components/ui/ServicesNavSwitcher';
 
 const Page = () => {
   const [activeCategory, setActiveCategory] = useState<string>('Tous');
@@ -20,24 +22,15 @@ const Page = () => {
 
   return (
     <div className="min-h-screen pb-24">
-      {/* Fil d'Ariane SEO */}
-      <nav aria-label="Fil d'Ariane" className="pt-6 sm:pt-10 pb-2 text-xs sm:text-sm text-neutral-400 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <ol className="flex items-center gap-2">
-          <li>
-            <Link href="/" className="hover:text-white transition-colors">
-              Accueil
-            </Link>
-          </li>
-          <li>/</li>
-          <li>
-            <Link href="/services" className="hover:text-white transition-colors">
-              Services & Expertises
-            </Link>
-          </li>
-          <li>/</li>
-          <li className="text-white font-medium">Socles & Templates</li>
-        </ol>
-      </nav>
+      {/* Fil d'Ariane & Navigation Switcher */}
+      <Breadcrumb
+        items={[
+          { label: 'Nos Expertises', href: '/services' },
+          { label: 'Socles & Templates' },
+        ]}
+        backLink={{ href: '/services', label: 'Retour aux services' }}
+      />
+      <ServicesNavSwitcher />
 
       <header className="mx-auto mb-10 sm:mb-12 text-center mt-4 sm:mt-6 px-4 relative z-10">
         <Fade direction="up" cascade damping={0.1} triggerOnce>

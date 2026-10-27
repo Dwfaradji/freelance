@@ -4,11 +4,17 @@ import React from 'react';
 import Link from 'next/link';
 import Contact from '@/components/Contact/contact';
 import { Fade } from '@/components/ui/Fade';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 
 const Page = () => {
   return (
-    <div className="overflow-hidden min-h-screen pt-6 sm:pt-14 pb-16 sm:pb-24">
-      <header className="mx-auto mb-10 sm:mb-16 mt-4 sm:mt-8 text-center px-4 max-w-4xl">
+    <div className="overflow-hidden min-h-screen pb-16 sm:pb-24">
+      <Breadcrumb
+        items={[{ label: 'Contact & Échange Projet' }]}
+        backLink={{ href: '/', label: 'Retour au site' }}
+      />
+
+      <header className="mx-auto mb-10 sm:mb-16 mt-4 text-center px-4 max-w-4xl">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
           <span className="section-label mb-3 sm:mb-4 inline-block">
             Échange Direct avec le Fondateur

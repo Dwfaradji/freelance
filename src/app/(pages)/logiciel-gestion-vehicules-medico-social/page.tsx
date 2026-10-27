@@ -19,6 +19,8 @@ import {
   FileCheck
 } from 'lucide-react';
 import FleetCostCalculator from '@/components/Tools/FleetCostCalculator';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
 
 export default function LogicielGestionVehiculesMedicoSocialPage() {
   const jsonLd = {
@@ -40,31 +42,6 @@ export default function LogicielGestionVehiculesMedicoSocialPage() {
       name: 'DevEvoke',
       url: 'https://www.devevoke.com',
     },
-  };
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
-        item: 'https://www.devevoke.com/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Solutions Médico-Social',
-        item: 'https://www.devevoke.com/solutions-medico-social',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Logiciel Gestion Véhicules Médico-Social (Floticar)',
-        item: 'https://www.devevoke.com/logiciel-gestion-vehicules-medico-social',
-      },
-    ],
   };
 
   const fonctionnalites = [
@@ -127,30 +104,17 @@ export default function LogicielGestionVehiculesMedicoSocialPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-
       <div className="overflow-hidden pb-24">
-        {/* Fil d'Ariane SEO */}
-        <nav aria-label="Fil d'Ariane" className="pt-6 pb-2 text-sm text-muted">
-          <ol className="flex items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-white transition-colors">
-                Accueil
-              </Link>
-            </li>
-            <li>/</li>
-            <li>
-              <Link href="/solutions-medico-social" className="hover:text-white transition-colors">
-                Solutions Médico-Social
-              </Link>
-            </li>
-            <li>/</li>
-            <li className="text-white font-medium">Gestion de Flotte Automobile</li>
-          </ol>
-        </nav>
+        <Breadcrumb
+          items={[
+            { label: 'Pôle Médico-Social', href: '/medico-social' },
+            { label: 'Solutions', href: '/solutions-medico-social' },
+            { label: 'Gestion de Flotte Automobile' },
+          ]}
+          backHref="/solutions-medico-social"
+          backLabel="Retour aux solutions"
+        />
+        <MedicoSocialNavSwitcher />
 
         {/* HERO SECTION */}
         <header className="relative py-16 md:py-24 text-center px-4 max-w-5xl mx-auto">

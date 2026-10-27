@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Scroll from '@/components/ui/scroll';
 import Header from '@/components/Home/header';
 import NeedsSection from '@/components/Home/NeedsSection';
 import SolutionsGrid from '@/components/Home/SolutionsGrid';
@@ -17,8 +16,6 @@ import FinalCTA from '@/components/Home/FinalCTA';
 export default function HomePage() {
   return (
     <>
-      <Scroll />
-
       {/* Section 1 — Hero : Positionnement & CTAs */}
       <Header />
 

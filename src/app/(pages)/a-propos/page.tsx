@@ -9,10 +9,15 @@ import AboutGrid from '@/components/About/aboutGrid';
 import { AboutMethodology, AboutSecurity } from '@/components/About/aboutFeatures';
 import AnimatedStats from '@/components/Home/AnimatedStats';
 import Testimonial from '@/components/Home/testimonial';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 
 const Page = () => {
   return (
     <>
+      <Breadcrumb
+        items={[{ label: 'L’Agence & Le Fondateur' }]}
+        backLink={{ href: '/', label: 'Retour au site' }}
+      />
       <AboutHeader />
       <AnimatedStats />
       <AboutMethodology />

@@ -185,7 +185,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://www.floticar.fr"
+                  href="https://floticar.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary-300 text-neutral-300 transition-colors"

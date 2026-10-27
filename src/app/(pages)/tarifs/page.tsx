@@ -4,10 +4,18 @@ import PricingHeader from '@/components/Pricing/pricingHeader';
 import PricingMain from '@/components/Pricing/pricingMain';
 import PricingFAQ from '@/components/Pricing/pricingFAQ';
 import PricingCTA from '@/components/Pricing/pricingCTA';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import LegalNavSwitcher from '@/components/PagesInfo/LegalNavSwitcher';
 
 const Page = () => {
   return (
     <div className="overflow-hidden">
+      <Breadcrumb
+        items={[{ label: 'Informations Tarifaires & Forfaits' }]}
+        backLink={{ href: '/', label: 'Retour au site' }}
+      />
+      <LegalNavSwitcher />
+
       {/* 
         PricingHeader contains the Page Hero and the Additional Services (Maintenance & Hébergement).
         It is rendered at the top because it has the Hero.

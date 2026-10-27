@@ -3,9 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Sparkles, LayoutGrid, CheckCircle2 } from 'lucide-react';
 
-import medicalImg from '@/images/templates/medicalTemplate-1920.webp';
-import medical2Img from '@/images/templates/medical-2-1920.webp';
-import realEstateImg from '@/images/templates/real-estate-1-1920.webp';
+import medicalImg from '@/images/templates/etablissement-medico-social-1920.webp';
+import medical2Img from '@/images/templates/cabinet-dentaire-orthodontie-1920.webp';
+import realEstateImg from '@/images/templates/ehpad-residence-seniors-1920.webp';
 
 interface FeaturedTemplate {
   title: string;

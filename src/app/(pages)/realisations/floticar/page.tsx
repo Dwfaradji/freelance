@@ -22,6 +22,7 @@ import {
   Layers,
 } from 'lucide-react';
 import FleetCostCalculator from '@/components/Tools/FleetCostCalculator';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 
 export default function FloticarCaseStudyPage() {
   const jsonLd = {
@@ -43,31 +44,6 @@ export default function FloticarCaseStudyPage() {
       name: 'DevEvoke',
       url: 'https://www.devevoke.com',
     },
-  };
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
-        item: 'https://www.devevoke.com/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Réalisations',
-        item: 'https://www.devevoke.com/realisations',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Étude de cas Floticar',
-        item: 'https://www.devevoke.com/realisations/floticar',
-      },
-    ],
   };
 
   const fonctionnalites = [
@@ -109,32 +85,16 @@ export default function FloticarCaseStudyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
 
       <div className="min-h-screen bg-neutral-950 text-white selection:bg-primary-500/30 selection:text-primary-200">
-        {/* Breadcrumb */}
-        <div className="pt-28 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav aria-label="Fil d’Ariane" className="text-xs text-neutral-400">
-            <ol className="flex items-center gap-2">
-              <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Accueil
-                </Link>
-              </li>
-              <li>/</li>
-              <li>
-                <Link href="/realisations" className="hover:text-white transition-colors">
-                  Réalisations
-                </Link>
-              </li>
-              <li>/</li>
-              <li className="text-white font-medium">Étude de cas Floticar</li>
-            </ol>
-          </nav>
-        </div>
+        <Breadcrumb
+          items={[
+            { label: 'Réalisations', href: '/realisations' },
+            { label: 'Étude de cas Floticar' },
+          ]}
+          backHref="/realisations"
+          backLabel="Retour aux réalisations"
+        />
 
         {/* Hero Section */}
         <section className="relative overflow-hidden py-12 md:py-16 border-b border-white/5">
@@ -388,6 +348,12 @@ export default function FloticarCaseStudyPage() {
                 className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-primary-300 hover:text-white font-medium text-sm transition-all"
               >
                 Page solution : Gestion de flotte médico-sociale
+              </Link>
+              <Link
+                href="/realisations"
+                className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-sm transition-all"
+              >
+                ← Toutes les réalisations
               </Link>
             </div>
           </div>

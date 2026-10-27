@@ -8,6 +8,7 @@ import { MyProvider } from '@/context/context';
 import { Metadata as NextMetadata } from 'next/dist/lib/metadata/types/metadata-interface';
 import GoogleAnalytics from '@/lib/GoogleAnalytics';
 import AppHead from '@/config/AppHead';
+import FloatingQuickNav from '@/components/ui/FloatingQuickNav';
 
 import './globals.css';
 import 'swiper/css';
@@ -174,6 +175,7 @@ export default function RootLayout({
             </PageTransition>
           </main>
           <Footer />
+          <FloatingQuickNav />
         </MyProvider>
       </body>
     </html>

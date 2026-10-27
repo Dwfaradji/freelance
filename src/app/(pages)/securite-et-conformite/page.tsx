@@ -13,6 +13,8 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import TrustBar from '@/components/Home/trustBar';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import ServicesNavSwitcher from '@/components/ui/ServicesNavSwitcher';
 
 export const metadata: Metadata = {
   title: 'Sécurité Web & Conformité RGPD Médico-Sociale | DevEvoke',
@@ -32,11 +34,20 @@ export const metadata: Metadata = {
 
 export default function SecuriteConformitePage() {
   return (
-    <div className="min-h-screen pt-8 sm:pt-20 pb-16 sm:pb-24 relative overflow-hidden">
+    <div className="min-h-screen pb-16 sm:pb-24 relative overflow-hidden">
+      <Breadcrumb
+        items={[
+          { label: 'Nos Expertises', href: '/services' },
+          { label: 'Sécurité & Hébergement Souverain' },
+        ]}
+        backLink={{ href: '/services', label: 'Retour aux services' }}
+      />
+      <ServicesNavSwitcher />
+
       {/* Background radial glow */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[500px] bg-primary-600/10 blur-[140px] pointer-events-none rounded-full" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-4">
         {/* Header */}
         <header className="text-center max-w-3xl mx-auto mb-16">
           <span className="section-label mb-4 inline-block">

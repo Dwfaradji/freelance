@@ -4,6 +4,8 @@ import Script from 'next/script';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, CheckCircle2, ShieldCheck, Clock, Award } from 'lucide-react';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
 
 export default function DiagnosticPage() {
   const jsonLd = {
@@ -29,22 +31,17 @@ export default function DiagnosticPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen pt-8 sm:pt-20 pb-16 sm:pb-24 relative overflow-hidden">
-        {/* Glows */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[500px] bg-primary-600/10 blur-[140px] pointer-events-none rounded-full" />
+      <div className="min-h-screen pb-16 sm:pb-24 relative overflow-hidden">
+        <Breadcrumb
+          items={[
+            { label: 'Pôle Médico-Social', href: '/medico-social' },
+            { label: 'Diagnostic Numérique' },
+          ]}
+          backLink={{ href: '/medico-social', label: 'Retour au pôle médico-social' }}
+        />
+        <MedicoSocialNavSwitcher />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Breadcrumb / Back link */}
-          <div className="mb-8">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Retour à l’accueil
-            </Link>
-          </div>
-
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Header with 2-Column Presentation */}
           <div className="grid lg:grid-cols-12 gap-12 items-center mb-16">
             <div className="lg:col-span-7 space-y-6">

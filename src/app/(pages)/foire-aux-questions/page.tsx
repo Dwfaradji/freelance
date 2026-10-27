@@ -5,22 +5,18 @@ import Link from 'next/link';
 import { HelpCircle, ArrowRight, ShieldCheck, Sparkles, Calendar, MessageSquare } from 'lucide-react';
 import PricingFAQ from '@/components/Pricing/pricingFAQ';
 import { Fade } from '@/components/ui/Fade';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import LegalNavSwitcher from '@/components/PagesInfo/LegalNavSwitcher';
 
 export default function FoireAuxQuestionsPage() {
   return (
-    <div className="overflow-hidden min-h-screen pt-20 pb-24">
-      {/* Fil d'Ariane SEO */}
-      <nav aria-label="Fil d'Ariane" className="pt-4 pb-2 text-sm text-neutral-400">
-        <ol className="flex items-center gap-2">
-          <li>
-            <Link href="/" className="hover:text-white transition-colors">
-              Accueil
-            </Link>
-          </li>
-          <li>/</li>
-          <li className="text-white font-medium">Foire Aux Questions (FAQ)</li>
-        </ol>
-      </nav>
+    <div className="overflow-hidden min-h-screen pb-24">
+      {/* Fil d'Ariane & Navigation */}
+      <Breadcrumb
+        items={[{ label: 'Foire Aux Questions (FAQ)' }]}
+        backLink={{ href: '/', label: 'Retour au site' }}
+      />
+      <LegalNavSwitcher />
 
       {/* Hero Header */}
       <header className="mx-auto mb-16 mt-8 text-center px-4 max-w-4xl">

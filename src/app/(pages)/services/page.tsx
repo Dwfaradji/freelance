@@ -5,11 +5,19 @@ import Link from 'next/link';
 
 import ServiceList from '@/components/Services/ServiceList';
 import ProcessTimeline from '@/components/Services/ProcessTimeline';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import ServicesNavSwitcher from '@/components/ui/ServicesNavSwitcher';
 
 const Page = () => {
   return (
     <>
-      <header className="mx-auto mb-16 text-center mt-8 px-4 max-w-4xl">
+      <Breadcrumb
+        items={[{ label: 'Nos Expertises & Services' }]}
+        backLink={{ href: '/', label: 'Retour au site' }}
+      />
+      <ServicesNavSwitcher />
+
+      <header className="mx-auto mb-16 text-center mt-4 px-4 max-w-4xl">
         <Fade direction="up" triggerOnce>
           <span className="section-label mb-4 inline-block">Ingénierie & Transformation Numérique</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
