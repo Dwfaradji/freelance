@@ -91,6 +91,10 @@ export async function POST(request: Request) {
   const parseResult = contactSubmissionSchema.safeParse(rawBody);
   if (!parseResult.success) {
     const formattedErrors = parseResult.error.flatten().fieldErrors;
+    const errorDetails = Object.entries(formattedErrors)
+      .map(([field, errs]) => `${field}: ${errs?.join(', ')}`)
+      .join(' | ');
+
     securityLogger.logFormEvent({
       requestId,
       formType: formType as any,
@@ -98,7 +102,7 @@ export async function POST(request: Request) {
       status: 'ERROR',
       ip: clientIp,
       durationMs: Date.now() - startTime,
-      error: 'Form validation failed',
+      error: `Form validation failed: ${errorDetails}`,
     });
 
     return NextResponse.json(
@@ -106,7 +110,7 @@ export async function POST(request: Request) {
         success: false,
         status: 400,
         message: 'INVALID_PARAMETER',
-        error: 'Données de formulaire invalides. Veuillez corriger les champs signalés.',
+        error: `Données de formulaire invalides : ${errorDetails}`,
         fieldErrors: formattedErrors,
         requestId,
       },

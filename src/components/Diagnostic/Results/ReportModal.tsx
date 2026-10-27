@@ -152,10 +152,18 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
         setReferenceId(response.data.referenceId || null);
         setSendSuccess(true);
       } else {
-        setSendError('Une erreur est survenue lors de l’envoi. Veuillez réessayer.');
+        setSendError(response?.data?.error || 'Une erreur est survenue lors de l’envoi. Veuillez réessayer.');
       }
-    } catch {
-      setSendError('Impossible d’envoyer le formulaire pour le moment.');
+    } catch (err: any) {
+      const serverError = err?.response?.data?.error;
+      const fieldErrors = err?.response?.data?.fieldErrors;
+      let detailedMsg = 'Impossible d’envoyer le formulaire pour le moment.';
+      if (serverError) {
+        detailedMsg = serverError;
+      } else if (fieldErrors && typeof fieldErrors === 'object') {
+        detailedMsg = Object.values(fieldErrors).flat().join('. ');
+      }
+      setSendError(detailedMsg);
     } finally {
       setIsSending(false);
     }

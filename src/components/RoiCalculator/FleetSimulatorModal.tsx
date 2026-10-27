@@ -377,10 +377,18 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
       if (response && (response.status === 200 || response.data?.status === 200 || response.data?.success)) {
         setDemoSuccess(true);
       } else {
-        setDemoError('Une erreur est survenue lors de l’envoi. Veuillez réessayer.');
+        setDemoError(response?.data?.error || 'Une erreur est survenue lors de l’envoi. Veuillez réessayer.');
       }
-    } catch {
-      setDemoError('Impossible de transmettre la demande pour le moment.');
+    } catch (err: any) {
+      const serverError = err?.response?.data?.error;
+      const fieldErrors = err?.response?.data?.fieldErrors;
+      let detailedMsg = 'Impossible de transmettre la demande pour le moment.';
+      if (serverError) {
+        detailedMsg = serverError;
+      } else if (fieldErrors && typeof fieldErrors === 'object') {
+        detailedMsg = Object.values(fieldErrors).flat().join('. ');
+      }
+      setDemoError(detailedMsg);
     } finally {
       setIsSendingDemo(false);
     }

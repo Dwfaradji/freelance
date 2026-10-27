@@ -23,6 +23,7 @@ export const phoneFieldSchema = z
   .trim()
   .max(30, 'Le numéro de téléphone ne doit pas dépasser 30 caractères.')
   .optional()
+  .nullable()
   .or(z.literal(''))
   .transform((val) => (val ? normalizePhone(val) : undefined));
 
@@ -32,6 +33,7 @@ export const optionalSanitizedString = (maxLen: number = 150) =>
     .trim()
     .max(maxLen, `La valeur ne doit pas dépasser ${maxLen} caractères.`)
     .optional()
+    .nullable()
     .or(z.literal(''))
     .transform((val) => (val ? sanitizeString(val, maxLen) : undefined));
 
@@ -60,7 +62,7 @@ export const contactSubmissionSchema = z.object({
   projectType: optionalSanitizedString(150),
   budget: optionalSanitizedString(80),
   delay: optionalSanitizedString(80),
-  isDemoRequest: z.boolean().optional(),
+  isDemoRequest: z.boolean().optional().nullable(),
   service: optionalSanitizedString(100),
   content: z
     .string()
@@ -71,11 +73,12 @@ export const contactSubmissionSchema = z.object({
   rgpdConsent: z
     .union([z.boolean(), z.string()])
     .optional()
+    .nullable()
     .transform((val) => val === true || val === 'true' || val === 'on'),
   // Champs Honeypot (doivent être vides)
-  website: z.string().optional(),
-  companyWebsite: z.string().optional(),
-  hp_confirm: z.string().optional(),
+  website: z.string().optional().nullable(),
+  companyWebsite: z.string().optional().nullable(),
+  hp_confirm: z.string().optional().nullable(),
 });
 
 /**
@@ -107,9 +110,10 @@ export const demoSubmissionSchema = z.object({
     .trim()
     .max(3000, 'Les notes ne doivent pas dépasser 3 000 caractères.')
     .optional()
+    .nullable()
     .or(z.literal(''))
     .transform((val) => (val ? sanitizeString(val, 3000) : undefined)),
-  website: z.string().optional(),
+  website: z.string().optional().nullable(),
 });
 
 /**
@@ -117,8 +121,8 @@ export const demoSubmissionSchema = z.object({
  */
 export const newsletterSubmissionSchema = z.object({
   email: emailFieldSchema,
-  website: z.string().optional(),
-  companyWebsite: z.string().optional(),
+  website: z.string().optional().nullable(),
+  companyWebsite: z.string().optional().nullable(),
 });
 
 export type ContactSubmissionInput = z.infer<typeof contactSubmissionSchema>;

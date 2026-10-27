@@ -85,6 +85,11 @@ export async function POST(request: Request) {
   // 4. Validation Zod de l'email
   const parseResult = newsletterSubmissionSchema.safeParse(rawBody);
   if (!parseResult.success) {
+    const formattedErrors = parseResult.error.flatten().fieldErrors;
+    const errorDetails = Object.entries(formattedErrors)
+      .map(([field, errs]) => `${field}: ${errs?.join(', ')}`)
+      .join(' | ');
+
     securityLogger.logFormEvent({
       requestId,
       formType: 'newsletter',
@@ -92,7 +97,7 @@ export async function POST(request: Request) {
       status: 'ERROR',
       ip: clientIp,
       durationMs: Date.now() - startTime,
-      error: 'Invalid email syntax',
+      error: `Form validation failed: ${errorDetails}`,
     });
 
     return NextResponse.json(
@@ -100,7 +105,8 @@ export async function POST(request: Request) {
         success: false,
         status: 400,
         message: 'EMAIL_SYNTAX_INCORRECT',
-        error: 'Adresse email invalide. Veuillez renseigner une adresse email correcte.',
+        error: `Adresse email invalide : ${errorDetails}`,
+        fieldErrors: formattedErrors,
         requestId,
       },
       { status: 400 }

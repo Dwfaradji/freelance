@@ -37,8 +37,9 @@ const NewsLetters = () => {
         setMessage(response?.data?.error || 'Une erreur est survenue. Veuillez vérifier votre adresse.');
         setIsSuccess(false);
       }
-    } catch {
-      setMessage("Une erreur est survenue. Veuillez réessayer dans quelques instants.");
+    } catch (err: any) {
+      const serverError = err?.response?.data?.error;
+      setMessage(serverError || "Une erreur est survenue. Veuillez réessayer dans quelques instants.");
       setIsSuccess(false);
     } finally {
       setIsSubmitting(false);

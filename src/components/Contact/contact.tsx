@@ -85,11 +85,28 @@ const Contact = ({
       } else {
         window.location.hash = 'Erreur_send';
         setSendMsg(true);
-        setSendText(response?.data?.error || "Une erreur s'est produite lors de l'envoi. Veuillez vérifier vos données ou réessayer.");
+        const serverError = response?.data?.error;
+        const fieldErrors = response?.data?.fieldErrors;
+        let detailedMsg = "Une erreur s'est produite lors de l'envoi. Veuillez vérifier vos données ou réessayer.";
+        if (serverError) {
+          detailedMsg = serverError;
+        } else if (fieldErrors && typeof fieldErrors === 'object') {
+          detailedMsg = Object.values(fieldErrors).flat().join('. ');
+        }
+        setSendText(detailedMsg);
       }
-    } catch {
+    } catch (err: any) {
+      window.location.hash = 'Erreur_send';
       setSendMsg(true);
-      setSendText('Erreur de connexion. Veuillez vérifier votre réseau ou réessayer dans quelques instants.');
+      const serverError = err?.response?.data?.error;
+      const fieldErrors = err?.response?.data?.fieldErrors;
+      let detailedMsg = 'Erreur de connexion. Veuillez vérifier votre réseau ou réessayer dans quelques instants.';
+      if (serverError) {
+        detailedMsg = serverError;
+      } else if (fieldErrors && typeof fieldErrors === 'object') {
+        detailedMsg = Object.values(fieldErrors).flat().join('. ');
+      }
+      setSendText(detailedMsg);
     } finally {
       setIsSubmitting(false);
     }
@@ -150,10 +167,22 @@ const Contact = ({
                     placeholder="ex. Stéphane"
                     type="text"
                     id="firstname"
-                    {...register('firstname', { required: true })}
+                    {...register('firstname', {
+                      required: 'Le prénom est requis',
+                      minLength: {
+                        value: 2,
+                        message: 'Le prénom doit comporter au moins 2 caractères',
+                      },
+                      maxLength: {
+                        value: 80,
+                        message: 'Le prénom ne doit pas dépasser 80 caractères',
+                      },
+                    })}
                   />
                   {errors.firstname && (
-                    <span className="text-red-400 text-xs mt-1 block">Ce champ est requis</span>
+                    <span className="text-red-400 text-xs mt-1 block">
+                      {errors.firstname.message || 'Ce champ est requis'}
+                    </span>
                   )}
                 </div>
 
@@ -182,10 +211,22 @@ const Contact = ({
                     placeholder="ex. Entreprise Martin / Association"
                     type="text"
                     id="business"
-                    {...register('business', { required: true })}
+                    {...register('business', {
+                      required: 'L’entreprise ou organisation est requise',
+                      minLength: {
+                        value: 2,
+                        message: 'Le nom de structure doit comporter au moins 2 caractères',
+                      },
+                      maxLength: {
+                        value: 120,
+                        message: 'Le nom ne doit pas dépasser 120 caractères',
+                      },
+                    })}
                   />
                   {errors.business && (
-                    <span className="text-red-400 text-xs mt-1 block">Ce champ est requis</span>
+                    <span className="text-red-400 text-xs mt-1 block">
+                      {errors.business.message || 'Ce champ est requis'}
+                    </span>
                   )}
                 </div>
 
@@ -243,10 +284,18 @@ const Contact = ({
                     placeholder="direction@votre-association.fr"
                     type="email"
                     id="email"
-                    {...register('email', { required: true })}
+                    {...register('email', {
+                      required: 'L’email professionnel est requis',
+                      pattern: {
+                        value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/,
+                        message: 'Format d’adresse email invalide',
+                      },
+                    })}
                   />
                   {errors.email && (
-                    <span className="text-red-400 text-xs mt-1 block">Ce champ est requis</span>
+                    <span className="text-red-400 text-xs mt-1 block">
+                      {errors.email.message || 'Ce champ est requis'}
+                    </span>
                   )}
                 </div>
 
@@ -317,25 +366,46 @@ const Contact = ({
                   className={`${inputClasses} min-h-[130px] resize-y`}
                   placeholder="Expliquez brièvement votre problématique (ex: outils actuels, nombre d'usagers/éducateurs concernés, objectifs prioritaires...)"
                   id="message"
-                  {...register('content', { required: true })}
+                  {...register('content', {
+                    required: 'La description de votre besoin est requise',
+                    minLength: {
+                      value: 5,
+                      message: 'Veuillez préciser votre demande (minimum 5 caractères)',
+                    },
+                    maxLength: {
+                      value: 5000,
+                      message: 'Le message ne doit pas dépasser 5 000 caractères',
+                    },
+                  })}
                 />
                 {errors.content && (
-                  <span className="text-red-400 text-xs mt-1 block">Ce champ est requis</span>
+                  <span className="text-red-400 text-xs mt-1 block">
+                    {errors.content.message || 'Ce champ est requis'}
+                  </span>
                 )}
               </div>
 
               {/* RGPD Checkbox */}
-              <div className="flex items-start gap-2.5 pt-1">
-                <input
-                  type="checkbox"
-                  defaultChecked={false}
-                  id="rgpd"
-                  {...register('rgpdConsent', { required: true })}
-                  className="mt-1 rounded bg-white/5 border-white/20 text-primary-500 focus:ring-primary-500"
-                />
-                <label htmlFor="rgpd" className="text-xs text-muted leading-relaxed">
-                  En soumettant ce formulaire, j’accepte que les informations saisies soient exploitées par DevEvoke pour échanger sur mon projet médico-social. Données confidentielles, non cédées à des tiers.
-                </label>
+              <div>
+                <div className="flex items-start gap-2.5 pt-1">
+                  <input
+                    type="checkbox"
+                    defaultChecked={false}
+                    id="rgpd"
+                    {...register('rgpdConsent', {
+                      required: 'Veuillez accepter les conditions pour transmettre votre demande',
+                    })}
+                    className="mt-1 rounded bg-white/5 border-white/20 text-primary-500 focus:ring-primary-500"
+                  />
+                  <label htmlFor="rgpd" className="text-xs text-muted leading-relaxed">
+                    En soumettant ce formulaire, j’accepte que les informations saisies soient exploitées par DevEvoke pour échanger sur mon projet médico-social. Données confidentielles, non cédées à des tiers.
+                  </label>
+                </div>
+                {errors.rgpdConsent && (
+                  <span className="text-red-400 text-xs mt-1 block">
+                    {errors.rgpdConsent.message || 'Ce champ est requis'}
+                  </span>
+                )}
               </div>
 
               {/* Submit CTA */}

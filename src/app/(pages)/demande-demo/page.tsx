@@ -33,6 +33,7 @@ export default function DemandeDemoPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,6 +41,7 @@ export default function DemandeDemoPage() {
 
     setIsSubmitting(true);
     setError(false);
+    setErrorMessage(null);
 
     const messageContent = `
 DEMANDE DE DÉMONSTRATION EN DIRECT :
@@ -76,9 +78,19 @@ Notes / Attentes particulières : ${notes || 'Aucune'}
         setSuccess(true);
       } else {
         setError(true);
+        setErrorMessage(response?.data?.error || null);
       }
-    } catch {
+    } catch (err: any) {
       setError(true);
+      const serverError = err?.response?.data?.error;
+      const fieldErrors = err?.response?.data?.fieldErrors;
+      let detailedMsg = "Une erreur est survenue lors de l’envoi. Veuillez réessayer ou nous joindre directement par email.";
+      if (serverError) {
+        detailedMsg = serverError;
+      } else if (fieldErrors && typeof fieldErrors === 'object') {
+        detailedMsg = Object.values(fieldErrors).flat().join('. ');
+      }
+      setErrorMessage(detailedMsg);
     } finally {
       setIsSubmitting(false);
     }
@@ -382,7 +394,7 @@ Notes / Attentes particulières : ${notes || 'Aucune'}
 
                   {error && (
                     <p className="text-xs text-red-400">
-                      Une erreur est survenue lors de l’envoi. Veuillez réessayer ou nous joindre directement par email.
+                      {errorMessage || "Une erreur est survenue lors de l’envoi. Veuillez réessayer ou nous joindre directement par email."}
                     </p>
                   )}
 
