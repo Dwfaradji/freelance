@@ -15,6 +15,7 @@ import {
   Clock,
   Search,
   Lock,
+  LayoutGrid,
 } from 'lucide-react';
 
 export default function DeveloppementWebPage() {
@@ -155,10 +156,17 @@ export default function DeveloppementWebPage() {
                   <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  href="/realisations"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-200 font-medium text-sm transition-all text-center"
+                  href="/templates"
+                  className="w-full sm:w-auto px-6 py-4 rounded-xl bg-primary-500/10 hover:bg-primary-500/20 border border-primary-500/30 text-primary-300 font-medium text-sm transition-all flex items-center justify-center gap-2"
                 >
-                  Découvrir nos réalisations
+                  <LayoutGrid className="size-4" />
+                  <span>Voir nos templates</span>
+                </Link>
+                <Link
+                  href="/realisations"
+                  className="w-full sm:w-auto px-6 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-200 font-medium text-sm transition-all text-center"
+                >
+                  Réalisations
                 </Link>
               </div>
 
@@ -259,6 +267,29 @@ export default function DeveloppementWebPage() {
                   </div>
                 );
               })}
+            </div>
+
+            {/* Callout Accélérateur Socles & Templates */}
+            <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-primary-950/60 via-neutral-900/90 to-primary-950/40 border border-primary-500/20 shadow-xl shadow-primary-500/5 flex flex-col lg:flex-row items-center justify-between gap-6">
+              <div className="space-y-2 text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-400">
+                  <LayoutGrid className="size-4" />
+                  <span>Accélérateur de déploiement</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white">
+                  Besoin d’aller vite ? Explorez nos socles &amp; templates métiers
+                </h3>
+                <p className="text-sm text-neutral-300 max-w-2xl leading-relaxed">
+                  Pour réduire le délai de mise en ligne et optimiser votre budget, découvrez nos modèles pré-configurés (santé, médico-social, cabinets professionnels, services). Chaque socle sert de fondation solide et est entièrement personnalisé à votre image.
+                </p>
+              </div>
+              <Link
+                href="/templates"
+                className="shrink-0 px-6 py-3.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-semibold text-sm transition-all shadow-lg shadow-primary-500/25 flex items-center gap-2 group"
+              >
+                <span>Explorer les templates</span>
+                <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </section>
@@ -369,6 +400,13 @@ export default function DeveloppementWebPage() {
               >
                 <span>Planifier un échange de cadrage</span>
                 <ArrowRight className="size-4" />
+              </Link>
+              <Link
+                href="/templates"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-primary-500/10 hover:bg-primary-500/20 border border-primary-500/30 text-primary-300 font-medium text-sm transition-all flex items-center justify-center gap-2"
+              >
+                <LayoutGrid className="size-4" />
+                <span>Explorer nos templates</span>
               </Link>
               <Link
                 href="/services"

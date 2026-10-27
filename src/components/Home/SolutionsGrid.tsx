@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   ArrowRight,
   Sparkles,
+  LayoutGrid,
 } from 'lucide-react';
 
 interface SolutionCardProps {
@@ -129,13 +130,21 @@ export default function SolutionsGrid() {
           })}
         </div>
 
-        {/* Bottom Link to Full Services */}
-        <div className="mt-12 text-center">
+        {/* Bottom Links */}
+        <div className="mt-12 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/templates"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 shadow-lg shadow-primary-500/20 hover:opacity-95 transition-all"
+          >
+            <LayoutGrid className="size-4" />
+            <span>Explorer nos socles &amp; templates métiers</span>
+            <ArrowRight className="size-4" />
+          </Link>
           <Link
             href="/services"
             className="btn-outline text-xs sm:text-sm inline-flex items-center gap-2"
           >
-            <span>Consulter l’ensemble de nos services & méthodologie</span>
+            <span>Consulter l’ensemble de nos services</span>
             <ArrowRight className="size-4" />
           </Link>
         </div>

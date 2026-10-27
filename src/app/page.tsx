@@ -5,6 +5,7 @@ import Scroll from '@/components/ui/scroll';
 import Header from '@/components/Home/header';
 import NeedsSection from '@/components/Home/NeedsSection';
 import SolutionsGrid from '@/components/Home/SolutionsGrid';
+import TemplatesShowcase from '@/components/Home/TemplatesShowcase';
 import SectorSection from '@/components/Home/SectorSection';
 import FloticarShowcase from '@/components/Home/FloticarShowcase';
 import MethodologySection from '@/components/Home/MethodologySection';
@@ -26,6 +27,9 @@ export default function HomePage() {
 
       {/* Section 3 — Solutions : Les 6 piliers technologiques DevEvoke */}
       <SolutionsGrid />
+
+      {/* Section 3b — Socles & Templates : Accélérateurs prêts à l'emploi */}
+      <TemplatesShowcase />
 
       {/* Section 4 — Secteur Médico-Social : Les établissements accompagnés */}
       <SectorSection />

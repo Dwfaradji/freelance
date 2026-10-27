@@ -72,6 +72,18 @@ export default function Header() {
               </Link>
             </div>
 
+            {/* Quick link to templates under CTAs */}
+            <div className="pt-1 text-xs text-neutral-400 text-center lg:text-left">
+              <span>Besoin d’un démarrage rapide ? </span>
+              <Link
+                href="/templates"
+                className="text-primary-400 hover:text-primary-300 font-medium inline-flex items-center gap-1 transition-colors hover:underline"
+              >
+                <span>Explorer nos socles &amp; templates métiers</span>
+                <ArrowRight className="size-3" />
+              </Link>
+            </div>
+
             {/* Reassurance Trust Markers */}
             <div className="pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-neutral-300 text-left">
               <div className="flex items-center gap-2">
