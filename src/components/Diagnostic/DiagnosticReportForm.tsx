@@ -356,8 +356,19 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
 
           <button
             type="submit"
-            disabled={isSending}
-            className="btn-primary w-full py-3.5 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-500/20 cursor-pointer"
+            disabled={!consentReport || isSending}
+            className={`btn-primary w-full py-3.5 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-500/20 transition-all duration-200 ${
+              !consentReport
+                ? 'opacity-40 grayscale cursor-not-allowed pointer-events-none'
+                : isSending
+                ? 'opacity-70 cursor-wait'
+                : 'cursor-pointer'
+            }`}
+            title={
+              !consentReport
+                ? 'Veuillez accepter la transmission du rapport pour continuer'
+                : undefined
+            }
           >
             {isSending ? (
               <span>Transmission en cours...</span>

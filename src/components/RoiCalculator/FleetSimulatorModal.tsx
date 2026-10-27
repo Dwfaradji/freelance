@@ -1647,8 +1647,19 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
                     <div className="pt-2 flex items-center gap-3">
                       <button
                         type="submit"
-                        disabled={isSendingDemo}
-                        className="flex-1 py-3 rounded-xl bg-secondary-500 hover:bg-secondary-400 disabled:opacity-50 text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-secondary-500/20 cursor-pointer flex items-center justify-center gap-2"
+                        disabled={!demoConsent || isSendingDemo}
+                        className={`flex-1 py-3 rounded-xl bg-secondary-500 hover:bg-secondary-400 text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-secondary-500/20 flex items-center justify-center gap-2 duration-200 ${
+                          !demoConsent
+                            ? 'opacity-40 grayscale cursor-not-allowed pointer-events-none'
+                            : isSendingDemo
+                            ? 'opacity-70 cursor-wait'
+                            : 'cursor-pointer hover:shadow-secondary-500/30'
+                        }`}
+                        title={
+                          !demoConsent
+                            ? "Veuillez accepter d'être recontacté(e) pour planifier votre démonstration"
+                            : undefined
+                        }
                       >
                         {isSendingDemo ? (
                           <span>Envoi en cours...</span>

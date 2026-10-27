@@ -46,6 +46,7 @@ const Contact = ({
   const [buttonSendMsg, setButtonSendMsg] = React.useState(true);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [referenceId, setReferenceId] = React.useState<string | null>(null);
+  const [isRgpdConsentChecked, setIsRgpdConsentChecked] = React.useState(false);
 
   const {
     register,
@@ -66,7 +67,7 @@ const Contact = ({
       budget: 'En cours de cadrage',
       delay: '1 à 3 mois',
       content: prefilledMessage,
-      rgpdConsent: true,
+      rgpdConsent: false,
       website: '',
     },
   });
@@ -81,6 +82,7 @@ const Contact = ({
         setSendText('Votre demande de projet a bien été transmise à notre équipe.');
         setSendMsg(true);
         setButtonSendMsg(false);
+        setIsRgpdConsentChecked(false);
         reset();
       } else {
         window.location.hash = 'Erreur_send';
@@ -390,12 +392,16 @@ const Contact = ({
                 <div className="flex items-start gap-2.5 pt-1">
                   <input
                     type="checkbox"
-                    defaultChecked={false}
+                    checked={isRgpdConsentChecked}
                     id="rgpd"
                     {...register('rgpdConsent', {
                       required: 'Veuillez accepter les conditions pour transmettre votre demande',
                     })}
-                    className="mt-1 rounded bg-white/5 border-white/20 text-primary-500 focus:ring-primary-500"
+                    onChange={(e) => {
+                      setIsRgpdConsentChecked(e.target.checked);
+                      register('rgpdConsent').onChange(e);
+                    }}
+                    className="mt-1 rounded bg-white/5 border-white/20 text-primary-500 focus:ring-primary-500 cursor-pointer"
                   />
                   <label htmlFor="rgpd" className="text-xs text-muted leading-relaxed">
                     En soumettant ce formulaire, j’accepte que les informations saisies soient exploitées par DevEvoke pour échanger sur mon projet médico-social. Données confidentielles, non cédées à des tiers.
@@ -413,10 +419,19 @@ const Contact = ({
                 {buttonSendMsg && (
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className={`btn-primary w-full sm:w-auto px-8 py-3.5 text-sm font-semibold flex items-center justify-center gap-2 ${
-                      isSubmitting ? 'opacity-70 cursor-wait' : ''
+                    disabled={!isRgpdConsentChecked || isSubmitting}
+                    className={`btn-primary w-full sm:w-auto px-8 py-3.5 text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 ${
+                      !isRgpdConsentChecked
+                        ? 'opacity-40 grayscale cursor-not-allowed pointer-events-none'
+                        : isSubmitting
+                        ? 'opacity-70 cursor-wait'
+                        : 'cursor-pointer hover:shadow-lg hover:shadow-primary-500/25'
                     }`}
+                    title={
+                      !isRgpdConsentChecked
+                        ? 'Veuillez cocher la case de consentement pour transmettre votre projet'
+                        : undefined
+                    }
                   >
                     {isSubmitting ? (
                       <span>Envoi en cours...</span>
