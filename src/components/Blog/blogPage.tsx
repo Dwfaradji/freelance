@@ -1,6 +1,6 @@
 'use client';
 import React, { useMemo } from 'react';
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from '@/components/ui/Fade';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BlogProps } from '@/data/typeFile';

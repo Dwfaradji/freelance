@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import React from 'react';
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from '@/components/ui/Fade';
 
 interface Text {
   titleH1?: string;

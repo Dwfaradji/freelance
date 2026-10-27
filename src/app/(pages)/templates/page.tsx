@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import { articles } from '@/data/dataSlideDevis';
 import Template from '@/components/Template/template';
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from '@/components/ui/Fade';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 

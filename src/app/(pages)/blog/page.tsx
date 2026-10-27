@@ -3,7 +3,7 @@ import React from 'react';
 import BlogHeader from '@/components/Blog/blogHeader';
 import BlogsContainer from '@/components/Blog/blogsContainer';
 import Link from 'next/link';
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from '@/components/ui/Fade';
 
 const Page = () => {
   return (

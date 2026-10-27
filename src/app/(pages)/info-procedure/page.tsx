@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { pageInfosProcess } from '@/data/data';
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from '@/components/ui/Fade';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 

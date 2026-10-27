@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Contact from '@/components/Contact/contact';
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from '@/components/ui/Fade';
 
 const Page = () => {
   return (

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from '@/components/ui/Fade';
 import Link from 'next/link';
 
 import ServiceList from '@/components/Services/ServiceList';

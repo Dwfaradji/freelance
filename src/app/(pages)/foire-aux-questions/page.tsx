@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { HelpCircle, ArrowRight, ShieldCheck, Sparkles, Calendar, MessageSquare } from 'lucide-react';
 import PricingFAQ from '@/components/Pricing/pricingFAQ';
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from '@/components/ui/Fade';
 
 export default function FoireAuxQuestionsPage() {
   return (
