@@ -113,7 +113,7 @@ export function DemoInternalEmail({ data, referenceId }: DemoInternalProps) {
       {/* SECTION 3 : CONTEXTE */}
       <EmailCard title="CONTEXTE">
         <EmailFieldGroup>
-          <EmailField label="Page d'origine :" value="Page Démonstration (/demande-demo)" />
+          <EmailField label="Page d'origine :" value="Demande de Démonstration Floticar" />
           <EmailField
             label="Référence dossier :"
             value={<strong style={{ fontFamily: emailTokens.typography.monoFamily }}>{referenceId}</strong>}
@@ -153,7 +153,7 @@ ${data.role ? `- Fonction : ${data.role}\n` : ''}- Email : ${data.email}
 CONTEXTE
 - Référence : ${referenceId}
 - Date : ${formatDate(new Date())}
-- Page : /demande-demo
+- Origine : Démonstration Floticar
 
 Pour répondre, écrivez directement à : ${data.email}
 `.trim();

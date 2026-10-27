@@ -19,7 +19,12 @@ const PricingCTA = () => {
             <BarChart3 className="w-4 h-4" />
             <span>Faire le diagnostic gratuit (3 min)</span>
           </Link>
-          <Link href="/demande-demo" className="btn-outline inline-flex items-center gap-2">
+          <Link
+            href="https://floticar.com/demande-de-demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline inline-flex items-center gap-2"
+          >
             <Calendar className="w-4 h-4" />
             <span>Démonstration Floticar</span>
           </Link>

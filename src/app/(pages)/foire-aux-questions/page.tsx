@@ -69,7 +69,9 @@ export default function FoireAuxQuestionsPage() {
                 <ArrowRight className="size-4" />
               </Link>
               <Link
-                href="/demande-demo"
+                href="https://floticar.com/demande-de-demo"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-xs sm:text-sm transition-all"
               >
                 Demander une démo Floticar

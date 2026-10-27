@@ -32,7 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Outils & Diagnostic
     { url: `${baseUrl}/diagnostic-numerique`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/demande-demo`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.85 },
 
     // Services, Agence & Contact
     { url: `${baseUrl}/services`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },

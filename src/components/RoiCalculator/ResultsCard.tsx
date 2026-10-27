@@ -233,7 +233,9 @@ export default function ResultsCard({
       {/* CTA Buttons */}
       <div className="space-y-2.5 pt-4 border-t border-white/10">
         <Link
-          href="/demande-demo"
+          href="https://floticar.com/demande-de-demo"
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn-primary w-full py-3.5 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-500/20 cursor-pointer"
         >
           <span>Tester avec vos données réelles</span>

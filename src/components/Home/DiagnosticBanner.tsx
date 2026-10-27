@@ -64,7 +64,9 @@ export default function DiagnosticBanner() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/demande-demo"
+                href="https://floticar.com/demande-de-demo"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-outline w-full sm:w-auto lg:w-full py-3.5 text-center text-xs font-medium text-gray-300 hover:text-white"
               >
                 Demander une démonstration Floticar →

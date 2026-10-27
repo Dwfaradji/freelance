@@ -158,7 +158,9 @@ export default function FloticarCaseStudyPage() {
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/demande-demo"
+                href="https://floticar.com/demande-de-demo"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-sm hover:opacity-95 shadow-lg shadow-primary-500/20 transition-all flex items-center gap-2"
               >
                 <span>Demander une démo de 14 jours</span>
@@ -374,7 +376,9 @@ export default function FloticarCaseStudyPage() {
                 <ArrowRight className="size-4" />
               </Link>
               <Link
-                href="/demande-demo"
+                href="https://floticar.com/demande-de-demo"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-sm transition-all"
               >
                 Demander une démo de Floticar

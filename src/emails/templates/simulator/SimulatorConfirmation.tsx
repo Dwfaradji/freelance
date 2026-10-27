@@ -103,8 +103,8 @@ export function SimulatorConfirmationEmail({ data, referenceId }: SimulatorConfi
         Pour aller plus loin, l'équipe DevEvoke peut analyser votre situation plus précisément lors d'un échange personnalisé et vous présenter la solution Floticar sans aucun engagement.
       </EmailAlert>
 
-      <EmailButton href={`${emailTokens.brand.website}/demande-demo?ref=${referenceId}`} align="center">
-        Échanger avec DevEvoke
+      <EmailButton href="https://floticar.com/demande-de-demo" align="center">
+        Découvrir la démonstration Floticar
       </EmailButton>
 
       {/* Signature DevEvoke */}

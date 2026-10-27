@@ -376,7 +376,12 @@ export default function LogicielGestionVehiculesMedicoSocialPage() {
               Bénéficiez d'une démonstration personnalisée et testez gratuitement Floticar pendant 14 jours avec votre équipe.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/demande-demo" className="btn-primary text-base">
+              <Link
+                href="https://floticar.com/demande-de-demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-base"
+              >
                 Demander une démonstration de 14 jours
                 <ArrowRight className="size-4" />
               </Link>
