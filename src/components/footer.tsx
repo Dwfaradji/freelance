@@ -243,6 +243,17 @@ export default function Footer() {
             <Link href="/info-tarif" className="hover:text-white transition-colors py-1">
               Modalités Tarifaires
             </Link>
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('openCookiePreferences'));
+                }
+              }}
+              className="hover:text-white transition-colors py-1 cursor-pointer bg-transparent border-none text-xs text-neutral-400"
+            >
+              Gestion des cookies
+            </button>
           </div>
         </div>
       </div>

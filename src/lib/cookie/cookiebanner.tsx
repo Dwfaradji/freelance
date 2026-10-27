@@ -49,28 +49,10 @@ const CookieBanner: React.FC<CookieBannerProps> = ({
   const [isSettingsVisible, setIsSettingsVisible] = useState<boolean>(false);
   const [cookies, setCookies] = useState<Cookies>({
     necessary: true,
-    analytics: false,
+    analytics: true, // Suivi Google Analytics accepté par défaut
     marketing: false,
     preferences: false,
   });
-
-  useEffect(() => {
-    const cookieConsent = document.cookie.includes('cookieConsent=true');
-    if (!cookieConsent) {
-      setTimeout(() => setIsBannerVisible(true), config.delay);
-    } else {
-      // If already consented, parse preferences and apply them immediately
-      try {
-        const prefMatch = document.cookie.match(/cookiePreferences=([^;]+)/);
-        if (prefMatch) {
-          const savedCookies = JSON.parse(decodeURIComponent(prefMatch[1]));
-          applyConsent(savedCookies);
-        }
-      } catch (e) {
-        // Ignorer les erreurs de parsing
-      }
-    }
-  }, [config.delay]);
 
   const applyConsent = (preferences: Cookies) => {
     if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
@@ -83,20 +65,65 @@ const CookieBanner: React.FC<CookieBannerProps> = ({
     }
   };
 
+  useEffect(() => {
+    const hasRejected = document.cookie.includes('cookieConsent=false');
+    const prefMatch = document.cookie.match(/cookiePreferences=([^;]+)/);
+
+    if (prefMatch) {
+      try {
+        const savedCookies = JSON.parse(decodeURIComponent(prefMatch[1]));
+        setCookies(savedCookies);
+        applyConsent(savedCookies);
+      } catch (e) {
+        // Ignorer les erreurs de parsing
+      }
+    } else if (hasRejected) {
+      const rejectedState = { necessary: true, analytics: false, marketing: false, preferences: false };
+      setCookies(rejectedState);
+      applyConsent(rejectedState);
+    } else {
+      // Par défaut, suivi Google Analytics actif dès la navigation
+      applyConsent({ necessary: true, analytics: true, marketing: false, preferences: false });
+    }
+
+    const hasAnswered = document.cookie.includes('cookieConsent=true') || hasRejected;
+    if (!hasAnswered) {
+      const timer = setTimeout(() => setIsBannerVisible(true), config.delay);
+      return () => clearTimeout(timer);
+    }
+  }, [config.delay]);
+
+  // Permet de rouvrir le panneau depuis le footer ou un lien de la politique de confidentialité
+  useEffect(() => {
+    const handleOpenBanner = () => {
+      setIsBannerVisible(true);
+      setIsSettingsVisible(true);
+    };
+    window.addEventListener('openCookiePreferences', handleOpenBanner);
+    return () => window.removeEventListener('openCookiePreferences', handleOpenBanner);
+  }, []);
+
   const handleAccept = () => {
-    document.cookie = `cookieConsent=true; max-age=${config.expires * 24 * 60 * 60}`;
+    const expiresDays = config.expires || 365;
+    const maxAge = expiresDays * 24 * 60 * 60;
+    document.cookie = `cookieConsent=true; max-age=${maxAge}; path=/; SameSite=Lax`;
     document.cookie = `cookiePreferences=${encodeURIComponent(
       JSON.stringify(cookies),
-    )}; max-age=${config.expires * 24 * 60 * 60}`;
+    )}; max-age=${maxAge}; path=/; SameSite=Lax`;
     applyConsent(cookies);
     setIsBannerVisible(false);
   };
 
   const handleReject = () => {
-    document.cookie = 'cookieConsent=false; max-age=-1';
-    document.cookie = 'cookiePreferences=; max-age=-1';
-    // Par défaut "denied", on s'assure que tout reste bloqué
-    applyConsent({ necessary: true, analytics: false, marketing: false, preferences: false });
+    const expiresDays = config.expires || 365;
+    const maxAge = expiresDays * 24 * 60 * 60;
+    const deactivatedState = { necessary: true, analytics: false, marketing: false, preferences: false };
+    document.cookie = `cookieConsent=false; max-age=${maxAge}; path=/; SameSite=Lax`;
+    document.cookie = `cookiePreferences=${encodeURIComponent(
+      JSON.stringify(deactivatedState),
+    )}; max-age=${maxAge}; path=/; SameSite=Lax`;
+    setCookies(deactivatedState);
+    applyConsent(deactivatedState);
     setIsBannerVisible(false);
   };
 
@@ -179,22 +206,22 @@ const CookieBanner: React.FC<CookieBannerProps> = ({
             <div className="flex flex-col gap-3">
               <button
                 onClick={handleAccept}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 hover:opacity-90 text-white font-bold text-sm transition-opacity shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 hover:opacity-90 text-white font-bold text-sm transition-opacity shadow-[0_0_20px_rgba(59,130,246,0.3)] cursor-pointer"
               >
-                {config.acceptBtnLabel}
+                {isSettingsVisible ? "Enregistrer mes choix" : config.acceptBtnLabel}
               </button>
               
               <div className="flex gap-3">
                 <button
                   onClick={toggleSettings}
-                  className="flex-1 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 font-semibold text-xs transition-colors"
+                  className="flex-1 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 font-semibold text-xs transition-colors cursor-pointer"
                 >
-                  {isSettingsVisible ? "Masquer" : config.settingsBtnLabel}
+                  {isSettingsVisible ? "Masquer les options" : config.settingsBtnLabel}
                 </button>
                 {config.showDeclineBtn && (
                   <button
                     onClick={handleReject}
-                    className="flex-1 py-2.5 rounded-xl bg-transparent hover:bg-white/5 border border-white/5 text-gray-400 hover:text-gray-200 font-semibold text-xs transition-colors"
+                    className="flex-1 py-2.5 rounded-xl bg-transparent hover:bg-white/5 border border-white/5 text-gray-400 hover:text-gray-200 font-semibold text-xs transition-colors cursor-pointer"
                   >
                     {config.declineInfoBtnLabel}
                   </button>
