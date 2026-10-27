@@ -31,22 +31,22 @@ const AboutHeader = () => {
               </p>
               
               {/* Engagements Clés */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="glass p-4 rounded-2xl border border-white/5 border-l-primary-500 border-l-4">
-                  <div className="text-2xl font-bold text-white mb-1">Sur-Mesure</div>
-                  <div className="text-xs text-muted-light">Calqué sur vos processus réels</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-8">
+                <div className="glass p-3.5 sm:p-4 rounded-2xl border border-white/5 border-l-primary-500 border-l-4">
+                  <div className="text-base sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">Sur-Mesure</div>
+                  <div className="text-[11px] sm:text-xs text-muted-light">Calqué sur vos processus réels</div>
                 </div>
-                <div className="glass p-4 rounded-2xl border border-white/5 border-l-secondary-500 border-l-4">
-                  <div className="text-2xl font-bold text-white mb-1">100% RGPD</div>
-                  <div className="text-xs text-muted-light">Sécurité et conformité CNIL</div>
+                <div className="glass p-3.5 sm:p-4 rounded-2xl border border-white/5 border-l-secondary-500 border-l-4">
+                  <div className="text-base sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">100% RGPD</div>
+                  <div className="text-[11px] sm:text-xs text-muted-light">Sécurité et conformité CNIL</div>
                 </div>
-                <div className="glass p-4 rounded-2xl border border-white/5 border-l-emerald-500 border-l-4">
-                  <div className="text-2xl font-bold text-white mb-1">France</div>
-                  <div className="text-xs text-muted-light">Hébergement cloud souverain</div>
+                <div className="glass p-3.5 sm:p-4 rounded-2xl border border-white/5 border-l-emerald-500 border-l-4">
+                  <div className="text-base sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">France</div>
+                  <div className="text-[11px] sm:text-xs text-muted-light">Hébergement cloud souverain</div>
                 </div>
-                <div className="glass p-4 rounded-2xl border border-white/5 border-l-sky-500 border-l-4">
-                  <div className="text-2xl font-bold text-white mb-1">Proximité</div>
-                  <div className="text-xs text-muted-light">Interlocuteur direct & agilité</div>
+                <div className="glass p-3.5 sm:p-4 rounded-2xl border border-white/5 border-l-sky-500 border-l-4">
+                  <div className="text-base sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">Proximité</div>
+                  <div className="text-[11px] sm:text-xs text-muted-light">Interlocuteur direct & agilité</div>
                 </div>
               </div>
             </Fade>
@@ -61,11 +61,11 @@ const AboutHeader = () => {
                   alt="Atelier collaboratif de conception numérique DevEvoke avec une direction d'association médico-sociale"
                   width={1000}
                   height={750}
-                  className="w-full h-[420px] sm:h-[500px] object-cover object-center transform transition-transform duration-700 group-hover:scale-105 brightness-[0.95] contrast-[1.05]"
+                  className="w-full h-[260px] sm:h-[500px] object-cover object-center transform transition-transform duration-700 group-hover:scale-105 brightness-[0.95] contrast-[1.05]"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/80 via-transparent to-transparent opacity-50" />
-                <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-neutral-900/80 border border-white/10 rounded-2xl p-4">
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 backdrop-blur-md bg-neutral-900/80 border border-white/10 rounded-2xl p-3 sm:p-4">
                   <span className="text-xs font-bold text-white block">Immersion terrain & co-conception</span>
                   <p className="text-[11px] text-neutral-300">
                     Chaque solution est imaginée avec vos professionnels pour garantir une adoption naturelle.

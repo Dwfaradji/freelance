@@ -15,6 +15,7 @@ import {
   ArrowRight,
   Sparkles,
   Building2,
+  LayoutGrid,
 } from 'lucide-react';
 
 const solutionItems = [
@@ -53,6 +54,12 @@ const solutionItems = [
     desc: 'Serveurs sécurisés ISO 27001 en France et conformité RGPD.',
     href: '/securite-et-conformite',
     icon: ShieldCheck,
+  },
+  {
+    title: 'Socles & Templates Métiers',
+    desc: 'Accélérateurs de déploiement personnalisables sous Next.js.',
+    href: '/templates',
+    icon: LayoutGrid,
   },
 ];
 
@@ -119,7 +126,7 @@ export default function Navbar() {
           <Link
             href="/"
             aria-label="Retour à l'accueil de DevEvoke"
-            className="relative z-10 shrink-0 flex items-center"
+            className="relative z-10 shrink-0 flex items-center group"
           >
             <ImportLogo displayColor="colorS" />
           </Link>
@@ -294,21 +301,21 @@ export default function Navbar() {
             aria-label={openMenu ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'}
             aria-expanded={openMenu}
             onClick={() => setOpenMenu(!openMenu)}
-            className="relative z-10 flex size-10 flex-col items-center justify-center gap-[5px] rounded-lg lg:hidden text-white hover:bg-white/5"
+            className="relative z-50 flex size-11 min-h-[44px] min-w-[44px] flex-col items-center justify-center gap-[6px] rounded-xl lg:hidden text-white bg-white/5 border border-white/10 hover:bg-white/10 active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
           >
             <span
-              className={`h-0.5 w-5 bg-white transition-all duration-300 ${
-                openMenu ? 'translate-y-[7px] rotate-45' : ''
+              className={`h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${
+                openMenu ? 'translate-y-[8px] rotate-45' : ''
               }`}
             />
             <span
-              className={`h-0.5 w-5 bg-white transition-all duration-300 ${
-                openMenu ? 'opacity-0' : ''
+              className={`h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${
+                openMenu ? 'opacity-0 scale-x-0' : ''
               }`}
             />
             <span
-              className={`h-0.5 w-5 bg-white transition-all duration-300 ${
-                openMenu ? '-translate-y-[7px] -rotate-45' : ''
+              className={`h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${
+                openMenu ? '-translate-y-[8px] -rotate-45' : ''
               }`}
             />
           </button>
@@ -317,86 +324,75 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-3xl transition-all duration-300 lg:hidden overflow-y-auto pt-24 pb-12 px-6 ${
+        className={`fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-3xl transition-all duration-300 lg:hidden overflow-y-auto pt-[max(5.5rem,calc(env(safe-area-inset-top)+4.5rem))] pb-[max(2.5rem,calc(env(safe-area-inset-bottom)+1.5rem))] px-5 sm:px-8 ${
           openMenu ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex flex-col space-y-6 max-w-sm mx-auto">
+        <div className="flex flex-col space-y-6 max-w-md mx-auto">
           {/* Main Links */}
-          <div className="space-y-1 border-b border-white/10 pb-6">
-            <Link
-              href="/services"
-              className="block py-2 text-xl font-bold text-white hover:text-primary-400"
-            >
-              Nos Expertises & Services
-            </Link>
-            <Link
-              href="/medico-social"
-              className="block py-2 text-xl font-bold text-white hover:text-primary-400"
-            >
-              Pôle Médico-Social
-            </Link>
-            <Link
-              href="/realisations"
-              className="block py-2 text-xl font-bold text-white hover:text-primary-400"
-            >
-              Réalisations & Études de Cas
-            </Link>
-            <Link
-              href="/diagnostic-numerique"
-              className="block py-2 text-xl font-bold text-white hover:text-primary-400"
-            >
-              Diagnostic Numérique Gratuit
-            </Link>
-            <Link
-              href="/blog"
-              className="block py-2 text-xl font-bold text-white hover:text-primary-400"
-            >
-              Ressources & Guides
-            </Link>
-            <Link
-              href="/a-propos"
-              className="block py-2 text-xl font-bold text-white hover:text-primary-400"
-            >
-              L’Agence & Fondateur
-            </Link>
+          <div className="space-y-1.5 border-b border-white/10 pb-5">
+            {[
+              { href: '/services', label: 'Nos Expertises & Services' },
+              { href: '/medico-social', label: 'Pôle Médico-Social' },
+              { href: '/realisations', label: 'Réalisations & Études de Cas' },
+              { href: '/diagnostic-numerique', label: 'Diagnostic Numérique Gratuit' },
+              { href: '/blog', label: 'Ressources & Guides' },
+              { href: '/a-propos', label: 'L’Agence & Fondateur' },
+            ].map((item) => {
+              const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-base sm:text-lg font-semibold transition-all active:scale-[0.99] ${
+                    isActive
+                      ? 'bg-primary-500/15 text-primary-300 border border-primary-500/30'
+                      : 'text-neutral-200 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <ArrowRight className={`size-4 transition-transform ${isActive ? 'text-primary-400 translate-x-0.5' : 'text-neutral-500'}`} />
+                </Link>
+              );
+            })}
           </div>
 
           {/* Quick Solutions Submenu */}
-          <div className="space-y-2">
-            <span className="text-xs uppercase tracking-wider text-neutral-400 font-semibold block mb-2">
+          <div className="space-y-2.5">
+            <span className="text-[11px] uppercase tracking-wider text-neutral-400 font-bold block px-1">
               Solutions directes :
             </span>
-            <div className="grid grid-cols-1 gap-2 text-sm text-neutral-300">
-              <Link href="/developpement-web" className="py-1 hover:text-primary-300">
-                • Développement Web & Plateformes
-              </Link>
-              <Link href="/application-mobile" className="py-1 hover:text-primary-300">
-                • Applications Mobiles & Nomades
-              </Link>
-              <Link href="/developpement-saas" className="py-1 hover:text-primary-300">
-                • Conception de Plateformes SaaS
-              </Link>
-              <Link href="/solutions-metier" className="py-1 hover:text-primary-300">
-                • Logiciels Métier Sur-Mesure
-              </Link>
-              <Link href="/automatisation" className="py-1 hover:text-primary-300">
-                • Automatisation & Synchronisation API
-              </Link>
-              <Link href="/securite-et-conformite" className="py-1 hover:text-primary-300">
-                • Sécurité & Hébergement Souverain
-              </Link>
-              <Link href="/templates" className="py-1 hover:text-primary-300">
-                • Socles & Templates Métiers
-              </Link>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+              {solutionItems.map((sol) => {
+                const SolIcon = sol.icon;
+                const isSolActive = pathname === sol.href || pathname.startsWith(sol.href);
+                return (
+                  <Link
+                    key={sol.href}
+                    href={sol.href}
+                    className={`flex items-center gap-3 p-2.5 rounded-xl transition-all active:bg-white/10 ${
+                      isSolActive
+                        ? 'bg-primary-500/15 text-primary-300 border border-primary-500/30'
+                        : 'text-neutral-300 hover:text-white hover:bg-white/5 border border-transparent'
+                    }`}
+                  >
+                    <div className="size-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary-400 shrink-0">
+                      <SolIcon className="size-4" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-medium leading-tight">
+                      {sol.title}
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
           {/* Mobile CTA */}
-          <div className="pt-4">
+          <div className="pt-2">
             <Link
               href="/contact"
-              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary-500/25"
+              className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl shadow-primary-500/25 active:scale-[0.98] transition-transform"
             >
               <span>Parler de votre projet</span>
               <ArrowRight className="size-4" />

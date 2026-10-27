@@ -132,7 +132,7 @@ export default function NeedsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className={`group relative flex flex-col justify-between rounded-2xl p-7 border transition-all duration-300 ${
+                className={`group relative flex flex-col justify-between rounded-2xl p-5 sm:p-7 border transition-all duration-300 ${
                   item.highlight
                     ? 'bg-gradient-to-b from-primary-950/40 via-surface to-surface border-primary-500/40 shadow-xl shadow-primary-950/30 hover:border-primary-400'
                     : 'glass border-white/10 hover:border-white/20 hover:bg-white/[0.04]'
@@ -182,18 +182,18 @@ export default function NeedsSection() {
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-16 p-8 rounded-2xl glass border border-primary-500/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-12 sm:mt-16 p-5 sm:p-8 rounded-2xl glass border border-primary-500/20 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center sm:text-left">
-            <h4 className="text-lg font-bold text-white">
+            <h4 className="text-base sm:text-lg font-bold text-white">
               Votre besoin spécifique ne figure pas dans cette liste ?
             </h4>
-            <p className="text-sm text-muted">
+            <p className="text-xs sm:text-sm text-muted">
               Nous étudions l’organisation et les contraintes de votre entreprise ou association pour concevoir une réponse technique adaptée.
             </p>
           </div>
           <Link
             href="/contact"
-            className="btn-primary shrink-0 px-6 py-3 text-sm font-semibold whitespace-nowrap"
+            className="btn-primary w-full sm:w-auto shrink-0 px-6 py-3.5 text-sm font-semibold text-center"
           >
             Échanger avec le fondateur
           </Link>

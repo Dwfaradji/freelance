@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og';
+import fs from 'fs';
+import path from 'path';
 
 export const size = {
   width: 64,
@@ -7,6 +9,9 @@ export const size = {
 export const contentType = 'image/png';
 
 export default function Icon() {
+  const logoData = fs.readFileSync(path.join(process.cwd(), 'public/icon.png'));
+  const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
+
   return new ImageResponse(
     (
       <div
@@ -16,23 +21,21 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #0f172a 0%, #030712 100%)', // Dark glass effect
-          borderRadius: '16px', // Rounded corners
-          border: '4px solid #3b82f6', // Neon blue border
+          background: '#030712',
+          borderRadius: '14px',
+          overflow: 'hidden',
+          padding: '6px',
         }}
       >
-        <div
+        <img
+          src={logoBase64}
+          alt="DevEvoke"
           style={{
-            color: '#22d3ee', // Neon cyan letter
-            fontSize: 42,
-            fontWeight: 900,
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            marginTop: '2px', // Optical alignment
-            marginLeft: '2px',
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
           }}
-        >
-          D
-        </div>
+        />
       </div>
     ),
     {

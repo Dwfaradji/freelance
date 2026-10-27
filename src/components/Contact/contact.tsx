@@ -115,9 +115,9 @@ const Contact = ({
   };
 
   const inputClasses =
-    'w-full appearance-none rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-primary-500 focus:bg-white/[0.05] focus:outline-none focus:ring-1 focus:ring-primary-500 transition-all';
+    'w-full appearance-none rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 min-h-[44px] text-base sm:text-sm text-white placeholder:text-gray-500 focus:border-primary-500 focus:bg-white/[0.05] focus:outline-none focus:ring-1 focus:ring-primary-500 transition-all';
   const selectClasses =
-    'w-full rounded-xl bg-surface border border-white/10 px-4 py-3 text-sm text-white focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 transition-all';
+    'w-full rounded-xl bg-surface border border-white/10 px-4 py-3 min-h-[44px] text-base sm:text-sm text-white focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 transition-all';
 
   return (
     <Fade cascade triggerOnce>
@@ -285,6 +285,7 @@ const Contact = ({
                     className={inputClasses}
                     placeholder="direction@votre-association.fr"
                     type="email"
+                    inputMode="email"
                     id="email"
                     {...register('email', {
                       required: 'L’email professionnel est requis',
@@ -309,6 +310,7 @@ const Contact = ({
                     className={inputClasses}
                     placeholder="06 12 34 56 78"
                     type="tel"
+                    inputMode="tel"
                     id="phone"
                     maxLength={14}
                     {...register('phone')}
@@ -389,7 +391,7 @@ const Contact = ({
 
               {/* RGPD Checkbox */}
               <div>
-                <div className="flex items-start gap-2.5 pt-1">
+                <label htmlFor="rgpd" className="min-h-[44px] flex items-start gap-3 pt-1 cursor-pointer select-none">
                   <input
                     type="checkbox"
                     checked={isRgpdConsentChecked}
@@ -401,12 +403,12 @@ const Contact = ({
                       setIsRgpdConsentChecked(e.target.checked);
                       register('rgpdConsent').onChange(e);
                     }}
-                    className="mt-1 rounded bg-white/5 border-white/20 text-primary-500 focus:ring-primary-500 cursor-pointer"
+                    className="mt-1 size-4 rounded bg-white/5 border-white/20 text-primary-500 focus:ring-primary-500 cursor-pointer shrink-0"
                   />
-                  <label htmlFor="rgpd" className="text-xs text-muted leading-relaxed">
+                  <span className="text-xs text-muted leading-relaxed">
                     En soumettant ce formulaire, j’accepte que les informations saisies soient exploitées par DevEvoke pour échanger sur mon projet médico-social. Données confidentielles, non cédées à des tiers.
-                  </label>
-                </div>
+                  </span>
+                </label>
                 {errors.rgpdConsent && (
                   <span className="text-red-400 text-xs mt-1 block">
                     {errors.rgpdConsent.message || 'Ce champ est requis'}

@@ -247,7 +247,7 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="Ex : Pierre"
-                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
             </div>
             <div>
@@ -259,7 +259,7 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 placeholder="Ex : Dubois"
-                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
             </div>
           </div>
@@ -275,7 +275,7 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
                 value={organization}
                 onChange={(e) => setOrganization(e.target.value)}
                 placeholder="Ex : Association Solidarité Autisme"
-                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
             </div>
             <div>
@@ -287,7 +287,7 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
                 placeholder="Ex : Directeur Général, DSI, Cadre..."
-                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
             </div>
           </div>
@@ -300,10 +300,11 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
               <input
                 required
                 type="email"
+                inputMode="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="p.dubois@association-exemple.fr"
-                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
             </div>
             <div>
@@ -312,37 +313,38 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
               </label>
               <input
                 type="tel"
+                inputMode="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Ex : 06 12 34 56 78"
-                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2 text-xs sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
             </div>
           </div>
 
           {/* Cases de consentement */}
-          <div className="space-y-2 pt-2 border-t border-white/5 text-[11px] text-neutral-300">
-            <label className="flex items-start gap-2.5 cursor-pointer">
+          <div className="space-y-2 pt-2 border-t border-white/5 text-xs text-neutral-300">
+            <label className="min-h-[44px] flex items-start gap-3 cursor-pointer select-none">
               <input
                 required
                 type="checkbox"
                 checked={consentReport}
                 onChange={(e) => setConsentReport(e.target.checked)}
-                className="mt-0.5 rounded border-white/20 text-primary-500 focus:ring-primary-400 cursor-pointer"
+                className="mt-1 size-4 rounded border-white/20 text-primary-500 focus:ring-primary-400 cursor-pointer shrink-0"
               />
-              <span>
+              <span className="leading-relaxed">
                 J’accepte que les données de mon diagnostic soient transmises à DevEvoke afin de recevoir mon rapport d'évaluation personnalisé par email. *
               </span>
             </label>
 
-            <label className="flex items-start gap-2.5 cursor-pointer text-neutral-400">
+            <label className="min-h-[44px] flex items-start gap-3 cursor-pointer select-none text-neutral-400">
               <input
                 type="checkbox"
                 checked={consentNewsletter}
                 onChange={(e) => setConsentNewsletter(e.target.checked)}
-                className="mt-0.5 rounded border-white/20 text-primary-500 focus:ring-primary-400 cursor-pointer"
+                className="mt-1 size-4 rounded border-white/20 text-primary-500 focus:ring-primary-400 cursor-pointer shrink-0"
               />
-              <span>
+              <span className="leading-relaxed">
                 (Optionnel) J’accepte de recevoir des retours d’expérience et conseils de DevEvoke sur la modernisation du secteur médico-social.
               </span>
             </label>

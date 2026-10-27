@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function SecuriteConformitePage() {
   return (
-    <main className="min-h-screen pt-28 pb-24 relative overflow-hidden">
+    <div className="min-h-screen pt-8 sm:pt-20 pb-16 sm:pb-24 relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[500px] bg-primary-600/10 blur-[140px] pointer-events-none rounded-full" />
 
@@ -195,6 +195,6 @@ export default function SecuriteConformitePage() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

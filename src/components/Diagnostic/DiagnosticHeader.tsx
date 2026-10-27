@@ -30,7 +30,7 @@ export default function DiagnosticHeader({
   ];
 
   return (
-    <header className="px-5 sm:px-8 py-4 border-b border-white/10 bg-neutral-900/95 backdrop-blur-md shrink-0 flex flex-col gap-3 relative z-20">
+    <header className="px-4 sm:px-8 pt-[max(1rem,env(safe-area-inset-top))] pb-3.5 border-b border-white/10 bg-neutral-900/95 backdrop-blur-md shrink-0 flex flex-col gap-3 relative z-20">
       <div className="flex items-center justify-between gap-4">
         {/* Brand & Module title */}
         <div className="flex items-center gap-2.5">
@@ -80,7 +80,7 @@ export default function DiagnosticHeader({
             type="button"
             onClick={onCloseRequest}
             aria-label="Fermer le diagnostic"
-            className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-400 hover:text-white flex items-center justify-center transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+            className="size-11 min-h-[44px] min-w-[44px] rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-400 hover:text-white flex items-center justify-center transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
           >
             <X className="w-4 h-4" />
           </button>

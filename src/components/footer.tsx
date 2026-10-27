@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '@/images/logocv.svg';
+import logo from '@/images/logo.webp';
 import { ArrowRight, ShieldCheck, Mail, MapPin } from 'lucide-react';
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -26,23 +26,28 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-24 border-t border-white/10 bg-neutral-950 text-neutral-400">
+    <footer className="relative mt-12 sm:mt-24 border-t border-white/10 bg-neutral-950 text-neutral-400">
       {/* Subtle top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
 
       {/* Main Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 mb-10 sm:mb-16">
           {/* Brand Col */}
           <div className="lg:col-span-4 space-y-5">
-            <Link href="/" aria-label="DevEvoke" className="inline-block">
-              <Image
-                src={logo}
-                alt="DevEvoke Logo"
-                width={130}
-                height={42}
-                className="opacity-95 hover:opacity-100 transition-opacity"
-              />
+            <Link href="/" aria-label="DevEvoke" className="inline-flex items-center gap-3 group">
+              <div className="relative size-10 rounded-xl overflow-hidden shadow-md shadow-primary-500/10 shrink-0 border border-white/10 bg-neutral-900/80 p-1 group-hover:scale-105 group-hover:border-primary-500/30 transition-all duration-300">
+                <Image
+                  src={logo}
+                  alt="DevEvoke Logo"
+                  width={40}
+                  height={40}
+                  className="size-full object-contain"
+                />
+              </div>
+              <span className="text-xl font-black tracking-tight text-white flex items-center">
+                Dev<span className="text-primary-400">Evoke</span>
+              </span>
             </Link>
             <p className="text-sm text-neutral-400 leading-relaxed max-w-sm">
               DevEvoke est une agence digitale française spécialisée dans la conception de solutions logicielles et numériques sur-mesure : développement web Next.js, applications mobiles nomades, plateformes SaaS et automatisation. Ancrage local à Perpignan (Occitanie) et accompagnement partout en France.
@@ -218,24 +223,24 @@ export default function Footer() {
         </div>
 
         {/* Bottom Banner with Hosting & Legal */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+        <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 text-center sm:text-left">
           <div>
             &copy; {currentYear} <span className="text-neutral-300 font-medium">DevEvoke</span> — Agence digitale & solutions métier sur-mesure (Perpignan, Occitanie & France). Hébergement souverain ISO 27001 en France.
           </div>
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            <Link href="/mentions-legal" className="hover:text-white transition-colors">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 sm:gap-x-6 gap-y-2">
+            <Link href="/mentions-legal" className="hover:text-white transition-colors py-1">
               Mentions Légales
             </Link>
-            <Link href="/politique-confidentialite" className="hover:text-white transition-colors">
+            <Link href="/politique-confidentialite" className="hover:text-white transition-colors py-1">
               Confidentialité & RGPD
             </Link>
-            <Link href="/cgv" className="hover:text-white transition-colors">
+            <Link href="/cgv" className="hover:text-white transition-colors py-1">
               CGV
             </Link>
-            <Link href="/securite-et-conformite" className="hover:text-white transition-colors">
+            <Link href="/securite-et-conformite" className="hover:text-white transition-colors py-1">
               Sécurité & Conformité
             </Link>
-            <Link href="/info-tarif" className="hover:text-white transition-colors">
+            <Link href="/info-tarif" className="hover:text-white transition-colors py-1">
               Modalités Tarifaires
             </Link>
           </div>

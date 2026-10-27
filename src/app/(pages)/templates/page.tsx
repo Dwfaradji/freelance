@@ -21,7 +21,7 @@ const Page = () => {
   return (
     <div className="min-h-screen pb-24">
       {/* Fil d'Ariane SEO */}
-      <nav aria-label="Fil d'Ariane" className="pt-24 pb-2 text-sm text-neutral-400 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <nav aria-label="Fil d'Ariane" className="pt-6 sm:pt-10 pb-2 text-xs sm:text-sm text-neutral-400 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ol className="flex items-center gap-2">
           <li>
             <Link href="/" className="hover:text-white transition-colors">
@@ -39,14 +39,14 @@ const Page = () => {
         </ol>
       </nav>
 
-      <header className="mx-auto mb-12 text-center mt-6 px-4 relative z-10">
+      <header className="mx-auto mb-10 sm:mb-12 text-center mt-4 sm:mt-6 px-4 relative z-10">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
-          <span className="section-label mb-4 inline-block">Socles & Architectures</span>
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <span className="section-label mb-3 sm:mb-4 inline-block">Socles & Architectures</span>
+          <h1 className="mb-4 sm:mb-6 text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
             Socles Numériques <span className="text-highlight">Métiers</span>
           </h1>
 
-          <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto mb-4">
+          <p className="text-sm sm:text-lg text-muted leading-relaxed max-w-3xl mx-auto mb-4">
             Découvrez nos modèles et socles pré-configurés pour le secteur médico-social et sanitaire (EHPAD, résidences autonomie, coordination de soins, services à domicile). Accélérez votre déploiement tout en assurant une conformité immédiate.
           </p>
         </Fade>
@@ -59,7 +59,7 @@ const Page = () => {
             <button
               key={index}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${
+              className={`px-4 sm:px-5 py-2 sm:py-2.5 min-h-[40px] rounded-full text-xs sm:text-sm font-medium transition-all duration-300 border cursor-pointer ${
                 activeCategory === cat
                   ? 'bg-primary-500 text-white border-primary-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]'
                   : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white'

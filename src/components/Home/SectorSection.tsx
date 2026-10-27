@@ -68,25 +68,25 @@ const otherEstablishments = [
 
 export default function SectorSection() {
   return (
-    <section className="py-28 bg-neutral-900/60 border-t border-white/5 relative">
+    <section className="py-12 sm:py-20 lg:py-28 bg-neutral-900/60 border-t border-white/5 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <span className="section-label">
             <Building2 className="size-3.5" />
             Pôle Sectoriel d’Excellence
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 sm:mb-5 leading-tight">
             Une expertise éprouvée dans le médico-social & associatif
           </h2>
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
+          <p className="text-sm sm:text-lg text-neutral-300 leading-relaxed">
             Parce que les contraintes humaines et réglementaires du médico-social exigent une rigueur d’ingénierie absolue, DevEvoke y a développé un savoir-faire approfondi pour simplifier le quotidien des établissements.
           </p>
         </div>
 
         {/* 3 Featured Photographic Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-16">
           {featuredStructures.map((struct, idx) => (
             <Link
               key={idx}
@@ -94,7 +94,7 @@ export default function SectorSection() {
               className="group rounded-3xl overflow-hidden border border-white/10 bg-neutral-900/80 hover:border-primary-500/40 transition-all duration-500 flex flex-col justify-between shadow-xl hover:shadow-2xl hover:shadow-primary-500/10"
             >
               {/* Photo Header */}
-              <div className="relative h-60 w-full overflow-hidden">
+              <div className="relative h-48 sm:h-60 w-full overflow-hidden">
                 <Image
                   src={struct.image}
                   alt={struct.alt}
@@ -105,22 +105,22 @@ export default function SectorSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent pointer-events-none" />
                 
                 {/* Floating Tag */}
-                <div className="absolute top-4 left-4 backdrop-blur-md bg-neutral-950/80 border border-white/15 px-3 py-1 rounded-full text-[11px] font-semibold text-primary-300">
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 backdrop-blur-md bg-neutral-950/80 border border-white/15 px-3 py-1 rounded-full text-[11px] font-semibold text-primary-300">
                   {struct.sigle}
                 </div>
 
-                <div className="absolute top-4 right-4 backdrop-blur-md bg-primary-950/80 border border-primary-500/30 px-3 py-1 rounded-full text-[10px] font-mono text-emerald-300">
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 backdrop-blur-md bg-primary-950/80 border border-primary-500/30 px-3 py-1 rounded-full text-[10px] font-mono text-emerald-300">
                   {struct.tag}
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+              <div className="p-5 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-secondary-400 block">
                     {struct.badge}
                   </span>
-                  <h3 className="text-xl font-bold text-white group-hover:text-primary-300 transition-colors leading-snug">
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-primary-300 transition-colors leading-snug">
                     {struct.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
@@ -138,12 +138,12 @@ export default function SectorSection() {
         </div>
 
         {/* Secondary Establishments Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
           {otherEstablishments.map((est, idx) => (
             <Link
               key={idx}
               href={est.href}
-              className="card-modern group flex flex-col justify-between hover:border-primary-500/40 text-left p-6"
+              className="card-modern group flex flex-col justify-between hover:border-primary-500/40 text-left p-5 sm:p-6"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -167,7 +167,7 @@ export default function SectorSection() {
         </div>
 
         {/* Reassurance Footer */}
-        <div className="mt-16 p-6 rounded-2xl bg-white/[0.02] border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+        <div className="mt-10 sm:mt-16 p-4 sm:p-6 rounded-2xl bg-white/[0.02] border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 text-center sm:text-left">
           <div className="flex items-center gap-2.5">
             <ShieldCheck className="size-4 text-emerald-400 shrink-0" />
             <span>
@@ -176,7 +176,7 @@ export default function SectorSection() {
           </div>
           <Link
             href="/medico-social"
-            className="text-white hover:text-primary-300 font-semibold whitespace-nowrap"
+            className="text-white hover:text-primary-300 font-semibold sm:whitespace-nowrap inline-block pt-1 sm:pt-0"
           >
             Explorer notre hub médico-social complet →
           </Link>

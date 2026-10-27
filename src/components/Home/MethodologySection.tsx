@@ -53,28 +53,28 @@ const steps = [
 
 export default function MethodologySection() {
   return (
-    <section className="py-28 bg-neutral-900/40 border-t border-white/5 relative">
+    <section className="py-12 sm:py-20 lg:py-28 bg-neutral-900/40 border-t border-white/5 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <span className="section-label">
             <Layers className="size-3.5" />
             Méthodologie DevEvoke
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 sm:mb-5 leading-tight">
             Une approche humaine et pragmatique, pensée pour vos équipes
           </h2>
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
+          <p className="text-sm sm:text-lg text-neutral-300 leading-relaxed">
             De la première immersion jusqu&apos;au suivi dans le temps, nous construisons la solution avec les professionnels qui l&apos;utiliseront au quotidien.
           </p>
         </div>
 
         {/* Featured Photo Banner: Co-design in Action */}
-        <div className="mb-16 rounded-3xl overflow-hidden border border-white/10 bg-neutral-900/90 shadow-2xl">
+        <div className="mb-10 sm:mb-16 rounded-3xl overflow-hidden border border-white/10 bg-neutral-900/90 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             {/* Photo Column */}
-            <div className="lg:col-span-6 relative h-[320px] sm:h-[400px] lg:h-[440px] w-full overflow-hidden">
+            <div className="lg:col-span-6 relative h-[240px] sm:h-[400px] lg:h-[440px] w-full overflow-hidden">
               <Image
                 src="/images/home/workshop_coconception.jpg"
                 alt="Atelier collaboratif de co-conception numérique entre DevEvoke et des décideurs d'organisation"
@@ -85,41 +85,39 @@ export default function MethodologySection() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-neutral-900/90 hidden lg:block" />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent lg:hidden" />
               
-              <div className="absolute top-4 left-4 backdrop-blur-md bg-neutral-950/80 border border-white/15 px-3 py-1.5 rounded-full text-xs font-semibold text-primary-300 flex items-center gap-2">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 backdrop-blur-md bg-neutral-950/80 border border-white/15 px-3 py-1.5 rounded-full text-xs font-semibold text-primary-300 flex items-center gap-2">
                 <Users2 className="size-3.5" />
                 <span>Atelier de Cadrage Fonctionnel</span>
               </div>
             </div>
 
             {/* Narrative Column */}
-            <div className="lg:col-span-6 p-8 sm:p-10 lg:p-12 space-y-5 text-left">
+            <div className="lg:col-span-6 p-5 sm:p-10 lg:p-12 space-y-4 sm:space-y-5 text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold">
                 <CheckCircle2 className="size-3.5" />
                 <span>Co-Conception Inclusive</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
+              <h3 className="text-xl sm:text-3xl font-bold text-white leading-snug">
                 Nous nous déplaçons dans vos structures pour observer les pratiques réelles
               </h3>
 
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
+              <p className="text-xs sm:text-base text-neutral-300 leading-relaxed font-normal">
                 Un logiciel médico-social ne s&apos;imagine pas derrière un bureau d&apos;ingénieurs à distance. Nous nous asseyons avec vos directeurs, éducateurs et soignants pour tester les maquettes en conditions réelles et valider chaque écran avant le moindre développement.
               </p>
 
-              <div className="pt-2 flex items-center gap-6 text-xs text-neutral-300">
+              <div className="pt-2 grid grid-cols-3 gap-2 sm:gap-6 text-xs text-neutral-300">
                 <div className="space-y-1">
-                  <span className="text-xl font-bold text-white block">100%</span>
-                  <span className="text-neutral-400">Adapté à vos processus</span>
+                  <span className="text-lg sm:text-xl font-bold text-white block">100%</span>
+                  <span className="text-neutral-400 text-[11px] sm:text-xs">Adapté aux processus</span>
                 </div>
-                <div className="w-px h-8 bg-white/10" />
-                <div className="space-y-1">
-                  <span className="text-xl font-bold text-emerald-400 block">Zéro</span>
-                  <span className="text-neutral-400">Jargon technique</span>
+                <div className="space-y-1 border-l border-white/10 pl-2 sm:pl-6">
+                  <span className="text-lg sm:text-xl font-bold text-emerald-400 block">Zéro</span>
+                  <span className="text-neutral-400 text-[11px] sm:text-xs">Jargon technique</span>
                 </div>
-                <div className="w-px h-8 bg-white/10" />
-                <div className="space-y-1">
-                  <span className="text-xl font-bold text-primary-400 block">Sur-mesure</span>
-                  <span className="text-neutral-400">Droit à l&apos;évolution</span>
+                <div className="space-y-1 border-l border-white/10 pl-2 sm:pl-6">
+                  <span className="text-lg sm:text-xl font-bold text-primary-400 block">Sur-mesure</span>
+                  <span className="text-neutral-400 text-[11px] sm:text-xs">Évolutif</span>
                 </div>
               </div>
             </div>
@@ -127,13 +125,13 @@ export default function MethodologySection() {
         </div>
 
         {/* 5 Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
           {steps.map((st, idx) => {
             const Icon = st.icon;
             return (
               <div
                 key={idx}
-                className="card-modern relative flex flex-col justify-between group hover:border-primary-500/40 text-left p-6"
+                className="card-modern relative flex flex-col justify-between group hover:border-primary-500/40 text-left p-5 sm:p-6"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">

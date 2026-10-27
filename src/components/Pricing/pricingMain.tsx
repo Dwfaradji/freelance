@@ -72,7 +72,7 @@ const PricingMain = () => {
                         <svg className="w-5 h-5 text-primary-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="truncate" title={detail}>{detail}</span>
+                        <span className="leading-snug" title={detail}>{detail}</span>
                       </li>
                     ))}
                     {tarif.details.length > 4 && (
@@ -84,17 +84,17 @@ const PricingMain = () => {
                 </div>
 
                 {/* Prix + CTA */}
-                <div className="flex flex-col items-center justify-center gap-6 border-t border-white/5 bg-black/20 px-8 py-10 lg:border-l lg:border-t-0 lg:min-w-[320px] backdrop-blur-sm">
+                <div className="flex flex-col items-center justify-center gap-5 sm:gap-6 border-t border-white/5 bg-black/20 px-5 sm:px-8 py-6 sm:py-10 lg:border-l lg:border-t-0 lg:min-w-[320px] backdrop-blur-sm">
                   <div className="text-center">
-                    <p className="text-sm font-medium text-muted uppercase tracking-wider mb-2">À partir de</p>
-                    <p className="text-5xl font-bold text-white tracking-tight drop-shadow-sm">
+                    <p className="text-xs sm:text-sm font-medium text-muted uppercase tracking-wider mb-1 sm:mb-2">À partir de</p>
+                    <p className="text-3xl sm:text-5xl font-bold text-white tracking-tight drop-shadow-sm">
                       {tarif.price}
                     </p>
                   </div>
                   
                   <button
                     onClick={() => handleOpenModal(tarif.id)}
-                    className={isFeatured ? 'btn-primary w-full py-4 text-base shadow-[0_0_20px_rgba(59,130,246,0.3)]' : 'btn-outline w-full py-4 text-base'}
+                    className={isFeatured ? 'btn-primary w-full py-3.5 sm:py-4 min-h-[48px] text-sm sm:text-base shadow-[0_0_20px_rgba(59,130,246,0.3)]' : 'btn-outline w-full py-3.5 sm:py-4 min-h-[48px] text-sm sm:text-base'}
                     aria-label={`En savoir plus sur la ${tarif.title}`}
                   >
                     Découvrir l&apos;offre

@@ -48,23 +48,23 @@ const featuredTemplates: FeaturedTemplate[] = [
 
 export default function TemplatesShowcase() {
   return (
-    <section className="py-24 bg-neutral-900/40 border-t border-white/5 relative overflow-hidden">
+    <section className="py-12 sm:py-20 lg:py-24 bg-neutral-900/40 border-t border-white/5 relative overflow-hidden">
       {/* Background glow accents */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-primary-600/10 blur-[140px] pointer-events-none rounded-full" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary-600/10 blur-[130px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 gap-6">
           <div className="max-w-2xl space-y-4">
             <span className="section-label">
               <LayoutGrid className="size-3.5 text-primary-400" />
               Accélérateurs de Déploiement
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               Des socles &amp; templates pré-configurés pour <span className="text-highlight">démarrer rapidement</span>
             </h2>
-            <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
+            <p className="text-sm sm:text-lg text-neutral-300 leading-relaxed">
               Ne repartez pas d’une page blanche. Découvrez nos modèles spécialisés, prêts à être personnalisés à 100% selon votre charte graphique et vos objectifs.
             </p>
           </div>
@@ -72,7 +72,7 @@ export default function TemplatesShowcase() {
           <div className="shrink-0">
             <Link
               href="/templates"
-              className="px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-sm transition-all inline-flex items-center gap-2 group"
+              className="px-6 py-3.5 min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-sm transition-all inline-flex items-center justify-center w-full sm:w-auto gap-2 group"
             >
               <span>Voir toute la galerie (16 socles)</span>
               <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
@@ -81,7 +81,7 @@ export default function TemplatesShowcase() {
         </div>
 
         {/* 3 Featured Template Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {featuredTemplates.map((template, idx) => (
             <Link
               key={idx}
@@ -111,7 +111,7 @@ export default function TemplatesShowcase() {
                 </div>
 
                 {/* Card Body */}
-                <div className="p-6 space-y-3">
+                <div className="p-5 sm:p-6 space-y-3">
                   <h3 className="text-xl font-bold text-white group-hover:text-primary-300 transition-colors">
                     {template.title}
                   </h3>
@@ -131,7 +131,7 @@ export default function TemplatesShowcase() {
               </div>
 
               {/* Card Footer */}
-              <div className="p-6 pt-0">
+              <div className="p-5 sm:p-6 pt-0">
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-primary-400 group-hover:text-primary-300">
                   <span>Explorer ce modèle</span>
                   <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
@@ -142,7 +142,7 @@ export default function TemplatesShowcase() {
         </div>
 
         {/* Reassurance Banner */}
-        <div className="mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-8 sm:mt-12 p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-3">
             <div className="p-2.5 rounded-xl bg-primary-500/10 text-primary-400 shrink-0 hidden sm:block">
               <Sparkles className="size-5" />
@@ -158,7 +158,7 @@ export default function TemplatesShowcase() {
           </div>
           <Link
             href="/templates"
-            className="shrink-0 px-5 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-semibold text-xs transition-all shadow-md shadow-primary-500/20"
+            className="shrink-0 w-full sm:w-auto px-5 py-3 min-h-[44px] rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-semibold text-xs transition-all shadow-md shadow-primary-500/20 flex items-center justify-center text-center"
           >
             Explorer les 16 modèles →
           </Link>

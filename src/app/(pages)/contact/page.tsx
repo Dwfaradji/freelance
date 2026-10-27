@@ -7,20 +7,20 @@ import { Fade } from '@/components/ui/Fade';
 
 const Page = () => {
   return (
-    <div className="overflow-hidden min-h-screen pt-20 pb-24">
-      <header className="mx-auto mb-16 mt-8 text-center px-4 max-w-4xl">
+    <div className="overflow-hidden min-h-screen pt-6 sm:pt-14 pb-16 sm:pb-24">
+      <header className="mx-auto mb-10 sm:mb-16 mt-4 sm:mt-8 text-center px-4 max-w-4xl">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
-          <span className="section-label mb-4 inline-block">
+          <span className="section-label mb-3 sm:mb-4 inline-block">
             Échange Direct avec le Fondateur
           </span>
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mb-4 sm:mb-6 text-2xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
             Concevons ensemble la{' '}
             <span className="text-highlight">
               solution digitale
             </span>{' '}
             pensée pour votre métier
           </h1>
-          <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-lg text-muted leading-relaxed max-w-2xl mx-auto">
             Entreprises, TPE, PME, startups, associations ou structures médico-sociales : échangez directement avec le fondateur et développeur pour cadrer votre projet de logiciel métier, d’application mobile, de plateforme SaaS ou d’automatisation.
           </p>
         </Fade>

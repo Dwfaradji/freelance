@@ -84,6 +84,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({
@@ -167,7 +168,7 @@ export default function RootLayout({
         </a>
         <MyProvider>
           <Navbar />
-          <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 outline-none">
+          <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl w-full outline-none">
             <PageTransition>
               {children}
             </PageTransition>

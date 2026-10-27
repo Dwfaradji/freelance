@@ -1349,37 +1349,37 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-                    <div className="p-3 bg-black/40 rounded-2xl border border-white/5">
-                      <span className="text-[11px] text-neutral-400 block mb-0.5">Investissement logiciel</span>
-                      <span className="text-base sm:text-lg font-bold text-white font-mono">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-center">
+                    <div className="p-2.5 sm:p-3 bg-black/40 rounded-2xl border border-white/5">
+                      <span className="text-[10px] sm:text-[11px] text-neutral-400 block mb-0.5">Investissement logiciel</span>
+                      <span className="text-xs sm:text-base md:text-lg font-bold text-white font-mono break-words">
                         {simulation.roi.annualSoftwareCost.toLocaleString('fr-FR')} € / an
                       </span>
-                      <span className="text-[10px] text-neutral-500 block">({simulation.roi.monthlySoftwareCost} €/mois)</span>
+                      <span className="text-[9px] sm:text-[10px] text-neutral-500 block">({simulation.roi.monthlySoftwareCost} €/mois)</span>
                     </div>
 
-                    <div className="p-3 bg-black/40 rounded-2xl border border-white/5">
-                      <span className="text-[11px] text-neutral-400 block mb-0.5">Économies brutes</span>
-                      <span className="text-base sm:text-lg font-bold text-white font-mono">
+                    <div className="p-2.5 sm:p-3 bg-black/40 rounded-2xl border border-white/5">
+                      <span className="text-[10px] sm:text-[11px] text-neutral-400 block mb-0.5">Économies brutes</span>
+                      <span className="text-xs sm:text-base md:text-lg font-bold text-white font-mono break-words">
                         +{simulation.annualGrossSaving.toLocaleString('fr-FR')} €
                       </span>
-                      <span className="text-[10px] text-neutral-500 block">estimées / an</span>
+                      <span className="text-[9px] sm:text-[10px] text-neutral-500 block">estimées / an</span>
                     </div>
 
-                    <div className="p-3 bg-emerald-500/10 rounded-2xl border border-emerald-500/30">
-                      <span className="text-[11px] text-emerald-300 block mb-0.5">Gain net potentiel</span>
-                      <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">
+                    <div className="p-2.5 sm:p-3 bg-emerald-500/10 rounded-2xl border border-emerald-500/30">
+                      <span className="text-[10px] sm:text-[11px] text-emerald-300 block mb-0.5">Gain net potentiel</span>
+                      <span className="text-xs sm:text-base md:text-lg font-bold text-emerald-400 font-mono break-words">
                         +{simulation.roi.annualNetGain.toLocaleString('fr-FR')} €
                       </span>
-                      <span className="text-[10px] text-emerald-300/80 block">après coût logiciel</span>
+                      <span className="text-[9px] sm:text-[10px] text-emerald-300/80 block">après coût logiciel</span>
                     </div>
 
-                    <div className="p-3 bg-secondary-500/10 rounded-2xl border border-secondary-500/30">
-                      <span className="text-[11px] text-secondary-300 block mb-0.5">ROI estimé</span>
-                      <span className="text-base sm:text-lg font-bold text-secondary-400 font-mono">
+                    <div className="p-2.5 sm:p-3 bg-secondary-500/10 rounded-2xl border border-secondary-500/30">
+                      <span className="text-[10px] sm:text-[11px] text-secondary-300 block mb-0.5">ROI estimé</span>
+                      <span className="text-xs sm:text-base md:text-lg font-bold text-secondary-400 font-mono break-words">
                         +{simulation.roi.roiPercent} %
                       </span>
-                      <span className="text-[10px] text-secondary-300/80 block">sur 12 mois</span>
+                      <span className="text-[9px] sm:text-[10px] text-secondary-300/80 block">sur 12 mois</span>
                     </div>
                   </div>
                 </div>

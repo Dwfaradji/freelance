@@ -17,7 +17,7 @@ import {
 
 export default function Header() {
   return (
-    <header className="relative min-h-[92svh] w-full flex flex-col justify-center overflow-hidden bg-gradient-to-b from-neutral-950 via-[#070d1d] to-neutral-950 pt-28 pb-20 lg:pt-36 lg:pb-28 border-b border-white/5">
+    <header className="relative min-h-[92svh] w-full flex flex-col justify-center overflow-hidden bg-gradient-to-b from-neutral-950 via-[#070d1d] to-neutral-950 pt-12 pb-16 sm:pt-24 sm:pb-20 lg:pt-36 lg:pb-28 border-b border-white/5">
       {/* Subtle atmospheric glow lights */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[600px] h-[500px] bg-primary-600/15 blur-[160px] pointer-events-none rounded-full" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary-600/10 blur-[150px] pointer-events-none rounded-full" />
@@ -31,10 +31,10 @@ export default function Header() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 space-y-7 text-center lg:text-left"
+            className="lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left"
           >
             {/* Sector Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs sm:text-sm font-medium shadow-sm backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs sm:text-sm font-medium shadow-sm backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500" />
@@ -43,7 +43,7 @@ export default function Header() {
             </div>
 
             {/* Main H1 Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-extrabold tracking-tight text-white leading-[1.12]">
+            <h1 className="text-3xl sm:text-5xl lg:text-[58px] font-extrabold tracking-tight text-white leading-[1.15]">
               Des solutions digitales pensées pour votre{' '}
               <span className="text-highlight">
                 métier
@@ -120,44 +120,44 @@ export default function Header() {
                   width={800}
                   height={600}
                   priority
-                  className="w-full h-[400px] sm:h-[480px] lg:h-[500px] object-cover object-center filter brightness-[0.95] contrast-[1.05] group-hover:scale-[1.02] transition-transform duration-700"
+                  className="w-full h-[340px] sm:h-[480px] lg:h-[500px] object-cover object-center filter brightness-[0.95] contrast-[1.05] group-hover:scale-[1.02] transition-transform duration-700"
                 />
 
                 {/* Gradient vignette for text overlay readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent pointer-events-none" />
 
                 {/* Floating Glass Pill Top Left */}
-                <div className="absolute top-4 left-4 sm:top-5 sm:left-5 backdrop-blur-md bg-neutral-950/75 border border-white/15 rounded-full px-3.5 py-1.5 shadow-xl flex items-center gap-2">
+                <div className="absolute top-3 left-3 sm:top-5 sm:left-5 backdrop-blur-md bg-neutral-950/80 border border-white/15 rounded-full px-3 py-1 sm:px-3.5 sm:py-1.5 shadow-xl flex items-center gap-2">
                   <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-[11px] sm:text-xs font-medium text-white">
+                  <span className="text-[10px] sm:text-xs font-medium text-white">
                     Ingénierie Full-Stack Sur-Mesure
                   </span>
                 </div>
 
-                {/* Floating Glass Tag Top Right */}
-                <div className="absolute top-4 right-4 sm:top-5 sm:right-5 backdrop-blur-md bg-primary-950/80 border border-primary-500/30 rounded-xl px-3 py-1.5 shadow-xl text-[10px] sm:text-[11px] font-semibold text-primary-200">
+                {/* Floating Glass Tag Top Right (visible sm+ to avoid mobile badge collision) */}
+                <div className="hidden sm:block absolute top-5 right-5 backdrop-blur-md bg-primary-950/80 border border-primary-500/30 rounded-xl px-3 py-1.5 shadow-xl text-[10px] sm:text-[11px] font-semibold text-primary-200">
                   Web • Mobile • SaaS • Métier
                 </div>
 
                 {/* Bottom Overlay Card: Real Impact */}
-                <div className="absolute bottom-4 inset-x-4 sm:bottom-5 sm:inset-x-5 backdrop-blur-xl bg-neutral-900/90 border border-white/15 rounded-2xl p-4 shadow-2xl space-y-2.5">
+                <div className="absolute bottom-3 inset-x-3 sm:bottom-5 sm:inset-x-5 backdrop-blur-xl bg-neutral-900/90 border border-white/15 rounded-2xl p-3 sm:p-4 shadow-2xl space-y-2 sm:space-y-2.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="size-7 rounded-lg bg-primary-500/20 text-primary-300 flex items-center justify-center">
-                        <CalendarCheck className="size-4" />
+                      <div className="size-6 sm:size-7 rounded-lg bg-primary-500/20 text-primary-300 flex items-center justify-center">
+                        <CalendarCheck className="size-3.5 sm:size-4" />
                       </div>
-                      <span className="text-xs font-bold text-white">Outils Métiers & Automatisation</span>
+                      <span className="text-[11px] sm:text-xs font-bold text-white">Outils Métiers & Automatisation</span>
                     </div>
-                    <span className="text-[10px] font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                    <span className="text-[9px] sm:text-[10px] font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                       Zéro double saisie
                     </span>
                   </div>
 
-                  <p className="text-[11px] text-neutral-300 leading-snug">
+                  <p className="text-[10px] sm:text-[11px] text-neutral-300 leading-snug">
                     Des interfaces simples créées avec vos professionnels pour libérer du temps utile et éliminer la complexité.
                   </p>
 
-                  <div className="flex items-center justify-between pt-1 border-t border-white/5 text-[10px] text-neutral-400">
+                  <div className="flex items-center justify-between pt-1 border-t border-white/5 text-[9px] sm:text-[10px] text-neutral-400">
                     <span className="flex items-center gap-1">
                       <Lock className="size-3 text-primary-400" />
                       Données sécurisées en France

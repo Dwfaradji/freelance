@@ -103,7 +103,7 @@ const Scroll: React.FC = () => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 10 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
-          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40"
+          className="fixed bottom-[max(1.5rem,calc(env(safe-area-inset-bottom)+0.75rem))] right-[max(1.25rem,calc(env(safe-area-inset-right)+0.75rem))] sm:bottom-8 sm:right-8 z-40"
         >
           <button
             onClick={scrollToNextSection}

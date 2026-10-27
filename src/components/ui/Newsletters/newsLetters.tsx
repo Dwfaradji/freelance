@@ -70,7 +70,7 @@ const NewsLetters = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="relative overflow-hidden rounded-3xl bg-[#030712] border border-white/5 p-10 sm:p-16 lg:p-20 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-12 mb-20"
+          className="relative overflow-hidden rounded-3xl bg-[#030712] border border-white/5 p-6 sm:p-14 lg:p-20 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 mb-14 sm:mb-20"
         >
           {/* Lueur d'ambiance asymétrique */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/15 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3" />
@@ -78,28 +78,28 @@ const NewsLetters = () => {
 
           {/* Typography (Gauche) */}
           <div className="relative z-10 flex flex-col items-start text-left max-w-2xl">
-            <h2 className="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold text-white tracking-tighter leading-[1.05] mb-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-[4rem] font-extrabold text-white tracking-tighter leading-[1.05] mb-4 sm:mb-6">
               Prêt à dominer <br />
               <span className="text-highlight">
                 votre marché ?
               </span>
             </h2>
-            <p className="text-lg text-gray-400 font-light leading-relaxed mb-0">
+            <p className="text-base sm:text-lg text-gray-400 font-light leading-relaxed mb-0">
               Transformons votre vision en une plateforme digitale ultra-performante. Contactez-nous aujourd'hui pour obtenir un devis gratuit et personnalisé.
             </p>
           </div>
 
           {/* Bouton d'action (Droite) */}
-          <div className="relative z-10 shrink-0 w-full lg:w-auto flex justify-center lg:justify-end mt-4 lg:mt-0">
+          <div className="relative z-10 shrink-0 w-full lg:w-auto flex justify-center lg:justify-end mt-2 lg:mt-0">
             <Link
               href="/contact"
-              className="relative group w-full sm:w-auto inline-block"
+              className="relative group w-full sm:w-auto inline-block text-center"
             >
               {/* Glow Edge Effect (Signature Vercel) */}
               <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 opacity-60 group-hover:opacity-100 transition duration-500 animate-gradient-x blur-[2px]" />
               <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 opacity-80 group-hover:opacity-100 transition duration-500 animate-gradient-x" />
               
-              <div className="relative flex items-center justify-center gap-3 px-10 py-5 bg-black text-white font-semibold text-lg rounded-full hover:bg-black/80 transition-all duration-300">
+              <div className="relative flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 min-h-[48px] bg-black text-white font-semibold text-base sm:text-lg rounded-full hover:bg-black/80 transition-all duration-300">
                 Démarrer mon projet
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -119,10 +119,10 @@ const NewsLetters = () => {
           className="max-w-3xl mx-auto text-center"
         >
           <span className="section-label mb-2">Restez informé</span>
-          <h3 className="text-2xl font-bold text-white mb-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
             Rejoignez notre newsletter
           </h3>
-          <p className="text-gray-400 text-sm mb-8">
+          <p className="text-gray-400 text-xs sm:text-sm mb-6 sm:mb-8">
             Recevez nos dernières actualités, conseils tech et offres exclusives, sans spam.
           </p>
 
@@ -140,16 +140,17 @@ const NewsLetters = () => {
             />
             <input
               type="email"
+              inputMode="email"
               placeholder="votre@email.com"
               value={email}
               onChange={handleChange}
-              className="w-full rounded-full border border-white/10 bg-white/5 px-6 py-4 text-white placeholder:text-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition-all shadow-inner"
+              className="w-full rounded-full border border-white/10 bg-white/5 pl-5 sm:pl-6 pr-28 sm:pr-32 py-3.5 sm:py-4 text-base sm:text-sm text-white placeholder:text-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition-all shadow-inner"
               onKeyDown={(e) => e.key === 'Enter' && envoyer()}
             />
             <button
               onClick={envoyer}
               disabled={!isFormValid || isSubmitting}
-              className="absolute right-2 top-2 bottom-2 bg-primary-600 hover:bg-primary-500 disabled:bg-white/10 disabled:text-gray-500 text-white px-6 rounded-full font-medium transition-colors cursor-pointer"
+              className="absolute right-1.5 sm:right-2 top-1.5 bottom-1.5 sm:top-2 sm:bottom-2 bg-primary-600 hover:bg-primary-500 disabled:bg-white/10 disabled:text-gray-500 text-white px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm transition-colors cursor-pointer flex items-center justify-center"
             >
               {isSubmitting ? 'Envoi...' : 'Rejoindre'}
             </button>

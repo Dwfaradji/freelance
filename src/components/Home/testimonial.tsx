@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '@/images/logocv.svg';
+import logo from '@/images/logo.webp';
 
 const AnimatedWord = ({ children, delay, highlight = false }: { children: React.ReactNode, delay: number, highlight?: boolean }) => (
   <span className="relative inline-block overflow-hidden pt-2 pb-4 -mb-4 px-1">
@@ -66,11 +66,12 @@ const Testimonial = ({ ctaHref = '/contact', ctaLabel = 'Discuter de votre proje
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center">
         
         {/* Citation Monumentale */}
-        <div className="text-center max-w-5xl mx-auto mb-20 flex flex-wrap justify-center gap-x-3 sm:gap-x-4 lg:gap-x-5 text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2]">
+        <div className="text-center max-w-5xl mx-auto mb-16 sm:mb-20 flex flex-wrap justify-center gap-x-2.5 sm:gap-x-4 lg:gap-x-5 text-2xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.25]">
           {["Nous", "ne", "développons", "pas", "de", "simples", "logiciels.", "Nous", "forgeons", "des"].map((word, i) => (
             <AnimatedWord key={i} delay={i * 0.03}>{word}</AnimatedWord>
           ))}
-          <AnimatedWord delay={11 * 0.03} highlight>solutions numériques</AnimatedWord>
+          <AnimatedWord delay={10 * 0.03} highlight>solutions</AnimatedWord>
+          <AnimatedWord delay={11 * 0.03} highlight>numériques</AnimatedWord>
           {["qui", "simplifient", "le", "quotidien", "des", "équipes", "et", "des", "usagers."].map((word, i) => (
             <AnimatedWord key={`end-${i}`} delay={(12 + i) * 0.03}>{word}</AnimatedWord>
           ))}
@@ -89,14 +90,13 @@ const Testimonial = ({ ctaHref = '/contact', ctaLabel = 'Discuter de votre proje
           
           <div className="relative flex items-center gap-6 p-2 pr-8 rounded-full border border-white/10 bg-black/40 backdrop-blur-2xl shadow-2xl transition-transform duration-500 hover:scale-105">
             {/* Logo encerclé */}
-            <div className="flex items-center justify-center size-16 md:size-20 rounded-full border border-white/10 bg-white/5 overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/20 to-transparent" />
+            <div className="flex items-center justify-center size-16 md:size-20 rounded-full border border-primary-500/20 bg-neutral-900/90 overflow-hidden relative shrink-0 shadow-lg shadow-primary-500/10 p-2.5">
               <Image
                 src={logo}
                 alt="Logo DevEvoke"
-                width={50}
-                height={50}
-                className="object-contain relative z-10 drop-shadow-lg"
+                width={80}
+                height={80}
+                className="size-full object-contain relative z-10"
               />
             </div>
             
