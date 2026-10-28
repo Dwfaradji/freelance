@@ -41,6 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 # local IDE settings
-.idea/
-.antigravity/
-.agent/
+.idea
+.antigravity
+.agent
