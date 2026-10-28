@@ -26,8 +26,6 @@ export type EmailTemplateType =
   | 'demo_client'
   | 'diagnostic_internal'
   | 'diagnostic_client'
-  | 'simulator_internal'
-  | 'simulator_client'
   | 'newsletter_internal'
   | 'newsletter_client';
 

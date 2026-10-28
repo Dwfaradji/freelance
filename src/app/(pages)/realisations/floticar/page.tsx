@@ -16,8 +16,8 @@ import {
   QrCode,
   Sparkles,
   Layers,
+  Calculator,
 } from 'lucide-react';
-import FleetCostCalculator from '@/components/Tools/FleetCostCalculator';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 
 export default function FloticarCaseStudyPage() {
@@ -289,21 +289,31 @@ export default function FloticarCaseStudyPage() {
           </div>
         </section>
 
-        {/* Fleet Cost Calculator Component */}
+        {/* Simulateur Flotte Automobile (sur Floticar) */}
         <section className="py-20 border-b border-white/5">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="text-xs uppercase tracking-wider text-accent font-semibold block mb-2">
-                Simulateur Financier
-              </span>
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="glass-strong p-8 sm:p-12 rounded-3xl border border-secondary-500/20 text-center relative overflow-hidden">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-500/10 border border-secondary-500/20 text-secondary-400 text-xs font-mono mb-4">
+                <Sparkles className="size-3.5" />
+                <span>Simulateur interactif Floticar</span>
+              </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
                 Estimez les gains potentiels pour votre flotte
               </h2>
-              <p className="text-neutral-400 text-xs sm:text-sm">
-                Calculez en quelques clics les économies administratives et les coûts d’amendes évités grâce à la dématérialisation.
+              <p className="text-muted text-xs sm:text-sm max-w-2xl mx-auto mb-8">
+                Calculez en quelques clics les économies administratives, le carburant et les coûts d&apos;amendes évités grâce au simulateur officiel Floticar.
               </p>
+              <Link
+                href="https://floticar.com/simulateur"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-2 text-sm sm:text-base"
+              >
+                <Calculator className="size-4" />
+                <span>Lancer le simulateur sur Floticar</span>
+                <ArrowRight className="size-4" />
+              </Link>
             </div>
-            <FleetCostCalculator />
           </div>
         </section>
 

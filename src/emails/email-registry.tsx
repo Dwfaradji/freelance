@@ -6,7 +6,6 @@ import {
   QuoteEmailData,
   DemoEmailData,
   DiagnosticEmailData,
-  SimulatorEmailData,
   NewsletterEmailData,
 } from './email-types';
 import { formatName, formatCompany } from './email-utils';
@@ -45,14 +44,6 @@ import {
   renderDiagnosticConfirmationText,
 } from './templates/diagnostic/DiagnosticConfirmation';
 import {
-  SimulatorInternalEmail,
-  renderSimulatorInternalText,
-} from './templates/simulator/SimulatorInternal';
-import {
-  SimulatorConfirmationEmail,
-  renderSimulatorConfirmationText,
-} from './templates/simulator/SimulatorConfirmation';
-import {
   NewsletterInternalEmail,
   renderNewsletterInternalText,
 } from './templates/newsletter/NewsletterInternal';
@@ -89,12 +80,6 @@ export const emailSubjects = {
   diagnosticConfirmation: (_data: DiagnosticEmailData, ref: string) =>
     `DevEvoke — Votre diagnostic est disponible [Réf: ${ref}]`,
 
-  simulatorInternal: (_data: SimulatorEmailData, ref: string) =>
-    `Nouveau résultat du simulateur — DevEvoke [Réf: ${ref}]`,
-
-  simulatorConfirmation: (_data: SimulatorEmailData, ref: string) =>
-    `Votre simulation DevEvoke est disponible [Réf: ${ref}]`,
-
   newsletterInternal: (_data: NewsletterEmailData, ref: string) =>
     `Nouvel abonné newsletter — DevEvoke [Réf: ${ref}]`,
 
@@ -129,12 +114,6 @@ export const emailPreheaders = {
 
   diagnosticConfirmation: () =>
     `Votre synthèse de maturité numérique et vos points d'attention prioritaires.`,
-
-  simulatorInternal: (data: SimulatorEmailData) =>
-    `Nouvelle simulation d'optimisation économique complétée pour ${data.vehicles} véhicule(s).`,
-
-  simulatorConfirmation: () =>
-    `Vos estimations d'économies et projections de rentabilité sont prêtes.`,
 
   newsletterInternal: (data: NewsletterEmailData) =>
     `Nouvelle inscription confirmée : ${data.email}.`,
@@ -202,20 +181,6 @@ export const emailTemplates: Record<EmailType, EmailTemplateDefinition<any>> = {
     preheader: () => emailPreheaders.diagnosticConfirmation(),
     component: ({ data, referenceId }) => <DiagnosticConfirmationEmail data={data} referenceId={referenceId} />,
     text: (data, ref) => renderDiagnosticConfirmationText(data, ref),
-    isClientEmail: true,
-  },
-  'simulator-internal': {
-    subject: (data, ref) => emailSubjects.simulatorInternal(data, ref),
-    preheader: (data) => emailPreheaders.simulatorInternal(data),
-    component: ({ data, referenceId }) => <SimulatorInternalEmail data={data} referenceId={referenceId} />,
-    text: (data, ref) => renderSimulatorInternalText(data, ref),
-    isClientEmail: false,
-  },
-  'simulator-confirmation': {
-    subject: (data, ref) => emailSubjects.simulatorConfirmation(data, ref),
-    preheader: () => emailPreheaders.simulatorConfirmation(),
-    component: ({ data, referenceId }) => <SimulatorConfirmationEmail data={data} referenceId={referenceId} />,
-    text: (data, ref) => renderSimulatorConfirmationText(data, ref),
     isClientEmail: true,
   },
   'newsletter-internal': {

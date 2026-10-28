@@ -9,8 +9,6 @@ export type EmailType =
   | 'demo-confirmation'
   | 'diagnostic-internal'
   | 'diagnostic-confirmation'
-  | 'simulator-internal'
-  | 'simulator-confirmation'
   | 'newsletter-internal'
   | 'newsletter-confirmation';
 
@@ -78,20 +76,6 @@ export interface DiagnosticEmailData extends BaseEmailData {
   fullReportSummary?: string;
 }
 
-export interface SimulatorEmailData extends BaseEmailData {
-  firstName: string;
-  lastName?: string;
-  business?: string;
-  email: string;
-  phone?: string;
-  vehicles: number;
-  annualKmPerVehicle?: number;
-  annualSavings: string | number;
-  roiPercentage?: string | number;
-  paybackMonths?: string | number;
-  fullSimulationSummary?: string;
-}
-
 export interface NewsletterEmailData extends BaseEmailData {
   email: string;
 }
@@ -101,7 +85,6 @@ export type EmailDataPayload =
   | QuoteEmailData
   | DemoEmailData
   | DiagnosticEmailData
-  | SimulatorEmailData
   | NewsletterEmailData;
 
 export interface SendTransactionalEmailOptions {

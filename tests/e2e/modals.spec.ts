@@ -96,76 +96,15 @@ test.describe('Modales, Simulateurs Multi-Étapes & Accordéons UI', () => {
     await expect(dialog).toBeHidden();
   });
 
-  test('Simulateur ROI Flotte (/logiciel-gestion-vehicules-medico-social) : contrôles +/-, Retour, calcul ROI et accordéon hypothèses', async ({
+  test('CTA Simulateur Flotte (/logiciel-gestion-vehicules-medico-social) : présence de la carte et lien externe vers Floticar', async ({
     page,
   }) => {
     await page.goto('/logiciel-gestion-vehicules-medico-social');
 
-    await page.getByRole('button', { name: /Estimer mes économies de flotte/i }).click();
-    const dialog = page.getByRole('dialog');
-    await expect(dialog).toBeVisible();
-
-    await dialog.getByRole('button', { name: /Calculer mes économies/i }).click();
-    await expect(
-      dialog.getByRole('heading', { name: /Combien de véhicules gérez-vous/i })
-    ).toBeVisible();
-
-    // Valeur initiale par défaut : 8 véhicules. Tester + (x2 -> 10) et - (x1 -> 9)
-    const plusBtn = dialog.getByRole('button', { name: /Augmenter le nombre de véhicules/i });
-    const minusBtn = dialog.getByRole('button', { name: /Diminuer le nombre de véhicules/i });
-    await plusBtn.click();
-    await plusBtn.click();
-    await expect(dialog.getByText('10', { exact: true })).toBeVisible();
-    await minusBtn.click();
-    await expect(dialog.getByText('9', { exact: true })).toBeVisible();
-
-    // Continuer puis Retour -> vérifie que la valeur 9 est conservée
-    await dialog.getByRole('button', { name: /^Continuer$/i }).click();
-    await expect(
-      dialog.getByRole('heading', {
-        name: /Combien de kilomètres votre flotte parcourt-elle par an/i,
-      })
-    ).toBeVisible();
-
-    await dialog.getByRole('button', { name: /Retour/i }).click();
-    await expect(dialog.getByText('9', { exact: true })).toBeVisible();
-
-    // Avancer jusqu'au récapitulatif (7 étapes)
-    for (let i = 0; i < 7; i++) {
-      await dialog.getByRole('button', { name: /^Continuer$/i }).click();
-    }
-
-    await expect(
-      dialog.getByRole('heading', { name: /Vérifiez votre simulation/i })
-    ).toBeVisible();
-    await dialog.getByRole('button', { name: /Calculer mes économies/i }).click();
-
-    // Attendre les résultats
-    const hypothesesBtn = dialog.getByRole('button', {
-      name: /Comment cette estimation est-elle calculée/i,
-    });
-    await expect(hypothesesBtn).toBeVisible({ timeout: 5000 });
-    await expect(
-      dialog.getByRole('heading', { name: /Votre potentiel d'économies estimé/i })
-    ).toBeVisible();
-
-    // Tester l'accordéon des hypothèses de calcul
-    await hypothesesBtn.click();
-    await expect(dialog.getByText(/Source :/i).first()).toBeVisible();
-
-    // Tester "Modifier mes données" -> retour à l'écran de vérification
-    await dialog.getByRole('button', { name: /Modifier mes données/i }).click();
-    await expect(
-      dialog.getByRole('heading', { name: /Vérifiez votre simulation/i })
-    ).toBeVisible();
-
-    // Fermeture via le bouton Fermer le simulateur
-    await dialog.getByRole('button', { name: /Fermer le simulateur/i }).click();
-    const quitBtn = page.getByRole('button', { name: /^Quitter$/i });
-    if (await quitBtn.isVisible()) {
-      await quitBtn.click();
-    }
-    await expect(dialog).toBeHidden();
+    const ctaLink = page.getByRole('link', { name: /Lancer le simulateur de flotte Floticar/i });
+    await expect(ctaLink).toBeVisible();
+    await expect(ctaLink).toHaveAttribute('href', 'https://floticar.com/simulateur');
+    await expect(ctaLink).toHaveAttribute('target', '_blank');
   });
 
   test('Accordéons FAQ (/foire-aux-questions) : ouverture, fermeture et filtrage par catégorie', async ({

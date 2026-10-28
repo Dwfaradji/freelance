@@ -8,7 +8,6 @@ export type TransactionalFormType =
   | 'quote'
   | 'demo'
   | 'diagnostic'
-  | 'simulator'
   | 'newsletter';
 
 /**
@@ -17,9 +16,6 @@ export type TransactionalFormType =
 export function detectFormType(data: Partial<ContactSubmissionInput>): TransactionalFormType {
   if (data.isDemoRequest) {
     return 'demo';
-  }
-  if (data.service === 'floticar_simulator_demo') {
-    return 'simulator';
   }
   if (data.projectType?.toLowerCase().includes('diagnostic')) {
     return 'diagnostic';

@@ -13,9 +13,10 @@ import {
   TrendingDown, 
   Clock, 
   Building, 
-  FileCheck
+  FileCheck,
+  Calculator,
+  Sparkles
 } from 'lucide-react';
-import FleetCostCalculator from '@/components/Tools/FleetCostCalculator';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
 
@@ -318,10 +319,31 @@ export default function LogicielGestionVehiculesMedicoSocialPage() {
           </div>
         </section>
 
-        {/* SECTION 4.5 : SIMULATEUR CALCULATEUR DE GAINS */}
+        {/* SECTION 4.5 : SIMULATEUR CALCULATEUR DE GAINS (SUR FLOTICAR) */}
         <section className="py-16 border-t border-white/5">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <FleetCostCalculator />
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="glass-strong p-8 sm:p-12 rounded-3xl border border-secondary-500/20 text-center relative overflow-hidden">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-500/10 border border-secondary-500/20 text-secondary-400 text-xs font-mono mb-4">
+                <Sparkles className="size-3.5" />
+                <span>Simulateur d&apos;économies interactif</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-bold text-white mb-3 tracking-tight">
+                Estimez le potentiel d&apos;économies de votre flotte
+              </h2>
+              <p className="text-muted text-sm sm:text-base max-w-2xl mx-auto mb-8">
+                Évaluez en moins de 2 minutes vos gains sur le temps administratif, le carburant et l&apos;entretien grâce au simulateur officiel Floticar.
+              </p>
+              <Link
+                href="https://floticar.com/simulateur"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-2 text-sm sm:text-base"
+              >
+                <Calculator className="size-4" />
+                <span>Lancer le simulateur de flotte Floticar</span>
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
           </div>
         </section>
 
