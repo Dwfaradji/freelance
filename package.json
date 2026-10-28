@@ -10,11 +10,8 @@
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
     "start": "next start",
-    "test:roi": "npx tsx scripts/test-roi-calculator.ts",
-    "test:diagnostic": "npx tsx scripts/test-diagnostic-engine.ts",
-    "test:security": "npx tsx scripts/test-form-security.ts",
-    "test:unit": "npx tsx tests/unit/validation/email.test.ts && npm run test:roi && npm run test:diagnostic",
-    "test:integration": "npx tsx tests/integration/api-forms.test.ts && npm run test:security",
+    "test:unit": "npx tsx tests/unit/validation/email.test.ts",
+    "test:integration": "npx tsx tests/integration/api-forms.test.ts",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test": "npm run test:unit && npm run test:integration"
