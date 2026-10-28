@@ -1,9 +1,8 @@
 import React from 'react';
 import DiagnosticTool from '@/components/Diagnostic/DiagnosticTool';
 import Script from 'next/script';
-import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, CheckCircle2, ShieldCheck, Clock, Award } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, Clock, Award } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
 

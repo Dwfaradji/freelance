@@ -13,7 +13,6 @@ import {
   Workflow,
   ShieldCheck,
   ArrowRight,
-  Sparkles,
   Building2,
   LayoutGrid,
 } from 'lucide-react';

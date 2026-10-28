@@ -1,7 +1,6 @@
 import assert from 'node:assert';
-import { DIAGNOSTIC_QUESTIONS, getActiveQuestions } from '../src/lib/diagnostic/questions';
+import { getActiveQuestions } from '../src/lib/diagnostic/questions';
 import { buildDiagnosticReport } from '../src/lib/diagnostic/report';
-import { calculateDimensionScores, calculateGlobalMaturity } from '../src/lib/diagnostic/scoring';
 import { OrganizationProfile } from '../src/lib/diagnostic/types';
 
 console.log('=== DÉBUT DES TESTS DU MOTEUR DE DIAGNOSTIC MÉDICO-SOCIAL ===\n');

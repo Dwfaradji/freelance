@@ -6,6 +6,11 @@ import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import callApi from '@/utils/callApi';
 import { CheckCircle2, ShieldCheck, Send } from 'lucide-react';
+import {
+  EMAIL_VALIDATION_MESSAGES,
+  normalizeEmail,
+  validateProfessionalEmail,
+} from '@/lib/validation/email';
 
 interface ContactProps {
   prefilledMessage?: string;
@@ -73,9 +78,22 @@ const Contact = ({
   });
 
   const onSubmit = async (data: FormData) => {
+    const emailValidation = validateProfessionalEmail(data.email);
+    if (!emailValidation.isValid) {
+      setSendMsg(true);
+      setSendText(
+        emailValidation.message || EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX
+      );
+      return;
+    }
+
     setIsSubmitting(true);
     try {
-      const response = await callApi({ url: '/api/contact', data });
+      const payload = {
+        ...data,
+        email: normalizeEmail(data.email),
+      };
+      const response = await callApi({ url: '/api/contact', data: payload });
       if (response?.data?.status === 200 || response?.data?.success) {
         window.location.hash = 'confirmation';
         setReferenceId(response.data.referenceId || null);
@@ -147,7 +165,7 @@ const Contact = ({
               </p>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
               {/* Honeypot anti-spam (invisible pour les humains, piège à bots) */}
               <input
                 type="text"
@@ -288,10 +306,14 @@ const Contact = ({
                     inputMode="email"
                     id="email"
                     {...register('email', {
-                      required: 'L’email professionnel est requis',
-                      pattern: {
-                        value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/,
-                        message: 'Format d’adresse email invalide',
+                      required: EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX,
+                      validate: (value) => {
+                        const result = validateProfessionalEmail(value);
+                        return (
+                          result.isValid ||
+                          result.message ||
+                          EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX
+                        );
                       },
                     })}
                   />

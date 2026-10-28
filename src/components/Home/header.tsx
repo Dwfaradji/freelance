@@ -8,8 +8,6 @@ import {
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
-  Sparkles,
-  Smartphone,
   Users,
   Lock,
   CalendarCheck,
@@ -39,20 +37,20 @@ export default function Header() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500" />
               </span>
-              <span>Agence Digitale & Solutions Métier Sur-Mesure</span>
+              <span>Agence Digitale Spécialisée Médico-Social &amp; Développement Sur-Mesure</span>
             </div>
 
             {/* Main H1 Title */}
-            <h1 className="text-3xl sm:text-5xl lg:text-[58px] font-extrabold tracking-tight text-white leading-[1.15]">
-              Des solutions digitales pensées pour votre{' '}
+            <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-white leading-[1.15]">
+              Solutions digitales &amp; développement sur-mesure pour le{' '}
               <span className="text-highlight">
-                métier
+                secteur médico-social
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-neutral-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
-              DevEvoke conçoit des logiciels métiers, plateformes web, applications mobiles et architectures SaaS sur-mesure pour les entreprises, PME, organisations et associations exigeantes.
+              DevEvoke accompagne les établissements médico-sociaux (ESMS, IME, SESSAD, DITEP, ESAT, EHPAD) et associations gestionnaires dans la création et la refonte de sites web, le développement de logiciels métiers, d’applications mobiles hors-ligne et l’automatisation de leurs processus.
             </p>
 
             {/* CTAs */}
@@ -65,10 +63,10 @@ export default function Header() {
                 <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/services"
+                href="/solutions-medico-social"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-200 hover:text-white font-medium text-sm transition-all text-center backdrop-blur-sm"
               >
-                Découvrir nos expertises
+                Découvrir nos solutions médico-sociales
               </Link>
             </div>
 

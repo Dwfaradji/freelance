@@ -14,7 +14,22 @@ import {
   contactSubmissionSchema,
   newsletterSubmissionSchema,
   demoSubmissionSchema,
+  professionalEmailSchema,
 } from '../src/lib/forms/schemas';
+import {
+  EMAIL_VALIDATION_MESSAGES,
+  getEmailDomain,
+  isDisposableEmail,
+  isFreeEmailProvider,
+  isProfessionalEmail,
+  validateProfessionalEmail,
+} from '../src/lib/validation/email';
+import {
+  verifyEmailDomainDns,
+  clearEmailDnsCache,
+} from '../src/lib/validation/emailDns';
+import { POST as postContact } from '../src/app/api/contact/route';
+import { POST as postNewsletter } from '../src/app/api/newsletters/route';
 import React from 'react';
 import { render } from '@react-email/components';
 import {
@@ -23,7 +38,6 @@ import {
   formatCompany,
   formatPhone,
   formatCurrency,
-  formatDate,
   formatPercentage,
   formatNumber,
   stripHtml,
@@ -782,6 +796,375 @@ await runTestAsync('Section 38 : Aucun template ne contient undefined, NaN, Infi
   }));
   checkClean(simConf, 'SimulatorConfirmation');
 });
+
+  // ============================================================================
+  // 13. VALIDATION DES E-MAILS PROFESSIONNELS (CENTRALISÉE)
+  // ============================================================================
+  console.log('\n--- 13. Validation des E-mails Professionnels (B2B) ---');
+
+  runTest('Accepte les adresses e-mail professionnelles légitimes (entreprises, associations, médico-social)', () => {
+    const acceptedEmails = [
+      'contact@devevoke.com',
+      'direction@association-medico-sociale.fr',
+      'prenom.nom@entreprise.fr',
+      'direction@ime-exemple.fr',
+      'contact@cabinet-medical.fr',
+      'responsable@adapei.fr',
+      'direction@petite-association-locale.fr',
+      'dsi@fondation-autisme.org',
+      // Domaines personnalisés contenant un mot proche d'un fournisseur grand public (ne doivent PAS être bloqués)
+      'contact@ime-free.fr',
+      'direction@association-orange.fr',
+      'accueil@cabinet-live.fr',
+    ];
+
+    for (const email of acceptedEmails) {
+      const validation = validateProfessionalEmail(email);
+      assert.strictEqual(
+        validation.isValid,
+        true,
+        `L'adresse professionnelle "${email}" doit être acceptée`
+      );
+      assert.strictEqual(isProfessionalEmail(email), true);
+      assert.strictEqual(professionalEmailSchema.safeParse(email).success, true);
+    }
+  });
+
+  runTest('Refuse tous les fournisseurs grand public / personnels avec le message UX français attendu', () => {
+    const rejectedPersonalEmails = [
+      'test@gmail.com',
+      'user@googlemail.com',
+      'test@hotmail.com',
+      'test@hotmail.fr',
+      'test@outlook.com',
+      'test@outlook.fr',
+      'test@live.com',
+      'test@live.fr',
+      'test@msn.com',
+      'test@yahoo.com',
+      'test@yahoo.fr',
+      'test@ymail.com',
+      'test@icloud.com',
+      'test@me.com',
+      'test@mac.com',
+      'test@aol.com',
+      'test@proton.me',
+      'test@protonmail.com',
+      'test@gmx.com',
+      'test@gmx.fr',
+      'test@mail.com',
+      'test@orange.fr',
+      'test@wanadoo.fr',
+      'test@free.fr',
+      'test@sfr.fr',
+      'test@neuf.fr',
+      'test@laposte.net',
+    ];
+
+    for (const email of rejectedPersonalEmails) {
+      const validation = validateProfessionalEmail(email);
+      assert.strictEqual(
+        validation.isValid,
+        false,
+        `L'adresse personnelle "${email}" doit être refusée`
+      );
+      assert.strictEqual(validation.code, 'FREE_EMAIL_PROVIDER');
+      assert.strictEqual(
+        validation.message,
+        "Merci d'utiliser votre adresse e-mail professionnelle."
+      );
+      assert.strictEqual(isFreeEmailProvider(email), true);
+      assert.strictEqual(isProfessionalEmail(email), false);
+
+      const zodResult = professionalEmailSchema.safeParse(email);
+      assert.strictEqual(zodResult.success, false);
+      assert.strictEqual(
+        zodResult.error?.issues[0]?.message,
+        "Merci d'utiliser votre adresse e-mail professionnelle."
+      );
+    }
+  });
+
+  runTest('Refuse les adresses e-mail temporaires / jetables avec le message UX français attendu', () => {
+    const disposableEmails = [
+      'test@yopmail.com',
+      'test@yopmail.fr',
+      'user@mailinator.com',
+      'anon@guerrillamail.com',
+      'temp@temp-mail.org',
+      'jetable@10minutemail.com',
+      'spam@trashmail.com',
+      'sub@mail.yopmail.com',
+    ];
+
+    for (const email of disposableEmails) {
+      const validation = validateProfessionalEmail(email);
+      assert.strictEqual(
+        validation.isValid,
+        false,
+        `L'adresse jetable "${email}" doit être refusée`
+      );
+      assert.strictEqual(validation.code, 'DISPOSABLE_EMAIL_DOMAIN');
+      assert.strictEqual(
+        validation.message,
+        'Les adresses e-mail temporaires ne sont pas acceptées.'
+      );
+      assert.strictEqual(isDisposableEmail(email), true);
+      assert.strictEqual(isProfessionalEmail(email), false);
+
+      const zodResult = professionalEmailSchema.safeParse(email);
+      assert.strictEqual(zodResult.success, false);
+      assert.strictEqual(
+        zodResult.error?.issues[0]?.message,
+        'Les adresses e-mail temporaires ne sont pas acceptées.'
+      );
+    }
+  });
+
+  runTest('Gère la normalisation (espaces, casse) et rejette les syntaxes invalides ou trop longues', () => {
+    // Normalisation casse + espaces
+    const messyPro = '   Direction.Generale@IME-EXEMPLE.FR   ';
+    const proRes = validateProfessionalEmail(messyPro);
+    assert.strictEqual(proRes.isValid, true);
+    assert.strictEqual(proRes.normalizedEmail, 'direction.generale@ime-exemple.fr');
+    assert.strictEqual(getEmailDomain(messyPro), 'ime-exemple.fr');
+
+    // Casse + espaces sur un fournisseur personnel -> toujours refusé
+    const messyGmail = '  TEST@GMAIL.COM  ';
+    const gmailRes = validateProfessionalEmail(messyGmail);
+    assert.strictEqual(gmailRes.isValid, false);
+    assert.strictEqual(gmailRes.code, 'FREE_EMAIL_PROVIDER');
+
+    // Syntaxes invalides
+    const invalidSyntaxes = [
+      '',
+      '   ',
+      'abc',
+      'abc@',
+      '@example.com',
+      'user@',
+      'user@domain',
+      'user@.invalid.fr',
+      'user@domain..fr',
+      '.user@entreprise.fr',
+      'user.@entreprise.fr',
+      'user..name@entreprise.fr',
+      'user name@entreprise.fr',
+      'user@-domain.fr',
+      'user@domain-.fr',
+      'user@domain.123',
+      `${'a'.repeat(65)}@entreprise.fr`, // Partie locale > 64 caractères
+      `contact@${'a'.repeat(250)}.fr`, // Longueur totale > 254 caractères
+    ];
+
+    for (const invalid of invalidSyntaxes) {
+      const res = validateProfessionalEmail(invalid);
+      assert.strictEqual(
+        res.isValid,
+        false,
+        `L'entrée invalide "${invalid.slice(0, 40)}" doit être rejetée`
+      );
+      assert.strictEqual(
+        res.message,
+        EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX
+      );
+      assert.strictEqual(getEmailDomain(invalid), null);
+    }
+  });
+
+  // ============================================================================
+  // 14. TESTS DE VÉRIFICATION DNS / MX CÔTÉ SERVEUR
+  // ============================================================================
+  console.log('\n--- 14. Vérification DNS / MX Résiliente Côté Serveur ---');
+
+  await runTestAsync('verifyEmailDomainDns valide un domaine disposant d\'enregistrements MX', async () => {
+    clearEmailDnsCache();
+    const res = await verifyEmailDomainDns('contact@entreprise.fr', {
+      bypassCache: true,
+      resolver: {
+        resolveMx: async () => [{ exchange: 'mx1.entreprise.fr', priority: 10 }],
+        resolve4: async () => [],
+        resolve6: async () => [],
+      },
+    });
+    assert.strictEqual(res.allowed, true);
+    assert.strictEqual(res.hasMailRecords, true);
+    assert.strictEqual(res.status, 'MX_FOUND');
+  });
+
+  await runTestAsync('verifyEmailDomainDns rejette explicitement un domaine configuré en Null MX (RFC 7505)', async () => {
+    const res = await verifyEmailDomainDns('contact@no-mail.example', {
+      bypassCache: true,
+      resolver: {
+        resolveMx: async () => [{ exchange: '.', priority: 0 }],
+        resolve4: async () => ['93.184.216.34'],
+        resolve6: async () => [],
+      },
+    });
+    assert.strictEqual(res.allowed, false);
+    assert.strictEqual(res.status, 'NULL_MX_REJECTED');
+    assert.strictEqual(res.message, EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX);
+  });
+
+  await runTestAsync('verifyEmailDomainDns reste résilient (fail-open) en cas de timeout ou indisponibilité DNS', async () => {
+    const timeoutRes = await verifyEmailDomainDns('contact@association.fr', {
+      bypassCache: true,
+      timeoutMs: 30,
+      resolver: {
+        resolveMx: () => new Promise((resolve) => setTimeout(() => resolve([]), 200)),
+        resolve4: async () => [],
+        resolve6: async () => [],
+      },
+    });
+    assert.strictEqual(timeoutRes.allowed, true);
+    assert.strictEqual(timeoutRes.status, 'DNS_TIMEOUT');
+  });
+
+  // ============================================================================
+  // 15. TESTS DES ENDPOINTS SERVEUR (/api/contact & /api/newsletters)
+  // ============================================================================
+  console.log('\n--- 15. Protection Serveur des Endpoints API (Anti-Contournement Client) ---');
+
+  await runTestAsync('POST /api/contact bloque un appel direct avec une adresse personnelle (gmail.com) sans appeler Resend', async () => {
+    rateLimiter.reset();
+    const req = new Request('http://localhost:3000/api/contact', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-forwarded-for': '198.51.100.10',
+      },
+      body: JSON.stringify({
+        firstname: 'Jean',
+        lastname: 'Dupont',
+        business: 'IME Exemple',
+        email: 'test@gmail.com',
+        content: 'Demande envoyée directement via API en contournant le navigateur.',
+      }),
+    });
+
+    const response = await postContact(req);
+    const json = await response.json();
+
+    assert.strictEqual(response.status, 400);
+    assert.strictEqual(json.success, false);
+    assert.strictEqual(json.message, 'FREE_EMAIL_PROVIDER');
+    assert.strictEqual(
+      json.error,
+      "Merci d'utiliser votre adresse e-mail professionnelle."
+    );
+  });
+
+  await runTestAsync('POST /api/contact bloque un appel direct avec une adresse jetable (yopmail.com) sans appeler Resend', async () => {
+    rateLimiter.reset();
+    const req = new Request('http://localhost:3000/api/contact', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-forwarded-for': '198.51.100.11',
+      },
+      body: JSON.stringify({
+        firstname: 'Jean',
+        business: 'IME Exemple',
+        email: 'test@yopmail.com',
+        content: 'Tentative avec email jetable.',
+      }),
+    });
+
+    const response = await postContact(req);
+    const json = await response.json();
+
+    assert.strictEqual(response.status, 400);
+    assert.strictEqual(json.success, false);
+    assert.strictEqual(json.message, 'DISPOSABLE_EMAIL_DOMAIN');
+    assert.strictEqual(
+      json.error,
+      'Les adresses e-mail temporaires ne sont pas acceptées.'
+    );
+  });
+
+  await runTestAsync('POST /api/newsletters bloque un appel direct avec une adresse personnelle ou invalide', async () => {
+    rateLimiter.reset();
+    const reqFree = new Request('http://localhost:3000/api/newsletters', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-forwarded-for': '198.51.100.12',
+      },
+      body: JSON.stringify({
+        email: 'test@outlook.fr',
+      }),
+    });
+
+    const resFree = await postNewsletter(reqFree);
+    const jsonFree = await resFree.json();
+    assert.strictEqual(resFree.status, 400);
+    assert.strictEqual(jsonFree.success, false);
+    assert.strictEqual(
+      jsonFree.error,
+      "Merci d'utiliser votre adresse e-mail professionnelle."
+    );
+
+    const reqInvalid = new Request('http://localhost:3000/api/newsletters', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-forwarded-for': '198.51.100.13',
+      },
+      body: JSON.stringify({
+        email: 'abc@',
+      }),
+    });
+
+    const resInvalid = await postNewsletter(reqInvalid);
+    const jsonInvalid = await resInvalid.json();
+    assert.strictEqual(resInvalid.status, 400);
+    assert.strictEqual(jsonInvalid.success, false);
+    assert.strictEqual(
+      jsonInvalid.error,
+      'Veuillez saisir une adresse e-mail valide.'
+    );
+  });
+
+  await runTestAsync('POST /api/contact accepte un e-mail professionnel valide et bloque la répétition identique immédiate', async () => {
+    rateLimiter.reset();
+    const payload = {
+      firstname: 'Claire',
+      lastname: 'Morel',
+      business: 'Association Médico-Sociale Horizon',
+      email: 'direction@association-medico-sociale.fr',
+      content: 'Nous souhaitons planifier un cadrage pour notre futur outil métier multi-sites.',
+    };
+
+    const req1 = new Request('http://localhost:3000/api/contact', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-forwarded-for': '198.51.100.14',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const res1 = await postContact(req1);
+    const json1 = await res1.json();
+    assert.strictEqual(res1.status, 200);
+    assert.strictEqual(json1.success, true);
+
+    // Soumission strictement identique immédiate -> bloquée par anti-doublon (429)
+    const req2 = new Request('http://localhost:3000/api/contact', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-forwarded-for': '198.51.100.14',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const res2 = await postContact(req2);
+    const json2 = await res2.json();
+    assert.strictEqual(res2.status, 429);
+    assert.strictEqual(json2.success, false);
+    assert.strictEqual(json2.message, 'DUPLICATE_SUBMISSION');
+  });
 
   // ============================================================================
   // RÉSUMÉ DES TESTS

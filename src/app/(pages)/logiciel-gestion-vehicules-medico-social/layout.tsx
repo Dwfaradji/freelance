@@ -2,19 +2,15 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Logiciel Gestion Flotte & Véhicules Association Médico-Sociale (Floticar)',
+  title: 'Solution SaaS de Gestion de Véhicules pour ESMS & Associations (par DevEvoke)',
   description:
-    'Floticar est le logiciel SaaS de gestion et suivi de flotte automobile adapté aux associations, IME, SESSAD et établissements médico-sociaux. Réservations, carnets de bord, entretiens et optimisation des coûts.',
+    'Découvrez Floticar, la solution SaaS développée par DevEvoke pour simplifier le suivi des véhicules de service en établissement médico-social (IME, SESSAD, ESAT, EHPAD) et association gestionnaire.',
   keywords: [
-    'logiciel gestion véhicules association',
-    'gestion flotte association',
-    'gestion véhicules établissement médico-social',
-    'logiciel gestion flotte médico-social',
-    'suivi véhicules association',
-    'gestion parc automobile association',
-    'logiciel gestion flotte automobile',
-    'gestion véhicules IME',
-    'gestion véhicules SESSAD',
+    'logiciel gestion véhicules établissement médico-social',
+    'gestion flotte association médico-sociale',
+    'suivi véhicules IME SESSAD',
+    'carnet de bord numérique véhicule associatif',
+    'solution SaaS développée par DevEvoke',
     'Floticar',
     'DevEvoke',
   ],
@@ -22,9 +18,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.devevoke.com/logiciel-gestion-vehicules-medico-social',
   },
   openGraph: {
-    title: 'Logiciel Gestion Véhicules & Flotte Association Médico-Sociale | Floticar',
+    title: 'Solution SaaS de Gestion de Véhicules Médico-Sociale | Conçue par DevEvoke',
     description:
-      'Optimisez le suivi de votre parc automobile en association médico-sociale, IME ou SESSAD. Dématérialisation du carnet de bord, alertes entretiens et gestion des réservations.',
+      'Solution développée par DevEvoke pour dématérialiser le carnet de bord, les alertes d’entretien et les réservations de véhicules en ESMS.',
     url: 'https://www.devevoke.com/logiciel-gestion-vehicules-medico-social',
     siteName: 'DevEvoke',
     images: [
@@ -32,7 +28,7 @@ export const metadata: Metadata = {
         url: '/icon.png',
         width: 800,
         height: 600,
-        alt: 'Floticar - Logiciel de gestion de flotte automobile pour associations médico-sociales',
+        alt: 'Solution de gestion de flotte médico-sociale développée par DevEvoke',
       },
     ],
     locale: 'fr_FR',
@@ -40,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gestion de Flotte Automobile pour Associations & IME/SESSAD | Floticar',
+    title: 'Gestion de Véhicules pour Associations & ESMS | Solution DevEvoke',
     description:
-      'La solution SaaS éditée par DevEvoke pour gérer et suivre les véhicules des établissements médico-sociaux.',
+      'Une solution SaaS conçue par DevEvoke pour suivre les véhicules des établissements médico-sociaux.',
     images: ['/icon.png'],
   },
 };

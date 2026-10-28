@@ -6,16 +6,11 @@ import {
   AlertTriangle,
   ArrowRight,
   ShieldCheck,
-  Zap,
   WifiOff,
   QrCode,
   Lock,
-  Layers,
   Sparkles,
   HelpCircle,
-  Clock,
-  MapPin,
-  Cpu,
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import ServicesNavSwitcher from '@/components/ui/ServicesNavSwitcher';

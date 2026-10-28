@@ -5,13 +5,9 @@ import Image from 'next/image';
 import { 
   Building, 
   Heart, 
-  Users, 
   ShieldCheck, 
   ArrowRight, 
-  CheckCircle2, 
-  Clock, 
   Smartphone,
-  FileText
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';

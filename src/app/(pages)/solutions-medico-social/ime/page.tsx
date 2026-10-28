@@ -5,10 +5,6 @@ import Image from 'next/image';
 import { 
   GraduationCap, 
   Car, 
-  Users, 
-  CalendarCheck, 
-  ShieldCheck, 
-  CheckCircle2, 
   ArrowRight, 
   HeartHandshake,
   FileText
@@ -17,28 +13,28 @@ import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
 
 export const metadata: Metadata = {
-  title: 'Solutions Numériques & Logiciels pour IME',
+  title: 'Logiciels Sur-Mesure & Solutions Numériques pour IME et DITEP',
   description:
-    'Solutions digitales conçues pour les Instituts Médico-Éducatifs (IME) : suivi éducatif et thérapeutique, gestion des transports et minibus (Floticar), coordination et lien familles.',
+    'Solutions digitales conçues pour les Instituts Médico-Éducatifs (IME) et DITEP : suivi éducatif et thérapeutique, coordination pluridisciplinaire, portail familles, logistique des transports et conformité RGPD.',
   keywords: [
     'logiciel IME',
     'solution numérique IME',
-    'gestion véhicules IME',
+    'logiciel DITEP',
     'institut médico éducatif logiciel',
     'suivi éducatif IME',
-    'Floticar IME',
+    'application médico-sociale enfance',
     'DevEvoke',
   ],
   alternates: {
     canonical: 'https://www.devevoke.com/solutions-medico-social/ime',
   },
   openGraph: {
-    title: 'Solutions Numériques & Logiciels pour IME | DevEvoke',
+    title: 'Logiciels Sur-Mesure & Solutions Numériques pour IME et DITEP | DevEvoke',
     description:
-      'Facilitez le quotidien des éducateurs, rééducateurs et directions d’IME avec des outils numériques pensés pour l’accompagnement des enfants et adolescents.',
+      'Facilitez le quotidien des éducateurs, rééducateurs et directions d’IME et DITEP avec des outils numériques pensés pour l’accompagnement des enfants et adolescents.',
     url: 'https://www.devevoke.com/solutions-medico-social/ime',
     siteName: 'DevEvoke',
-    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Solutions logicielles pour IME' }],
+    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Solutions logicielles pour IME et DITEP' }],
     locale: 'fr_FR',
     type: 'website',
   },
@@ -48,14 +44,14 @@ export default function SolutionsImePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Solutions Numériques pour Instituts Médico-Éducatifs (IME)',
+    name: 'Solutions Numériques pour Instituts Médico-Éducatifs (IME) et DITEP',
     provider: {
       '@type': 'Organization',
       name: 'DevEvoke',
       url: 'https://www.devevoke.com',
     },
     description:
-      'Outils de suivi éducatif, gestion de flotte de minibus et coordination pour Instituts Médico-Éducatifs.',
+      'Outils numériques de suivi éducatif, coordination pluridisciplinaire, lien familles et gestion logistique pour IME et DITEP.',
   };
 
   return (

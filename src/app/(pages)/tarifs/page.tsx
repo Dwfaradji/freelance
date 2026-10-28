@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import PricingHeader from '@/components/Pricing/pricingHeader';
 import PricingMain from '@/components/Pricing/pricingMain';

@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { Fade } from '@/components/ui/Fade';
 import Link from 'next/link';

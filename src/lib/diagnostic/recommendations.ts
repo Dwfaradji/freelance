@@ -2,7 +2,6 @@ import {
   DevEvokeSolution,
   DiagnosticRisk,
   Dimension,
-  Horizon,
   OrganizationProfile,
   Recommendation,
   Strength,
@@ -284,7 +283,7 @@ export function buildRoadmap(recommendations: Recommendation[]): {
  */
 export function detectStrengths(
   dimensionScores: Record<Dimension, number>,
-  answers: Record<string, string>
+  _answers: Record<string, string>
 ): Strength[] {
   const strengths: Strength[] = [];
 

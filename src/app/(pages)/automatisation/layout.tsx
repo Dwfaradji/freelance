@@ -1,18 +1,19 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Automatisation des Processus & Suppression Double Saisie',
+  title: 'Automatisation des Processus Métier & Interopérabilité Médico-Sociale',
   description:
-    'Automatisation de processus métier, suppression des doubles saisies et synchronisation de données via API. Génération automatique de bilans, alertes intelligentes et gain de temps administratif en Occitanie et toute la France.',
+    'Digitalisation des processus métier, suppression des doubles saisies et interopérabilité entre logiciels pour établissements médico-sociaux (ESMS) et associations : synchronisation API, consolidation CPOM et gain de temps administratif.',
   alternates: {
     canonical: 'https://www.devevoke.com/automatisation',
   },
   openGraph: {
-    title: 'Automatisation des Processus & Suppression Double Saisie | DevEvoke',
+    title: 'Automatisation des Processus & Interopérabilité Médico-Sociale | DevEvoke',
     description:
-      'Gagnez des heures chaque semaine : connectez vos outils, supprimez les saisies manuelles et automatisez vos flux administratifs avec DevEvoke.',
+      'Libérez du temps pour l’accompagnement humain : connectez vos outils, supprimez les ressaisies manuelles et automatisez vos bilans d’activité.',
     url: 'https://www.devevoke.com/automatisation',
     siteName: 'DevEvoke',
+    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Automatisation des processus médico-sociaux DevEvoke' }],
     locale: 'fr_FR',
     type: 'website',
   },

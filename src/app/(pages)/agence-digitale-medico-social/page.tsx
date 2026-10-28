@@ -6,7 +6,6 @@ import {
   ShieldCheck, 
   Layers, 
   Car, 
-  Cpu, 
   Smartphone, 
   HeartHandshake, 
   CheckCircle2, 
@@ -14,7 +13,6 @@ import {
   Lock, 
   Server, 
   Workflow, 
-  Users, 
   FileText,
   Clock,
   Sparkles

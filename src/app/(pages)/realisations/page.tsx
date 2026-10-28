@@ -1,15 +1,9 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
   Sparkles,
   ArrowRight,
-  ShieldCheck,
-  Smartphone,
-  Cpu,
-  Layers,
   CheckCircle2,
   ExternalLink,
 } from 'lucide-react';

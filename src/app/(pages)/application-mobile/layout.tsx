@@ -1,18 +1,19 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Développement Applications Mobiles iOS & Android Perpignan',
+  title: 'Développement Application Mobile Médico-Social & Équipes Terrain',
   description:
-    'Conception d’applications mobiles professionnelles sous React Native et Expo. Mode hors-ligne (offline-first), ergonomie tactile et intégration système pour équipes terrain et entreprises en Occitanie et toute la France.',
+    'Conception d’applications mobiles iOS et Android sur-mesure (React Native, PWA) pour le secteur médico-social : mode hors-ligne garanti pour SESSAD, éducateurs spécialisés, intervenants à domicile et équipes mobiles.',
   alternates: {
     canonical: 'https://www.devevoke.com/application-mobile',
   },
   openGraph: {
-    title: 'Développement Applications Mobiles iOS & Android | DevEvoke',
+    title: 'Développement Application Mobile Médico-Social & Terrain | DevEvoke',
     description:
-      'Applications mobiles sur-mesure pour professionnels et équipes de terrain. Fonctionnement 100% hors-ligne, synchronisation automatique et sécurité des données.',
+      'Applications mobiles sur-mesure pour professionnels médico-sociaux et équipes en tournée. Fonctionnement 100% hors-ligne, synchronisation automatique et conformité RGPD.',
     url: 'https://www.devevoke.com/application-mobile',
     siteName: 'DevEvoke',
+    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Application mobile médico-sociale hors-ligne DevEvoke' }],
     locale: 'fr_FR',
     type: 'website',
   },

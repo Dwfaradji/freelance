@@ -61,7 +61,6 @@ const ProcessPage = () => {
         <div className="space-y-16">
           {steps.map((step, index) => {
             const isEven = index % 2 === 0;
-            const stepNumber = index + 1;
             // On nettoie le titre (ex: "Étape 1 : Compréhension...")
             const cleanTitle = step.title?.replace(/^Étape \d+\s*:\s*/i, '') || '';
 

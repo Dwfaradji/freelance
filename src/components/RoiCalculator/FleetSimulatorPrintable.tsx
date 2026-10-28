@@ -10,7 +10,6 @@ interface FleetSimulatorPrintableProps {
 export default function FleetSimulatorPrintable({ simulation }: FleetSimulatorPrintableProps) {
   const {
     inputs,
-    currentCost,
     scenarios,
     annualGrossSaving,
     monthlyGrossSaving,
@@ -19,7 +18,6 @@ export default function FleetSimulatorPrintable({ simulation }: FleetSimulatorPr
     roi,
     priorities,
     personalizedNarrative,
-    assumptions,
     confidence,
   } = simulation;
 

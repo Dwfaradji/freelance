@@ -1,8 +1,6 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import { HelpCircle, ArrowRight, ShieldCheck, Sparkles, Calendar, MessageSquare } from 'lucide-react';
+import { HelpCircle, ArrowRight, MessageSquare } from 'lucide-react';
 import PricingFAQ from '@/components/Pricing/pricingFAQ';
 import { Fade } from '@/components/ui/Fade';
 import Breadcrumb from '@/components/ui/Breadcrumb';

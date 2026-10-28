@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FullFleetSimulationResult } from '@/lib/roi/types';
-import { ArrowRight, Calculator, CheckCircle2, RotateCcw, ShieldCheck, Sparkles, TrendingUp, Zap } from 'lucide-react';
+import { ArrowRight, Calculator, CheckCircle2, RotateCcw, Zap } from 'lucide-react';
 
 interface FleetSimulatorTriggerProps {
   onOpen: () => void;

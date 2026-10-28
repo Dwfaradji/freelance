@@ -3,15 +3,11 @@
 import React from 'react';
 import { DiagnosticReport } from '@/lib/diagnostic/types';
 import {
-  ArrowRight,
   Award,
-  BarChart3,
-  CheckCircle2,
   Clock,
   Lock,
   Play,
   RotateCcw,
-  ShieldCheck,
   Sparkles,
 } from 'lucide-react';
 

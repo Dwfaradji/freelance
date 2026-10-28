@@ -5,9 +5,8 @@ import {
   calculateFleetROI,
   formatEstimatedCurrency,
   formatPayback,
-  sanitizeNumber,
 } from '../src/lib/roi/calculator';
-import { DEFAULT_FLEET_INPUTS, SCENARIOS } from '../src/lib/roi/constants';
+import { DEFAULT_FLEET_INPUTS } from '../src/lib/roi/constants';
 import { FleetInputs } from '../src/lib/roi/types';
 
 console.log('--- TEST 1 : Cas Standard Réaliste ---');

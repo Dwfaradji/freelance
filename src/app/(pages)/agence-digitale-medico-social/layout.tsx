@@ -2,29 +2,26 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Agence Digitale Médico-Social | Transformation Numérique & Logiciels',
+  title: 'Agence Digitale & Web Médico-Social : Sites, Applications & Logiciels',
   description:
-    'DevEvoke est une agence digitale spécialisée dans le secteur médico-social. Nous concevons des logiciels métiers, solutions SaaS, applications mobiles et outils de gestion de flotte pour IME, SESSAD, ESAT, EHPAD et associations gestionnaires.',
+    'Agence digitale spécialisée dans le secteur médico-social : création et refonte de sites internet, applications web et mobiles, logiciels métiers sur-mesure et accompagnement pour ESMS, associations gestionnaires, IME, SESSAD, DITEP, ESAT et EHPAD.',
   keywords: [
     'agence digitale médico-social',
     'agence web médico-social',
     'transformation numérique médico-social',
-    'logiciel médico-social',
-    'solution numérique médico-sociale',
+    'création site internet médico-social',
+    'refonte site internet association médico-sociale',
+    'solution digitale médico-social',
     'digitalisation association médico-sociale',
-    'logiciel IME',
-    'logiciel SESSAD',
-    'logiciel ESAT',
-    'logiciel EHPAD',
     'DevEvoke',
   ],
   alternates: {
     canonical: 'https://www.devevoke.com/agence-digitale-medico-social',
   },
   openGraph: {
-    title: 'Agence Digitale Médico-Social | DevEvoke',
+    title: 'Agence Digitale & Web Spécialisée Médico-Social | DevEvoke',
     description:
-      'Ingénierie logicielle et transformation numérique pour les établissements et associations médico-sociales en France. Logiciels métiers, conformité RGPD et gestion de flotte.',
+      'Ingénierie logicielle, création de sites web et transformation numérique pour les établissements et associations médico-sociales en France.',
     url: 'https://www.devevoke.com/agence-digitale-medico-social',
     siteName: 'DevEvoke',
     images: [
@@ -42,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Agence Digitale Spécialisée Médico-Social | DevEvoke',
     description:
-      'Solutions numériques et logiciels métiers sur-mesure pour associations gestionnaires, IME, SESSAD, ESAT et EHPAD.',
+      'Sites web, applications mobiles et logiciels métiers sur-mesure pour associations gestionnaires, ESMS, IME, SESSAD, DITEP, ESAT et EHPAD.',
     images: ['/icon.png'],
   },
 };

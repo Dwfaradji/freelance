@@ -1,20 +1,15 @@
 // layout.tsx
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import PageTransition from '@/components/ui/PageTransition';
-import { MyProvider } from '@/context/context';
 import { Metadata as NextMetadata } from 'next/dist/lib/metadata/types/metadata-interface';
 import GoogleAnalytics from '@/lib/GoogleAnalytics';
 import AppHead from '@/config/AppHead';
 import FloatingQuickNav from '@/components/ui/FloatingQuickNav';
 
 import './globals.css';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,41 +26,43 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: NextMetadata = {
   metadataBase: new URL('https://www.devevoke.com'),
   title: {
-    default: 'DevEvoke | Agence digitale & solutions métier sur-mesure',
+    default:
+      'DevEvoke | Solutions Digitales & Développement Sur-Mesure pour le Médico-Social',
     template: '%s | DevEvoke',
   },
   description:
-    'DevEvoke conçoit des solutions digitales pensées pour votre métier : développement web Next.js, applications mobiles nomades, plateformes SaaS, logiciels sur-mesure et automatisation. Basée à Perpignan (Occitanie & toute la France).',
+    'Agence digitale spécialisée dans les solutions numériques pour le secteur médico-social : logiciels métiers sur-mesure, applications web et mobiles, plateformes SaaS, création et refonte de sites pour ESMS, associations, IME, SESSAD, DITEP, ESAT et EHPAD.',
   keywords: [
-    'Agence digitale Perpignan',
-    'Agence digitale Occitanie',
-    'Développement web sur-mesure',
-    'Solutions métier sur-mesure',
-    'Logiciel métier sur-mesure',
-    'Développement application mobile',
-    'Conception plateforme SaaS',
-    'Automatisation des processus',
-    'Agence Next.js France',
-    'Solutions médico-social',
-    'Hébergement souverain France',
+    'agence digitale médico-social',
+    'agence web médico-social',
+    'solutions digitales médico-social',
+    'développement logiciel médico-social',
+    'logiciel sur mesure médico-social',
+    'application web ESMS',
+    'application mobile médico-social',
+    'transformation numérique médico-social',
+    'création site internet médico-social',
+    'automatisation processus médico-social',
+    'hébergement souverain France RGPD',
     'Boucif Faradji',
     'DevEvoke',
   ],
   alternates: {
-    canonical: 'https://www.devevoke.com/',
+    canonical: 'https://www.devevoke.com',
   },
   openGraph: {
-    title: 'DevEvoke | Agence Digitale & Solutions Métier Sur-Mesure',
+    title:
+      'DevEvoke | Solutions Digitales & Logiciels Sur-Mesure pour le Médico-Social',
     description:
-      'Des solutions digitales pensées pour votre métier : logiciels sur-mesure, applications mobiles nomades, plateformes SaaS et automatisation.',
-    url: 'https://www.devevoke.com/',
+      'Conception de logiciels métiers, applications web et mobiles, plateformes SaaS et sites internet pour les établissements et associations du secteur médico-social.',
+    url: 'https://www.devevoke.com',
     siteName: 'DevEvoke',
     images: [
       {
         url: '/icon.png',
         width: 800,
         height: 600,
-        alt: 'DevEvoke - Agence Digitale & Solutions Métier',
+        alt: 'DevEvoke - Solutions digitales et développement sur-mesure pour le médico-social',
       },
     ],
     locale: 'fr_FR',
@@ -73,9 +70,10 @@ export const metadata: NextMetadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DevEvoke | Agence Digitale & Solutions Métier Sur-Mesure',
+    title:
+      'DevEvoke | Solutions Digitales & Développement Sur-Mesure Médico-Social',
     description:
-      'Logiciels sur-mesure, développement web Next.js, applications mobiles et plateformes SaaS pour entreprises et organisations.',
+      'Logiciels métiers sur-mesure, applications web et mobiles, SaaS et automatisation pour ESMS, associations gestionnaires, IME, SESSAD, DITEP, ESAT et EHPAD.',
     images: ['/icon.png'],
   },
 };
@@ -103,7 +101,7 @@ export default function RootLayout({
         url: 'https://www.devevoke.com',
         logo: 'https://www.devevoke.com/icon.png',
         description:
-          'Agence digitale française spécialisée dans la conception de solutions logicielles et numériques sur-mesure : développement web Next.js, applications mobiles, plateformes SaaS et automatisation.',
+          'Agence digitale française spécialisée dans la conception de solutions numériques et le développement sur-mesure pour le secteur médico-social (ESMS, associations gestionnaires, IME, SESSAD, DITEP, ESAT, EHPAD) : logiciels métiers, applications web et mobiles, plateformes SaaS et automatisation.',
         founder: {
           '@type': 'Person',
           name: 'Boucif Faradji',
@@ -135,7 +133,7 @@ export default function RootLayout({
         name: 'DevEvoke',
         image: 'https://www.devevoke.com/icon.png',
         description:
-          'Agence digitale à Perpignan spécialisée dans le développement web Next.js, applications mobiles, plateformes SaaS et logiciels métiers sur-mesure.',
+          'Agence digitale basée à Perpignan (Occitanie) accompagnant les établissements médico-sociaux, associations et organisations partout en France dans le développement web Next.js, les applications mobiles, les plateformes SaaS et les logiciels métiers sur-mesure.',
         url: 'https://www.devevoke.com',
         address: {
           '@type': 'PostalAddress',
@@ -143,6 +141,10 @@ export default function RootLayout({
           addressRegion: 'Occitanie',
           postalCode: '66000',
           addressCountry: 'FR',
+        },
+        areaServed: {
+          '@type': 'Country',
+          name: 'France',
         },
         priceRange: '€€€',
       },
@@ -167,16 +169,14 @@ export default function RootLayout({
         >
           Aller au contenu principal
         </a>
-        <MyProvider>
-          <Navbar />
-          <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl w-full outline-none">
-            <PageTransition>
-              {children}
-            </PageTransition>
-          </main>
-          <Footer />
-          <FloatingQuickNav />
-        </MyProvider>
+        <Navbar />
+        <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl w-full outline-none">
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
+        <Footer />
+        <FloatingQuickNav />
       </body>
     </html>
   );

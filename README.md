@@ -1,7 +1,3 @@
-Super, je vais adapter le README pour refléter que le site est déjà déployé sur Vercel. Voici une version mise à jour :
-
----
-
 # Mon Portfolio de Développeur Freelance
 
 Bienvenue sur le projet Next.js de mon portfolio. Ce site est conçu pour présenter mes compétences et projets en tant que développeur freelance. Le projet a été démarré avec [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

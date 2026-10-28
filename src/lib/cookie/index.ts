@@ -32,12 +32,4 @@ const config = {
   ],
 };
 
-const headerScripts = [
-  {
-    title: 'Google Analytics',
-    type: 'analytics',
-    value: `https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`,
-  },
-];
-
-export { headerScripts, config };
+export { config };

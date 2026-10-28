@@ -1,7 +1,8 @@
+'use client';
 import React from 'react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { UserCheck, Code2, Layers, Cpu, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { UserCheck, Code2, Layers, ShieldCheck } from 'lucide-react';
 
 import myPhoto from '@/images/about/photo-profil-1920.webp';
 

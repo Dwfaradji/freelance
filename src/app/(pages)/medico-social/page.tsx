@@ -1,22 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Building2,
   ShieldCheck,
-  Layers,
   Car,
   Cpu,
   Smartphone,
   CheckCircle2,
   ArrowRight,
-  Server,
   Users,
-  FileText,
-  Clock,
   Sparkles,
   HelpCircle,
-  Lock,
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';

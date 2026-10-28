@@ -3,13 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   Building2,
-  Users,
-  CheckCircle2,
   ArrowRight,
   ShieldCheck,
-  Smartphone,
-  Calendar,
-  Layers,
 } from 'lucide-react';
 
 const featuredStructures = [

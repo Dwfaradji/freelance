@@ -4,15 +4,8 @@ import Image from 'next/image';
 import floticarImg from '@/images/projects/floticar-dashboard.png';
 import {
   Car,
-  QrCode,
-  CalendarCheck,
-  Wrench,
-  AlertTriangle,
-  TrendingDown,
   ArrowRight,
   CheckCircle2,
-  FileCheck,
-  ShieldCheck,
   Smartphone,
 } from 'lucide-react';
 
@@ -39,15 +32,15 @@ export default function FloticarShowcase() {
             <div className="lg:col-span-6 space-y-5 sm:space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 text-xs font-semibold">
                 <Car className="size-3.5 shrink-0" />
-                <span>Preuve Concrète d&apos;Ingénierie Métier • Conçu par DevEvoke</span>
+                <span>Réalisation SaaS &amp; Preuve d&apos;Expertise • Conçu par DevEvoke</span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
-                Floticar : La gestion de flotte pensée pour les organisations & établissements
+                Étude de cas : Floticar, solution SaaS développée pour les flottes associatives
               </h2>
 
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                Né des contraintes réelles constatées auprès d’associations gestionnaires, d’IME, de SESSAD et d’entreprises, <strong className="text-white">Floticar</strong> élimine les carnets de bord papier, responsabilise les conducteurs et protège le budget de l’organisation.
+                Illustration concrète de notre capacité à concevoir un produit numérique complet : né des besoins observés auprès d’associations gestionnaires, d’IME et de SESSAD, <strong className="text-white">Floticar</strong> dématérialise le carnet de bord des véhicules partagés et simplifie le suivi opérationnel.
               </p>
 
               {/* 6 Feature Points */}
@@ -66,19 +59,17 @@ export default function FloticarShowcase() {
               {/* CTAs */}
               <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
-                  href="https://www.floticar.fr"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/realisations/floticar"
                   className="px-6 py-3.5 min-h-[44px] rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-xs sm:text-sm hover:opacity-95 shadow-lg shadow-primary-500/20 transition-all flex items-center justify-center gap-2"
                 >
-                  <span>Visiter le site officiel Floticar</span>
+                  <span>Lire l’étude de cas Floticar</span>
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
                   href="/realisations"
                   className="px-6 py-3.5 min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-xs sm:text-sm transition-all flex items-center justify-center text-center"
                 >
-                  Voir nos études de cas
+                  Découvrir toutes nos réalisations
                 </Link>
               </div>
             </div>
@@ -138,12 +129,10 @@ export default function FloticarShowcase() {
                 </div>
 
                 <Link
-                  href="https://www.floticar.fr"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/realisations/floticar"
                   className="text-xs font-semibold text-primary-400 hover:text-white shrink-0 sm:pr-2 self-end sm:self-auto min-h-[36px] flex items-center"
                 >
-                  Découvrir Floticar →
+                  Voir l’étude de cas →
                 </Link>
               </div>
 

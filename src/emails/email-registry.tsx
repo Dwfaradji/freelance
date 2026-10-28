@@ -65,37 +65,37 @@ import {
  * 1. OBJETS D'EMAIL CENTRALISÉS (Section 42 du Design System)
  */
 export const emailSubjects = {
-  contactInternal: (data: ContactEmailData, ref: string) =>
+  contactInternal: (_data: ContactEmailData, ref: string) =>
     `Nouvelle demande de contact — DevEvoke [Réf: ${ref}]`,
 
   contactConfirmation: (_data: ContactEmailData, ref: string) =>
     `DevEvoke — Votre demande a bien été reçue [Réf: ${ref}]`,
 
-  quoteInternal: (data: QuoteEmailData, ref: string) =>
+  quoteInternal: (_data: QuoteEmailData, ref: string) =>
     `Nouvelle demande de devis — DevEvoke [Réf: ${ref}]`,
 
   quoteConfirmation: (_data: QuoteEmailData, ref: string) =>
     `DevEvoke — Votre demande de devis [Réf: ${ref}]`,
 
-  demoInternal: (data: DemoEmailData, ref: string) =>
+  demoInternal: (_data: DemoEmailData, ref: string) =>
     `Nouvelle demande de démonstration — DevEvoke [Réf: ${ref}]`,
 
   demoConfirmation: (_data: DemoEmailData, ref: string) =>
     `DevEvoke — Votre demande de démonstration [Réf: ${ref}]`,
 
-  diagnosticInternal: (data: DiagnosticEmailData, ref: string) =>
+  diagnosticInternal: (_data: DiagnosticEmailData, ref: string) =>
     `Nouveau diagnostic complété — DevEvoke [Réf: ${ref}]`,
 
   diagnosticConfirmation: (_data: DiagnosticEmailData, ref: string) =>
     `DevEvoke — Votre diagnostic est disponible [Réf: ${ref}]`,
 
-  simulatorInternal: (data: SimulatorEmailData, ref: string) =>
+  simulatorInternal: (_data: SimulatorEmailData, ref: string) =>
     `Nouveau résultat du simulateur — DevEvoke [Réf: ${ref}]`,
 
   simulatorConfirmation: (_data: SimulatorEmailData, ref: string) =>
     `Votre simulation DevEvoke est disponible [Réf: ${ref}]`,
 
-  newsletterInternal: (data: NewsletterEmailData, ref: string) =>
+  newsletterInternal: (_data: NewsletterEmailData, ref: string) =>
     `Nouvel abonné newsletter — DevEvoke [Réf: ${ref}]`,
 
   newsletterConfirmation: () =>

@@ -12,7 +12,6 @@ import {
 } from '@/lib/diagnostic/constants';
 import { getActiveQuestions } from '@/lib/diagnostic/questions';
 import {
-  DiagnosticQuestion,
   DiagnosticReport,
   FleetSize,
   MobilityLevel,
@@ -25,22 +24,14 @@ import {
   AlertTriangle,
   ArrowRight,
   Award,
-  Building2,
   Calendar,
-  Car,
   CheckCircle2,
   Clock,
-  Compass,
   FileText,
-  Layers,
   Printer,
   RotateCcw,
-  Shield,
-  ShieldCheck,
-  Smartphone,
   Sparkles,
   Target,
-  Users,
   Zap,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';

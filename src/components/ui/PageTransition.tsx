@@ -1,36 +1,28 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // On bloque l'écran au minimum pour laisser le temps au premier chargement
-    // aux images lourdes (comme le portfolio) de se télécharger en arrière-plan.
-    const minTime = 2000;
-    const startTime = Date.now();
-
-    const hideLoader = () => {
-      const elapsed = Date.now() - startTime;
-      const remaining = Math.max(0, minTime - elapsed);
-      setTimeout(() => setIsLoading(false), remaining);
-    };
-
-    // Si c'est le chargement initial de la page complète
-    if (document.readyState === 'complete') {
-      hideLoader();
-    } else {
-      window.addEventListener('load', hideLoader, { once: true });
-      // Fallback sécurité si load ne se déclenche pas
-      setTimeout(() => setIsLoading(false), minTime + 3000);
+    try {
+      if (sessionStorage.getItem('devevoke_initialized') === '1') {
+        return;
+      }
+      sessionStorage.setItem('devevoke_initialized', '1');
+    } catch {
+      // Ignore storage access errors in restricted environments
     }
 
-    return () => window.removeEventListener('load', hideLoader);
-  }, []); // Se lance uniquement au premier chargement du site
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 350);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Si on scrolle pendant le loading, on force la position en haut
   useEffect(() => {
@@ -50,8 +42,9 @@ export default function PageTransition({ children }: { children: React.ReactNode
             key="global-loader"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[var(--color-bg)] overflow-hidden"
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[var(--color-bg)] overflow-hidden pointer-events-none"
+            aria-hidden="true"
           >
             {/* Dynamic Background Glows */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -143,8 +136,8 @@ export default function PageTransition({ children }: { children: React.ReactNode
         )}
       </AnimatePresence>
       
-      {/* Contenu de la page qui charge en arrière-plan */}
-      <div className={isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-1000'}>
+      {/* Contenu de la page visible dès le rendu SSR pour le SEO et le LCP */}
+      <div>
         {children}
       </div>
     </>

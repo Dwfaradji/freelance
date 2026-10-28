@@ -1,10 +1,19 @@
 import { NextResponse } from 'next/server';
 import { validateFormRequest } from '@/lib/security/requestValidation';
 import { checkHoneypot } from '@/lib/security/honeypot';
-import { rateLimiter, getClientIp } from '@/lib/security/rateLimit';
+import {
+  rateLimiter,
+  getClientIp,
+  computeSubmissionFingerprint,
+} from '@/lib/security/rateLimit';
 import { securityLogger, generateRequestId } from '@/lib/security/logger';
 import { generateReference } from '@/lib/security/reference';
 import { newsletterSubmissionSchema } from '@/lib/forms/schemas';
+import {
+  EMAIL_VALIDATION_MESSAGES,
+  validateProfessionalEmail,
+} from '@/lib/validation/email';
+import { verifyEmailDomainDns } from '@/lib/validation/emailDns';
 import { sendTransactionalEmail } from '@/lib/email/sendTransactionalEmail';
 import { getEmailConfig } from '@/lib/email/config';
 
@@ -28,7 +37,7 @@ export async function POST(request: Request) {
     return validation.errorResponse!;
   }
 
-  const rawBody = validation.parsedBody;
+  const rawBody = validation.parsedBody as Record<string, unknown>;
 
   // 2. Détection Anti-Spam Honeypot
   const honeypotResult = checkHoneypot(rawBody);
@@ -82,13 +91,28 @@ export async function POST(request: Request) {
     );
   }
 
-  // 4. Validation Zod de l'email
+  // 4. Validation de l'e-mail professionnel & Schéma Zod
+  const emailCheck = validateProfessionalEmail(rawBody.email);
   const parseResult = newsletterSubmissionSchema.safeParse(rawBody);
-  if (!parseResult.success) {
-    const formattedErrors = parseResult.error.flatten().fieldErrors;
-    const errorDetails = Object.entries(formattedErrors)
+
+  if (!parseResult.success || !emailCheck.isValid) {
+    const formattedErrors: Record<string, string[] | undefined> =
+      !parseResult.success ? parseResult.error.flatten().fieldErrors : {};
+
+    if (!emailCheck.isValid && !formattedErrors.email) {
+      formattedErrors.email = [
+        emailCheck.message ?? EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX,
+      ];
+    }
+
+    const logDetails = Object.entries(formattedErrors)
       .map(([field, errs]) => `${field}: ${errs?.join(', ')}`)
       .join(' | ');
+
+    const userFacingError = !emailCheck.isValid
+      ? (emailCheck.message ?? EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX)
+      : Object.values(formattedErrors).flat().filter(Boolean).join(' ') ||
+        EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX;
 
     securityLogger.logFormEvent({
       requestId,
@@ -97,15 +121,17 @@ export async function POST(request: Request) {
       status: 'ERROR',
       ip: clientIp,
       durationMs: Date.now() - startTime,
-      error: `Form validation failed: ${errorDetails}`,
+      error: `Form validation failed: ${logDetails}`,
     });
 
     return NextResponse.json(
       {
         success: false,
         status: 400,
-        message: 'EMAIL_SYNTAX_INCORRECT',
-        error: `Adresse email invalide : ${errorDetails}`,
+        message: !emailCheck.isValid
+          ? (emailCheck.code ?? 'EMAIL_SYNTAX_INCORRECT')
+          : 'EMAIL_SYNTAX_INCORRECT',
+        error: userFacingError,
         fieldErrors: formattedErrors,
         requestId,
       },
@@ -115,7 +141,71 @@ export async function POST(request: Request) {
 
   const validatedData = parseResult.data;
 
-  // 5. Vérifier la configuration SMTP
+  // 5. Vérification DNS / MX côté serveur
+  const dnsResult = await verifyEmailDomainDns(validatedData.email);
+  if (!dnsResult.allowed) {
+    const dnsErrorMessage =
+      dnsResult.message ?? EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX;
+
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'newsletter',
+      action: 'VALIDATION_FAILED',
+      status: 'ERROR',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: `DNS domain validation failed: ${dnsResult.status}`,
+    });
+
+    return NextResponse.json(
+      {
+        success: false,
+        status: 400,
+        message: 'INVALID_EMAIL_DOMAIN_DNS',
+        error: dnsErrorMessage,
+        fieldErrors: { email: [dnsErrorMessage] },
+        requestId,
+      },
+      { status: 400 }
+    );
+  }
+
+  // 6. Protection contre les soumissions répétitives identiques
+  const fingerprint = computeSubmissionFingerprint(rawBody);
+  const duplicateCheck = rateLimiter.checkDuplicate(
+    clientIp,
+    'newsletter',
+    fingerprint
+  );
+  if (duplicateCheck.isDuplicate) {
+    securityLogger.logFormEvent({
+      requestId,
+      formType: 'newsletter',
+      action: 'RATE_LIMITED',
+      status: 'BLOCKED',
+      ip: clientIp,
+      durationMs: Date.now() - startTime,
+      error: `Duplicate newsletter subscription blocked (${duplicateCheck.retryAfterSeconds}s remaining)`,
+    });
+
+    return NextResponse.json(
+      {
+        success: false,
+        status: 429,
+        message: 'DUPLICATE_SUBMISSION',
+        error: `Cette adresse e-mail vient déjà d’être soumise. Veuillez patienter ${duplicateCheck.retryAfterSeconds} secondes.`,
+        requestId,
+      },
+      {
+        status: 429,
+        headers: {
+          'Retry-After': String(duplicateCheck.retryAfterSeconds),
+        },
+      }
+    );
+  }
+
+  // 7. Vérifier la configuration du service d'e-mail
   const emailConfig = getEmailConfig();
   if (!emailConfig.isConfigured) {
     securityLogger.logFormEvent({
@@ -139,10 +229,10 @@ export async function POST(request: Request) {
     );
   }
 
-  // 6. Génération de référence
+  // 8. Génération de référence
   const referenceId = generateReference('NL');
 
-  // 7. Envoi de la notification et de la confirmation
+  // 9. Envoi de la notification et de la confirmation via Resend
   try {
     const sendResult = await sendTransactionalEmail({
       formType: 'newsletter',
@@ -157,7 +247,8 @@ export async function POST(request: Request) {
           success: false,
           status: 500,
           message: 'EMAIL_SENDING_FAILED',
-          error: 'Une erreur est survenue lors de l’inscription. Veuillez réessayer.',
+          error:
+            'Une erreur est survenue lors de l’inscription. Veuillez réessayer.',
           requestId,
         },
         { status: 500 }
@@ -174,14 +265,19 @@ export async function POST(request: Request) {
       },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const internalErrMsg =
+      error instanceof Error
+        ? error.message
+        : 'Unexpected newsletter subscription error';
+
     securityLogger.logFormEvent({
       requestId,
       formType: 'newsletter',
       action: 'EMAIL_FAILED',
       status: 'ERROR',
       durationMs: Date.now() - startTime,
-      error: error?.message || 'Unexpected newsletter subscription error',
+      error: internalErrMsg,
     });
 
     return NextResponse.json(

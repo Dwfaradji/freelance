@@ -1,16 +1,18 @@
 'use client';
 
 import React, { useState } from 'react';
-import { DIAGNOSTIC_DISCLAIMER } from '@/lib/diagnostic/constants';
 import { DiagnosticReport } from '@/lib/diagnostic/types';
 import callApi from '@/utils/callApi';
+import {
+  EMAIL_VALIDATION_MESSAGES,
+  validateProfessionalEmail,
+} from '@/lib/validation/email';
 import {
   ArrowLeft,
   CheckCircle2,
   FileText,
   Printer,
   Send,
-  ShieldCheck,
 } from 'lucide-react';
 
 interface DiagnosticReportFormProps {
@@ -38,6 +40,7 @@ export default function DiagnosticReportForm({
   const [isSending, setIsSending] = useState(false);
   const [sendSuccess, setSendSuccess] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string | null>(null);
 
   // Déclencheur impression / enregistrement PDF direct
   const handlePrintPdf = () => {
@@ -60,8 +63,17 @@ export default function DiagnosticReportForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!firstName || !organization || !email) {
+    if (!firstName.trim() || !organization.trim()) {
       setSendError('Veuillez renseigner les champs obligatoires.');
+      return;
+    }
+
+    const emailValidation = validateProfessionalEmail(email);
+    if (!emailValidation.isValid) {
+      const msg =
+        emailValidation.message || EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX;
+      setEmailError(msg);
+      setSendError(msg);
       return;
     }
 
@@ -72,6 +84,7 @@ export default function DiagnosticReportForm({
 
     setIsSending(true);
     setSendError(null);
+    setEmailError(null);
 
     try {
       const summaryContent = `
@@ -111,7 +124,7 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
           lastname: lastName,
           business: organization,
           role: role,
-          email: email,
+          email: emailValidation.normalizedEmail,
           phone: phone || undefined,
           projectType: `Rapport Diagnostic Médico-Social (${report.globalScore}/100 - ${report.maturityLevel.label})`,
           establishmentType: report.organization.structureType,
@@ -224,7 +237,7 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-4 p-5 rounded-2xl bg-neutral-900/60 border border-white/10 text-left">
+        <form onSubmit={handleSubmit} noValidate className="space-y-4 p-5 rounded-2xl bg-neutral-900/60 border border-white/10 text-left">
           {/* Honeypot anti-spam */}
           <input
             type="text"
@@ -302,10 +315,25 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
                 type="email"
                 inputMode="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (emailError) setEmailError(null);
+                  if (sendError) setSendError(null);
+                }}
+                onBlur={() => {
+                  if (email.trim()) {
+                    const check = validateProfessionalEmail(email);
+                    setEmailError(check.isValid ? null : (check.message ?? null));
+                  }
+                }}
                 placeholder="p.dubois@association-exemple.fr"
                 className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
+              {emailError && (
+                <span className="text-rose-400 text-xs mt-1 block">
+                  {emailError}
+                </span>
+              )}
             </div>
             <div>
               <label className="block text-xs font-semibold text-neutral-300 mb-1">

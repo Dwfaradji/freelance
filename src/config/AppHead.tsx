@@ -1,48 +1,17 @@
 // src/components/Head.tsx
 import React from 'react';
-import Head from 'next/head';
 import siteMetadata from '@/config/metadata';
 import CookieBanner from '@/lib/cookie/cookiebanner';
-import { config, headerScripts } from '@/lib/cookie';
+import { config } from '@/lib/cookie';
 
-// Définir les types pour les icônes
-type Icon = {
-  url: string;
-  sizes: string;
-  type: string;
-};
-
-type Metadata = {
-  title: string;
-  description: string;
-  alternates: {
-    canonical: string;
-  };
-  robots: {
-    follow: boolean;
-    index: boolean;
-  };
-  icons: {
-    icon: Icon[];
-    apple: Icon[];
-    other: Icon[];
-  };
-  manifest: string;
-};
-
-// S'assurer que le type de siteMetadata correspond à Metadata
 const AppHead: React.FC = () => {
-  // @ts-ignore
-  const metadata: Metadata = siteMetadata;
+  const metadata = siteMetadata;
 
   return (
     <>
       <meta name="theme-color" content="#030712" />
 
-      <CookieBanner
-        config={config as any}
-        headerScripts={headerScripts as any}
-      />
+      <CookieBanner config={config as any} />
       {/* Icons */}
       {metadata.icons.icon.map((icon, index) => (
         <link

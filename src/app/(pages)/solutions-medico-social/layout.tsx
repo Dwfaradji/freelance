@@ -2,16 +2,16 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Solutions Numériques & Logiciels pour le Secteur Médico-Social',
+  title: 'Solutions Digitales & Outils Numériques pour Établissements Médico-Sociaux',
   description:
-    'Découvrez les solutions numériques DevEvoke pour le secteur médico-social : logiciels métiers, gestion de flotte automobile (Floticar), applications mobiles et automatisation pour IME, SESSAD, ESAT et EHPAD.',
+    'Catalogue des solutions digitales DevEvoke pour les établissements médico-sociaux (ESMS) : logiciels métiers sur-mesure, applications web et mobiles, automatisation des processus et outils spécialisés pour IME, SESSAD, DITEP, ESAT, EHPAD et associations.',
   keywords: [
+    'solution digitale médico-social',
+    'outils numériques établissements médico-sociaux',
     'solutions médico-social',
-    'solution numérique médico-sociale',
-    'logiciel médico-social',
+    'logiciel ESMS sur mesure',
+    'application web ESMS',
     'logiciel pour association médico-sociale',
-    'outils numériques médico-social',
-    'gestion de flotte médico-social',
     'logiciel IME',
     'logiciel SESSAD',
     'logiciel ESAT',
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.devevoke.com/solutions-medico-social',
   },
   openGraph: {
-    title: 'Solutions Numériques Médico-Social | DevEvoke',
+    title: 'Solutions Digitales & Outils Numériques Médico-Social | DevEvoke',
     description:
-      'Panorama complet des logiciels métiers, applications et outils SaaS développés par DevEvoke pour les organisations médico-sociales en France.',
+      'Panorama complet des logiciels métiers, applications web et mobiles et outils numériques développés par DevEvoke pour les structures médico-sociales.',
     url: 'https://www.devevoke.com/solutions-medico-social',
     siteName: 'DevEvoke',
     images: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Solutions Logicielles & Numériques Médico-Social | DevEvoke',
+    title: 'Solutions Digitales & Outils Numériques Médico-Social | DevEvoke',
     description:
       'Des solutions créées pour les directeurs d’établissements, DSI et associations du secteur médico-social.',
     images: ['/icon.png'],

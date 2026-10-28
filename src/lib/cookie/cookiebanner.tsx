@@ -28,10 +28,6 @@ interface CookieBannerProps {
     acceptBtnLabel: string;
     declineInfoBtnLabel: string;
   };
-  headerScripts: Array<{
-    type: keyof Cookies;
-    value: string;
-  }>;
 }
 
 interface Cookies {
@@ -43,7 +39,6 @@ interface Cookies {
 
 const CookieBanner: React.FC<CookieBannerProps> = ({
   config,
-  headerScripts,
 }) => {
   const [isBannerVisible, setIsBannerVisible] = useState<boolean>(false);
   const [isSettingsVisible, setIsSettingsVisible] = useState<boolean>(false);

@@ -3,20 +3,29 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import callApi from '../../../utils/callApi';
+import {
+  EMAIL_VALIDATION_MESSAGES,
+  validateProfessionalEmail,
+} from '@/lib/validation/email';
 
 const NewsLetters = () => {
   const [email, setEmail] = useState('');
   const [website, setWebsite] = useState(''); // Honeypot trap
-  const [isFormValid, setIsFormValid] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
   const envoyer = async () => {
-    if (!isFormValid || isSubmitting) {
-      if (!isFormValid) setMessage('Veuillez entrer une adresse email valide.');
+    if (isSubmitting) {
+      return;
+    }
+
+    const validation = validateProfessionalEmail(email);
+    if (!validation.isValid) {
+      setMessage(
+        validation.message || EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX
+      );
+      setIsSuccess(false);
       return;
     }
 
@@ -24,7 +33,7 @@ const NewsLetters = () => {
     try {
       const response = await callApi({
         url: '/api/newsletters',
-        data: { email, website },
+        data: { email: validation.normalizedEmail, website },
       });
 
       if (response?.data?.status === 200 || response?.data?.success) {
@@ -32,7 +41,6 @@ const NewsLetters = () => {
         setIsSuccess(true);
         setEmail('');
         setWebsite('');
-        setIsFormValid(false);
       } else {
         setMessage(response?.data?.error || 'Une erreur est survenue. Veuillez vérifier votre adresse.');
         setIsSuccess(false);
@@ -49,7 +57,6 @@ const NewsLetters = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setEmail(value);
-    setIsFormValid(emailRegex.test(value));
     if (message) setMessage(null);
   };
 
@@ -141,7 +148,7 @@ const NewsLetters = () => {
             <input
               type="email"
               inputMode="email"
-              placeholder="votre@email.com"
+              placeholder="direction@votre-association.fr"
               value={email}
               onChange={handleChange}
               className="w-full rounded-full border border-white/10 bg-white/5 pl-5 sm:pl-6 pr-28 sm:pr-32 py-3.5 sm:py-4 text-base sm:text-sm text-white placeholder:text-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition-all shadow-inner"
@@ -149,7 +156,7 @@ const NewsLetters = () => {
             />
             <button
               onClick={envoyer}
-              disabled={!isFormValid || isSubmitting}
+              disabled={!email.trim() || isSubmitting}
               className="absolute right-1.5 sm:right-2 top-1.5 bottom-1.5 sm:top-2 sm:bottom-2 bg-primary-600 hover:bg-primary-500 disabled:bg-white/10 disabled:text-gray-500 text-white px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm transition-colors cursor-pointer flex items-center justify-center"
             >
               {isSubmitting ? 'Envoi...' : 'Rejoindre'}

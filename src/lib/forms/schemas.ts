@@ -1,22 +1,32 @@
 import { z } from 'zod';
-import { sanitizeString, normalizeEmail, normalizePhone } from '../security/sanitization';
+import { sanitizeString, normalizePhone } from '../security/sanitization';
+import {
+  EMAIL_VALIDATION_MESSAGES,
+  normalizeEmail,
+  validateProfessionalEmail,
+} from '../validation/email';
 
 /**
- * Regex pour validation stricte des emails professionnels :
- * - Pas de caractères d'injection d'en-tête (CR/LF)
- * - Format username@domain.tld valide
- * - Longueur maximale RFC 5321 (254 caractères)
+ * Schéma Zod centralisé pour la validation stricte des adresses e-mail professionnelles :
+ * 1. Normalisation (trim, suppression des espaces invisibles, minuscules)
+ * 2. Vérification syntaxique RFC 5321 / 5322 (5..254 caractères, sans CRLF, domaine + TLD valides)
+ * 3. Refus des e-mails temporaires / jetables
+ * 4. Refus des fournisseurs grand public / personnels (gmail, outlook, yahoo, orange, etc.)
  */
-const EMAIL_REGEX =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+export const professionalEmailSchema = z
+  .string({ message: EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX })
+  .transform((val) => normalizeEmail(val))
+  .superRefine((val, ctx) => {
+    const validation = validateProfessionalEmail(val);
+    if (!validation.isValid) {
+      ctx.addIssue({
+        code: 'custom',
+        message: validation.message ?? EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX,
+      });
+    }
+  });
 
-export const emailFieldSchema = z
-  .string()
-  .trim()
-  .min(5, 'L’adresse email est requise.')
-  .max(254, 'L’adresse email est trop longue.')
-  .regex(EMAIL_REGEX, 'Format d’adresse email invalide.')
-  .transform((val) => normalizeEmail(val));
+export const emailFieldSchema = professionalEmailSchema;
 
 export const phoneFieldSchema = z
   .string()

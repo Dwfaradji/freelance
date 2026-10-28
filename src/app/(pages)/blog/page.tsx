@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import BlogHeader from '@/components/Blog/blogHeader';
 import BlogsContainer from '@/components/Blog/blogsContainer';
@@ -15,15 +14,15 @@ const Page = () => {
       />
       <header className="mx-auto mb-16 mt-4 text-center px-4">
         <Fade direction="up" cascade damping={0.1} triggerOnce>
-          <span className="section-label mb-4 inline-block">Le Journal</span>
+          <span className="section-label mb-4 inline-block">Ressources &amp; Expertise Métier</span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Découvrez notre{' '}
+            Ressources &amp; guides sur le{' '}
             <span className="text-highlight">
-              Blog
+              numérique médico-social
             </span>
           </h1>
           <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
-            Nous partageons nos réflexions, nos découvertes technologiques, et des conseils pratiques sur le développement web, le design, et l'écosystème tech. Plongez dans nos articles rédigés avec passion.
+            Analyses, conseils pratiques et retours d’expérience dédiés aux directions d’établissements médico-sociaux (ESMS), associations gestionnaires et responsables SI : logiciels sur-mesure, ergonomie UX, interopérabilité, sécurité et conformité RGPD.
           </p>
         </Fade>
       </header>

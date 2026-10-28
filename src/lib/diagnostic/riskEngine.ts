@@ -19,12 +19,9 @@ export function detectRisks(
 ): DiagnosticRisk[] {
   const risks: DiagnosticRisk[] = [];
 
-  const q1Score = getOptionScore('q1', answers.q1);
   const q2Score = getOptionScore('q2', answers.q2);
   const q3Score = getOptionScore('q3', answers.q3);
-  const q4Score = getOptionScore('q4', answers.q4);
   const q7Score = getOptionScore('q7', answers.q7);
-  const q8Score = getOptionScore('q8', answers.q8);
   const q9Score = getOptionScore('q9', answers.q9);
   const q10Score = getOptionScore('q10', answers.q10);
   const q12Score = getOptionScore('q12', answers.q12);

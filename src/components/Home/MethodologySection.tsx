@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import {
   Search,
@@ -7,7 +6,6 @@ import {
   Code2,
   Rocket,
   RefreshCw,
-  ArrowRight,
   Layers,
   Users2,
   CheckCircle2,

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Mail, Phone, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 
 export default function FinalCTA() {
   return (

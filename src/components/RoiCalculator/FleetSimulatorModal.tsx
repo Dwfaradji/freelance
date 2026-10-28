@@ -4,38 +4,31 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom';
 import {
   ADMIN_HOURS_PRESETS,
-  DEFAULT_CONSUMPTION,
-  DEFAULT_FLEET_INPUTS,
-  DEFAULT_FUEL_PRICE,
-  DEFAULT_HOURLY_COST,
   FLEET_PROBLEMS,
-  FLOTICAR_MONTHLY_PRICE_PER_VEHICLE,
   MAINTENANCE_PRESETS,
   MILEAGE_PRESETS,
   ORGANIZATION_OPTIONS,
 } from '@/lib/roi/constants';
 import {
-  buildFullFleetSimulation,
   formatEstimatedCurrency,
 } from '@/lib/roi/calculator';
 import {
   FleetInputs,
   FleetProblemId,
   FullFleetSimulationResult,
-  OrganizationType,
 } from '@/lib/roi/types';
 import callApi from '@/utils/callApi';
+import {
+  EMAIL_VALIDATION_MESSAGES,
+  validateProfessionalEmail,
+} from '@/lib/validation/email';
 import {
   AlertTriangle,
   ArrowRight,
   Calculator,
-  Calendar,
   Car,
   CheckCircle2,
   ChevronDown,
-  Clock,
-  Compass,
-  FileText,
   HelpCircle,
   Info,
   Minus,
@@ -45,8 +38,6 @@ import {
   Send,
   ShieldCheck,
   Sparkles,
-  TrendingUp,
-  Users,
   Zap,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
@@ -87,7 +78,6 @@ export default function FleetSimulatorModal({
   onInputsChange,
   selectedProblems,
   onProblemsChange,
-  onReset,
   simulation,
 }: FleetSimulatorModalProps) {
   const [screen, setScreen] = useState<SimulatorScreen>('intro');
@@ -107,6 +97,7 @@ export default function FleetSimulatorModal({
   const [isSendingDemo, setIsSendingDemo] = useState(false);
   const [demoSuccess, setDemoSuccess] = useState(false);
   const [demoError, setDemoError] = useState<string | null>(null);
+  const [demoEmailError, setDemoEmailError] = useState<string | null>(null);
 
   // Accordéon des hypothèses
   const [isAssumptionsOpen, setIsAssumptionsOpen] = useState(false);
@@ -332,10 +323,20 @@ export default function FleetSimulatorModal({
   // Soumission demande démo / lead
   const handleDemoSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!demoFirstName || !demoEmail) {
+    if (!demoFirstName.trim()) {
       setDemoError('Veuillez renseigner votre prénom et votre email professionnel.');
       return;
     }
+
+    const emailValidation = validateProfessionalEmail(demoEmail);
+    if (!emailValidation.isValid) {
+      const msg =
+        emailValidation.message || EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX;
+      setDemoEmailError(msg);
+      setDemoError(msg);
+      return;
+    }
+
     if (!demoConsent) {
       setDemoError('Veuillez confirmer votre accord pour être recontacté.');
       return;
@@ -343,6 +344,7 @@ export default function FleetSimulatorModal({
 
     setIsSendingDemo(true);
     setDemoError(null);
+    setDemoEmailError(null);
 
     try {
       const summaryContent = `
@@ -366,7 +368,7 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
           firstname: demoFirstName,
           lastname: demoLastName || '',
           business: demoOrg || 'Structure non renseignée',
-          email: demoEmail,
+          email: emailValidation.normalizedEmail,
           phone: demoPhone || 'Non renseigné',
           service: 'floticar_simulator_demo',
           content: summaryContent,
@@ -1541,7 +1543,7 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleDemoSubmit} className="space-y-4 text-left">
+                  <form onSubmit={handleDemoSubmit} noValidate className="space-y-4 text-left">
                     {demoError && (
                       <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-300">
                         {demoError}
@@ -1609,12 +1611,28 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
                       </label>
                       <input
                         type="email"
+                        inputMode="email"
                         required
                         value={demoEmail}
-                        onChange={(e) => setDemoEmail(e.target.value)}
+                        onChange={(e) => {
+                          setDemoEmail(e.target.value);
+                          if (demoEmailError) setDemoEmailError(null);
+                          if (demoError) setDemoError(null);
+                        }}
+                        onBlur={() => {
+                          if (demoEmail.trim()) {
+                            const check = validateProfessionalEmail(demoEmail);
+                            setDemoEmailError(check.isValid ? null : (check.message ?? null));
+                          }
+                        }}
                         placeholder="jean.dupont@association.fr"
                         className="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-white text-xs focus:outline-none focus:border-secondary-400"
                       />
+                      {demoEmailError && (
+                        <span className="text-red-400 text-xs mt-1 block">
+                          {demoEmailError}
+                        </span>
+                      )}
                     </div>
 
                     {/* Honeypot anti-spam (invisible pour les humains, appât pour bots) */}

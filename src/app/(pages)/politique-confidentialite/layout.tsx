@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const metadata = {
-  title: 'Politique de confidentialité - DevEvoke',
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Politique de Confidentialité & Protection des Données (RGPD)',
   description:
-`Découvrez la politique de confidentialité de DevEvoke. Apprenez comment nous collectons, utilisons et protégeons vos données personnelles sur notre site.`,
+    'Politique de confidentialité de DevEvoke : engagements RGPD, hébergement souverain en France, finalités de collecte des formulaires et exercice des droits informatiques et libertés.',
   alternates: {
     canonical: 'https://www.devevoke.com/politique-confidentialite',
   },

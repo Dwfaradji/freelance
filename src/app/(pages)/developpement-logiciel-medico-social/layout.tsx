@@ -2,25 +2,26 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Développement Logiciel Médico-Social Sur-Mesure',
+  title: 'Développement Logiciel Médico-Social & Application Métier ESMS Sur-Mesure',
   description:
-    'Conception et développement de logiciels métiers sur-mesure pour établissements médico-sociaux (IME, SESSAD, ESAT, EHPAD) et associations gestionnaires. Hébergement souverain en France, RGPD et sécurité web.',
+    'Conception et développement de logiciels métiers sur-mesure et d’applications web pour établissements médico-sociaux (ESMS, IME, SESSAD, DITEP, ESAT, EHPAD) et associations gestionnaires. Interopérabilité, hébergement souverain France et RGPD.',
   keywords: [
     'développement logiciel médico-social',
-    'logiciel médico-social sur mesure',
-    'application métier médico-social',
+    'logiciel sur mesure médico-social',
+    'logiciel ESMS sur mesure',
+    'application web ESMS',
+    'développement application médico-social',
     'logiciel gestion établissement médico-social',
-    'développement web médico-social',
-    'agence digitale médico-sociale',
+    'développeur médico-social',
     'DevEvoke',
   ],
   alternates: {
     canonical: 'https://www.devevoke.com/developpement-logiciel-medico-social',
   },
   openGraph: {
-    title: 'Développement Logiciel Médico-Social Sur-Mesure | DevEvoke',
+    title: 'Développement Logiciel Médico-Social & ESMS Sur-Mesure | DevEvoke',
     description:
-      'Créez le logiciel métier parfaitement adapté aux besoins de vos professionnels de terrain et directions médico-sociales. Sécurité web et conformité totale au RGPD.',
+      'Concevez le logiciel métier parfaitement adapté aux besoins de vos professionnels de terrain et directions médico-sociales. Sécurité web et conformité RGPD.',
     url: 'https://www.devevoke.com/developpement-logiciel-medico-social',
     siteName: 'DevEvoke',
     images: [
@@ -36,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Développement Logiciel Médico-Social | DevEvoke',
+    title: 'Développement Logiciel Médico-Social Sur-Mesure | DevEvoke',
     description:
-      'Solutions numériques sur-mesure pour structures médico-sociales. Hébergement souverain en France et sécurité web.',
+      'Logiciels métiers et applications web sur-mesure pour structures médico-sociales (ESMS). Hébergement souverain en France et conformité RGPD.',
     images: ['/icon.png'],
   },
 };

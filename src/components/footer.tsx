@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/images/logo.webp';
-import { ArrowRight, ShieldCheck, Mail, MapPin } from 'lucide-react';
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -50,7 +49,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-neutral-400 leading-relaxed max-w-sm">
-              DevEvoke est une agence digitale française spécialisée dans la conception de solutions logicielles et numériques sur-mesure : développement web Next.js, applications mobiles nomades, plateformes SaaS et automatisation. Ancrage local à Perpignan (Occitanie) et accompagnement partout en France.
+              DevEvoke est une agence digitale française spécialisée dans les solutions numériques et le développement sur-mesure pour le secteur médico-social (ESMS, associations gestionnaires, IME, SESSAD, DITEP, ESAT, EHPAD) : sites web Next.js, logiciels métiers, applications mobiles et automatisation. Basée à Perpignan (Occitanie), intervention partout en France.
             </p>
             <div className="pt-2 flex items-center gap-3">
               <Link
@@ -130,18 +129,38 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/medico-social" className="hover:text-primary-300 text-primary-400 font-medium transition-colors">
-                  Hub Pôle Médico-Social
+                <Link href="/agence-digitale-medico-social" className="hover:text-primary-300 text-primary-400 font-medium transition-colors">
+                  Agence Digitale Médico-Social
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions-medico-social" className="hover:text-white transition-colors">
+                  Solutions Médico-Sociales
+                </Link>
+              </li>
+              <li>
+                <Link href="/developpement-logiciel-medico-social" className="hover:text-white transition-colors">
+                  Développement Logiciel ESMS
+                </Link>
+              </li>
+              <li>
+                <Link href="/medico-social" className="hover:text-white transition-colors">
+                  Transformation Numérique ESMS
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions-medico-social/associations" className="hover:text-white transition-colors">
+                  Associations Gestionnaires
                 </Link>
               </li>
               <li>
                 <Link href="/solutions-medico-social/ime" className="hover:text-white transition-colors">
-                  Solutions pour IME
+                  Solutions pour IME &amp; DITEP
                 </Link>
               </li>
               <li>
                 <Link href="/solutions-medico-social/sessad" className="hover:text-white transition-colors">
-                  Solutions pour SESSAD & SAVS
+                  Solutions pour SESSAD &amp; SAVS
                 </Link>
               </li>
               <li>
@@ -152,11 +171,6 @@ export default function Footer() {
               <li>
                 <Link href="/solutions-medico-social/ehpad" className="hover:text-white transition-colors">
                   Solutions pour EHPAD
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions-medico-social/associations" className="hover:text-white transition-colors">
-                  Associations Gestionnaires
                 </Link>
               </li>
               <li>
@@ -185,12 +199,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://floticar.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/realisations/floticar"
                   className="hover:text-primary-300 text-neutral-300 transition-colors"
                 >
-                  Étude de Cas Floticar ↗
+                  Étude de Cas Floticar
                 </Link>
               </li>
               <li>

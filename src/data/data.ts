@@ -348,7 +348,7 @@ const pageMentionsLegales: PageInfo[] = [
 
   {
     title: 'Édition du site',
-    text: "En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet https://www.devevoke.com/ l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi: Propriétaire du site : Faradji Boucif - Contact : contact@devevoke.com 06 18 23 76 62 - Adresse : 5 impasse des vergers. Identification de l'entreprise : EI Faradji Boucif au capital social de € - SIREN : 87843895100013 - RCS ou RM : - Adresse postale : 5 impasse des vergers - Directeur de la publication : Faradji boucif - Contact : dw.faradji66@yahoo.co. Hébergeur : OVH SAS - 2 rue Kellermann - BP 80157 - 59053 Roubaix Cedex 1 - Téléphone : 1007",
+    text: "En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet https://www.devevoke.com/ l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi : Propriétaire du site : Faradji Boucif (DevEvoke) - Contact : contact@devevoke.com - Téléphone : 06 18 23 76 62 - Adresse : 5 impasse des vergers, 66000 Perpignan. Identification de l'entreprise : EI Faradji Boucif - SIRET : 878 438 951 00013 - Directeur de la publication : Faradji Boucif - Contact : contact@devevoke.com. Hébergeur : OVH SAS - 2 rue Kellermann - BP 80157 - 59053 Roubaix Cedex 1 - Téléphone : 1007.",
   },
   {
     title: 'Propriété intellectuelle et contrefaçons.',
@@ -360,7 +360,7 @@ const pageMentionsLegales: PageInfo[] = [
   },
   {
     title: 'CNIL et gestion des données personnelles.',
-    text: "Conformément aux dispositions de la loi 78-17 du 6 janvier 1978 modifiée, l’utilisateur du site https://www.devevoke.com/ dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre Délégué à la Protection des Données : -. Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), lisez notre.",
+    text: `Conformément aux dispositions de la loi 78-17 du 6 janvier 1978 modifiée et du Règlement Général sur la Protection des Données (RGPD), l’utilisateur du site https://www.devevoke.com/ dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à contact@devevoke.com. Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), consultez notre ${lienPolitiqueConfidentialite}.`,
   },
   {
     title: 'Liens hypertextes et cookies.',

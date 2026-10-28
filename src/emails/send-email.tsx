@@ -3,15 +3,12 @@ import { Resend } from 'resend';
 import { render } from '@react-email/components';
 import { getEmailConfig } from './email-config';
 import {
-  EmailType,
   SendTransactionalEmailOptions,
   SendTransactionalEmailResult,
-  EmailTemplateDefinition,
 } from './email-types';
 import { securityLogger } from '../lib/security/logger';
 import { generateReference } from '../lib/security/reference';
 import { stripCrlf } from '../lib/security/sanitization';
-import { formatName, formatCompany } from './email-utils';
 
 import {
   emailTemplates,

@@ -6,8 +6,6 @@ import {
   AlertTriangle,
   ArrowRight,
   ShieldCheck,
-  Zap,
-  Layers,
   Sparkles,
   HelpCircle,
   Clock,

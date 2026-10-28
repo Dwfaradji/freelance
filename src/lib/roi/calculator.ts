@@ -65,7 +65,6 @@ export function calculateFleetROI(
 ): RoiResult {
   // 1. Sanitisation stricte des entrées
   const vehicles = Math.max(1, Math.floor(sanitizeNumber(inputs.vehicles, 1, 1)));
-  const drivers = Math.max(1, Math.floor(sanitizeNumber(inputs.drivers, 1, 1)));
   const weeklyAdminHours = sanitizeNumber(inputs.weeklyAdminHours, 0, 0, 168);
   const hourlyCost = sanitizeNumber(inputs.hourlyCost, 0, 0);
   const annualKmPerVehicle = sanitizeNumber(inputs.annualKmPerVehicle, 0, 0);

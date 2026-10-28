@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import photoProfil from '@/images/about/photo-profil-1920.webp';
 import {
@@ -8,9 +7,7 @@ import {
   CheckCircle2,
   Cpu,
   HeartHandshake,
-  ArrowRight,
   ShieldCheck,
-  Check,
 } from 'lucide-react';
 
 const reasons = [

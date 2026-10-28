@@ -1,18 +1,19 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Développement Web Sur-Mesure & Next.js Perpignan & France',
+  title: 'Création & Refonte de Sites Internet et Applications Web Médico-Social',
   description:
-    'Création de sites internet haut de gamme, plateformes web réactives et applications métier sur-mesure sous Next.js et React. Performance SEO, ergonomie UX et hébergement sécurisé en France.',
+    'Création et refonte de sites internet pour associations et établissements médico-sociaux, portails familles et applications web sur-mesure sous Next.js. Accessibilité RGAA, référencement SEO et hébergement souverain en France.',
   alternates: {
     canonical: 'https://www.devevoke.com/developpement-web',
   },
   openGraph: {
-    title: 'Développement Web Sur-Mesure & Next.js | DevEvoke',
+    title: 'Création & Refonte de Sites Web et Applications Médico-Sociales | DevEvoke',
     description:
-      'Sites web d’entreprise, plateformes SaaS et intranets métier. Architecture moderne, temps de chargement ultra-rapides et conformité RGPD.',
+      'Sites internet d’associations et d’ESMS, portails usagers/familles et applications web Next.js. Architecture moderne, SEO et conformité RGPD.',
     url: 'https://www.devevoke.com/developpement-web',
     siteName: 'DevEvoke',
+    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Création de site web et application médico-sociale DevEvoke' }],
     locale: 'fr_FR',
     type: 'website',
   },

@@ -13,17 +13,21 @@ import {
   Car,
   FileSearch,
   Layers,
+  Code2,
+  Sparkles,
 } from 'lucide-react';
 
 const medicoSocialItems = [
   { href: '/medico-social', label: 'Pôle Médico-Social', icon: Building2 },
+  { href: '/agence-digitale-medico-social', label: 'Agence Médico-Sociale', icon: Sparkles },
   { href: '/solutions-medico-social', label: 'Toutes les solutions', icon: Layers },
+  { href: '/developpement-logiciel-medico-social', label: 'Logiciels Sur-Mesure', icon: Code2 },
+  { href: '/solutions-medico-social/associations', label: 'Associations', icon: Users },
   { href: '/solutions-medico-social/ime', label: 'IME', icon: GraduationCap },
   { href: '/solutions-medico-social/sessad', label: 'SESSAD', icon: Navigation },
   { href: '/solutions-medico-social/esat', label: 'ESAT', icon: Briefcase },
   { href: '/solutions-medico-social/ehpad', label: 'EHPAD', icon: HeartPulse },
-  { href: '/solutions-medico-social/associations', label: 'Associations', icon: Users },
-  { href: '/logiciel-gestion-vehicules-medico-social', label: 'Flotte Floticar', icon: Car },
+  { href: '/logiciel-gestion-vehicules-medico-social', label: 'Parc Auto ESMS', icon: Car },
   { href: '/diagnostic-numerique', label: 'Audit Gratuit', icon: FileSearch },
 ];
 

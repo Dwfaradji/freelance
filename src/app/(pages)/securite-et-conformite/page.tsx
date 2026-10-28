@@ -3,12 +3,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  ShieldCheck,
   Lock,
   Server,
   FileCheck2,
   Users,
-  EyeOff,
   ArrowRight,
   CheckCircle2,
 } from 'lucide-react';
@@ -17,9 +15,9 @@ import Breadcrumb from '@/components/ui/Breadcrumb';
 import ServicesNavSwitcher from '@/components/ui/ServicesNavSwitcher';
 
 export const metadata: Metadata = {
-  title: 'Sécurité Web & Conformité RGPD Médico-Sociale | DevEvoke',
+  title: 'Sécurité Numérique, Hébergement France & Conformité RGPD Médico-Social',
   description:
-    'Découvrez les standards de sécurité et de protection des données appliqués par DevEvoke pour les associations médico-sociales : conformité stricte au RGPD, hébergement souverain en France, chiffrement et sécurité applicative.',
+    'Standards de sécurité et protection des données appliqués par DevEvoke pour les établissements et associations médico-sociales : conformité stricte au RGPD, hébergement souverain en France, chiffrement et contrôle d’accès RBAC.',
   alternates: {
     canonical: 'https://www.devevoke.com/securite-et-conformite',
   },
@@ -28,6 +26,9 @@ export const metadata: Metadata = {
     description:
       'Engagements techniques et organisationnels de DevEvoke pour garantir la confidentialité et la sécurité des données des établissements médico-sociaux.',
     url: 'https://www.devevoke.com/securite-et-conformite',
+    siteName: 'DevEvoke',
+    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Sécurité et conformité RGPD médico-sociale DevEvoke' }],
+    locale: 'fr_FR',
     type: 'website',
   },
 };

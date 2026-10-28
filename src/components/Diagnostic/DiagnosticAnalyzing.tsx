@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { CheckCircle2, Loader2, Sparkles } from 'lucide-react';
-import { motion } from 'motion/react';
 
 interface DiagnosticAnalyzingProps {
   onFinish: () => void;

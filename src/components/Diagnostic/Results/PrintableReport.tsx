@@ -19,9 +19,7 @@ export default function PrintableReport({ report }: PrintableReportProps) {
     strengths,
     risks,
     priorities,
-    quickWins,
     roadmap,
-    fleet,
     customSynthesis,
   } = report;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { BarChart3, Calendar, ArrowRight } from 'lucide-react';
+import { BarChart3, Calendar } from 'lucide-react';
 
 const PricingCTA = () => {
   return (

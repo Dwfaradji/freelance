@@ -1,18 +1,19 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Développement SaaS & Logiciels Cloud Sur-Mesure',
+  title: 'Développement SaaS Médico-Social & Plateformes Cloud Multi-Structures',
   description:
-    'Conception et développement de plateformes SaaS multi-tenants, applications cloud B2B et architectures scalables sous Next.js et PostgreSQL. Gestion des abonnements Stripe, authentification RBAC et hébergement souverain.',
+    'Conception et développement de plateformes SaaS sur-mesure et logiciels cloud multi-établissements pour le secteur médico-social et associatif : cloisonnement des données, gestion fine des droits (RBAC) et hébergement souverain en France.',
   alternates: {
     canonical: 'https://www.devevoke.com/developpement-saas',
   },
   openGraph: {
-    title: 'Développement SaaS & Logiciels Cloud Sur-Mesure | DevEvoke',
+    title: 'Développement SaaS Médico-Social & Plateformes Multi-Structures | DevEvoke',
     description:
-      'Créez votre propre plateforme SaaS : multi-tenant sécurisé, facturation récurrente Stripe, API REST et architecture cloud moderne.',
+      'Conception de plateformes SaaS sécurisées pour associations gestionnaires, fédérations et porteurs de projets numériques médico-sociaux.',
     url: 'https://www.devevoke.com/developpement-saas',
     siteName: 'DevEvoke',
+    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Développement SaaS médico-social sur-mesure DevEvoke' }],
     locale: 'fr_FR',
     type: 'website',
   },

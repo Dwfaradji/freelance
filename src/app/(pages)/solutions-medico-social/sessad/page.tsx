@@ -7,38 +7,35 @@ import {
   MapPin, 
   Smartphone, 
   Clock, 
-  ShieldCheck, 
   ArrowRight, 
-  CheckCircle2, 
   FileCheck,
-  Building2
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
 
 export const metadata: Metadata = {
-  title: 'Solutions Numériques & Gestion de Flotte pour SESSAD',
+  title: 'Applications Mobiles Hors-Ligne & Solutions Numériques pour SESSAD',
   description:
-    'Solutions logicielles adaptées aux SESSAD : gestion et suivi des véhicules de service (Floticar), organisation des tournées nomades, notes de suivi dématérialisées et conformité RGPD.',
+    'Solutions logicielles et applications mobiles adaptées aux SESSAD, SAVS et SAMSAH : saisie de comptes-rendus en mode hors-ligne, organisation des tournées nomades, suivi des véhicules de service et conformité RGPD.',
   keywords: [
     'logiciel SESSAD',
     'solution numérique SESSAD',
-    'gestion véhicules SESSAD',
-    'flotte automobile SESSAD',
+    'application mobile SESSAD',
     'application éducateur SESSAD',
-    'Floticar SESSAD',
+    'tournées médico-sociales logiciel',
+    'gestion véhicules SESSAD',
     'DevEvoke',
   ],
   alternates: {
     canonical: 'https://www.devevoke.com/solutions-medico-social/sessad',
   },
   openGraph: {
-    title: 'Solutions Numériques & Gestion de Flotte pour SESSAD | DevEvoke',
+    title: 'Applications Mobiles & Solutions Numériques pour SESSAD | DevEvoke',
     description:
-      'Gérez les interventions mobiles de vos professionnels et optimisez le parc de voitures de votre SESSAD avec nos solutions connectées.',
+      'Facilitez les interventions mobiles de vos éducateurs et rééducateurs en SESSAD grâce à des outils terrain ergonomiques fonctionnant même hors-ligne.',
     url: 'https://www.devevoke.com/solutions-medico-social/sessad',
     siteName: 'DevEvoke',
-    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Solutions logicielles pour SESSAD' }],
+    images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Solutions logicielles et mobiles pour SESSAD' }],
     locale: 'fr_FR',
     type: 'website',
   },
@@ -48,14 +45,14 @@ export default function SolutionsSessadPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Solutions Numériques et Gestion de Parc pour SESSAD',
+    name: 'Applications Mobiles et Solutions Numériques pour SESSAD',
     provider: {
       '@type': 'Organization',
       name: 'DevEvoke',
       url: 'https://www.devevoke.com',
     },
     description:
-      'Gestion de flotte automobile (Floticar), organisation des tournées d’intervention et mobilité des équipes de SESSAD.',
+      'Applications mobiles hors-ligne, organisation des tournées d’intervention, saisie de comptes-rendus terrain et suivi logistique pour équipes de SESSAD.',
   };
 
   return (
@@ -84,7 +81,7 @@ export default function SolutionsSessadPage() {
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-8 leading-[1.15]">
-            Solutions numériques et gestion de flotte pour les{' '}
+            Applications mobiles et solutions numériques pour les{' '}
             <span className="text-gradient drop-shadow-sm">équipes nomades de SESSAD</span>
           </h1>
 

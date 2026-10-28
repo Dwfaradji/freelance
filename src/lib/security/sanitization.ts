@@ -1,3 +1,5 @@
+import { normalizeEmail as normalizeProfessionalEmail } from '../validation/email';
+
 /**
  * Utilitaires de sanitisation et d'échappement sécurisé pour DevEvoke.
  * Protège contre les injections XSS, injections d'en-têtes email et caractères de contrôle abusifs.
@@ -57,10 +59,7 @@ export function sanitizeString(val: unknown, maxLength?: number): string {
  * Normalise une adresse email (trim, minuscule, suppression des espaces invisibles).
  */
 export function normalizeEmail(email: unknown): string {
-  if (typeof email !== 'string') {
-    return '';
-  }
-  return email.trim().toLowerCase();
+  return normalizeProfessionalEmail(email);
 }
 
 /**

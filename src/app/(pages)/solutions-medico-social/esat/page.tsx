@@ -4,12 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   Briefcase, 
-  Layers, 
   Users, 
-  TrendingUp, 
-  ShieldCheck, 
   ArrowRight, 
-  CheckCircle2, 
   Workflow,
   FileSpreadsheet
 } from 'lucide-react';

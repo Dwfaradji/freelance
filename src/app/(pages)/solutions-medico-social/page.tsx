@@ -6,14 +6,9 @@ import {
   Car, 
   Smartphone, 
   Workflow, 
-  Building2, 
   ShieldCheck, 
   ArrowRight, 
   CheckCircle2, 
-  Users, 
-  Sparkles,
-  Server,
-  Lock
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
@@ -28,44 +23,50 @@ export default function SolutionsMedicoSocialPage() {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Logiciels Métiers & Applications Web Médico-Social',
-        url: 'https://www.devevoke.com/solutions/logiciel-metier',
+        name: 'Développement de Logiciels Métiers & Applications Web Médico-Social',
+        url: 'https://www.devevoke.com/developpement-logiciel-medico-social',
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Étude de cas Floticar : Gestion de Flotte Associative',
-        url: 'https://www.devevoke.com/realisations/floticar',
+        name: 'Applications Mobiles Hors-Ligne pour Équipes Terrain & SESSAD',
+        url: 'https://www.devevoke.com/application-mobile',
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: 'Solutions Numériques pour IME',
-        url: 'https://www.devevoke.com/solutions-medico-social/ime',
+        name: 'Solutions Numériques pour Associations Gestionnaires',
+        url: 'https://www.devevoke.com/solutions-medico-social/associations',
       },
       {
         '@type': 'ListItem',
         position: 4,
+        name: 'Solutions Numériques pour IME & DITEP',
+        url: 'https://www.devevoke.com/solutions-medico-social/ime',
+      },
+      {
+        '@type': 'ListItem',
+        position: 5,
         name: 'Solutions Numériques pour SESSAD',
         url: 'https://www.devevoke.com/solutions-medico-social/sessad',
       },
       {
         '@type': 'ListItem',
-        position: 5,
+        position: 6,
         name: 'Solutions Numériques pour ESAT',
         url: 'https://www.devevoke.com/solutions-medico-social/esat',
       },
       {
         '@type': 'ListItem',
-        position: 6,
+        position: 7,
         name: 'Solutions Numériques pour EHPAD',
         url: 'https://www.devevoke.com/solutions-medico-social/ehpad',
       },
       {
         '@type': 'ListItem',
-        position: 7,
-        name: 'Solutions pour Associations Gestionnaires',
-        url: 'https://www.devevoke.com/solutions-medico-social/associations',
+        position: 8,
+        name: 'Étude de cas SaaS Floticar : Gestion de Flotte Associative',
+        url: 'https://www.devevoke.com/realisations/floticar',
       },
     ],
   };

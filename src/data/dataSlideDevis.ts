@@ -195,5 +195,4 @@ const articles: Article[] = [
   }
 ];
 
-const data: any[] = [];
-export { articles, data };
+export { articles };

@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const metadata = {
-  title: 'Mentions légales - DevEvoke',
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Mentions Légales',
   description:
-    'Mentions légales du site DevEvoke. Découvrez les informations légales et les conditions d’utilisation de notre site.',
+    'Mentions légales du site DevEvoke : informations sur l’éditeur Boucif Faradji, l’hébergement souverain en France, la propriété intellectuelle et les conditions d’utilisation.',
   alternates: {
     canonical: 'https://www.devevoke.com/mentions-legal',
   },

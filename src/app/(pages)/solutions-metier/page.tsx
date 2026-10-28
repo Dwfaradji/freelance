@@ -6,14 +6,10 @@ import {
   AlertTriangle,
   ArrowRight,
   ShieldCheck,
-  Zap,
   Layers,
   Sparkles,
   HelpCircle,
-  Clock,
-  Building2,
   FileSpreadsheet,
-  Check,
   Lock,
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';

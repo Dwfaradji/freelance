@@ -2,16 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
-  Code2, 
   Layers, 
-  ShieldCheck, 
   CheckCircle2, 
   ArrowRight, 
-  Database, 
   Cpu, 
-  Smartphone, 
-  Workflow, 
-  Lock, 
   Server, 
   HeadphonesIcon,
   Sparkles

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!blog) {
     return {
-      title: 'Article introuvable | DevEvoke',
+      title: 'Article introuvable',
       description: "Cet article n'existe pas ou a été supprimé.",
     };
   }
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const imageUrl = blog.img?.startsWith('http') ? blog.img : `https://www.devevoke.com${blog.img}`;
 
   return {
-    title: `${blog.title} | Blog DevEvoke`,
+    title: blog.title,
     description: blog.metaDescription || blog.descriptionShort,
     alternates: {
       canonical: url,

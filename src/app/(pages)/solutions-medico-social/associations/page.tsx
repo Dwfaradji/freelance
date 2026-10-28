@@ -4,27 +4,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   Building2, 
-  Layers, 
   Car, 
   ShieldCheck, 
   TrendingUp, 
   ArrowRight, 
-  CheckCircle2, 
-  Users, 
-  Workflow,
-  Server
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
 
 export const metadata: Metadata = {
-  title: 'Solutions Numériques pour Associations Médico-Sociales',
+  title: 'Solutions Digitales & SI Multi-Établissements pour Associations Médico-Sociales',
   description:
-    'Solutions digitales pour associations gestionnaires médico-sociales : pilotage multi-établissements, gestion centralisée de flotte (Floticar), gouvernance des SI et conformité RGPD.',
+    'Solutions digitales sur-mesure pour associations gestionnaires médico-sociales : pilotage multi-établissements (ESMS), logiciels métiers, refonte de site internet, interopérabilité des SI et conformité RGPD.',
   keywords: [
     'logiciel association médico-sociale',
     'solution numérique association gestionnaire',
-    'gestion flotte association médico-sociale',
+    'refonte site internet association médico-sociale',
     'DSI médico-social',
     'logiciel multi-établissements médico-social',
     'digitalisation association médico-sociale',
@@ -34,9 +29,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.devevoke.com/solutions-medico-social/associations',
   },
   openGraph: {
-    title: 'Solutions Numériques pour Associations Médico-Sociales | DevEvoke',
+    title: 'Solutions Digitales & Logiciels pour Associations Médico-Sociales | DevEvoke',
     description:
-      'Accompagnement technologique sur-mesure pour les associations gestionnaires d’établissements sociaux et médico-sociaux.',
+      'Accompagnement technologique sur-mesure pour les associations gestionnaires d’établissements sociaux et médico-sociaux (ESMS).',
     url: 'https://www.devevoke.com/solutions-medico-social/associations',
     siteName: 'DevEvoke',
     images: [{ url: '/icon.png', width: 800, height: 600, alt: 'Solutions pour associations médico-sociales' }],
@@ -56,7 +51,7 @@ export default function SolutionsAssociationsPage() {
       url: 'https://www.devevoke.com',
     },
     description:
-      'Gouvernance des systèmes d’information, consolidation multi-sites et gestion de flotte automobile pour associations gestionnaires.',
+      'Gouvernance des systèmes d’information, développement de logiciels sur-mesure, consolidation multi-sites et portails web pour associations gestionnaires.',
   };
 
   return (

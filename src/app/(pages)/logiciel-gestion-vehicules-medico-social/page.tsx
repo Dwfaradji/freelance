@@ -3,19 +3,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import floticarImg from '@/images/projects/floticar-dashboard.png';
 import { 
-  Car, 
   CalendarCheck, 
   Wrench, 
   AlertTriangle, 
   Smartphone, 
   FileSpreadsheet, 
-  CheckCircle2, 
   ArrowRight, 
   ShieldCheck, 
   TrendingDown, 
   Clock, 
   Building, 
-  KeyRound,
   FileCheck
 } from 'lucide-react';
 import FleetCostCalculator from '@/components/Tools/FleetCostCalculator';
