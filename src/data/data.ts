@@ -386,7 +386,15 @@ const politiqueConfidentialite: PageInfo[] = [
   },
   {
     title: 'Données collectées et finalités',
-    text: "Les données recueillies (nom, prénom, organisation, fonction, email, téléphone, description de besoin) ont pour unique finalité le traitement des demandes de devis, de démonstration ou de prise de contact commercial. Elles ne sont en aucun cas cédées ou revendues à des tiers.",
+    text: "Les données recueillies (nom, prénom, organisation, fonction, email professionnel, téléphone, description de besoin) ont pour unique finalité le traitement des demandes de devis, de démonstration, de diagnostic numérique ou d'inscription à la newsletter B2B. Elles ne sont en aucun cas cédées ou revendues à des tiers.",
+  },
+  {
+    title: 'Vérification des adresses e-mail professionnelles et lutte contre la fraude (Art. 6.1.f RGPD)',
+    text: "Afin de garantir la fiabilité des échanges B2B, prévenir les abus et protéger nos formulaires contre le spam et la fraude (base légale : intérêt légitime de DevEvoke au sens de l'article 6.1.f du RGPD), l'adresse e-mail professionnelle saisie lors de la soumission d'un formulaire fait l'objet d'une vérification technique de délivrabilité côté serveur via notre sous-traitant spécialisé Hunter Web Services Inc. (encadré par un accord de traitement des données — Data Processing Addendum / DPA — conforme au RGPD). Conformément au principe de minimisation des données (article 5.1.c du RGPD), seule l'adresse e-mail est transmise lors de cette vérification : aucun nom, prénom, numéro de téléphone, nom d'établissement ou contenu de message n'est communiqué à ce prestataire. Aucune adresse e-mail n'est conservée en clair dans nos caches techniques (empreintes cryptographiques SHA-256 uniquement) ni dans nos journaux de sécurité.",
+  },
+  {
+    title: 'Sous-traitants techniques et registre des traitements',
+    text: "L'acheminement sécurisé des notifications et confirmations par e-mail est assuré par notre prestataire d'envoi transactionnel Resend, et la vérification de validité des adresses e-mail professionnelles par Hunter Web Services Inc. Ces traitements sont consignés dans le registre des activités de traitement de DevEvoke et encadrés par des clauses contractuelles de protection des données (DPA).",
   },
   {
     title: 'Chiffrement et Sécurité des Échanges',

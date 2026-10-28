@@ -13,7 +13,11 @@
     "test:roi": "npx tsx scripts/test-roi-calculator.ts",
     "test:diagnostic": "npx tsx scripts/test-diagnostic-engine.ts",
     "test:security": "npx tsx scripts/test-form-security.ts",
-    "test": "npm run test:roi && npm run test:diagnostic && npm run test:security"
+    "test:unit": "npx tsx tests/unit/validation/email.test.ts && npm run test:roi && npm run test:diagnostic",
+    "test:integration": "npx tsx tests/integration/api-forms.test.ts && npm run test:security",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test": "npm run test:unit && npm run test:integration"
   },
   "dependencies": {
     "@react-email/components": "^1.0.12",
@@ -34,6 +38,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.39.5",
+    "@playwright/test": "^1.64.1",
     "@types/node": "^25",
     "@types/nodemailer": "^8.0.0",
     "@types/react": "^19",

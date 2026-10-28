@@ -105,6 +105,19 @@ export default function DiagnosticModal({
     return getActiveQuestions(profile);
   }, [profile]);
 
+  // Si le diagnostic est déjà intégralement complété à l'ouverture ("Consulter mes résultats"),
+  // afficher directement l'écran de résultats.
+  useEffect(() => {
+    if (
+      isOpen &&
+      screen === 'intro' &&
+      activeQuestions.length > 0 &&
+      activeQuestions.every((q) => Boolean(answers[q.id]))
+    ) {
+      setScreen('results');
+    }
+  }, [isOpen, screen, activeQuestions, answers]);
+
   // Détermination de la phase active pour le Header
   const currentPhaseKey = useMemo(() => {
     if (screen === 'intro') return 'profile';

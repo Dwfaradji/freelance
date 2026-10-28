@@ -34,6 +34,46 @@ function getResendClient(apiKey?: string): Resend | null {
   return resendClient;
 }
 
+export interface RecordedEmailCall {
+  type: SendTransactionalEmailOptions['type'];
+  from: string;
+  to: string | string[];
+  replyTo?: string;
+  subject: string;
+  text: string;
+  referenceId: string;
+  data: Record<string, any>;
+}
+
+const recordedEmailCalls: RecordedEmailCall[] = [];
+let customMockHandler:
+  | ((call: RecordedEmailCall) => Promise<SendTransactionalEmailResult> | SendTransactionalEmailResult)
+  | null = null;
+
+export function getRecordedEmailCalls(): RecordedEmailCall[] {
+  return [...recordedEmailCalls];
+}
+
+export function clearRecordedEmailCalls(): void {
+  recordedEmailCalls.length = 0;
+}
+
+export function setEmailMockHandler(
+  handler:
+    | ((call: RecordedEmailCall) => Promise<SendTransactionalEmailResult> | SendTransactionalEmailResult)
+    | null
+): void {
+  customMockHandler = handler;
+}
+
+function isTestEmailEnvironment(): boolean {
+  return (
+    process.env.EMAIL_TEST_MODE === 'true' ||
+    process.env.NODE_ENV === 'test' ||
+    customMockHandler !== null
+  );
+}
+
 /**
  * Service central d'envoi transactionnel d'emails.
  * 1. Sélectionne le template React Email associé.
@@ -82,6 +122,39 @@ export async function sendTransactionalEmail(
     : !definition.isClientEmail && options.data.email
     ? stripCrlf(options.data.email)
     : config.internalRecipient;
+
+  const callRecord: RecordedEmailCall = {
+    type: options.type,
+    from: config.from.formatted,
+    to: toRecipient,
+    replyTo,
+    subject,
+    text: textContent,
+    referenceId,
+    data: options.data,
+  };
+  recordedEmailCalls.push(callRecord);
+
+  // Mode test automatisé : aucun envoi réel Resend ou SMTP
+  if (isTestEmailEnvironment()) {
+    if (customMockHandler) {
+      return await customMockHandler(callRecord);
+    }
+
+    securityLogger.logFormEvent({
+      requestId: options.requestId || `req_${Date.now()}`,
+      formType: options.type.split('-')[0] as any,
+      action: 'EMAIL_SENT',
+      status: 'SUCCESS',
+      referenceId,
+    });
+
+    return {
+      success: true,
+      provider: 'mock',
+      messageId: `mock_${referenceId}_${recordedEmailCalls.length}`,
+    };
+  }
 
   // Tentative 1 : Envoi via Resend si configuré
   if (config.isResendConfigured && config.resendApiKey) {

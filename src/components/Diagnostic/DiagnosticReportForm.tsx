@@ -40,7 +40,11 @@ export default function DiagnosticReportForm({
   const [isSending, setIsSending] = useState(false);
   const [sendSuccess, setSendSuccess] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
+  const [firstNameError, setFirstNameError] = useState<string | null>(null);
+  const [orgError, setOrgError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
+  const [consentError, setConsentError] = useState<string | null>(null);
+  const sendingRef = React.useRef(false);
 
   // Déclencheur impression / enregistrement PDF direct
   const handlePrintPdf = () => {
@@ -63,9 +67,23 @@ export default function DiagnosticReportForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!firstName.trim() || !organization.trim()) {
-      setSendError('Veuillez renseigner les champs obligatoires.');
+    if (sendingRef.current) {
       return;
+    }
+
+    let hasValidationError = false;
+    if (firstName.trim().length < 2) {
+      setFirstNameError('Le prénom doit comporter au moins 2 caractères.');
+      hasValidationError = true;
+    } else {
+      setFirstNameError(null);
+    }
+
+    if (organization.trim().length < 2) {
+      setOrgError('Le nom de l’association ou établissement est requis.');
+      hasValidationError = true;
+    } else {
+      setOrgError(null);
     }
 
     const emailValidation = validateProfessionalEmail(email);
@@ -73,15 +91,24 @@ export default function DiagnosticReportForm({
       const msg =
         emailValidation.message || EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX;
       setEmailError(msg);
-      setSendError(msg);
-      return;
+      hasValidationError = true;
+    } else {
+      setEmailError(null);
     }
 
     if (!consentReport) {
-      setSendError('Veuillez accepter la transmission du rapport par email.');
+      setConsentError('Veuillez accepter la transmission du rapport par email.');
+      hasValidationError = true;
+    } else {
+      setConsentError(null);
+    }
+
+    if (hasValidationError) {
+      setSendError('Veuillez vérifier les champs signalés ci-dessus.');
       return;
     }
 
+    sendingRef.current = true;
     setIsSending(true);
     setSendError(null);
     setEmailError(null);
@@ -138,19 +165,32 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
         setReferenceId(response.data.referenceId || null);
         setSendSuccess(true);
       } else {
-        setSendError(response?.data?.error || 'Une erreur est survenue lors de l’envoi. Veuillez réessayer.');
+        const emailFieldErr = response?.data?.fieldErrors?.email?.[0];
+        if (emailFieldErr) {
+          setEmailError(emailFieldErr);
+        } else {
+          setSendError(
+            response?.data?.error ||
+              'Une erreur est survenue lors de l’envoi. Veuillez réessayer.'
+          );
+        }
       }
     } catch (err: any) {
       const serverError = err?.response?.data?.error;
       const fieldErrors = err?.response?.data?.fieldErrors;
-      let detailedMsg = 'Impossible d’envoyer le formulaire pour le moment.';
-      if (serverError) {
-        detailedMsg = serverError;
-      } else if (fieldErrors && typeof fieldErrors === 'object') {
-        detailedMsg = Object.values(fieldErrors).flat().join('. ');
+      if (fieldErrors?.email?.[0]) {
+        setEmailError(fieldErrors.email[0]);
+      } else {
+        let detailedMsg = 'Impossible d’envoyer le formulaire pour le moment.';
+        if (serverError) {
+          detailedMsg = serverError;
+        } else if (fieldErrors && typeof fieldErrors === 'object') {
+          detailedMsg = Object.values(fieldErrors).flat().join('. ');
+        }
+        setSendError(detailedMsg);
       }
-      setSendError(detailedMsg);
     } finally {
+      sendingRef.current = false;
       setIsSending(false);
     }
   };
@@ -251,23 +291,34 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div>
-              <label className="block text-xs font-semibold text-neutral-300 mb-1">
+              <label htmlFor="diagnostic-firstname" className="block text-xs font-semibold text-neutral-300 mb-1">
                 Prénom *
               </label>
               <input
+                id="diagnostic-firstname"
                 required
                 type="text"
+                aria-invalid={Boolean(firstNameError)}
                 value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                onChange={(e) => {
+                  setFirstName(e.target.value);
+                  if (firstNameError) setFirstNameError(null);
+                }}
                 placeholder="Ex : Pierre"
                 className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
+              {firstNameError && (
+                <span role="alert" className="text-rose-400 text-xs mt-1 block">
+                  {firstNameError}
+                </span>
+              )}
             </div>
             <div>
-              <label className="block text-xs font-semibold text-neutral-300 mb-1">
+              <label htmlFor="diagnostic-lastname" className="block text-xs font-semibold text-neutral-300 mb-1">
                 Nom
               </label>
               <input
+                id="diagnostic-lastname"
                 type="text"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
@@ -279,23 +330,34 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div>
-              <label className="block text-xs font-semibold text-neutral-300 mb-1">
+              <label htmlFor="diagnostic-organization" className="block text-xs font-semibold text-neutral-300 mb-1">
                 Association / Établissement *
               </label>
               <input
+                id="diagnostic-organization"
                 required
                 type="text"
+                aria-invalid={Boolean(orgError)}
                 value={organization}
-                onChange={(e) => setOrganization(e.target.value)}
+                onChange={(e) => {
+                  setOrganization(e.target.value);
+                  if (orgError) setOrgError(null);
+                }}
                 placeholder="Ex : Association Solidarité Autisme"
                 className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
+              {orgError && (
+                <span role="alert" className="text-rose-400 text-xs mt-1 block">
+                  {orgError}
+                </span>
+              )}
             </div>
             <div>
-              <label className="block text-xs font-semibold text-neutral-300 mb-1">
+              <label htmlFor="diagnostic-role" className="block text-xs font-semibold text-neutral-300 mb-1">
                 Fonction
               </label>
               <input
+                id="diagnostic-role"
                 type="text"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
@@ -307,13 +369,16 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div>
-              <label className="block text-xs font-semibold text-neutral-300 mb-1">
+              <label htmlFor="diagnostic-email" className="block text-xs font-semibold text-neutral-300 mb-1">
                 Email professionnel *
               </label>
               <input
+                id="diagnostic-email"
                 required
                 type="email"
                 inputMode="email"
+                aria-invalid={Boolean(emailError)}
+                aria-describedby={emailError ? 'diagnostic-email-error' : undefined}
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -330,16 +395,21 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
                 className="w-full rounded-xl bg-black/40 border border-white/10 px-3.5 py-2.5 min-h-[44px] text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
               />
               {emailError && (
-                <span className="text-rose-400 text-xs mt-1 block">
+                <span
+                  id="diagnostic-email-error"
+                  role="alert"
+                  className="text-rose-400 text-xs mt-1 block"
+                >
                   {emailError}
                 </span>
               )}
             </div>
             <div>
-              <label className="block text-xs font-semibold text-neutral-300 mb-1">
+              <label htmlFor="diagnostic-phone" className="block text-xs font-semibold text-neutral-300 mb-1">
                 Téléphone (facultatif)
               </label>
               <input
+                id="diagnostic-phone"
                 type="tel"
                 inputMode="tel"
                 value={phone}
@@ -352,21 +422,32 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
 
           {/* Cases de consentement */}
           <div className="space-y-2 pt-2 border-t border-white/5 text-xs text-neutral-300">
-            <label className="min-h-[44px] flex items-start gap-3 cursor-pointer select-none">
+            <label htmlFor="diagnostic-consent-report" className="min-h-[44px] flex items-start gap-3 cursor-pointer select-none">
               <input
+                id="diagnostic-consent-report"
                 required
                 type="checkbox"
+                aria-invalid={Boolean(consentError)}
                 checked={consentReport}
-                onChange={(e) => setConsentReport(e.target.checked)}
+                onChange={(e) => {
+                  setConsentReport(e.target.checked);
+                  if (consentError) setConsentError(null);
+                }}
                 className="mt-1 size-4 rounded border-white/20 text-primary-500 focus:ring-primary-400 cursor-pointer shrink-0"
               />
               <span className="leading-relaxed">
                 J’accepte que les données de mon diagnostic soient transmises à DevEvoke afin de recevoir mon rapport d'évaluation personnalisé par email. *
               </span>
             </label>
+            {consentError && (
+              <span role="alert" className="text-rose-400 text-xs block">
+                {consentError}
+              </span>
+            )}
 
-            <label className="min-h-[44px] flex items-start gap-3 cursor-pointer select-none text-neutral-400">
+            <label htmlFor="diagnostic-consent-newsletter" className="min-h-[44px] flex items-start gap-3 cursor-pointer select-none text-neutral-400">
               <input
+                id="diagnostic-consent-newsletter"
                 type="checkbox"
                 checked={consentNewsletter}
                 onChange={(e) => setConsentNewsletter(e.target.checked)}
@@ -379,26 +460,19 @@ Consentement communications séparé : ${consentNewsletter ? 'Oui' : 'Non'}
           </div>
 
           {sendError && (
-            <p className="text-xs text-rose-400 bg-rose-500/10 p-2.5 rounded-lg border border-rose-500/20">
+            <p role="alert" className="text-xs text-rose-400 bg-rose-500/10 p-2.5 rounded-lg border border-rose-500/20">
               {sendError}
             </p>
           )}
 
           <button
             type="submit"
-            disabled={!consentReport || isSending}
+            disabled={isSending}
             className={`btn-primary w-full py-3.5 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary-500/20 transition-all duration-200 ${
-              !consentReport
-                ? 'opacity-40 grayscale cursor-not-allowed pointer-events-none'
-                : isSending
+              isSending
                 ? 'opacity-70 cursor-wait'
                 : 'cursor-pointer'
             }`}
-            title={
-              !consentReport
-                ? 'Veuillez accepter la transmission du rapport pour continuer'
-                : undefined
-            }
           >
             {isSending ? (
               <span>Transmission en cours...</span>

@@ -1,4 +1,5 @@
 import assert from 'node:assert';
+process.env.EMAIL_TEST_MODE = 'true';
 import {
   escapeHtml,
   sanitizeString,

@@ -23,6 +23,10 @@ export const EMAIL_VALIDATION_MESSAGES = {
   INVALID_SYNTAX: 'Veuillez saisir une adresse e-mail valide.',
   FREE_PROVIDER: "Merci d'utiliser votre adresse e-mail professionnelle.",
   DISPOSABLE_PROVIDER: 'Les adresses e-mail temporaires ne sont pas acceptées.',
+  UNVERIFIED_PROFESSIONAL:
+    "Cette adresse e-mail n'a pas pu être vérifiée. Vérifiez votre adresse ou utilisez une autre adresse professionnelle.",
+  VERIFICATION_UNAVAILABLE:
+    'La vérification de votre adresse e-mail est momentanément indisponible. Veuillez réessayer dans quelques instants.',
 } as const;
 
 /**
@@ -33,7 +37,9 @@ export type EmailValidationErrorCode =
   | 'INVALID_EMAIL_SYNTAX'
   | 'FREE_EMAIL_PROVIDER'
   | 'DISPOSABLE_EMAIL_DOMAIN'
-  | 'INVALID_EMAIL_DOMAIN_DNS';
+  | 'INVALID_EMAIL_DOMAIN_DNS'
+  | 'EMAIL_VERIFICATION_FAILED'
+  | 'EMAIL_VERIFICATION_UNAVAILABLE';
 
 export interface EmailValidationResult {
   isValid: boolean;

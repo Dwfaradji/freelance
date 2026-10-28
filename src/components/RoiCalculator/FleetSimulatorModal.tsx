@@ -97,7 +97,10 @@ export default function FleetSimulatorModal({
   const [isSendingDemo, setIsSendingDemo] = useState(false);
   const [demoSuccess, setDemoSuccess] = useState(false);
   const [demoError, setDemoError] = useState<string | null>(null);
+  const [demoFirstNameError, setDemoFirstNameError] = useState<string | null>(null);
   const [demoEmailError, setDemoEmailError] = useState<string | null>(null);
+  const [demoConsentError, setDemoConsentError] = useState<string | null>(null);
+  const sendingDemoRef = useRef(false);
 
   // Accordéon des hypothèses
   const [isAssumptionsOpen, setIsAssumptionsOpen] = useState(false);
@@ -323,9 +326,16 @@ export default function FleetSimulatorModal({
   // Soumission demande démo / lead
   const handleDemoSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!demoFirstName.trim()) {
-      setDemoError('Veuillez renseigner votre prénom et votre email professionnel.');
+    if (sendingDemoRef.current) {
       return;
+    }
+
+    let hasValidationError = false;
+    if (demoFirstName.trim().length < 2) {
+      setDemoFirstNameError('Le prénom doit comporter au moins 2 caractères.');
+      hasValidationError = true;
+    } else {
+      setDemoFirstNameError(null);
     }
 
     const emailValidation = validateProfessionalEmail(demoEmail);
@@ -333,15 +343,24 @@ export default function FleetSimulatorModal({
       const msg =
         emailValidation.message || EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX;
       setDemoEmailError(msg);
-      setDemoError(msg);
-      return;
+      hasValidationError = true;
+    } else {
+      setDemoEmailError(null);
     }
 
     if (!demoConsent) {
-      setDemoError('Veuillez confirmer votre accord pour être recontacté.');
+      setDemoConsentError('Veuillez confirmer votre accord pour être recontacté.');
+      hasValidationError = true;
+    } else {
+      setDemoConsentError(null);
+    }
+
+    if (hasValidationError) {
+      setDemoError('Veuillez vérifier les champs obligatoires.');
       return;
     }
 
+    sendingDemoRef.current = true;
     setIsSendingDemo(true);
     setDemoError(null);
     setDemoEmailError(null);
@@ -365,11 +384,11 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
       const response = await callApi({
         url: '/api/contact',
         data: {
-          firstname: demoFirstName,
-          lastname: demoLastName || '',
-          business: demoOrg || 'Structure non renseignée',
+          firstname: demoFirstName.trim(),
+          lastname: demoLastName.trim() || '',
+          business: demoOrg.trim() || 'Structure non renseignée',
           email: emailValidation.normalizedEmail,
-          phone: demoPhone || 'Non renseigné',
+          phone: demoPhone.trim() || undefined,
           service: 'floticar_simulator_demo',
           content: summaryContent,
           website: demoWebsite,
@@ -379,19 +398,32 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
       if (response && (response.status === 200 || response.data?.status === 200 || response.data?.success)) {
         setDemoSuccess(true);
       } else {
-        setDemoError(response?.data?.error || 'Une erreur est survenue lors de l’envoi. Veuillez réessayer.');
+        const emailFieldErr = response?.data?.fieldErrors?.email?.[0];
+        if (emailFieldErr) {
+          setDemoEmailError(emailFieldErr);
+        } else {
+          setDemoError(
+            response?.data?.error ||
+              'Une erreur est survenue lors de l’envoi. Veuillez réessayer.'
+          );
+        }
       }
     } catch (err: any) {
       const serverError = err?.response?.data?.error;
       const fieldErrors = err?.response?.data?.fieldErrors;
-      let detailedMsg = 'Impossible de transmettre la demande pour le moment.';
-      if (serverError) {
-        detailedMsg = serverError;
-      } else if (fieldErrors && typeof fieldErrors === 'object') {
-        detailedMsg = Object.values(fieldErrors).flat().join('. ');
+      if (fieldErrors?.email?.[0]) {
+        setDemoEmailError(fieldErrors.email[0]);
+      } else {
+        let detailedMsg = 'Impossible de transmettre la demande pour le moment.';
+        if (serverError) {
+          detailedMsg = serverError;
+        } else if (fieldErrors && typeof fieldErrors === 'object') {
+          detailedMsg = Object.values(fieldErrors).flat().join('. ');
+        }
+        setDemoError(detailedMsg);
       }
-      setDemoError(detailedMsg);
     } finally {
+      sendingDemoRef.current = false;
       setIsSendingDemo(false);
     }
   };
@@ -1545,30 +1577,41 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
                 ) : (
                   <form onSubmit={handleDemoSubmit} noValidate className="space-y-4 text-left">
                     {demoError && (
-                      <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-300">
+                      <div role="alert" className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-300">
                         {demoError}
                       </div>
                     )}
 
                     <div className="grid sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="text-xs text-neutral-300 font-semibold mb-1 block">
+                        <label htmlFor="sim-demo-firstname" className="text-xs text-neutral-300 font-semibold mb-1 block">
                           Prénom *
                         </label>
                         <input
+                          id="sim-demo-firstname"
                           type="text"
                           required
+                          aria-invalid={Boolean(demoFirstNameError)}
                           value={demoFirstName}
-                          onChange={(e) => setDemoFirstName(e.target.value)}
+                          onChange={(e) => {
+                            setDemoFirstName(e.target.value);
+                            if (demoFirstNameError) setDemoFirstNameError(null);
+                          }}
                           placeholder="Jean"
                           className="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-white text-xs focus:outline-none focus:border-secondary-400"
                         />
+                        {demoFirstNameError && (
+                          <span role="alert" className="text-red-400 text-xs mt-1 block">
+                            {demoFirstNameError}
+                          </span>
+                        )}
                       </div>
                       <div>
-                        <label className="text-xs text-neutral-300 font-semibold mb-1 block">
+                        <label htmlFor="sim-demo-lastname" className="text-xs text-neutral-300 font-semibold mb-1 block">
                           Nom
                         </label>
                         <input
+                          id="sim-demo-lastname"
                           type="text"
                           value={demoLastName}
                           onChange={(e) => setDemoLastName(e.target.value)}
@@ -1580,10 +1623,11 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
 
                     <div className="grid sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="text-xs text-neutral-300 font-semibold mb-1 block">
+                        <label htmlFor="sim-demo-org" className="text-xs text-neutral-300 font-semibold mb-1 block">
                           Organisation / Structure
                         </label>
                         <input
+                          id="sim-demo-org"
                           type="text"
                           value={demoOrg}
                           onChange={(e) => setDemoOrg(e.target.value)}
@@ -1592,10 +1636,11 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-neutral-300 font-semibold mb-1 block">
+                        <label htmlFor="sim-demo-phone" className="text-xs text-neutral-300 font-semibold mb-1 block">
                           Téléphone
                         </label>
                         <input
+                          id="sim-demo-phone"
                           type="tel"
                           value={demoPhone}
                           onChange={(e) => setDemoPhone(e.target.value)}
@@ -1606,13 +1651,18 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
                     </div>
 
                     <div>
-                      <label className="text-xs text-neutral-300 font-semibold mb-1 block">
+                      <label htmlFor="sim-demo-email" className="text-xs text-neutral-300 font-semibold mb-1 block">
                         Email professionnel *
                       </label>
                       <input
+                        id="sim-demo-email"
                         type="email"
                         inputMode="email"
                         required
+                        aria-invalid={Boolean(demoEmailError)}
+                        aria-describedby={
+                          demoEmailError ? 'sim-demo-email-error' : undefined
+                        }
                         value={demoEmail}
                         onChange={(e) => {
                           setDemoEmail(e.target.value);
@@ -1629,7 +1679,11 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
                         className="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-white text-xs focus:outline-none focus:border-secondary-400"
                       />
                       {demoEmailError && (
-                        <span className="text-red-400 text-xs mt-1 block">
+                        <span
+                          id="sim-demo-email-error"
+                          role="alert"
+                          className="text-red-400 text-xs mt-1 block"
+                        >
                           {demoEmailError}
                         </span>
                       )}
@@ -1648,36 +1702,39 @@ Coût estimé Floticar : ${simulation.roi.annualSoftwareCost} €/an (${simulati
                     />
 
                     <div className="pt-1">
-                      <label className="flex items-start gap-2.5 cursor-pointer">
+                      <label htmlFor="sim-demo-consent" className="flex items-start gap-2.5 cursor-pointer">
                         <input
+                          id="sim-demo-consent"
                           type="checkbox"
                           required
+                          aria-invalid={Boolean(demoConsentError)}
                           checked={demoConsent}
-                          onChange={(e) => setDemoConsent(e.target.checked)}
+                          onChange={(e) => {
+                            setDemoConsent(e.target.checked);
+                            if (demoConsentError) setDemoConsentError(null);
+                          }}
                           className="mt-0.5 accent-secondary-500 rounded"
                         />
                         <span className="text-[11px] text-neutral-400 leading-snug">
                           J'accepte d'être recontacté(e) pour planifier une démonstration de Floticar et recevoir ma simulation détaillée. Aucune donnée n'est cédée à des tiers.
                         </span>
                       </label>
+                      {demoConsentError && (
+                        <span role="alert" className="text-red-400 text-xs mt-1 block">
+                          {demoConsentError}
+                        </span>
+                      )}
                     </div>
 
                     <div className="pt-2 flex items-center gap-3">
                       <button
                         type="submit"
-                        disabled={!demoConsent || isSendingDemo}
+                        disabled={isSendingDemo}
                         className={`flex-1 py-3 rounded-xl bg-secondary-500 hover:bg-secondary-400 text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-secondary-500/20 flex items-center justify-center gap-2 duration-200 ${
-                          !demoConsent
-                            ? 'opacity-40 grayscale cursor-not-allowed pointer-events-none'
-                            : isSendingDemo
+                          isSendingDemo
                             ? 'opacity-70 cursor-wait'
                             : 'cursor-pointer hover:shadow-secondary-500/30'
                         }`}
-                        title={
-                          !demoConsent
-                            ? "Veuillez accepter d'être recontacté(e) pour planifier votre démonstration"
-                            : undefined
-                        }
                       >
                         {isSendingDemo ? (
                           <span>Envoi en cours...</span>

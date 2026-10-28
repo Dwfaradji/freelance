@@ -29,6 +29,7 @@ export default function FleetSimulatorTool({
     'technical_inspection',
   ]);
   const [hasStarted, setHasStarted] = useState(false);
+  const isHydratedRef = React.useRef(false);
 
   // Restauration de session client
   useEffect(() => {
@@ -46,11 +47,14 @@ export default function FleetSimulatorTool({
       }
     } catch {
       // Ignorer silencieusement
+    } finally {
+      isHydratedRef.current = true;
     }
   }, []);
 
   // Sauvegarde session client
   useEffect(() => {
+    if (!isHydratedRef.current) return;
     try {
       if (typeof window !== 'undefined') {
         window.sessionStorage.setItem(

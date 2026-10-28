@@ -51,12 +51,13 @@ const Contact = ({
   const [buttonSendMsg, setButtonSendMsg] = React.useState(true);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [referenceId, setReferenceId] = React.useState<string | null>(null);
-  const [isRgpdConsentChecked, setIsRgpdConsentChecked] = React.useState(false);
+  const submittingRef = React.useRef(false);
 
   const {
     register,
     handleSubmit,
     reset,
+    setError,
     formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
@@ -78,16 +79,21 @@ const Contact = ({
   });
 
   const onSubmit = async (data: FormData) => {
-    const emailValidation = validateProfessionalEmail(data.email);
-    if (!emailValidation.isValid) {
-      setSendMsg(true);
-      setSendText(
-        emailValidation.message || EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX
-      );
+    if (submittingRef.current) {
       return;
     }
 
+    const emailValidation = validateProfessionalEmail(data.email);
+    if (!emailValidation.isValid) {
+      const msg =
+        emailValidation.message || EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX;
+      setError('email', { type: 'validate', message: msg });
+      return;
+    }
+
+    submittingRef.current = true;
     setIsSubmitting(true);
+    setSendMsg(false);
     try {
       const payload = {
         ...data,
@@ -100,14 +106,37 @@ const Contact = ({
         setSendText('Votre demande de projet a bien été transmise à notre équipe.');
         setSendMsg(true);
         setButtonSendMsg(false);
-        setIsRgpdConsentChecked(false);
         reset();
       } else {
         window.location.hash = 'Erreur_send';
-        setSendMsg(true);
         const serverError = response?.data?.error;
         const fieldErrors = response?.data?.fieldErrors;
-        let detailedMsg = "Une erreur s'est produite lors de l'envoi. Veuillez vérifier vos données ou réessayer.";
+        if (fieldErrors?.email?.[0]) {
+          setError('email', { type: 'server', message: fieldErrors.email[0] });
+          setSendMsg(false);
+        } else {
+          setSendMsg(true);
+          let detailedMsg =
+            "Une erreur s'est produite lors de l'envoi. Veuillez vérifier vos données ou réessayer.";
+          if (serverError) {
+            detailedMsg = serverError;
+          } else if (fieldErrors && typeof fieldErrors === 'object') {
+            detailedMsg = Object.values(fieldErrors).flat().join('. ');
+          }
+          setSendText(detailedMsg);
+        }
+      }
+    } catch (err: any) {
+      window.location.hash = 'Erreur_send';
+      const serverError = err?.response?.data?.error;
+      const fieldErrors = err?.response?.data?.fieldErrors;
+      if (fieldErrors?.email?.[0]) {
+        setError('email', { type: 'server', message: fieldErrors.email[0] });
+        setSendMsg(false);
+      } else {
+        setSendMsg(true);
+        let detailedMsg =
+          'Erreur de connexion. Veuillez vérifier votre réseau ou réessayer dans quelques instants.';
         if (serverError) {
           detailedMsg = serverError;
         } else if (fieldErrors && typeof fieldErrors === 'object') {
@@ -115,19 +144,8 @@ const Contact = ({
         }
         setSendText(detailedMsg);
       }
-    } catch (err: any) {
-      window.location.hash = 'Erreur_send';
-      setSendMsg(true);
-      const serverError = err?.response?.data?.error;
-      const fieldErrors = err?.response?.data?.fieldErrors;
-      let detailedMsg = 'Erreur de connexion. Veuillez vérifier votre réseau ou réessayer dans quelques instants.';
-      if (serverError) {
-        detailedMsg = serverError;
-      } else if (fieldErrors && typeof fieldErrors === 'object') {
-        detailedMsg = Object.values(fieldErrors).flat().join('. ');
-      }
-      setSendText(detailedMsg);
     } finally {
+      submittingRef.current = false;
       setIsSubmitting(false);
     }
   };
@@ -165,7 +183,13 @@ const Contact = ({
               </p>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+            <form
+              onSubmit={(e) => {
+                void handleSubmit(onSubmit)(e);
+              }}
+              noValidate
+              className="space-y-5"
+            >
               {/* Honeypot anti-spam (invisible pour les humains, piège à bots) */}
               <input
                 type="text"
@@ -179,7 +203,7 @@ const Contact = ({
               {/* Ligne 1 : Nom & Prénom */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="firstname" className="block text-xs font-semibold text-gray-300 mb-1">
                     Prénom *
                   </label>
                   <input
@@ -187,12 +211,12 @@ const Contact = ({
                     placeholder="ex. Stéphane"
                     type="text"
                     id="firstname"
+                    aria-invalid={Boolean(errors.firstname)}
                     {...register('firstname', {
                       required: 'Le prénom est requis',
-                      minLength: {
-                        value: 2,
-                        message: 'Le prénom doit comporter au moins 2 caractères',
-                      },
+                      validate: (val) =>
+                        val.trim().length >= 2 ||
+                        'Le prénom doit comporter au moins 2 caractères',
                       maxLength: {
                         value: 80,
                         message: 'Le prénom ne doit pas dépasser 80 caractères',
@@ -200,14 +224,14 @@ const Contact = ({
                     })}
                   />
                   {errors.firstname && (
-                    <span className="text-red-400 text-xs mt-1 block">
+                    <span role="alert" className="text-red-400 text-xs mt-1 block">
                       {errors.firstname.message || 'Ce champ est requis'}
                     </span>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="lastname" className="block text-xs font-semibold text-gray-300 mb-1">
                     Nom
                   </label>
                   <input
@@ -223,7 +247,7 @@ const Contact = ({
               {/* Ligne 2 : Organisation & Fonction */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="business" className="block text-xs font-semibold text-gray-300 mb-1">
                     Entreprise / Organisation *
                   </label>
                   <input
@@ -231,12 +255,12 @@ const Contact = ({
                     placeholder="ex. Entreprise Martin / Association"
                     type="text"
                     id="business"
+                    aria-invalid={Boolean(errors.business)}
                     {...register('business', {
                       required: 'L’entreprise ou organisation est requise',
-                      minLength: {
-                        value: 2,
-                        message: 'Le nom de structure doit comporter au moins 2 caractères',
-                      },
+                      validate: (val) =>
+                        val.trim().length >= 2 ||
+                        'Le nom de structure doit comporter au moins 2 caractères',
                       maxLength: {
                         value: 120,
                         message: 'Le nom ne doit pas dépasser 120 caractères',
@@ -244,14 +268,14 @@ const Contact = ({
                     })}
                   />
                   {errors.business && (
-                    <span className="text-red-400 text-xs mt-1 block">
+                    <span role="alert" className="text-red-400 text-xs mt-1 block">
                       {errors.business.message || 'Ce champ est requis'}
                     </span>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="role" className="block text-xs font-semibold text-gray-300 mb-1">
                     Votre fonction
                   </label>
                   <input
@@ -267,10 +291,10 @@ const Contact = ({
               {/* Ligne 3 : Type d'organisation & Périmètre */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="establishmentType" className="block text-xs font-semibold text-gray-300 mb-1">
                     Type d’organisation
                   </label>
-                  <select {...register('establishmentType')} className={selectClasses}>
+                  <select id="establishmentType" {...register('establishmentType')} className={selectClasses}>
                     <option value="PME / Entreprise">PME / Entreprise</option>
                     <option value="TPE / Indépendant">TPE / Indépendant</option>
                     <option value="Startup / Projet SaaS">Startup / Projet SaaS</option>
@@ -281,10 +305,10 @@ const Contact = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="siteCount" className="block text-xs font-semibold text-gray-300 mb-1">
                     Périmètre / Nombre de sites
                   </label>
-                  <select {...register('siteCount')} className={selectClasses}>
+                  <select id="siteCount" {...register('siteCount')} className={selectClasses}>
                     <option value="1 site unique">1 site unique</option>
                     <option value="2 à 5 sites">2 à 5 sites</option>
                     <option value="6 à 15 sites">6 à 15 sites</option>
@@ -296,7 +320,7 @@ const Contact = ({
               {/* Ligne 4 : Email pro & Téléphone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="email" className="block text-xs font-semibold text-gray-300 mb-1">
                     Email professionnel *
                   </label>
                   <input
@@ -305,6 +329,8 @@ const Contact = ({
                     type="email"
                     inputMode="email"
                     id="email"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                     {...register('email', {
                       required: EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX,
                       validate: (value) => {
@@ -318,14 +344,18 @@ const Contact = ({
                     })}
                   />
                   {errors.email && (
-                    <span className="text-red-400 text-xs mt-1 block">
+                    <span
+                      id="email-error"
+                      role="alert"
+                      className="text-red-400 text-xs mt-1 block"
+                    >
                       {errors.email.message || 'Ce champ est requis'}
                     </span>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="phone" className="block text-xs font-semibold text-gray-300 mb-1">
                     Téléphone direct
                   </label>
                   <input
@@ -343,10 +373,10 @@ const Contact = ({
               {/* Ligne 5 : Type de projet & Budget indicatif */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="sm:col-span-1">
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="projectType" className="block text-xs font-semibold text-gray-300 mb-1">
                     Nature du projet
                   </label>
-                  <select {...register('projectType')} className={selectClasses}>
+                  <select id="projectType" {...register('projectType')} className={selectClasses}>
                     <option value="Logiciel métier sur-mesure">Logiciel métier sur-mesure</option>
                     <option value="Conception & Développement SaaS">Plateforme SaaS</option>
                     <option value="Application mobile (iOS / Android)">Application mobile nomade</option>
@@ -358,10 +388,10 @@ const Contact = ({
                 </div>
 
                 <div className="sm:col-span-1">
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="budget" className="block text-xs font-semibold text-gray-300 mb-1">
                     Budget indicatif
                   </label>
-                  <select {...register('budget')} className={selectClasses}>
+                  <select id="budget" {...register('budget')} className={selectClasses}>
                     <option value="En cours de cadrage">En cours de cadrage</option>
                     <option value="Moins de 10 000 €">&lt; 10 000 €</option>
                     <option value="10 000 € à 25 000 €">10 000 € à 25 000 €</option>
@@ -371,10 +401,10 @@ const Contact = ({
                 </div>
 
                 <div className="sm:col-span-1">
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">
+                  <label htmlFor="delay" className="block text-xs font-semibold text-gray-300 mb-1">
                     Délai souhaité
                   </label>
-                  <select {...register('delay')} className={selectClasses}>
+                  <select id="delay" {...register('delay')} className={selectClasses}>
                     <option value="1 à 3 mois">1 à 3 mois</option>
                     <option value="Urgent (< 1 mois)">Urgent (&lt; 1 mois)</option>
                     <option value="3 à 6 mois">3 à 6 mois</option>
@@ -385,19 +415,19 @@ const Contact = ({
 
               {/* Message / Description */}
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1">
+                <label htmlFor="message" className="block text-xs font-semibold text-gray-300 mb-1">
                   Description de votre besoin ou contexte *
                 </label>
                 <textarea
                   className={`${inputClasses} min-h-[130px] resize-y`}
                   placeholder="Expliquez brièvement votre problématique (ex: outils actuels, nombre d'usagers/éducateurs concernés, objectifs prioritaires...)"
                   id="message"
+                  aria-invalid={Boolean(errors.content)}
                   {...register('content', {
                     required: 'La description de votre besoin est requise',
-                    minLength: {
-                      value: 5,
-                      message: 'Veuillez préciser votre demande (minimum 5 caractères)',
-                    },
+                    validate: (val) =>
+                      val.trim().length >= 5 ||
+                      'Veuillez préciser votre demande (minimum 5 caractères)',
                     maxLength: {
                       value: 5000,
                       message: 'Le message ne doit pas dépasser 5 000 caractères',
@@ -405,7 +435,7 @@ const Contact = ({
                   })}
                 />
                 {errors.content && (
-                  <span className="text-red-400 text-xs mt-1 block">
+                  <span role="alert" className="text-red-400 text-xs mt-1 block">
                     {errors.content.message || 'Ce champ est requis'}
                   </span>
                 )}
@@ -416,15 +446,11 @@ const Contact = ({
                 <label htmlFor="rgpd" className="min-h-[44px] flex items-start gap-3 pt-1 cursor-pointer select-none">
                   <input
                     type="checkbox"
-                    checked={isRgpdConsentChecked}
                     id="rgpd"
+                    aria-invalid={Boolean(errors.rgpdConsent)}
                     {...register('rgpdConsent', {
                       required: 'Veuillez accepter les conditions pour transmettre votre demande',
                     })}
-                    onChange={(e) => {
-                      setIsRgpdConsentChecked(e.target.checked);
-                      register('rgpdConsent').onChange(e);
-                    }}
                     className="mt-1 size-4 rounded bg-white/5 border-white/20 text-primary-500 focus:ring-primary-500 cursor-pointer shrink-0"
                   />
                   <span className="text-xs text-muted leading-relaxed">
@@ -432,7 +458,7 @@ const Contact = ({
                   </span>
                 </label>
                 {errors.rgpdConsent && (
-                  <span className="text-red-400 text-xs mt-1 block">
+                  <span role="alert" className="text-red-400 text-xs mt-1 block">
                     {errors.rgpdConsent.message || 'Ce champ est requis'}
                   </span>
                 )}
@@ -443,19 +469,12 @@ const Contact = ({
                 {buttonSendMsg && (
                   <button
                     type="submit"
-                    disabled={!isRgpdConsentChecked || isSubmitting}
+                    disabled={isSubmitting}
                     className={`btn-primary w-full sm:w-auto px-8 py-3.5 text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 ${
-                      !isRgpdConsentChecked
-                        ? 'opacity-40 grayscale cursor-not-allowed pointer-events-none'
-                        : isSubmitting
+                      isSubmitting
                         ? 'opacity-70 cursor-wait'
                         : 'cursor-pointer hover:shadow-lg hover:shadow-primary-500/25'
                     }`}
-                    title={
-                      !isRgpdConsentChecked
-                        ? 'Veuillez cocher la case de consentement pour transmettre votre projet'
-                        : undefined
-                    }
                   >
                     {isSubmitting ? (
                       <span>Envoi en cours...</span>
@@ -470,6 +489,7 @@ const Contact = ({
 
                 {sendMsg && (
                   <div
+                    role={!buttonSendMsg ? 'status' : 'alert'}
                     className={`mt-4 p-5 rounded-2xl border ${
                       !buttonSendMsg
                         ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300'

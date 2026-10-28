@@ -14,9 +14,11 @@ const NewsLetters = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
+  const submittingRef = React.useRef(false);
 
-  const envoyer = async () => {
-    if (isSubmitting) {
+  const envoyer = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (submittingRef.current || isSubmitting) {
       return;
     }
 
@@ -29,6 +31,7 @@ const NewsLetters = () => {
       return;
     }
 
+    submittingRef.current = true;
     setIsSubmitting(true);
     try {
       const response = await callApi({
@@ -50,6 +53,7 @@ const NewsLetters = () => {
       setMessage(serverError || "Une erreur est survenue. Veuillez réessayer dans quelques instants.");
       setIsSuccess(false);
     } finally {
+      submittingRef.current = false;
       setIsSubmitting(false);
     }
   };
@@ -105,7 +109,7 @@ const NewsLetters = () => {
               {/* Glow Edge Effect (Signature Vercel) */}
               <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 opacity-60 group-hover:opacity-100 transition duration-500 animate-gradient-x blur-[2px]" />
               <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 opacity-80 group-hover:opacity-100 transition duration-500 animate-gradient-x" />
-              
+
               <div className="relative flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 min-h-[48px] bg-black text-white font-semibold text-base sm:text-lg rounded-full hover:bg-black/80 transition-all duration-300">
                 Démarrer mon projet
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
@@ -133,7 +137,11 @@ const NewsLetters = () => {
             Recevez nos dernières actualités, conseils tech et offres exclusives, sans spam.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto relative">
+          <form
+            onSubmit={envoyer}
+            noValidate
+            className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto relative"
+          >
             {/* Honeypot anti-spam */}
             <input
               type="text"
@@ -146,25 +154,30 @@ const NewsLetters = () => {
               aria-hidden="true"
             />
             <input
+              id="newsletter-email"
+              aria-label="Email professionnel"
+              aria-invalid={Boolean(message && !isSuccess)}
+              aria-describedby={message ? 'newsletter-email-feedback' : undefined}
               type="email"
               inputMode="email"
               placeholder="direction@votre-association.fr"
               value={email}
               onChange={handleChange}
               className="w-full rounded-full border border-white/10 bg-white/5 pl-5 sm:pl-6 pr-28 sm:pr-32 py-3.5 sm:py-4 text-base sm:text-sm text-white placeholder:text-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition-all shadow-inner"
-              onKeyDown={(e) => e.key === 'Enter' && envoyer()}
             />
             <button
-              onClick={envoyer}
-              disabled={!email.trim() || isSubmitting}
+              type="submit"
+              disabled={isSubmitting}
               className="absolute right-1.5 sm:right-2 top-1.5 bottom-1.5 sm:top-2 sm:bottom-2 bg-primary-600 hover:bg-primary-500 disabled:bg-white/10 disabled:text-gray-500 text-white px-4 sm:px-6 rounded-full font-medium text-xs sm:text-sm transition-colors cursor-pointer flex items-center justify-center"
             >
               {isSubmitting ? 'Envoi...' : 'Rejoindre'}
             </button>
-          </div>
+          </form>
 
           {message && (
             <motion.p
+              id="newsletter-email-feedback"
+              role={isSuccess ? 'status' : 'alert'}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               className={`mt-6 text-sm font-medium ${isSuccess ? 'text-green-400' : 'text-red-400'}`}

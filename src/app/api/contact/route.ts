@@ -13,7 +13,7 @@ import {
   EMAIL_VALIDATION_MESSAGES,
   validateProfessionalEmail,
 } from '@/lib/validation/email';
-import { verifyEmailDomainDns } from '@/lib/validation/emailDns';
+import { verifyProfessionalEmail } from '@/lib/email/verifyProfessionalEmail';
 import {
   sendTransactionalEmail,
   detectFormType,
@@ -150,12 +150,9 @@ export async function POST(request: Request) {
 
   const validatedData = parseResult.data;
 
-  // 6. Vérification DNS / MX côté serveur (avec timeout court et fallback résilient)
-  const dnsResult = await verifyEmailDomainDns(validatedData.email);
-  if (!dnsResult.allowed) {
-    const dnsErrorMessage =
-      dnsResult.message ?? EMAIL_VALIDATION_MESSAGES.INVALID_SYNTAX;
-
+  // 6. Vérification serveur approfondie via Hunter Email Verifier (Sections 7 à 17)
+  const hunterVerification = await verifyProfessionalEmail(validatedData.email);
+  if (!hunterVerification.valid) {
     securityLogger.logFormEvent({
       requestId,
       formType,
@@ -163,16 +160,49 @@ export async function POST(request: Request) {
       status: 'ERROR',
       ip: clientIp,
       durationMs: Date.now() - startTime,
-      error: `DNS domain validation failed: ${dnsResult.status}`,
+      error: `email verification failed: status=${hunterVerification.status} reason=${hunterVerification.reason ?? 'rejected'}`,
     });
+
+    if (hunterVerification.status === 'error') {
+      const unavailableMsg =
+        hunterVerification.userMessage ??
+        EMAIL_VALIDATION_MESSAGES.VERIFICATION_UNAVAILABLE;
+
+      return NextResponse.json(
+        {
+          success: false,
+          status: 503,
+          message: 'EMAIL_VERIFICATION_UNAVAILABLE',
+          error: unavailableMsg,
+          fieldErrors: { email: [unavailableMsg] },
+          requestId,
+        },
+        { status: 503 }
+      );
+    }
+
+    const userVerificationError =
+      hunterVerification.userMessage ??
+      EMAIL_VALIDATION_MESSAGES.UNVERIFIED_PROFESSIONAL;
+
+    const verificationCode =
+      hunterVerification.status === 'personal'
+        ? 'FREE_EMAIL_PROVIDER'
+        : hunterVerification.status === 'disposable'
+        ? 'DISPOSABLE_EMAIL_DOMAIN'
+        : hunterVerification.status === 'accept_all'
+        ? 'EMAIL_ACCEPT_ALL_REJECTED'
+        : hunterVerification.status === 'unknown'
+        ? 'EMAIL_VERIFICATION_UNKNOWN'
+        : 'EMAIL_VERIFICATION_INVALID';
 
     return NextResponse.json(
       {
         success: false,
         status: 400,
-        message: 'INVALID_EMAIL_DOMAIN_DNS',
-        error: dnsErrorMessage,
-        fieldErrors: { email: [dnsErrorMessage] },
+        message: verificationCode,
+        error: userVerificationError,
+        fieldErrors: { email: [userVerificationError] },
         requestId,
       },
       { status: 400 }

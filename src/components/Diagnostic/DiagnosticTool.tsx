@@ -20,6 +20,7 @@ export default function DiagnosticTool() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [profile, setProfile] = useState<OrganizationProfile>(defaultProfile);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+  const isHydratedRef = React.useRef(false);
 
   // Restauration de session client
   useEffect(() => {
@@ -36,11 +37,14 @@ export default function DiagnosticTool() {
       }
     } catch {
       // Ignorer silencieusement
+    } finally {
+      isHydratedRef.current = true;
     }
   }, []);
 
   // Sauvegarde en sessionStorage
   useEffect(() => {
+    if (!isHydratedRef.current) return;
     try {
       if (typeof window !== 'undefined') {
         const stateToSave = {
