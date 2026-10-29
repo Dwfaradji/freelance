@@ -313,8 +313,8 @@ export default function ApplicationMobilePage() {
                     <span>Rapports de visite, prise de photos géolocalisées, relevés de compteurs et signature client.</span>
                   </div>
                   <div className="p-3 rounded-lg bg-white/5 border border-white/5">
-                    <strong className="text-white block font-semibold mb-1">Gestion de Flottes & Matériel</strong>
-                    <span>Scan QR code de prise de véhicule, état des lieux visuel et relevés kilométriques instantanés.</span>
+                    <strong className="text-white block font-semibold mb-1">Inventaire & Matériel Terrain</strong>
+                    <span>Scan de QR code / code-barres de matériel, inventaire tournant, état des lieux visuel et traçabilité des dotations.</span>
                   </div>
                 </div>
                 <div className="pt-2">

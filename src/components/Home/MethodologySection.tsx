@@ -78,6 +78,7 @@ export default function MethodologySection() {
                 alt="Atelier collaboratif de co-conception numérique entre DevEvoke et des décideurs d'organisation"
                 width={800}
                 height={600}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-full object-cover object-center brightness-[0.95] contrast-[1.05]"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-neutral-900/90 hidden lg:block" />

@@ -93,9 +93,8 @@ export default function SolutionsGrid() {
             return (
               <div
                 key={idx}
-                className={`card-modern group flex flex-col justify-between ${
-                  item.highlight ? 'border-primary-500/30' : ''
-                }`}
+                className={`card-modern group flex flex-col justify-between ${item.highlight ? 'border-primary-500/30' : ''
+                  }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
@@ -132,14 +131,7 @@ export default function SolutionsGrid() {
 
         {/* Bottom Links */}
         <div className="mt-12 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/templates"
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 shadow-lg shadow-primary-500/20 hover:opacity-95 transition-all"
-          >
-            <LayoutGrid className="size-4" />
-            <span>Explorer nos socles &amp; templates métiers</span>
-            <ArrowRight className="size-4" />
-          </Link>
+
           <Link
             href="/services"
             className="btn-outline text-xs sm:text-sm inline-flex items-center gap-2"

@@ -54,10 +54,10 @@ const otherEstablishments = [
     href: '/solutions-medico-social/associations',
   },
   {
-    sigle: 'Gestion de Parc',
-    title: 'Flotte Automobile Associative',
-    focus: 'Suivi par QR code, dématérialisation des carnets de bord et alertes de maintenance (Floticar).',
-    href: '/realisations',
+    sigle: 'SAAD & SSIAD',
+    title: 'Services d’Aide & Soins à Domicile',
+    focus: 'Gestion des plannings d’interventions, feuilles de route et coordination sécurisée.',
+    href: '/solutions-metier',
   },
 ];
 
@@ -95,6 +95,7 @@ export default function SectorSection() {
                   alt={struct.alt}
                   width={600}
                   height={400}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-[0.92] contrast-[1.05]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent pointer-events-none" />

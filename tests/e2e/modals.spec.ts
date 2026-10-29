@@ -42,6 +42,7 @@ test.describe('Modales, Simulateurs Multi-Étapes & Accordéons UI', () => {
     page,
   }) => {
     await page.goto('/diagnostic-numerique');
+    await page.waitForLoadState('networkidle');
 
     await page.getByRole('button', { name: /Faire mon diagnostic gratuit/i }).click();
     const dialog = page.getByRole('dialog');
@@ -111,6 +112,7 @@ test.describe('Modales, Simulateurs Multi-Étapes & Accordéons UI', () => {
     page,
   }) => {
     await page.goto('/foire-aux-questions');
+    await page.waitForLoadState('networkidle');
 
     const firstQuestionBtn = page.locator('main button[aria-expanded]').first();
     await expect(firstQuestionBtn).toBeVisible();

@@ -5,7 +5,7 @@ import {
   Building2, 
   ShieldCheck, 
   Layers, 
-  Car, 
+  Globe, 
   Smartphone, 
   HeartHandshake, 
   CheckCircle2, 
@@ -43,7 +43,7 @@ export default function AgenceDigitaleMedicoSocialPage() {
       name: 'France',
     },
     description:
-      'Conception de solutions numériques, logiciels métiers, applications mobiles et gestion de flotte pour les établissements médico-sociaux et associations gestionnaires.',
+      'Conception de solutions numériques, logiciels métiers, applications mobiles et portails collaboratifs pour les établissements médico-sociaux et associations gestionnaires.',
     audience: {
       '@type': 'Audience',
       audienceType: 'Directions d’établissements médico-sociaux, DSI, associations gestionnaires, IME, SESSAD, ESAT, EHPAD',
@@ -84,7 +84,7 @@ export default function AgenceDigitaleMedicoSocialPage() {
     {
       acronyme: 'Associations',
       nom: 'Associations Gestionnaires Multi-Établissements',
-      desc: 'Pilotage unifié du système d’information, consolidation des données administratives et budgétaires, gestion centralisée de flotte et gouvernance globale.',
+      desc: 'Pilotage unifié du système d’information, consolidation des données administratives et budgétaires, portails extranets et gouvernance globale.',
       link: '/solutions-medico-social/associations',
     },
   ];
@@ -97,22 +97,22 @@ export default function AgenceDigitaleMedicoSocialPage() {
       href: '/developpement-logiciel-medico-social',
     },
     {
-      icon: <Car className="size-6 text-secondary-400" />,
-      title: 'Gestion de Flotte Automobile (Floticar)',
-      desc: 'Solution SaaS dédiée aux associations médico-sociales pour réserver les véhicules partagés, dématérialiser les carnets kilométriques, anticiper les contrôles techniques et maîtriser les coûts de transport.',
-      href: '/logiciel-gestion-vehicules-medico-social',
+      icon: <Globe className="size-6 text-secondary-400" />,
+      title: 'Portails Collaboratifs, Extranets & Espaces Familles',
+      desc: 'Espaces sécurisés et conformes RGPD pour fluidifier la communication entre équipes pluridisciplinaires, usagers, familles et partenaires institutionnels.',
+      href: '/solutions-metier',
     },
     {
       icon: <Smartphone className="size-6 text-accent" />,
       title: 'Applications Mobiles & Tablettes Terrain',
-      desc: 'Applications intuitives conçues pour les professionnels mobiles (éducateurs, soignants, chauffeurs). Mode hors-ligne, saisie rapide et ergonomie pensée pour le terrain.',
-      href: '/solutions/application-mobile',
+      desc: 'Applications intuitives conçues pour les professionnels mobiles (éducateurs, soignants, coordinateurs). Mode hors-ligne, saisie rapide et ergonomie pensée pour le terrain.',
+      href: '/application-mobile',
     },
     {
       icon: <Workflow className="size-6 text-emerald-400" />,
       title: 'Automatisation & Dématérialisation',
       desc: 'Réduction drastique des ressaisies manuelles, synchronisation des données entre logiciels existants et dématérialisation des formulaires d’admission ou de suivi.',
-      href: '/solutions/automatisation',
+      href: '/automatisation',
     },
   ];
 
@@ -266,7 +266,7 @@ export default function AgenceDigitaleMedicoSocialPage() {
                 Des solutions numériques adaptées aux organisations médico-sociales
               </h2>
               <p className="text-muted text-lg">
-                Que vous ayez besoin d’un logiciel métier sur-mesure, d’une application mobile pour vos équipes nomades ou d’une plateforme SaaS de gestion de flotte, nous concevons des outils dimensionnés pour vos enjeux.
+                Que vous ayez besoin d’un logiciel métier sur-mesure, d’une application mobile pour vos équipes nomades ou d’un portail collaboratif sécurisé, nous concevons des outils dimensionnés pour vos enjeux.
               </p>
             </div>
 
@@ -294,33 +294,33 @@ export default function AgenceDigitaleMedicoSocialPage() {
               ))}
             </div>
 
-            {/* FOCUS FLOTICAR BANNER DÉCISIONNAIRE */}
+            {/* FOCUS DIAGNOSTIC & STRATÉGIE NUMÉRIQUE MÉDICO-SOCIALE */}
             <div className="mt-12 glass-strong rounded-3xl p-8 sm:p-12 border border-secondary-500/30 bg-gradient-to-br from-surface to-[#0a192f] shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-80 h-80 bg-secondary-500/10 rounded-full blur-[100px] pointer-events-none" />
               <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
                 <div className="lg:col-span-8 space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-500/20 text-secondary-300 text-xs font-semibold uppercase tracking-wider">
-                    Produit SaaS Développé par DevEvoke
+                    Méthodologie DevEvoke
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                    Floticar : La gestion de flotte automobile pensée pour les associations et établissements médico-sociaux
+                    Un audit et une feuille de route logicielle sur-mesure pour votre structure
                   </h3>
                   <p className="text-muted leading-relaxed text-base">
-                    Les IME, SESSAD et associations gèrent quotidiennement des dizaines de véhicules pour transporter des enfants, des adultes vulnérables ou réaliser des soins à domicile. Floticar centralise les réservations, assure le suivi kilométrique, planifie les contrôles techniques et automatise les alertes de maintenance.
+                    Les IME, SESSAD et associations composent souvent avec des outils hétérogènes, des fichiers Excel dispersés et des ressaisies chronophages. Nous analysons vos flux métier sur le terrain pour identifier les gains d&apos;efficacité immédiats et concevoir des solutions pérennes conformes au RGPD.
                   </p>
                 </div>
                 <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
                   <Link
-                    href="/realisations/floticar"
+                    href="/diagnostic-numerique"
                     className="btn-primary text-center justify-center text-sm"
                   >
-                    Découvrir l'étude Floticar
+                    Faire le diagnostic gratuit
                   </Link>
                   <Link
                     href="/contact"
                     className="btn-outline text-center justify-center text-sm"
                   >
-                    Demander une démo 14 jours
+                    Prendre rendez-vous
                   </Link>
                 </div>
               </div>
@@ -480,7 +480,7 @@ export default function AgenceDigitaleMedicoSocialPage() {
               Vous représentez une association ou un établissement médico-social ?
             </h2>
             <p className="text-muted text-lg sm:text-xl mb-10 max-w-2xl mx-auto">
-              Échangeons sur vos besoins d’informatisation, vos outils de gestion de flotte ou vos projets d’applications métiers sur-mesure. Nos consultants et architectes logiciels sont à votre disposition.
+              Échangeons sur vos besoins d’informatisation, la digitalisation de vos processus ou vos projets d’applications métiers sur-mesure. Nos consultants et architectes logiciels sont à votre disposition.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact" className="btn-primary text-base">

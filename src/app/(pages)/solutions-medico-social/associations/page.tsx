@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   Building2, 
-  Car, 
+  Layers, 
   ShieldCheck, 
   TrendingUp, 
   ArrowRight, 
@@ -85,7 +85,7 @@ export default function SolutionsAssociationsPage() {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted leading-relaxed max-w-3xl mx-auto mb-10">
-            Vous gérez plusieurs structures (IME, SESSAD, ESAT, foyers, EHPAD) ? DevEvoke accompagne les <strong>Directions Générales</strong> et <strong>DSI associatives</strong> dans l’unification de leur système d’information, la gestion de leur flotte automobile (<strong>Floticar</strong>) et la conformité RGPD.
+            Vous gérez plusieurs structures (IME, SESSAD, ESAT, foyers, EHPAD) ? DevEvoke accompagne les <strong>Directions Générales</strong> et <strong>DSI associatives</strong> dans l’unification de leur système d’information, la mutualisation des moyens, la digitalisation des processus métiers et la conformité RGPD.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -93,8 +93,8 @@ export default function SolutionsAssociationsPage() {
               Planifier un échange de cadrage associatif
               <ArrowRight className="size-4" />
             </Link>
-            <Link href="/realisations/floticar" className="btn-outline w-full sm:w-auto text-base">
-              Étude de cas gestion de flotte (Floticar)
+            <Link href="/realisations" className="btn-outline w-full sm:w-auto text-base">
+              Découvrir nos réalisations
             </Link>
           </div>
         </header>
@@ -112,7 +112,7 @@ export default function SolutionsAssociationsPage() {
                   Les associations gestionnaires regroupent souvent des établissements historiques ayant chacun développé leurs propres habitudes de travail et leurs propres outils. Cette hétérogénéité fragmente les données, complique les reportings pour les financeurs (ARS, départements) et entraîne des surcoûts d’infrastructure.
                 </p>
                 <p className="text-muted leading-relaxed text-base sm:text-lg">
-                  DevEvoke vous apporte une vision d’ensemble : alignement stratégique du SI, déploiement d’outils transversaux comme <strong>Floticar</strong> pour les parcs de véhicules mutualisés, et développement de passerelles inter-applicatives sécurisées.
+                  DevEvoke vous apporte une vision d’ensemble : alignement stratégique du SI, déploiement de socles logiciels transversaux mutualisés entre établissements et développement de passerelles inter-applicatives sécurisées.
                 </p>
               </div>
 
@@ -141,11 +141,11 @@ export default function SolutionsAssociationsPage() {
             <div className="grid sm:grid-cols-3 gap-6">
               <div className="glass p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
                 <div className="size-12 rounded-xl bg-secondary-500/10 flex items-center justify-center text-secondary-400 mb-4">
-                  <Car className="size-6" />
+                  <Layers className="size-6" />
                 </div>
-                <h3 className="text-white font-bold text-lg mb-2">Gestion centralisée de la flotte</h3>
+                <h3 className="text-white font-bold text-lg mb-2">Mutualisation des moyens & ressources</h3>
                 <p className="text-sm text-muted leading-relaxed">
-                  Visualisez l’ensemble des véhicules de l’association par établissement. Partagez les minibus entre structures proches pour maximiser le taux d’usage.
+                  Partagez vos ressources critiques (équipements, plannings de salles, astreintes et matériels) entre structures proches pour optimiser vos budgets et désenclaver les équipes.
                 </p>
               </div>
 

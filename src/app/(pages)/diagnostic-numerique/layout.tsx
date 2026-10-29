@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Diagnostic Numérique Médico-Social Gratuit | DevEvoke',
     description:
-      'Mesurez la maturité digitale de votre structure médico-sociale et découvrez comment supprimer la double saisie et optimiser votre flotte de véhicules.',
+      'Mesurez la maturité digitale de votre structure médico-sociale et découvrez comment supprimer la double saisie et fluidifier vos processus métiers.',
     url: 'https://www.devevoke.com/diagnostic-numerique',
     type: 'website',
   },

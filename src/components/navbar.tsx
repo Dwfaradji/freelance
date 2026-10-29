@@ -54,12 +54,6 @@ const solutionItems = [
     href: '/securite-et-conformite',
     icon: ShieldCheck,
   },
-  {
-    title: 'Socles & Templates Métiers',
-    desc: 'Accélérateurs de déploiement personnalisables sous Next.js.',
-    href: '/templates',
-    icon: LayoutGrid,
-  },
 ];
 
 export default function Navbar() {
@@ -113,11 +107,10 @@ export default function Navbar() {
     <>
       <nav
         aria-label="Navigation principale"
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-neutral-950/85 backdrop-blur-2xl border-b border-white/10 shadow-2xl shadow-black/40'
-            : 'bg-transparent border-b border-transparent'
-        }`}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-neutral-950/85 backdrop-blur-2xl border-b border-white/10 shadow-2xl shadow-black/40'
+          : 'bg-transparent border-b border-transparent'
+          }`}
         style={{ height: '72px' }}
       >
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -141,19 +134,17 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setSolutionsDropdown(!solutionsDropdown)}
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                  isSolutionActive
-                    ? 'text-white bg-white/5'
-                    : 'text-neutral-300 hover:text-white hover:bg-white/5'
-                }`}
+                className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${isSolutionActive
+                  ? 'text-white bg-white/5'
+                  : 'text-neutral-300 hover:text-white hover:bg-white/5'
+                  }`}
                 aria-expanded={solutionsDropdown}
                 aria-haspopup="true"
               >
                 <span>Expertises</span>
                 <ChevronDown
-                  className={`size-4 transition-transform duration-200 ${
-                    solutionsDropdown ? 'rotate-180 text-primary-400' : 'text-neutral-400'
-                  }`}
+                  className={`size-4 transition-transform duration-200 ${solutionsDropdown ? 'rotate-180 text-primary-400' : 'text-neutral-400'
+                    }`}
                 />
               </button>
 
@@ -171,13 +162,6 @@ export default function Navbar() {
                       >
                         <Building2 className="size-3" />
                         <span>Pôle Médico-Social</span>
-                        <ArrowRight className="size-3" />
-                      </Link>
-                      <Link
-                        href="/services"
-                        className="text-xs text-primary-400 hover:text-primary-300 font-medium inline-flex items-center gap-1"
-                      >
-                        <span>Tous les services</span>
                         <ArrowRight className="size-3" />
                       </Link>
                     </div>
@@ -208,18 +192,13 @@ export default function Navbar() {
                     })}
                   </div>
 
-                  <div className="mt-3 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                  <div className="mt-3 pt-3 border-t border-white/5 flex items-cente justify-end text-xs">
                     <Link
-                      href="/templates"
-                      className="text-neutral-400 hover:text-white transition-colors"
+                      href="/services"
+                      className="text-xs text-primary-400 hover:text-primary-300 font-medium inline-flex items-center gap-1"
                     >
-                      Socles & Templates Métiers →
-                    </Link>
-                    <Link
-                      href="/realisations"
-                      className="text-primary-400 hover:text-primary-300 transition-colors"
-                    >
-                      Consulter les Réalisations →
+                      <span>Tous les services</span>
+                      <ArrowRight className="size-3" />
                     </Link>
                   </div>
                 </div>
@@ -229,55 +208,50 @@ export default function Navbar() {
             {/* Direct Links */}
             <Link
               href="/medico-social"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                pathname === '/medico-social'
-                  ? 'text-white bg-white/5'
-                  : 'text-neutral-300 hover:text-white hover:bg-white/5'
-              }`}
+              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${pathname === '/medico-social'
+                ? 'text-white bg-white/5'
+                : 'text-neutral-300 hover:text-white hover:bg-white/5'
+                }`}
             >
               Médico-Social
             </Link>
 
             <Link
               href="/realisations"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                pathname === '/realisations'
-                  ? 'text-white bg-white/5'
-                  : 'text-neutral-300 hover:text-white hover:bg-white/5'
-              }`}
+              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${pathname === '/realisations'
+                ? 'text-white bg-white/5'
+                : 'text-neutral-300 hover:text-white hover:bg-white/5'
+                }`}
             >
               Réalisations
             </Link>
 
             <Link
               href="/diagnostic-numerique"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                pathname === '/diagnostic-numerique'
-                  ? 'text-white bg-white/5'
-                  : 'text-neutral-300 hover:text-white hover:bg-white/5'
-              }`}
+              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${pathname === '/diagnostic-numerique'
+                ? 'text-white bg-white/5'
+                : 'text-neutral-300 hover:text-white hover:bg-white/5'
+                }`}
             >
               Diagnostic
             </Link>
 
             <Link
               href="/blog"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                pathname.startsWith('/blog')
-                  ? 'text-white bg-white/5'
-                  : 'text-neutral-300 hover:text-white hover:bg-white/5'
-              }`}
+              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${pathname.startsWith('/blog')
+                ? 'text-white bg-white/5'
+                : 'text-neutral-300 hover:text-white hover:bg-white/5'
+                }`}
             >
               Ressources
             </Link>
 
             <Link
               href="/a-propos"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
-                pathname === '/a-propos'
-                  ? 'text-white bg-white/5'
-                  : 'text-neutral-300 hover:text-white hover:bg-white/5'
-              }`}
+              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${pathname === '/a-propos'
+                ? 'text-white bg-white/5'
+                : 'text-neutral-300 hover:text-white hover:bg-white/5'
+                }`}
             >
               L’Agence
             </Link>
@@ -303,19 +277,16 @@ export default function Navbar() {
             className="relative z-50 flex size-11 min-h-[44px] min-w-[44px] flex-col items-center justify-center gap-[6px] rounded-xl lg:hidden text-white bg-white/5 border border-white/10 hover:bg-white/10 active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
           >
             <span
-              className={`h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${
-                openMenu ? 'translate-y-[8px] rotate-45' : ''
-              }`}
+              className={`h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${openMenu ? 'translate-y-[8px] rotate-45' : ''
+                }`}
             />
             <span
-              className={`h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${
-                openMenu ? 'opacity-0 scale-x-0' : ''
-              }`}
+              className={`h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${openMenu ? 'opacity-0 scale-x-0' : ''
+                }`}
             />
             <span
-              className={`h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${
-                openMenu ? '-translate-y-[8px] -rotate-45' : ''
-              }`}
+              className={`h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${openMenu ? '-translate-y-[8px] -rotate-45' : ''
+                }`}
             />
           </button>
         </div>
@@ -323,9 +294,8 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-3xl transition-all duration-300 lg:hidden overflow-y-auto pt-[max(5.5rem,calc(env(safe-area-inset-top)+4.5rem))] pb-[max(2.5rem,calc(env(safe-area-inset-bottom)+1.5rem))] px-5 sm:px-8 ${
-          openMenu ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-3xl transition-all duration-300 lg:hidden overflow-y-auto pt-[max(5.5rem,calc(env(safe-area-inset-top)+4.5rem))] pb-[max(2.5rem,calc(env(safe-area-inset-bottom)+1.5rem))] px-5 sm:px-8 ${openMenu ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
       >
         <div className="flex flex-col space-y-6 max-w-md mx-auto">
           {/* Main Links */}
@@ -343,11 +313,10 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-base sm:text-lg font-semibold transition-all active:scale-[0.99] ${
-                    isActive
-                      ? 'bg-primary-500/15 text-primary-300 border border-primary-500/30'
-                      : 'text-neutral-200 hover:text-white hover:bg-white/5'
-                  }`}
+                  className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-base sm:text-lg font-semibold transition-all active:scale-[0.99] ${isActive
+                    ? 'bg-primary-500/15 text-primary-300 border border-primary-500/30'
+                    : 'text-neutral-200 hover:text-white hover:bg-white/5'
+                    }`}
                 >
                   <span>{item.label}</span>
                   <ArrowRight className={`size-4 transition-transform ${isActive ? 'text-primary-400 translate-x-0.5' : 'text-neutral-500'}`} />
@@ -369,11 +338,10 @@ export default function Navbar() {
                   <Link
                     key={sol.href}
                     href={sol.href}
-                    className={`flex items-center gap-3 p-2.5 rounded-xl transition-all active:bg-white/10 ${
-                      isSolActive
-                        ? 'bg-primary-500/15 text-primary-300 border border-primary-500/30'
-                        : 'text-neutral-300 hover:text-white hover:bg-white/5 border border-transparent'
-                    }`}
+                    className={`flex items-center gap-3 p-2.5 rounded-xl transition-all active:bg-white/10 ${isSolActive
+                      ? 'bg-primary-500/15 text-primary-300 border border-primary-500/30'
+                      : 'text-neutral-300 hover:text-white hover:bg-white/5 border border-transparent'
+                      }`}
                   >
                     <div className="size-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary-400 shrink-0">
                       <SolIcon className="size-4" />

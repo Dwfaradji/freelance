@@ -144,7 +144,7 @@ export default function SecuriteConformitePage() {
               4. Contrôle d’Accès & Traçabilité (RBAC)
             </h2>
             <p className="text-sm text-muted leading-relaxed">
-              Les accès sont cloisonnés par profils et rôles stricts (Directeur, Responsable de service, Éducateur, Gestionnaire de flotte). Chaque utilisateur n’accède qu’aux informations nécessaires à sa mission, avec journalisation des connexions et actions sensibles.
+              Les accès sont cloisonnés par profils et rôles stricts (Directeur, Chef de service, Éducateur, Personnel administratif). Chaque utilisateur n’accède qu’aux informations nécessaires à sa mission, avec journalisation des connexions et actions sensibles.
             </p>
           </div>
         </div>

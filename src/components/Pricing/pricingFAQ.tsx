@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: 'Pouvez-vous concevoir une plateforme SaaS complète de A à Z ?',
-    answer: 'Absolument. DevEvoke dispose d’une expertise éprouvée dans la création de produits SaaS, comme l’illustre Floticar (notre solution de gestion de flotte). Nous concevons l’architecture multi-organisations, les interfaces ergonomiques, les API, l’authentification sécurisée, la gestion des rôles (RBAC) et le déploiement cloud.',
+    answer: 'Absolument. DevEvoke dispose d’une expertise éprouvée dans la création de produits SaaS et plateformes web complexes pour le médico-social. Nous concevons l’architecture multi-organisations, les interfaces ergonomiques, les API, l’authentification sécurisée, la gestion des rôles (RBAC) et le déploiement cloud souverain en France.',
   },
   {
     question: 'Développez-vous des applications mobiles professionnelles avec mode hors-ligne ?',

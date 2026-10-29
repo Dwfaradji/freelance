@@ -3,12 +3,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
-  Car, 
   MapPin, 
   Smartphone, 
   Clock, 
   ArrowRight, 
   FileCheck,
+  Calendar,
+  Users,
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
@@ -86,16 +87,16 @@ export default function SolutionsSessadPage() {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted leading-relaxed max-w-3xl mx-auto mb-10">
-            Les professionnels de SESSAD passent une grande partie de leur temps sur la route (écoles, collèges, domiciles). Découvrez <strong>Floticar</strong> pour piloter facilement vos véhicules de service et nos outils mobiles de saisie d'activité.
+            Les professionnels de SESSAD passent une grande partie de leur temps sur la route (écoles, collèges, domiciles). Nous concevons des applications mobiles hors-ligne et des outils collaboratifs pensés pour fluidifier leur quotidien sans alourdir leur charge mentale.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/realisations/floticar" className="btn-primary w-full sm:w-auto text-base">
-              Découvrir l'étude de cas Floticar
+            <Link href="/contact" className="btn-primary w-full sm:w-auto text-base">
+              Échanger sur vos besoins SESSAD
               <ArrowRight className="size-4" />
             </Link>
-            <Link href="/contact" className="btn-outline w-full sm:w-auto text-base">
-              Échanger sur les besoins de votre SESSAD
+            <Link href="/diagnostic-numerique" className="btn-outline w-full sm:w-auto text-base">
+              Faire le diagnostic gratuit
             </Link>
           </div>
         </header>
@@ -113,7 +114,7 @@ export default function SolutionsSessadPage() {
                   Contrairement aux structures en internat ou externat fixe, le SESSAD intervient directement dans les lieux de vie de l'enfant (écoles, collèges, domicile familial). Les éducateurs spécialisés, psychologues, orthophonistes et psychomotriciens enchaînent les rendez-vous extérieurs.
                 </p>
                 <p className="text-muted leading-relaxed text-base sm:text-lg">
-                  La gestion des véhicules devient vite un casse-tête : réservations en double, carnets de bord papier mal renseignés, entretiens oubliés. <strong>Floticar</strong>, notre solution SaaS, résout ces problématiques en permettant la réservation instantanée et le suivi kilométrique sur smartphone sans application à installer.
+                  La déconnexion réseau, la double saisie papier-informatique et la dispersion des plannings pèsent lourdement sur les intervenants. Nous développons des applications mobiles intuitives avec synchronisation automatique et mode hors-ligne, garantissant la continuité du suivi des enfants sans perte d'information.
                 </p>
               </div>
 
@@ -141,46 +142,46 @@ export default function SolutionsSessadPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="glass p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
-                <Car className="size-8 text-secondary-400 mb-3" />
-                <h3 className="text-white font-bold mb-2">Réservation Autonome</h3>
-                <p className="text-xs text-muted leading-relaxed">Les intervenants réservent leur véhicule en quelques clics depuis leur téléphone avant leur départ.</p>
+                <Calendar className="size-8 text-secondary-400 mb-3" />
+                <h3 className="text-white font-bold mb-2">Planning Nomade & Tournées</h3>
+                <p className="text-xs text-muted leading-relaxed">Visualisation claire des interventions extérieures, adresses des rendez-vous et changements d'emploi du temps en direct.</p>
               </div>
               <div className="glass p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
                 <Smartphone className="size-8 text-primary-400 mb-3" />
-                <h3 className="text-white font-bold mb-2">Relevé Kilométrique Mobile</h3>
-                <p className="text-xs text-muted leading-relaxed">Fin des carnets papier dans les boîtes à gants : saisie du compteur au départ et au retour.</p>
+                <h3 className="text-white font-bold mb-2">Saisie 100% Hors-Ligne</h3>
+                <p className="text-xs text-muted leading-relaxed">Prise de notes et bilans d'interventions en école ou à domicile sans connexion, avec synchronisation automatique au retour.</p>
               </div>
               <div className="glass p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
-                <Clock className="size-8 text-accent mb-3" />
-                <h3 className="text-white font-bold mb-2">Suivi des Révisions</h3>
-                <p className="text-xs text-muted leading-relaxed">Alertes automatiques par email pour le gestionnaire avant chaque contrôle technique obligatoire.</p>
+                <Users className="size-8 text-accent mb-3" />
+                <h3 className="text-white font-bold mb-2">Coordination Pluridisciplinaire</h3>
+                <p className="text-xs text-muted leading-relaxed">Partage sécurisé des transmissions entre éducateurs, psychologues, rééducateurs et secrétariat conformément au RGPD.</p>
               </div>
               <div className="glass p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
                 <FileCheck className="size-8 text-emerald-400 mb-3" />
                 <h3 className="text-white font-bold mb-2">Comptes-Rendus Dématérialisés</h3>
-                <p className="text-xs text-muted leading-relaxed">Outils de prise de notes sécurisée utilisables hors-ligne entre deux rendez-vous.</p>
+                <p className="text-xs text-muted leading-relaxed">Fiches de suivi pré-remplies, validation numérique et transmission instantanée au dossier unique de l'enfant.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA FLOTICAR DÉMO */}
+        {/* CTA SESSAD CO-CONSTRUCTION */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto glass-strong p-10 sm:p-14 rounded-3xl text-center border border-secondary-500/30">
-            <span className="section-label mb-3 inline-block">Testez Floticar dans votre SESSAD</span>
+            <span className="section-label mb-3 inline-block">Co-construisons vos outils SESSAD</span>
             <h2 className="text-3xl font-bold text-white mb-4">
               Simplifiez la vie de vos équipes nomades dès aujourd'hui
             </h2>
             <p className="text-muted text-base sm:text-lg mb-8 max-w-2xl mx-auto">
-              Bénéficiez d'une démonstration personnalisée de 20 minutes pour découvrir comment Floticar s'adapte à votre SESSAD.
+              Bénéficiez d&apos;un échange de cadrage gratuit de 30 minutes avec un architecte logiciel pour évaluer vos processus et prototyper vos futurs outils mobiles.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact" className="btn-primary text-base">
-                Demander une démo 14 jours
+                Réserver un échange de cadrage
                 <ArrowRight className="size-4" />
               </Link>
-              <Link href="/realisations/floticar" className="btn-outline text-base">
-                Étude de cas Floticar
+              <Link href="/realisations" className="btn-outline text-base">
+                Découvrir nos réalisations
               </Link>
             </div>
 

@@ -1,20 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Sparkles,
   ArrowRight,
-  CheckCircle2,
-  ExternalLink,
 } from 'lucide-react';
 import { projects } from '@/data/data';
 import ProjectCard from '@/components/Projects/projectCard';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 
 export default function RealisationsPage() {
-  const floticarProject = projects[0];
-  const otherProjects = projects.slice(1);
-
   return (
     <div className="min-h-screen bg-neutral-950 text-white selection:bg-primary-500/30 selection:text-primary-200">
       <Breadcrumb
@@ -60,88 +54,20 @@ export default function RealisationsPage() {
         </div>
       </section>
 
-      {/* Featured Case Study: Floticar */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/5">
-        <div className="relative rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-900/90 to-neutral-950 border border-primary-500/30 p-8 sm:p-12 overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 text-xs font-semibold">
-                <span>Étude de Cas SaaS — Conçu & Développé par DevEvoke</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                Floticar : La dématérialisation du carnet de bord pour les flottes professionnelles
-              </h2>
-              <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                Né d’une problématique réelle de terrain, Floticar remplace les carnets de bord papier par un QR code scannable sur smartphone sans téléchargement. Une application SaaS complète avec tableau de bord centralisé pour la direction et alertes automatiques.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-neutral-300">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="size-4 text-primary-400 shrink-0" />
-                  <span>Traçabilité 100% des conducteurs</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="size-4 text-primary-400 shrink-0" />
-                  <span>Alertes contrôles techniques & vidanges</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="size-4 text-primary-400 shrink-0" />
-                  <span>Signalement immédiat des anomalies</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="size-4 text-primary-400 shrink-0" />
-                  <span>Architecture multi-tenant sécurisée</span>
-                </div>
-              </div>
-              <div className="pt-2 flex flex-wrap gap-4">
-                <Link
-                  href="/realisations/floticar"
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-xs sm:text-sm hover:opacity-95 shadow-lg shadow-primary-500/20 transition-all flex items-center gap-2"
-                >
-                  <span>Lire l’étude de cas technique</span>
-                  <ArrowRight className="size-4" />
-                </Link>
-                <a
-                  href="https://floticar.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-xs sm:text-sm transition-all inline-flex items-center gap-2"
-                >
-                  <span>Visiter floticar.com</span>
-                  <ExternalLink className="size-3.5 text-neutral-400" />
-                </a>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <Image
-                  src={floticarProject.image}
-                  alt="Plateforme SaaS Floticar développée par DevEvoke"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Other Projects List */}
+      {/* Projects List */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Typologies de projets & cas d’usage
+            Études de cas & réalisations logicielles
           </h2>
           <p className="text-neutral-400 text-sm">
-            Chaque organisation a ses flux de travail spécifiques. Voici des exemples d’architectures et d’outils sur-mesure conçus pour digitaliser les métiers.
+            Chaque organisation a ses flux de travail spécifiques. Voici des exemples d’architectures et d’outils sur-mesure conçus pour digitaliser les métiers et simplifier le quotidien des équipes.
           </p>
         </div>
 
         <div className="space-y-16">
-          {otherProjects.map((project, idx) => (
-            <ProjectCard key={project.id} {...project} index={idx + 1} />
+          {projects.map((project, idx) => (
+            <ProjectCard key={project.id} {...project} index={idx} />
           ))}
         </div>
       </section>

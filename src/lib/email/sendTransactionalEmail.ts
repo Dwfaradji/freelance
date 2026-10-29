@@ -54,7 +54,7 @@ export async function sendTransactionalEmail(params: {
     fullReportSummary: (data as any).content || '',
     fullSimulationSummary: (data as any).content || '',
     subject: (data as any).projectType || '',
-    demoFocus: (data as any).projectType || 'Floticar (Gestion de flotte)',
+    demoFocus: (data as any).projectType || 'Solution médico-sociale sur-mesure',
     preferredSlot: 'Dans la semaine (matin)',
     annualSavings: '18 400 €',
     vehicles: 10,

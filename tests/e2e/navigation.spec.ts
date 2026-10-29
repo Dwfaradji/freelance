@@ -60,7 +60,7 @@ test.describe('P0 — Navigation principale, parcours critiques & intégrité de
     await expect(page.getByRole('heading', { level: 1 })).toContainText(/Projets & réalisations/i);
 
     // Ouvrir l'étude de cas Floticar
-    await page.getByRole('link', { name: /Lire l’étude de cas technique/i }).click();
+    await page.locator('article').filter({ hasText: 'Floticar' }).getByRole('link', { name: /Découvrir le projet/i }).click();
     await expect(page).toHaveURL(/\/realisations\/floticar$/);
     await expect(page.getByRole('heading', { level: 1 })).toContainText(/Floticar/i);
   });
@@ -81,9 +81,9 @@ test.describe('P0 — Navigation principale, parcours critiques & intégrité de
       'href',
       '/developpement-logiciel-medico-social'
     );
-    await expect(footer.getByRole('link', { name: 'Étude de Cas Floticar' })).toHaveAttribute(
+    await expect(footer.getByRole('link', { name: 'Transformation Numérique ESMS' })).toHaveAttribute(
       'href',
-      '/realisations/floticar'
+      '/medico-social'
     );
 
     await footer.getByRole('link', { name: 'Mentions Légales' }).click();

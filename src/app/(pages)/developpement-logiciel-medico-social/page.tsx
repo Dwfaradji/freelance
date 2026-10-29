@@ -169,7 +169,7 @@ export default function DeveloppementLogicielMedicoSocialPage() {
                     'Outil de planification et d’optimisation des tournées d’intervention pour SESSAD',
                     'Portail de communication sécurisé avec les familles et représentants légaux',
                     'Gestion d’ateliers de production et facturation commerciale pour ESAT',
-                    'Solution SaaS de gestion de flotte automobile partagée (Floticar)',
+                    'Outil de suivi logistique, plannings de réservation et gestion des ressources partagées',
                     'Tableaux de bord d’activité et reporting réglementaire pour directions générales',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-muted text-sm sm:text-base">

@@ -860,7 +860,7 @@ const blogData: BlogProps[] = [
       },
       {
         title: '4. Mutualisation des outils pour les associations gestionnaires multi-établissements',
-        text: 'Pour les associations gérant plusieurs établissements, l\'enjeu est de simplifier l\'outillage. En mutualisant les données administratives, en déployant des solutions communes comme Floticar pour le parc automobile et en reliant les applications métiers via des flux simples, l\'association réalise d\'importantes économies tout en offrant un meilleur confort de travail à ses collaborateurs.'
+        text: 'Pour les associations gérant plusieurs établissements, l\'enjeu est de simplifier l\'outillage. En mutualisant les données administratives, en déployant des socles logiciels communs et en reliant les applications métiers via des flux sécurisés, l\'association réalise d\'importantes économies tout en offrant un meilleur confort de travail à ses collaborateurs.'
       }
     ],
     img: articleHeader.src,

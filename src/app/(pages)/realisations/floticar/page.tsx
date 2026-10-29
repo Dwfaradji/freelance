@@ -147,7 +147,7 @@ export default function FloticarCaseStudyPage() {
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent pointer-events-none" />
-                
+
                 <div className="absolute top-4 left-4 backdrop-blur-md bg-neutral-950/80 border border-white/15 px-3 py-1.5 rounded-full text-xs font-semibold text-white flex items-center gap-2">
                   <Smartphone className="size-3.5 text-secondary-400" />
                   <span>Côté Conducteur : Scan QR Code</span>
@@ -174,7 +174,7 @@ export default function FloticarCaseStudyPage() {
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-transparent to-transparent pointer-events-none" />
-                
+
                 <div className="absolute top-4 left-4 backdrop-blur-md bg-primary-950/80 border border-primary-500/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-primary-200">
                   Côté Direction : Cockpit Centralisé
                 </div>
@@ -351,15 +351,9 @@ export default function FloticarCaseStudyPage() {
               </Link>
               <Link
                 href="/logiciel-gestion-vehicules-medico-social"
-                className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-primary-300 hover:text-white font-medium text-sm transition-all"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-semibold text-xs hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
               >
-                Page solution : Gestion de flotte médico-sociale
-              </Link>
-              <Link
-                href="/realisations"
-                className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-sm transition-all"
-              >
-                ← Toutes les réalisations
+                Gestion de flotte médico-sociale
               </Link>
             </div>
           </div>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   Layers, 
-  Car, 
+  Globe, 
   Smartphone, 
   Workflow, 
   ShieldCheck, 
@@ -65,13 +65,23 @@ export default function SolutionsMedicoSocialPage() {
       {
         '@type': 'ListItem',
         position: 8,
-        name: 'Étude de cas SaaS Floticar : Gestion de Flotte Associative',
-        url: 'https://www.devevoke.com/realisations/floticar',
+        name: 'Diagnostic Numérique Médico-Social',
+        url: 'https://www.devevoke.com/diagnostic-numerique',
       },
     ],
   };
 
-  const categories = [
+  interface SolutionCategory {
+    title: string;
+    desc: string;
+    icon: React.ReactNode;
+    link: string;
+    linkLabel: string;
+    badge?: string;
+    points: string[];
+  }
+
+  const categories: SolutionCategory[] = [
     {
       title: 'Logiciels Métiers & Applications Web',
       desc: 'Développement sur-mesure d’outils centralisés pour fluidifier le dossier usager, les plannings et le suivi administratif.',
@@ -86,24 +96,24 @@ export default function SolutionsMedicoSocialPage() {
       ],
     },
     {
-      title: 'Gestion de Flotte Automobile (Floticar)',
-      desc: 'Solution SaaS éditée par DevEvoke pour gérer et suivre les véhicules des associations, IME et SESSAD.',
-      icon: <Car className="size-6 text-secondary-400" />,
-      link: '/logiciel-gestion-vehicules-medico-social',
-      linkLabel: 'Découvrir le logiciel Floticar',
-      badge: 'Solution SaaS DevEvoke',
+      title: 'Portails Collaboratifs, Extranets & Espaces Familles',
+      desc: 'Espaces sécurisés et ergonomiques pour fluidifier les liens entre professionnels, usagers, familles et partenaires institutionnels.',
+      icon: <Globe className="size-6 text-secondary-400" />,
+      link: '/developpement-web',
+      linkLabel: 'Découvrir nos portails et extranets',
+      badge: 'Espaces Sécurisés RGPD',
       points: [
-        'Réservation en ligne des véhicules partagés',
-        'Carnet de bord dématérialisé sur smartphone',
-        'Alertes automatiques contrôles techniques et révisions',
-        'Suivi des consommations et ventilation budgétaire',
+        'Transmission sécurisée des bilans et documents',
+        'Espace famille rassurant et conforme RGPD',
+        'Messagerie chiffrée et agenda partagé',
+        'Accessibilité RGAA et responsive sur tous écrans',
       ],
     },
     {
       title: 'Applications Mobiles & Tablettes Soignants',
       desc: 'Outils tactiles fluides conçus pour les éducateurs, soignants et intervenants nomades sur le terrain.',
       icon: <Smartphone className="size-6 text-accent" />,
-      link: '/solutions/application-mobile',
+      link: '/application-mobile',
       linkLabel: 'Découvrir nos solutions mobiles',
       points: [
         'Saisie rapide des transmissions à la volée',
@@ -116,7 +126,7 @@ export default function SolutionsMedicoSocialPage() {
       title: 'Automatisation des Processus & APIs',
       desc: 'Connectez vos outils historiques et éliminez les ressaisies manuelles chronophages.',
       icon: <Workflow className="size-6 text-emerald-400" />,
-      link: '/solutions/automatisation',
+      link: '/automatisation',
       linkLabel: 'Découvrir l’automatisation des flux',
       points: [
         'Interconnexion avec vos logiciels de paie et comptabilité',
@@ -139,9 +149,9 @@ export default function SolutionsMedicoSocialPage() {
     {
       slug: 'sessad',
       title: 'SESSAD & Services Nomades',
-      desc: 'Outils dédiés aux professionnels en mobilité : gestion des tournées scolaires et à domicile, réservation de flotte et dématérialisation des notes.',
+      desc: 'Outils dédiés aux professionnels en mobilité : gestion des tournées scolaires et à domicile, saisie de notes hors-ligne et coordination des prises en charge.',
       link: '/solutions-medico-social/sessad',
-      image: '/images/home/floticar_real_action.jpg',
+      image: '/images/home/sessad_field_educator.jpg',
       badge: 'Mobilité & Tournées',
     },
     {
@@ -163,7 +173,7 @@ export default function SolutionsMedicoSocialPage() {
     {
       slug: 'associations',
       title: 'Associations Gestionnaires Multi-Sites',
-      desc: 'Pilotage unifié du système d’information, mutualisation des moyens (flotte, matériel) et reporting consolidé pour les conseils d’administration.',
+      desc: 'Pilotage unifié du système d’information, mutualisation des moyens (ressources, matériel) et reporting consolidé pour les conseils d’administration.',
       link: '/solutions-medico-social/associations',
       image: '/images/home/hero_medicosocial_team.jpg',
       badge: 'Gouvernance & DSI',
@@ -379,8 +389,8 @@ export default function SolutionsMedicoSocialPage() {
                 Contacter DevEvoke
                 <ArrowRight className="size-4" />
               </Link>
-              <Link href="/realisations/floticar" className="btn-outline text-base">
-                Découvrir l'étude Floticar
+              <Link href="/diagnostic-numerique" className="btn-outline text-base">
+                Faire le diagnostic gratuit
               </Link>
             </div>
           </div>

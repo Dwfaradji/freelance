@@ -83,6 +83,7 @@ export default function FloticarShowcase() {
                   alt="Conducteur scannant le QR code d'un véhicule avec son smartphone"
                   width={600}
                   height={450}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="w-full h-[240px] sm:h-[380px] object-cover object-center group-hover:scale-102 transition-transform duration-700 brightness-[0.95]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent pointer-events-none" />
@@ -110,6 +111,7 @@ export default function FloticarShowcase() {
                       alt="Dashboard Floticar"
                       width={80}
                       height={80}
+                      sizes="80px"
                       className="w-full h-full object-cover"
                     />
                   </div>

@@ -74,7 +74,7 @@ const TeamSection = () => {
               Développeur passionné par l’ingénierie logicielle et les architectures web modernes, j&apos;ai créé DevEvoke avec une vision claire : concevoir des solutions numériques et des logiciels métier sur mesure qui répondent aux contraintes réelles des entreprises, des organisations et des structures médico-sociales.
             </p>
             <p className="text-muted leading-relaxed">
-              Que ce soit pour créer une plateforme SaaS complète comme Floticar, digitaliser un processus métier complexe ou bâtir une application mobile professionnelle, DevEvoke privilégie toujours l&apos;utilité concrète, la pérennité du code et la proximité humaine.
+              Que ce soit pour concevoir une plateforme SaaS métier, digitaliser un processus opérationnel complexe ou bâtir une application mobile professionnelle, DevEvoke privilégie toujours l&apos;utilité concrète, la pérennité du code et la proximité humaine.
             </p>
             <div className="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3 text-xs text-neutral-300">
               <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono">Next.js / React</span>

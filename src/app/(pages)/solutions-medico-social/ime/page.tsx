@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   GraduationCap, 
-  Car, 
+  Calendar, 
   ArrowRight, 
   HeartHandshake,
   FileText
@@ -85,7 +85,7 @@ export default function SolutionsImePage() {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted leading-relaxed max-w-3xl mx-auto mb-10">
-            Simplifiez le suivi éducatif et thérapeutique des jeunes accompagnés, optimisez la gestion quotidienne de vos minibus de ramassage avec <strong>Floticar</strong> et facilitez les échanges sécurisés avec les familles.
+            Simplifiez le suivi éducatif et thérapeutique des jeunes accompagnés, renforcez la coordination pluridisciplinaire et facilitez les échanges sécurisés avec les familles et partenaires scolaires.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -93,8 +93,8 @@ export default function SolutionsImePage() {
               Demander un échange pour votre IME
               <ArrowRight className="size-4" />
             </Link>
-            <Link href="/realisations/floticar" className="btn-outline w-full sm:w-auto text-base">
-              Découvrir l'étude de cas Floticar
+            <Link href="/diagnostic-numerique" className="btn-outline w-full sm:w-auto text-base">
+              Faire le diagnostic gratuit
             </Link>
           </div>
         </header>
@@ -141,11 +141,11 @@ export default function SolutionsImePage() {
             <div className="grid sm:grid-cols-3 gap-6">
               <div className="glass p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
                 <div className="size-12 rounded-xl bg-secondary-500/10 flex items-center justify-center text-secondary-400 mb-4">
-                  <Car className="size-6" />
+                  <Calendar className="size-6" />
                 </div>
-                <h3 className="text-white font-bold text-lg mb-2">Sécurité des transports & minibus</h3>
+                <h3 className="text-white font-bold text-lg mb-2">Organisation des activités & plannings</h3>
                 <p className="text-sm text-muted leading-relaxed">
-                  Les tournées de ramassage matinales et du soir sont critiques. Floticar permet de planifier les minibus adaptés, de suivre les contrôles techniques et de consigner les kilomètres sans paperasse.
+                  Coordination sans accroc des ateliers éducatifs, des séances thérapeutiques et des plannings de salles ou matériels partagés pour l&apos;ensemble de l&apos;établissement.
                 </p>
               </div>
 

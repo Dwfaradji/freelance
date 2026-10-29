@@ -1,8 +1,6 @@
-'use client';
 import React from 'react';
-import { motion } from 'motion/react';
 import Image from 'next/image';
-import  blogData  from '@/data/dataBlog';
+import blogData from '@/data/dataBlog';
 import Link from 'next/link';
 import { slugify } from '@/utils/slugify';
 import myPhoto from '@/images/about/photo-profil-688.webp';
@@ -18,11 +16,7 @@ const BlogHeader = () => {
 
   return (
     <Link href={`/blog/${slugify(latestPost.title)}`}>
-      <motion.article
-        whileHover={{ y: -4 }}
-        transition={{ duration: 0.3 }}
-        className="group relative overflow-hidden rounded-3xl glass border border-white/5 transition-all duration-500 hover:border-white/10 hover:glass-strong shadow-lg"
-      >
+      <article className="group relative overflow-hidden rounded-3xl glass border border-white/5 transition-all duration-300 hover:border-white/10 hover:glass-strong hover:-translate-y-1 shadow-lg">
         <div className="grid md:grid-cols-2">
           {/* Image */}
           <div className="relative h-64 overflow-hidden md:h-full md:min-h-[400px]">
@@ -30,6 +24,7 @@ const BlogHeader = () => {
               src={latestPost.img}
               width={800}
               height={600}
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt={latestPost.alt}
               className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -51,32 +46,29 @@ const BlogHeader = () => {
               {latestPost.descriptionShort}
             </p>
 
-            {/* Auteur + Date */}
-            <div className="mt-8 flex items-center gap-4">
-              <Image
-                width={40}
-                height={40}
-                className="size-10 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-primary/30 transition-all"
-                src={myPhoto.src}
-                alt="Auteur"
-                sizes="40px"
-              />
-              <div>
-                <p className="text-sm font-semibold text-white">Boucif Faradji</p>
-                <p className="text-xs text-muted-light mt-0.5">{formattedDate}</p>
+            <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
+              <div className="flex items-center gap-3">
+                <Image
+                  src={myPhoto}
+                  alt="Auteur Boucif Faradji"
+                  className="size-10 rounded-full border border-white/10 object-cover"
+                />
+                <div>
+                  <p className="text-sm font-medium text-white">Boucif Faradji</p>
+                  <p className="text-xs text-muted">{formattedDate}</p>
+                </div>
               </div>
-            </div>
 
-            {/* Lien */}
-            <div className="mt-8 flex items-center gap-2 text-sm font-bold text-primary-400 group-hover:text-primary-300 transition-colors">
-              Lire l'article complet
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover:translate-x-1 transition-transform">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-primary-400 group-hover:text-primary-300 transition-colors">
+                Lire l'article
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
             </div>
           </div>
         </div>
-      </motion.article>
+      </article>
     </Link>
   );
 };

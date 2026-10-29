@@ -382,7 +382,7 @@ const Contact = ({
                     <option value="Application mobile (iOS / Android)">Application mobile nomade</option>
                     <option value="Développement web & Espace client">Développement web & Espace client</option>
                     <option value="Automatisation des processus">Automatisation des processus & API</option>
-                    <option value="Floticar (Gestion de flotte)">Floticar (Gestion de flotte)</option>
+                    <option value="Solution médico-sociale sur-mesure">Solution médico-sociale sur-mesure</option>
                     <option value="Audit & Cadrage technique">Audit & Cadrage technique</option>
                   </select>
                 </div>

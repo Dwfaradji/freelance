@@ -198,14 +198,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/realisations/floticar"
-                  className="hover:text-primary-300 text-neutral-300 transition-colors"
-                >
-                  Étude de Cas Floticar
-                </Link>
-              </li>
-              <li>
                 <Link href="/info-procedure" className="hover:text-white transition-colors">
                   Processus de Réalisation
                 </Link>

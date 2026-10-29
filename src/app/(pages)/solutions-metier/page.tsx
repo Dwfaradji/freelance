@@ -305,8 +305,8 @@ export default function SolutionsMetierPage() {
                 <h3 className="text-xl font-bold text-white">Exemples de Logiciels Métiers Conçus</h3>
                 <div className="space-y-3 text-xs text-neutral-300">
                   <div className="p-3 rounded-lg bg-white/5 border border-white/5">
-                    <strong className="text-white block font-semibold mb-1">Gestion Logistique & Flotte</strong>
-                    <span>Attribution de matériel, suivi des plannings de véhicules, alertes d’entretien et relevés kilométriques.</span>
+                    <strong className="text-white block font-semibold mb-1">Gestion Logistique & Ressources Internes</strong>
+                    <span>Attribution de matériel, inventaire, réservation d’équipements partagés et suivi des maintenances.</span>
                   </div>
                   <div className="p-3 rounded-lg bg-white/5 border border-white/5">
                     <strong className="text-white block font-semibold mb-1">Coordination & Suivi d’Activité</strong>

@@ -11,7 +11,6 @@ import {
   Sparkles,
   HelpCircle,
   Server,
-  Car,
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import ServicesNavSwitcher from '@/components/ui/ServicesNavSwitcher';
@@ -103,8 +102,8 @@ export default function DeveloppementSaasPage() {
       a: 'Un MVP SaaS robuste et prêt à être commercialisé (authentification, espace client, logique métier cœur, paiement Stripe) se conçoit généralement en 2 à 3 mois pour un budget optimisé grâce à la suppression de tout intermédiaire non technique.',
     },
     {
-      q: 'Quelle est la preuve de la compétence de DevEvoke en matière de SaaS ?',
-      a: 'DevEvoke a conçu et édite en interne la plateforme SaaS Floticar (gestion de flotte automobile par QR code pour établissements professionnels). Nous maîtrisons l’ensemble de la chaîne : modélisation, UX, abonnements, sécurité, support et montées de version.',
+      q: 'Quelle est la preuve de la compétence de DevEvoke en ingénierie SaaS ?',
+      a: 'DevEvoke conçoit et opère des architectures logicielles cloud complètes pour le secteur médico-social et les professionnels. Nous maîtrisons l’ensemble de la chaîne : modélisation multi-tenant étanche, UX métier intuitive, abonnements et facturation automatisés, conformité RGPD et montées de version sans interruption.',
     },
     {
       q: 'Comment s’organise la propriété intellectuelle du produit SaaS ?',
@@ -166,7 +165,7 @@ export default function DeveloppementSaasPage() {
                   href="/realisations"
                   className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-200 font-medium text-sm transition-all text-center"
                 >
-                  Voir l&apos;étude de cas Floticar
+                  Découvrir nos réalisations
                 </Link>
               </div>
 
@@ -271,43 +270,41 @@ export default function DeveloppementSaasPage() {
           </div>
         </section>
 
-        {/* Proof of Competence: Floticar Showcase Banner */}
+        {/* Proof of Competence: SaaS Engineering Showcase Banner */}
         <section className="py-20 bg-neutral-900/40 border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="card-modern p-8 sm:p-12 border-primary-500/30 bg-gradient-to-br from-neutral-900 to-neutral-950">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-8 space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs font-semibold">
-                    <Car className="size-3.5" />
-                    <span>Preuve Concrète d&apos;Édition Logicielle</span>
+                    <Sparkles className="size-3.5" />
+                    <span>Ingénierie Logicielle & Produits Cloud</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                    Floticar : un SaaS conçu et opéré par DevEvoke
+                    Des architectures SaaS éprouvées sur le terrain médico-social
                   </h3>
                   <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                    Floticar est notre solution SaaS dédiée au suivi des véhicules associatifs et professionnels. De la numérisation du carnet de bord par QR code à la facturation automatisée, ce cas réel illustre notre maîtrise complète du cycle de vie logiciel.
+                    De la gestion des plannings d&apos;équipes nomades aux portails extranets sécurisés, nous concevons des logiciels SaaS pensés pour simplifier le quotidien des structures et associations. Modélisation multi-établissements, synchronisation fluide et sécurité des données sensibles.
                   </p>
                   <div className="pt-2 flex flex-wrap gap-4 text-xs text-neutral-400">
-                    <span>✓ Multi-organisations étanche</span>
-                    <span>✓ Zéro application à télécharger (PWA)</span>
-                    <span>✓ Hébergement souverain France</span>
+                    <span>✓ Cloisonnement multi-entités étanche</span>
+                    <span>✓ Interfaces pensées pour les soignants et éducateurs</span>
+                    <span>✓ Hébergement souverain & conforme RGPD</span>
                   </div>
                 </div>
                 <div className="lg:col-span-4 flex flex-col gap-3 justify-center items-start lg:items-end">
                   <Link
-                    href="https://www.floticar.fr"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/realisations"
                     className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-semibold text-xs hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
                   >
-                    <span>Découvrir Floticar en direct</span>
+                    <span>Explorer nos réalisations SaaS</span>
                     <ArrowRight className="size-3.5" />
                   </Link>
                   <Link
-                    href="/realisations"
+                    href="/contact"
                     className="text-xs text-primary-400 hover:text-primary-300 transition-colors"
                   >
-                    Consulter nos autres études de cas →
+                    Échanger sur votre projet logiciel →
                   </Link>
                 </div>
               </div>

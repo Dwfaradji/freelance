@@ -150,7 +150,7 @@ export const RECOMMENDATION_CATALOG: Array<
       scores.management < 65 || answers.q16 === 'q16_a' || answers.q16 === 'q16_b' || answers.q17 === 'q17_a',
   },
 
-  // 8. Gestion informatisée de flotte automobile (Floticar)
+  // 8. Gestion informatisée des véhicules et déplacements
   {
     id: 'rec_fleet_automation',
     dimension: 'fleet',
@@ -397,7 +397,7 @@ export function detectRelevantSolutions(
     solutions.add('mobileApp');
   }
 
-  // Floticar : UNIQUEMENT si l'établissement possède une flotte ET que le score flotte est < 65
+  // Module Véhicules & Déplacements : UNIQUEMENT si l'établissement possède une flotte ET que le score flotte est < 65
   if (profile.fleet !== 'none' && fleetScore !== undefined && fleetScore < 65) {
     solutions.add('fleet');
   }

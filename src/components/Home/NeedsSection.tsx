@@ -1,10 +1,7 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'motion/react';
 import {
-  Car,
+  Lock,
   FileCheck2,
   Cpu,
   Users,
@@ -48,90 +45,82 @@ const needs: NeedItem[] = [
     link: '/developpement-web',
     ctaText: 'Découvrir le développement web',
     icon: Building2,
-    tag: 'Performance & Visibilité',
+    tag: 'Visibilité & Conversion',
   },
   {
-    id: 'paperwork',
-    problem: '« Nos équipes perdent un temps précieux sur des saisies manuelles répétitives »',
-    solution: 'Automatisation des flux & suppression double saisie',
+    id: 'mobile-app',
+    problem: '« Nos intervenants sur le terrain perdent du temps avec des feuilles volantes »',
+    solution: 'Application mobile & tablette hors-ligne',
     description:
-      'Suppression des ressaisies, synchronisation temps réel de vos outils via API et génération instantanée de bilans d’activité en PDF.',
-    link: '/automatisation',
-    ctaText: 'Explorer l’automatisation',
-    icon: FileCheck2,
-    tag: 'Gain de temps opérationnel',
-  },
-  {
-    id: 'field-teams',
-    problem: '« Nos professionnels sur le terrain manquent d’outils mobiles fiables et hors-ligne »',
-    solution: 'Applications mobiles iOS & Android (Offline-First)',
-    description:
-      'Outils tactiles pour techniciens, commerciaux ou équipes itinérantes : plannings, comptes-rendus express et fonctionnement 100% hors-ligne.',
+      'Applications tactiles ergonomiques conçues pour les professionnels nomades (éducateurs, soignants, techniciens) : saisie rapide et mode déconnecté.',
     link: '/application-mobile',
-    ctaText: 'Découvrir les applications mobiles',
+    ctaText: 'Découvrir nos solutions mobiles',
     icon: Users,
-    tag: 'Mobilité & Hors-Ligne',
+    tag: 'Mobilité & Terrain',
   },
   {
     id: 'saas-product',
-    problem: '« Nous voulons digitaliser notre offre ou lancer un produit SaaS B2B »',
-    solution: 'Conception de plateforme SaaS sur-mesure',
+    problem: '« Nous voulons digitaliser un service et le proposer sous forme d’abonnement »',
+    solution: 'Conception de plateforme SaaS',
     description:
-      'Architecture cloud multi-tenant sécurisée, gestion des abonnements Stripe, facturation automatisée et espace client en libre-service.',
+      'Développement de votre produit logiciel cloud de A à Z : architecture multi-tenant, abonnements Stripe, espace client et sécurité renforcée.',
     link: '/developpement-saas',
-    ctaText: 'Concevoir votre SaaS',
-    icon: ShieldCheck,
+    ctaText: 'Voir notre expertise SaaS',
+    icon: Sparkles,
     tag: 'Produit Cloud B2B',
   },
   {
-    id: 'fleet',
-    problem: '« Nous avons besoin de fiabiliser la gestion d’une flotte ou de matériel »',
-    solution: 'Floticar — Gestion de flotte connectée',
+    id: 'automation',
+    problem: '« Nos équipes passent des heures à ressaisir les mêmes données entre plusieurs outils »',
+    solution: 'Automatisation & interconnexion d’outils',
     description:
-      'Carnet de bord numérique par QR code sur smartphone, alertes de contrôle technique et traçabilité des conducteurs. Conçu par DevEvoke.',
-    link: '/realisations',
-    ctaText: 'Découvrir l’étude de cas',
-    icon: Car,
-    tag: 'Étude de cas concrète',
+      'Suppression des tâches manuelles répétitives, synchronisation automatique de vos bases et interconnexion de vos logiciels via APIs sécurisées.',
+    link: '/automatisation',
+    ctaText: 'Découvrir l’automatisation',
+    icon: FileCheck2,
+    tag: 'Productivité Immédiate',
+  },
+  {
+    id: 'extranets-rgpd',
+    problem: '« Nos échanges avec les usagers, familles et partenaires manquent de sécurité »',
+    solution: 'Portails web & extranets sécurisés (RGPD)',
+    description:
+      'Espaces d’échange sécurisés, transmission chiffrée de documents sensibles et traçabilité complète des accès avec hébergement souverain en France.',
+    link: '/solutions-metier',
+    ctaText: 'Découvrir nos portails sécurisés',
+    icon: Lock,
+    tag: 'Conformité & Confiance',
   },
 ];
 
 export default function NeedsSection() {
   return (
-    <section className="py-24 relative overflow-hidden bg-surface/50 border-y border-white/5">
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-[600px] bg-primary-600/5 blur-[140px] pointer-events-none rounded-full" />
+    <section className="py-20 sm:py-28 lg:py-32 relative bg-surface/50 border-t border-white/5">
+      {/* Background Subtle Gradient */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary-600/5 blur-[180px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
-            Espace Vos Besoins
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
-            Vous partez d’un{' '}
-            <span className="text-highlight">
-              problème concret
-            </span>
-            , nous concevons la solution.
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="section-label mb-3 inline-block">
+            Partir de vos Réalités de Terrain
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-5 leading-tight">
+            Quelle problématique souhaitez-vous{' '}
+            <span className="text-gradient">résoudre en priorité ?</span>
           </h2>
-          <p className="text-lg text-muted leading-relaxed">
-            Pas de jargon technique stérile : sélectionnez la problématique rencontrée dans votre organisation pour découvrir notre réponse numérique opérationnelle.
+          <p className="text-base sm:text-lg text-muted leading-relaxed">
+            La technologie n’est qu’un moyen. Nous commençons toujours par écouter vos irritants quotidiens, vos contraintes métiers et vos objectifs opérationnels.
           </p>
         </div>
 
         {/* Needs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {needs.map((item, index) => {
+          {needs.map((item) => {
             const Icon = item.icon;
             return (
-              <motion.div
+              <div
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
                 className={`group relative flex flex-col justify-between rounded-2xl p-5 sm:p-7 border transition-all duration-300 ${
                   item.highlight
                     ? 'bg-gradient-to-b from-primary-950/40 via-surface to-surface border-primary-500/40 shadow-xl shadow-primary-950/30 hover:border-primary-400'
@@ -176,26 +165,32 @@ export default function NeedsSection() {
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
         {/* Bottom Banner */}
         <div className="mt-12 sm:mt-16 p-5 sm:p-8 rounded-2xl glass border border-primary-500/20 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center sm:text-left">
-            <h4 className="text-base sm:text-lg font-bold text-white">
-              Votre besoin spécifique ne figure pas dans cette liste ?
-            </h4>
-            <p className="text-xs sm:text-sm text-muted">
-              Nous étudions l’organisation et les contraintes de votre entreprise ou association pour concevoir une réponse technique adaptée.
-            </p>
+          <div className="flex items-center gap-4 text-center sm:text-left">
+            <div className="w-12 h-12 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center shrink-0 border border-primary-500/30">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <div>
+              <p className="text-sm sm:text-base font-semibold text-white">
+                Votre situation ne rentre dans aucune case ?
+              </p>
+              <p className="text-xs sm:text-sm text-muted">
+                C’est normal : chaque établissement a ses particularités. Échangeons 30 minutes pour clarifier votre besoin.
+              </p>
+            </div>
           </div>
           <Link
             href="/contact"
-            className="btn-primary w-full sm:w-auto shrink-0 px-6 py-3.5 text-sm font-semibold text-center"
+            className="btn-primary w-full sm:w-auto text-sm shrink-0"
           >
-            Échanger avec le fondateur
+            <span>Demander un diagnostic offert</span>
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

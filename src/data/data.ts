@@ -122,7 +122,7 @@ const prices: Price[] = [
     title: 'Plateforme SaaS Sur-Mesure',
     subtitle: 'Produit Numérique Multi-Organisations',
     price: 'Sur Devis',
-    description: `Conception de plateformes SaaS complètes. À l'image de Floticar (notre solution de gestion de flotte), nous développons des outils web centralisés, robustes et évolutifs.`,
+    description: `Conception de plateformes SaaS métiers complètes. Nous développons des outils web multi-organisations centralisés, robustes, ergonomiques et évolutifs.`,
     details: [
       'Architecture cloud moderne et évolutive (multi-tenant)',
       'Portail multi-organisations et gestion fine des droits',

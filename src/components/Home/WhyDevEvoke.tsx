@@ -106,6 +106,7 @@ export default function WhyDevEvoke() {
                   alt="Boucif Faradji, Fondateur de DevEvoke"
                   width={120}
                   height={120}
+                  sizes="96px"
                   className="w-full h-full object-cover object-top"
                 />
               </div>

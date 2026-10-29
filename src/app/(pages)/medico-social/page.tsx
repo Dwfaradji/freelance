@@ -3,7 +3,6 @@ import Link from 'next/link';
 import {
   Building2,
   ShieldCheck,
-  Car,
   Cpu,
   Smartphone,
   CheckCircle2,
@@ -43,7 +42,7 @@ export default function MedicoSocialHubPage() {
       { '@type': 'Country', name: 'France' },
     ],
     description:
-      'Pôle d’expertise numérique DevEvoke dédié au médico-social : logiciels métiers, applications mobiles hors-ligne pour SESSAD, outils pour IME, ESAT, EHPAD et gestion de flotte Floticar. Hébergement souverain sécurisé en France.',
+      'Pôle d’expertise numérique DevEvoke dédié au médico-social : logiciels métiers, applications mobiles hors-ligne pour SESSAD, outils pour IME, ESAT, EHPAD et digitalisation des processus associatifs. Hébergement souverain sécurisé en France.',
   };
 
   const structures = [
@@ -124,8 +123,8 @@ export default function MedicoSocialHubPage() {
       a: 'C’est précisément notre raison d’être : nous ne concevons pas des progiciels usines à gaz avec 50 boutons par écran. Les interfaces sont épurées, rédigées dans le vocabulaire quotidien de vos professionnels, avec de gros boutons tactiles et une logique d’action en 2 à 3 clics.',
     },
     {
-      q: 'Quelle est la place de Floticar dans l’accompagnement de DevEvoke ?',
-      a: 'Floticar est notre solution SaaS dédiée à la gestion de flotte automobile par QR code. Elle est née au contact direct des problématiques d’IME et de SESSAD confrontés aux pertes régulières de carnets de bord papier et aux amendes non imputées. C’est un exemple concret de notre capacité à résoudre un irritant quotidien.',
+      q: 'Comment assurez-vous l’adhésion des équipes éducatives et soignantes ?',
+      a: 'Nous co-construisons les outils en immersion avec les professionnels sur le terrain. En simplifiant drastiquement les démarches de saisie (grands boutons, mode hors-ligne, suppression de la paperasse), les outils deviennent de véritables alliés au quotidien plutôt qu’une contrainte administrative supplémentaire.',
     },
     {
       q: 'Comment s’organisent les échanges avec l’association ?',
@@ -278,38 +277,29 @@ export default function MedicoSocialHubPage() {
           </div>
         </section>
 
-        {/* Floticar Showcase Banner */}
+        {/* Co-design Showcase Banner */}
         <section className="py-20 border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="card-modern p-8 sm:p-12 border-primary-500/30 bg-gradient-to-br from-neutral-900 to-neutral-950">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-8 space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs font-semibold">
-                    <Car className="size-3.5" />
-                    <span>Innovation Métier Concrète</span>
+                    <Sparkles className="size-3.5" />
+                    <span>Immersion & Co-Construction Terrain</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                    Floticar : La gestion de flotte pensée pour vos tournées
+                    Des outils conçus avec et pour vos professionnels
                   </h3>
                   <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                    Né sur le terrain auprès d’IME et de SESSAD, Floticar remplace le carnet de bord papier par un simple QR code scanné avec le smartphone des conducteurs, sans application à installer. Zéro amende non imputée, alertes de contrôle technique automatiques et disponibilité des véhicules en temps réel.
+                    Chaque établissement possède ses spécificités. Nous intervenons aux côtés de vos équipes administratives, soignantes et éducatives pour concevoir des interfaces ultra-simples qui suppriment les doublons de saisie, fluidifient les transmissions et protègent les données sensibles.
                   </p>
                 </div>
                 <div className="lg:col-span-4 flex flex-col gap-3 justify-center items-start lg:items-end">
                   <Link
-                    href="https://www.floticar.fr"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/realisations"
                     className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-semibold text-xs hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
                   >
-                    <span>Découvrir Floticar</span>
-                    <ArrowRight className="size-3.5" />
-                  </Link>
-                  <Link
-                    href="/realisations"
-                    className="text-xs text-primary-400 hover:text-primary-300 transition-colors"
-                  >
-                    Consulter tous nos projets →
+                    Consulter tous nos projets
                   </Link>
                 </div>
               </div>

@@ -20,13 +20,11 @@ const PricingCTA = () => {
             <span>Faire le diagnostic gratuit (3 min)</span>
           </Link>
           <Link
-            href="https://floticar.com/demande-de-demo"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="btn-outline inline-flex items-center gap-2"
           >
             <Calendar className="w-4 h-4" />
-            <span>Démonstration Floticar</span>
+            <span>Réserver un échange de cadrage</span>
           </Link>
         </div>
       </div>

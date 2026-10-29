@@ -25,7 +25,7 @@ const AboutMore = () => {
   const strengths = [
     {
       title: "Expertise Logicielle, Web & SaaS",
-      desc: "Une équipe d’ingénieurs et de designers UI/UX spécialisés dans la conception de plateformes web modernes, d’applications mobiles et d’outils SaaS métiers (notamment Floticar pour la gestion de flotte).",
+      desc: "Une équipe d’ingénieurs et de designers UI/UX spécialisés dans la conception de plateformes web modernes, d’applications mobiles et d’outils métiers sur-mesure pour les acteurs du médico-social.",
       details: [
         "Développement Full-Stack Next.js, React et TypeScript de pointe.",
         "Applications mobiles et tablettes adaptées aux tournées terrain (mode hors-ligne).",

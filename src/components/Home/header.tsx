@@ -1,9 +1,6 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'motion/react';
 import {
   ArrowRight,
   ShieldCheck,
@@ -24,13 +21,8 @@ export default function Header() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
-          {/* Left Column: Narrative Positioning & CTAs */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left"
-          >
+          {/* Left Column: Narrative Positioning & CTAs (SSR immédiat, aucun blocage JS) */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
             {/* Sector Badge */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs sm:text-sm font-medium shadow-sm backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
@@ -90,22 +82,17 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="size-4 text-primary-400 shrink-0" />
-                <span>Conforme RGPD & CNIL</span>
+                <span>Conforme RGPD &amp; CNIL</span>
               </div>
               <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
                 <Users className="size-4 text-sky-400 shrink-0" />
                 <span>Direct avec le fondateur</span>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column: Hero Visual with Real Photography + Floating UI Glass Cards */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative"
-          >
+          <div className="lg:col-span-5 relative">
             <div className="relative group">
               {/* Outer decorative gradient border */}
               <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-primary-500/30 via-secondary-500/20 to-primary-600/30 blur-lg opacity-70 group-hover:opacity-100 transition duration-700 pointer-events-none" />
@@ -118,6 +105,7 @@ export default function Header() {
                   width={800}
                   height={600}
                   priority
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 42vw"
                   className="w-full h-[340px] sm:h-[480px] lg:h-[500px] object-cover object-center filter brightness-[0.95] contrast-[1.05] group-hover:scale-[1.02] transition-transform duration-700"
                 />
 
@@ -144,7 +132,7 @@ export default function Header() {
                       <div className="size-6 sm:size-7 rounded-lg bg-primary-500/20 text-primary-300 flex items-center justify-center">
                         <CalendarCheck className="size-3.5 sm:size-4" />
                       </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-white">Outils Métiers & Automatisation</span>
+                      <span className="text-[11px] sm:text-xs font-bold text-white">Outils Métiers &amp; Automatisation</span>
                     </div>
                     <span className="text-[9px] sm:text-[10px] font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                       Zéro double saisie
@@ -167,7 +155,7 @@ export default function Header() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>
