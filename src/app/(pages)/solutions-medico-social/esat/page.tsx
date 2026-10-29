@@ -118,7 +118,7 @@ export default function SolutionsEsatPage() {
               <div className="lg:col-span-6">
                 <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group">
                   <Image
-                    src="/images/home/esat_workshop_activity.jpg"
+                    src="/images/home/esat_workshop_activity.webp"
                     alt="Atelier de production ESAT encadré par des moniteurs d'atelier"
                     width={800}
                     height={520}

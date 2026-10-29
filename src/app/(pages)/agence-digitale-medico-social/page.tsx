@@ -218,7 +218,7 @@ export default function AgenceDigitaleMedicoSocialPage() {
               <div className="lg:col-span-6 space-y-6">
                 <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group">
                   <Image
-                    src="/images/about/about_field_immersion.jpg"
+                    src="/images/about/about_field_immersion.webp"
                     alt="Immersion DevEvoke au sein d'un établissement médico-social"
                     width={800}
                     height={460}
@@ -386,7 +386,7 @@ export default function AgenceDigitaleMedicoSocialPage() {
             <div className="mb-14 rounded-3xl overflow-hidden glass border border-white/10 relative group">
               <div className="relative h-64 sm:h-80 w-full overflow-hidden">
                 <Image
-                  src="/images/home/workshop_coconception.jpg"
+                  src="/images/home/workshop_coconception.webp"
                   alt="Atelier collaboratif de co-conception avec les directeurs médico-sociaux"
                   width={1400}
                   height={600}

@@ -119,7 +119,7 @@ export default function SolutionsEhpadPage() {
               <div className="lg:col-span-6">
                 <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group">
                   <Image
-                    src="/images/home/ehpad_coordination_life.jpg"
+                    src="/images/home/ehpad_coordination_life.webp"
                     alt="Coordinatrice de vie et résidente en EHPAD partageant un moment chaleureux avec tablette"
                     width={800}
                     height={520}

@@ -143,7 +143,7 @@ export default function SolutionsMedicoSocialPage() {
       title: 'Instituts Médico-Éducatifs (IME)',
       desc: 'Solutions pour coordonner les projets pédagogiques et éducatifs, sécuriser les transports d’enfants et simplifier les échanges avec les familles.',
       link: '/solutions-medico-social/ime',
-      image: '/images/solutions/ime_pedagogy_learning.jpg',
+      image: '/images/solutions/ime_pedagogy_learning.webp',
       badge: 'Enfance & Pédagogie',
     },
     {
@@ -151,7 +151,7 @@ export default function SolutionsMedicoSocialPage() {
       title: 'SESSAD & Services Nomades',
       desc: 'Outils dédiés aux professionnels en mobilité : gestion des tournées scolaires et à domicile, saisie de notes hors-ligne et coordination des prises en charge.',
       link: '/solutions-medico-social/sessad',
-      image: '/images/home/sessad_field_educator.jpg',
+      image: '/images/home/sessad_field_educator.webp',
       badge: 'Mobilité & Tournées',
     },
     {
@@ -159,7 +159,7 @@ export default function SolutionsMedicoSocialPage() {
       title: 'Établissements & Services d’Aide par le Travail (ESAT)',
       desc: 'Concilier gestion commerciale d’atelier et suivi du projet personnalisé d’accompagnement des travailleurs en situation de handicap.',
       link: '/solutions-medico-social/esat',
-      image: '/images/home/esat_workshop_activity.jpg',
+      image: '/images/home/esat_workshop_activity.webp',
       badge: 'Ateliers & Travail Protégé',
     },
     {
@@ -167,7 +167,7 @@ export default function SolutionsMedicoSocialPage() {
       title: 'EHPAD & Résidences Autonomie',
       desc: 'Modernisation des transmissions ciblées, portail familles rassurant et allègement de la charge administrative des équipes soignantes.',
       link: '/solutions-medico-social/ehpad',
-      image: '/images/home/ehpad_coordination_life.jpg',
+      image: '/images/home/ehpad_coordination_life.webp',
       badge: 'Grand Âge & Lien Famille',
     },
     {
@@ -175,7 +175,7 @@ export default function SolutionsMedicoSocialPage() {
       title: 'Associations Gestionnaires Multi-Sites',
       desc: 'Pilotage unifié du système d’information, mutualisation des moyens (ressources, matériel) et reporting consolidé pour les conseils d’administration.',
       link: '/solutions-medico-social/associations',
-      image: '/images/home/hero_medicosocial_team.jpg',
+      image: '/images/home/hero_medicosocial_team.webp',
       badge: 'Gouvernance & DSI',
     },
     {
@@ -183,7 +183,7 @@ export default function SolutionsMedicoSocialPage() {
       title: 'Foyers de Vie, MAS & FAM',
       desc: 'Outils ergonomiques pour le suivi au long cours des résidents, le dossier de vie partagé et les activités socio-éducatives adaptées.',
       link: '/contact',
-      image: '/images/about/about_field_immersion.jpg',
+      image: '/images/about/about_field_immersion.webp',
       badge: 'Hébergement Médicalisé',
     },
   ];

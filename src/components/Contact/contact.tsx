@@ -562,7 +562,7 @@ const Contact = ({
                 <Image
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-[0.95]"
-                  src="/images/home/workshop_coconception.jpg"
+                  src="/images/home/workshop_coconception.webp"
                   alt="Échange et cadrage de projet avec l'équipe DevEvoke"
                   sizes="(max-width: 1024px) 0vw, 30vw"
                 />

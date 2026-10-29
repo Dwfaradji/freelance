@@ -69,7 +69,7 @@ export default function SecuriteConformitePage() {
         <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl mb-16 group">
           <div className="relative h-64 sm:h-80 w-full overflow-hidden">
             <Image
-              src="/images/about/about_sovereign_security.jpg"
+              src="/images/about/about_sovereign_security.webp"
               alt="Couloir de serveurs sécurisés en centre de données souverain français"
               width={1400}
               height={600}

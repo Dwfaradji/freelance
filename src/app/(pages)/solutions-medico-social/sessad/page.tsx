@@ -121,7 +121,7 @@ export default function SolutionsSessadPage() {
               <div className="lg:col-span-6">
                 <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group">
                   <Image
-                    src="/images/home/sessad_field_educator.jpg"
+                    src="/images/home/sessad_field_educator.webp"
                     alt="Éducateur spécialisé SESSAD en séance avec tablette tactile"
                     width={800}
                     height={520}

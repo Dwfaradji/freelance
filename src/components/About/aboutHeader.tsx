@@ -57,7 +57,7 @@ const AboutHeader = () => {
             <Fade direction="up" delay={200} triggerOnce>
               <div className="relative rounded-[2.5rem] overflow-hidden glass border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] group">
                 <Image
-                  src="/images/home/workshop_coconception.jpg"
+                  src="/images/home/workshop_coconception.webp"
                   alt="Atelier collaboratif de conception numérique DevEvoke avec une direction d'association médico-sociale"
                   width={1000}
                   height={750}

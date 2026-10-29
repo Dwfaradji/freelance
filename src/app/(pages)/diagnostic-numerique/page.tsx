@@ -77,7 +77,7 @@ export default function DiagnosticPage() {
             <div className="lg:col-span-5">
               <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group">
                 <Image
-                  src="/images/diagnostic/diagnostic_audit_medicosocial.jpg"
+                  src="/images/diagnostic/diagnostic_audit_medicosocial.webp"
                   alt="Consultation d'audit et diagnostic de maturité numérique en établissement médico-social"
                   width={800}
                   height={540}

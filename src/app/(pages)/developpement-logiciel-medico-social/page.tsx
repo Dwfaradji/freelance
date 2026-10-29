@@ -183,7 +183,7 @@ export default function DeveloppementLogicielMedicoSocialPage() {
               <div className="lg:col-span-6 space-y-6">
                 <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group">
                   <Image
-                    src="/images/home/workshop_coconception.jpg"
+                    src="/images/home/workshop_coconception.webp"
                     alt="Atelier de co-conception d'application métier médico-sociale"
                     width={800}
                     height={460}

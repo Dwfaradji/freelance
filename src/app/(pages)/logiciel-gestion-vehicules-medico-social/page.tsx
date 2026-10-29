@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import floticarImg from '@/images/projects/floticar-dashboard.png';
+import floticarImg from '@/images/projects/floticar-dashboard.webp';
 import { 
   CalendarCheck, 
   Wrench, 
@@ -149,7 +149,7 @@ export default function LogicielGestionVehiculesMedicoSocialPage() {
             {/* Field Action Photograph */}
             <div className="lg:col-span-5 relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group flex flex-col justify-end min-h-[380px] lg:min-h-[480px]">
               <Image
-                src="/images/home/floticar_real_action.jpg"
+                src="/images/home/floticar_real_action.webp"
                 alt="Chauffeur et éducateur scannant le QR code sur minibus associatif avec Floticar"
                 width={800}
                 height={600}

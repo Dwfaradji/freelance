@@ -74,7 +74,7 @@ export default function MethodologySection() {
             {/* Photo Column */}
             <div className="lg:col-span-6 relative h-[240px] sm:h-[400px] lg:h-[440px] w-full overflow-hidden">
               <Image
-                src="/images/home/workshop_coconception.jpg"
+                src="/images/home/workshop_coconception.webp"
                 alt="Atelier collaboratif de co-conception numérique entre DevEvoke et des décideurs d'organisation"
                 width={800}
                 height={600}

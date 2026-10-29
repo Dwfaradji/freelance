@@ -119,7 +119,7 @@ export default function SolutionsAssociationsPage() {
               <div className="lg:col-span-6">
                 <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group">
                   <Image
-                    src="/images/home/hero_medicosocial_team.jpg"
+                    src="/images/home/hero_medicosocial_team.webp"
                     alt="Direction et coordination d'association médico-sociale en réunion de pilotage"
                     width={800}
                     height={520}

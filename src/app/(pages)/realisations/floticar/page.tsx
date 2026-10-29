@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import floticarImg from '@/images/projects/floticar-dashboard.png';
+import floticarImg from '@/images/projects/floticar-dashboard.webp';
 import {
   CalendarCheck,
   Wrench,
@@ -139,7 +139,7 @@ export default function FloticarCaseStudyPage() {
             <div className="lg:col-span-5 relative group">
               <div className="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-neutral-900">
                 <Image
-                  src="/images/home/floticar_real_action.jpg"
+                  src="/images/home/floticar_real_action.webp"
                   alt="Conducteur d'une association médico-sociale scannant le QR code sur le minibus de tournée"
                   width={600}
                   height={500}

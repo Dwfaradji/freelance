@@ -11,7 +11,7 @@ export const emailTokens = {
     tagline: 'Agence digitale · Solutions logicielles & numériques sur-mesure',
     website: 'https://www.devevoke.com',
     contactEmail: 'contact@devevoke.com',
-    logoUrl: 'https://www.devevoke.com/images/home/workshop_coconception.jpg',
+    logoUrl: 'https://www.devevoke.com/images/home/workshop_coconception.webp',
     servicesSummary: 'Sites web · Applications · SaaS · Solutions métier',
     location: 'Perpignan (Occitanie) · Accompagnement France entière',
     siren: '878 438 951 00013',

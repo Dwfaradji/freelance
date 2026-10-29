@@ -17,7 +17,7 @@ export const AboutMethodology = () => {
           <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full z-0" />
           <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl glass p-2">
               <Image 
-                src="/images/about/about_field_immersion.jpg" 
+                src="/images/about/about_field_immersion.webp" 
                 alt="Immersion et co-conception de solutions logicielles dans un établissement médico-social" 
                 width={800} 
                 height={600} 
@@ -78,7 +78,7 @@ export const AboutSecurity = () => {
           <div className="absolute inset-0 bg-secondary/20 blur-[100px] rounded-full z-0" />
           <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl glass p-2">
              <Image 
-                src="/images/about/about_sovereign_security.jpg" 
+                src="/images/about/about_sovereign_security.webp" 
                 alt="Infrastructure cloud souveraine en France et sécurité des données associatives" 
                 width={800} 
                 height={600} 

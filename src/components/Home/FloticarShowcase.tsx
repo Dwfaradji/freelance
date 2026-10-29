@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import floticarImg from '@/images/projects/floticar-dashboard.png';
+import floticarImg from '@/images/projects/floticar-dashboard.webp';
 import {
   Car,
   ArrowRight,
@@ -79,7 +79,7 @@ export default function FloticarShowcase() {
               {/* Field Action Photo */}
               <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-neutral-900 group">
                 <Image
-                  src="/images/home/floticar_real_action.jpg"
+                  src="/images/home/floticar_real_action.webp"
                   alt="Conducteur scannant le QR code d'un véhicule avec son smartphone"
                   width={600}
                   height={450}

@@ -20,7 +20,7 @@ export default function Header() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          
+
           {/* Left Column: Narrative Positioning & CTAs (SSR immédiat, aucun blocage JS) */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
             {/* Sector Badge */}
@@ -62,17 +62,7 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Quick link to templates under CTAs */}
-            <div className="pt-1 text-xs text-neutral-400 text-center lg:text-left">
-              <span>Besoin d’un démarrage rapide ? </span>
-              <Link
-                href="/templates"
-                className="text-primary-400 hover:text-primary-300 font-medium inline-flex items-center gap-1 transition-colors hover:underline"
-              >
-                <span>Explorer nos socles &amp; templates métiers</span>
-                <ArrowRight className="size-3" />
-              </Link>
-            </div>
+
 
             {/* Reassurance Trust Markers */}
             <div className="pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-neutral-300 text-left">
@@ -100,7 +90,7 @@ export default function Header() {
               {/* Main Photo Frame */}
               <div className="relative rounded-3xl overflow-hidden border border-white/15 bg-neutral-900 shadow-2xl">
                 <Image
-                  src="/images/home/hero_medicosocial_team.jpg"
+                  src="/images/home/hero_medicosocial_team.webp"
                   alt="Session de travail et coordination sur logiciel métier sur-mesure"
                   width={800}
                   height={600}

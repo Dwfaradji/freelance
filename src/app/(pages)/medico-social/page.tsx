@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Building2,
   ShieldCheck,
@@ -10,6 +11,8 @@ import {
   Users,
   Sparkles,
   HelpCircle,
+  Eye,
+  FileCheck2,
 } from 'lucide-react';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import MedicoSocialNavSwitcher from '@/components/ui/MedicoSocialNavSwitcher';
@@ -52,6 +55,8 @@ export default function MedicoSocialHubPage() {
       desc: 'Gestion des admissions, suivi des projets personnalisés de scolarisation, communication avec les familles et coordination pluridisciplinaire.',
       link: '/solutions-medico-social/ime',
       badge: 'Enfance & Pédagogie',
+      image: '/images/solutions/ime_pedagogy_learning.webp',
+      alt: 'Atelier pédagogique et d’apprentissage en Institut Médico-Éducatif (IME)',
     },
     {
       sigle: 'SESSAD & SAVS',
@@ -59,6 +64,8 @@ export default function MedicoSocialHubPage() {
       desc: 'Outils mobiles pour éducateurs nomades, gestion des plannings de tournée, comptes-rendus d’interventions en milieu scolaire ou à domicile sans réseau.',
       link: '/solutions-medico-social/sessad',
       badge: 'Mobilité & Hors-Ligne',
+      image: '/images/home/sessad_field_educator.webp',
+      alt: 'Éducatrice spécialisée SESSAD en intervention de terrain auprès d’un jeune',
     },
     {
       sigle: 'ESAT',
@@ -66,6 +73,8 @@ export default function MedicoSocialHubPage() {
       desc: 'Suivi de la production en atelier (bois, espaces verts, conditionnement), devis commerciaux et fiches d’activités adaptées aux travailleurs.',
       link: '/solutions-medico-social/esat',
       badge: 'Production & Inclusion',
+      image: '/images/home/esat_workshop_activity.webp',
+      alt: 'Travailleur et moniteur en atelier de production protégée au sein d’un ESAT',
     },
     {
       sigle: 'EHPAD & Résidences',
@@ -73,6 +82,8 @@ export default function MedicoSocialHubPage() {
       desc: 'Transmissions d’équipes sécurisées, gestion des astreintes et portails familles pour maintenir un lien transparent avec les proches.',
       link: '/solutions-medico-social/ehpad',
       badge: 'Grand Âge & Lien Familles',
+      image: '/images/home/ehpad_coordination_life.webp',
+      alt: 'Soignante et résidente en échange bienveillant au sein d’un EHPAD',
     },
     {
       sigle: 'FAM & MAS',
@@ -80,6 +91,8 @@ export default function MedicoSocialHubPage() {
       desc: 'Organisation du quotidien des résidents, protocoles de soins et traçabilité rigoureuse des interventions d’accompagnement.',
       link: '/contact',
       badge: 'Hébergement & Soins',
+      image: '/images/about/about_field_immersion.webp',
+      alt: 'Échange humain et accompagnement soignant en foyer d’accueil médicalisé',
     },
     {
       sigle: 'Associations Multi-Sites',
@@ -87,6 +100,8 @@ export default function MedicoSocialHubPage() {
       desc: 'Centralisation des indicateurs d’activité multi-établissements, harmonisation du système d’information et pilotage budgétaire unifié.',
       link: '/solutions-medico-social/associations',
       badge: 'Gouvernance & Reporting',
+      image: '/images/home/hero_medicosocial_team.webp',
+      alt: 'Équipe de direction et cadres associatifs réunis pour la gouvernance médico-sociale',
     },
   ];
 
@@ -152,50 +167,80 @@ export default function MedicoSocialHubPage() {
           <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[350px] bg-secondary-600/10 blur-[150px] pointer-events-none rounded-full" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-3xl space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs font-semibold uppercase tracking-wider">
-                <Building2 className="size-3.5" />
-                <span>Pôle d&apos;Excellence Sectoriel • Médico-Social</span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs font-semibold uppercase tracking-wider">
+                  <Building2 className="size-3.5" />
+                  <span>Pôle d&apos;Excellence Sectoriel • Médico-Social</span>
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                  Solutions numériques pensées pour les acteurs du{' '}
+                  <span className="text-highlight">médico-social</span>
+                </h1>
+
+                <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed">
+                  Allégez la charge administrative de vos équipes et renforcez le temps utile consacré aux personnes accompagnées grâce à des logiciels métiers sur-mesure, des applications mobiles nomades et des outils de coordination simples.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+                  <Link
+                    href="/contact"
+                    className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 text-white font-semibold text-sm hover:opacity-95 shadow-xl shadow-primary-500/25 transition-all flex items-center justify-center gap-2 group"
+                  >
+                    <span>Parler de votre établissement</span>
+                    <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    href="/diagnostic-numerique"
+                    className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-200 font-medium text-sm transition-all text-center"
+                  >
+                    Faire le diagnostic médico-social gratuit
+                  </Link>
+                </div>
+
+                <div className="pt-6 flex flex-wrap items-center gap-6 text-xs text-neutral-400">
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 className="size-4 text-emerald-400" />
+                    Hébergement sécurisé France
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 className="size-4 text-emerald-400" />
+                    Conforme RGPD & CNIL
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 className="size-4 text-emerald-400" />
+                    Co-conception avec le terrain
+                  </span>
+                </div>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                Solutions numériques pensées pour les acteurs du{' '}
-                <span className="text-highlight">médico-social</span>
-              </h1>
+              {/* Photo Hero Médicaux-Sociale : Professionnel avec tablette métier */}
+              <div className="lg:col-span-5 relative">
+                <div className="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-neutral-900 group">
+                  <Image
+                    src="/images/solutions/professionnel-medico-social-tablette.webp"
+                    alt="Professionnel du médico-social utilisant une solution numérique de coordination sur tablette tactile"
+                    width={960}
+                    height={540}
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    className="w-full h-[320px] sm:h-[420px] object-cover object-center group-hover:scale-102 transition-transform duration-700 brightness-[0.97]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent pointer-events-none" />
+                  
+                  <div className="absolute top-4 left-4 backdrop-blur-md bg-neutral-950/80 border border-white/15 px-3 py-1.5 rounded-xl text-xs font-semibold text-white flex items-center gap-2">
+                    <Smartphone className="size-3.5 text-primary-400 shrink-0" />
+                    <span>Application Métier & Coordination</span>
+                  </div>
 
-              <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed">
-                Allégez la charge administrative de vos équipes et renforcez le temps utile consacré aux personnes accompagnées grâce à des logiciels métiers sur-mesure, des applications mobiles nomades et des outils de coordination simples.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-                <Link
-                  href="/contact"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 text-white font-semibold text-sm hover:opacity-95 shadow-xl shadow-primary-500/25 transition-all flex items-center justify-center gap-2 group"
-                >
-                  <span>Parler de votre établissement</span>
-                  <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  href="/diagnostic-numerique"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-200 font-medium text-sm transition-all text-center"
-                >
-                  Faire le diagnostic médico-social gratuit
-                </Link>
-              </div>
-
-              <div className="pt-6 flex flex-wrap items-center gap-6 text-xs text-neutral-400">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="size-4 text-emerald-400" />
-                  Hébergement sécurisé France
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="size-4 text-emerald-400" />
-                  Conforme RGPD & CNIL
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="size-4 text-emerald-400" />
-                  Co-conception avec le terrain
-                </span>
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-neutral-200">
+                    <span className="font-semibold text-xs">Suivi des usagers & mobilité</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[11px] border border-emerald-500/30">
+                      Ergonomie Terrain
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -222,24 +267,46 @@ export default function MedicoSocialHubPage() {
                 <Link
                   key={idx}
                   href={s.link}
-                  className="card-modern p-8 space-y-4 group flex flex-col justify-between hover:border-primary-500/40 transition-all text-left"
+                  className="card-modern rounded-3xl overflow-hidden border border-white/10 group flex flex-col justify-between hover:border-primary-500/40 transition-all text-left shadow-xl"
                 >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl font-black text-white group-hover:text-primary-300 transition-colors">
+                  <div>
+                    {/* Photo de structure */}
+                    <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-neutral-900">
+                      <Image
+                        src={s.image}
+                        alt={s.alt}
+                        width={600}
+                        height={400}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="size-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.92] contrast-[1.05]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent pointer-events-none" />
+                      
+                      <div className="absolute top-3 left-3 backdrop-blur-md bg-neutral-950/80 border border-white/15 px-3 py-1 rounded-full text-xs font-black text-primary-300">
                         {s.sigle}
-                      </span>
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary-300 bg-primary-500/10 px-2.5 py-1 rounded-full border border-primary-500/20">
+                      </div>
+
+                      <div className="absolute top-3 right-3 backdrop-blur-md bg-primary-950/80 border border-primary-500/30 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider text-primary-200">
                         {s.badge}
-                      </span>
+                      </div>
                     </div>
-                    <h3 className="text-base font-bold text-neutral-200">{s.nom}</h3>
-                    <p className="text-xs text-neutral-400 leading-relaxed">{s.desc}</p>
+
+                    {/* Contenu carte */}
+                    <div className="p-6 space-y-2.5">
+                      <h3 className="text-lg font-bold text-white group-hover:text-primary-300 transition-colors leading-snug">
+                        {s.nom}
+                      </h3>
+                      <p className="text-xs text-neutral-300 leading-relaxed font-normal">
+                        {s.desc}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-primary-400 group-hover:text-primary-300 font-semibold">
-                    <span>Découvrir les solutions</span>
-                    <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+                  <div className="p-6 pt-0">
+                    <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-primary-400 group-hover:text-white font-semibold transition-colors">
+                      <span>Découvrir les solutions adaptées</span>
+                      <ArrowRight className="size-4 group-hover:translate-x-1.5 transition-transform" />
+                    </div>
                   </div>
                 </Link>
               ))}
@@ -277,31 +344,63 @@ export default function MedicoSocialHubPage() {
           </div>
         </section>
 
-        {/* Co-design Showcase Banner */}
+        {/* Co-design Showcase Banner with Action Photo */}
         <section className="py-20 border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="card-modern p-8 sm:p-12 border-primary-500/30 bg-gradient-to-br from-neutral-900 to-neutral-950">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-8 space-y-4">
+            <div className="rounded-3xl overflow-hidden border border-primary-500/30 bg-gradient-to-br from-neutral-900 to-neutral-950 shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+                
+                {/* Photo Column */}
+                <div className="lg:col-span-5 relative h-[260px] sm:h-[380px] lg:h-[420px] w-full overflow-hidden">
+                  <Image
+                    src="/images/solutions/atelier-coconception-medico-social.webp"
+                    alt="Atelier collaboratif de co-conception numérique entre DevEvoke et des professionnels du médico-social"
+                    width={960}
+                    height={540}
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    className="size-full object-cover object-center brightness-[0.97] contrast-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-neutral-950/90 hidden lg:block" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent lg:hidden" />
+                  
+                  <div className="absolute top-4 left-4 backdrop-blur-md bg-neutral-950/80 border border-white/15 px-3 py-1.5 rounded-full text-xs font-semibold text-primary-300 flex items-center gap-2">
+                    <Users className="size-3.5" />
+                    <span>Atelier de Cadrage Fonctionnel</span>
+                  </div>
+                </div>
+
+                {/* Narrative Column */}
+                <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12 space-y-5 text-left">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs font-semibold">
                     <Sparkles className="size-3.5" />
                     <span>Immersion & Co-Construction Terrain</span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white">
+
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
                     Des outils conçus avec et pour vos professionnels
                   </h3>
+
                   <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                    Chaque établissement possède ses spécificités. Nous intervenons aux côtés de vos équipes administratives, soignantes et éducatives pour concevoir des interfaces ultra-simples qui suppriment les doublons de saisie, fluidifient les transmissions et protègent les données sensibles.
+                    Chaque établissement possède ses spécificités. Nous nous déplaçons directement dans vos structures pour observer les pratiques réelles aux côtés de vos équipes administratives, soignantes et éducatives. Nous concevons ensemble des interfaces ultra-simples qui suppriment les doublons de saisie, fluidifient les transmissions et protègent rigoureusement les données sensibles.
                   </p>
+
+                  <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                    <Link
+                      href="/contact"
+                      className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold text-xs sm:text-sm hover:opacity-95 shadow-lg shadow-primary-500/20 transition-all flex items-center justify-center gap-2"
+                    >
+                      <span>Organiser un atelier de cadrage</span>
+                      <ArrowRight className="size-4" />
+                    </Link>
+                    <Link
+                      href="/realisations"
+                      className="px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white font-medium text-xs sm:text-sm transition-all flex items-center justify-center text-center"
+                    >
+                      Consulter nos réalisations
+                    </Link>
+                  </div>
                 </div>
-                <div className="lg:col-span-4 flex flex-col gap-3 justify-center items-start lg:items-end">
-                  <Link
-                    href="/realisations"
-                    className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-semibold text-xs hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
-                  >
-                    Consulter tous nos projets
-                  </Link>
-                </div>
+
               </div>
             </div>
           </div>

@@ -1,8 +1,8 @@
 // data file for the website
 import { Project, Price, Service, PageInfo } from './typeFile';
 
-import floticar from '@/images/projects/floticar-dashboard.png';
-import floticarMobile from '@/images/projects/floticar-dashboard.png';
+import floticar from '@/images/projects/floticar-dashboard.webp';
+import floticarMobile from '@/images/projects/floticar-dashboard.webp';
 
 // Project
 const projects: Project[] = [
@@ -27,8 +27,8 @@ const projects: Project[] = [
     description: `Outil interne sur-mesure pour centraliser les informations d'activité, fluidifier les circuits de validation et remplacer les classeurs Excel instables.`,
     details: `Problématique : prolifération de fichiers Excel désynchronisés, risques d'erreurs humaines et temps perdu à consolider les bilans opérationnels. Notre réponse : application web réactive, base de données relationnelle sécurisée et tableaux de bord de pilotage en temps réel.`,
     results: `Bénéfices : gain de temps immédiat sur les tâches administratives, fiabilité totale des indicateurs et adoption naturelle par les équipes.`,
-    image: '/images/home/esat_workshop_activity.jpg',
-    imageMobile: '/images/home/esat_workshop_activity.jpg',
+    image: '/images/home/esat_workshop_activity.webp',
+    imageMobile: '/images/home/esat_workshop_activity.webp',
     alt: 'Logiciel métier sur-mesure et tableau de bord opérationnel',
     tech: ['Next.js', 'PostgreSQL', 'TypeScript', 'Tailwind CSS'],
     link: '/solutions-metier',
@@ -41,8 +41,8 @@ const projects: Project[] = [
     description: `Application web et mobile conçue pour faciliter le travail des équipes de terrain avec saisie rapide et fonctionnement déconnecté.`,
     details: `Problématique : perte de temps en double saisie le soir, manque d'accès aux plannings lors des déplacements et interventions en zones blanches sans réseau. Notre réponse : interface tactile épurée, saisie rapide et mode consultation/saisie 100% hors-ligne avec synchronisation automatique.`,
     results: `Bénéfices : réduction drastique de la charge mentale administrative, transmissions sécurisées conformes RGPD et fluidité d'intervention.`,
-    image: '/images/home/sessad_field_educator.jpg',
-    imageMobile: '/images/home/sessad_field_educator.jpg',
+    image: '/images/home/sessad_field_educator.webp',
+    imageMobile: '/images/home/sessad_field_educator.webp',
     alt: 'Application mobile professionnelle en mode déconnecté',
     tech: ['Next.js', 'React Native', 'PWA Offline', 'TypeScript'],
     link: '/application-mobile',
@@ -55,8 +55,8 @@ const projects: Project[] = [
     description: `Plateforme web sécurisée facilitant les échanges, la mise à disposition de documents et la coordination entre collaborateurs et usagers.`,
     details: `Problématique : dispersion des communications par email, absence d'espace centralisé et ruptures de transmission. Notre réponse : portail web sur-mesure hébergé sur infrastructure souveraine en France avec contrôle strict des accès par rôles (RBAC).`,
     results: `Bénéfices : traçabilité complète des échanges, conformité RGPD native et communication fluide et transparente.`,
-    image: '/images/home/ehpad_coordination_life.jpg',
-    imageMobile: '/images/home/ehpad_coordination_life.jpg',
+    image: '/images/home/ehpad_coordination_life.webp',
+    imageMobile: '/images/home/ehpad_coordination_life.webp',
     alt: 'Portail web sécurisé et espace professionnel',
     tech: ['Next.js', 'React', 'Chiffrement AES-256', 'Hébergement France'],
     link: '/developpement-web',

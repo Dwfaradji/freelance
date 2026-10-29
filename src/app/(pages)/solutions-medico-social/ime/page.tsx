@@ -119,7 +119,7 @@ export default function SolutionsImePage() {
               <div className="lg:col-span-6">
                 <div className="relative rounded-3xl overflow-hidden glass border border-white/10 shadow-2xl group">
                   <Image
-                    src="/images/solutions/ime_pedagogy_learning.jpg"
+                    src="/images/solutions/ime_pedagogy_learning.webp"
                     alt="Séance éducative individualisée en IME avec outil tactile adapté"
                     width={800}
                     height={520}
